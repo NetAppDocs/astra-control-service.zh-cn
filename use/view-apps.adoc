@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: use/view-apps.html 
+keywords: view app, view app status, view app protection status, view app pods, view persistent storage 
+summary: 开始管理某个应用程序后， Astra Control 会提供有关该应用程序的详细信息，您可以通过这些详细信息来确定其状态，保护状态， Pod ，永久性存储等。 
+---
+= 查看应用程序的运行状况和详细信息
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+开始管理某个应用程序后， Astra Control 会提供有关该应用程序的详细信息，使您能够确定其状态（是否运行正常），保护状态（是否在发生故障时受到全面保护）， Pod ，永久性存储等。
+
+image:screenshot-app-overview.gif[""]
+
+.步骤
+. 单击 * 应用程序 * ，然后单击应用程序的名称。
+. 单击 " 四周 " 可查找所需的信息：
++
+应用程序状态:: 提供反映应用程序在 Kubernetes 中的状态的状态。例如， Pod 和永久性卷是否联机？如果某个应用程序运行状况不正常，您需要查看 Kubernetes 日志，对集群上的问题描述进行故障排除。Astra Control 不会提供信息来帮助您修复损坏的应用程序。
+应用程序保护状态::
++
+--
+** * 完全保护 * ：应用程序具有一个活动备份计划，并且备份成功完成不到一周
+** * 部分保护 * ：应用程序具有活动备份计划，活动快照计划或成功备份或快照
+** * 未受保护 * ：既不受完全保护也不受部分保护的应用程序。
++
+_You can't be Fully protected until you have a recent backup_ 。这一点非常重要，因为备份存储在对象存储中，而不是永久性卷。如果发生故障或意外事件会擦除集群及其永久性存储，则需要备份才能恢复。快照无法让您恢复。
+
+
+
+--
+概述:: 与应用程序关联的 Pod 的状态信息。
+数据保护:: 用于配置数据保护策略以及查看现有快照和备份。
+存储:: 显示应用程序级别的永久性卷。从 Kubernetes 集群的角度来看，永久性卷的状态。
+Resources:: 用于验证正在备份和管理哪些资源。
+活动:: 与应用程序相关的 Astra Control 活动。
+
+
+

@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: learn/architecture.html 
+keywords: astra, astra control, architecture, astra control center, kubernetes, netapp, clusters, trident, astra control service 
+summary: 下面简要介绍了 Astra Control 环境的各个组件。 
+---
+= 架构和组件
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/learn/
+
+
+下面简要介绍了 Astra Control 环境的各个组件。
+
+image:architecture.png["Astra Control 架构图和组件"]
+
+
+
+== Astra Control 组件
+
+* * Kubernetes 集群 * ： Kubernetes 是一个可移植，可扩展的开源平台，用于管理容器化工作负载和服务，便于进行声明性配置和自动化。Astra Control 为 Kubernetes 集群中托管的应用程序提供管理服务。
+* * Trident * ：作为 NetApp 维护的完全受支持的开源存储配置程序和流程编排程序， Trident 支持您为 Docker 和 Kubernetes 管理的容器化应用程序创建存储卷。使用 Astra Control 部署时， Trident 包括已配置的 ONTAP 存储后端。
+* * 存储后端 * ： Astra 控制服务使用 https://cloud.netapp.com/cloud-volumes-service-for-gcp["适用于 Google Cloud 的 NetApp Cloud Volumes Service"^] 作为 GKE- 集群和的后端存储 作为 AKS 集群的后端存储。
++
+Astra 控制中心使用 ONTAP AFF 和 FAS 存储后端。作为存储软件和硬件平台， ONTAP 可提供核心存储服务，支持多个存储访问协议以及快照和镜像等存储管理功能。
+
+* * Cloud Insights * ： Cloud Insights 是一款 NetApp 云基础架构监控工具，可用于监控由 控制中心管理的 Kubernetes 集群的性能和利用率。Cloud Insights 将存储使用量与工作负载相关联。
+
+
+
+
+== Astra Control 接口
+
+您可以使用不同的界面完成任务：
+
+* * Web 用户界面（ UI ） * ： Astra 控制服务和 Astra 控制中心使用同一个基于 Web 的 UI ，您可以在其中管理，迁移和保护应用程序。使用用户界面管理用户帐户和配置设置。
+* * API * ： Astra 控制服务和 Astra 控制中心使用相同的 Astra API 。使用 API ，您可以执行与使用 UI 相同的任务。
+
+
+
+
+== 有关详细信息 ...
+
+* https://docs.netapp.com/us-en/astra-control-center/index.html["Astra 控制中心文档"^]
+* https://docs.netapp.com/us-en/astra-automation/index.html["使用 Astra API"^]
+* https://netapp-trident.readthedocs.io/en/latest/["Trident 文档"^]
+* https://docs.netapp.com/us-en/cloudinsights/["Cloud Insights 文档"^]
+* https://docs.netapp.com/us-en/ontap/index.html["ONTAP 文档"^]
+

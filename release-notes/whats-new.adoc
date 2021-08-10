@@ -1,0 +1,174 @@
+---
+sidebar: sidebar 
+permalink: release-notes/whats-new.html 
+keywords: what's new, bugs, bug fixes, new features, enhancements 
+summary: NetApp 会定期更新 Astra Control Service ，为您提供新功能，增强功能和错误修复。 
+---
+= Astra 控制服务的新增功能
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/release-notes/
+
+
+NetApp 会定期更新 Astra Control Service ，为您提供新功能，增强功能和错误修复。
+
+
+
+== 2021 年 8 月 5 日
+
+此版本包含以下新增功能和增强功能：
+
+
+
+=== Astra 控制中心
+
+Astra Control 现在可采用新的部署模式。_Astra Control Center_ 是一款自行管理的软件，您可以在数据中心内安装和操作该软件，以便管理内部 Kubernetes 集群的 Kubernetes 应用程序生命周期管理。
+
+https://docs.netapp.com/us-en/astra-control-center["请访问 Astra 控制中心文档以了解更多信息"^]。
+
+
+
+=== 自带存储分段
+
+现在，您可以通过添加其他存储分段以及在云提供商中更改 Kubernetes 集群的默认存储分段来管理 Astra 用于备份和克隆的存储分段。
+
+link:../use/manage-buckets.html["了解有关管理存储分段的更多信息"]。
+
+
+
+== 2021 年 6 月 2 日
+
+此版本包含错误修复以及 Google Cloud 支持的以下增强功能。
+
+
+
+=== 支持共享 vPC
+
+现在，您可以使用共享 VPC 网络配置管理 GCP 项目中的 GKEE 集群。
+
+
+
+=== CVS 服务类型的永久性卷大小
+
+现在，使用 CVS 服务类型时， Astra Control Service 会创建最小大小为 300 GiB 的永久性卷。
+
+link:../learn/choose-class-and-size.html["了解 Astra 控制服务如何使用适用于 Google Cloud 的 Cloud Volumes Service 作为永久性卷的后端存储"]。
+
+
+
+=== 支持容器优化操作系统
+
+现在， GKE- 工作节点支持容器优化操作系统。这是对 Ubuntu 支持的补充。
+
+link:../get-started/set-up-google-cloud.html#gke-cluster-requirements["了解有关 GKEE 集群要求的更多信息"]。
+
+
+
+== 2021 年 4 月 15 日
+
+此版本包含以下新增功能和增强功能：
+
+
+
+=== 支持 AKS 集群
+
+现在， Astra Control Service 可以管理 Azure Kubernetes Service （ AKS ）中受管 Kubernetes 集群上运行的应用程序。
+
+link:../get-started/set-up-microsoft-azure.html["了解如何开始使用"]。
+
+
+
+=== REST API
+
+Astra Control REST API 现在可供使用。API 基于现代技术和当前最佳实践。
+
+https://docs.netapp.com/us-en/astra-automation["了解如何使用 REST API 自动执行应用程序数据生命周期管理"^]。
+
+
+
+=== 按年订阅
+
+Astra Control Service 现在可提供 _Premium 订阅 _ 。
+
+按折扣价预付费，每年订阅一次，您可以在每个应用程序软件包中管理多达 10 个应用程序。请联系 NetApp 销售部门，根据您的组织需要购买任意数量的软件包—例如，从 Astra Control Service 购买 3 个软件包来管理 30 个应用程序。
+
+如果您管理的应用程序超过年度订阅所允许的数量，则每个应用程序的超额费用为每分钟 0.005 美元（与高级 PayGo 相同）。
+
+link:../get-started/intro.html#pricing["了解有关 Astra Control 服务定价的更多信息"]。
+
+
+
+=== 命名空间和应用程序可视化
+
+我们对 " 发现的应用程序 " 页面进行了改进，以更好地显示命名空间和应用程序之间的层次结构。只需展开一个命名空间即可查看该命名空间中包含的应用程序。
+
+link:../use/manage-apps.html["了解有关管理应用程序的更多信息"]。
+
+image:screenshot-group.gif[""]
+
+
+
+=== 用户界面增强功能
+
+数据保护向导已进行了增强，易于使用。例如，我们优化了保护策略向导，以便在定义保护计划时更轻松地查看该计划。
+
+image:screenshot-protection-policy.gif[""]
+
+
+
+=== 活动增强功能
+
+我们可以更轻松地在您的 Astra Control 帐户中查看有关活动的详细信息。
+
+* 按受管应用程序，严重性级别，用户和时间范围筛选活动列表。
+* 将您的 Astra Control 帐户活动下载到 CSV 文件中。
+* 选择计算或应用程序后，直接从计算页面或应用程序页面查看活动。
+
+
+link:../use/view-account-activity.html["了解有关查看帐户活动的更多信息"]。
+
+
+
+== 2021 年 3 月 1 日
+
+Astra Control Service 现在支持 https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types["_CVS_ 服务类型"^] 借助适用于 Google Cloud 的 Cloud Volumes Service 。这是对 _cvs-Performance_ 服务类型的补充。请注意， Astra 控制服务使用适用于 Google Cloud 的 Cloud Volumes Service 作为永久性卷的后端存储。
+
+此增强功能意味着， Astra Control Service 现在可以管理在 _any_ 中运行的 Kubernetes 集群的应用程序数据 https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["支持 Cloud Volumes Service 的 Google 云区域"^]。
+
+如果您可以灵活地在 Google Cloud 区域之间进行选择，则可以根据性能要求选择 CVS 或 CVS-Performance 。 link:../learn/choose-class-and-size.html["了解有关选择服务类型的更多信息"]。
+
+
+
+== 2021 年 1 月 25 日
+
+我们很高兴地宣布， Astra 控制服务现已全面上市。我们采纳了从测试版收到的许多反馈，并进行了一些其他显著的改进。
+
+* 现在，您可以通过计费从免费计划过渡到高级计划。 link:../use/set-up-billing.html["了解有关计费的更多信息"]。
+* 现在，使用 CVS-Performance 服务类型时， Astra Control Service 会创建最小大小为 100 GiB 的永久性卷。
+* Astra Control Service 现在可以更快地发现应用程序。
+* 现在，您可以自行创建和删除帐户。
+* 当 Astra 控制服务无法再访问 Kubernetes 计算时，我们改进了通知功能。
++
+这些通知非常重要，因为 Astra Control Service 无法管理已断开连接计算的应用程序。
+
+
+
+
+
+== 2020 年 12 月 17 日（测试版更新）
+
+我们主要关注错误修复以改善您的体验，但我们还进行了一些其他显著的改进：
+
+* 当您将第一个 Kubernetes 计算添加到 Astra Control Service 时，现在将在集群所在的地理位置创建对象存储。
+* 现在，当您在计算级别查看存储详细信息时，可以查看有关永久性卷的详细信息。
++
+image:screenshot-compute-pvs.gif["配置到 Kubernetes 集群的永久性卷的屏幕截图。"]
+
+* 我们添加了一个选项，用于从现有快照或备份还原应用程序。
++
+image:screenshot-app-restore.gif["应用程序的数据保护选项卡的屏幕截图，您可以单击操作下拉列表以选择还原应用程序。"]
+
+* 如果删除了 Astra Control Service 正在管理的 Kubernetes 集群，则该集群现在将显示为 * 已删除 * 状态。然后，您可以从 Astra Control Service 中删除此集群。
+* 现在，帐户所有者可以修改为其他用户分配的角色。
+* 我们添加了一个计费部分，该部分将在发布 Astra 控制服务以实现通用可用性（ GA ）时启用。
+

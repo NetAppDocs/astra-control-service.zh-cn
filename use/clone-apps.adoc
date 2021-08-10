@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: use/clone-apps.html 
+keywords: clone app, clone storage, clone persistent storage, clone data, move workload, clone data, migrate data, data migration, move storage, move application, move data 
+summary: 克隆现有应用程序以在同一个 Kubernetes 集群或另一个集群上创建重复的应用程序。如果您需要将应用程序和存储从一个 Kubernetes 集群移动到另一个集群，则克隆可以助您一臂之力。例如，您可能希望通过 CI CD 管道和 Kubernetes 命名空间移动工作负载。 
+---
+= 克隆和迁移应用程序
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+克隆现有应用程序以在同一个 Kubernetes 集群或另一个集群上创建重复的应用程序。如果您需要将应用程序和存储从一个 Kubernetes 集群移动到另一个集群，则克隆可以助您一臂之力。例如，您可能希望通过 CI/CD 管道以及在 Kubernetes 命名空间之间移动工作负载。
+
+当 Astra Control 克隆应用程序时，它会为您的应用程序配置和永久性存储创建一个克隆。
+
+.步骤
+. 单击 * 应用程序 * 。
+. 单击所需应用程序的 * 操作 * 列中的下拉列表。
+. 单击 * 克隆 * 。
++
+image:screenshot-create-clone.gif["应用程序页面的屏幕截图，在此可以单击操作列中的下拉列表并选择克隆。"]
+
+. * 克隆详细信息 * ：指定克隆的详细信息：
++
+** 保留默认名称和命名空间，或者对其进行编辑。
+** 选择克隆的目标计算。
+** 选择是要从现有快照还是备份创建克隆。如果不选择此选项，则 Astra Control 将根据应用程序的当前状态创建克隆。
+
+
+. * 克隆摘要 * ：查看有关克隆的详细信息，然后单击 * 克隆应用程序 * 。
++
+image:screenshot-clone-summary.gif[""]
+
+
+
+Astra Control 会根据您提供的信息克隆该应用程序。

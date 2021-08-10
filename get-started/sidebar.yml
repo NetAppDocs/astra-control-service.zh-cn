@@ -1,0 +1,26 @@
+---
+section: get-started
+title: 入门
+entries:
+- title: Astra Control 简介
+  url: "/get-started/intro.html"
+- title: 支持的 Kubernetes 部署
+  url: "/get-started/supported-deployments.html"
+- title: 快速入门
+  url: "/get-started/quick-start.html"
+- title: 设置您的云提供商
+  entries:
+  - title: 设置 Google Cloud
+    url: "/get-started/set-up-google-cloud.html"
+  - title: 设置 Microsoft Azure
+    url: "/get-started/set-up-microsoft-azure.html"
+- title: 注册帐户
+  url: "/get-started/register.html"
+- title: 管理计算
+  url: "/get-started/add-first-cluster.html"
+- title: 下一步是什么？
+  url: "/get-started/whats-next.html"
+- title: 视频
+  url: "/get-started/videos.html"
+- title: 常见问题解答
+  url: "/get-started/faq.html"

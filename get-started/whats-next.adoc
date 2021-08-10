@@ -1,0 +1,23 @@
+---
+sidebar: sidebar 
+permalink: get-started/whats-next.html 
+keywords: get started, manage apps, manage account 
+summary: 登录并向 Astra Control 添加计算功能后，您就可以开始使用 Astra Control 的应用程序数据管理功能了。 
+---
+= 接下来是什么？
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+登录并向 Astra Control 添加计算功能后，您就可以开始使用 Astra Control 的应用程序数据管理功能了。
+
+* link:../use/manage-apps.html["开始管理应用程序"]
+* link:../use/protect-apps.html["保护应用程序"]
+* link:../use/clone-apps.html["克隆应用程序"]
+* link:../use/set-up-billing.html["设置计费"]
+* link:../use/manage-users.html["邀请和管理用户"]
+* link:../use/manage-credentials.html["管理云提供商凭据"]
+* link:../use/manage-notifications.html["管理通知"]
+

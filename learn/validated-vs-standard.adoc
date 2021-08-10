@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: learn/validated-vs-standard.html 
+keywords: supported apps 
+summary: 您可以将两种类型的应用程序引入 Astra Control ： Validated 和 Standard 。了解这两个类别之间的区别，以及对项目和战略的潜在影响。 
+---
+= 经验证的应用程序与标准应用程序
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/learn/
+
+
+您可以将两种类型的应用程序引入 Astra Control ： Validated 和 Standard 。了解这两个类别之间的区别，以及对项目和战略的潜在影响。
+
+
+NOTE: 将这两类产品视为 " 受支持 " 和 " 不受支持 " 很容易被认为。 但如您所见，在 Astra Control 中没有 " 不受支持 " 的应用程序。您可以将任何应用程序添加到 Astra Control 中，但与标准应用程序相比，经过验证的应用程序在其 Astra Control 工作流中构建的基础架构更多。
+
+
+
+== 经验证的应用程序
+
+经验证的 Astra Control 应用程序包括以下内容：
+
+* MySQL 0.3.22
+* MariaDB 14.14
+* PostgreSQL 11.7
+* Jenkins 2.249.1 LTS
+
+
+经过验证的应用程序的简短列表代表了 Astra Control 可识别的应用程序。Astra Control QA 团队已对这些应用程序进行了分析并确认，这些应用程序需要经过全面测试才能恢复。
+
+Astra 控制开发团队还会检查经过验证的应用程序，并创建自定义工作流，以帮助确保数据的安全性和一致性。例如，当 Astra Control 对 PostgreSQL 数据库进行备份时，它会首先暂停数据库。备份完成后， Astra Control 会将数据库还原到正常运行状态。
+
+无论您将哪种类型的应用程序与 Astra Control 结合使用，始终自行测试备份和还原工作流，以确保您能够满足灾难恢复要求。
+
+请告诉我们您希望在未来验证哪些应用程序。 https://astra.netapp.io/support["通过支持页面上的反馈电子邮件地址联系我们。"]
+
+
+
+== 标准应用程序
+
+包括自定义程序在内的任何其他应用程序均视为标准应用程序。您可以通过 Astra Control 添加和管理标准应用程序。您还可以为标准应用程序创建基本崩溃状态一致的快照和备份。但是，这些功能尚未经过 QA 测试，无法将应用程序还原到其原始状态。

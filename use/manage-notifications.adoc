@@ -1,0 +1,32 @@
+---
+sidebar: sidebar 
+permalink: use/manage-notifications.html 
+keywords: notifications, delete notifications, mark notifications as read 
+summary: 操作完成或失败时， Astra Control 会向您发出通知。例如，如果应用程序的备份成功完成，您将看到通知。 
+---
+= 查看和管理通知
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+操作完成或失败时， Astra Control 会向您发出通知。例如，如果应用程序的备份成功完成，您将看到通知。
+
+未读通知的数量显示在界面右上角：
+
+image:screenshot-unread-notifications.gif["屏幕截图显示了 Astra Control 界面，您可以在此界面中查看未读通知的数量。"]
+
+您可以查看这些通知并将其标记为已读（如果您希望像我们一样清除未读通知，则可以使用此功能）。
+
+.步骤
+. 单击右上角的未读通知数量。
++
+image:screenshot-expand-notifications.gif["屏幕截图显示了 Astra Control 界面中的扩展通知。"]
+
+. 查看通知，然后单击 * 标记为已读 * 或 * 显示所有通知 * 。
++
+如果单击 * 显示所有通知 * ，则会加载通知页面。
+
+. 在 * 通知 * 页面上，查看通知，选择要标记为已读的通知，单击 * 操作 * 并选择 * 标记为已读 * 。
+
