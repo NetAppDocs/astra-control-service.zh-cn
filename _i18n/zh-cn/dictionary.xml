@@ -43,7 +43,6 @@
   <block id="5299efec4db7fee00fd52cc320607de2" category="list-text">创建命名空间。</block>
   <block id="058e20040046a4fb9ce23f043893c802" category="list-text">在命名空间上部署 MariaDB 。</block>
   <block id="9a2eac9459e2e6eafe0dd031df575602" category="list-text">创建数据库。</block>
-  <block id="3b9fc826dadbde960b59991dbfb3dc09" category="admonition">这种在部署时设置密码的方法不安全。对于生产环境，我们不建议这样做。</block>
   <block id="d3e32d3f18bc354fb95311457a473e01" category="paragraph">Pod 联机后，您可以使用 Astra Control 管理应用程序。使用 Astra Control ，您可以在命名空间级别或使用 Helm 标签管理应用程序。</block>
   <block id="3a2733e04ebc062ff579b9025859743e" category="summary">从标准稳定图表中了解如何部署 MySQL 。在 Kubernetes 集群上部署 MySQL 后，您可以使用 Astra Control 管理此应用程序。</block>
   <block id="1d738f7ceb4e38173282a543ee774dee" category="doc">从 Helm 图表部署 MySQL</block>
@@ -55,13 +54,7 @@
   <block id="3d6981732463d68a06db716d371fdfa9" category="list-text">使用以下命令部署 MySQL ：</block>
   <block id="970aeac42c94256cd1b3fff9b82095eb" category="list-text">在命名空间上部署 MySQL 。</block>
   <block id="e6da9fbe947bc16784aef00d8b644cf5" category="paragraph">Pod 联机后，您可以使用 Astra Control 管理应用程序。使用 Astra Control ，您可以在命名空间级别或使用 Helm 标签管理应用程序及其名称。</block>
-  <block id="dfc72fe858ad9d11738bf95ddd366c0c" category="summary">了解如何从 Helm 图表中部署 Postgres 。在集群上部署 Postgres 后，您可以向 Astra Control 注册该应用程序。</block>
   <block id="254257378902df079ba71f8378f0bbd9" category="doc">从 Helm 图表部署 Postgres</block>
-  <block id="e2f8b84a5f047a8bd5aff1dffdd6078a" category="paragraph">从 BitNami Helm 图表中了解如何部署 Postgres 。在集群上部署 Postgres 后，您可以向 Astra Control 注册该应用程序。</block>
-  <block id="16d6edcf51e67e91011fe145b9337470" category="paragraph">Postgres 是一款经过验证的适用于 Astra 的应用程序。 <block ref="cbdeb4dc56c4a7dd98ddd584159beafb" category="inline-link-macro-rx"></block>。</block>
-  <block id="fd97bc95e932a3b652c02757f9dd0ee7" category="section-title">安装 Postgres</block>
-  <block id="7eaf2e848faefd841526bcab567b42d2" category="list-text">使用以下命令部署 Postgres ：</block>
-  <block id="4339679e0fca3b2c77b834f0f446ef21" category="list-text">在命名空间上部署 Postgres 。</block>
   <block id="8af1c34244700f810760890ac853ae2b" category="summary">从 BitNami Helm 图表中了解如何部署 Jenkins 。在集群上部署 Jenkins 后，您可以向 Astra Control 注册此应用程序。</block>
   <block id="7357cc85e416b3744a3f46ea90fb01cc" category="doc">从 Helm 图表中部署 Jenkins</block>
   <block id="db8ec17bfebf1b75f269cb1a8955cb1f" category="paragraph">Jenkins 是一款经过验证的适用于 Astra Control 的应用程序。 <block ref="cbdeb4dc56c4a7dd98ddd584159beafb" category="inline-link-macro-rx"></block>。</block>
@@ -1377,4 +1370,11 @@
   <block id="192e86d2fab79103a50251f3cf938e77" category="sidebar">适用于 GKEE 集群的存储</block>
   <block id="515ddaf1bc34159a3a7827d17c7aa5db" category="sidebar">经验证的应用程序与标准应用程序</block>
   <block id="4e7b93cbf596a837185aa740bdb8b853" category="sidebar">定义自定义应用程序</block>
+  <block id="f2d1d98a3481f0962642b8cbefa4b5c8" category="summary">了解如何从 Helm 图表部署 PostgreSQL 。在集群上部署 PostgreSQL 后，您可以向 Astra Control 注册此应用程序。</block>
+  <block id="39a9cd4c5a8b26df94de4486fbceaf05" category="doc">从 Helm 图表部署 PostgreSQL</block>
+  <block id="fd021c901c4984e4a4879c0cbe8e67d7" category="paragraph">从 BitNami Helm 图表中了解如何部署 PostgreSQL 。在集群上部署 PostgreSQL 后，您可以向 Astra Control 注册此应用程序。</block>
+  <block id="60ac1e4f29cf6dea1fa68fb2c7b85119" category="paragraph">PostgreSQL 是一款经过验证的适用于 Astra 的应用程序。 <block ref="cbdeb4dc56c4a7dd98ddd584159beafb" category="inline-link-macro-rx"></block>。</block>
+  <block id="e8565549b24f45f7b7a999f9a71bd282" category="section-title">安装 PostgreSQL</block>
+  <block id="6331969d8c82d3693df5ee6e46258442" category="list-text">使用以下命令部署 PostgreSQL ：</block>
+  <block id="0a8c342a3be14e17eed2350af165e13a" category="list-text">在命名空间上部署 PostgreSQL 。</block>
 </blocks>

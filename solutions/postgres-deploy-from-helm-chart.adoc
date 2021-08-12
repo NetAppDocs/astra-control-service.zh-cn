@@ -1,18 +1,18 @@
 ---
 sidebar: sidebar 
 permalink: solutions/postgres-deploy-from-helm-chart.html 
-keywords: deploy apps, deploy postgres, helm chart, astra, astra control, kubernetes 
-summary: 了解如何从 Helm 图表中部署 Postgres 。在集群上部署 Postgres 后，您可以向 Astra Control 注册该应用程序。 
+keywords: deploy apps, deploy postgresql, helm chart, astra, astra control, kubernetes 
+summary: 了解如何从 Helm 图表部署 PostgreSQL 。在集群上部署 PostgreSQL 后，您可以向 Astra Control 注册此应用程序。 
 ---
-= 从 Helm 图表部署 Postgres
+= 从 Helm 图表部署 PostgreSQL
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/
 
 
-从 BitNami Helm 图表中了解如何部署 Postgres 。在集群上部署 Postgres 后，您可以向 Astra Control 注册该应用程序。
+从 BitNami Helm 图表中了解如何部署 PostgreSQL 。在集群上部署 PostgreSQL 后，您可以向 Astra Control 注册此应用程序。
 
-Postgres 是一款经过验证的适用于 Astra 的应用程序。 link:../learn/validated-vs-standard.html["了解经过验证的应用程序与标准应用程序之间的区别"]。
+PostgreSQL 是一款经过验证的适用于 Astra 的应用程序。 link:../learn/validated-vs-standard.html["了解经过验证的应用程序与标准应用程序之间的区别"]。
 
 这些说明同时适用于 Astra 控制服务和 Astra 控制中心。
 
@@ -30,7 +30,7 @@ NOTE: 对于 Astra 控制中心，您可以先将集群添加到 Astra 控制中
 
 
 
-== 安装 Postgres
+== 安装 PostgreSQL
 
 有关此过程的两个重要注意事项：
 
@@ -45,11 +45,11 @@ NOTE: 对于 Astra 控制中心，您可以先将集群添加到 Astra 控制中
 ----
 helm repo add bitnami https://charts.bitnami.com/bitnami
 ----
-. 使用以下命令部署 Postgres ：
+. 使用以下命令部署 PostgreSQL ：
 +
 [listing]
 ----
-Helm install <name> --namespace <namespace> --create-namespace -–set persistence.storageClass=<storage_class>
+helm install <name> bitnami/postgresql --namespace <namespace> --create-namespace -–set persistence.storageClass=<storage_class>
 ----
 +
 
@@ -68,7 +68,7 @@ NOTE: 如果卷大小发生更改，请使用 Kibibyte （ KI ）， mebibyte �
 此操作将执行以下操作：
 
 * 创建命名空间。
-* 在命名空间上部署 Postgres 。
+* 在命名空间上部署 PostgreSQL 。
 
 
 Pod 联机后，您可以使用 Astra Control 管理应用程序。使用 Astra Control ，您可以在命名空间级别或使用 Helm 标签管理应用程序。
