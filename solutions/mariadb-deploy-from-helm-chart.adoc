@@ -49,7 +49,7 @@ helm repo add bitnami https://charts.bitnami.com/bitnami
 +
 [listing]
 ----
-Helm install <name> --namespace <namespace> --create-namespace -–set persistence.storageClass=<storage_class>
+helm install <name> bitnami/mariadb --namespace <namespace> --create-namespace -–set persistence.storageClass=<storage_class>
 ----
 +
 
@@ -71,8 +71,5 @@ NOTE: 如果卷大小发生更改，请使用 Kibibyte （ KI ）， mebibyte �
 * 在命名空间上部署 MariaDB 。
 * 创建数据库。
 
-
-
-WARNING: 这种在部署时设置密码的方法不安全。对于生产环境，我们不建议这样做。
 
 Pod 联机后，您可以使用 Astra Control 管理应用程序。使用 Astra Control ，您可以在命名空间级别或使用 Helm 标签管理应用程序。
