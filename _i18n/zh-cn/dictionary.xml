@@ -857,7 +857,6 @@
   <block id="841635950fb18e5b0f307e270b18753f" category="list-text"><block ref="841635950fb18e5b0f307e270b18753f" category="inline-link-macro-rx"></block></block>
   <block id="2d6d98fb621bf485983416d3fe4e23f0" category="list-text"><block ref="2d6d98fb621bf485983416d3fe4e23f0" category="inline-link-macro-rx"></block></block>
   <block id="0fae08f8fcd64cec619ae5065fc2aa88" category="section-title">管理应用程序</block>
-  <block id="2d077594684130c153af172197078ab1" category="paragraph">使用 Astra Control 可以在命名空间级别或通过 Kubernetes 标签管理应用程序。</block>
   <block id="88c0a67bdf6030605c2de05383b4784a" category="section-title">按命名空间管理应用程序</block>
   <block id="fbcac7ea3c81bb3194babac595a5ade0" category="paragraph">" 应用程序 " 页面的 * 已发现 * 部分显示命名空间以及这些命名空间中 Helm 安装的应用程序或自定义标记的应用程序。您可以选择单独管理每个应用程序，也可以选择在命名空间级别管理每个应用程序。这一切都可以细化到数据保护操作所需的粒度级别。</block>
   <block id="8bfc4cb4fff96597635f56f65ebcede0" category="paragraph">例如，您可能希望为 "Maria" 设置一个每周节奏的备份策略，但您可能需要比该策略更频繁地备份 "MariaDB" （位于同一命名空间中）。根据这些需求，您需要单独管理应用程序，而不是在一个命名空间下进行管理。</block>
@@ -1377,4 +1376,15 @@
   <block id="e8565549b24f45f7b7a999f9a71bd282" category="section-title">安装 PostgreSQL</block>
   <block id="6331969d8c82d3693df5ee6e46258442" category="list-text">使用以下命令部署 PostgreSQL ：</block>
   <block id="0a8c342a3be14e17eed2350af165e13a" category="list-text">在命名空间上部署 PostgreSQL 。</block>
+  <block id="e80a2d3ab10c12a099b79d17f9452092" category="paragraph">当 Astra Control 发现集群上运行的应用程序时，这些应用程序将不受管理，直到您选择要如何管理它们为止。Astra Control 中的受管应用程序可以是以下任一项：</block>
+  <block id="3757d3597962f660c54cb3f9ed5ba251" category="list-text">命名空间，包括该命名空间中的所有资源</block>
+  <block id="99185f9c0e1b271b9c7c1684898a4b91" category="inline-image-macro">一个概念映像，显示 Astra 管理命名空间中的所有资源。</block>
+  <block id="5f5e029c480c6d454f7077a350ea7051" category="paragraph"><block ref="5f5e029c480c6d454f7077a350ea7051" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e050bda24d0aab071d42300cbd046e22" category="list-text">在命名空间中使用 helm3 部署的单个应用程序</block>
+  <block id="bc02e113923823bd80cf4509ac5dd0ea" category="inline-image-macro">一个概念映像，用于显示 Astra 管理在包含其他应用程序的命名空间中部署的单个应用程序。</block>
+  <block id="aaa30264edbceaac1a9c4ae46e684508" category="paragraph"><block ref="aaa30264edbceaac1a9c4ae46e684508" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ae686937d504e3cd859c9520838b6c99" category="list-text">一组通过 Kubernetes 标签标识的资源（在 Astra Control 中称为 _custom app_ ）</block>
+  <block id="1984643c8908376406c99cfdc708bfe1" category="inline-image-macro">一个概念映像，显示 Astra 根据 Kubernetes 标签管理自定义应用程序。</block>
+  <block id="cebcf4cdc27ea2de41ca4d36d92600e4" category="paragraph"><block ref="cebcf4cdc27ea2de41ca4d36d92600e4" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="85247f8021c87aa8ad33e2806beb6767" category="paragraph">以下各节介绍如何使用这些选项管理应用程序。</block>
 </blocks>
