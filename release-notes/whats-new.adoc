@@ -104,7 +104,7 @@ link:../get-started/intro.html#pricing["了解有关 Astra Control 服务定价�
 
 link:../use/manage-apps.html["了解有关管理应用程序的更多信息"]。
 
-image:screenshot-group.gif[""]
+image:screenshot-group.gif["\"Apps\" 页面的屏幕截图，其中已选择 \"Discovered （已发现） \" 选项卡。"]
 
 
 
@@ -112,7 +112,7 @@ image:screenshot-group.gif[""]
 
 数据保护向导已进行了增强，易于使用。例如，我们优化了保护策略向导，以便在定义保护计划时更轻松地查看该计划。
 
-image:screenshot-protection-policy.gif[""]
+image:screenshot-protection-policy.gif["配置保护策略对话框的屏幕截图，您可以在其中启用每小时，每天，每周和每月计划。"]
 
 
 

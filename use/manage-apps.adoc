@@ -67,7 +67,7 @@ image:diagram-managed-app3.png["一个概念映像，显示 Astra 根据 Kuberne
 .步骤
 . 单击 * 应用程序 * ，然后单击 * 已发现 * 。
 +
-image:screenshot-app-discovery.gif[""]
+image:screenshot-app-discovery.gif["\"Apps\" 页面的屏幕截图，其中显示了 \"Discovered \" 选项卡。"]
 
 . 查看已发现的命名空间列表并展开命名空间以查看应用程序和关联资源。
 +
@@ -77,19 +77,19 @@ Astra Control 会在命名空间中显示 Helm 应用程序和自定义标记的
 以下是一个命名空间中包含两个应用程序的示例：
 
 +
-image:screenshot-group.gif[""]
+image:screenshot-group.gif["应用程序页面的屏幕截图，其中扩展了一个命名空间，以显示该命名空间中的两个应用程序。"]
 
 . 确定是单独管理每个应用程序，还是在命名空间级别管理每个应用程序。
 . 在层次结构中的所需级别，单击 * 操作 * 列中的下拉列表，然后单击 * 管理 * 。
 +
-image:screenshot-app-manage.gif[""]
+image:screenshot-app-manage.gif["应用程序页面中展开的下拉列表的屏幕截图，您可以在其中选择管理或忽略命名空间或应用程序。"]
 
 . 如果您不想管理某个应用程序，请单击所需应用程序的 * 操作 * 列中的下拉列表，然后单击 * 忽略 * 。
 +
 例如，如果您希望同时管理 "Jenkins " 命名空间下的所有应用程序，以便它们具有相同的快照和备份策略，则可以管理此命名空间并忽略此命名空间中的应用程序：
 
 +
-image:screenshot-app-manage-and-ignore.gif[""]
+image:screenshot-app-manage-and-ignore.gif["应用程序页面中展开的下拉列表的屏幕截图，您可以在其中选择管理或忽略命名空间或应用程序。"]
 
 
 
@@ -114,16 +114,16 @@ Astra Control 在应用程序页面顶部包含一个名为 * 定义自定义应
 以下是一个示例：
 
 +
-image:screenshot-selected-resources.gif[""]
+image:screenshot-selected-resources.gif["您可以保护的资源的屏幕截图，例如配置映射和永久性卷声明。"]
 
 +
 *** 通过展开资源并单击标签数量来查看可用标签。
 +
-image:screenshot-view-labels.gif[""]
+image:screenshot-view-labels.gif["一个屏幕截图，显示已展开的资源以及该资源的标签数量。"]
 
 *** 选择一个标签。
 +
-image:screenshot-select-label.gif[""]
+image:screenshot-select-label.gif["屏幕截图显示了单击标签数量后可从中选择的标签列表。"]
 
 +
 选择标签后，它将显示在 * 标签 * 字段中。Astra Control 还会更新 * 未选定资源 * 部分，以显示与选定标签不匹配的资源。
@@ -132,7 +132,7 @@ image:screenshot-select-label.gif[""]
 
 .. * 未选择资源 * ：验证您不想保护的应用程序资源。
 +
-image:screenshot-selected-label.gif[""]
+image:screenshot-selected-label.gif["从 \" 资源 \" 窗格中选择标签后，屏幕截图将在 \" 标签 \" 字段中显示标签。"]
 
 
 

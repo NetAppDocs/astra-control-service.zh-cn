@@ -31,7 +31,7 @@ image:screenshot-create-clone.gif["应用程序页面的屏幕截图，在此可
 
 . * 克隆摘要 * ：查看有关克隆的详细信息，然后单击 * 克隆应用程序 * 。
 +
-image:screenshot-clone-summary.gif[""]
+image:screenshot-clone-summary.gif["克隆摘要对话框的屏幕截图，可用于查看有关原始应用程序和克隆应用程序的克隆信息。"]
 
 
 

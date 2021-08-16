@@ -16,7 +16,7 @@ NetApp 以多种方式为 Astra Control 提供支持。全天候提供丰富的�
 
 您可以从 Astra Control UI 访问支持选项，方法是从主菜单中选择 * 支持 * 选项卡。
 
-image:screenshot-support.gif[""]
+image:screenshot-support.gif["Astra Control 中支持页面的屏幕截图，您可以在其中查看资源以获取帮助并联系 NetApp 。"]
 
 
 
@@ -54,4 +54,4 @@ image:screenshot-support.gif[""]
 
 使用您的 "941" 序列号打开 Web 服务单。 link:register-support.html["详细了解您的序列号"]。
 
-image:screenshot-web-ticket.gif[""]
+image:screenshot-web-ticket.gif["NetApp 支持站点上的 Web 服务单屏幕截图，要求您选择系统，输入问题详细信息并提供联系信息。"]

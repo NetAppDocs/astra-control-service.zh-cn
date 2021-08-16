@@ -240,7 +240,7 @@ Cloud Volumes Service 提供两种服务类型： CVS 和 CVS-Performance 。 ht
 如果尚未设置网络对等，您将看到以下通知：
 
 +
-image:gcp-peering.gif[""]
+image:gcp-peering.gif["Google Cloud 控制台的屏幕截图，其中显示一个名为 View Command How to Set up Network peering 的按钮。"]
 
 . 单击按钮以查看 network peering set up 命令。
 . 复制命令并在 Cloud Shell 中运行。

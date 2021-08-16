@@ -186,7 +186,6 @@
   <block id="b9877c5dbf359ad58f5080431075cb6d" category="list-text">在 * 区域 * 下，选择您的区域和分区。</block>
   <block id="98f1f357710d50446d69f033d749f951" category="list-text">在 * 网络详细信息 * 下，选择您的 VPC 。</block>
   <block id="2ff77b9545f9e4017797bb6c191c4987" category="paragraph">如果尚未设置网络对等，您将看到以下通知：</block>
-  <block id="7723dc3216b468857875988633bd0a47" category="paragraph"><block ref="7723dc3216b468857875988633bd0a47" category="inline-image-macro-rx" type="image"></block></block>
   <block id="dc2a6c9243f8deb98e6fe7fcb7e5d3ff" category="list-text">单击按钮以查看 network peering set up 命令。</block>
   <block id="41897f6972633fb2d183e54a98f4f52e" category="list-text">复制命令并在 Cloud Shell 中运行。</block>
   <block id="2678a78c1e599c5a6c8db9f14d5c00c4" category="inline-link">适用于 GCP 的 Cloud Volumes Service 的快速入门</block>
@@ -257,7 +256,6 @@
   <block id="3946d8b08dbcd33b3e5d7fc0e1384dec" category="inline-link-macro">了解 AKS 集群的存储类</block>
   <block id="a19a34a2b21fc32f9c330467fd8f7073" category="list-text"><block ref="cd9652b8cc8533a7d8fe2d3ddeb81557" category="inline-link-macro-rx"></block>。</block>
   <block id="2d072183006368402099ca5ce53ece5a" category="list-text">* 审核并批准 * ：查看配置详细信息，然后单击 * 添加计算 * 。</block>
-  <block id="1f05f2fe66aefb2c9f59490c5c129349" category="paragraph"><block ref="1f05f2fe66aefb2c9f59490c5c129349" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e525048f7d08b462ebab4dacc8fc366b" category="paragraph">以下视频显示了 GKEE 集群的每个步骤。</block>
   <block id="4f4227e8eaa2c24c78198dd3270e2bf9" category="paragraph">Astra Control Service 会为应用程序备份创建一个对象存储，在集群上创建一个管理员帐户，并设置您指定的默认存储类。此过程最多可能需要 5 分钟。</block>
   <block id="b1151aae9531d2f5e85d085e8878cea6" category="summary">如果您只是想快速了解问题解答，此常见问题解答会很有帮助。</block>
@@ -612,7 +610,6 @@
   <block id="f0bb5f816cd485bcccbc6528698e88f4" category="list-text">按折扣价预付费，每年订阅一次，您可以在每个应用程序软件包中管理多达 10 个应用程序。请联系 NetApp 销售部门，根据您的组织需要购买任意数量的软件包—例如，从 Astra Control Service 购买 3 个软件包来管理 30 个应用程序。如果您管理的应用程序超过年度订阅所允许的数量，则每个应用程序的超额费用为每分钟 0.005 美元（与高级 PayGo 相同）。</block>
   <block id="b7b192852402c2ca345a411875aaae75" category="paragraph">如果您还没有 Astra Control 帐户，则购买高级订阅会自动为您创建一个 Astra Control 帐户。如果您已有免费计划，则会自动转换为高级订阅。</block>
   <block id="5018050a8afabce2a4f5990656c22220" category="paragraph">创建 Astra Control 帐户时，您将自动注册免费计划。Astra Control 的信息板显示了您当前管理的 10 个免费应用程序中的多少个应用程序：</block>
-  <block id="a9c4aba908523b84c8ec8af6b0e59097" category="paragraph"><block ref="a9c4aba908523b84c8ec8af6b0e59097" category="inline-image-macro-rx" type="image"></block></block>
   <block id="3748b09df32ade69551630a0a079c20a" category="paragraph">如果您尝试管理第 11 个应用程序，则 Astra Control 会通知您已达到免费计划的限制。然后，系统会提示您从免费计划升级到高级计划。</block>
   <block id="7731109e347c1efee81b5b6103bf7027" category="paragraph">您可以随时升级到高级计划。升级后， Astra Control 会开始为帐户中的 _all_ 受管应用程序收取费用。前 10 个应用程序不会保留在免费计划中。</block>
   <block id="6b77f6ea2428949be628fe51587bf096" category="section-title">Google Cloud 计费</block>
@@ -648,7 +645,6 @@
   <block id="a48e367a6943ebbceece7d330cdded8c" category="list-text">在 * 计划 * 下，转到 * 高级订阅 * ，然后单击 * 联系销售人员 * 。</block>
   <block id="0a9e22b35c53b1b1d1b835a07879cb83" category="list-text">向销售团队提供详细信息以启动此流程。</block>
   <block id="57fb01c4fa6ba534ae1a897bf0353f71" category="paragraph">NetApp 销售代表将与您联系以处理您的采购订单。订单完成后， Astra Control 将在计费选项卡上反映您的当前计划。</block>
-  <block id="b6c8e0f844b86fd75bb49d5d7f92b6ab" category="paragraph"><block ref="b6c8e0f844b86fd75bb49d5d7f92b6ab" category="inline-image-macro-rx" type="image"></block></block>
   <block id="183088af30e3f3a1a11af65eceaefba6" category="section-title">查看当前成本和计费历史记录</block>
   <block id="b56850a923bd27b7f0b7f786c933404f" category="paragraph">Astra Control 可按应用程序显示您当前的每月成本以及详细的计费历史记录。</block>
   <block id="33cc485206429f77c02b6f99c5326daf" category="paragraph">您的当前成本将显示在计费概述下。</block>
@@ -826,7 +822,6 @@
   <block id="d634208090b405838694d5e6d1b488f1" category="list-text">选择应用程序的目标计算。</block>
   <block id="9aa1ea781ae5747b01a517a1ed4bd6d3" category="list-text">单击 * 查看信息 * 。</block>
   <block id="6dbb469b36d9e432e7223dadffd8a7c8" category="list-text">* 还原摘要 * ：查看有关还原操作的详细信息，然后单击 * 还原应用程序 * 。</block>
-  <block id="879eec20f9b1260c8aa5d3672e77e8d3" category="paragraph"><block ref="879eec20f9b1260c8aa5d3672e77e8d3" category="inline-image-macro-rx" type="image"></block></block>
   <block id="67446286ca857d701032db886f475805" category="paragraph">Astra Control 会根据您提供的信息还原应用程序。</block>
   <block id="73e5c8ce985735a0c92b24da1a48a7fb" category="summary">克隆现有应用程序以在同一个 Kubernetes 集群或另一个集群上创建重复的应用程序。如果您需要将应用程序和存储从一个 Kubernetes 集群移动到另一个集群，则克隆可以助您一臂之力。例如，您可能希望通过 CI CD 管道和 Kubernetes 命名空间移动工作负载。</block>
   <block id="0adcbb2b9c783786f0ac0b7cfb133292" category="doc">克隆和迁移应用程序</block>
@@ -841,7 +836,6 @@
   <block id="4270471e0c1a1cd103ba74cad8d545fb" category="list-text">选择克隆的目标计算。</block>
   <block id="b50343ac8865ee6508570846230e18d5" category="list-text">选择是要从现有快照还是备份创建克隆。如果不选择此选项，则 Astra Control 将根据应用程序的当前状态创建克隆。</block>
   <block id="e9ee4b284fca35cae9623535c7cc5189" category="list-text">* 克隆摘要 * ：查看有关克隆的详细信息，然后单击 * 克隆应用程序 * 。</block>
-  <block id="e2f1a62b487e5df37277530066176f0b" category="paragraph"><block ref="e2f1a62b487e5df37277530066176f0b" category="inline-image-macro-rx" type="image"></block></block>
   <block id="7314dfe17835f41d1b36686a0ec9c765" category="paragraph">Astra Control 会根据您提供的信息克隆该应用程序。</block>
   <block id="7fa390cadcf67cc7d7678d1a1bee8dcd" category="summary">将 Kubernetes 计算添加到 Astra Control 后，您可以在该集群上安装应用程序（在 Astra Control 之外），然后转到 Astra Control 中的应用程序页面开始管理这些应用程序。</block>
   <block id="5fb1db6350c7c4cb8be4f2defd16ebd8" category="inline-link-macro">将 Kubernetes 计算添加到 Astra Control</block>
@@ -862,17 +856,13 @@
   <block id="8bfc4cb4fff96597635f56f65ebcede0" category="paragraph">例如，您可能希望为 "Maria" 设置一个每周节奏的备份策略，但您可能需要比该策略更频繁地备份 "MariaDB" （位于同一命名空间中）。根据这些需求，您需要单独管理应用程序，而不是在一个命名空间下进行管理。</block>
   <block id="475ed97241ce60dd40c138c07077aa08" category="paragraph">虽然 Astra Control 允许您单独管理层次结构的两个级别（命名空间和该命名空间中的应用程序），但最佳做法是选择一个或另一个。如果在命名空间和应用程序级别同时执行操作，则在 Astra Control 中执行的操作可能会失败。</block>
   <block id="7456b57fbd6363e799b9140ba1f4f701" category="list-text">单击 * 应用程序 * ，然后单击 * 已发现 * 。</block>
-  <block id="6d83e7c8112c7198be8d3eedbaa43c09" category="paragraph"><block ref="6d83e7c8112c7198be8d3eedbaa43c09" category="inline-image-macro-rx" type="image"></block></block>
   <block id="8becd0c5cc4d018d843024933b6f5998" category="list-text">查看已发现的命名空间列表并展开命名空间以查看应用程序和关联资源。</block>
   <block id="d5fe639b499759762c159b8de84b500f" category="paragraph">Astra Control 会在命名空间中显示 Helm 应用程序和自定义标记的应用程序。如果 Helm 标签可用，则会使用标记图标来指定这些标签。</block>
   <block id="d6f8a6b20556aaa60e9078e6b3df4cd5" category="paragraph">以下是一个命名空间中包含两个应用程序的示例：</block>
-  <block id="81c63d33b9d6dddb4ff1dd2eb56adec4" category="paragraph"><block ref="81c63d33b9d6dddb4ff1dd2eb56adec4" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c8e5b4e5d17fb1cf0756ed0f7caeadae" category="list-text">确定是单独管理每个应用程序，还是在命名空间级别管理每个应用程序。</block>
   <block id="c06b80fdbc011a9dafa0f6c1030c330c" category="list-text">在层次结构中的所需级别，单击 * 操作 * 列中的下拉列表，然后单击 * 管理 * 。</block>
-  <block id="a5cbe5a260037d78fe65e175720736b3" category="paragraph"><block ref="a5cbe5a260037d78fe65e175720736b3" category="inline-image-macro-rx" type="image"></block></block>
   <block id="936739bc3ec1f2c3b2a04e180cbc7e86" category="list-text">如果您不想管理某个应用程序，请单击所需应用程序的 * 操作 * 列中的下拉列表，然后单击 * 忽略 * 。</block>
   <block id="b03d32b8c5ff5695099912182a487db4" category="paragraph">例如，如果您希望同时管理 "Jenkins " 命名空间下的所有应用程序，以便它们具有相同的快照和备份策略，则可以管理此命名空间并忽略此命名空间中的应用程序：</block>
-  <block id="0307e6e3c7b7a381000903814606374b" category="paragraph"><block ref="0307e6e3c7b7a381000903814606374b" category="inline-image-macro-rx" type="image"></block></block>
   <block id="b921f272cfcf883e922b6fe018ad35ac" category="paragraph">您选择管理的应用程序现在可从 * 受管 * 选项卡访问。任何被忽略的应用程序都将移至 * 已忽略 * 选项卡。理想情况下， " 已发现 " 选项卡将显示零个应用程序，以便在安装新应用程序后更容易找到和管理这些应用程序。</block>
   <block id="6af5a492909049f5a3f3a317f33387c5" category="section-title">按 Kubernetes 标签管理应用程序</block>
   <block id="fafe7a62e8b3ae532bb18b06ccee820b" category="inline-link-macro">了解有关通过 Kubernetes 标签定义应用程序的更多信息</block>
@@ -885,14 +875,10 @@
   <block id="3d471413130b445eb41cd48f3bb83dbb" category="list-text">* 标签： * 输入标签或从以下资源中选择标签。</block>
   <block id="63e2c72b31ac421e16112ad470a0aacb" category="list-text">* 选定资源 * ：查看和管理要保护的选定 Kubernetes 资源（ Pod ，机密，永久性卷等）。</block>
   <block id="4d947fe0b5c4693f487f4fd1a4295c99" category="paragraph">以下是一个示例：</block>
-  <block id="01e802eee7c99583ffa082a4f8953f81" category="paragraph"><block ref="01e802eee7c99583ffa082a4f8953f81" category="inline-image-macro-rx" type="image"></block></block>
   <block id="65d915db12ce6d12b86418e9d59ba002" category="list-text">通过展开资源并单击标签数量来查看可用标签。</block>
-  <block id="e2b6b294902e20aa63b78404ea7ee87d" category="paragraph"><block ref="e2b6b294902e20aa63b78404ea7ee87d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="86741b85afbee2998165d52e99ba2b0c" category="list-text">选择一个标签。</block>
-  <block id="37d4a73e941aea22c9364f99022db815" category="paragraph"><block ref="37d4a73e941aea22c9364f99022db815" category="inline-image-macro-rx" type="image"></block></block>
   <block id="4ee09935f26a58e275d621ea772fbbd8" category="paragraph">选择标签后，它将显示在 * 标签 * 字段中。Astra Control 还会更新 * 未选定资源 * 部分，以显示与选定标签不匹配的资源。</block>
   <block id="0a032a00e4cd4d3d1677c6b5b518d743" category="list-text">* 未选择资源 * ：验证您不想保护的应用程序资源。</block>
-  <block id="5b89747f0a8baa18ab58c506c75bf082" category="paragraph"><block ref="5b89747f0a8baa18ab58c506c75bf082" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6932998101aae92351c4f34be10a83e5" category="list-text">单击 * 定义自定义应用程序 * 。</block>
   <block id="d23192e8c76eebc71f36a162aed2bd8e" category="paragraph">使用 Astra Control 可以管理应用程序。现在，您可以在 * 受管 * 选项卡中找到它。</block>
   <block id="f620b5e05e6e7eabf125361d9667f6bd" category="section-title">系统应用程序如何？</block>
@@ -981,12 +967,10 @@
   <block id="d97ae83d9ddeb23e7c2fc4a7d71e99ca" category="list-text">已发现但尚未管理的应用程序的数量。</block>
   <block id="0f70ff3da666ec1a8d90d5e3734f1a7d" category="paragraph">理想情况下，此数字为零，因为您可能会在发现应用程序后对其进行管理或忽略。然后，您将监控信息板上发现的应用程序的数量，以确定开发人员何时向集群添加新应用程序。</block>
   <block id="dfea95b6aef7a4ec30fd5891aff128fd" category="paragraph">请注意，这些不仅仅是数字或状态，您可以从其中的每种状态深入了解。例如，如果应用程序未得到完全保护，您可以将鼠标悬停在图标上以确定哪些应用程序未得到完全保护，这包括原因。</block>
-  <block id="7bb5a96ee1d752bc09a9564fbcb45dce" category="paragraph"><block ref="7bb5a96ee1d752bc09a9564fbcb45dce" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ebbf07879bd8efbbdce140357b7ffb9e" category="paragraph">Compute 互动程序可提供有关计算运行状况的类似详细信息，您可以像使用应用程序一样深入了解更多详细信息。</block>
   <block id="4853ac5909bba59fd0ddaf13c9303742" category="summary">开始管理某个应用程序后， Astra Control 会提供有关该应用程序的详细信息，您可以通过这些详细信息来确定其状态，保护状态， Pod ，永久性存储等。</block>
   <block id="f8d33567c30a4afc7c2bd8cd718b0ec1" category="doc">查看应用程序的运行状况和详细信息</block>
   <block id="fa5fe34788e56d2fac1bbbcd7f415142" category="paragraph">开始管理某个应用程序后， Astra Control 会提供有关该应用程序的详细信息，使您能够确定其状态（是否运行正常），保护状态（是否在发生故障时受到全面保护）， Pod ，永久性存储等。</block>
-  <block id="37e4831fe9b8cca3e2fb3a182ba0233f" category="paragraph"><block ref="37e4831fe9b8cca3e2fb3a182ba0233f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="26b879f24d7c48d7eb357d8ad63a3bed" category="list-text">单击 " 四周 " 可查找所需的信息：</block>
   <block id="660c8ca780937de069805678b0292feb" category="list-text">应用程序状态</block>
   <block id="b72757bde0673a4cfc165870b6360319" category="list-text">提供反映应用程序在 Kubernetes 中的状态的状态。例如， Pod 和永久性卷是否联机？如果某个应用程序运行状况不正常，您需要查看 Kubernetes 日志，对集群上的问题描述进行故障排除。Astra Control 不会提供信息来帮助您修复损坏的应用程序。</block>
@@ -1009,7 +993,6 @@
   <block id="9f1a9252fa8e7cccfce329f81193d946" category="inline-link-macro">激活对您的 NetApp 序列号的支持</block>
   <block id="bc81d4a64e11b988c024ee890e91e099" category="paragraph">您必须先执行此操作 <block ref="50b527056876367f64e162872389171b" category="inline-link-macro-rx"></block> 以便使用这些非自助服务支持选项。聊天和 Web 服务单以及案例管理需要使用 NetApp 支持站点（ NSS ） SSO 帐户。</block>
   <block id="a1c214630481371d4daa77b520664d2e" category="paragraph">您可以从 Astra Control UI 访问支持选项，方法是从主菜单中选择 * 支持 * 选项卡。</block>
-  <block id="ee442c490fdf5e5e229f4a4900e529c2" category="paragraph"><block ref="ee442c490fdf5e5e229f4a4900e529c2" category="inline-image-macro-rx" type="image"></block></block>
   <block id="07d41912a6ab6b97216f8cf89e93205c" category="section-title">自助支持</block>
   <block id="6b9b3535d917a5890db4ef00a3718361" category="paragraph">这些选项全天候免费提供：</block>
   <block id="19111351b69b6b15668130b38b7f6038" category="inline-link">知识库</block>
@@ -1029,7 +1012,6 @@
   <block id="f02d5b77bd725ef47a24df7e08285321" category="paragraph">选择 * 云数据服务 &gt; Astra * 。</block>
   <block id="928c42e61d96311dd843410728f03e00" category="inline-link-macro">详细了解您的序列号</block>
   <block id="ebe0a961903a40ac9d1811d9fb5de23f" category="paragraph">使用您的 "941" 序列号打开 Web 服务单。 <block ref="422f2bb9f25b1e1a77e11bd3c7bab062" category="inline-link-macro-rx"></block>。</block>
-  <block id="0bfc2c8783c0e010d8bb057397cda980" category="paragraph"><block ref="0bfc2c8783c0e010d8bb057397cda980" category="inline-image-macro-rx" type="image"></block></block>
   <block id="998b5e98a07268d4a8f1fc7afd69c7fc" category="summary">在设置帐户时， Astra Control 会尝试自动注册您的帐户以获得支持。如果无法注册，您可以手动注册以获得支持。要获得 NetApp 技术支持的帮助，需要注册支持。</block>
   <block id="42748df9eaa0be17ddc5cc1593cf57ab" category="doc">注册以获得支持</block>
   <block id="afeb71cc4cb6fc5bb0db2f9866b02880" category="section-title">验证您的支持注册</block>
@@ -1143,7 +1125,6 @@
   <block id="5ee8d4e880da1ab6adf2ef58cad52bc3" category="paragraph"><block ref="b64ad29284518b0972171e8bbb41ea75" category="inline-link-macro-rx"></block>。</block>
   <block id="9282f0c6796e0f17265209c00c2346fc" category="section-title">用户界面增强功能</block>
   <block id="ea71bdbbb619c5a614a77af5d8214a33" category="paragraph">数据保护向导已进行了增强，易于使用。例如，我们优化了保护策略向导，以便在定义保护计划时更轻松地查看该计划。</block>
-  <block id="7ee22c47c9ced225afb279686afe4a22" category="paragraph"><block ref="7ee22c47c9ced225afb279686afe4a22" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f8d60fe9ffb24efb6e2d553fde81d26f" category="section-title">活动增强功能</block>
   <block id="df190078d46dda49c8775fd8c265a726" category="paragraph">我们可以更轻松地在您的 Astra Control 帐户中查看有关活动的详细信息。</block>
   <block id="a2b88dc15f93478f0229d71a6d7b0e3d" category="list-text">按受管应用程序，严重性级别，用户和时间范围筛选活动列表。</block>
@@ -1387,4 +1368,43 @@
   <block id="1984643c8908376406c99cfdc708bfe1" category="inline-image-macro">一个概念映像，显示 Astra 根据 Kubernetes 标签管理自定义应用程序。</block>
   <block id="cebcf4cdc27ea2de41ca4d36d92600e4" category="paragraph"><block ref="cebcf4cdc27ea2de41ca4d36d92600e4" category="inline-image-macro-rx" type="image"></block></block>
   <block id="85247f8021c87aa8ad33e2806beb6767" category="paragraph">以下各节介绍如何使用这些选项管理应用程序。</block>
+  <block id="a732e2368bd2a5b981e292838ce79c63" category="inline-image-macro">Google Cloud 控制台的屏幕截图，其中显示一个名为 View Command How to Set up Network peering 的按钮。</block>
+  <block id="3078d99540b5f42a455476a35a92e58c" category="paragraph"><block ref="3078d99540b5f42a455476a35a92e58c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="342d96bb8b26fc21bd0ef71a5d047979" category="inline-image-macro">屏幕截图显示了查看和批准页面，其中提供了您为受管应用选择的配置的摘要。</block>
+  <block id="ee769e73c12032ec317f9cc74037448a" category="paragraph"><block ref="aa0ffcb0ea40ad11a9a38aa9c7e39509" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a652491b41217a70e3507a8e3c6a7b8a" category="inline-image-macro">屏幕截图显示了 Astra 信息板，其中提供了资源摘要和入门链接。</block>
+  <block id="a3b2fd001bddeaca5085d6d53047a8bd" category="paragraph"><block ref="a3b2fd001bddeaca5085d6d53047a8bd" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="bb35bc245c86566a5ceb846abef9975e" category="inline-image-macro">显示帐户选项卡以及为高级订阅启用的帐户的屏幕截图。</block>
+  <block id="d80a7e5c594f021275823f1385cddb6c" category="paragraph"><block ref="d80a7e5c594f021275823f1385cddb6c" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="10d41ef8faeb35e6bce6bc1d8f14db60" category="inline-image-macro">" 还原应用程序 " 页面的屏幕截图，可用于查看有关还原操作的信息。</block>
+  <block id="8c022a794c661eac28aa18d18386e4af" category="paragraph"><block ref="8c022a794c661eac28aa18d18386e4af" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="096e19c3dc95542287248a1c1458c65e" category="inline-image-macro">克隆摘要对话框的屏幕截图，可用于查看有关原始应用程序和克隆应用程序的克隆信息。</block>
+  <block id="cb15fda00d18a7bab68b70a468aebced" category="paragraph"><block ref="cb15fda00d18a7bab68b70a468aebced" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7c7feb7f0739093141fa30c858b44903" category="inline-image-macro">"Apps" 页面的屏幕截图，其中显示了 "Discovered " 选项卡。</block>
+  <block id="f25e75ff35065f942eda2b53888c00ee" category="paragraph"><block ref="f25e75ff35065f942eda2b53888c00ee" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e8f45b89755848317f9650c2be8b21e2" category="inline-image-macro">应用程序页面的屏幕截图，其中扩展了一个命名空间，以显示该命名空间中的两个应用程序。</block>
+  <block id="cef904bbcee1860f389a7033e8ee19e9" category="paragraph"><block ref="cef904bbcee1860f389a7033e8ee19e9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f7208e43dc3503a6bbc8082c2a658257" category="inline-image-macro">应用程序页面中展开的下拉列表的屏幕截图，您可以在其中选择管理或忽略命名空间或应用程序。</block>
+  <block id="b03ce2bb540ada8a01dd448fe891c904" category="paragraph"><block ref="b03ce2bb540ada8a01dd448fe891c904" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="588b0d3dabca4fcfff49bcf216d3533e" category="paragraph"><block ref="588b0d3dabca4fcfff49bcf216d3533e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d9c796431fe45f6d4fad58c0584db361" category="inline-image-macro">您可以保护的资源的屏幕截图，例如配置映射和永久性卷声明。</block>
+  <block id="adcf39866e330b592f763c408bf213b9" category="paragraph"><block ref="adcf39866e330b592f763c408bf213b9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="b4d14ece9d7d4efb03ccad6b74672e35" category="inline-image-macro">一个屏幕截图，显示已展开的资源以及该资源的标签数量。</block>
+  <block id="737654d194ed792547738e533cc7dfad" category="paragraph"><block ref="737654d194ed792547738e533cc7dfad" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7e50d0652269cef8db74f2a6e59cc9a5" category="inline-image-macro">屏幕截图显示了单击标签数量后可从中选择的标签列表。</block>
+  <block id="ef49302b34034ad54f6858f9fde75907" category="paragraph"><block ref="ef49302b34034ad54f6858f9fde75907" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="65acbad890a1d87903f2731dba131e94" category="inline-image-macro">从 " 资源 " 窗格中选择标签后，屏幕截图将在 " 标签 " 字段中显示标签。</block>
+  <block id="d73b1e47b116a7a04fc9e784c9c18381" category="paragraph"><block ref="d73b1e47b116a7a04fc9e784c9c18381" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4fb73a1dcbda9bf8030c1f81c76c723e" category="inline-image-macro">屏幕截图显示了将鼠标悬停在未完全受保护的应用程序数量上时显示的工具提示。工具提示提供了应用程序的名称以及未完全保护的原因。</block>
+  <block id="143ffe33feb85f3a1668d4945c0be990" category="paragraph"><block ref="143ffe33feb85f3a1668d4945c0be990" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="7f78ed92291292a76167efd490de5dd6" category="inline-image-macro">应用程序的 " 概述 " 页面的屏幕截图，您可以在此查看应用程序状态，应用程序保护状态，保护计划等详细信息。</block>
+  <block id="6b475c3aebc5699879c45f5996f9f6c8" category="paragraph"><block ref="6b475c3aebc5699879c45f5996f9f6c8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="d3dee19ad1e22e678272d8365b6156a5" category="inline-image-macro">Astra Control 中支持页面的屏幕截图，您可以在其中查看资源以获取帮助并联系 NetApp 。</block>
+  <block id="8be91fc1582bfc45323e97b707808aa3" category="paragraph"><block ref="8be91fc1582bfc45323e97b707808aa3" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="4de6f45f19d51d4e4a39a31451bed2e6" category="inline-image-macro">NetApp 支持站点上的 Web 服务单屏幕截图，要求您选择系统，输入问题详细信息并提供联系信息。</block>
+  <block id="35d3c782a5cd77a5bdc15c1f99546544" category="paragraph"><block ref="35d3c782a5cd77a5bdc15c1f99546544" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="58a37706ad29b91b5ea0febd18591e9e" category="inline-image-macro">"Apps" 页面的屏幕截图，其中已选择 "Discovered （已发现） " 选项卡。</block>
+  <block id="dc52ad8a88f5c9ee3cb4fe055db4e1dc" category="paragraph"><block ref="dc52ad8a88f5c9ee3cb4fe055db4e1dc" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="159d293f53335411fd6cc5fe00714c00" category="inline-image-macro">配置保护策略对话框的屏幕截图，您可以在其中启用每小时，每天，每周和每月计划。</block>
+  <block id="21f09c3d76f30b003457dd7343c1e7bc" category="paragraph"><block ref="21f09c3d76f30b003457dd7343c1e7bc" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>

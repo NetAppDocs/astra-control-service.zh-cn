@@ -39,7 +39,7 @@ NetApp 序列号表示您的 Astra Control 帐户。打开 Web 服务单时，�
 
 您可以从 * 支持 * 页面的 Astra Control 界面中找到序列号。
 
-image:screenshot-support.gif[""]
+image:screenshot-support.gif["Astra Control 中支持页面的屏幕截图，您可以在其中查看资源以获取帮助并联系 NetApp 。"]
 
 
 

@@ -65,7 +65,7 @@ Astra 控制服务使用此服务帐户发现 Google Kubernetes Engine 中运行
 
 . * 审核并批准 * ：查看配置详细信息，然后单击 * 添加计算 * 。
 +
-image:screenshot-compute-approve.gif[""]
+image:screenshot-compute-approve.gif["屏幕截图显示了查看和批准页面，其中提供了您为受管应用选择的配置的摘要。"]
 
 
 
