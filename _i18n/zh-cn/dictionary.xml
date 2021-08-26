@@ -1276,7 +1276,6 @@
   <block id="51d249216b03414f10b242b851af7951" category="section-title">Astra Control 组件</block>
   <block id="d8d99f445b448bac281380f1e36416a2" category="list-text">* Kubernetes 集群 * ： Kubernetes 是一个可移植，可扩展的开源平台，用于管理容器化工作负载和服务，便于进行声明性配置和自动化。Astra Control 为 Kubernetes 集群中托管的应用程序提供管理服务。</block>
   <block id="be453b7bcaebebc76ccf72e6f5ef64c6" category="list-text">* Trident * ：作为 NetApp 维护的完全受支持的开源存储配置程序和流程编排程序， Trident 支持您为 Docker 和 Kubernetes 管理的容器化应用程序创建存储卷。使用 Astra Control 部署时， Trident 包括已配置的 ONTAP 存储后端。</block>
-  <block id="9e09d1d31e6a9eeadba06a3a97e64c54" category="list-text">* 存储后端 * ： Astra 控制服务使用<block ref="33441d63a8e7ace6860eab2024320819" category="inline-link-rx"></block> 作为 GKE- 集群和的后端存储<block ref="16e1ab965c1d673c5cb3b5a28e77c1c1" category="inline-link-rx"></block> 作为 AKS 集群的后端存储。</block>
   <block id="0c758b2fe414aac2d4d0c46296e6dd0e" category="paragraph">Astra 控制中心使用 ONTAP AFF 和 FAS 存储后端。作为存储软件和硬件平台， ONTAP 可提供核心存储服务，支持多个存储访问协议以及快照和镜像等存储管理功能。</block>
   <block id="0d665a366eaf52c1c3fa1714cceb919b" category="list-text">* Cloud Insights * ： Cloud Insights 是一款 NetApp 云基础架构监控工具，可用于监控由 控制中心管理的 Kubernetes 集群的性能和利用率。Cloud Insights 将存储使用量与工作负载相关联。</block>
   <block id="de0c45e94d4b178203631d55e65d1b62" category="section-title">Astra Control 接口</block>
@@ -1407,4 +1406,5 @@
   <block id="dc52ad8a88f5c9ee3cb4fe055db4e1dc" category="paragraph"><block ref="dc52ad8a88f5c9ee3cb4fe055db4e1dc" category="inline-image-macro-rx" type="image"></block></block>
   <block id="159d293f53335411fd6cc5fe00714c00" category="inline-image-macro">配置保护策略对话框的屏幕截图，您可以在其中启用每小时，每天，每周和每月计划。</block>
   <block id="21f09c3d76f30b003457dd7343c1e7bc" category="paragraph"><block ref="21f09c3d76f30b003457dd7343c1e7bc" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="757d7423da5a7de838fffd06a0944448" category="list-text">* 存储后端 * ： Astra 控制服务使用<block ref="d804c793f302b1f3285300e6253aaac6" category="inline-link-rx"></block> 作为 GKE- 集群和的后端存储<block ref="9e2d15731749abbc242896b41a1be2ef" category="inline-link-rx"></block> 作为 AKS 集群的后端存储。</block>
 </blocks>
