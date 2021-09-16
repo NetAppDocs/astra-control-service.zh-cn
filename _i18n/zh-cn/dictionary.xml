@@ -1392,4 +1392,7 @@
   <block id="757d7423da5a7de838fffd06a0944448" category="list-text">* 存储后端 * ： Astra 控制服务使用<block ref="d804c793f302b1f3285300e6253aaac6" category="inline-link-rx"></block> 作为 GKE- 集群和的后端存储<block ref="9e2d15731749abbc242896b41a1be2ef" category="inline-link-rx"></block> 作为 AKS 集群的后端存储。</block>
   <block id="c59ae8d7beeb519a23478ab048af482c" category="paragraph"><block ref="c59ae8d7beeb519a23478ab048af482c" category="inline-link-macro-rx"></block></block>
   <block id="ed1b64a1d7f7dd0912cafcc8db4b0e07" category="paragraph"><block ref="ed1b64a1d7f7dd0912cafcc8db4b0e07" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="6f2ac1cf1da8ec34232c651d4bba0149" category="paragraph"><block ref="6f2ac1cf1da8ec34232c651d4bba0149" category="inline-link-macro-rx"></block></block>
+  <block id="fbd3ad11889bebf7ba34d30c64465dc9" category="inline-link-macro">有关 Astra 的通知</block>
+  <block id="ac03979daf772f92e5a936c29416f083" category="paragraph"><block ref="ac03979daf772f92e5a936c29416f083" category="inline-link-macro-rx"></block></block>
 </blocks>
