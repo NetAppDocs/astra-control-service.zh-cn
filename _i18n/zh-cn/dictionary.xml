@@ -28,10 +28,7 @@
   <block id="058e20040046a4fb9ce23f043893c802" category="list-text">在命名空间上部署 MariaDB 。</block>
   <block id="9a2eac9459e2e6eafe0dd031df575602" category="list-text">创建数据库。</block>
   <block id="d3e32d3f18bc354fb95311457a473e01" category="paragraph">Pod 联机后，您可以使用 Astra Control 管理应用程序。使用 Astra Control ，您可以在命名空间级别或使用 Helm 标签管理应用程序。</block>
-  <block id="3a2733e04ebc062ff579b9025859743e" category="summary">从标准稳定图表中了解如何部署 MySQL 。在 Kubernetes 集群上部署 MySQL 后，您可以使用 Astra Control 管理此应用程序。</block>
   <block id="1d738f7ceb4e38173282a543ee774dee" category="doc">从 Helm 图表部署 MySQL</block>
-  <block id="a99e9ada14f45aad894515c40ec30de5" category="inline-link">标准稳定图表</block>
-  <block id="a3e41147a59f53e5117fbfae93409ca3" category="paragraph">了解如何从部署 MySQL<block ref="05e41c0f8c70278b3e46d9de55b9a4c9" category="inline-link-rx"></block>。在 Kubernetes 集群上部署 MySQL 后，您可以使用 Astra Control 管理此应用程序。</block>
   <block id="3a06cfb32360d8e0f898a3eff6ca85ec" category="paragraph">MySQL 是经过验证的适用于 Astra Control 的应用程序。 <block ref="cbdeb4dc56c4a7dd98ddd584159beafb" category="inline-link-macro-rx"></block>。</block>
   <block id="2f4f94cc5a0950a910a46c35cf923e05" category="section-title">安装 MySQL</block>
   <block id="e13d9dd518c3f3a9ada2a60d9d1c6beb" category="list-text">建议您将 Helm 图表部署在非默认命名空间中。</block>
@@ -1395,4 +1392,7 @@
   <block id="6f2ac1cf1da8ec34232c651d4bba0149" category="paragraph"><block ref="6f2ac1cf1da8ec34232c651d4bba0149" category="inline-link-macro-rx"></block></block>
   <block id="fbd3ad11889bebf7ba34d30c64465dc9" category="inline-link-macro">有关 Astra 的通知</block>
   <block id="ac03979daf772f92e5a936c29416f083" category="paragraph"><block ref="ac03979daf772f92e5a936c29416f083" category="inline-link-macro-rx"></block></block>
+  <block id="46e99d499ce6f7990ef9f220c50ce56d" category="summary">从 BitNami Helm 图表中了解如何部署 MySQL 。在 Kubernetes 集群上部署 MySQL 后，您可以使用 Astra Control 管理此应用程序。</block>
+  <block id="17f47137e3c74939946bb140e4cbdf1d" category="inline-link">BitNami Helm 图表</block>
+  <block id="1b5fa0188e8ea3c73983cbacc6bad658" category="paragraph">了解如何从部署 MySQL<block ref="89d30ca06936e36075136ad48e711aa1" category="inline-link-rx"></block>。在 Kubernetes 集群上部署 MySQL 后，您可以使用 Astra Control 管理此应用程序。</block>
 </blocks>
