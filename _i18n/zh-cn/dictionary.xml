@@ -38,12 +38,6 @@
   <block id="254257378902df079ba71f8378f0bbd9" category="doc">从 Helm 图表部署 Postgres</block>
   <block id="8af1c34244700f810760890ac853ae2b" category="summary">从 BitNami Helm 图表中了解如何部署 Jenkins 。在集群上部署 Jenkins 后，您可以向 Astra Control 注册此应用程序。</block>
   <block id="7357cc85e416b3744a3f46ea90fb01cc" category="doc">从 Helm 图表中部署 Jenkins</block>
-  <block id="db8ec17bfebf1b75f269cb1a8955cb1f" category="paragraph">Jenkins 是一款经过验证的适用于 Astra Control 的应用程序。 <block ref="cbdeb4dc56c4a7dd98ddd584159beafb" category="inline-link-macro-rx"></block>。</block>
-  <block id="0c320ff93a31e2f55637d0776b8377f4" category="inline-link">适用于 Jenkins 的 Kubernetes 插件</block>
-  <block id="e7fd20fba91edea83cd789e5dd3145f7" category="paragraph">Astra Control 当前不支持<block ref="7941b88a09668dbb84e99be4c077654b" category="inline-link-rx"></block>。您可以在不使用插件的 Kubernetes 集群中运行 Jenkins 。该插件可为 Jenkins 集群提供可扩展性。</block>
-  <block id="1329521b4ee9e281002e69575656af51" category="section-title">安装 Jenkins</block>
-  <block id="edf97ce0355bb2ec287dafe27d9062d4" category="list-text">使用命令创建 `Jenkins` 命名空间并将 Jenkins 部署到其中：</block>
-  <block id="75a5e02d69cb7561b79d87479d3dbcad" category="list-text">设置正确的存储类。</block>
   <block id="4e0607432990160c5925f87a3a84fa17" category="summary">Astra 控制服务可以在 Google Kubernetes Engine （ GKEE ）和 Azure Kubernetes Service （ AKS ）中管理受管 Kubernetes 集群上运行的应用程序。</block>
   <block id="acb13b8754d0f14e58090cb4826d589f" category="doc">支持的 Kubernetes 部署</block>
   <block id="06b1a7d4e1877b69bcb6fcbd9fc3f7d2" category="inline-link-macro">了解如何为 Astra Control Service 设置 Google Cloud</block>
@@ -1206,21 +1200,6 @@
   <block id="73d58bce64935ac37f26ef1b6d250e13" category="paragraph">Astra 控制服务使用最小卷大小 100 GiB 来配置永久性卷，即使 PVC 要求的卷大小更小也是如此。例如，如果 Helm 图表中的 PVC 要求提供 6 GiB ，则 Astra 控制服务会自动配置 100 GiB 卷。</block>
   <block id="7bdb5bed9124f4cb8ef00cb0eb64a04a" category="summary">您可以将两种类型的应用程序引入 Astra Control ： Validated 和 Standard 。了解这两个类别之间的区别，以及对项目和战略的潜在影响。</block>
   <block id="c8a8951e747490d31a329c8be8936189" category="doc">经验证的应用程序与标准应用程序</block>
-  <block id="a4f58e10114ac3858ccee21f394e721e" category="paragraph">您可以将两种类型的应用程序引入 Astra Control ： Validated 和 Standard 。了解这两个类别之间的区别，以及对项目和战略的潜在影响。</block>
-  <block id="7d1cb03e94822990df4c59766603b06b" category="admonition">将这两类产品视为 " 受支持 " 和 " 不受支持 " 很容易被认为。 但如您所见，在 Astra Control 中没有 " 不受支持 " 的应用程序。您可以将任何应用程序添加到 Astra Control 中，但与标准应用程序相比，经过验证的应用程序在其 Astra Control 工作流中构建的基础架构更多。</block>
-  <block id="e8033fc2ca0e50685a7a51da706bf560" category="section-title">经验证的应用程序</block>
-  <block id="7388dc32b164c94f50f4e5903d312739" category="paragraph">经验证的 Astra Control 应用程序包括以下内容：</block>
-  <block id="f1feecd901e0cba755eb44088e989121" category="list-text">MySQL 0.3.22</block>
-  <block id="445e4d152c0ebe794c7409a75dc0a06d" category="list-text">MariaDB 14.14</block>
-  <block id="7c9564aed2d813b61abef14cb78f4b1b" category="list-text">PostgreSQL 11.7</block>
-  <block id="c41f183769d14afc51c6880beb24af93" category="list-text">Jenkins 2.249.1 LTS</block>
-  <block id="973fba3cfb5056972e457b763a806699" category="paragraph">经过验证的应用程序的简短列表代表了 Astra Control 可识别的应用程序。Astra Control QA 团队已对这些应用程序进行了分析并确认，这些应用程序需要经过全面测试才能恢复。</block>
-  <block id="be90b572b10558193bf4128db92d64ff" category="paragraph">Astra 控制开发团队还会检查经过验证的应用程序，并创建自定义工作流，以帮助确保数据的安全性和一致性。例如，当 Astra Control 对 PostgreSQL 数据库进行备份时，它会首先暂停数据库。备份完成后， Astra Control 会将数据库还原到正常运行状态。</block>
-  <block id="1ab0ccfcd696f5ac57b9af7b716b47fa" category="paragraph">无论您将哪种类型的应用程序与 Astra Control 结合使用，始终自行测试备份和还原工作流，以确保您能够满足灾难恢复要求。</block>
-  <block id="2f53eae73f378111a30ede6f1758a648" category="inline-link">通过支持页面上的反馈电子邮件地址联系我们。</block>
-  <block id="473c85629704a57aea815bc7f44ca238" category="paragraph">请告诉我们您希望在未来验证哪些应用程序。<block ref="9bdc2aa9d65645fef4eb390726a6b4b5" category="inline-link-rx"></block></block>
-  <block id="005a897ef8be58f196a3932bdcd4c7d4" category="section-title">标准应用程序</block>
-  <block id="3dd21a860f3331ffd3e236f2d75cb51d" category="paragraph">包括自定义程序在内的任何其他应用程序均视为标准应用程序。您可以通过 Astra Control 添加和管理标准应用程序。您还可以为标准应用程序创建基本崩溃状态一致的快照和备份。但是，这些功能尚未经过 QA 测试，无法将应用程序还原到其原始状态。</block>
   <block id="dffb3f008a66e6ee72d3314057769ea5" category="summary">通过创建自定义应用程序，您可以将 Kubernetes 集群中的元素分组到一个应用程序中。</block>
   <block id="8b9f069d5ee077bf6c98f579de6a71fb" category="doc">定义自定义应用程序</block>
   <block id="1567558dc23e01e46fe4a434b8fd1943" category="paragraph">通过自定义应用程序，您可以更精细地控制要包含在 Astra Control 操作中的内容，其中包括：</block>
@@ -1395,4 +1374,8 @@
   <block id="46e99d499ce6f7990ef9f220c50ce56d" category="summary">从 BitNami Helm 图表中了解如何部署 MySQL 。在 Kubernetes 集群上部署 MySQL 后，您可以使用 Astra Control 管理此应用程序。</block>
   <block id="17f47137e3c74939946bb140e4cbdf1d" category="inline-link">BitNami Helm 图表</block>
   <block id="1b5fa0188e8ea3c73983cbacc6bad658" category="paragraph">了解如何从部署 MySQL<block ref="89d30ca06936e36075136ad48e711aa1" category="inline-link-rx"></block>。在 Kubernetes 集群上部署 MySQL 后，您可以使用 Astra Control 管理此应用程序。</block>
+  <block id="e81b0f8fae224ca0c3d3258b75a989dd" category="section-title">Astra Control API 许可证</block>
+  <block id="f7c79ca7f13fd9da78390d5a97db7042" category="paragraph"><block ref="f7c79ca7f13fd9da78390d5a97db7042" category="inline-link-rx"></block></block>
+  <block id="e8e0a6f955276be561895d1f7b9500be" category="paragraph"><block ref="e8e0a6f955276be561895d1f7b9500be" category="inline-link-macro-rx"></block></block>
+  <block id="2c0f8c5a84761b79b6e1174632297f5c" category="paragraph"><block ref="2c0f8c5a84761b79b6e1174632297f5c" category="inline-link-macro-rx"></block></block>
 </blocks>
