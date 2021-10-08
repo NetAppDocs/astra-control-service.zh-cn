@@ -5,36 +5,9 @@
   <block id="d41d8cd98f00b204e9800998ecf8427e" category="inline-link"></block>
   <block id="3e7ce18250825ebe097f3b6178f9d04a" category="summary">从 BitNami Helm 图表中了解如何部署 MariaDB 。在集群上部署 MariaDB 后，您可以使用 Astra Control 管理应用程序。</block>
   <block id="6080ff5b6dc7bbad85ca9517a06dd7c4" category="doc">从 Helm 图表部署 MariaDB</block>
-  <block id="1c3f1447442e109dc23e7e797afb4a10" category="inline-link-macro">了解经过验证的应用程序与标准应用程序之间的区别</block>
-  <block id="e8c7f57646eeebab499b45d9ad3be745" category="paragraph">MariaDB 是一款经过验证的适用于 Astra 的应用程序。 <block ref="cbdeb4dc56c4a7dd98ddd584159beafb" category="inline-link-macro-rx"></block>。</block>
-  <block id="a5d80e4d072d6d19415d551335ac7924" category="paragraph">这些说明同时适用于 Astra 控制服务和 Astra 控制中心。</block>
   <block id="5a2ebfb8baa378cfcfcba58bbb1380c2" category="section-title">要求</block>
-  <block id="ab18cc4346e2e3d8a032a31039afba17" category="list-text">已添加到 Astra Control 的集群。</block>
-  <block id="321e17c956a0f11a93fb3113131da56e" category="admonition">对于 Astra 控制中心，您可以先将集群添加到 Astra 控制中心，或者先添加应用程序。</block>
-  <block id="43d084833af96d5fa7b52fee8769b44d" category="list-text">更新了安装在本地计算机上的 Helm （版本 3.2+ ）和 Kubectl 的版本，并为集群提供了正确的 kubeconfig</block>
-  <block id="4edc6e3711a7b2b1f3ee14f852711a72" category="section-title">安装 MariaDB</block>
-  <block id="bd6d523df7fc61f437b6bcf95c84e6ab" category="paragraph">有关此过程的两个重要注意事项：</block>
-  <block id="209d9f7d3ed72d86bff8e960b7efb31f" category="list-text">您必须在将集群添加到 Astra Control Service 后部署应用程序，而不是在之前部署。在将集群添加到 Astra 控制中心之前或之后， Astra 控制中心将接受应用程序。</block>
-  <block id="ea534a4997c41ebaeedc962e00a4862d" category="list-text">您必须将 Helm 图表部署在非默认命名空间中。</block>
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">步骤</block>
-  <block id="dc702442c7de31408b54856404ef54c5" category="list-text">添加 BitNami 图表 repo ：</block>
-  <block id="03d31232188172ba57e277511835a7df" category="list-text">使用以下命令部署 MariaDB ：</block>
-  <block id="9834325e5db7a6fd1294df25eb3c3003" category="admonition">如果卷大小发生更改，请使用 Kibibyte （ KI ）， mebibyte （ Mi ）或 Gibibyte （ Gi ）单位。</block>
-  <block id="cafa0dd1c432e6dbdb1fbdf59e566ad4" category="paragraph">只有在以下情况下才需要定义存储类：</block>
-  <block id="1de9addd4871f1d857a3df16d960a0f0" category="list-text">您正在使用 Astra 控制服务，并且不想使用默认存储类。</block>
-  <block id="9f661d823153d138cd0dd585255af30e" category="list-text">您正在使用 Astra 控制中心，但尚未将集群导入到 Astra 控制中心。或者，您已导入集群，但不想使用默认存储类。</block>
-  <block id="a066057b0baac664a05fecacafe54676" category="paragraph">此操作将执行以下操作：</block>
-  <block id="5299efec4db7fee00fd52cc320607de2" category="list-text">创建命名空间。</block>
-  <block id="058e20040046a4fb9ce23f043893c802" category="list-text">在命名空间上部署 MariaDB 。</block>
-  <block id="9a2eac9459e2e6eafe0dd031df575602" category="list-text">创建数据库。</block>
-  <block id="d3e32d3f18bc354fb95311457a473e01" category="paragraph">Pod 联机后，您可以使用 Astra Control 管理应用程序。使用 Astra Control ，您可以在命名空间级别或使用 Helm 标签管理应用程序。</block>
   <block id="1d738f7ceb4e38173282a543ee774dee" category="doc">从 Helm 图表部署 MySQL</block>
-  <block id="3a06cfb32360d8e0f898a3eff6ca85ec" category="paragraph">MySQL 是经过验证的适用于 Astra Control 的应用程序。 <block ref="cbdeb4dc56c4a7dd98ddd584159beafb" category="inline-link-macro-rx"></block>。</block>
-  <block id="2f4f94cc5a0950a910a46c35cf923e05" category="section-title">安装 MySQL</block>
-  <block id="e13d9dd518c3f3a9ada2a60d9d1c6beb" category="list-text">建议您将 Helm 图表部署在非默认命名空间中。</block>
-  <block id="3d6981732463d68a06db716d371fdfa9" category="list-text">使用以下命令部署 MySQL ：</block>
-  <block id="970aeac42c94256cd1b3fff9b82095eb" category="list-text">在命名空间上部署 MySQL 。</block>
-  <block id="e6da9fbe947bc16784aef00d8b644cf5" category="paragraph">Pod 联机后，您可以使用 Astra Control 管理应用程序。使用 Astra Control ，您可以在命名空间级别或使用 Helm 标签管理应用程序及其名称。</block>
   <block id="254257378902df079ba71f8378f0bbd9" category="doc">从 Helm 图表部署 Postgres</block>
   <block id="8af1c34244700f810760890ac853ae2b" category="summary">从 BitNami Helm 图表中了解如何部署 Jenkins 。在集群上部署 Jenkins 后，您可以向 Astra Control 注册此应用程序。</block>
   <block id="7357cc85e416b3744a3f46ea90fb01cc" category="doc">从 Helm 图表中部署 Jenkins</block>
@@ -312,82 +285,7 @@
   <block id="70e9aa86ac0b41ade7ad4fce41b6d744" category="paragraph">否Astra Control 创建的快照和备份只能使用 Astra Control 进行管理。</block>
   <block id="0e1998253be388fcd1c18fc76ead9054" category="summary">Astra Control 是 Kubernetes 应用程序数据生命周期管理解决方案，可简化有状态应用程序的操作。轻松保护，备份和迁移 Kubernetes 工作负载，并即时创建有效的应用程序克隆。</block>
   <block id="7e073986fe6af6ce1775bdfd558def36" category="doc">Astra Control 简介</block>
-  <block id="98f770b0af18ca763421bac22b4b6805" category="section-title">功能</block>
-  <block id="c66fd3d61ca9e5331b05a6bd70d4a1df" category="paragraph">Astra Control 为 Kubernetes 应用程序数据生命周期管理提供了关键功能：</block>
-  <block id="842f680f400de3b6ee92728ef695d366" category="list-text">自动管理永久性存储</block>
-  <block id="0a5245490d6d6f511bbdb3db35acfe54" category="list-text">创建应用程序感知型按需快照和备份</block>
-  <block id="f107a6e34d3d0df36d460bc5b3a5fe8b" category="list-text">自动执行策略驱动的快照和备份操作</block>
-  <block id="ae3099cc177fc161f80c6965fe89a71a" category="list-text">将应用程序和数据从一个 Kubernetes 集群迁移到另一个集群</block>
-  <block id="053d6e036cc8c9d7a8c57234d6bfc574" category="list-text">轻松地将应用程序从生产环境克隆到暂存环境</block>
-  <block id="1c26e7db082840fcbfcd87527c92e1aa" category="list-text">直观显示应用程序运行状况和保护状态</block>
-  <block id="3e09a55ad40337db37927865855151a9" category="list-text">使用用户界面或 API 实施备份和迁移工作流</block>
-  <block id="6762973af9b127d271f0d2b2aea0bc96" category="section-title">部署模式</block>
-  <block id="db1905d057dd6fde6f8b7bd6afe60e41" category="paragraph">Astra Control 有两种部署模式：</block>
-  <block id="5ac9f21bb5ada8cf5c614ea23fce4131" category="list-text">* Astra Control Service* ： NetApp 管理的一项服务，可在 Google Kubernetes Engine （ GKEE ）和 Azure Kubernetes Service （ AKS ）中为 Kubernetes 集群提供应用程序感知型数据管理。</block>
-  <block id="ddbf9f0ee6e908772df862b9cb9312d3" category="list-text">* Astra Control Center* ：自管理软件，可为内部环境中运行的 Kubernetes 集群提供应用程序感知型数据管理。</block>
-  <block id="35b46e301702b6fcb16192f9f4cf4533" category="cell">Astra 控制服务</block>
   <block id="9c634046a90a62883b122e76b9afcef2" category="cell">Astra 控制中心</block>
-  <block id="72fa0b165b80dd423c3cca71e56e6e85" category="cell">如何提供？</block>
-  <block id="f7b1d494056b7a9289f329a721d9f318" category="cell">作为 NetApp 提供的一项完全托管的云服务</block>
-  <block id="aff53210beade5ba79414ae13eb6b73d" category="cell">作为您下载，安装和管理的软件</block>
-  <block id="7cae1429bdc4131db46365e8fc893a77" category="cell">它托管在何处？</block>
-  <block id="7ab48d8d90e46b91aa73c1832b7681f9" category="cell">基于 NetApp 选择的公有云</block>
-  <block id="6cc0042ffe94d2cdea2bf7b80705f4ef" category="cell">在您提供的 Kubernetes 集群上</block>
-  <block id="a564f860d9dd9df279c4ea80b08d026a" category="cell">如何更新？</block>
-  <block id="b2929741e98ca2c366d8d7dfda36e2b9" category="cell">由 NetApp 管理</block>
-  <block id="091f846d60c1037c90ba7580f37ef9fa" category="cell">您可以管理任何更新</block>
-  <block id="cef5c6ab0b7d20ab7cd426689afb9fa5" category="cell">应用程序数据管理功能是什么？</block>
-  <block id="6d23e94a1a5dc06559303503aa66bb54" category="cell">两个平台上的功能相同，但后端存储或外部服务除外</block>
-  <block id="1ca7b72bd26cd5c5adf9a4ebc84be59b" category="cell">什么是后端存储支持？</block>
-  <block id="d1c86529e5adfef0855455a2e0bd54bd" category="cell">NetApp 云服务产品</block>
-  <block id="d6fc0eb1930e7e56affc953c237c5514" category="cell">NetApp ONTAP AFF 和 FAS 系统</block>
-  <block id="4d9496325ef678735e8ac8b99b7a562b" category="section-title">支持的应用程序</block>
-  <block id="e10d583d2cd76b7b257cc090edd7af58" category="paragraph">Astra Control 支持 Kubernetes 集群上运行的所有应用程序。NetApp 已对某些应用程序进行了验证，以确保快照和备份的安全性和一致性。</block>
-  <block id="413fa631b9dc3fae7db58555ebef88ac" category="inline-link-macro">了解经过验证的应用程序与标准应用程序之间的区别</block>
-  <block id="bda41e5b5302f5503c219959b3ada5e4" category="paragraph"><block ref="5de926869bc882f86ce2ab88f9798e60" category="inline-link-macro-rx"></block>。</block>
-  <block id="3cf57593346f365ce163d769c70a8cab" category="paragraph">无论与 Astra Control 结合使用哪种类型的应用程序，您都应始终自行测试备份和还原工作流，以确保满足灾难恢复要求。</block>
-  <block id="5f4b9e6660ba4e73dc9c6aa214e60cde" category="section-title">Astra 控制服务的工作原理</block>
-  <block id="972dbc054c14df6a8a668ad2c71b9afa" category="paragraph">Astra Control Service 是一种由 NetApp 管理的云服务，它始终处于启用状态，并使用最新功能进行更新。它利用多个组件实现应用程序数据生命周期管理。</block>
-  <block id="29346571353a36c4c8e378195149db77" category="paragraph">从较高的层面来看， Astra Control Service 的工作原理如下：</block>
-  <block id="5e44a260fc47d95ab78eb0e97efe4e7d" category="list-text">您可以通过设置云提供商并注册 Astra 帐户开始使用 Astra Control Service 。</block>
-  <block id="a3b5183ae6f5c3f1d6644448f795b5cb" category="inline-link">适用于 Google Cloud 的 NetApp Cloud Volumes Service</block>
-  <block id="13fcc9b8465f60b72f591715f581b2d7" category="list-text">对于 GKE- 集群， Astra Control Service 使用<block ref="33441d63a8e7ace6860eab2024320819" category="inline-link-rx"></block> 作为永久性卷的后端存储。</block>
-  <block id="766e03fde5f400830f8365087232fdf8" category="list-text">对于 AKS 集群， Astra Control Service 使用<block ref="16e1ab965c1d673c5cb3b5a28e77c1c1" category="inline-link-rx"></block> 作为永久性卷的后端存储。</block>
-  <block id="1ae8e0ca715d9854cf1c69ead32e4931" category="list-text">您可以将第一个 Kubernetes 计算添加到 Astra Control Service 中。然后， Astra 控制服务将执行以下操作：</block>
-  <block id="e99f973393b40d224e0166ec9b211177" category="list-text">在云提供商帐户中创建一个对象存储，该帐户是备份副本的存储位置。</block>
-  <block id="2fe87449d125b0daf20d2fc8de53081e" category="paragraph">在 Azure 中， Astra Control Service 还会为 Blob 容器创建资源组，存储帐户和密钥。</block>
-  <block id="c2fd5ecb26eed8762bfa518199e6199f" category="list-text">在集群上创建新的管理员角色和 Kubernetes 服务帐户。</block>
-  <block id="d0d814f19c11e53389188aeb96b688e1" category="inline-link">NetApp 的 Trident</block>
-  <block id="d4bc3d62cc55cc4c782ea688d17c4e4a" category="list-text">使用此新管理员角色进行安装<block ref="5a65efdf35e241e6474d636afa409ccb" category="inline-link-rx"></block> 以创建一个或多个存储类。</block>
-  <block id="e940255251217819e17f4f7ab0a6f0cc" category="list-text">使用 Trident 为应用程序配置永久性卷。</block>
-  <block id="a853ecb1e1044a3ae5762294407c0fda" category="list-text">此时，您可以向集群添加应用程序。将在新的默认存储类上配置永久性卷。</block>
-  <block id="67d2a2db6f77778acc532b68658f63cc" category="list-text">然后，您可以使用 Astra Control Service 管理这些应用程序，并开始创建快照，备份和克隆。</block>
-  <block id="a7eb0ba32f9706a479c6037bea16e1ca" category="paragraph">Astra Control Service 会持续监控您的计算状态变化，因此它可以识别您在此过程中添加的任何新应用程序。</block>
-  <block id="e786ffd39fb455113d3fe53fbfe3d11b" category="inline-link-macro">通过从免费计划升级到高级计划来设置计费</block>
-  <block id="3c67a6f3d3a9a533de732ddf327b6b2c" category="paragraph">Astra Control 的免费计划支持您管理帐户中多达 10 个应用程序。如果您要管理 10 个以上的应用程序，则需要 <block ref="d88bf1f0b11be830df6064746bab5c5c" category="inline-link-macro-rx"></block>。</block>
-  <block id="b714fdd25acef8e71be758de7ff02f0b" category="section-title">Astra 控制中心的工作原理</block>
-  <block id="90d397f2aa31c2e6d9f5dfda5d12adca" category="paragraph">Astra 控制中心在您自己的私有云中本地运行。</block>
-  <block id="9b04dea5fba4d366b92ef41197eae5e2" category="paragraph">对于第一个版本， Astra 控制中心将支持 ONTAP 9.5 及更高版本的 OpenShift Kubernetes 集群和 Trident 存储后端。</block>
-  <block id="51269e2584d26b04961877ec77db6da7" category="paragraph">在云互联环境中， Astra 控制中心使用 Cloud Insights 提供高级监控和遥测功能。如果没有 Cloud Insights 连接，则 Astra 控制中心可提供有限的（ 7 天的指标）监控和遥测功能，并通过开放式指标端点导出到 Kubernetes 原生监控工具（例如 Prometheus 和 Grafana ）。</block>
-  <block id="1bc8163319d46bff9915aa0226885a42" category="paragraph">Astra 控制中心完全集成到 AutoSupport 和 Active IQ 生态系统中，可为用户和 NetApp 支持提供故障排除和使用信息。</block>
-  <block id="26849905a5aa23f71bc18ee28e352604" category="paragraph">您可以使用 90 天评估许可证试用 Astra Control Center 。评估版可通过电子邮件和社区（ Slack 通道）选项来支持。此外，您还可以从产品支持信息板访问知识库文章和文档。</block>
-  <block id="b4851e92b19af0c5c82447fc0937709d" category="inline-link">要求</block>
-  <block id="ebd65e27e034512530c808d2d0aa364d" category="paragraph">要安装和使用 Astra 控制中心，您需要满足特定的要求<block ref="0a14e0fc52cf8d6c6274f9c6e777d67d" category="inline-link-rx"></block>。</block>
-  <block id="6319f881d45c326a5f6222a746f50981" category="paragraph">从较高的层面来看， Astra 控制中心的工作原理如下：</block>
-  <block id="2cb07ff1146f3d6896d00ffdcea250ef" category="inline-link">安装 Astra 控制中心</block>
-  <block id="141fef2285846990a6e6c770d3b66fd7" category="list-text">您可以在本地环境中安装 Astra Control Center 。详细了解如何操作<block ref="f475345d677789f4d639982aa82b248b" category="inline-link-rx"></block>。</block>
-  <block id="700b690f37b8bd2c5567e27f33a6ebc3" category="list-text">您可以完成一些设置任务，例如：</block>
-  <block id="7201cacbec2885cd7fb3b75613cca8c9" category="list-text">设置许可</block>
-  <block id="eb5c57b6e151d53821e4b23967e81377" category="list-text">添加第一个集群。</block>
-  <block id="c9907096d1eaf9ff75898674c5c5886c" category="list-text">添加在添加集群时发现的后端存储。</block>
-  <block id="71aa2846410bae740856b6176a203f5f" category="list-text">添加用于存储应用程序备份的对象存储分段。</block>
-  <block id="41d8c63c7f85077d4a2d906119683f17" category="inline-link">设置 Astra 控制中心</block>
-  <block id="55c39076648efeeb2b28246823b491a3" category="paragraph">详细了解如何操作<block ref="b22537ad7ca1637b212d8b0013023d5b" category="inline-link-rx"></block>。</block>
-  <block id="656961e00441efa04ed529308b30c882" category="paragraph">Astra 控制中心可执行以下操作：</block>
-  <block id="2d5c8076b3d85d3578def0c82397a6ae" category="list-text">发现有关受管 Kubernetes 集群的详细信息。</block>
-  <block id="85164cd7847493bf2fd072ffce98dcb6" category="list-text">在您选择管理的集群上发现 Trident 配置，并可用于监控存储后端。</block>
-  <block id="ddea1bc3a5a7c042e2e20073bf2da7ef" category="list-text">发现这些集群上的应用程序，并使您能够管理和保护这些应用程序。</block>
-  <block id="9a55692aae5c5e67eb30bd651d29bc66" category="paragraph">您可以将应用程序添加到集群中。或者，如果要管理的集群中已有一些应用程序，则可以使用 Astra 控制中心来发现和管理它们。然后，使用 Astra 控制中心创建快照，备份和克隆。</block>
   <block id="620e99caf2b3d803b4dd22b70d895fde" category="summary">此文档站点上的许多页面都包含一些视频，用于展示如何使用 Astra Control Service 完成任务。如果您只是对视频感兴趣，我们会通过在这个页面上收集所有视频（类似于播放列表）来简化您的操作。</block>
   <block id="cec4f0bbb3f7119930f9ff4d721ad21a" category="doc">Astra Control Service 视频</block>
   <block id="54c5307863ad46506a3935148faf8976" category="paragraph">此文档站点上的许多页面都包含一些视频，用于向您展示如何完成 Astra Control Service 的任务。如果您只是对视频感兴趣，我们会在这个页面上收集所有视频（类似于播放列表），让您轻松地观看视频。</block>
@@ -1231,27 +1129,6 @@
   <block id="09fcc57d953e448e733bfa37d444c81b" category="paragraph">创建这两个自定义应用程序后，管理员可以将这些资源视为任何其他 Astra Control 应用程序。管理员可以克隆这些资源，创建备份和快照，并根据 Kubernetes 标签为每个资源组创建自定义保护策略。</block>
   <block id="ef8ee09fa3337e5d951394563bcf6ba8" category="summary">下面简要介绍了 Astra Control 环境的各个组件。</block>
   <block id="9282ad3aef7e124a3b2b9c7eab52b33d" category="doc">架构和组件</block>
-  <block id="2325c645f4d2112a8e96b127fbad7bf2" category="inline-image-macro">Astra Control 架构图和组件</block>
-  <block id="51d249216b03414f10b242b851af7951" category="section-title">Astra Control 组件</block>
-  <block id="d8d99f445b448bac281380f1e36416a2" category="list-text">* Kubernetes 集群 * ： Kubernetes 是一个可移植，可扩展的开源平台，用于管理容器化工作负载和服务，便于进行声明性配置和自动化。Astra Control 为 Kubernetes 集群中托管的应用程序提供管理服务。</block>
-  <block id="be453b7bcaebebc76ccf72e6f5ef64c6" category="list-text">* Trident * ：作为 NetApp 维护的完全受支持的开源存储配置程序和流程编排程序， Trident 支持您为 Docker 和 Kubernetes 管理的容器化应用程序创建存储卷。使用 Astra Control 部署时， Trident 包括已配置的 ONTAP 存储后端。</block>
-  <block id="0c758b2fe414aac2d4d0c46296e6dd0e" category="paragraph">Astra 控制中心使用 ONTAP AFF 和 FAS 存储后端。作为存储软件和硬件平台， ONTAP 可提供核心存储服务，支持多个存储访问协议以及快照和镜像等存储管理功能。</block>
-  <block id="0d665a366eaf52c1c3fa1714cceb919b" category="list-text">* Cloud Insights * ： Cloud Insights 是一款 NetApp 云基础架构监控工具，可用于监控由 控制中心管理的 Kubernetes 集群的性能和利用率。Cloud Insights 将存储使用量与工作负载相关联。</block>
-  <block id="de0c45e94d4b178203631d55e65d1b62" category="section-title">Astra Control 接口</block>
-  <block id="d015aca78df45458ee1d6533c5246919" category="paragraph">您可以使用不同的界面完成任务：</block>
-  <block id="00aa04dc89975c51656bb6d6838c2477" category="list-text">* Web 用户界面（ UI ） * ： Astra 控制服务和 Astra 控制中心使用同一个基于 Web 的 UI ，您可以在其中管理，迁移和保护应用程序。使用用户界面管理用户帐户和配置设置。</block>
-  <block id="b54bf9cff477b330bbe4df9a4e028dd0" category="list-text">* API * ： Astra 控制服务和 Astra 控制中心使用相同的 Astra API 。使用 API ，您可以执行与使用 UI 相同的任务。</block>
-  <block id="d13de4a83d7b44c2e65495def8ef1c7b" category="section-title">有关详细信息 ...</block>
-  <block id="3a4b2c66d4bdac6ce0e3340c71a39eda" category="inline-link">Astra 控制中心文档</block>
-  <block id="ea643bf7aaf130341a17f697a7009368" category="list-text"><block ref="ea643bf7aaf130341a17f697a7009368" category="inline-link-rx"></block></block>
-  <block id="30f4d9ba43475ff8056fa1d73ffc972c" category="inline-link">使用 Astra API</block>
-  <block id="3d8f201e2aea311db7d1d35c86d726da" category="list-text"><block ref="3d8f201e2aea311db7d1d35c86d726da" category="inline-link-rx"></block></block>
-  <block id="40ef3fb23e015d9b4b46a16fa50f10d3" category="inline-link">Trident 文档</block>
-  <block id="acb0eedb4568a08ecb52aa0c1bad5823" category="list-text"><block ref="acb0eedb4568a08ecb52aa0c1bad5823" category="inline-link-rx"></block></block>
-  <block id="5858ee4031acd7b896faa2d3d2c1a299" category="inline-link">Cloud Insights 文档</block>
-  <block id="2b93b48daf034e4100d00b85950e109d" category="list-text"><block ref="2b93b48daf034e4100d00b85950e109d" category="inline-link-rx"></block></block>
-  <block id="eb75aeb3b4b2b9734ba3e52f5483f0b2" category="inline-link">ONTAP 文档</block>
-  <block id="8217522f2b9eea86f1099a2aba54aebd" category="list-text"><block ref="8217522f2b9eea86f1099a2aba54aebd" category="inline-link-rx"></block></block>
   <block id="46c8ce0480dfb453a068efd5c148d585" category="summary">Astra Control Service 是一项由 NetApp 管理的服务，可在 Google Kubernetes Engine （ GKEE ）和 Azure Kubernetes Service （ AKS ）中为 Kubernetes 集群提供应用程序感知型数据管理。如果您需要管理在内部环境中运行的 Kubernetes 应用程序，请访问 Astra Control Center 的文档。</block>
   <block id="ef22ff17624b3faeed227ce5c717eb5f" category="doc">Astra Control Service 文档</block>
   <block id="ce8c3cae4f2c01197a36e6ffb040472a" category="summary">Astra Control 具有一个 REST API ，可用于使用编程语言或 Curl 等实用程序直接访问 Astra Control 功能。您还可以使用 Ansible 和其他自动化技术管理 Astra Control 部署。</block>
@@ -1310,11 +1187,6 @@
   <block id="4e7b93cbf596a837185aa740bdb8b853" category="sidebar">定义自定义应用程序</block>
   <block id="f2d1d98a3481f0962642b8cbefa4b5c8" category="summary">了解如何从 Helm 图表部署 PostgreSQL 。在集群上部署 PostgreSQL 后，您可以向 Astra Control 注册此应用程序。</block>
   <block id="39a9cd4c5a8b26df94de4486fbceaf05" category="doc">从 Helm 图表部署 PostgreSQL</block>
-  <block id="fd021c901c4984e4a4879c0cbe8e67d7" category="paragraph">从 BitNami Helm 图表中了解如何部署 PostgreSQL 。在集群上部署 PostgreSQL 后，您可以向 Astra Control 注册此应用程序。</block>
-  <block id="60ac1e4f29cf6dea1fa68fb2c7b85119" category="paragraph">PostgreSQL 是一款经过验证的适用于 Astra 的应用程序。 <block ref="cbdeb4dc56c4a7dd98ddd584159beafb" category="inline-link-macro-rx"></block>。</block>
-  <block id="e8565549b24f45f7b7a999f9a71bd282" category="section-title">安装 PostgreSQL</block>
-  <block id="6331969d8c82d3693df5ee6e46258442" category="list-text">使用以下命令部署 PostgreSQL ：</block>
-  <block id="0a8c342a3be14e17eed2350af165e13a" category="list-text">在命名空间上部署 PostgreSQL 。</block>
   <block id="e80a2d3ab10c12a099b79d17f9452092" category="paragraph">当 Astra Control 发现集群上运行的应用程序时，这些应用程序将不受管理，直到您选择要如何管理它们为止。Astra Control 中的受管应用程序可以是以下任一项：</block>
   <block id="3757d3597962f660c54cb3f9ed5ba251" category="list-text">命名空间，包括该命名空间中的所有资源</block>
   <block id="99185f9c0e1b271b9c7c1684898a4b91" category="inline-image-macro">一个概念映像，显示 Astra 管理命名空间中的所有资源。</block>
@@ -1365,17 +1237,18 @@
   <block id="dc52ad8a88f5c9ee3cb4fe055db4e1dc" category="paragraph"><block ref="dc52ad8a88f5c9ee3cb4fe055db4e1dc" category="inline-image-macro-rx" type="image"></block></block>
   <block id="159d293f53335411fd6cc5fe00714c00" category="inline-image-macro">配置保护策略对话框的屏幕截图，您可以在其中启用每小时，每天，每周和每月计划。</block>
   <block id="21f09c3d76f30b003457dd7343c1e7bc" category="paragraph"><block ref="21f09c3d76f30b003457dd7343c1e7bc" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="757d7423da5a7de838fffd06a0944448" category="list-text">* 存储后端 * ： Astra 控制服务使用<block ref="d804c793f302b1f3285300e6253aaac6" category="inline-link-rx"></block> 作为 GKE- 集群和的后端存储<block ref="9e2d15731749abbc242896b41a1be2ef" category="inline-link-rx"></block> 作为 AKS 集群的后端存储。</block>
   <block id="c59ae8d7beeb519a23478ab048af482c" category="paragraph"><block ref="c59ae8d7beeb519a23478ab048af482c" category="inline-link-macro-rx"></block></block>
-  <block id="ed1b64a1d7f7dd0912cafcc8db4b0e07" category="paragraph"><block ref="ed1b64a1d7f7dd0912cafcc8db4b0e07" category="inline-image-macro-rx" type="image"></block></block>
   <block id="6f2ac1cf1da8ec34232c651d4bba0149" category="paragraph"><block ref="6f2ac1cf1da8ec34232c651d4bba0149" category="inline-link-macro-rx"></block></block>
   <block id="fbd3ad11889bebf7ba34d30c64465dc9" category="inline-link-macro">有关 Astra 的通知</block>
   <block id="ac03979daf772f92e5a936c29416f083" category="paragraph"><block ref="ac03979daf772f92e5a936c29416f083" category="inline-link-macro-rx"></block></block>
   <block id="46e99d499ce6f7990ef9f220c50ce56d" category="summary">从 BitNami Helm 图表中了解如何部署 MySQL 。在 Kubernetes 集群上部署 MySQL 后，您可以使用 Astra Control 管理此应用程序。</block>
-  <block id="17f47137e3c74939946bb140e4cbdf1d" category="inline-link">BitNami Helm 图表</block>
-  <block id="1b5fa0188e8ea3c73983cbacc6bad658" category="paragraph">了解如何从部署 MySQL<block ref="89d30ca06936e36075136ad48e711aa1" category="inline-link-rx"></block>。在 Kubernetes 集群上部署 MySQL 后，您可以使用 Astra Control 管理此应用程序。</block>
   <block id="e81b0f8fae224ca0c3d3258b75a989dd" category="section-title">Astra Control API 许可证</block>
   <block id="f7c79ca7f13fd9da78390d5a97db7042" category="paragraph"><block ref="f7c79ca7f13fd9da78390d5a97db7042" category="inline-link-rx"></block></block>
   <block id="e8e0a6f955276be561895d1f7b9500be" category="paragraph"><block ref="e8e0a6f955276be561895d1f7b9500be" category="inline-link-macro-rx"></block></block>
   <block id="2c0f8c5a84761b79b6e1174632297f5c" category="paragraph"><block ref="2c0f8c5a84761b79b6e1174632297f5c" category="inline-link-macro-rx"></block></block>
+  <block id="a15f81bc6fc43123ae2b2fd94d3160ad" category="paragraph"><block ref="a15f81bc6fc43123ae2b2fd94d3160ad" category="inline-link-macro-rx"></block></block>
+  <block id="5526bb94851e769663b72deb3d57ba3c" category="paragraph"><block ref="5526bb94851e769663b72deb3d57ba3c" category="inline-link-macro-rx"></block></block>
+  <block id="71cdf80f0a6842021d0f5b6e4246a743" category="paragraph"><block ref="71cdf80f0a6842021d0f5b6e4246a743" category="inline-link-macro-rx"></block></block>
+  <block id="763c4b3703292a7be770180e0471a713" category="paragraph"><block ref="763c4b3703292a7be770180e0471a713" category="inline-link-macro-rx"></block></block>
+  <block id="8b018fbf1e19d6ad546cbbccef829ba8" category="paragraph"><block ref="8b018fbf1e19d6ad546cbbccef829ba8" category="inline-link-macro-rx"></block></block>
 </blocks>
