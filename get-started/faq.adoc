@@ -110,9 +110,9 @@ Astra Control 要求您在入职部分提供准确的客户信息。如果您提
 
 WARNING: 在通过 GCP 删除集群之前，请始终从 Astra Control 中将其删除。如果在集群仍由 Astra Control 管理时从 GCP 中删除集群，则可能会对您的 Astra Control 帐户产生发生原因问题。
 
-* 从 Astra Control 中删除集群时是否会卸载 NetApp Trident ？ *
+* 从 Astra Control 中删除集群时是否会卸载 Astra Trident ？ *
 
-从 Astra Control 中删除 Trident 后，它不会从集群中卸载。
+从 Astra Control 中删除 Astra Trident 后，它不会从集群中卸载。
 
 
 
@@ -132,7 +132,7 @@ Astra Control 不会部署应用程序。应用程序必须部署在 Astra Contr
 
 * 我看不到应用程序的任何 PVC 绑定到 GCP CVS 。有什么问题？ *
 
-在成功添加到 Astra Control 后， NetApp Trident 运算符会将默认存储类设置为 `NetApp-CVS-Premium` 。如果应用程序的 PVC 未绑定到适用于 Google Cloud 的 Cloud Volumes Service ，您可以执行以下几个步骤：
+在成功添加到 Astra Control 后， Astra Trident 运算符会将默认存储类设置为 `NetApp-CVS-Premium` 。如果应用程序的 PVC 未绑定到适用于 Google Cloud 的 Cloud Volumes Service ，您可以执行以下几个步骤：
 
 * 运行 `kubectl get SC` 并检查默认存储类。
 * 检查用于部署应用程序的 YAML 文件或 Helm 图表，查看是否定义了其他存储类。

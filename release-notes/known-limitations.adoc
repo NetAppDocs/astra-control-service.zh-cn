@@ -26,9 +26,9 @@ summary: 已知限制确定了本产品版本不支持的平台、设备或功�
 
 
 
-=== 未从集群中卸载 Trident
+=== 未从集群中卸载 Astra Trident
 
-从 Astra 控制服务取消管理集群时， Trident 不会自动从集群中卸载。要卸载 Trident ，您需要 https://netapp-trident.readthedocs.io/en/latest/kubernetes/operations/tasks/managing.html#uninstalling-trident["请按照 Trident 文档中的以下步骤进行操作"^]。
+从 Astra 控制服务取消管理集群时，不会自动从集群中卸载 Astra Trident 。要卸载 Astra Trident ，您需要 https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["请按照 Astra Trident 文档中的以下步骤进行操作"^]。
 
 
 

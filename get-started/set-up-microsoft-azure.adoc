@@ -89,7 +89,7 @@ vNet::
 
 --
 专用网络:: 不得在集群上启用专用网络。
-外部卷快照控制器:: 集群必须安装 CSI 卷快照控制器。默认情况下，此控制器从 K8s 1.21 版开始安装，但您需要检查运行 1.17 ， 1.18 ， 1.19 或 1.20 版的集群。 https://netapp-trident.readthedocs.io/en/latest/kubernetes/operations/tasks/volumes/snapshots.html["了解有关用于按需卷快照的外部快照控制器的更多信息"^]。
+外部卷快照控制器:: 集群必须安装 CSI 卷快照控制器。默认情况下，此控制器从 K8s 1.21 版开始安装，但您需要检查运行 1.17 ， 1.18 ， 1.19 或 1.20 版的集群。 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html["了解有关用于按需卷快照的外部快照控制器的更多信息"^]。
 
 
 

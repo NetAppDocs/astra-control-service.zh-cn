@@ -38,7 +38,7 @@ Astra Control 停止管理应用程序。
 停止从 Astra Control 管理不再需要管理的计算。作为最佳实践，我们建议您先从 Astra Control 中删除计算，然后再通过 GCP 将其删除。
 
 * 此操作将阻止 Astra Control 管理您的计算。它不会对集群的配置进行任何更改，也不会删除集群。
-* 不会从集群中卸载 Trident 。 https://netapp-trident.readthedocs.io/en/stable-v20.04/kubernetes/operations/tasks/managing.html#uninstalling-trident["了解如何卸载 Trident"^]。
+* 不会从集群中卸载 Astra Trident 。 https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["了解如何卸载 Astra Trident"^]。
 
 
 .步骤

@@ -257,8 +257,6 @@
   <block id="58e7a1631bced81042ee450415ba603c" category="paragraph">* 从 Astra Control 中删除集群后，应用程序和数据会发生什么情况？ *</block>
   <block id="5ba60b157e39b139de0a0957b20b94c0" category="paragraph">从 Astra Control 中删除集群不会对集群的配置（应用程序和永久性存储）进行任何更改。对该集群上的应用程序执行的任何 Astra Control 快照或备份都将无法还原。存储在后端存储中的卷快照数据不会被删除。由 Astra Control 创建的永久性存储备份将保留在云提供商的对象存储中，但无法还原。</block>
   <block id="ebbe7b49b4dfb4e04de74f7b82444433" category="admonition">在通过 GCP 删除集群之前，请始终从 Astra Control 中将其删除。如果在集群仍由 Astra Control 管理时从 GCP 中删除集群，则可能会对您的 Astra Control 帐户产生发生原因问题。</block>
-  <block id="6db0affd7861f3944a96bf792f5bfea7" category="paragraph">* 从 Astra Control 中删除集群时是否会卸载 NetApp Trident ？ *</block>
-  <block id="bcebaafd3c5c8e5d6f0076ad58bbb7c4" category="paragraph">从 Astra Control 中删除 Trident 后，它不会从集群中卸载。</block>
   <block id="f75d983d4bc87e1a244c894a4357e93a" category="section-title">管理应用程序</block>
   <block id="eaeb56aabe324b7270ae7355bb58edcb" category="paragraph">* Astra Control 是否可以部署应用程序？ *</block>
   <block id="48df7f09a242df239385ebae869133b8" category="paragraph">Astra Control 不会部署应用程序。应用程序必须部署在 Astra Control 之外。</block>
@@ -267,7 +265,6 @@
   <block id="b3d3212b84b66c52decacb83fca1191d" category="paragraph">* Astra Control 是否可以管理非 NetApp 存储上的应用程序？ *</block>
   <block id="43c9583c5f06b5003113b84316a2a65c" category="paragraph">否虽然 Astra Control 可以发现使用非 NetApp 存储的应用程序，但它无法管理使用非 NetApp 存储的应用程序。</block>
   <block id="395007096dc9e0b54c09749dc82a8941" category="paragraph">* 我看不到应用程序的任何 PVC 绑定到 GCP CVS 。有什么问题？ *</block>
-  <block id="779ed69036ccb8ed623f7e848a14998d" category="paragraph">在成功添加到 Astra Control 后， NetApp Trident 运算符会将默认存储类设置为 `NetApp-CVS-Premium` 。如果应用程序的 PVC 未绑定到适用于 Google Cloud 的 Cloud Volumes Service ，您可以执行以下几个步骤：</block>
   <block id="baaf63e6e2361e11fa4ae44151218b4e" category="list-text">运行 `kubectl get SC` 并检查默认存储类。</block>
   <block id="c5f298a00c4f6a85ebf65b24eef94a12" category="list-text">检查用于部署应用程序的 YAML 文件或 Helm 图表，查看是否定义了其他存储类。</block>
   <block id="e6a9a6e67a5ea296cdeb689bc08e952f" category="list-text">检查以确保工作节点映像类型为 Ubuntu 且 NFS 挂载成功。</block>
@@ -360,7 +357,6 @@
   <block id="bc287e95f5c3144752a8a8d09fbe96b1" category="list-text">不得在集群上启用专用网络。</block>
   <block id="5b033d6a3f89da3c19247af957fdeadd" category="list-text">外部卷快照控制器</block>
   <block id="fe86e9ef31fe3697198ba10d3c208d2d" category="inline-link">了解有关用于按需卷快照的外部快照控制器的更多信息</block>
-  <block id="fb47287a4dca8bca8c1765fa3ebecd4f" category="list-text">集群必须安装 CSI 卷快照控制器。默认情况下，此控制器从 K8s 1.21 版开始安装，但您需要检查运行 1.17 ， 1.18 ， 1.19 或 1.20 版的集群。<block ref="626820cbadb594231d7beec18ed1056a" category="inline-link-rx"></block>。</block>
   <block id="4e145f73e74518d9ca0febd4ca5ceaa2" category="section-title">安装 CSI 卷快照控制器</block>
   <block id="db152b65ba4b10857eb411555072a9e1" category="paragraph">如要求列表中所述， Kubernetes 集群必须安装 CSI 卷快照控制器。按照以下步骤在集群上安装控制器。</block>
   <block id="762e5330ca1d8613044960a7a2ed2f76" category="list-title">适用于 K8s 1.17 ， 1.18 和 1.19 的步骤</block>
@@ -456,8 +452,6 @@
   <block id="768991d0d322b5190312aa94ab045d44" category="section-title">停止管理计算</block>
   <block id="1da4b61d99a41085dcf16efec8f2c5d2" category="paragraph">停止从 Astra Control 管理不再需要管理的计算。作为最佳实践，我们建议您先从 Astra Control 中删除计算，然后再通过 GCP 将其删除。</block>
   <block id="6d88b2f00d2e909bfc79701542651d55" category="list-text">此操作将阻止 Astra Control 管理您的计算。它不会对集群的配置进行任何更改，也不会删除集群。</block>
-  <block id="72bb03d0510a78e3bf1ee3da5212cf27" category="inline-link">了解如何卸载 Trident</block>
-  <block id="b719eee7043a625f9fb58ea70308e0e6" category="list-text">不会从集群中卸载 Trident 。<block ref="d8f8b603afe1427b5139c601c4a764d7" category="inline-link-rx"></block>。</block>
   <block id="83457133a0ef330b6cf07b6b359318bf" category="list-text">单击 * 计算 * 。</block>
   <block id="36e3fa8b76ec03743bb24cce9d865908" category="list-text">单击不再需要管理的计算对应的复选框。</block>
   <block id="ff725a9e2b95ece2340334c35c928a4f" category="list-text">单击 * 操作 * 下拉列表并选择 * 取消管理计算 / 秒 * 。</block>
@@ -939,9 +933,6 @@
   <block id="623db30e78541159ce87dfd621c82f08" category="paragraph">以下限制会影响 Astra Control Service 在任何受支持的 Kubernetes 部署中对 Kubernetes 集群的管理。</block>
   <block id="dd3a2db9d2624c1f74d5695e67b20c7a" category="section-title">运行状况不正常的 Pod 会影响应用程序管理</block>
   <block id="18867cbe33cffa3a4ee306d7c7f44e64" category="paragraph">如果受管应用程序中的 Pod 运行状况不正常，则 Astra Control Service 无法创建新的备份和克隆。</block>
-  <block id="39feb634693572723a378befc20023aa" category="section-title">未从集群中卸载 Trident</block>
-  <block id="185d9e7bb43f5673a0095e89e4b5cfc9" category="inline-link">请按照 Trident 文档中的以下步骤进行操作</block>
-  <block id="47aeeaba119f11619f101a608a4295bd" category="paragraph">从 Astra 控制服务取消管理集群时， Trident 不会自动从集群中卸载。要卸载 Trident ，您需要<block ref="a3367f4bf1eb45533cb3cef3b2543411" category="inline-link-rx"></block>。</block>
   <block id="52613a0e2a34040faff2fa3713d61414" category="section-title">与 Postgres Pod 的现有连接导致故障</block>
   <block id="b9f8e20735440b893e92df9f8f191ee9" category="paragraph">在 Postgres Pod 上执行操作时，不应直接在 Pod 中连接以使用 psql 命令。Astra 控制服务需要使用 psql 访问权限来冻结和解冻数据库。如果已建立连接，则快照，备份或克隆将失败。</block>
   <block id="6bfe142cec74b24abd2888a936579280" category="section-title">GKEE 集群管理的限制</block>
@@ -1251,4 +1242,13 @@
   <block id="71cdf80f0a6842021d0f5b6e4246a743" category="paragraph"><block ref="71cdf80f0a6842021d0f5b6e4246a743" category="inline-link-macro-rx"></block></block>
   <block id="763c4b3703292a7be770180e0471a713" category="paragraph"><block ref="763c4b3703292a7be770180e0471a713" category="inline-link-macro-rx"></block></block>
   <block id="8b018fbf1e19d6ad546cbbccef829ba8" category="paragraph"><block ref="8b018fbf1e19d6ad546cbbccef829ba8" category="inline-link-macro-rx"></block></block>
+  <block id="11109376f935d63cf6fdba6e3756aceb" category="paragraph">* 从 Astra Control 中删除集群时是否会卸载 Astra Trident ？ *</block>
+  <block id="0a70013e35f514ecd34397e2adc3dea9" category="paragraph">从 Astra Control 中删除 Astra Trident 后，它不会从集群中卸载。</block>
+  <block id="346b702c8a7dcf4fe312e988bde33c2d" category="paragraph">在成功添加到 Astra Control 后， Astra Trident 运算符会将默认存储类设置为 `NetApp-CVS-Premium` 。如果应用程序的 PVC 未绑定到适用于 Google Cloud 的 Cloud Volumes Service ，您可以执行以下几个步骤：</block>
+  <block id="82fa24bddc8c8dba3c5821bc22294f6e" category="list-text">集群必须安装 CSI 卷快照控制器。默认情况下，此控制器从 K8s 1.21 版开始安装，但您需要检查运行 1.17 ， 1.18 ， 1.19 或 1.20 版的集群。<block ref="005ac06c428589f925784bc23d35b2d8" category="inline-link-rx"></block>。</block>
+  <block id="c8f51750761cfb5d9ed1f009407abc09" category="inline-link">了解如何卸载 Astra Trident</block>
+  <block id="e1f711a0f8692f3d19fa623e09b24909" category="list-text">不会从集群中卸载 Astra Trident 。<block ref="3c0339a1ad9f8347feaea25bac6a0a15" category="inline-link-rx"></block>。</block>
+  <block id="82adec1884becbf1b5df647fed914628" category="section-title">未从集群中卸载 Astra Trident</block>
+  <block id="2ffc1b9c31ec02503b31e837127256d6" category="inline-link">请按照 Astra Trident 文档中的以下步骤进行操作</block>
+  <block id="684d9922c22d027489e3cb0caa3d50ca" category="paragraph">从 Astra 控制服务取消管理集群时，不会自动从集群中卸载 Astra Trident 。要卸载 Astra Trident ，您需要<block ref="63f898d0a9f06a9c415a80b9d724603c" category="inline-link-rx"></block>。</block>
 </blocks>
