@@ -75,6 +75,8 @@ homepage:
     links:
     - title: Slack 通道
       url: https://netapppub.slack.com/#astra
+    - title: Astra Control 博客
+      url: https://cloud.netapp.com/blog/topic/astra
     - title: Astra Control —简化混合云的应用程序数据管理
       url: https://cloud.netapp.com/blog/blg-astra-control-simplifying-kubernetes-application-data-management-for-the-hybrid-cloud
     - title: Cloud Central 上的 Kubernetes Hub

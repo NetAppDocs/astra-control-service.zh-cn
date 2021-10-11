@@ -1251,4 +1251,5 @@
   <block id="82adec1884becbf1b5df647fed914628" category="section-title">未从集群中卸载 Astra Trident</block>
   <block id="2ffc1b9c31ec02503b31e837127256d6" category="inline-link">请按照 Astra Trident 文档中的以下步骤进行操作</block>
   <block id="684d9922c22d027489e3cb0caa3d50ca" category="paragraph">从 Astra 控制服务取消管理集群时，不会自动从集群中卸载 Astra Trident 。要卸载 Astra Trident ，您需要<block ref="63f898d0a9f06a9c415a80b9d724603c" category="inline-link-rx"></block>。</block>
+  <block id="36910a95584c53fdc9ed97782ef3965c" category="sidebar">Astra Control 博客</block>
 </blocks>
