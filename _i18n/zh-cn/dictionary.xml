@@ -23,7 +23,6 @@
   <block id="2433628c53fed80ea9d352a1bcd9ce45" category="paragraph">按照以下步骤快速入门，或者向下滚动到其余部分以了解完整详细信息。</block>
   <block id="04696f5c6f9ab48b84d14152c7d2d9e0" category="section-title">查看 Google Kubernetes Engine 的 Astra Control Service 要求</block>
   <block id="276169ccd2a2393a29e9402ab483c9e7" category="inline-xref">了解有关此步骤的更多信息</block>
-  <block id="0c79d09bceb10e9b2943ba1111116f82" category="paragraph">确保集群运行状况良好且运行的 Kubernetes 版本介于 1.17 到 1.20 之间，工作节点处于联机状态并运行容器优化操作系统或 Ubuntu 等。 <block ref="e5d6d79c6a6c0b51cbb3547ebf53c7a2" category="inline-xref-macro-rx"></block>。</block>
   <block id="e1f8cf5619eaead1686587245bccae8d" category="section-title">购买适用于 Google Cloud 的 Cloud Volumes Service</block>
   <block id="6bc831ad70814156fd6e24cc7c40c869" category="paragraph">转到 Google 云市场中的 NetApp Cloud Volumes Service 页面，然后单击购买。 <block ref="f209690edb14942c7909d656f7852191" category="inline-xref-macro-rx"></block>。</block>
   <block id="877504ffbacff5a936df5d8b9380d0d7" category="section-title">在 Google Cloud 项目中启用 API</block>
@@ -58,9 +57,7 @@
   <block id="ff7c3dae8ad736b0186cac18877f5e34" category="section-title">GKEE 集群要求</block>
   <block id="d771a3cd33e9fe1259f139de74469638" category="paragraph">Kubernetes 集群必须满足以下要求，才能通过 Astra Control Service 发现和管理它。</block>
   <block id="80afba45eb055fc9bdc48c90d1debd06" category="list-text">Kubernetes 版本</block>
-  <block id="93532a2da808c477693ac39a99fa06f8" category="list-text">集群运行的 Kubernetes 版本必须介于 1.17 到 1.20 之间。</block>
   <block id="2dd1148046499f9c2422ce1045a4accf" category="list-text">映像类型</block>
-  <block id="26ae1a19394981413717b5ff64bd6b0b" category="list-text">每个工作节点的映像类型必须为容器优化操作系统或 Ubuntu 。</block>
   <block id="cbdbd5c432bdb656f6cc6d947afee596" category="list-text">集群状态</block>
   <block id="5546f6eb1d3ba8ca20733cab8923a4df" category="list-text">集群必须运行状况良好，并且至少有一个联机辅助节点，并且没有处于故障状态的辅助节点。</block>
   <block id="1e74109ffea9efee081364cbc0ee2939" category="list-text">Google Cloud 地区</block>
@@ -1252,4 +1249,10 @@
   <block id="2ffc1b9c31ec02503b31e837127256d6" category="inline-link">请按照 Astra Trident 文档中的以下步骤进行操作</block>
   <block id="684d9922c22d027489e3cb0caa3d50ca" category="paragraph">从 Astra 控制服务取消管理集群时，不会自动从集群中卸载 Astra Trident 。要卸载 Astra Trident ，您需要<block ref="63f898d0a9f06a9c415a80b9d724603c" category="inline-link-rx"></block>。</block>
   <block id="36910a95584c53fdc9ed97782ef3965c" category="sidebar">Astra Control 博客</block>
+  <block id="8e6a6a6c3648fa9123db975bf7474704" category="paragraph">确保集群运行状况良好且运行的 Kubernetes 版本介于 1.18 到 1.20 之间，工作节点处于联机状态并运行容器优化操作系统或 Ubuntu 等。 <block ref="e5d6d79c6a6c0b51cbb3547ebf53c7a2" category="inline-xref-macro-rx"></block>。</block>
+  <block id="cbcf2fd02363fc4e7f9dfa1eff178d1e" category="list-text">集群运行的 Kubernetes 版本必须介于 1.18 到 1.20 之间。</block>
+  <block id="32c25baf5ee1ef8c18e42fb93a5e8c1a" category="list-text">每个工作节点的映像类型必须为以下类型之一：</block>
+  <block id="19c1ea45cf0c0ac981fe5a335806b866" category="list-text">容器优化操作系统，包含容器</block>
+  <block id="6cf81447b5980903240b63a4f939c8d2" category="list-text">采用 Docker 的容器优化操作系统</block>
+  <block id="a0af4cce8ef460df0e0ad48776e27496" category="list-text">采用 Docker 的 Ubuntu</block>
 </blocks>
