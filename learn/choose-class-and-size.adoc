@@ -1,0 +1,103 @@
+---
+sidebar: sidebar 
+permalink: learn/choose-class-and-size.html 
+keywords: service level, cvs, cvs-performance, storage class, storage classes, pv size, persistent volume size, volume size, bandwidth, performance 
+summary: Astra 控制服务使用适用于 Google Cloud 的 Cloud Volumes Service 作为永久性卷的后端存储。您应了解选择服务级别，存储类和永久性卷大小如何帮助您实现性能目标。 
+---
+= GKE- 集群的服务类型，存储类和 PV 大小
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/learn/
+
+
+[role="lead"]
+Astra 控制服务使用适用于 Google Cloud 的 Cloud Volumes Service 作为永久性卷的后端存储。您应了解选择服务类型，存储类和永久性卷大小如何帮助您实现性能目标。
+
+
+
+== 概述
+
+Cloud Volumes Service for Google Cloud 提供两种服务类型： _CVS_ 和 _CVS-Performance_ 。特定 Google Cloud 地区支持这些服务类型。 https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["转到 NetApp Cloud Central 的全球区域地图"^] 确定集群所在的 Google Cloud 区域支持的服务类型。
+
+如果您的 Kubernetes 集群必须位于特定区域，则您将使用该区域支持的服务类型。
+
+但是，如果您可以灵活地在 Google Cloud 区域之间进行选择，则我们会根据您的性能要求建议您执行以下操作：
+
+* 对于具有中到高性能存储需求的 K8s 应用程序，请选择支持 CVS-Performance 并使用高级或至尊存储类的 Google Cloud 区域。此类工作负载包括 AI/ML 管道， CI/CD 管道，介质处理以及包括关系， NoSQL ，时间序列等在内的数据库
+* 对于具有中低端存储性能需求的 K8s 应用程序（ Web 应用程序，通用文件存储等），请选择支持 CVS 或 CVS-Performance 且具有标准存储类的 Google Cloud 区域。
+
+
+下表快速比较了此页面上所述的信息。
+
+[cols="5*"]
+|===
+| 服务类型 | 用例 | 支持的区域 | 存储类 | 最小卷大小 
+
+
+| CVS 性能 | 具有中到高存储性能需求的应用程序 | https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["查看支持的 Google Cloud 区域"^]  a| 
+* netapp-cvs-standard
+* netapp-cvs-Premium
+* netapp-cvs-至 高性能
+
+| 100 GiB 
+
+
+| CVS | 具有中低端存储性能需求的应用程序 | https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["查看支持的 Google Cloud 区域"^] | netapp-cvs-standard | 300 GiB 
+|===
+
+
+== CVS-Performance 服务类型
+
+在选择存储类和创建永久性卷之前，请了解有关 CVS-Performance 服务类型的更多信息。
+
+
+
+=== 存储类
+
+CVS-Performance 服务类型支持三种服务级别：标准，高级和极速。在将计算添加到 Astra Control Service 时，系统会提示您选择标准，高级或极速作为永久性卷的默认存储类。其中每个服务级别都针对不同的容量和带宽需求而设计。
+
+存储类的名称包括 _netapp-cvs-standard_ ， _netapp-cvs-prem_ 和 _netapp-cvs-Extreme 。
+
+https://cloud.google.com/solutions/partners/netapp-cloud-volumes/selecting-the-appropriate-service-level-and-allocated-capacity-for-netapp-cloud-volumes-service#service_levels["有关这些服务级别的详细信息，请参见 Cloud Volumes Service for Google Cloud 文档"^]。
+
+
+
+=== 永久性卷大小和性能
+
+https://cloud.google.com/solutions/partners/netapp-cloud-volumes/selecting-the-appropriate-service-level-and-allocated-capacity-for-netapp-cloud-volumes-service#service_levels["如 Google Cloud 文档所说明"^]，每个服务级别允许的带宽均为所配置容量的每 GiB 。这意味着，较大的卷将提供更好的性能。
+
+请务必通读上述链接的 Google Cloud 页面。其中包括成本比较和示例，可帮助您更好地了解如何将服务级别与卷大小结合使用以实现性能目标。
+
+
+
+=== 最小卷大小
+
+Astra 控制服务使用最小卷大小 100 GiB 和 CVS-Performance 服务类型来配置永久性卷，即使 PVC 请求的卷大小较小也是如此。例如，如果 Helm 图表中的 PVC 要求提供 6 GiB ，则 Astra 控制服务会自动配置 100 GiB 卷。
+
+
+
+== CVS 服务类型
+
+在选择存储类和创建永久性卷之前，请了解有关 CVS 服务类型的更多信息。
+
+
+
+=== 存储类
+
+CVS 服务类型支持一个服务级别：标准。在管理支持 CVS 服务类型的区域中的集群时， Astra 控制服务会使用标准服务级别作为永久性卷的默认存储类。此存储类名为 _netapp-cvs-standard_ 。
+
+https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-levels["有关标准服务级别的详细信息，请参见 Cloud Volumes Service for Google Cloud 文档"^]。
+
+
+
+=== 永久性卷大小和性能
+
+CVS 服务类型允许的带宽是按配置容量的每 GiB 计算的。这意味着，较大的卷将提供更好的性能。
+
+
+
+=== 最小卷大小
+
+Astra 控制服务使用最小卷大小 300 GiB 和 CVS 服务类型来配置永久性卷，即使 PVC 要求的卷大小更小也是如此。例如，如果请求 20 GiB ，则 Astra 控制服务会自动配置 300 GiB 卷。
+
+由于限制，如果 PVC 请求的卷介于 700-999 GiB 之间，则 Astra 控制服务会自动配置卷大小 1000 GiB 。

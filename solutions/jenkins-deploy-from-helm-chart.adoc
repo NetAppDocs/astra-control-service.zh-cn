@@ -1,0 +1,13 @@
+---
+sidebar: sidebar 
+permalink: solutions/jenkins-deploy-from-helm-chart.html 
+keywords: helm, jenkins, deploy apps, deploy jenkins, bitnami, helm chart, astra, astra control, kubernetes 
+summary: 从 BitNami Helm 图表中了解如何部署 Jenkins 。在集群上部署 Jenkins 后，您可以向 Astra Control 注册此应用程序。 
+---
+= 从 Helm 图表中部署 Jenkins
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/solutions/
+
+
+link:https://raw.githubusercontent.com/NetAppDocs/astra-control-center/main/_include/source-jenkins-deploy-from-helm-chart.adoc[""]

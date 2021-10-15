@@ -1,0 +1,63 @@
+---
+sidebar: sidebar 
+permalink: release-notes/known-limitations.html 
+keywords: limitations, known limitations, interoperability 
+summary: 已知限制确定了本产品版本不支持的平台、设备或功能、或者这些平台、设备或功能无法与产品正确交互操作。仔细审查这些限制。 
+---
+= 已知限制
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/release-notes/
+
+
+已知限制确定了本产品版本不支持的平台、设备或功能、或者这些平台、设备或功能无法与产品正确交互操作。仔细审查这些限制。
+
+
+
+== 一般限制
+
+以下限制会影响 Astra Control Service 在任何受支持的 Kubernetes 部署中对 Kubernetes 集群的管理。
+
+
+
+=== 运行状况不正常的 Pod 会影响应用程序管理
+
+如果受管应用程序中的 Pod 运行状况不正常，则 Astra Control Service 无法创建新的备份和克隆。
+
+
+
+=== 未从集群中卸载 Astra Trident
+
+从 Astra 控制服务取消管理集群时，不会自动从集群中卸载 Astra Trident 。要卸载 Astra Trident ，您需要 https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["请按照 Astra Trident 文档中的以下步骤进行操作"^]。
+
+
+
+=== 与 Postgres Pod 的现有连接导致故障
+
+在 Postgres Pod 上执行操作时，不应直接在 Pod 中连接以使用 psql 命令。Astra 控制服务需要使用 psql 访问权限来冻结和解冻数据库。如果已建立连接，则快照，备份或克隆将失败。
+
+
+
+== GKEE 集群管理的限制
+
+以下限制适用于在 Google Kubernetes Engine （ GKEE ）中管理 Kubernetes 集群。
+
+
+
+=== 支持一个 GCP 项目和一个服务帐户
+
+Astra Control Service 支持一个 Google Cloud Platform 项目和一个服务帐户。您不应向 Astra Control Service 添加多个服务帐户，也不应轮换服务帐户凭据。
+
+
+
+=== Google Marketplace 应用程序尚未经过验证
+
+NetApp 尚未验证从 Google Marketplace 部署的应用程序。某些用户报告发现或备份从 Google Marketplace 部署的 Postgres ， MariaDB 和 MySQL 应用程序时出现问题。
+
+无论您在 Astra Control Service 中使用哪种类型的应用程序，您都应始终自行测试备份和还原工作流，以确保满足灾难恢复要求。
+
+
+
+=== 永久性卷限制
+
+每个 Google Cloud 区域最多可以有 100 个卷。如果达到此限制，则创建新克隆或卷将失败。 link:../support/get-help.html["请联系支持部门以增加卷限制"]。

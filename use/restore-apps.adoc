@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: use/restore-apps.html 
+keywords: restore app, restoring an app, restore an app, restore 
+summary: Astra Control 可以从快照或备份还原应用程序配置和永久性存储。永久性存储备份会从对象存储传输，因此从现有备份还原的速度最快。 
+---
+= 还原应用程序
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Astra Control 可以从快照或备份还原应用程序配置和永久性存储。永久性存储备份会从对象存储传输，因此从现有备份还原的速度最快。
+
+.步骤
+. 单击 * 应用程序 * ，然后单击受管应用程序的名称。
+. 单击 * 数据保护 * 。
+. 如果要从快照还原，请保持选中 * 快照 * 。否则，请单击 * 备份 * 从备份中还原。
++
+image:screenshot-restore-snapshot-or-backup.gif["数据保护选项卡的屏幕截图，您可以在此查看快照或备份。"]
+
+. 单击 * 操作 * 列中要从中还原的快照或备份的下拉列表。
+. 单击 * 还原应用程序 * 。
++
+image:screenshot-restore-app.gif["应用程序页面的屏幕截图，在此可以单击操作列中的下拉列表并选择还原应用程序。"]
+
+. * 还原详细信息 * ：指定克隆的详细信息：
++
+** 输入应用程序的名称和命名空间。
+** 选择应用程序的目标计算。
+** 单击 * 查看信息 * 。
+
+
+. * 还原摘要 * ：查看有关还原操作的详细信息，然后单击 * 还原应用程序 * 。
++
+image:screenshot-restore-summary.gif["\" 还原应用程序 \" 页面的屏幕截图，可用于查看有关还原操作的信息。"]
+
+
+
+Astra Control 会根据您提供的信息还原应用程序。

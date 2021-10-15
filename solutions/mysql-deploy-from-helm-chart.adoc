@@ -1,0 +1,13 @@
+---
+sidebar: sidebar 
+permalink: solutions/mysql-deploy-from-helm-chart.html 
+keywords: helm, mysql, helm chart, deploy mysql, astra, astra control, kubernetes 
+summary: 从 BitNami Helm 图表中了解如何部署 MySQL 。在 Kubernetes 集群上部署 MySQL 后，您可以使用 Astra Control 管理此应用程序。 
+---
+= 从 Helm 图表部署 MySQL
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+
+link:https://raw.githubusercontent.com/NetAppDocs/astra-control-center/main/_include/source-mysql-deploy-from-helm-chart.adoc[""]
