@@ -71,7 +71,6 @@
   <block id="cbcf2fd02363fc4e7f9dfa1eff178d1e" category="list-text">集群运行的 Kubernetes 版本必须介于 1.18 到 1.20 之间。</block>
   <block id="2dd1148046499f9c2422ce1045a4accf" category="list-text">映像类型</block>
   <block id="32c25baf5ee1ef8c18e42fb93a5e8c1a" category="list-text">每个工作节点的映像类型必须为以下类型之一：</block>
-  <block id="19c1ea45cf0c0ac981fe5a335806b866" category="list-text">容器优化操作系统，包含容器</block>
   <block id="6cf81447b5980903240b63a4f939c8d2" category="list-text">采用 Docker 的容器优化操作系统</block>
   <block id="a0af4cce8ef460df0e0ad48776e27496" category="list-text">采用 Docker 的 Ubuntu</block>
   <block id="cbdbd5c432bdb656f6cc6d947afee596" category="list-text">集群状态</block>
@@ -1255,4 +1254,5 @@
   <block id="192e86d2fab79103a50251f3cf938e77" category="sidebar">适用于 GKEE 集群的存储</block>
   <block id="515ddaf1bc34159a3a7827d17c7aa5db" category="sidebar">经验证的应用程序与标准应用程序</block>
   <block id="4e7b93cbf596a837185aa740bdb8b853" category="sidebar">定义自定义应用程序</block>
+  <block id="decffb9e7c279510849a3e5513787dad" category="list-text">容器优化操作系统与容器</block>
 </blocks>
