@@ -49,7 +49,7 @@ image:screenshot-cloud-central-signup.gif["Cloud Central 注册页面的屏幕�
 
 .步骤
 . https://cloud.netapp.com/astra["转到 Cloud Central 上的 Astra Control 页面"^]。
-. 单击 * 注册获取免费计划 * 。
+. 单击 * 开始使用 Astra Control* 。
 . 在表单中提供所需信息。
 +
 填写表单时需要注意的一些重要事项：

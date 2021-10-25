@@ -179,7 +179,6 @@
   <block id="790648d3b85d3e92fa5b4e577275ef70" category="paragraph">使用 Astra Control 时，您可以从帐户中管理应用程序。帐户包括可以查看和管理帐户中的应用程序以及您的计费详细信息的用户。</block>
   <block id="c3d2edad004e97ae3aa8859394dc7966" category="inline-link">转到 Cloud Central 上的 Astra Control 页面</block>
   <block id="3889784207ede468b81664012c11b61c" category="list-text"><block ref="1b7eb0b86e80375179438e28519fc192" category="inline-link-rx"></block>。</block>
-  <block id="89462d00f4070b6cc36c341f6e8cee3d" category="list-text">单击 * 注册获取免费计划 * 。</block>
   <block id="5f2575e876c38f49aa892ec0aabae362" category="list-text">在表单中提供所需信息。</block>
   <block id="9af90bb703b753ebc52e31ad01e6d842" category="paragraph">填写表单时需要注意的一些重要事项：</block>
   <block id="b7324677f7d831f32c546a0047ebbc04" category="list-text">您的企业名称和地址必须准确无误，因为我们会对其进行验证，以满足全球贸易合规性的要求。</block>
@@ -1255,4 +1254,5 @@
   <block id="515ddaf1bc34159a3a7827d17c7aa5db" category="sidebar">经验证的应用程序与标准应用程序</block>
   <block id="4e7b93cbf596a837185aa740bdb8b853" category="sidebar">定义自定义应用程序</block>
   <block id="decffb9e7c279510849a3e5513787dad" category="list-text">容器优化操作系统与容器</block>
+  <block id="367dcd19960f9ba12d3b3fe1c84d0e33" category="list-text">单击 * 开始使用 Astra Control* 。</block>
 </blocks>
