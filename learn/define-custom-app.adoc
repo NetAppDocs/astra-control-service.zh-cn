@@ -55,7 +55,7 @@ image:show-pods-labels.png["运行 \"kubectl get pods-namespace=ngins-app -show-
 
 管理员将集群添加到 Astra Control 后，下一步是定义自定义应用程序。为此，管理员单击应用程序页面上的超过定义自定义应用程序 * 按钮。
 
-在显示的弹出窗口中，管理员会将 `devops-cany-deployment` 设置为应用程序名称。然后，管理员在 "* 计算 "* 下拉列表中选择集群，然后从 "* 命名空间 "* 下拉列表中选择应用程序的命名空间。
+在显示的弹出窗口中，管理员会将 `devops-cany-deployment` 设置为应用程序名称。然后，管理员在 "** 集群 " 下拉列表中选择集群，然后从 "* 命名空间 "* 下拉列表中选择应用程序的命名空间。
 
 此时，管理员可以在 "#Labels"* 字段中键入 `deeption=Canary` ，也可以从以下资源中选择该标签。
 

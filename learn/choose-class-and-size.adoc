@@ -54,7 +54,7 @@ Cloud Volumes Service for Google Cloud 提供两种服务类型： _CVS_ 和 _CV
 
 === 存储类
 
-CVS-Performance 服务类型支持三种服务级别：标准，高级和极速。在将计算添加到 Astra Control Service 时，系统会提示您选择标准，高级或极速作为永久性卷的默认存储类。其中每个服务级别都针对不同的容量和带宽需求而设计。
+CVS-Performance 服务类型支持三种服务级别：标准，高级和极速。将集群添加到 Astra Control Service 时，系统会提示您选择标准，高级或极速作为永久性卷的默认存储类。其中每个服务级别都针对不同的容量和带宽需求而设计。
 
 存储类的名称包括 _netapp-cvs-standard_ ， _netapp-cvs-prem_ 和 _netapp-cvs-Extreme 。
 

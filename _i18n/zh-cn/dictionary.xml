@@ -187,29 +187,20 @@
   <block id="faad0c48075d54a6d23cfde1031df94e" category="paragraph">如果您已登录到 Cloud Central ，则会看到注册状态，然后重定向到 Astra 控制信息板。否则，系统将提示您先登录。</block>
   <block id="e4dda6e31c02a8c9c10c2adb20f664b3" category="paragraph">注册后，您可以直接从访问 Astra Control<block ref="8c65d1fc4cf122e461b28ceccd26064c" category="inline-link-rx"></block>。</block>
   <block id="74b741fc3d54baf9d97610b2ee78aaef" category="summary">设置环境后，您可以创建 Kubernetes 集群，然后将其添加到 Astra Control Service 。</block>
-  <block id="5a5b3df66a11847181f482004110039e" category="doc">从 Astra Control Service 开始管理 Kubernetes 计算</block>
   <block id="500d3c8defab0707486026a482b78c38" category="section-title">创建 Kubernetes 集群</block>
   <block id="b25e6cbe92376851fb2fc7b4e024274e" category="inline-link-macro">Google Kubernetes Engine （ GKEE ）的 Astra Control Service 要求</block>
   <block id="7ec62f1fcc63aa055150f41a8b57d7ef" category="inline-link-macro">Azure Kubernetes Service （ AKS ）的 Astra Control Service 要求</block>
   <block id="25b774164d06000c8ad44501ac10ab10" category="paragraph">如果您还没有集群，请创建一个满足要求的集群 <block ref="c14ce2b90a6d517d28f6a149c4e1ddd7" category="inline-link-macro-rx"></block> 或 <block ref="e84503f3b2eeb988725ef0ca528d805e" category="inline-link-macro-rx"></block>。</block>
-  <block id="c45d614900f987096a434c54e2548f8f" category="section-title">开始管理 Kubernetes 计算</block>
-  <block id="fc053333ca784efea96acf6a4de22690" category="paragraph">登录到 Astra Control Service 后，第一步是开始管理计算。</block>
   <block id="a711863513c11f3a6d86294acc7be0ba" category="list-title">您需要什么？ #8217 ；将需要什么</block>
   <block id="46b491767cd12d81f9bf9593f5a96cf7" category="inline-link-macro">了解如何设置服务帐户</block>
   <block id="686cb20b1345505bc3b4d980227e595c" category="list-text">对于 GKE- ，您应该拥有具有所需权限的服务帐户的服务帐户密钥文件。 <block ref="9215258f7e020d0c05367a1a3bfd0982" category="inline-link-macro-rx"></block>。</block>
   <block id="2c620a037dcfb55d88e388bd87452f5c" category="inline-link-macro">了解如何设置服务主体</block>
   <block id="d58782d9ffae011af57b2d00eca5681c" category="list-text">对于 AKS ，您应具有包含创建服务主体时 Azure 命令行界面输出的 JSON 文件。 <block ref="5c26c2c9f58f27535bc48f1971ddec6d" category="inline-link-macro-rx"></block>。</block>
   <block id="76bfd2350e4f4c3da0b233404caa674c" category="paragraph">如果未将 Azure 订阅 ID 添加到 JSON 文件中，您也需要此 ID 。</block>
-  <block id="86edf1b793d5fca23881ffbba999ff1a" category="list-text">在信息板上，单击 * 管理 Kubernetes Compute * 。</block>
-  <block id="f8dea4f24a01d7ae72249b252a2e12d9" category="paragraph">按照提示添加计算。</block>
   <block id="85dd90fee281dc51fb16e2fda68973ba" category="list-text">* 提供商 * ：选择您的云提供商，然后提供所需的凭据。</block>
   <block id="c455f809c2ef97e08167a8b008383167" category="list-text">* Microsoft Azure* ：通过上传 JSON 文件或从剪贴板粘贴此 JSON 文件的内容来提供有关 Azure 服务主体的详细信息。</block>
   <block id="e74a8dbdeb214fd881946935b35ce7aa" category="paragraph">JSON 文件应包含创建服务主体时 Azure 命令行界面的输出。它还可以包含您的订阅 ID ，以便自动添加到 Astra 。否则，您需要在提供 JSON 后手动输入 ID 。</block>
   <block id="f7f3a8af2d67b9c332d14c7846f01b8a" category="list-text">* Google Cloud Platform* ：通过上传文件或粘贴剪贴板中的内容来提供服务帐户密钥文件。</block>
-  <block id="2c48c91ff90c28c41635d6668c267157" category="paragraph">Astra 控制服务使用此服务帐户发现 Google Kubernetes Engine 中运行的计算。</block>
-  <block id="ab33984bb3219f10db30765a2150e71d" category="list-text">* 计算 * ：选择要添加的计算。</block>
-  <block id="eb80e46f60cd65b4e849749f32f90a88" category="paragraph">请仔细查看 " 符合条件 " 选项卡。如果出现警告，请将鼠标悬停在警告上以确定此计算是否存在问题描述。例如，它可能会标识集群没有工作节点。</block>
-  <block id="2d2ec788edfdf19529c243977be50d28" category="list-text">* 存储 * ：选择希望在此计算中部署的 Kubernetes 应用程序默认使用的存储类。</block>
   <block id="b0cee72642f5457a71ddd0b49efb6d93" category="inline-link">适用于 Google Cloud 的 Cloud Volumes Service</block>
   <block id="7450cfde7058dc5e1f7909d0280fd7ae" category="inline-link">Azure NetApp Files</block>
   <block id="c2369e1667f77d14041c57f9b2ffa952" category="paragraph">每个存储类都利用<block ref="50b9c349ffc0f290290b7f669280db42" category="inline-link-rx"></block> 或<block ref="16e1ab965c1d673c5cb3b5a28e77c1c1" category="inline-link-rx"></block>。</block>
@@ -217,7 +208,6 @@
   <block id="20553cfdca75ae3f783cddf339f02160" category="list-text"><block ref="f10cb0ea0034e1f4379ccb2c8a481c0b" category="inline-link-macro-rx"></block>。</block>
   <block id="3946d8b08dbcd33b3e5d7fc0e1384dec" category="inline-link-macro">了解 AKS 集群的存储类</block>
   <block id="a19a34a2b21fc32f9c330467fd8f7073" category="list-text"><block ref="cd9652b8cc8533a7d8fe2d3ddeb81557" category="inline-link-macro-rx"></block>。</block>
-  <block id="2d072183006368402099ca5ce53ece5a" category="list-text">* 审核并批准 * ：查看配置详细信息，然后单击 * 添加计算 * 。</block>
   <block id="342d96bb8b26fc21bd0ef71a5d047979" category="inline-image-macro">屏幕截图显示了查看和批准页面，其中提供了您为受管应用选择的配置的摘要。</block>
   <block id="ee769e73c12032ec317f9cc74037448a" category="paragraph"><block ref="aa0ffcb0ea40ad11a9a38aa9c7e39509" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e525048f7d08b462ebab4dacc8fc366b" category="paragraph">以下视频显示了 GKEE 集群的每个步骤。</block>
@@ -316,13 +306,9 @@
   <block id="08f0f9d0dde6c00e11eb2dd3f21902a3" category="paragraph">Astra 控制服务使用服务帐户密钥来建立您刚刚设置的服务帐户的身份。以下视频显示了如何从 Google Cloud 控制台创建服务帐户密钥。 <block ref="77beeb6b6eefb718274ff2d1aa6b28ef" category="inline-link-macro-rx"></block>。</block>
   <block id="123677b9276c735da97377750437ce0b" category="section-title">有关使用 Astra Control 的视频</block>
   <block id="5a85f0703ab01da4f9b15c91575ba7c2" category="paragraph">以下视频介绍了如何使用 Astra Control 完成常见任务。</block>
-  <block id="f772e145ed8ce4e69d9a8ac0c1de46a5" category="section-title">通过 Astra Control 管理计算</block>
-  <block id="5deaeb57662fc6d37ddd7afbfb3d31a3" category="inline-link-macro">了解有关管理计算的更多信息</block>
-  <block id="12ca837225d824659cd84124825b19da" category="paragraph">登录到 Astra Control Service 后，第一步是添加 Kubernetes 计算。 <block ref="f3df3d784327ac4ca608d96e8ccf3d86" category="inline-link-macro-rx"></block>。</block>
   <block id="2b44ed9b51c4c625419cf0a113f71811" category="section-title">配置保护策略</block>
   <block id="1744dc29ef0e09675e5ac7f173bde507" category="inline-link-macro">了解有关配置保护策略的更多信息</block>
   <block id="46d92e94002e35426d69c1a70310fe19" category="paragraph">保护策略通过按定义的计划创建快照，备份或这两者来保护应用程序。您可以选择每小时，每天，每周和每月创建快照和备份，并且可以指定要保留的副本数。 <block ref="bdaae0813dcbbfe4400763742e737a36" category="inline-link-macro-rx"></block>。</block>
-  <block id="4d08f1776dcdcfb2135aaaa1bc651e1b" category="summary">登录并向 Astra Control 添加计算功能后，您就可以开始使用 Astra Control 的应用程序数据管理功能了。</block>
   <block id="7c3983f18df54b898b386f7cf4a7d05c" category="doc">接下来是什么？</block>
   <block id="32139554c6b5c9a48dcfdd0ff983a9eb" category="inline-link-macro">开始管理应用程序</block>
   <block id="a4338c4608081cbe5421e9459f9dc53a" category="list-text"><block ref="a4338c4608081cbe5421e9459f9dc53a" category="inline-link-macro-rx"></block></block>
@@ -344,7 +330,6 @@
   <block id="6114e8a8f2850be98581400acbf88b6f" category="section-title">查看 Azure Kubernetes Service 的 Astra Control Service 要求</block>
   <block id="31b87fdf6c21e3f7ee6940d55ab3e44d" category="paragraph">确保集群运行状况良好且运行的是 Kubernetes 1.17 或更高版本，节点池处于联机状态并运行的是 * Linux * 等。 <block ref="b5bf5f6b96deccca53804b3360957342" category="inline-xref-macro-rx"></block>。</block>
   <block id="64f071aa545dfea3fd68ea0ca25cad17" category="section-title">对于 Azure NetApp Files ，</block>
-  <block id="bca720d5b51462300ed7bf713c7c11d6" category="paragraph">请求访问 Azure NetApp Files 服务，然后注册 NetApp 资源提供商。 <block ref="1a6283ac5652ee1365a6604fb78e9fc4" category="inline-xref-macro-rx"></block>。</block>
   <block id="1a58284cd0ffb72aa1652378f4ae9b61" category="section-title">Create a NetApp account</block>
   <block id="ce0c7018ccdc0653c0246a3a73ff9e01" category="paragraph">在 Azure 门户中，转到 Azure NetApp Files 并创建 NetApp 帐户。 <block ref="d2becf07b74daf6c832034271db73d53" category="inline-xref-macro-rx"></block>。</block>
   <block id="e82e5070cbce17a76f8a1282c7e2df78" category="section-title">设置容量池</block>
@@ -384,13 +369,7 @@
   <block id="a571dbb3887a364b4b4dcb82a5fa6ec9" category="list-text">创建快照控制器。</block>
   <block id="111a34eabb6102652811ded59098f913" category="paragraph">如果您希望 Snapshot 控制器位于特定命名空间中，请先下载并编辑以下文件，然后再应用它们。</block>
   <block id="5422a82e50c3ce750e901aaf32f32999" category="list-title">K8s 1.20 版的步骤</block>
-  <block id="b6df3f9c66d592973a3653fab8b99f99" category="paragraph">通过提交等待列表请求来访问 Azure NetApp Files 。获得批准后，您需要注册 NetApp 资源提供商。</block>
-  <block id="cc3d856d4ca13c91cb5198ffb920b49c" category="inline-link">提交等待列表请求以访问 Azure NetApp Files</block>
-  <block id="83fbf0ad94f13f1caf225e0bd9f9811d" category="list-text"><block ref="ffe6a535182f46b4e3da0b92af959b61" category="inline-link-rx"></block>。</block>
-  <block id="e8e89bd1b52662b4c640a9a6b3ba3645" category="list-text">等待 Azure NetApp Files 团队发送确认电子邮件。</block>
   <block id="c798d4fa199184ebee2987a6b804a582" category="inline-link">按照 Azure NetApp Files 文档注册 NetApp 资源提供商</block>
-  <block id="f7757558b791c7f7d09e4410fb108ffb" category="list-text"><block ref="a98a1975b3bf1faa32916bb69d9397fc" category="inline-link-rx"></block>。</block>
-  <block id="4bf659dfe07a14b120b789014ff3222c" category="paragraph">获得访问权限后，在 Azure NetApp Files 中创建一个 NetApp 帐户。</block>
   <block id="7def1b16243e596c2479dd2d0d17a22f" category="inline-link">按照 Azure NetApp Files 文档从 Azure 门户创建 NetApp 帐户</block>
   <block id="82ae8c27ca674e19ab55d58aebf9ff3f" category="list-text"><block ref="2fb2346b5b3b4d0c814cacca5e828ad4" category="inline-link-rx"></block>。</block>
   <block id="02209b9e3a221b39bf0ce87641e7afc6" category="section-title">Set up a capacity pool</block>
@@ -409,7 +388,6 @@
   <block id="a1de6be583d4f76211273269f82d2c56" category="paragraph">如果您使用的是对等 VNets ，则对等连接的两端必须处于联机状态： Kubernetes 集群所在的 vNet 和已委派 Azure NetApp Files 子网的 vNet 。</block>
   <block id="0c6661cb62c4c6856bf4ad63b7455d3e" category="inline-link">按照 Azure NetApp Files 文档将子网委派给 Azure NetApp Files</block>
   <block id="d76bc4002358843c51e82968e9ecb523" category="list-text"><block ref="b694cd8ac4a00a0f8c9dccde36219227" category="inline-link-rx"></block>。</block>
-  <block id="a7a8a1e07d82b095fd723e45c7cb38e4" category="paragraph">等待大约 10 分钟，然后发现在委派子网中运行的计算。</block>
   <block id="dac9a0778c5d071c5723f0f6cd92de38" category="paragraph">Astra 控制服务需要分配有贡献者角色的 Azure 服务主体。Astra 控制服务使用此服务主体来代表您促进 Kubernetes 应用程序数据管理。</block>
   <block id="147bfaed48f23073b5ac12078d88e536" category="paragraph">服务主体是指专为应用程序，服务和工具而创建的身份。为服务主体分配角色将限制对特定 Azure 资源的访问。</block>
   <block id="39b79e60ac591872f5047525fabf80ab" category="inline-link">有关使用 CLI 的详细信息，请参见 Azure 文档</block>
@@ -455,12 +433,6 @@
   <block id="fdcff977492d72bd4bad80358b5b7d99" category="list-text">创建 Astra Control 帐户时，请指定您的 NetApp Cloud Central 电子邮件 ID<block ref="778ba27a5b5fe872bd25f23635cb760f" category="inline-link-rx"></block>。</block>
   <block id="8c14e4dec27dea8a5cc533eb50aa8d6e" category="inline-link-macro">了解有关注册过程的更多信息</block>
   <block id="f2785b884437a4abfaf84ef4de8f60db" category="paragraph"><block ref="2f8c311f1f0fe130dd944321a6337c35" category="inline-link-macro-rx"></block>。</block>
-  <block id="e10d65c69a67acab1483cfe4834c8da1" category="section-title">将计算添加到 Astra Control</block>
-  <block id="e933d65b6a7a75ec01820c3a5d404790" category="paragraph">登录后，单击 * 添加计算 * ，开始使用 Astra Control 管理计算。</block>
-  <block id="27ada06cb04968027c794d6458f23ce5" category="inline-link-macro">了解有关添加计算的更多信息</block>
-  <block id="ab97027f7c3f427b8f38f7d83703fe66" category="paragraph"><block ref="3bbcb200b699307e53953bb2e8025e0b" category="inline-link-macro-rx"></block>。</block>
-  <block id="d4c0cb74693a3b84713651db5b9e59d2" category="summary">从 Astra Control 中删除不再需要管理的任何应用程序或计算。</block>
-  <block id="b7cf6ac386107863287edc923105a475" category="doc">取消管理应用程序和计算</block>
   <block id="bf8c1c55cd29562d4dd4520d4e2fb45a" category="section-title">停止管理应用程序</block>
   <block id="8ae7d728c4c184ea4251e1e2887cb0b6" category="paragraph">停止管理不再需要从 Astra Control 备份，创建快照或克隆的应用程序。</block>
   <block id="1eb15cc34f73a18c5010c7e078c2820b" category="list-text">所有现有备份和快照都将被删除。</block>
@@ -470,16 +442,8 @@
   <block id="5de4e322c0719319e5eca4303640ef9d" category="list-text">单击 * 操作 * 下拉列表并选择 * 取消管理应用程序 / 秒 * 。</block>
   <block id="66e7d50a7b53b5cb457efb26fc9202d1" category="list-text">确认要取消管理这些应用程序，然后单击 * 是，取消管理应用程序 * 。</block>
   <block id="4668b66a5d28ac2e48346052d32da09b" category="paragraph">Astra Control 停止管理应用程序。</block>
-  <block id="768991d0d322b5190312aa94ab045d44" category="section-title">停止管理计算</block>
-  <block id="1da4b61d99a41085dcf16efec8f2c5d2" category="paragraph">停止从 Astra Control 管理不再需要管理的计算。作为最佳实践，我们建议您先从 Astra Control 中删除计算，然后再通过 GCP 将其删除。</block>
-  <block id="6d88b2f00d2e909bfc79701542651d55" category="list-text">此操作将阻止 Astra Control 管理您的计算。它不会对集群的配置进行任何更改，也不会删除集群。</block>
   <block id="c8f51750761cfb5d9ed1f009407abc09" category="inline-link">了解如何卸载 Astra Trident</block>
   <block id="e1f711a0f8692f3d19fa623e09b24909" category="list-text">不会从集群中卸载 Astra Trident 。<block ref="3c0339a1ad9f8347feaea25bac6a0a15" category="inline-link-rx"></block>。</block>
-  <block id="83457133a0ef330b6cf07b6b359318bf" category="list-text">单击 * 计算 * 。</block>
-  <block id="36e3fa8b76ec03743bb24cce9d865908" category="list-text">单击不再需要管理的计算对应的复选框。</block>
-  <block id="ff725a9e2b95ece2340334c35c928a4f" category="list-text">单击 * 操作 * 下拉列表并选择 * 取消管理计算 / 秒 * 。</block>
-  <block id="7e5c83aeab53bd4c3234d6356eeb9029" category="list-text">确认要取消管理计算，然后单击 * 是，取消管理计算 * 。</block>
-  <block id="2cf3c9e52e480ccb0878599376cf7ee0" category="paragraph">Astra Control 停止管理计算。</block>
   <block id="15c72501c81a636e9acaf9de197e03da" category="section-title">从云提供商中删除集群</block>
   <block id="0ecba3cedec1e8d9b411a2ce790080cd" category="paragraph">在删除持久性卷（ PV ）驻留在 NetApp 存储类上的 Kubernetes 集群之前，您需要先按照以下方法之一删除永久性卷声明（ PVC ）。在删除集群之前删除 PVC 和 PV 可确保您不会从云提供商收到意外账单。</block>
   <block id="ddf1663ccbe93fbad389abace27b7e96" category="list-text">* 方法 1* ：从集群中删除应用程序工作负载命名空间。请勿删除 Trident 命名空间。</block>
@@ -554,8 +518,6 @@
   <block id="d6017f17ab6511046838220ddab0c3c4" category="doc">关闭您的帐户</block>
   <block id="84e28afdb935ed3b521f8d18f8021e5f" category="paragraph">如果您不再需要 Astra Control 帐户，可以随时关闭该帐户。</block>
   <block id="7216898ff2d7cf04cdfc45a6a1c22f26" category="admonition">关闭帐户后， Astra Control 自动创建的分段将自动删除。</block>
-  <block id="63ad87af76e99c5fff554d3e2b999bd2" category="inline-link-macro">取消管理所有应用程序和计算</block>
-  <block id="ecf2d166c9050d7ce30ba4f48907b92f" category="list-text"><block ref="f5f308c4e0e6c462cb0ce5ae79559615" category="inline-link-macro-rx"></block>。</block>
   <block id="6c0e500424a5c002ce12581a29b25a8e" category="inline-link-macro">从 Astra Control 中删除凭据</block>
   <block id="1e7a041da379048b21a55b1ea2d128df" category="list-text"><block ref="879194b01b570dff0dfd634e5021bfcd" category="inline-link-macro-rx"></block>。</block>
   <block id="77916e0dda1b650781052941cb0efbb6" category="list-text">单击 * 关闭帐户 * 。</block>
@@ -568,8 +530,6 @@
   <block id="2b99cbe6e402c3cd789d8752745bfbd0" category="list-text">单击 * 导出到 CSV* 将您的帐户活动下载到 CSV 文件。</block>
   <block id="fea3fe6a4c68375faa8ac65f03e247b0" category="list-title">查看特定应用程序的帐户活动的步骤</block>
   <block id="3e0ad76bf67b8bed8d5279f8f4a91705" category="list-text">单击 * 应用程序 * ，然后单击应用程序的名称。</block>
-  <block id="3738a292a97ea2745bf6f35a333768cb" category="list-title">查看计算帐户活动的步骤</block>
-  <block id="fee35e7474c3066fa2c44484a923b723" category="list-text">单击 * 计算 * ，然后单击计算名称。</block>
   <block id="d95c69c43af6837af2e7b735550c3894" category="summary">邀请用户加入您的 Astra Control 帐户并删除不应再访问您的帐户的用户。</block>
   <block id="42fea43246af353c517277bafa8f94d3" category="doc">邀请和删除用户</block>
   <block id="9a0112e9326bfb2ebbe8296f89fd4be9" category="paragraph">邀请用户加入您的 Astra Control 帐户，并删除不应再访问此帐户的用户。</block>
@@ -585,7 +545,6 @@
   <block id="07bb712636ed13b638d72bb327675777" category="list-text">每个角色都提供以下权限：</block>
   <block id="009fbfbca46589505e571105aa553afd" category="list-text">* 所有者 * 具有管理员权限，可以删除帐户。</block>
   <block id="bb382507e845750265db4d4c275e9d90" category="list-text">* 管理员 * 具有成员权限，可以邀请其他用户。</block>
-  <block id="8248f4f3632abf23847d241329597096" category="list-text">* 成员 * 可以全面管理应用程序和计算。</block>
   <block id="12683a08e59030d6f53d51de7d346b89" category="list-text">* 查看器 * 可以查看资源。</block>
   <block id="e95529cde3c446cd1ad7b358e639e059" category="inline-image-macro">" 邀请用户 " 屏幕的屏幕截图，您可以在此输入名称，电子邮件地址并选择角色。</block>
   <block id="47ea351fcbd9ce111d128f9412edd07e" category="paragraph"><block ref="47ea351fcbd9ce111d128f9412edd07e" category="inline-image-macro-rx" type="image"></block></block>
@@ -665,21 +624,12 @@
   <block id="d800f0eab20db3e705596a843a3d496b" category="paragraph"><block ref="d800f0eab20db3e705596a843a3d496b" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e9d6dc6572983edd42be299fd6cd7c56" category="list-text">键入备份的名称以确认删除，然后单击 * 是，删除备份 * 。</block>
   <block id="d12ca2a27e08ac6933e4e003aba3edba" category="paragraph">Astra Control 会删除备份。</block>
-  <block id="67661f0c67a9a4645902266f26999303" category="summary">将 Kubernetes 计算添加到 Astra Control 后，您可以查看有关该计算的详细信息，例如其位置，工作节点，永久性卷和存储类。</block>
-  <block id="04367356c8e28d00479a23fdee8aea39" category="doc">查看计算的运行状况和详细信息</block>
-  <block id="badc1aeb5fe782a123c10c4f6e9023aa" category="list-text">单击计算名称。</block>
   <block id="78b19f27dc2cef7a73de3663b10e68fb" category="list-text">查看 * 概述 * 和 * 存储 * 选项卡中的信息以查找所需的信息。</block>
   <block id="fd8001bbeb8d9f8b55b043d6db003c85" category="list-text">* 概述 * ：有关工作节点的详细信息，包括其状态。</block>
-  <block id="1825841c7b132cb5df31c466db49d616" category="list-text">* 存储 * ：与计算关联的永久性卷，包括存储类和状态。</block>
-  <block id="bd7e95938fde64f6e673b6a01c9e42d6" category="list-text">* 活动 * ：与计算相关的 Astra 活动。</block>
-  <block id="e4fecf2890e430564339a20ea1fe6334" category="inline-image-macro">计算的 " 概述 " 选项卡的屏幕截图。</block>
-  <block id="a2de28cc78dad76508cb8229a299b6fd" category="paragraph"><block ref="a2de28cc78dad76508cb8229a299b6fd" category="inline-image-macro-rx" type="image"></block></block>
   <block id="e477ccacd28fcf6ad0c7ee29903cefc6" category="summary">随时在您的帐户中添加和删除云提供商凭据。Astra Control 使用这些凭据代表您配置资源。</block>
   <block id="d031c428f3040bac9819fa764663397d" category="doc">添加和删除凭据</block>
-  <block id="5d7815aa512d0fbbf05a176aa0dc653b" category="paragraph">随时在您的帐户中添加和删除云提供商凭据。Astra Control 使用这些凭据来发现 Kubernetes 计算，计算中的应用程序，并代表您配置资源。</block>
   <block id="7b758bf36ef17d1879863c969ac42d38" category="paragraph">请注意， Astra Control 中的所有用户都共享相同的凭据集。</block>
   <block id="0f391d5482822722d86585c248878517" category="section-title">添加凭据</block>
-  <block id="b8b5abd7c4f1904ef2b462a74dcb8ebd" category="paragraph">向 Astra Control 添加凭据的最常见方法是管理计算，但您也可以从帐户页面添加凭据。然后，在管理其他 Kubernetes 计算时，您可以选择这些凭据。</block>
   <block id="d1d2df683ec3a42a861cfb62b75272b0" category="list-text">对于 GKE- ，您应该拥有具有所需权限的服务帐户的服务帐户密钥文件。 <block ref="253b0a52b10e4210af2fe90c716fc07d" category="inline-link-macro-rx"></block>。</block>
   <block id="3c78e0f3097138b21f46299d66575bdb" category="list-text">对于 AKS ，您应具有包含创建服务主体时 Azure 命令行界面输出的 JSON 文件。 <block ref="3a7a4b138690ea6892076b27b1d6faeb" category="inline-link-macro-rx"></block>。</block>
   <block id="d08c957004d0c2777d0bc41ead873aff" category="list-text">单击 * 帐户 &gt; 凭据 * 。</block>
@@ -690,10 +640,7 @@
   <block id="014c14c5512caaa6fd3b7a442dba0aa0" category="list-text">* Microsoft Azure* ：通过上传 JSON 文件或从剪贴板粘贴 JSON 文件的内容，为 Astra Control 提供有关 Azure 服务主体的详细信息。</block>
   <block id="215956a7e5ab424f91575424b1020a9a" category="paragraph">JSON 文件应包含创建服务主体时 Azure 命令行界面的输出。它还可以包括您的订阅 ID ，以便自动添加到 Astra Control 。否则，您需要在提供 JSON 后手动输入 ID 。</block>
   <block id="69c8912eef32a675c12ccfe82e1ba720" category="list-text">* Google Cloud Platform* ：通过上传文件或粘贴剪贴板中的内容来提供 Google Cloud 服务帐户密钥文件。</block>
-  <block id="3c0a7e030e7f5e0e3283fb14ca313962" category="paragraph">现在，您可以在向 Astra Control 添加计算时选择这些凭据。</block>
   <block id="25f033e226552b2f5ae002edb8e5fd2f" category="section-title">删除凭据</block>
-  <block id="146056f319e800b4fc6dc6f3a194a782" category="inline-link-macro">取消管理所有计算</block>
-  <block id="bfdc48bc106863b605f50443d4b0b765" category="paragraph">随时从帐户中删除凭据。您只能在之后删除凭据 <block ref="bac5182178cb8488b9560aac7b75286e" category="inline-link-macro-rx"></block>。</block>
   <block id="12fce85c2a771804bf71c2607b90e479" category="admonition">添加到 Astra Control 的第一组凭据始终处于使用状态，因为 Astra Control 使用这些凭据向备份存储分段进行身份验证。最好不要删除这些凭据。</block>
   <block id="9ec183ab0f5277f34cfe023303d82a60" category="list-text">单击 * 状态 * 列中要删除的凭据的下拉列表。</block>
   <block id="03b194a23dcb353466fbfb7acff64363" category="list-text">单击 * 删除 * 。</block>
@@ -713,7 +660,6 @@
   <block id="bd06fb80fea241d2f1257e510ccacecf" category="paragraph"><block ref="bd06fb80fea241d2f1257e510ccacecf" category="inline-image-macro-rx" type="image"></block></block>
   <block id="417cb34bb9c40d133797106d3824b402" category="list-text">* 还原详细信息 * ：指定克隆的详细信息：</block>
   <block id="2682de2e7f62c237cf6b4329a0199da7" category="list-text">输入应用程序的名称和命名空间。</block>
-  <block id="d634208090b405838694d5e6d1b488f1" category="list-text">选择应用程序的目标计算。</block>
   <block id="9aa1ea781ae5747b01a517a1ed4bd6d3" category="list-text">单击 * 查看信息 * 。</block>
   <block id="6dbb469b36d9e432e7223dadffd8a7c8" category="list-text">* 还原摘要 * ：查看有关还原操作的详细信息，然后单击 * 还原应用程序 * 。</block>
   <block id="10d41ef8faeb35e6bce6bc1d8f14db60" category="inline-image-macro">" 还原应用程序 " 页面的屏幕截图，可用于查看有关还原操作的信息。</block>
@@ -729,17 +675,12 @@
   <block id="4c9e4420814f313c0a1c58432e6f66b7" category="paragraph"><block ref="4c9e4420814f313c0a1c58432e6f66b7" category="inline-image-macro-rx" type="image"></block></block>
   <block id="a69f8caed78eab8c89f997c7e54966ba" category="list-text">* 克隆详细信息 * ：指定克隆的详细信息：</block>
   <block id="b49763be9dcc763219331387dee4efd5" category="list-text">保留默认名称和命名空间，或者对其进行编辑。</block>
-  <block id="4270471e0c1a1cd103ba74cad8d545fb" category="list-text">选择克隆的目标计算。</block>
   <block id="b50343ac8865ee6508570846230e18d5" category="list-text">选择是要从现有快照还是备份创建克隆。如果不选择此选项，则 Astra Control 将根据应用程序的当前状态创建克隆。</block>
   <block id="e9ee4b284fca35cae9623535c7cc5189" category="list-text">* 克隆摘要 * ：查看有关克隆的详细信息，然后单击 * 克隆应用程序 * 。</block>
   <block id="096e19c3dc95542287248a1c1458c65e" category="inline-image-macro">克隆摘要对话框的屏幕截图，可用于查看有关原始应用程序和克隆应用程序的克隆信息。</block>
   <block id="cb15fda00d18a7bab68b70a468aebced" category="paragraph"><block ref="cb15fda00d18a7bab68b70a468aebced" category="inline-image-macro-rx" type="image"></block></block>
   <block id="7314dfe17835f41d1b36686a0ec9c765" category="paragraph">Astra Control 会根据您提供的信息克隆该应用程序。</block>
-  <block id="7fa390cadcf67cc7d7678d1a1bee8dcd" category="summary">将 Kubernetes 计算添加到 Astra Control 后，您可以在该集群上安装应用程序（在 Astra Control 之外），然后转到 Astra Control 中的应用程序页面开始管理这些应用程序。</block>
-  <block id="5fb1db6350c7c4cb8be4f2defd16ebd8" category="inline-link-macro">将 Kubernetes 计算添加到 Astra Control</block>
-  <block id="48f3309762b52ad751d6a52414ce2bbc" category="paragraph">你先请 <block ref="5121981af8ea9e30a2103798c04afc3c" category="inline-link-macro-rx"></block>，您可以在集群上安装应用程序（在 Astra Control 之外），然后转到 Astra Control 中的应用程序页面开始管理这些应用程序。</block>
   <block id="262c2c7b16c416e39567678b2dfa52c1" category="section-title">在集群上安装应用程序</block>
-  <block id="a123c551220f544c21142f2a202f2122" category="paragraph">现在，您已将计算添加到 Astra Control 中，您可以在集群上安装应用程序。默认情况下，将在新存储类上配置永久性卷。Pod 联机后，您可以使用 Astra Control 管理应用程序。</block>
   <block id="f98c5302fbe917a8c1e6bf0543c37717" category="paragraph">只有当存储位于由 Astra Control 安装的存储类上时， Astra Control 才会管理有状态应用程序。</block>
   <block id="f10cb0ea0034e1f4379ccb2c8a481c0b" category="list-text"><block ref="f10cb0ea0034e1f4379ccb2c8a481c0b" category="inline-link-macro-rx"></block></block>
   <block id="cd9652b8cc8533a7d8fe2d3ddeb81557" category="list-text"><block ref="cd9652b8cc8533a7d8fe2d3ddeb81557" category="inline-link-macro-rx"></block></block>
@@ -787,7 +728,6 @@
   <block id="1dab58ae48ea7d3a7412dc2d15bbca88" category="list-text">单击 * 应用程序 &gt; 定义自定义应用程序 * 。</block>
   <block id="221ab6bdb8b195fa84e284c4d1e0bbcd" category="list-text">在 * 定义自定义应用程序 * 对话框中，提供管理该应用程序所需的信息：</block>
   <block id="b0e41529770f4e2b9a698031a68dc524" category="list-text">* 新建应用程序 * ：输入应用程序的显示名称。</block>
-  <block id="fcaadf38738d7aaa334af7651a9fb022" category="list-text">* 计算 * ：选择应用程序所在的计算。</block>
   <block id="a5c5c227f5aa127dcfb5c741eafa8154" category="list-text">* 命名空间： * 选择应用程序的命名空间。</block>
   <block id="3d471413130b445eb41cd48f3bb83dbb" category="list-text">* 标签： * 输入标签或从以下资源中选择标签。</block>
   <block id="63e2c72b31ac421e16112ad470a0aacb" category="list-text">* 选定资源 * ：查看和管理要保护的选定 Kubernetes 资源（ Pod ，机密，永久性卷等）。</block>
@@ -808,8 +748,6 @@
   <block id="d23192e8c76eebc71f36a162aed2bd8e" category="paragraph">使用 Astra Control 可以管理应用程序。现在，您可以在 * 受管 * 选项卡中找到它。</block>
   <block id="f620b5e05e6e7eabf125361d9667f6bd" category="section-title">系统应用程序如何？</block>
   <block id="ef2baf7e1d2ac97212f51b2ab4f38c2d" category="paragraph">Astra Control 还会发现 Kubernetes 集群上运行的系统应用程序。您可以通过筛选应用程序列表来查看这些应用程序。</block>
-  <block id="719a84666783f0136da74b49218682fc" category="inline-image-macro">屏幕截图显示了单击应用程序屏幕中的所有计算时可用的显示系统应用程序选项。</block>
-  <block id="e5cba84ad5d5344017fd7f0dca8b323f" category="paragraph"><block ref="e5cba84ad5d5344017fd7f0dca8b323f" category="inline-image-macro-rx" type="image"></block></block>
   <block id="95a653c1fa5fdad4423d2f1481477043" category="paragraph">默认情况下，我们不会向您显示这些系统应用程序，因为您很少需要备份这些应用程序。</block>
   <block id="1f4796ad66f4408d4598ee58e3831b26" category="summary">您可以通过基于 SaaS 的用户界面访问 Astra 控制服务，网址为 astra.netapp.io 。</block>
   <block id="35664a514c5cd69f2629d976e1d6d8fb" category="doc">登录到 Astra 控制服务</block>
@@ -882,9 +820,6 @@
   <block id="83663a23f5309feae44e47bd2a71a050" category="list-text">单击要编辑的存储分段的 * 操作 * 列中的下拉列表。</block>
   <block id="57c51e006f567927ecd215cd958c14c6" category="list-text">选择 * 将此存储分段设置为此云的默认存储分段 * 。</block>
   <block id="04252e4e5460971d7f33943bd841f366" category="list-text">单击 * 更新 * 。</block>
-  <block id="6daac553efd993919186c3441e70c202" category="summary">单击信息板可查看应用程序，计算及其运行状况的详细视图。</block>
-  <block id="22b56e78af40278cb7c9a2cfb1987b2f" category="doc">查看应用程序和计算运行状况摘要</block>
-  <block id="eebd7981936bfbeb3ecd8e7079f9ca02" category="paragraph">单击 * 信息板 * 可查看应用程序，计算及其运行状况的详细视图。</block>
   <block id="4616f07e207a7f28d8d1077be554905d" category="paragraph">" 应用程序 " 图块可帮助您确定以下内容：</block>
   <block id="d72d4dcf59d18b1ee9c1df6e69c608ed" category="list-text">您当前管理的应用程序数量。</block>
   <block id="4aa32afb0bf1103ccc04cbd612b451da" category="list-text">这些受管应用程序是否运行正常。</block>
@@ -894,7 +829,6 @@
   <block id="dfea95b6aef7a4ec30fd5891aff128fd" category="paragraph">请注意，这些不仅仅是数字或状态，您可以从其中的每种状态深入了解。例如，如果应用程序未得到完全保护，您可以将鼠标悬停在图标上以确定哪些应用程序未得到完全保护，这包括原因。</block>
   <block id="4fb73a1dcbda9bf8030c1f81c76c723e" category="inline-image-macro">屏幕截图显示了将鼠标悬停在未完全受保护的应用程序数量上时显示的工具提示。工具提示提供了应用程序的名称以及未完全保护的原因。</block>
   <block id="143ffe33feb85f3a1668d4945c0be990" category="paragraph"><block ref="143ffe33feb85f3a1668d4945c0be990" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="ebbf07879bd8efbbdce140357b7ffb9e" category="paragraph">Compute 互动程序可提供有关计算运行状况的类似详细信息，您可以像使用应用程序一样深入了解更多详细信息。</block>
   <block id="4853ac5909bba59fd0ddaf13c9303742" category="summary">开始管理某个应用程序后， Astra Control 会提供有关该应用程序的详细信息，您可以通过这些详细信息来确定其状态，保护状态， Pod ，永久性存储等。</block>
   <block id="f8d33567c30a4afc7c2bd8cd718b0ec1" category="doc">查看应用程序的运行状况和详细信息</block>
   <block id="fa5fe34788e56d2fac1bbbcd7f415142" category="paragraph">开始管理某个应用程序后， Astra Control 会提供有关该应用程序的详细信息，使您能够确定其状态（是否运行正常），保护状态（是否在发生故障时受到全面保护）， Pod ，永久性存储等。</block>
@@ -1067,7 +1001,6 @@
   <block id="df190078d46dda49c8775fd8c265a726" category="paragraph">我们可以更轻松地在您的 Astra Control 帐户中查看有关活动的详细信息。</block>
   <block id="a2b88dc15f93478f0229d71a6d7b0e3d" category="list-text">按受管应用程序，严重性级别，用户和时间范围筛选活动列表。</block>
   <block id="ed9548dfd7d1dc91cfcaf2dcc939a60a" category="list-text">将您的 Astra Control 帐户活动下载到 CSV 文件中。</block>
-  <block id="c80c5b01fd0044e7352171bfce5bfd44" category="list-text">选择计算或应用程序后，直接从计算页面或应用程序页面查看活动。</block>
   <block id="44a04d6eee1ac7c339c8312bc5e23831" category="inline-link-macro">了解有关查看帐户活动的更多信息</block>
   <block id="0cf5c9bf114ef5773454f994588250d2" category="paragraph"><block ref="a2d0b2ac9c203d6a895e81ae74812b8d" category="inline-link-macro-rx"></block>。</block>
   <block id="be80b8547cba74eaaaa246128e9f505b" category="section-title">2021 年 3 月 1 日</block>
@@ -1084,8 +1017,6 @@
   <block id="ebb4cef6e957a3f3db21c2430ef1de91" category="list-text">现在，使用 CVS-Performance 服务类型时， Astra Control Service 会创建最小大小为 100 GiB 的永久性卷。</block>
   <block id="00d8253290bc1791dbe2e2f5445579ca" category="list-text">Astra Control Service 现在可以更快地发现应用程序。</block>
   <block id="f0823272d746557a316d9b1a6fcb7c28" category="list-text">现在，您可以自行创建和删除帐户。</block>
-  <block id="22f715fc2e4adcb0b8f5f82cf4b073c6" category="list-text">当 Astra 控制服务无法再访问 Kubernetes 计算时，我们改进了通知功能。</block>
-  <block id="b5cc07835f6b0a4117f5020965a979f4" category="paragraph">这些通知非常重要，因为 Astra Control Service 无法管理已断开连接计算的应用程序。</block>
   <block id="73980d377c8b298a2609da3a955bc2e8" category="section-title">2020 年 12 月 17 日（测试版更新）</block>
   <block id="b23449f655e47c7a7c436fa04f6dda52" category="paragraph">我们主要关注错误修复以改善您的体验，但我们还进行了一些其他显著的改进：</block>
   <block id="1a1973d9db3099685cb4f302f3120000" category="list-text">当您将第一个 Kubernetes 计算添加到 Astra Control Service 时，现在将在集群所在的地理位置创建对象存储。</block>
@@ -1125,7 +1056,6 @@
   <block id="0edbcf83e4e2aea2841ddd3b140c6d4b" category="cell">300 GiB</block>
   <block id="d0e151d8d46361050902da2abba3afe7" category="section-title">CVS-Performance 服务类型</block>
   <block id="ded2e62d320c1b78718faf094d248b64" category="paragraph">在选择存储类和创建永久性卷之前，请了解有关 CVS-Performance 服务类型的更多信息。</block>
-  <block id="7f6792a055d150feea9626f22ff0e409" category="paragraph">CVS-Performance 服务类型支持三种服务级别：标准，高级和极速。在将计算添加到 Astra Control Service 时，系统会提示您选择标准，高级或极速作为永久性卷的默认存储类。其中每个服务级别都针对不同的容量和带宽需求而设计。</block>
   <block id="697c64e48a6eafc1ca8347f5e7656773" category="paragraph">存储类的名称包括 _netapp-cvs-standard_ ， _netapp-cvs-prem_ 和 _netapp-cvs-Extreme 。</block>
   <block id="2a2fde22b2c381da69b13db7d0b36249" category="inline-link">有关这些服务级别的详细信息，请参见 Cloud Volumes Service for Google Cloud 文档</block>
   <block id="7b46717e315f810cad794637906fa86c" category="paragraph"><block ref="70b2940f4d2aaf808bc46854c2bb4fd5" category="inline-link-rx"></block>。</block>
@@ -1156,7 +1086,6 @@
   <block id="9c2af9c43f2be40978cce06350aeea0e" category="list-text">每 1 TiB 可提供多达 16 MiB/ 秒的吞吐量。</block>
   <block id="28e6e6c898b365d6eba133035d9d869e" category="inline-link-macro">了解如何设置容量池</block>
   <block id="7c3fd1201ecca4bd828067cc05c7404a" category="paragraph">这些服务级别是容量池的一个属性。您需要为要在 Kubernetes 集群中使用的每个服务级别设置一个容量池。 <block ref="9c64cfc629a7238f66dacc21bcfc31e7" category="inline-link-macro-rx"></block>。</block>
-  <block id="6c8db496a148e783d4be779772fdedb3" category="paragraph">Astra 控制服务会将这些服务级别用作永久性卷的存储类。将 Kubernetes 计算添加到 Astra Control Service 时，系统会提示您选择 "ule" ， "Premium" 或 "Standard" 作为默认存储类。存储类的名称包括 _netapp-anf-perf-ulum_ ， _netapp-anf-perf-prem_ 和 _netapp-anf-perf-standard_ 。</block>
   <block id="8421a35703a0079cbbb74ac63b5042ac" category="inline-link">有关这些服务级别的详细信息，请参见 Azure NetApp Files 文档</block>
   <block id="4081238ea81a74b395a9a94d19e16e7e" category="paragraph"><block ref="edfb291319373c6206f36cf737cf3f20" category="inline-link-rx"></block>。</block>
   <block id="1c4c03fddfe9018e07fad3e8219a1aae" category="paragraph">如上所述，每个服务级别的吞吐量均为已配置容量的 1 TiB 。这意味着，较大的卷可以提供更好的性能。因此，在配置卷时，应同时考虑容量和性能需求。</block>
@@ -1189,7 +1118,6 @@
   <block id="80f2dfe723f510691f863b5addb7b681" category="paragraph">该团队的稳定版本要求每小时创建一次快照，每天进行备份。金那利版本的发布时间较短，因此他们希望为任何标记为 `deeption=Canary` 的对象创建一个不太积极的短期保护策略。</block>
   <block id="eb4ac82a7483cd106d20a3d5cb0a554a" category="paragraph">为了避免可能的数据冲突，管理员会创建两个自定义应用程序：一个用于加那利版本，一个用于稳定版本。这样就可以使两组 Kubernetes 对象的备份，快照和克隆操作分开。</block>
   <block id="b8c0d0cd0f5072d1baf9e4b2b67b5d13" category="paragraph">管理员将集群添加到 Astra Control 后，下一步是定义自定义应用程序。为此，管理员单击应用程序页面上的超过定义自定义应用程序 * 按钮。</block>
-  <block id="3990dcd88978d7a9e0e6a16435d3db33" category="paragraph">在显示的弹出窗口中，管理员会将 `devops-cany-deployment` 设置为应用程序名称。然后，管理员在 "* 计算 "* 下拉列表中选择集群，然后从 "* 命名空间 "* 下拉列表中选择应用程序的命名空间。</block>
   <block id="44c87f3a9354775aa4010eece21b0657" category="paragraph">此时，管理员可以在 "#Labels"* 字段中键入 `deeption=Canary` ，也可以从以下资源中选择该标签。</block>
   <block id="7c29e9db76925e9b5d1cea9cef87efe6" category="paragraph">为 Canary 部署定义自定义应用程序后，管理员将重复此过程以实现稳定部署。</block>
   <block id="09fcc57d953e448e733bfa37d444c81b" category="paragraph">创建这两个自定义应用程序后，管理员可以将这些资源视为任何其他 Astra Control 应用程序。管理员可以克隆这些资源，创建备份和快照，并根据 Kubernetes 标签为每个资源组创建自定义保护策略。</block>
@@ -1233,14 +1161,11 @@
   <block id="dbfc769b7e821664736a653f70155476" category="sidebar">Astra Control —简化混合云的应用程序数据管理</block>
   <block id="a984dc296b5a86b8097f515731aee987" category="sidebar">Cloud Central 上的 Kubernetes Hub</block>
   <block id="e462fefdff91aa001d8ce5bcc11f5f5f" category="sidebar">部署应用程序</block>
-  <block id="c5e384f1c802b1bff63b63fd202681d7" category="sidebar">管理计算</block>
   <block id="58eaebf972358f1cf03d386a4ade1a0f" category="sidebar">下一步是什么？</block>
   <block id="554cfab3938e21d9270bd6b75931f96f" category="sidebar">视频</block>
   <block id="bffe9a3c9a7e00ba00a11749e022d911" category="sidebar">登录</block>
   <block id="29d8161547d1766f58a65cf9746e05fc" category="sidebar">管理和保护应用程序</block>
-  <block id="d041642ada570d9bb242a59ad36899fd" category="sidebar">查看应用程序和计算运行状况</block>
   <block id="17fabb6f435e3602c16a674e90abfbde" category="sidebar">信息板摘要</block>
-  <block id="451c4232dc41eab2c2066078ca5c18fd" category="sidebar">计算运行状况和详细信息</block>
   <block id="6381fa3198f7d01b695efd745c982751" category="sidebar">应用程序运行状况和详细信息</block>
   <block id="f20e69549fc23f9df431f9511f177e5e" category="sidebar">管理您的帐户</block>
   <block id="cf270e40d273f9e7fd7c3061729060c3" category="sidebar">培训</block>
@@ -1255,4 +1180,83 @@
   <block id="4e7b93cbf596a837185aa740bdb8b853" category="sidebar">定义自定义应用程序</block>
   <block id="decffb9e7c279510849a3e5513787dad" category="list-text">容器优化操作系统与容器</block>
   <block id="367dcd19960f9ba12d3b3fe1c84d0e33" category="list-text">单击 * 开始使用 Astra Control* 。</block>
+  <block id="3f1d9fb87fc33f3d4ce9b5dd75395968" category="doc">从 Astra Control Service 开始管理 Kubernetes 集群</block>
+  <block id="7867ff317e101e02ab5ea31a9b4ff20b" category="section-title">开始管理 Kubernetes 集群</block>
+  <block id="ea1985c42cc53ff4c48ab7df18f4954d" category="paragraph">登录到 Astra Control Service 后，第一步是开始管理集群。</block>
+  <block id="547d192fe09624d52da9312fc0e3a0e7" category="list-text">在信息板上，单击 * 管理 Kubernetes 集群 * 。</block>
+  <block id="8c40408a36679e38f149928cbae2a380" category="paragraph">按照提示添加集群。</block>
+  <block id="c1dc07e2cbb4b1eab0bbe317993aa03a" category="paragraph">Astra 控制服务使用此服务帐户发现在 Google Kubernetes Engine 中运行的集群。</block>
+  <block id="845d1da966add5110cf856d6d79e6c5b" category="list-text">* 集群 * ：选择要添加的集群。</block>
+  <block id="ee13f0c95046511a4285545e4573b88b" category="paragraph">请仔细查看 " 符合条件 " 选项卡。如果出现警告，请将鼠标悬停在警告上以确定集群是否存在问题描述。例如，它可能会标识集群没有工作节点。</block>
+  <block id="e64502cac6ddf009e109fec534b214a3" category="list-text">* 存储 * ：选择希望部署到此集群的 Kubernetes 应用程序默认使用的存储类。</block>
+  <block id="1bef3711acf2f49b145e7417dc71f2fb" category="list-text">* 审核并批准 * ：查看配置详细信息，然后单击 * 添加集群 * 。</block>
+  <block id="6ef4f81aa2771acef00b9d3e191399de" category="section-title">从 Astra Control 管理集群</block>
+  <block id="cbef4e1a90f30a40dd1adebddc2539f0" category="inline-link-macro">了解有关管理集群的更多信息</block>
+  <block id="1a1827772ddf17a8cd2d63764c59c107" category="paragraph">登录到 Astra Control Service 后，第一步是添加 Kubernetes 计算。 <block ref="ab608f55f866da4e88a269204d3ea328" category="inline-link-macro-rx"></block>。</block>
+  <block id="b3786fc8dfd9ef27e069bb2a2e954251" category="summary">现在，您已登录并将集群添加到 Astra Control ，即可开始使用 Astra Control 的应用程序数据管理功能。</block>
+  <block id="cd26568520740fb15191df367ae016f6" category="paragraph">登录并向 Astra Control 添加集群后，您便可开始使用 Astra Control 的应用程序数据管理功能了。</block>
+  <block id="d8222de1aa927c141b3a208e534e2164" category="paragraph">注册 NetApp 资源提供商。 <block ref="1a6283ac5652ee1365a6604fb78e9fc4" category="inline-xref-macro-rx"></block>。</block>
+  <block id="b6b0a5a2ff9a13b07078c6953318cc0a" category="paragraph">如果您没有 Microsoft Azure 帐户，请先注册 Microsoft Azure 。然后，通过注册 NetApp 资源提供商来访问 Azure NetApp Files 。</block>
+  <block id="cd575bca67e7ce42ef851b5892844f6b" category="list-text">如果您已有 Microsoft Azure 帐户，请跳至步骤 4 。</block>
+  <block id="396a6678444badce28754fa646d863f5" category="inline-link">Azure 订阅页面</block>
+  <block id="9e8197f491970cd76939ecc798d4f782" category="list-text">转至<block ref="6a3cf2aa4c76e983705d2b4d0c0cfeec" category="inline-link-rx"></block> 订阅 Azure 服务。</block>
+  <block id="200fbb68e8906141c429083e9bcb6fe3" category="list-text">选择一个计划并按照说明完成订阅。</block>
+  <block id="f4753a613899e6c5fa411aae13fc0512" category="list-text">登录 Azure 门户。</block>
+  <block id="8ea322965c1b00e5dc2b32f6b44cbbd2" category="list-text"><block ref="f31b4593573f8f3173b74083d2b4942a" category="inline-link-rx"></block>。</block>
+  <block id="848d6e0b4947d64e4eb9ae3543cf1cce" category="paragraph">注册后，在 Azure NetApp Files 中创建 NetApp 帐户。</block>
+  <block id="9350d2c562eac87f39f2b4d0643884b6" category="paragraph">等待大约 10 分钟，然后发现在委派子网中运行的集群。</block>
+  <block id="94eecee45e93b07731a5b0419e759fd0" category="section-title">将集群添加到 Astra Control</block>
+  <block id="369cb71e96306a90c968f5187321b61b" category="paragraph">登录后，单击 * 添加集群 * 以开始使用 Astra Control 管理集群。</block>
+  <block id="ce22cdbaf9c7b2a84e52b372cf44f51d" category="inline-link-macro">了解有关添加集群的更多信息</block>
+  <block id="83a7557c5cbaf7c83dfb60426a040f0d" category="paragraph"><block ref="08870732ab38e40fc73b515a443d25f4" category="inline-link-macro-rx"></block>。</block>
+  <block id="ad37cec77527ba2b72ebad59937415a8" category="summary">从 Astra Control 中删除不再需要管理的任何应用程序或集群。</block>
+  <block id="e22a0ea89c99a70578a25d6819a17c5e" category="doc">取消管理应用程序和集群</block>
+  <block id="206a0e294af13e6b2a4934eec5f74d10" category="section-title">停止管理集群</block>
+  <block id="d931a44781fa712ba9e029f16cdb5f49" category="paragraph">停止从 Astra Control 管理您不再需要管理的集群。作为最佳实践，我们建议您先从 Astra Control 中删除集群，然后再通过 GCP 将其删除。</block>
+  <block id="2b884629e58e22d2c3893c02ed13d791" category="list-text">此操作将停止由 Astra Control 管理集群。它不会对集群的配置进行任何更改，也不会删除集群。</block>
+  <block id="ef1d7ccac5a1ad2d54654b510a4dcfc1" category="list-text">单击 * 集群 * 。</block>
+  <block id="88db8bb208727dbcbd677087a01f8cdf" category="list-text">单击您不想再管理的集群对应的复选框。</block>
+  <block id="3100b77cf900229b1b0c63f0abafaf02" category="list-text">单击 * 操作 * 下拉列表并选择 * 取消管理 * 。</block>
+  <block id="8959adf147a74f3f1aada5bf8d708a04" category="list-text">确认要取消管理集群，然后单击 * 是，取消管理集群 * 。</block>
+  <block id="f923faa470b669c2fe512be025422520" category="paragraph">Astra Control 将停止管理集群。</block>
+  <block id="27d8eb96b8855de99b3d83a8dddb866d" category="inline-link-macro">取消管理所有应用程序和集群</block>
+  <block id="2b356495c12c2da0eb155e11f761b771" category="list-text"><block ref="7dcb035fef79797af91668373cd2575c" category="inline-link-macro-rx"></block>。</block>
+  <block id="c24664a07eb6e40162f3e96c142b0bdc" category="paragraph">您可以在 Astra Control 帐户中查看有关活动的详细信息。例如，邀请新用户时，添加集群时或创建快照时。您还可以将帐户活动导出到 CSV 文件。</block>
+  <block id="8880ee0a5839add89e472ce8439b06c6" category="list-title">查看集群帐户活动的步骤</block>
+  <block id="3b2c2afb3bf58c0d2b12336749e85096" category="list-text">单击 * 集群 * ，然后单击集群的名称。</block>
+  <block id="6f3fbb9cfba40c61792c736fe0dbe824" category="list-text">* 成员 * 可以全面管理应用程序和集群。</block>
+  <block id="d26452462c91effb2d4d1c161e5bc211" category="summary">将 Kubernetes 集群添加到 Astra Control 后，您可以查看有关集群的详细信息，例如集群的位置，工作节点，永久性卷和存储类。</block>
+  <block id="f9824e06c16a04674594e1386954134a" category="doc">查看集群的运行状况和详细信息</block>
+  <block id="ce72fc3bdbbcc8dd06f09e213ee3603a" category="list-text">单击集群名称。</block>
+  <block id="7ca36d9bd13515acbcb8ad88346aade4" category="list-text">* 存储 * ：与集群关联的永久性卷，包括存储类和状态。</block>
+  <block id="e9a91fa44ad0a8470c4f9d68ac260a95" category="list-text">* 活动 * ：与集群相关的 Astra 活动。</block>
+  <block id="7b7f698fd8966c244a92d48427deca49" category="inline-image-macro">集群的 " 概述 " 选项卡的屏幕截图。</block>
+  <block id="2b2a986bc4ac94e2c35e894b03dd3028" category="paragraph"><block ref="2b2a986bc4ac94e2c35e894b03dd3028" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0f08d4ca6b46d358b61f7caa1e8057ff" category="paragraph">随时在您的帐户中添加和删除云提供商凭据。Astra Control 使用这些凭据来发现 Kubernetes 集群，集群上的应用程序，并代表您配置资源。</block>
+  <block id="f47da5928482ec16270b3f4a38fd29b2" category="paragraph">向 Astra Control 添加凭据的最常见方法是管理集群，但您也可以从帐户页面添加凭据。然后，在管理其他 Kubernetes 集群时，您可以选择这些凭据。</block>
+  <block id="d8fcf72bfd3b99486c35821d3f2e44f4" category="paragraph">现在，您可以在向 Astra Control 添加集群时选择这些凭据。</block>
+  <block id="82f2b96e6fd3cf7bfa88172cb51c9afc" category="inline-link-macro">取消管理所有集群</block>
+  <block id="5074e7a91e497a22dc0714abe6e771dd" category="paragraph">随时从帐户中删除凭据。您只能在之后删除凭据 <block ref="7193f1b7f27bd5505d89cc1e5724fb4b" category="inline-link-macro-rx"></block>。</block>
+  <block id="658342e883e065c182f9a1f9b59425a0" category="list-text">选择应用程序的目标集群。</block>
+  <block id="e78b0b14ef505bb78e615dad8a884310" category="list-text">选择克隆的目标集群。</block>
+  <block id="ba2e9840531cec7c445b2572e7ce6428" category="summary">将 Kubernetes 集群添加到 Astra Control 后，您可以在该集群上安装应用程序（在 Astra Control 之外），然后转到 Astra Control 中的 "Apps" 页面开始管理这些应用程序。</block>
+  <block id="a41861b6e8134096202b0c039ad91943" category="inline-link-macro">将 Kubernetes 集群添加到 Astra Control</block>
+  <block id="f315eec03202b8ecf752d077368bd0f9" category="paragraph">你先请 <block ref="0506e4aae84ebec538a6578e8830bcbd" category="inline-link-macro-rx"></block>，您可以在集群上安装应用程序（在 Astra Control 之外），然后转到 Astra Control 中的应用程序页面开始管理这些应用程序。</block>
+  <block id="8fb2bbd32ce74172ced45f4d74e7a94f" category="paragraph">现在，您已将集群添加到 Astra Control 中，您可以在集群上安装应用程序。默认情况下，将在新存储类上配置永久性卷。Pod 联机后，您可以使用 Astra Control 管理应用程序。</block>
+  <block id="9dd5ba8915f4f0e871fe52c39c0b4f80" category="list-text">* 集群 * ：选择应用程序所在的集群。</block>
+  <block id="089cbe540e6c38546b11e3a1895d134c" category="inline-image-macro">屏幕截图显示了单击应用程序屏幕中的所有集群时可用的显示系统应用程序选项。</block>
+  <block id="ef2056cb7459bb7df5939f2ce15ba009" category="paragraph"><block ref="ef2056cb7459bb7df5939f2ce15ba009" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a87a7db22f3d6dc6de305b425559dfbc" category="summary">单击信息板可查看应用程序，集群及其运行状况的详细视图。</block>
+  <block id="896a3b387775ffd7575778fc2ed41da6" category="doc">查看应用程序和集群运行状况摘要</block>
+  <block id="bbc5f43e12edd3abbf78ee22da6f2478" category="paragraph">单击 * 信息板 * 可查看应用程序，集群及其运行状况的详细视图。</block>
+  <block id="e092bbb33142502c7f40032f677677d8" category="paragraph">" 集群 " 图块提供了有关集群运行状况的类似详细信息，您可以像使用应用程序一样深入查看以获取更多详细信息。</block>
+  <block id="2dd8ae234b96a1455259ff84939f6f55" category="list-text">选择集群或应用程序后，直接从集群页面或应用程序页面查看活动。</block>
+  <block id="acf41b9e4222ac75667601aca8b7f0c3" category="list-text">当 Astra 控制服务无法再访问 Kubernetes 集群时，我们改进了通知功能。</block>
+  <block id="80e17306b4086e61c6dfce35aec5d447" category="paragraph">这些通知非常重要，因为 Astra Control Service 无法管理已断开连接的集群的应用程序。</block>
+  <block id="b020426cdf7c03733c65b57cc5de3d91" category="paragraph">CVS-Performance 服务类型支持三种服务级别：标准，高级和极速。将集群添加到 Astra Control Service 时，系统会提示您选择标准，高级或极速作为永久性卷的默认存储类。其中每个服务级别都针对不同的容量和带宽需求而设计。</block>
+  <block id="d018979646e76280ddd6e2787bcce765" category="paragraph">Astra 控制服务会将这些服务级别用作永久性卷的存储类。将 Kubernetes 集群添加到 Astra Control Service 时，系统会提示您选择 "ule" ， "Premium" 或 "Standard" 作为默认存储类。存储类的名称包括 _netapp-anf-perf-ulum_ ， _netapp-anf-perf-prem_ 和 _netapp-anf-perf-standard_ 。</block>
+  <block id="10c73592e6dac790c75f1d7cefb013df" category="paragraph">在显示的弹出窗口中，管理员会将 `devops-cany-deployment` 设置为应用程序名称。然后，管理员在 "** 集群 " 下拉列表中选择集群，然后从 "* 命名空间 "* 下拉列表中选择应用程序的命名空间。</block>
+  <block id="0d9029e785d6af991e53b31b279e9aa4" category="sidebar">管理集群</block>
+  <block id="4a1ec7599c06da640a611db2ba7d41c3" category="sidebar">查看应用程序和集群运行状况</block>
+  <block id="2e901cb275fe5eac0fdd78371462a2dc" category="sidebar">集群运行状况和详细信息</block>
 </blocks>

@@ -16,7 +16,7 @@ entries:
     url: "/get-started/set-up-microsoft-azure.html"
 - title: 注册帐户
   url: "/get-started/register.html"
-- title: 管理计算
+- title: 管理集群
   url: "/get-started/add-first-cluster.html"
 - title: 下一步是什么？
   url: "/get-started/whats-next.html"

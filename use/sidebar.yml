@@ -14,11 +14,11 @@ entries:
     url: "/use/restore-apps.html"
   - title: 克隆和迁移应用程序
     url: "/use/clone-apps.html"
-- title: 查看应用程序和计算运行状况
+- title: 查看应用程序和集群运行状况
   entries:
   - title: 信息板摘要
     url: "/use/view-dashboard.html"
-  - title: 计算运行状况和详细信息
+  - title: 集群运行状况和详细信息
     url: "/use/view-clusters.html"
   - title: 应用程序运行状况和详细信息
     url: "/use/view-apps.html"
@@ -38,5 +38,5 @@ entries:
     url: "/use/manage-notifications.html"
   - title: 关闭您的帐户
     url: "/use/close-account.html"
-- title: 取消管理应用程序和计算
+- title: 取消管理应用程序和集群
   url: "/use/unmanage.html"

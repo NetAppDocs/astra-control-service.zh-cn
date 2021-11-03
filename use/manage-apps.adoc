@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: use/manage-apps.html 
 keywords: manage app, discover app, ignore app 
-summary: 将 Kubernetes 计算添加到 Astra Control 后，您可以在该集群上安装应用程序（在 Astra Control 之外），然后转到 Astra Control 中的应用程序页面开始管理这些应用程序。 
+summary: '将 Kubernetes 集群添加到 Astra Control 后，您可以在该集群上安装应用程序（在 Astra Control 之外），然后转到 Astra Control 中的 "Apps" 页面开始管理这些应用程序。' 
 ---
 = 开始管理应用程序
 :hardbreaks:
@@ -10,13 +10,13 @@ summary: 将 Kubernetes 计算添加到 Astra Control 后，您可以在该集�
 :imagesdir: ../media/use/
 
 
-你先请 link:../get-started/add-first-cluster.html["将 Kubernetes 计算添加到 Astra Control"]，您可以在集群上安装应用程序（在 Astra Control 之外），然后转到 Astra Control 中的应用程序页面开始管理这些应用程序。
+你先请 link:../get-started/add-first-cluster.html["将 Kubernetes 集群添加到 Astra Control"]，您可以在集群上安装应用程序（在 Astra Control 之外），然后转到 Astra Control 中的应用程序页面开始管理这些应用程序。
 
 
 
 == 在集群上安装应用程序
 
-现在，您已将计算添加到 Astra Control 中，您可以在集群上安装应用程序。默认情况下，将在新存储类上配置永久性卷。Pod 联机后，您可以使用 Astra Control 管理应用程序。
+现在，您已将集群添加到 Astra Control 中，您可以在集群上安装应用程序。默认情况下，将在新存储类上配置永久性卷。Pod 联机后，您可以使用 Astra Control 管理应用程序。
 
 只有当存储位于由 Astra Control 安装的存储类上时， Astra Control 才会管理有状态应用程序。
 
@@ -106,7 +106,7 @@ Astra Control 在应用程序页面顶部包含一个名为 * 定义自定义应
 . 在 * 定义自定义应用程序 * 对话框中，提供管理该应用程序所需的信息：
 +
 .. * 新建应用程序 * ：输入应用程序的显示名称。
-.. * 计算 * ：选择应用程序所在的计算。
+.. * 集群 * ：选择应用程序所在的集群。
 .. * 命名空间： * 选择应用程序的命名空间。
 .. * 标签： * 输入标签或从以下资源中选择标签。
 .. * 选定资源 * ：查看和管理要保护的选定 Kubernetes 资源（ Pod ，机密，永久性卷等）。
@@ -147,6 +147,6 @@ image:screenshot-selected-label.gif["从 \" 资源 \" 窗格中选择标签后�
 
 Astra Control 还会发现 Kubernetes 集群上运行的系统应用程序。您可以通过筛选应用程序列表来查看这些应用程序。
 
-image:screenshot-system-apps.gif["屏幕截图显示了单击应用程序屏幕中的所有计算时可用的显示系统应用程序选项。"]
+image:screenshot-system-apps.gif["屏幕截图显示了单击应用程序屏幕中的所有集群时可用的显示系统应用程序选项。"]
 
 默认情况下，我们不会向您显示这些系统应用程序，因为您很少需要备份这些应用程序。

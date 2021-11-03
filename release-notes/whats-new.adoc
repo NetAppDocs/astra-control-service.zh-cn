@@ -122,7 +122,7 @@ image:screenshot-protection-policy.gif["配置保护策略对话框的屏幕截�
 
 * 按受管应用程序，严重性级别，用户和时间范围筛选活动列表。
 * 将您的 Astra Control 帐户活动下载到 CSV 文件中。
-* 选择计算或应用程序后，直接从计算页面或应用程序页面查看活动。
+* 选择集群或应用程序后，直接从集群页面或应用程序页面查看活动。
 
 
 link:../use/view-account-activity.html["了解有关查看帐户活动的更多信息"]。
@@ -147,9 +147,9 @@ Astra Control Service 现在支持 https://cloud.google.com/solutions/partners/n
 * 现在，使用 CVS-Performance 服务类型时， Astra Control Service 会创建最小大小为 100 GiB 的永久性卷。
 * Astra Control Service 现在可以更快地发现应用程序。
 * 现在，您可以自行创建和删除帐户。
-* 当 Astra 控制服务无法再访问 Kubernetes 计算时，我们改进了通知功能。
+* 当 Astra 控制服务无法再访问 Kubernetes 集群时，我们改进了通知功能。
 +
-这些通知非常重要，因为 Astra Control Service 无法管理已断开连接计算的应用程序。
+这些通知非常重要，因为 Astra Control Service 无法管理已断开连接的集群的应用程序。
 
 
 

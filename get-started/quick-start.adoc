@@ -56,10 +56,10 @@ link:register.html["了解有关注册过程的更多信息"]。
 
 
 
-==== 将计算添加到 Astra Control
+==== 将集群添加到 Astra Control
 
 [role="quick-margin-para"]
-登录后，单击 * 添加计算 * ，开始使用 Astra Control 管理计算。
+登录后，单击 * 添加集群 * 以开始使用 Astra Control 管理集群。
 
 [role="quick-margin-para"]
-link:add-first-cluster.html["了解有关添加计算的更多信息"]。
+link:add-first-cluster.html["了解有关添加集群的更多信息"]。

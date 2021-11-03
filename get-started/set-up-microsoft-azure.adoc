@@ -30,7 +30,7 @@ summary: 在使用 Astra Control Service 管理 Azure Kubernetes Service 集群�
 ==== 对于 Azure NetApp Files ，
 
 [role="quick-margin-para"]
-请求访问 Azure NetApp Files 服务，然后注册 NetApp 资源提供商。 <<Register for Azure NetApp Files,了解有关此步骤的更多信息>>。
+注册 NetApp 资源提供商。 <<Register for Azure NetApp Files,了解有关此步骤的更多信息>>。
 
 
 
@@ -144,19 +144,21 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 
 == 对于 Azure NetApp Files ，
 
-通过提交等待列表请求来访问 Azure NetApp Files 。获得批准后，您需要注册 NetApp 资源提供商。
+如果您没有 Microsoft Azure 帐户，请先注册 Microsoft Azure 。然后，通过注册 NetApp 资源提供商来访问 Azure NetApp Files 。
 
 .步骤
-. https://aka.ms/azurenetappfiles["提交等待列表请求以访问 Azure NetApp Files"^]。
-. 等待 Azure NetApp Files 团队发送确认电子邮件。
-. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-register#resource-provider["按照 Azure NetApp Files 文档注册 NetApp 资源提供商"^]。
+. 如果您已有 Microsoft Azure 帐户，请跳至步骤 4 。
+. 转至 https://azure.microsoft.com/en-us/free/["Azure 订阅页面"^] 订阅 Azure 服务。
+. 选择一个计划并按照说明完成订阅。
+. 登录 Azure 门户。
+. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-register["按照 Azure NetApp Files 文档注册 NetApp 资源提供商"^]。
 
 
 
 
 == Create a NetApp account
 
-获得访问权限后，在 Azure NetApp Files 中创建一个 NetApp 帐户。
+注册后，在 Azure NetApp Files 中创建 NetApp 帐户。
 
 .步骤
 . https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-create-netapp-account["按照 Azure NetApp Files 文档从 Azure 门户创建 NetApp 帐户"^]。
@@ -200,7 +202,7 @@ link:../learn/azure-storage.html["详细了解 Azure NetApp Files 的服务级�
 . https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-delegate-subnet["按照 Azure NetApp Files 文档将子网委派给 Azure NetApp Files"^]。
 
 
-等待大约 10 分钟，然后发现在委派子网中运行的计算。
+等待大约 10 分钟，然后发现在委派子网中运行的集群。
 
 
 

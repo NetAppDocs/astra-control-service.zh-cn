@@ -26,7 +26,7 @@ Azure NetApp Files 支持三种服务级别：超存储，高级存储和标准�
 
 这些服务级别是容量池的一个属性。您需要为要在 Kubernetes 集群中使用的每个服务级别设置一个容量池。 link:../get-started/set-up-microsoft-azure.html["了解如何设置容量池"]。
 
-Astra 控制服务会将这些服务级别用作永久性卷的存储类。将 Kubernetes 计算添加到 Astra Control Service 时，系统会提示您选择 "ule" ， "Premium" 或 "Standard" 作为默认存储类。存储类的名称包括 _netapp-anf-perf-ulum_ ， _netapp-anf-perf-prem_ 和 _netapp-anf-perf-standard_ 。
+Astra 控制服务会将这些服务级别用作永久性卷的存储类。将 Kubernetes 集群添加到 Astra Control Service 时，系统会提示您选择 "ule" ， "Premium" 或 "Standard" 作为默认存储类。存储类的名称包括 _netapp-anf-perf-ulum_ ， _netapp-anf-perf-prem_ 和 _netapp-anf-perf-standard_ 。
 
 https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels["有关这些服务级别的详细信息，请参见 Azure NetApp Files 文档"^]。
 

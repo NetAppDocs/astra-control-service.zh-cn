@@ -47,9 +47,9 @@ video::get-started/video-create-gcp-service-account-key.mp4[width=848,height=480
 
 
 
-=== 通过 Astra Control 管理计算
+=== 从 Astra Control 管理集群
 
-登录到 Astra Control Service 后，第一步是添加 Kubernetes 计算。 link:add-first-cluster.html["了解有关管理计算的更多信息"]。
+登录到 Astra Control Service 后，第一步是添加 Kubernetes 计算。 link:add-first-cluster.html["了解有关管理集群的更多信息"]。
 
 video::get-started/video-manage-cluster.mp4[width=848,height=480]
 
