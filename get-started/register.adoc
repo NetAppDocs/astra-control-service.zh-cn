@@ -23,7 +23,7 @@ summary: Astra Control Service 集成在 NetApp Cloud Central 的身份验证服
 
 .步骤
 . https://cloud.netapp.com/astra["转到 Cloud Central 上的 Astra Control 页面"^]。
-. 单击 * 开始使用 Astra Control* 。
+. 选择 * 开始使用 Astra Control* 。
 . 选择 * 空闲计划 * 选项卡。
 +
 image:acs-registration-free-plan.png["需要选择空闲计划选项的注册表单计划选择选项卡的屏幕截图。"]
@@ -38,7 +38,7 @@ image:acs-registration-free-plan.png["需要选择空闲计划选项的注册表
 ** 在 * 业务电子邮件地址 * 字段中，如果您拥有 NetApp Cloud Central 帐户，请在此处输入您用于该帐户的电子邮件。如果您还没有 NetApp Cloud Central 帐户，请在注册到 Cloud Central 时使用您在此处输入的电子邮件地址。
 
 
-. 单击 * 提交 * 。
+. 选择 * 提交 * 。
 
 
 
@@ -48,16 +48,16 @@ image:acs-registration-free-plan.png["需要选择空闲计划选项的注册表
 如果您还没有 NetApp Cloud Central 帐户，请注册到 Cloud Central ，以便访问 Astra Control Service 和 NetApp 的其他云服务。Astra Control Service 集成在 NetApp Cloud Central 的身份验证服务中。如果您已有 Cloud Central 帐户且已完成注册，则可以访问 https://astra.netapp.io["Astra 控制服务"^] 直接使用您的 Cloud Central 凭据。
 
 
-TIP: 您可以使用单点登录使用公司目录中的凭据（联合身份）登录到 Cloud Central 。要了解更多信息，请转到 https://cloud.netapp.com/help-center["Cloud Central 帮助中心"^] 然后单击 * Cloud Central 登录选项 * 。
+TIP: 您可以使用单点登录使用公司目录中的凭据（联合身份）登录到 Cloud Central 。要了解更多信息，请转到 https://cloud.netapp.com/help-center["Cloud Central 帮助中心"^] 然后选择 * Cloud Central 登录选项 * 。
 
 .步骤
 . 转至 https://cloud.netapp.com["NetApp Cloud Central"^]。
-. 在右上角，单击 * 注册 * 。
+. 在右上角，选择 * 注册 * 。
 . 填写表单。
 +
 请确保您在此输入的电话号码和电子邮件地址与您在上述免费计划注册表中使用的电话号码和电子邮件地址相同。
 
-. 单击 * 注册 * 。
+. 选择 * 注册 * 。
 +
 
 TIP: 您在这些表单中输入的电子邮件地址是您的 NetApp Cloud Central 用户 ID 。注册新的 Astra Control Service 帐户或 Astra Control Service 管理员邀请您加入现有 Astra Control Service 帐户时，请使用此 Cloud Central 用户 ID 。
@@ -66,7 +66,7 @@ TIP: 您在这些表单中输入的电子邮件地址是您的 NetApp Cloud Cent
 image:screenshot-cloud-central-signup.gif["Cloud Central 注册页面的屏幕截图，您需要在此输入电子邮件地址，密码，名称，公司和电话号码，这是可选的。"]
 
 . 等待收到 NetApp Cloud Central 发送的电子邮件。此电子邮件来自地址 saas.support@netapp.com ，可能需要几分钟才能收到。请务必检查您的垃圾邮件文件夹。
-. 收到电子邮件后，单击电子邮件中的链接以验证您的电子邮件地址。
+. 电子邮件到达后，选择电子邮件中的链接以验证您的电子邮件地址。
 
 
 现在，您已有活动的 Cloud Central 用户登录。

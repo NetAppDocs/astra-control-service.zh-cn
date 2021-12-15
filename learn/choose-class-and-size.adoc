@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: learn/choose-class-and-size.html 
 keywords: service level, cvs, cvs-performance, storage class, storage classes, pv size, persistent volume size, volume size, bandwidth, performance 
-summary: Astra 控制服务使用适用于 Google Cloud 的 Cloud Volumes Service 作为永久性卷的后端存储。您应了解选择服务级别，存储类和永久性卷大小如何帮助您实现性能目标。 
+summary: Astra 控制服务使用适用于 Google Cloud 的 Cloud Volumes Service 作为永久性卷的存储后端。您应了解选择服务级别，存储类和永久性卷大小如何帮助您实现性能目标。 
 ---
 = GKE- 集群的服务类型，存储类和 PV 大小
 :hardbreaks:
@@ -11,13 +11,13 @@ summary: Astra 控制服务使用适用于 Google Cloud 的 Cloud Volumes Servic
 
 
 [role="lead"]
-Astra 控制服务支持将适用于 Google Cloud 的 Cloud Volumes Service 或 Google 永久性磁盘用作永久性卷的后端存储选项。
+Astra 控制服务支持将适用于 Google Cloud 的 Cloud Volumes Service 或 Google 永久性磁盘用作永久性卷的存储后端选项。
 
 
 
 == 适用于 Google Cloud 的 Cloud Volumes Service
 
-Astra 控制服务可以使用适用于 Google Cloud 的 Cloud Volumes Service 作为永久性卷的后端存储。您应了解选择服务类型，存储类和永久性卷大小如何帮助您实现性能目标。
+Astra 控制服务可以使用适用于 Google Cloud 的 Cloud Volumes Service 作为永久性卷的存储后端。您应了解选择服务类型，存储类和永久性卷大小如何帮助您实现性能目标。
 
 
 
@@ -112,7 +112,7 @@ Astra 控制服务使用最小卷大小 300 GiB 和 CVS 服务类型来配置永
 
 == Google 持久磁盘
 
-Astra Control Service 支持将 Google Persistent Disk 作为后端存储选项。此服务可提供由 Google 管理的块级存储。
+Astra Control Service 支持将 Google Persistent Disk 作为存储后端选项。此服务可提供由 Google 管理的块级存储。
 
 https://cloud.google.com/persistent-disk/["了解有关 Google 持久磁盘的更多信息"^]。
 

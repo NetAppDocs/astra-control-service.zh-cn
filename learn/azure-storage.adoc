@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: learn/azure-storage.html 
 keywords: service level, cvs, cvs-performance, storage class, storage classes, pv size, persistent volume size, volume size, bandwidth, performance 
-summary: Astra 控制服务使用 Azure NetApp Files 作为 Azure Kubernetes Service （ AKS ）集群的后端存储。您应了解选择存储类和永久性卷大小如何帮助您实现性能目标。 
+summary: Astra 控制服务使用 Azure NetApp Files 作为 Azure Kubernetes Service （ AKS ）集群的存储后端。您应了解选择存储类和永久性卷大小如何帮助您实现性能目标。 
 ---
 = AKS 集群的存储类和 PV 大小
 :hardbreaks:
@@ -11,13 +11,13 @@ summary: Astra 控制服务使用 Azure NetApp Files 作为 Azure Kubernetes Ser
 
 
 [role="lead"]
-Astra 控制服务支持将 Azure NetApp Files 或 Azure 托管磁盘作为 Azure Kubernetes Service （ AKS ）集群的后端存储。
+Astra 控制服务支持将 Azure NetApp Files 或 Azure 托管磁盘用作 Azure Kubernetes Service （ AKS ）集群的存储后端。
 
 
 
 == Azure NetApp Files
 
-Astra 控制服务支持将 Azure NetApp Files 作为 Azure Kubernetes Service （ AKS ）集群的后端存储。您应了解选择存储类和永久性卷大小如何帮助您实现性能目标。
+Astra 控制服务支持将 Azure NetApp Files 作为 Azure Kubernetes Service （ AKS ）集群的存储后端。您应了解选择存储类和永久性卷大小如何帮助您实现性能目标。
 
 
 
@@ -52,6 +52,6 @@ Astra 控制服务使用最小卷大小 100 GiB 来配置永久性卷，即使 P
 
 == Azure 受管磁盘
 
-Astra Control Service 支持将 Azure 托管磁盘作为后端存储选项。此服务可提供由 Azure 管理的块级存储。
+Astra Control Service 支持将 Azure 托管磁盘作为存储后端选项。此服务可提供由 Azure 管理的块级存储。
 
 https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["了解有关 Azure 受管磁盘的更多信息"^]。

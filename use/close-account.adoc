@@ -18,7 +18,7 @@ NOTE: 关闭帐户后， Astra Control 自动创建的分段将自动删除。
 .步骤
 . link:unmanage.html["取消管理所有应用程序和集群"]。
 . link:manage-credentials.html["从 Astra Control 中删除凭据"]。
-. 单击 * 帐户 > 计费 > 付款方式 * 。
-. 单击 * 关闭帐户 * 。
+. 选择 * 帐户 > 计费 > 付款方式 * 。
+. 选择 * 关闭帐户 * 。
 . 输入您的帐户名称并确认关闭该帐户。
 

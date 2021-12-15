@@ -18,9 +18,9 @@ NetApp 会定期更新 Astra Control Service ，为您提供新功能，增强�
 
 
 
-=== 后端存储
+=== 新的存储后端选项
 
-Astra Control Service 现在支持将 Google Persistent Disk 和 Azure 托管磁盘作为后端存储选项。
+现在， Astra Control Service 支持使用 Google Persistent Disk 和 Azure 托管磁盘作为存储后端选项。
 
 link:../get-started/set-up-google-cloud.html["设置 Google Cloud"]。。
 
@@ -96,7 +96,7 @@ link:../use/manage-buckets.html["了解有关管理存储分段的更多信息"]
 
 现在，使用 CVS 服务类型时， Astra Control Service 会创建最小大小为 300 GiB 的永久性卷。
 
-link:../learn/choose-class-and-size.html["了解 Astra 控制服务如何使用适用于 Google Cloud 的 Cloud Volumes Service 作为永久性卷的后端存储"]。
+link:../learn/choose-class-and-size.html["了解 Astra 控制服务如何使用适用于 Google Cloud 的 Cloud Volumes Service 作为永久性卷的存储后端"]。
 
 
 
@@ -175,7 +175,7 @@ link:../use/view-account-activity.html["了解有关查看帐户活动的更多�
 
 == 2021 年 3 月 1 日
 
-Astra Control Service 现在支持 https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types["_CVS_ 服务类型"^] 借助适用于 Google Cloud 的 Cloud Volumes Service 。这是对 _cvs-Performance_ 服务类型的补充。请注意， Astra 控制服务使用适用于 Google Cloud 的 Cloud Volumes Service 作为永久性卷的后端存储。
+Astra Control Service 现在支持 https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types["_CVS_ 服务类型"^] 借助适用于 Google Cloud 的 Cloud Volumes Service 。这是对 _cvs-Performance_ 服务类型的补充。请注意， Astra 控制服务使用适用于 Google Cloud 的 Cloud Volumes Service 作为永久性卷的存储后端。
 
 此增强功能意味着， Astra Control Service 现在可以管理在 _any_ 中运行的 Kubernetes 集群的应用程序数据 https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["支持 Cloud Volumes Service 的 Google 云区域"^]。
 
@@ -210,7 +210,7 @@ image:screenshot-compute-pvs.gif["配置到 Kubernetes 集群的永久性卷的�
 
 * 我们添加了一个选项，用于从现有快照或备份还原应用程序。
 +
-image:screenshot-app-restore.gif["应用程序的数据保护选项卡的屏幕截图，您可以单击操作下拉列表以选择还原应用程序。"]
+image:screenshot-app-restore.gif["应用程序的数据保护选项卡的屏幕截图，您可以在其中选择操作下拉列表以选择还原应用程序。"]
 
 * 如果删除了 Astra Control Service 正在管理的 Kubernetes 集群，则该集群现在将显示为 * 已删除 * 状态。然后，您可以从 Astra Control Service 中删除此集群。
 * 现在，帐户所有者可以修改为其他用户分配的角色。

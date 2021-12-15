@@ -33,7 +33,7 @@ NOTE: 如果您不开始使用 Google Cloud Volumes Service for Google Cloud 作
 ==== （可选）：购买适用于 Google Cloud 的 Cloud Volumes Service
 
 [role="quick-margin-para"]
-如果您计划使用适用于 Google Cloud 的 Cloud Volumes Service 作为存储后端，请转到 Google 云市场中的 NetApp Cloud Volumes Service 页面，然后单击购买。 <<Purchase Cloud Volumes Service for Google Cloud (optional),了解有关此步骤的更多信息>>。
+如果您计划使用适用于 Google Cloud 的 Cloud Volumes Service 作为存储后端，请转到 Google 云市场中的 NetApp Cloud Volumes Service 页面，然后选择购买。 <<Purchase Cloud Volumes Service for Google Cloud (optional),了解有关此步骤的更多信息>>。
 
 
 
@@ -181,10 +181,10 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 
 == 购买适用于 Google Cloud 的 Cloud Volumes Service （可选）
 
-Astra 控制服务可以使用适用于 Google Cloud 的 Cloud Volumes Service 作为永久性卷的后端存储。如果您计划使用此服务，则需要从 Google 云市场购买适用于 Google Cloud 的 Cloud Volumes Service ，以便为永久性卷开票。
+Astra 控制服务可以使用适用于 Google Cloud 的 Cloud Volumes Service 作为永久性卷的存储后端。如果您计划使用此服务，则需要从 Google 云市场购买适用于 Google Cloud 的 Cloud Volumes Service ，以便为永久性卷开票。
 
 .步骤
-. 转至 https://console.cloud.google.com/marketplace/product/endpoints/cloudvolumesgcp-api.netapp.com["NetApp Cloud Volumes Service 页面"^] 在 Google Cloud Marketplace 中，单击 * 购买 * ，然后按照提示进行操作。
+. 转至 https://console.cloud.google.com/marketplace/product/endpoints/cloudvolumesgcp-api.netapp.com["NetApp Cloud Volumes Service 页面"^] 在 Google Cloud Marketplace 中，选择 * 购买 * ，然后按照提示进行操作。
 +
 https://cloud.google.com/solutions/partners/netapp-cloud-volumes/quickstart#purchase_the_service["按照 Google Cloud 文档中的分步说明购买并启用此服务"^]。
 
@@ -234,7 +234,7 @@ Astra Control Service 使用 Google Cloud 服务帐户为您的 Kubernetes 应�
 
 
 
-如果您要使用 gcloud ，可以从 Astra Control 界面中执行相关步骤。单击 * 帐户 > 凭据 > 添加凭据 * ，然后单击 * 说明 * 。
+如果您要使用 gcloud ，可以从 Astra Control 界面中执行相关步骤。选择 * 帐户 > 凭据 > 添加凭据 * ，然后选择 * 说明 * 。
 
 如果您要使用 Google Cloud 控制台，以下视频将介绍如何从控制台创建服务帐户。
 
@@ -249,11 +249,11 @@ video::video-create-gcp-service-account.mp4[width=848,height=480]
 . 从 Google Cloud 控制台中，转到 * IAM & Admin* 并选择 * 服务帐户 * 。
 . 找到已有的 Astra 服务帐户 link:set-up-google-cloud.html#create-a-service-account["所需权限"] 然后复制此电子邮件地址。
 . 转到您的主机项目，然后选择 * IAM & Admin* > * IAM * 。
-. 单击 * 添加 * 并为服务帐户添加一个条目。
+. 选择 * 添加 * 并为服务帐户添加一个条目。
 +
 .. * 新成员 * ：输入服务帐户的电子邮件地址。
 .. * 角色 * ：选择 * 计算网络查看器 * 。
-.. 单击 * 保存 * 。
+.. 选择 * 保存 * 。
 
 
 
@@ -282,7 +282,7 @@ video::video-create-gcp-service-account-key.mp4[width=848,height=480]
 
 == 为 VPC 设置网络对等（可选）
 
-如果您计划将 Cloud Volumes Service for Google Cloud 用作后端存储服务，则最后一步是设置从 VPC 到 Cloud Volumes Service for Google Cloud 的网络对等关系。
+如果您计划将 Cloud Volumes Service for Google Cloud 用作存储后端服务，则最后一步是设置从 VPC 到 Cloud Volumes Service for Google Cloud 的网络对等关系。
 
 设置网络对等关系的最简单方法是直接从 Cloud Volumes Service 获取 gcloud 命令。在创建新文件系统时，可以从 Cloud Volumes Service 访问这些命令。
 
@@ -292,7 +292,7 @@ video::video-create-gcp-service-account-key.mp4[width=848,height=480]
 Cloud Volumes Service 提供两种服务类型： CVS 和 CVS-Performance 。 https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types["详细了解这些服务类型"^]。
 
 . https://console.cloud.google.com/netapp/cloud-volumes/volumes["转到 Google Cloud Platform 中的 Cloud Volumes"^]。
-. 在 * 卷 * 页面上，单击 * 创建 * 。
+. 在 * 卷 * 页面上，选择 * 创建 * 。
 . 在 * 服务类型 * 下，选择 * CVS* 或 * CVS-Performance* 。
 +
 您需要为 Google Cloud 区域选择正确的服务类型。这是您在步骤 1 中确定的服务类型。选择服务类型后，页面上的区域列表将更新为支持该服务类型的区域。
@@ -308,7 +308,7 @@ Cloud Volumes Service 提供两种服务类型： CVS 和 CVS-Performance 。 ht
 +
 image:gcp-peering.gif["Google Cloud 控制台的屏幕截图，其中显示一个名为 View Command How to Set up Network peering 的按钮。"]
 
-. 单击按钮以查看 network peering set up 命令。
+. 选择按钮以查看 network peering set up 命令。
 . 复制命令并在 Cloud Shell 中运行。
 +
 有关使用这些命令的详细信息，请参见 https://cloud.google.com/solutions/partners/netapp-cloud-volumes/quickstart#configure_private_services_access_and_set_up_network_peering["适用于 GCP 的 Cloud Volumes Service 的快速入门"^]。
@@ -316,7 +316,7 @@ image:gcp-peering.gif["Google Cloud 控制台的屏幕截图，其中显示一�
 +
 https://cloud.google.com/solutions/partners/netapp-cloud-volumes/setting-up-private-services-access["了解有关配置私有服务访问和设置网络对等的更多信息"^]。
 
-. 完成后，您可以单击 * 创建文件系统 * 页面上的取消。
+. 完成后，您可以在 * 创建文件系统 * 页面上选择取消。
 +
 我们开始创建此卷只是为了获取用于建立网络对等关系的命令。
 
