@@ -1,0 +1,621 @@
+---
+sidebar: sidebar 
+permalink: use/execution-hook-examples.html 
+keywords: execution hook, hook, script, examples 
+summary: 使用以下示例了解如何构建执行挂钩。 
+---
+= 执行钩示例
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+使用以下示例了解如何构建执行挂钩。您可以将这些挂钩用作模板或测试脚本。
+
+
+
+== 简单的成功示例
+
+这是一个简单的钩子示例，它成功地将消息写入标准输出和标准错误。
+
+[source]
+----
+#!/bin/sh
+
+# success_sample.sh
+#
+# A simple noop success hook script for testing purposes.
+#
+# args: None
+#
+
+
+#
+# Writes the given message to standard output
+#
+# $* - The message to write
+#
+msg() {
+    echo "$*"
+}
+
+
+#
+# Writes the given information message to standard output
+#
+# $* - The message to write
+#
+info() {
+    msg "INFO: $*"
+}
+
+#
+# Writes the given error message to standard error
+#
+# $* - The message to write
+#
+error() {
+    msg "ERROR: $*" 1>&2
+}
+
+
+#
+# main
+#
+
+# log something to stdout
+info "running success_sample.sh"
+
+# exit with 0 to indicate success
+info "exit 0"
+exit 0
+----
+
+
+== 简单成功示例（ bash 版本）
+
+这是一个简单的钩子示例，该钩子成功地将消息写入标准输出和标准错误，并写入 bash 。
+
+[source]
+----
+#!/bin/bash
+
+# success_sample.bash
+#
+# A simple noop success hook script for testing purposes.
+#
+# args: None
+
+
+#
+# Writes the given message to standard output
+#
+# $* - The message to write
+#
+msg() {
+    echo "$*"
+}
+
+
+#
+# Writes the given information message to standard output
+#
+# $* - The message to write
+#
+info() {
+    msg "INFO: $*"
+}
+
+#
+# Writes the given error message to standard error
+#
+# $* - The message to write
+#
+error() {
+    msg "ERROR: $*" 1>&2
+}
+
+
+#
+# main
+#
+
+# log something to stdout
+info "running success_sample.bash"
+
+# exit with 0 to indicate success
+info "exit 0"
+exit 0
+----
+
+
+== 简单成功示例（ zsh 版本）
+
+这是一个简单的钩子示例，该钩子成功地将消息写入标准输出和标准错误，并写入 Z shell 。
+
+[source]
+----
+#!/bin/zsh
+
+# success_sample.zsh
+#
+# A simple noop success hook script for testing purposes.
+#
+# args: None
+#
+
+
+#
+# Writes the given message to standard output
+#
+# $* - The message to write
+#
+msg() {
+    echo "$*"
+}
+
+
+#
+# Writes the given information message to standard output
+#
+# $* - The message to write
+#
+info() {
+    msg "INFO: $*"
+}
+
+#
+# Writes the given error message to standard error
+#
+# $* - The message to write
+#
+error() {
+    msg "ERROR: $*" 1>&2
+}
+
+#
+# main
+#
+
+# log something to stdout
+info "running success_sample.zsh"
+
+# exit with 0 to indicate success
+info "exit 0"
+exit 0
+----
+
+
+== 成功使用参数示例
+
+以下示例演示了如何在挂机中使用 args 。
+
+[source]
+----
+#!/bin/sh
+
+# success_sample_args.sh
+#
+# A simple success hook script with args for testing purposes.
+#
+# args: Up to two optional args that are echoed to stdout
+
+#
+# Writes the given message to standard output
+#
+# $* - The message to write
+#
+msg() {
+    echo "$*"
+}
+
+
+#
+# Writes the given information message to standard output
+#
+# $* - The message to write
+#
+info() {
+    msg "INFO: $*"
+}
+
+#
+# Writes the given error message to standard error
+#
+# $* - The message to write
+#
+error() {
+    msg "ERROR: $*" 1>&2
+}
+
+
+#
+# main
+#
+
+# log something to stdout
+info "running success_sample_args.sh"
+
+
+# collect args
+arg1=$1
+arg2=$2
+
+# output args and arg count to stdout
+info "number of args: $#"
+info "arg1 ${arg1}"
+info "arg2 ${arg2}"
+
+# exit with 0 to indicate success
+info "exit 0"
+exit 0
+----
+
+
+== 快照前 / 快照后挂钩示例
+
+以下示例演示了如何对快照前和快照后挂钩使用同一脚本。
+
+[source]
+----
+#!/bin/sh
+
+# success_sample_pre_post.sh
+#
+# A simple success hook script example with an arg for testing purposes
+# to demonstrate how the same script can be used for both a prehook and posthook
+#
+# args: [pre|post]
+
+# unique error codes for every error case
+ebase=100
+eusage=$((ebase+1))
+ebadstage=$((ebase+2))
+epre=$((ebase+3))
+epost=$((ebase+4))
+
+
+#
+# Writes the given message to standard output
+#
+# $* - The message to write
+#
+msg() {
+    echo "$*"
+}
+
+
+#
+# Writes the given information message to standard output
+#
+# $* - The message to write
+#
+info() {
+    msg "INFO: $*"
+}
+
+#
+# Writes the given error message to standard error
+#
+# $* - The message to write
+#
+error() {
+    msg "ERROR: $*" 1>&2
+}
+
+
+#
+# Would run prehook steps here
+#
+prehook() {
+    info "Running noop prehook"
+    return 0
+}
+
+#
+# Would run posthook steps here
+#
+posthook() {
+    info "Running noop posthook"
+    return 0
+}
+
+
+#
+# main
+#
+
+# check arg
+stage=$1
+if [ -z "${stage}" ]; then
+    echo "Usage: $0 <pre|post>"
+    exit ${eusage}
+fi
+
+if [ "${stage}" != "pre" ] && [ "${stage}" != "post" ]; then
+    echo "Invalid arg: ${stage}"
+    exit ${ebadstage}
+fi
+
+# log something to stdout
+info "running success_sample_pre_post.sh"
+
+if [ "${stage}" = "pre" ]; then
+    prehook
+    rc=$?
+    if [ ${rc} -ne 0 ]; then
+        error "Error during prehook"
+    fi
+fi
+
+if [ "${stage}" = "post" ]; then
+    posthook
+    rc=$?
+    if [ ${rc} -ne 0 ]; then
+        error "Error during posthook"
+    fi
+fi
+
+exit ${rc}
+----
+
+
+== 故障示例
+
+以下示例演示了如何处理挂机故障。
+
+[source]
+----
+#!/bin/sh
+
+# failure_sample_arg_exit_code.sh
+#
+# A simple failure hook script for testing purposes.
+#
+# args: [the exit code to return]
+#
+
+
+#
+# Writes the given message to standard output
+#
+# $* - The message to write
+#
+msg() {
+    echo "$*"
+}
+
+
+#
+# Writes the given information message to standard output
+#
+# $* - The message to write
+#
+info() {
+    msg "INFO: $*"
+}
+
+#
+# Writes the given error message to standard error
+#
+# $* - The message to write
+#
+error() {
+    msg "ERROR: $*" 1>&2
+}
+
+
+#
+# main
+#
+
+# log something to stdout
+info "running failure_sample_arg_exit_code.sh"
+
+argexitcode=$1
+
+# log to stderr
+error "script failed, returning exit code ${argexitcode}"
+
+# exit with specified exit code
+exit ${argexitcode}
+----
+
+
+== 详细故障示例
+
+以下示例演示了如何处理挂机故障，并提供更详细的日志记录。
+
+[source]
+----
+#!/bin/sh
+
+# failure_sample_verbose.sh
+#
+# A simple failure hook script with args for testing purposes.
+#
+# args: [The number of lines to output to stdout]
+
+
+#
+# Writes the given message to standard output
+#
+# $* - The message to write
+#
+msg() {
+    echo "$*"
+}
+
+
+#
+# Writes the given information message to standard output
+#
+# $* - The message to write
+#
+info() {
+    msg "INFO: $*"
+}
+
+#
+# Writes the given error message to standard error
+#
+# $* - The message to write
+#
+error() {
+    msg "ERROR: $*" 1>&2
+}
+
+
+#
+# main
+#
+
+# log something to stdout
+info "running failure_sample_verbose.sh"
+
+
+# output arg value to stdout
+linecount=$1
+info "line count ${linecount}"
+
+# write out a line to stdout based on line count arg
+i=1
+while [ "$i" -le ${linecount} ]; do
+    info "This is line ${i} from failure_sample_verbose.sh"
+    i=$(( i + 1 ))
+done
+
+error "exiting with error code 8"
+exit 8
+----
+
+
+== 退出代码示例失败
+
+以下示例显示了一个连接失败并显示退出代码。
+
+[source]
+----
+#!/bin/sh
+
+# failure_sample_arg_exit_code.sh
+#
+# A simple failure hook script for testing purposes.
+#
+# args: [the exit code to return]
+#
+
+
+#
+# Writes the given message to standard output
+#
+# $* - The message to write
+#
+msg() {
+    echo "$*"
+}
+
+
+#
+# Writes the given information message to standard output
+#
+# $* - The message to write
+#
+info() {
+    msg "INFO: $*"
+}
+
+#
+# Writes the given error message to standard error
+#
+# $* - The message to write
+#
+error() {
+    msg "ERROR: $*" 1>&2
+}
+
+
+#
+# main
+#
+
+# log something to stdout
+info "running failure_sample_arg_exit_code.sh"
+
+argexitcode=$1
+
+# log to stderr
+error "script failed, returning exit code ${argexitcode}"
+
+# exit with specified exit code
+exit ${argexitcode}
+----
+
+
+== 失败后成功示例
+
+以下示例显示了首次运行时发生故障的挂钩，但在第二次运行后仍会成功。
+
+[source]
+----
+#!/bin/sh
+
+# failure_then_success_sample.sh
+#
+# A hook script that fails on initial run but succeeds on second run for testing purposes.
+#
+# Helpful for testing retry logic for post hooks.
+#
+# args: None
+#
+
+#
+# Writes the given message to standard output
+#
+# $* - The message to write
+#
+msg() {
+    echo "$*"
+}
+
+
+#
+# Writes the given information message to standard output
+#
+# $* - The message to write
+#
+info() {
+    msg "INFO: $*"
+}
+
+#
+# Writes the given error message to standard error
+#
+# $* - The message to write
+#
+error() {
+    msg "ERROR: $*" 1>&2
+}
+
+
+#
+# main
+#
+
+# log something to stdout
+info "running failure_success sample.sh"
+
+
+if [ -e /tmp/hook-test.junk ] ; then
+    info "File does exist.  Removing /tmp/hook-test.junk"
+    rm /tmp/hook-test.junk
+    info "Second run so returning exit code 0"
+    exit 0
+else
+    info "File does not exist.  Creating /tmp/hook-test.junk"
+    echo "test" > /tmp/hook-test.junk
+    error "Failed first run, returning exit code 5"
+    exit 5
+fi
+----

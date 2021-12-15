@@ -17,7 +17,7 @@ summary: 设置环境后，您可以创建 Kubernetes 集群，然后将其添�
 
 == 创建 Kubernetes 集群
 
-如果您还没有集群，请创建一个满足要求的集群 link:set-up-google-cloud.html#gke-cluster-requirements["Google Kubernetes Engine （ GKEE ）的 Astra Control Service 要求"] 或 。
+如果您还没有集群，请创建一个满足要求的集群 link:set-up-google-cloud.html#gke-cluster-requirements["Google Kubernetes Engine （ GKEE ）的 Astra Control Service 要求"]， 或  。
 
 
 
@@ -27,7 +27,7 @@ summary: 设置环境后，您可以创建 Kubernetes 集群，然后将其添�
 
 .您需要什么？ #8217 ；将需要什么
 * 对于 GKE- ，您应该拥有具有所需权限的服务帐户的服务帐户密钥文件。 link:../get-started/set-up-google-cloud.html#create-a-service-account["了解如何设置服务帐户"]。
-* 对于 AKS ，您应具有包含创建服务主体时 Azure 命令行界面输出的 JSON 文件。 link:../get-started/set-up-microsoft-azure.html#create-an-azure-service-principal-2["了解如何设置服务主体"]。
+* 对于 AKS ，您应具有包含创建服务主体时 Azure 命令行界面输出的 JSON 文件。 link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2["了解如何设置服务主体"]。
 +
 如果未将 Azure 订阅 ID 添加到 JSON 文件中，您也需要此 ID 。
 
@@ -54,22 +54,27 @@ Astra 控制服务使用此服务帐户发现在 Google Kubernetes Engine 中运
 +
 请仔细查看 " 符合条件 " 选项卡。如果出现警告，请将鼠标悬停在警告上以确定集群是否存在问题描述。例如，它可能会标识集群没有工作节点。
 
++
+如果您选择的集群尚未配置 Cloud Volumes Service for Google Cloud 或 Azure NetApp Files ，则会显示一条警告。此集群未安装和配置 NetApp Trident 。如果要使用其他存储服务，您可以继续添加集群。
+
 . * 存储 * ：选择希望部署到此集群的 Kubernetes 应用程序默认使用的存储类。
 +
-每个存储类都利用 https://cloud.netapp.com/cloud-volumes-service-for-gcp["适用于 Google Cloud 的 Cloud Volumes Service"^] 或。
+列表中的每个 Cloud Volumes Service for Google Cloud 服务都会显示价格，性能和弹性信息。此时将显示每个 Azure NetApp Files 服务的性能和弹性信息。对于 Google Persistent Disk 或 Azure 受管磁盘等非 NetApp 存储类，不提供价格，性能和弹性信息。
 
 +
-** link:../learn/choose-class-and-size.html["了解 GKEE 集群的存储类"]。
-** link:../learn/azure-storage.html["了解 AKS 集群的存储类"]。
+每个存储类均可使用以下服务之一：
+
++
+** https://cloud.netapp.com/cloud-volumes-service-for-gcp["适用于 Google Cloud 的 Cloud Volumes Service"^]
+** https://cloud.google.com/persistent-disk/["Google 持久磁盘"^]
+** https://cloud.netapp.com/azure-netapp-files["Azure NetApp Files"^]
+** https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["Azure 受管磁盘"^]
++
+了解更多信息 link:../learn/choose-class-and-size.html["GKE 集群的存储类"] 和 。
+
 
 
 . * 审核并批准 * ：查看配置详细信息，然后单击 * 添加集群 * 。
-+
-image:screenshot-compute-approve.gif["屏幕截图显示了查看和批准页面，其中提供了您为受管应用选择的配置的摘要。"]
 
 
-
-以下视频显示了 GKEE 集群的每个步骤。
-
-video::video-manage-cluster.mp4[width=848,height=480]
-Astra Control Service 会为应用程序备份创建一个对象存储，在集群上创建一个管理员帐户，并设置您指定的默认存储类。此过程最多可能需要 5 分钟。
+Astra Control Service 会在符合条件的集群上创建用于应用程序备份的对象存储，在集群上创建管理员帐户，并设置您指定的默认存储类。此过程最多可能需要 5 分钟。

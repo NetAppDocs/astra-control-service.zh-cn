@@ -1,16 +1,16 @@
 ---
 sidebar: sidebar 
-permalink: get-started/set-up-microsoft-azure.html 
+permalink: get-started/set-up-microsoft-azure-with-anf.html 
 keywords: azure, azure netapp files, register, create account, create netapp account, azure subscription, azure permissions, service principal, create service principal, set up azure permissions, set up service principal, setup service principal, setup azure permissions, permissions, create capacity pool, setup capacity pool, set up capacity pool, kubernetes cluster, cluster requirements, version requirements, supported versions, supported regions, azure regions, kubernetes version, linux, image type, networking 
 summary: 在使用 Astra Control Service 管理 Azure Kubernetes Service 集群之前，需要执行一些步骤来准备 Microsoft Azure 订阅。 
 ---
-= 设置 Microsoft Azure
+= 使用 Azure NetApp Files 设置 Microsoft Azure
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/get-started/
 
 
-在使用 Astra Control Service 管理 Azure Kubernetes Service 集群之前，需要执行一些步骤来准备 Microsoft Azure 订阅。
+在使用 Astra Control Service 管理 Azure Kubernetes Service 集群之前，需要执行一些步骤来准备 Microsoft Azure 订阅。如果您计划使用 Azure NetApp Files 作为存储后端，请按照以下说明进行操作。
 
 
 
@@ -23,7 +23,14 @@ summary: 在使用 Astra Control Service 管理 Azure Kubernetes Service 集群�
 ==== 查看 Azure Kubernetes Service 的 Astra Control Service 要求
 
 [role="quick-margin-para"]
-确保集群运行状况良好且运行的是 Kubernetes 1.17 或更高版本，节点池处于联机状态并运行的是 * Linux * 等。 <<AKS cluster requirements,了解有关此步骤的更多信息>>。
+确保集群运行状况良好且运行的是 Kubernetes 1.19 或更高版本，节点池处于联机状态并运行的是 * Linux * 等。 <<Azure Kubernetes Service cluster requirements,了解有关此步骤的更多信息>>。
+
+
+
+==== 注册 Microsoft Azure
+
+[role="quick-margin-para"]
+创建 Microsoft Azure 帐户。 <<Sign up for Microsoft Azure,了解有关此步骤的更多信息>>。
 
 
 
@@ -37,7 +44,7 @@ summary: 在使用 Astra Control Service 管理 Azure Kubernetes Service 集群�
 ==== Create a NetApp account
 
 [role="quick-margin-para"]
-在 Azure 门户中，转到 Azure NetApp Files 并创建 NetApp 帐户。 <<Create a NetApp account,了解有关此步骤的更多信息>>。
+转到 Azure 门户中的 Azure NetApp Files 并创建 NetApp 帐户。 <<Create a NetApp account,了解有关此步骤的更多信息>>。
 
 
 
@@ -58,15 +65,15 @@ summary: 在使用 Astra Control Service 管理 Azure Kubernetes Service 集群�
 ==== 创建 Azure 服务主体
 
 [role="quick-margin-para"]
-创建具有 " 贡献者 " 角色的 Azure 服务主体。 <<Create an Azure service principal,阅读分步说明>>。
+创建具有 " 贡献者 " 角色的 Azure 服务主体。 <<Create an Azure service principal,了解有关此步骤的更多信息>>。
 
 
 
-== AK 集群要求
+== Azure Kubernetes Service 集群要求
 
 Kubernetes 集群必须满足以下要求，才能通过 Astra Control Service 发现和管理它。
 
-Kubernetes 版本:: 集群必须运行 Kubernetes 1.17 或更高版本。
+Kubernetes 版本:: 集群必须运行 Kubernetes 1.19 或更高版本。
 映像类型:: 所有节点池的映像类型必须为 Linux 。
 集群状态:: 集群必须运行状况良好，并且至少有一个联机辅助节点，并且没有处于故障状态的辅助节点。
 Azure 区域:: 集群必须位于 Azure NetApp Files 可用的区域。 https://azure.microsoft.com/en-us/global-infrastructure/services/?products=netapp["按区域查看 Azure 产品"^]。
@@ -82,23 +89,23 @@ vNet::
 
 +
 ** 您可以 https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-resource-limits#request-limit-increase-["提交增加限制的请求"^]。如需帮助，请联系您的 NetApp 代表。
-** 创建新的 AKS 集群时，请为此集群指定一个新网络。创建新网络后，配置新子网并将子网委派给 Azure NetApp Files 。
+** 创建新的 Amazon Kubernetes Service （ AKS ）集群时，请为此集群指定一个新网络。创建新网络后，配置新子网并将子网委派给 Azure NetApp Files 。
 
 
 
 
 --
 专用网络:: 不得在集群上启用专用网络。
-外部卷快照控制器:: 集群必须安装 CSI 卷快照控制器。默认情况下，此控制器从 K8s 1.21 版开始安装，但您需要检查运行 1.17 ， 1.18 ， 1.19 或 1.20 版的集群。 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html["了解有关用于按需卷快照的外部快照控制器的更多信息"^]。
+外部卷快照控制器:: 集群必须安装 CSI 卷快照控制器。默认情况下，此控制器从 K8s 1.21 版开始安装，但您需要检查运行 1.19 和 1.20 版的集群。 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html["了解有关用于按需卷快照的外部快照控制器的更多信息"^]。
 
 
 
 
 === 安装 CSI 卷快照控制器
 
-如要求列表中所述， Kubernetes 集群必须安装 CSI 卷快照控制器。按照以下步骤在集群上安装控制器。
+如中所述 <<Azure Kubernetes Service cluster requirements>>， Kubernetes 集群必须安装 CSI 卷快照控制器。按照以下步骤在集群上安装控制器。
 
-.适用于 K8s 1.17 ， 1.18 和 1.19 的步骤
+.K8s 1.19 版的步骤
 . 安装卷快照 CRD 。
 +
 [source, kubectl]
@@ -142,14 +149,22 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 
 
 
-== 对于 Azure NetApp Files ，
+== 注册 Microsoft Azure
 
-如果您没有 Microsoft Azure 帐户，请先注册 Microsoft Azure 。然后，通过注册 NetApp 资源提供商来访问 Azure NetApp Files 。
+如果您没有 Microsoft Azure 帐户，请先注册 Microsoft Azure 。
 
 .步骤
-. 如果您已有 Microsoft Azure 帐户，请跳至步骤 4 。
 . 转至 https://azure.microsoft.com/en-us/free/["Azure 订阅页面"^] 订阅 Azure 服务。
 . 选择一个计划并按照说明完成订阅。
+
+
+
+
+== 对于 Azure NetApp Files ，
+
+注册 NetApp 资源提供商即可访问 Azure NetApp Files 。
+
+.步骤
 . 登录 Azure 门户。
 . https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-register["按照 Azure NetApp Files 文档注册 NetApp 资源提供商"^]。
 
@@ -158,7 +173,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 
 == Create a NetApp account
 
-注册后，在 Azure NetApp Files 中创建 NetApp 帐户。
+在 Azure NetApp Files 中创建 NetApp 帐户。
 
 .步骤
 . https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-create-netapp-account["按照 Azure NetApp Files 文档从 Azure 门户创建 NetApp 帐户"^]。
@@ -219,7 +234,7 @@ Astra 控制服务需要分配有贡献者角色的 Azure 服务主体。Astra �
 .要求
 * 服务主体必须使用常规身份验证。不支持证书。
 * 必须为服务主体授予对您的 Azure 订阅的贡献者或所有者访问权限。
-* Azure 订阅必须包含 AKS 集群和您的 Azure NetApp Files 帐户。
+* 您为范围选择的订阅或资源组必须包含 AKS 集群和您的 Azure NetApp Files 帐户。
 
 
 .步骤
@@ -230,12 +245,22 @@ Astra 控制服务需要分配有贡献者角色的 Azure 服务主体。Astra �
 az configure --list-defaults
 az account list --output table
 ----
-. 创建服务主体，分配 " 贡献者 " 角色，并指定集群所在的整个订阅的范围。
+. 根据您使用的是整个订阅还是资源组，执行以下操作之一：
++
+** 创建服务主体，分配 " 贡献者 " 角色，并指定集群所在的整个订阅的范围。
 +
 [source, azurecli]
 ----
-az ad sp create-for-rbac --name http://sp-astra-service-principal --role contributor --scopes /subscriptions/SUBSCRIPTION-ID
+az ad sp create-for-rbac --name service-principal-name --role contributor --scopes /subscriptions/SUBSCRIPTION-ID
 ----
+** 创建服务主体，分配 " 贡献者 " 角色，并指定集群所在的资源组。
++
+[source, azurecli]
+----
+az ad sp create-for-rbac --name service-principal-name --role contributor --scopes /subscriptions/SUBSCRIPTION-ID/resourceGroups/RESOURCE-GROUP-ID
+----
+
+
 . 将生成的 Azure 命令行界面输出存储为 JSON 文件。
 +
 您需要提供此文件，以便 Astra Control Service 能够发现您的 AKS 集群并管理 Kubernetes 数据管理操作。 link:../use/manage-credentials.html["了解如何在 Astra Control Service 中管理凭据"]。
@@ -259,13 +284,21 @@ az ad sp create-for-rbac --name http://sp-astra-service-principal --role contrib
   "subscriptionId": "99ce999a-8c99-99d9-a9d9-99cce99f99ad"
 }
 ----
-. 可选：测试您的服务主体。
+. 可选：测试您的服务主体。根据您的服务主体使用的范围，从以下示例命令中进行选择。
 +
+.订阅范围
 [source, azurecli]
 ----
 az login --service-principal --username APP-ID-SERVICEPRINCIPAL --password PASSWORD --tenant TENANT-ID
 az group list --subscription SUBSCRIPTION-ID
 az aks list --subscription SUBSCRIPTION-ID
 az storage container list --subscription SUBSCRIPTION-ID
+----
++
+.资源组范围
+[source, azurecli]
+----
+az login --service-principal --username APP-ID-SERVICEPRINCIPAL --password PASSWORD --tenant TENANT-ID
+az aks list --subscription SUBSCRIPTION-ID --resource-group RESOURCE-GROUP-ID
 ----
 

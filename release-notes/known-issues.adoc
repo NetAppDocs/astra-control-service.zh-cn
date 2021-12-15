@@ -12,6 +12,30 @@ summary: 已知问题可确定可能妨碍您成功使用此版本产品的问�
 
 已知问题可确定可能妨碍您成功使用此版本产品的问题。
 
+以下已知问题会影响当前版本：
+
+* <<App clones fail after an application is deployed with a set storage class>>
+* <<App clones fail using a specific version of PostgreSQL>>
+* <<Backup taken from new snapshot instead of existing snapshot>>
+* <<Custom app execution hook scripts time out and cause post-snapshot scripts not to execute>>
+* <<Clone performance impacted by large persistent volumes>>
+* <<Simultaneous app restore operations in the same namespace can fail>>
+* <<Snapshots eventually begin to fail when using external-snapshotter version 4.2.0>>
+* <<Unable to stop running app backup>>
+
+
+
+
+== 使用设置的存储类部署应用程序后，应用程序克隆将失败
+
+在使用显式设置的存储类（例如， `helm install ...-set global.storageClass=netapp-cvs-perf-至 至至` ）部署应用程序后，后续克隆应用程序的尝试要求目标集群具有最初指定的存储类。将具有显式设置的存储类的应用程序克隆到没有相同存储类的集群将失败。此情况下没有恢复步骤。
+
+
+
+== 使用特定版本的 PostgreSQL 时应用程序克隆失败
+
+使用 BitNami PostgreSQL 11.5.0 图表时，同一集群中的应用程序克隆始终会失败。要成功克隆，请使用图表的早期或更高版本。
+
 
 
 == 从新快照而非现有快照进行备份
@@ -20,6 +44,32 @@ summary: 已知问题可确定可能妨碍您成功使用此版本产品的问�
 
 
 
+== 自定义应用程序执行钩脚本超时，发生原因快照后脚本不可执行
+
+如果执行挂机运行时间超过 25 分钟，则此挂机将失败，从而创建返回代码为不适用的事件日志条目。任何受影响的快照都将超时并标记为失败，并会生成一个事件日志条目，用于记录超时情况。
+
+由于执行挂钩通常会减少或完全禁用其运行的应用程序的功能，因此您应始终尽量缩短自定义执行挂钩运行所需的时间。
+
+
+
 == 克隆性能受大型永久性卷影响
 
 非常大且已使用的永久性卷的克隆可能会间歇性地速度较慢，具体取决于集群对对象存储的访问权限。如果克隆挂起且未复制任何数据超过 30 分钟，则 Astra Control 将终止克隆操作。
+
+
+
+== 同一命名空间中的同时应用程序还原操作可能会失败
+
+如果您尝试同时还原命名空间中的一个或多个单独管理的应用程序，还原操作可能会在很长时间后失败。作为临时解决策，一次还原一个应用程序。
+
+
+
+== 使用外部快照程序 4.2.0 版时，快照最终开始失败
+
+如果将 Kubernetes Snapshot-controller （也称为外部快照程序） 4.2.0 与 Kubernetes 1.20 或 1.21 结合使用，则快照最终可能会开始失败。要防止出现这种情况，请使用其他 https://kubernetes-csi.github.io/docs/snapshot-controller.html["支持的版本"^] 使用 Kubernetes 版本 1.20 或 1.21 的外部快照程序，例如 4.2.1 版。
+
+
+
+== 无法停止运行应用程序备份
+
+无法停止正在运行的备份。如果需要删除备份，请等待备份完成，然后按照中的说明进行操作 link:../use/protect-apps.html#delete-backups["删除备份"]。要删除失败的备份，请使用 link:https://docs.netapp.com/us-en/astra-automation/index.html["Astra API"^]。

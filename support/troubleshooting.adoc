@@ -1,0 +1,22 @@
+---
+sidebar: sidebar 
+permalink: support/troubleshooting.html 
+keywords: support, register for support, support registration 
+summary: 查找常见问题的故障排除提示。 
+---
+= 故障排除
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/support/
+
+
+了解如何解决您可能遇到的一些常见问题。
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Astra[]
+
+
+
+== 有关详细信息 ...
+
+* https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Astra["故障排除"^]
+

@@ -14,6 +14,50 @@ NetApp 会定期更新 Astra Control Service ，为您提供新功能，增强�
 
 
 
+== 2021 年 12 月 14 日
+
+
+
+=== 后端存储
+
+Astra Control Service 现在支持将 Google Persistent Disk 和 Azure 托管磁盘作为后端存储选项。
+
+link:../get-started/set-up-google-cloud.html["设置 Google Cloud"]。。
+
+
+
+=== 原位应用程序还原
+
+现在，您可以通过还原到同一集群和命名空间来原位还原应用程序的快照，克隆或备份。
+
+link:../use/restore-apps.html["还原应用程序"]。
+
+
+
+=== 使用执行挂钩对事件进行脚本处理
+
+Astra Control 支持自定义脚本，您可以在为应用程序创建快照之前或之后运行这些脚本。这样，您就可以执行暂停数据库事务等任务，以使数据库应用程序的快照保持一致。
+
+link:../use/manage-app-execution-hooks.html["管理应用程序执行挂钩"]。
+
+
+
+=== 操作员部署的应用程序
+
+当某些应用程序与操作员一起部署时， Astra Control 支持这些应用程序。
+
+link:../use/manage-apps.html#app-management-requirements["开始管理应用程序"]。
+
+
+
+=== 具有资源组范围的服务主体
+
+Astra 控制服务现在支持使用资源组范围的服务主体。
+
+link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2["创建 Azure 服务主体"]。
+
+
+
 == 2021 年 8 月 5 日
 
 此版本包含以下新增功能和增强功能：
@@ -74,7 +118,7 @@ link:../get-started/set-up-google-cloud.html#gke-cluster-requirements["了解有
 
 现在， Astra Control Service 可以管理 Azure Kubernetes Service （ AKS ）中受管 Kubernetes 集群上运行的应用程序。
 
-link:../get-started/set-up-microsoft-azure.html["了解如何开始使用"]。
+link:../get-started/set-up-microsoft-azure-with-anf.html["了解如何开始使用"]。
 
 
 

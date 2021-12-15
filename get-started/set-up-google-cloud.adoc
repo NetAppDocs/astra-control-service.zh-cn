@@ -13,6 +13,9 @@ summary: 在使用 Astra Control Service 管理 Google Kubernetes Engine 集群�
 在使用 Astra Control Service 管理 Google Kubernetes Engine 集群之前，需要执行一些步骤来准备 Google Cloud 项目。
 
 
+NOTE: 如果您不开始使用 Google Cloud Volumes Service for Google Cloud 作为存储后端，而打算稍后再使用，则应完成必要的步骤立即配置 Google Cloud Volumes Service for Google Cloud 。稍后创建服务帐户意味着您可能无法访问现有存储分段。
+
+
 
 == 快速开始设置 Google Cloud
 
@@ -23,14 +26,14 @@ summary: 在使用 Astra Control Service 管理 Google Kubernetes Engine 集群�
 ==== 查看 Google Kubernetes Engine 的 Astra Control Service 要求
 
 [role="quick-margin-para"]
-确保集群运行状况良好且运行的 Kubernetes 版本介于 1.18 到 1.20 之间，工作节点处于联机状态并运行容器优化操作系统或 Ubuntu 等。 <<GKE cluster requirements,了解有关此步骤的更多信息>>。
+确保集群运行状况良好且运行的 Kubernetes 版本介于 1.19 到 1.21.x 之间，并且工作节点处于联机状态并运行容器优化操作系统或 Ubuntu 等。 <<GKE cluster requirements,了解有关此步骤的更多信息>>。
 
 
 
-==== 购买适用于 Google Cloud 的 Cloud Volumes Service
+==== （可选）：购买适用于 Google Cloud 的 Cloud Volumes Service
 
 [role="quick-margin-para"]
-转到 Google 云市场中的 NetApp Cloud Volumes Service 页面，然后单击购买。 <<Purchase Cloud Volumes Service for Google Cloud,了解有关此步骤的更多信息>>。
+如果您计划使用适用于 Google Cloud 的 Cloud Volumes Service 作为存储后端，请转到 Google 云市场中的 NetApp Cloud Volumes Service 页面，然后单击购买。 <<Purchase Cloud Volumes Service for Google Cloud (optional),了解有关此步骤的更多信息>>。
 
 
 
@@ -45,6 +48,11 @@ summary: 在使用 Astra Control Service 管理 Google Kubernetes Engine 集群�
 * 服务使用情况
 * Cloud Resource Manager API
 * NetApp Cloud Volumes Service
++
+** Cloud Volumes Service for Google Cloud 必需
+** Google Persistent Disk 的可选（但建议）
+
+
 * 服务使用者管理 API
 * 服务网络 API
 * 服务管理 API
@@ -62,6 +70,11 @@ summary: 在使用 Astra Control Service 管理 Google Kubernetes Engine 集群�
 
 * Kubernetes 引擎管理员
 * NetApp Cloud Volumes 管理员
++
+** Cloud Volumes Service for Google Cloud 必需
+** Google Persistent Disk 的可选（但建议）
+
+
 * 存储管理员
 * 服务使用情况查看器
 * 计算网络查看器
@@ -79,22 +92,18 @@ summary: 在使用 Astra Control Service 管理 Google Kubernetes Engine 集群�
 
 
 
-==== 为 VPC 设置网络对等
+==== （可选）：为 VPC 设置网络对等
 
 [role="quick-margin-para"]
-设置从 VPC 到适用于 Google Cloud 的 Cloud Volumes Service 的网络对等关系。 <<Set up network peering for your VPC,按照分步说明进行操作>>。
-
-下图显示了您需要完成的每个步骤。
-
-image:diagram-google-cloud.png["一个概念图，用于显示 Google Cloud 项目，一个具有 IAM 角色的服务帐户，一个已启用的关键 API 以及对 Cloud Volumes Service for Google Cloud 的私有服务访问。"]
+如果您计划使用适用于 Google Cloud 的 Cloud Volumes Service 作为存储后端，请设置从 VPC 到适用于 Google Cloud 的 Cloud Volumes Service 的网络对等关系。 <<Set up network peering for your VPC (optional),按照分步说明进行操作>>。
 
 
 
 == GKEE 集群要求
 
-Kubernetes 集群必须满足以下要求，才能通过 Astra Control Service 发现和管理它。
+Kubernetes 集群必须满足以下要求，才能通过 Astra Control Service 发现和管理它。请注意，只有当您计划使用适用于 Google Cloud 的 Cloud Volumes Service 作为存储后端时，其中某些要求才适用。
 
-Kubernetes 版本:: 集群运行的 Kubernetes 版本必须介于 1.18 到 1.20 之间。
+Kubernetes 版本:: 集群运行的 Kubernetes 版本必须介于 1.19 到 1.21.x 之间
 映像类型::
 +
 --
@@ -105,8 +114,8 @@ Kubernetes 版本:: 集群运行的 Kubernetes 版本必须介于 1.18 到 1.20 
 
 --
 集群状态:: 集群必须运行状况良好，并且至少有一个联机辅助节点，并且没有处于故障状态的辅助节点。
-Google Cloud 地区:: 集群必须在中运行 https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc["支持 Cloud Volumes Service for Google Cloud 的 Google 云区域。"] 请注意， Astra 控制服务支持两种服务类型： CVS 和 CVS-Performance 。
-网络:: 集群必须位于与 Cloud Volumes Service for Google Cloud 建立对等关系的 VPC 中。 <<Set up network peering for your VPC,下面介绍了此步骤>>。
+Google Cloud 地区:: 如果您计划使用 Cloud Volumes Service for Google Cloud 作为存储后端，则集群必须在中运行 https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc["支持 Cloud Volumes Service for Google Cloud 的 Google 云区域。"] 请注意， Astra 控制服务支持两种服务类型： CVS 和 CVS-Performance 。作为最佳实践，您应选择一个支持适用于 Google Cloud 的 Cloud Volumes Service 的区域，即使您不将其用作存储后端也是如此。这样，如果您的性能要求发生变化，将来可以更轻松地将 Cloud Volumes Service for Google Cloud 用作存储后端。
+网络:: 如果您计划使用适用于 Google Cloud 的 Cloud Volumes Service 作为存储后端，则集群必须位于与适用于 Google Cloud 的 Cloud Volumes Service 建立对等关系的 VPC 中。 <<Set up network peering for your VPC,下面介绍了此步骤>>。
 专用集群::
 +
 --
@@ -117,13 +126,62 @@ Google Cloud 地区:: 集群必须在中运行 https://cloud.netapp.com/cloud-vo
 
 --
 GKEE 集群的操作模式:: 您应使用标准操作模式。目前尚未测试自动驾驶模式。 link:https://cloud.google.com/kubernetes-engine/docs/concepts/types-of-clusters#modes["了解有关操作模式的更多信息"^]。
+外部卷快照控制器:: 集群必须安装 CSI 卷快照控制器。默认情况下，此控制器从 K8s 1.21.x 版开始安装，但您需要检查运行 1.19 和 1.20 版的集群。 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html["了解有关用于按需卷快照的外部快照控制器的更多信息"^]。
 
 
 
 
-== 购买适用于 Google Cloud 的 Cloud Volumes Service
+=== 安装 CSI 卷快照控制器
 
-Astra 控制服务使用 Cloud Volumes Service for Google Cloud 作为永久性卷的后端存储。您需要从 Google 云市场购买适用于 Google Cloud 的 Cloud Volumes Service ，以便为永久性卷开票。
+如要求列表中所述， Kubernetes 集群必须安装 CSI 卷快照控制器。按照以下步骤在集群上安装控制器。
+
+.K8s 1.19 版的步骤
+. 安装卷快照 CRD 。
++
+[source, kubectl]
+----
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
+----
+. 创建快照控制器。
++
+如果您希望 Snapshot 控制器位于特定命名空间中，请先下载并编辑以下文件，然后再应用它们。
+
++
+[source, kubectl]
+----
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
+----
+
+
+.K8s 1.20 版的步骤
+. 安装卷快照 CRD 。
++
+[source, kubectl]
+----
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
+----
+. 创建快照控制器。
++
+如果您希望 Snapshot 控制器位于特定命名空间中，请先下载并编辑以下文件，然后再应用它们。
+
++
+[source, kubectl]
+----
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
+----
+
+
+
+
+== 购买适用于 Google Cloud 的 Cloud Volumes Service （可选）
+
+Astra 控制服务可以使用适用于 Google Cloud 的 Cloud Volumes Service 作为永久性卷的后端存储。如果您计划使用此服务，则需要从 Google 云市场购买适用于 Google Cloud 的 Cloud Volumes Service ，以便为永久性卷开票。
 
 .步骤
 . 转至 https://console.cloud.google.com/marketplace/product/endpoints/cloudvolumesgcp-api.netapp.com["NetApp Cloud Volumes Service 页面"^] 在 Google Cloud Marketplace 中，单击 * 购买 * ，然后按照提示进行操作。
@@ -146,7 +204,7 @@ https://cloud.google.com/solutions/partners/netapp-cloud-volumes/quickstart#purc
 ** 云存储 JSON API
 ** 服务使用情况
 ** Cloud Resource Manager API
-** NetApp Cloud Volumes Service
+** NetApp Cloud Volumes Service （适用于 Google Cloud 的 Cloud Volumes Service 所需）
 ** 服务使用者管理 API
 ** 服务网络 API
 ** 服务管理 API
@@ -222,9 +280,9 @@ video::video-create-gcp-service-account.mp4[width=848,height=480]
 video::video-create-gcp-service-account-key.mp4[width=848,height=480]
 
 
-== 为 VPC 设置网络对等
+== 为 VPC 设置网络对等（可选）
 
-最后一步是设置从 VPC 到适用于 Google Cloud 的 Cloud Volumes Service 的网络对等关系。
+如果您计划将 Cloud Volumes Service for Google Cloud 用作后端存储服务，则最后一步是设置从 VPC 到 Cloud Volumes Service for Google Cloud 的网络对等关系。
 
 设置网络对等关系的最简单方法是直接从 Cloud Volumes Service 获取 gcloud 命令。在创建新文件系统时，可以从 Cloud Volumes Service 访问这些命令。
 

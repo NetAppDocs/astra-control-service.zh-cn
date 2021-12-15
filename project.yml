@@ -14,7 +14,7 @@ sidebar:
   - section: release-notes
   - section: get-started
   - section: use
-  - title: 使用 REST API 实现自动化
+  - title: 使用 Astra Control REST API 实现自动化
     url: "/automation.html"
   - section: learn
   - section: solutions
@@ -41,7 +41,7 @@ homepage:
       url: "/use/clone-apps.html"
     - title: 设置计费
       url: "/use/set-up-billing.html"
-  - title: 使用 Astra REST API
+  - title: 使用 Astra Control REST API
     links:
     - title: 入门
       url: https://docs.netapp.com/us-en/astra-automation/get-started/before_get_started.html
@@ -81,8 +81,8 @@ homepage:
       url: https://cloud.netapp.com/hubfs/SB-4100-Jenkins%20(2).pdf
   - title: 博客社区
     links:
-    - title: Slack 通道
-      url: https://netapppub.slack.com/#astra
+    - title: '" 容器 " 通道可宽延'
+      url: https://netapp.io/slack
     - title: Astra Control 博客
       url: https://cloud.netapp.com/blog/topic/astra
     - title: Astra Control —简化混合云的应用程序数据管理

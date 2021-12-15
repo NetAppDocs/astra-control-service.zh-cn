@@ -11,11 +11,17 @@ summary: Astra 控制服务使用 Azure NetApp Files 作为 Azure Kubernetes Ser
 
 
 [role="lead"]
-Astra 控制服务使用 Azure NetApp Files 作为 Azure Kubernetes Service （ AKS ）集群的后端存储。您应了解选择存储类和永久性卷大小如何帮助您实现性能目标。
+Astra 控制服务支持将 Azure NetApp Files 或 Azure 托管磁盘作为 Azure Kubernetes Service （ AKS ）集群的后端存储。
 
 
 
-== 服务级别和存储类
+== Azure NetApp Files
+
+Astra 控制服务支持将 Azure NetApp Files 作为 Azure Kubernetes Service （ AKS ）集群的后端存储。您应了解选择存储类和永久性卷大小如何帮助您实现性能目标。
+
+
+
+=== 服务级别和存储类
 
 Azure NetApp Files 支持三种服务级别：超存储，高级存储和标准存储。其中每个服务级别都是为满足不同的性能需求而设计的：
 
@@ -24,7 +30,7 @@ Azure NetApp Files 支持三种服务级别：超存储，高级存储和标准�
 标准存储:: 每 1 TiB 可提供多达 16 MiB/ 秒的吞吐量。
 
 
-这些服务级别是容量池的一个属性。您需要为要在 Kubernetes 集群中使用的每个服务级别设置一个容量池。 link:../get-started/set-up-microsoft-azure.html["了解如何设置容量池"]。
+这些服务级别是容量池的一个属性。您需要为要在 Kubernetes 集群中使用的每个服务级别设置一个容量池。 link:../get-started/set-up-microsoft-azure-with-anf.html["了解如何设置容量池"]。
 
 Astra 控制服务会将这些服务级别用作永久性卷的存储类。将 Kubernetes 集群添加到 Astra Control Service 时，系统会提示您选择 "ule" ， "Premium" 或 "Standard" 作为默认存储类。存储类的名称包括 _netapp-anf-perf-ulum_ ， _netapp-anf-perf-prem_ 和 _netapp-anf-perf-standard_ 。
 
@@ -32,12 +38,20 @@ https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-ser
 
 
 
-== 永久性卷大小和性能
+=== 永久性卷大小和性能
 
 如上所述，每个服务级别的吞吐量均为已配置容量的 1 TiB 。这意味着，较大的卷可以提供更好的性能。因此，在配置卷时，应同时考虑容量和性能需求。
 
 
 
-== 最小卷大小
+=== 最小卷大小
 
 Astra 控制服务使用最小卷大小 100 GiB 来配置永久性卷，即使 PVC 要求的卷大小更小也是如此。例如，如果 Helm 图表中的 PVC 要求提供 6 GiB ，则 Astra 控制服务会自动配置 100 GiB 卷。
+
+
+
+== Azure 受管磁盘
+
+Astra Control Service 支持将 Azure 托管磁盘作为后端存储选项。此服务可提供由 Azure 管理的块级存储。
+
+https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["了解有关 Azure 受管磁盘的更多信息"^]。

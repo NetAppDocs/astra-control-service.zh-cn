@@ -18,7 +18,7 @@ summary: 只需几步即可开始使用 Astra Control Service 。
 
 . Google Cloud
 +
-** 查看 GKEE 集群要求。
+** 查看 Google Kubernetes Engine 集群要求。
 ** 从 Google 云市场购买适用于 Google Cloud 的 Cloud Volumes Service 。
 ** 启用所需的 API 。
 ** 创建服务帐户和服务帐户密钥。
@@ -30,14 +30,12 @@ link:set-up-google-cloud.html["了解有关 Google Cloud 要求的更多信息"]
 
 . Microsoft Azure
 +
-** 查看 AKS 集群要求。
-** 注册 Azure NetApp Files
-** 创建 NetApp 帐户
-** 设置容量池
-** 将子网委派给 Azure NetApp Files
-** 创建具有 " 贡献者 " 角色的 Azure 服务主体。
+** 查看您计划使用的存储后端的 Azure Kubernetes Service 集群要求。
 +
-link:set-up-microsoft-azure.html["了解有关 Microsoft Azure 要求的更多信息"]。
+link:set-up-microsoft-azure-with-anf.html["了解有关 Microsoft Azure 和 Azure NetApp Files 要求的更多信息"]。
+
++
+link:set-up-microsoft-azure-with-amd.html["了解有关 Microsoft Azure 和 Azure 托管磁盘要求的更多信息"]。
 
 
 

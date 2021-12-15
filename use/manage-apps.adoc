@@ -14,6 +14,69 @@ summary: '将 Kubernetes 集群添加到 Astra Control 后，您可以在该集�
 
 
 
+== 应用程序管理要求
+
+请考虑以下 Astra Control 应用程序管理要求：
+
+* * 许可 * ：要使用 Astra 控制中心管理应用程序，您需要获得 Astra 控制中心许可证。
+* * 命名空间 * ： Astra Control 要求一个应用程序不能跨越多个命名空间，但一个命名空间可以包含多个应用程序。
+* * 存储类 * ：如果您安装的应用程序明确设置了 StorageClass ，并且需要克隆该应用程序，则克隆操作的目标集群必须具有最初指定的 StorageClass 。将显式设置了 StorageClass 的应用程序克隆到不具有相同 StorageClass 的集群将失败。
+* * Kubernetes Resources* ：使用非 Astra Control 收集的 Kubernetes 资源的应用程序可能没有完整的应用程序数据管理功能。Astra Control 收集以下 Kubernetes 资源：
++
+** ClusterRole
+** ClusterRoleBinding.
+** 配置映射
+** 自定义资源定义
+** 自定义资源
+** DemonSet
+** 部署
+** DeploymentConfig
+** 传入
+** MutatingWebhook
+** PersistentVolumeClaim
+** POD
+** ReplicaSet
+** RoleBinding.
+** Role
+** 路由
+** 机密
+** 服务
+** ServiceAccount
+** 状态集
+** 验证 Webhook
+
+
+
+
+
+
+=== 支持的应用程序安装方法
+
+您可以使用以下方法安装要使用 Astra Control 管理的应用程序：
+
+* * 清单文件 * ： Astra Control 支持使用 kubectl 从清单文件安装的应用程序。例如：
++
+[listing]
+----
+kubectl apply -f myapp.yaml
+----
+* * Helm 3* ：如果使用 Helm 安装应用程序，则 Astra Control 需要 Helm 版本 3 。完全支持管理和克隆随 Helm 3 安装的应用程序（或从 Helm 2 升级到 Helm 3 ）。不支持管理随 Helm 2 安装的应用程序。
+* * 操作员部署的应用程序 * ： Astra Control 支持使用命名空间范围的运算符安装的应用程序。这些操作员通常采用 " 按价值传递 " 架构，而不是 " 按参考传递 " 架构。以下是一些遵循这些模式的操作员应用程序：
++
+** https://github.com/k8ssandra/cass-operator/tree/v1.7.1["Apache K8ssandra"^]
+** https://github.com/jenkinsci/kubernetes-operator["Jenkins CI"^]
+** https://github.com/percona/percona-xtradb-cluster-operator["Percona XtraDB 集群"^]
+
+
+
+
+请注意， Astra Control 可能无法克隆使用 " 按参考传递 " 架构设计的运算符（例如 CockroachDB 运算符）。在这些类型的克隆操作期间，克隆的操作员会尝试引用源操作员提供的 Kubernetes 机密，尽管在克隆过程中他们拥有自己的新机密。克隆操作可能会失败，因为 Astra Control 不知道源运算符中的 Kubernetes 密钥。
+
+
+NOTE: 操作员及其安装的应用程序必须使用相同的命名空间；您可能需要为操作员修改部署 .yaml 文件，以确保情况确实如此。
+
+
+
 == 在集群上安装应用程序
 
 现在，您已将集群添加到 Astra Control 中，您可以在集群上安装应用程序。默认情况下，将在新存储类上配置永久性卷。Pod 联机后，您可以使用 Astra Control 管理应用程序。

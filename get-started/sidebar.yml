@@ -12,8 +12,10 @@ entries:
   entries:
   - title: 设置 Google Cloud
     url: "/get-started/set-up-google-cloud.html"
-  - title: 设置 Microsoft Azure
-    url: "/get-started/set-up-microsoft-azure.html"
+  - title: 使用 Azure NetApp Files 设置 Microsoft Azure
+    url: "/get-started/set-up-microsoft-azure-with-anf.html"
+  - title: 使用 Azure 受管磁盘设置 Microsoft Azure
+    url: "/get-started/set-up-microsoft-azure-with-amd.html"
 - title: 注册帐户
   url: "/get-started/register.html"
 - title: 管理集群

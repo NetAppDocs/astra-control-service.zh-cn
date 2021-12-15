@@ -11,11 +11,17 @@ summary: Astra 控制服务使用适用于 Google Cloud 的 Cloud Volumes Servic
 
 
 [role="lead"]
-Astra 控制服务使用适用于 Google Cloud 的 Cloud Volumes Service 作为永久性卷的后端存储。您应了解选择服务类型，存储类和永久性卷大小如何帮助您实现性能目标。
+Astra 控制服务支持将适用于 Google Cloud 的 Cloud Volumes Service 或 Google 永久性磁盘用作永久性卷的后端存储选项。
 
 
 
-== 概述
+== 适用于 Google Cloud 的 Cloud Volumes Service
+
+Astra 控制服务可以使用适用于 Google Cloud 的 Cloud Volumes Service 作为永久性卷的后端存储。您应了解选择服务类型，存储类和永久性卷大小如何帮助您实现性能目标。
+
+
+
+=== 概述
 
 Cloud Volumes Service for Google Cloud 提供两种服务类型： _CVS_ 和 _CVS-Performance_ 。特定 Google Cloud 地区支持这些服务类型。 https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["转到 NetApp Cloud Central 的全球区域地图"^] 确定集群所在的 Google Cloud 区域支持的服务类型。
 
@@ -46,13 +52,13 @@ Cloud Volumes Service for Google Cloud 提供两种服务类型： _CVS_ 和 _CV
 |===
 
 
-== CVS-Performance 服务类型
+=== CVS-Performance 服务类型
 
 在选择存储类和创建永久性卷之前，请了解有关 CVS-Performance 服务类型的更多信息。
 
 
 
-=== 存储类
+==== 存储类
 
 CVS-Performance 服务类型支持三种服务级别：标准，高级和极速。将集群添加到 Astra Control Service 时，系统会提示您选择标准，高级或极速作为永久性卷的默认存储类。其中每个服务级别都针对不同的容量和带宽需求而设计。
 
@@ -62,7 +68,7 @@ https://cloud.google.com/solutions/partners/netapp-cloud-volumes/selecting-the-a
 
 
 
-=== 永久性卷大小和性能
+==== 永久性卷大小和性能
 
 https://cloud.google.com/solutions/partners/netapp-cloud-volumes/selecting-the-appropriate-service-level-and-allocated-capacity-for-netapp-cloud-volumes-service#service_levels["如 Google Cloud 文档所说明"^]，每个服务级别允许的带宽均为所配置容量的每 GiB 。这意味着，较大的卷将提供更好的性能。
 
@@ -70,19 +76,19 @@ https://cloud.google.com/solutions/partners/netapp-cloud-volumes/selecting-the-a
 
 
 
-=== 最小卷大小
+==== 最小卷大小
 
 Astra 控制服务使用最小卷大小 100 GiB 和 CVS-Performance 服务类型来配置永久性卷，即使 PVC 请求的卷大小较小也是如此。例如，如果 Helm 图表中的 PVC 要求提供 6 GiB ，则 Astra 控制服务会自动配置 100 GiB 卷。
 
 
 
-== CVS 服务类型
+=== CVS 服务类型
 
 在选择存储类和创建永久性卷之前，请了解有关 CVS 服务类型的更多信息。
 
 
 
-=== 存储类
+==== 存储类
 
 CVS 服务类型支持一个服务级别：标准。在管理支持 CVS 服务类型的区域中的集群时， Astra 控制服务会使用标准服务级别作为永久性卷的默认存储类。此存储类名为 _netapp-cvs-standard_ 。
 
@@ -90,14 +96,24 @@ https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-levels[
 
 
 
-=== 永久性卷大小和性能
+==== 永久性卷大小和性能
 
 CVS 服务类型允许的带宽是按配置容量的每 GiB 计算的。这意味着，较大的卷将提供更好的性能。
 
 
 
-=== 最小卷大小
+==== 最小卷大小
 
 Astra 控制服务使用最小卷大小 300 GiB 和 CVS 服务类型来配置永久性卷，即使 PVC 要求的卷大小更小也是如此。例如，如果请求 20 GiB ，则 Astra 控制服务会自动配置 300 GiB 卷。
 
 由于限制，如果 PVC 请求的卷介于 700-999 GiB 之间，则 Astra 控制服务会自动配置卷大小 1000 GiB 。
+
+
+
+== Google 持久磁盘
+
+Astra Control Service 支持将 Google Persistent Disk 作为后端存储选项。此服务可提供由 Google 管理的块级存储。
+
+https://cloud.google.com/persistent-disk/["了解有关 Google 持久磁盘的更多信息"^]。
+
+https://cloud.google.com/compute/docs/disks/performance["详细了解 Google 持久磁盘的不同性能级别"^]。

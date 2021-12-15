@@ -13,5 +13,6 @@ summary: Astra 控制服务可以在 Google Kubernetes Engine （ GKEE ）和 Az
 Astra 控制服务可以在 Google Kubernetes Engine （ GKEE ）和 Azure Kubernetes Service （ AKS ）中管理受管 Kubernetes 集群上运行的应用程序。
 
 * link:set-up-google-cloud.html["了解如何为 Astra Control Service 设置 Google Cloud"]。
-* link:set-up-microsoft-azure.html["了解如何为 Astra Control Service 设置 Microsoft Azure"]。
+* link:set-up-microsoft-azure-with-anf.html["了解如何使用适用于 Astra 控制服务的 Azure NetApp Files 设置 Microsoft Azure"]。
+* link:set-up-microsoft-azure-with-amd.html["了解如何使用 Azure 托管磁盘为 Astra Control Service 设置 Microsoft Azure"]。
 
