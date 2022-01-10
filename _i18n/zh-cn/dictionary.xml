@@ -225,7 +225,6 @@
   <block id="b3d3212b84b66c52decacb83fca1191d" category="paragraph">* Astra Control 是否可以管理非 NetApp 存储上的应用程序？ *</block>
   <block id="43c9583c5f06b5003113b84316a2a65c" category="paragraph">否虽然 Astra Control 可以发现使用非 NetApp 存储的应用程序，但它无法管理使用非 NetApp 存储的应用程序。</block>
   <block id="395007096dc9e0b54c09749dc82a8941" category="paragraph">* 我看不到应用程序的任何 PVC 绑定到 GCP CVS 。有什么问题？ *</block>
-  <block id="346b702c8a7dcf4fe312e988bde33c2d" category="paragraph">在成功添加到 Astra Control 后， Astra Trident 运算符会将默认存储类设置为 `NetApp-CVS-Premium` 。如果应用程序的 PVC 未绑定到适用于 Google Cloud 的 Cloud Volumes Service ，您可以执行以下几个步骤：</block>
   <block id="baaf63e6e2361e11fa4ae44151218b4e" category="list-text">运行 `kubectl get SC` 并检查默认存储类。</block>
   <block id="c5f298a00c4f6a85ebf65b24eef94a12" category="list-text">检查用于部署应用程序的 YAML 文件或 Helm 图表，查看是否定义了其他存储类。</block>
   <block id="e6a9a6e67a5ea296cdeb689bc08e952f" category="list-text">检查以确保工作节点映像类型为 Ubuntu 且 NFS 挂载成功。</block>
@@ -876,15 +875,12 @@
   <block id="b781da83c6614728483efd98a6c45ff6" category="inline-link">查看支持的 Google Cloud 区域</block>
   <block id="f2d5bc01766a2719ec00fce67740c5a0" category="cell"><block ref="f2d5bc01766a2719ec00fce67740c5a0" category="inline-link-rx"></block></block>
   <block id="571805c6be3d99c43ef1ffd83215e4e0" category="list-text">netapp-cvs-standard</block>
-  <block id="53f9d12f8764bffed2ad543cfb1443dd" category="list-text">netapp-cvs-Premium</block>
-  <block id="478ab286708b08763e2b1dbecb3bf4bc" category="list-text">netapp-cvs-至 高性能</block>
   <block id="d47eab2f6c8443515b4726d2c0efbcec" category="cell">100 GiB</block>
   <block id="51332b8fec73c1f1aeb5259d61fabb3a" category="cell">CVS</block>
   <block id="9c137190903b410a467e6b983bb71447" category="cell">具有中低端存储性能需求的应用程序</block>
   <block id="0edbcf83e4e2aea2841ddd3b140c6d4b" category="cell">300 GiB</block>
   <block id="d0e151d8d46361050902da2abba3afe7" category="section-title">CVS-Performance 服务类型</block>
   <block id="ded2e62d320c1b78718faf094d248b64" category="paragraph">在选择存储类和创建永久性卷之前，请了解有关 CVS-Performance 服务类型的更多信息。</block>
-  <block id="697c64e48a6eafc1ca8347f5e7656773" category="paragraph">存储类的名称包括 _netapp-cvs-standard_ ， _netapp-cvs-prem_ 和 _netapp-cvs-Extreme 。</block>
   <block id="2a2fde22b2c381da69b13db7d0b36249" category="inline-link">有关这些服务级别的详细信息，请参见 Cloud Volumes Service for Google Cloud 文档</block>
   <block id="7b46717e315f810cad794637906fa86c" category="paragraph"><block ref="70b2940f4d2aaf808bc46854c2bb4fd5" category="inline-link-rx"></block>。</block>
   <block id="13f98646de377b9b6685fdb302eeba4f" category="section-title">永久性卷大小和性能</block>
@@ -1491,4 +1487,9 @@
   <block id="a4a0f2c30880c790b9dbbfa923350694" category="paragraph">登录后，选择 * 添加集群 * 以开始使用 Astra Control 管理集群。</block>
   <block id="7bf41fe8e15f6028770c3b7c955f21e9" category="list-text">在信息板上，选择 * 管理 Kubernetes 集群 * 。</block>
   <block id="dfcef21edccf773f1b20e5811f0fb5ba" category="list-text">* 审核并批准 * ：查看配置详细信息并选择 * 添加集群 * 。</block>
+  <block id="4473ba991fd8b7156539cce0f9872d7f" category="list-text">netapp-cvs-perf-standard</block>
+  <block id="cb56125f258291d2d25e0797165c0e2c" category="list-text">netapp-cvs-perf-Premium</block>
+  <block id="db14445bac1925559a170b4efeb32b37" category="list-text">netapp-vcs-perf-至 高性能</block>
+  <block id="e006c2f00ca5a8ec47a9196763ca9c69" category="paragraph">存储类的名称包括 _netapp-cvs-perf-standard_ ， _netapp-cvs-perf-premium _ 和 _netapp-cvs-perf-Extreme 。</block>
+  <block id="a90204b381b7967a04938156531da34e" category="paragraph">在成功添加到 Astra Control 后， Astra Trident 运算符会将默认存储类设置为 `netapp-cvs-perf-Premium` 。如果应用程序的 PVC 未绑定到适用于 Google Cloud 的 Cloud Volumes Service ，您可以执行以下几个步骤：</block>
 </blocks>

@@ -132,7 +132,7 @@ Astra Control 不会部署应用程序。应用程序必须部署在 Astra Contr
 
 * 我看不到应用程序的任何 PVC 绑定到 GCP CVS 。有什么问题？ *
 
-在成功添加到 Astra Control 后， Astra Trident 运算符会将默认存储类设置为 `NetApp-CVS-Premium` 。如果应用程序的 PVC 未绑定到适用于 Google Cloud 的 Cloud Volumes Service ，您可以执行以下几个步骤：
+在成功添加到 Astra Control 后， Astra Trident 运算符会将默认存储类设置为 `netapp-cvs-perf-Premium` 。如果应用程序的 PVC 未绑定到适用于 Google Cloud 的 Cloud Volumes Service ，您可以执行以下几个步骤：
 
 * 运行 `kubectl get SC` 并检查默认存储类。
 * 检查用于部署应用程序的 YAML 文件或 Helm 图表，查看是否定义了其他存储类。

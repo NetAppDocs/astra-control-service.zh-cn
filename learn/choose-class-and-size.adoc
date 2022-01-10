@@ -41,9 +41,9 @@ Cloud Volumes Service for Google Cloud 提供两种服务类型： _CVS_ 和 _CV
 
 
 | CVS 性能 | 具有中到高存储性能需求的应用程序 | https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["查看支持的 Google Cloud 区域"^]  a| 
-* netapp-cvs-standard
-* netapp-cvs-Premium
-* netapp-cvs-至 高性能
+* netapp-cvs-perf-standard
+* netapp-cvs-perf-Premium
+* netapp-vcs-perf-至 高性能
 
 | 100 GiB 
 
@@ -62,7 +62,7 @@ Cloud Volumes Service for Google Cloud 提供两种服务类型： _CVS_ 和 _CV
 
 CVS-Performance 服务类型支持三种服务级别：标准，高级和极速。将集群添加到 Astra Control Service 时，系统会提示您选择标准，高级或极速作为永久性卷的默认存储类。其中每个服务级别都针对不同的容量和带宽需求而设计。
 
-存储类的名称包括 _netapp-cvs-standard_ ， _netapp-cvs-prem_ 和 _netapp-cvs-Extreme 。
+存储类的名称包括 _netapp-cvs-perf-standard_ ， _netapp-cvs-perf-premium _ 和 _netapp-cvs-perf-Extreme 。
 
 https://cloud.google.com/solutions/partners/netapp-cloud-volumes/selecting-the-appropriate-service-level-and-allocated-capacity-for-netapp-cloud-volumes-service#service_levels["有关这些服务级别的详细信息，请参见 Cloud Volumes Service for Google Cloud 文档"^]。
 
