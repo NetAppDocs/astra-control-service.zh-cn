@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: use/manage-buckets.html 
-keywords: bucket, buckets, add buckets, change default bucket, default, default bucket, remove bucket, delete bucket 
+keywords: bucket, buckets, add buckets, change default bucket, default, default bucket, remove bucket, delete bucket, S3, s3, storage, object storage, object store, store, object 
 summary: 通过添加其他存储分段以及更改云提供商中集群的默认存储分段，管理 Astra 用于备份和克隆的存储分段。 
 ---
 = 管理存储分段
@@ -22,7 +22,7 @@ summary: 通过添加其他存储分段以及更改云提供商中集群的默�
 
 Astra 控制服务会对您创建的备份和克隆使用此默认存储分段。然后，您可以使用备份在集群之间还原和克隆应用程序。
 
-如果向 Astra 控制服务添加其他分段，则可以在创建保护策略时从这些分段中进行选择。您还可以更改 Astra Control Service 用于临时备份和克隆的默认存储分段。
+如果向 Astra 控制服务添加其他分段，则可以在创建保护策略时从这些分段中进行选择。您还可以更改 Astra Control Service 用于临时备份和克隆的默认存储分段。您不能将存储分段从一个云提供商克隆到另一个云提供商。要将数据从一个云提供程序迁移到另一个云提供程序，请克隆关联的应用程序。
 
 
 TIP: 在启动备份或克隆之前， Astra 控制服务会检查目标存储分段是否可访问。
