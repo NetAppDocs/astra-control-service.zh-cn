@@ -187,6 +187,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 
 在为 Kubernetes 应用程序设置容量池时，请考虑以下事项：
 
+* 需要在将使用 Astra Control Service 管理 AKS 集群的同一 Azure 区域中创建容量池。
 * 容量池可以具有 " 超 " ， " 高级 " 或 " 标准 " 服务级别。其中每个服务级别都是为满足不同的性能需求而设计的。Astra 控制服务支持所有这三项功能。
 +
 您需要为要在 Kubernetes 集群中使用的每个服务级别设置一个容量池。
