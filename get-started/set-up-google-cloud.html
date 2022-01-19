@@ -904,7 +904,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-01-19 01:58:57 +0000">01/19/2022</time>
+    <time datetime="2022-01-19 23:39:48 +0000">01/19/2022</time>
     
   
 
@@ -1138,71 +1138,7 @@
 <dd>
 <p>您应使用标准操作模式。目前尚未测试自动驾驶模式。 <a href="https://cloud.google.com/kubernetes-engine/docs/concepts/types-of-clusters#modes" target="_blank" rel="noopener">"了解有关操作模式的更多信息"</a>。</p>
 </dd>
-<dt class="hdlist1">外部卷快照控制器</dt>
-<dd>
-<p>集群必须安装 CSI 卷快照控制器。默认情况下，此控制器从 K8s 1.21.x 版开始安装，但您需要检查运行 1.19 和 1.20 版的集群。 <a href="https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html" target="_blank" rel="noopener">"了解有关用于按需卷快照的外部快照控制器的更多信息"</a>。</p>
-</dd>
 </dl>
-</div>
-<div class="sect2">
-<h3 id="安装-csi-卷快照控制器">安装 CSI 卷快照控制器</h3>
-<div class="paragraph">
-<p>如要求列表中所述， Kubernetes 集群必须安装 CSI 卷快照控制器。按照以下步骤在集群上安装控制器。</p>
-</div>
-<div class="olist arabic">
-<div class="title">K8s 1.19 版的步骤</div>
-<ol class="arabic">
-<li>
-<p>安装卷快照 CRD 。</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-kubectl" data-lang="kubectl">kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>创建快照控制器。</p>
-<div class="paragraph">
-<p>如果您希望 Snapshot 控制器位于特定命名空间中，请先下载并编辑以下文件，然后再应用它们。</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-kubectl" data-lang="kubectl">kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="olist arabic">
-<div class="title">K8s 1.20 版的步骤</div>
-<ol class="arabic">
-<li>
-<p>安装卷快照 CRD 。</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-kubectl" data-lang="kubectl">kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>创建快照控制器。</p>
-<div class="paragraph">
-<p>如果您希望 Snapshot 控制器位于特定命名空间中，请先下载并编辑以下文件，然后再应用它们。</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-kubectl" data-lang="kubectl">kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
 </div>
 </div>
 </div>
