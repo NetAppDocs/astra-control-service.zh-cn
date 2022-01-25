@@ -11,7 +11,7 @@ summary: Astra Control 可以从快照或备份还原应用程序配置和永久
 
 
 [role="lead"]
-Astra Control 可以从快照或备份还原应用程序配置和永久性存储。永久性存储备份会从对象存储传输，因此从现有备份还原的速度最快。
+Astra Control 可以从快照或备份还原应用程序。将应用程序还原到同一集群时，从现有快照进行还原的速度会更快。您可以使用 Astra Control UI 或 https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API"^] 还原应用程序。
 
 .步骤
 . 选择 * 应用程序 * ，然后选择受管应用程序的名称。

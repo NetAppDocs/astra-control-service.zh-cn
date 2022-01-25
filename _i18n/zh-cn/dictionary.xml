@@ -306,7 +306,6 @@
   <block id="5b033d6a3f89da3c19247af957fdeadd" category="list-text">外部卷快照控制器</block>
   <block id="fe86e9ef31fe3697198ba10d3c208d2d" category="inline-link">了解有关用于按需卷快照的外部快照控制器的更多信息</block>
   <block id="4e145f73e74518d9ca0febd4ca5ceaa2" category="section-title">安装 CSI 卷快照控制器</block>
-  <block id="db152b65ba4b10857eb411555072a9e1" category="paragraph">如要求列表中所述， Kubernetes 集群必须安装 CSI 卷快照控制器。按照以下步骤在集群上安装控制器。</block>
   <block id="a618db5a33159c81598fe6712cd56a73" category="list-text">安装卷快照 CRD 。</block>
   <block id="a571dbb3887a364b4b4dcb82a5fa6ec9" category="list-text">创建快照控制器。</block>
   <block id="111a34eabb6102652811ded59098f913" category="paragraph">如果您希望 Snapshot 控制器位于特定命名空间中，请先下载并编辑以下文件，然后再应用它们。</block>
@@ -1308,7 +1307,6 @@
   <block id="a9c1db5f7ebed5ec4ad62c3c39433c12" category="list-text">集群运行的 Kubernetes 版本必须介于 1.19 到 1.21.x 之间</block>
   <block id="48c8939d34f428e6bd9fc34603223f50" category="list-text">如果您计划使用 Cloud Volumes Service for Google Cloud 作为存储后端，则集群必须在中运行<block ref="971594277e407eb62311208ac22b5d26" category="inline-link-rx"></block> 请注意， Astra 控制服务支持两种服务类型： CVS 和 CVS-Performance 。作为最佳实践，您应选择一个支持适用于 Google Cloud 的 Cloud Volumes Service 的区域，即使您不将其用作存储后端也是如此。这样，如果您的性能要求发生变化，将来可以更轻松地将 Cloud Volumes Service for Google Cloud 用作存储后端。</block>
   <block id="81bcc2f329ba39daa3b9368663a820ab" category="list-text">如果您计划使用适用于 Google Cloud 的 Cloud Volumes Service 作为存储后端，则集群必须位于与适用于 Google Cloud 的 Cloud Volumes Service 建立对等关系的 VPC 中。 <block ref="0ad607852da897e410e97f9809885c68" category="inline-xref-macro-rx"></block>。</block>
-  <block id="95f7204aa86701c28a4a0409417c5f4b" category="list-text">集群必须安装 CSI 卷快照控制器。默认情况下，此控制器从 K8s 1.21.x 版开始安装，但您需要检查运行 1.19 和 1.20 版的集群。<block ref="005ac06c428589f925784bc23d35b2d8" category="inline-link-rx"></block>。</block>
   <block id="a2d65aaa254e549a7eb41705ba526cef" category="list-title">K8s 1.19 版的步骤</block>
   <block id="6cd15e1f98ce1005310afa5d55df2b0e" category="section-title">购买适用于 Google Cloud 的 Cloud Volumes Service （可选）</block>
   <block id="4e40453871bcb6e051f205dcbae576db" category="list-text">NetApp Cloud Volumes Service （适用于 Google Cloud 的 Cloud Volumes Service 所需）</block>
@@ -1495,4 +1493,6 @@
   <block id="592d363442bda9d231d57bf7cf1b36d3" category="inline-link">使用 Astra Control REST API 创建快照和备份</block>
   <block id="33e0dd7ca49703e72c3862b5ef0de975" category="paragraph">保护策略通过按定义的计划创建快照，备份或这两者来保护应用程序。您可以选择每小时，每天，每周和每月创建快照和备份，并且可以指定要保留的副本数。如果您需要备份或快照的运行频率高于每小时一次，则可以<block ref="e7190f2033c7866ebb246bbdd297729e" category="inline-link-rx"></block>。</block>
   <block id="a656f2504cfb003f64d9d8ed061a01bd" category="list-text">需要在将使用 Astra Control Service 管理 AKS 集群的同一 Azure 区域中创建容量池。</block>
+  <block id="a4f53e5340ac3c6ab0e1234f9f27981c" category="inline-link">Astra Control API</block>
+  <block id="bd48cb856a5ec10f9c3c2bf8d62fc86c" category="paragraph">Astra Control 可以从快照或备份还原应用程序。将应用程序还原到同一集群时，从现有快照进行还原的速度会更快。您可以使用 Astra Control UI 或<block ref="c3bdc3d9b521474044010a53b984c85e" category="inline-link-rx"></block> 还原应用程序。</block>
 </blocks>
