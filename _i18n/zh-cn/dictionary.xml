@@ -260,7 +260,6 @@
   <block id="2b44ed9b51c4c625419cf0a113f71811" category="section-title">配置保护策略</block>
   <block id="1744dc29ef0e09675e5ac7f173bde507" category="inline-link-macro">了解有关配置保护策略的更多信息</block>
   <block id="46d92e94002e35426d69c1a70310fe19" category="paragraph">保护策略通过按定义的计划创建快照，备份或这两者来保护应用程序。您可以选择每小时，每天，每周和每月创建快照和备份，并且可以指定要保留的副本数。 <block ref="bdaae0813dcbbfe4400763742e737a36" category="inline-link-macro-rx"></block>。</block>
-  <block id="7c3983f18df54b898b386f7cf4a7d05c" category="doc">接下来是什么？</block>
   <block id="32139554c6b5c9a48dcfdd0ff983a9eb" category="inline-link-macro">开始管理应用程序</block>
   <block id="a4338c4608081cbe5421e9459f9dc53a" category="list-text"><block ref="a4338c4608081cbe5421e9459f9dc53a" category="inline-link-macro-rx"></block></block>
   <block id="3a2448fbaa994c176580cbee02393309" category="inline-link-macro">保护应用程序</block>
@@ -781,7 +780,6 @@
   <block id="d6e5a2fc47910c94d4b24f75464e0e3a" category="inline-link-macro">请联系支持部门以增加卷限制</block>
   <block id="02b37f08a53518073cbd56329db7a0f1" category="paragraph">每个 Google Cloud 区域最多可以有 100 个卷。如果达到此限制，则创建新克隆或卷将失败。 <block ref="32d9abae3f69ec2d093720ed5c65f7f7" category="inline-link-macro-rx"></block>。</block>
   <block id="598d6fe4e43f08217f8edf064d9a7fa3" category="summary">NetApp 会定期更新 Astra Control Service ，为您提供新功能，增强功能和错误修复。</block>
-  <block id="0059021fbd1c7648ec4ec55bd0f5aad2" category="doc">Astra 控制服务的新增功能</block>
   <block id="1ccff085c8843e6df85f630c0b00453e" category="section-title">2021 年 8 月 5 日</block>
   <block id="40bde2f2e0e627e3fcf147169d6d315a" category="paragraph">此版本包含以下新增功能和增强功能：</block>
   <block id="9c634046a90a62883b122e76b9afcef2" category="section-title">Astra 控制中心</block>
@@ -1495,4 +1493,6 @@
   <block id="a656f2504cfb003f64d9d8ed061a01bd" category="list-text">需要在将使用 Astra Control Service 管理 AKS 集群的同一 Azure 区域中创建容量池。</block>
   <block id="a4f53e5340ac3c6ab0e1234f9f27981c" category="inline-link">Astra Control API</block>
   <block id="bd48cb856a5ec10f9c3c2bf8d62fc86c" category="paragraph">Astra Control 可以从快照或备份还原应用程序。将应用程序还原到同一集群时，从现有快照进行还原的速度会更快。您可以使用 Astra Control UI 或<block ref="c3bdc3d9b521474044010a53b984c85e" category="inline-link-rx"></block> 还原应用程序。</block>
+  <block id="124d123607fcd1192a3750d68c2110f7" category="doc">Astra Control Service 的新增功能</block>
+  <block id="3f297ef15cde0668e93b35f2752fd4fd" category="doc">下一步是什么？</block>
 </blocks>

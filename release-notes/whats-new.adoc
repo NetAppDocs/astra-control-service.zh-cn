@@ -4,7 +4,7 @@ permalink: release-notes/whats-new.html
 keywords: what's new, bugs, bug fixes, new features, enhancements 
 summary: NetApp 会定期更新 Astra Control Service ，为您提供新功能，增强功能和错误修复。 
 ---
-= Astra 控制服务的新增功能
+= Astra Control Service 的新增功能
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/release-notes/

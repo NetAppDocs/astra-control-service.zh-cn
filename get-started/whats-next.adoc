@@ -4,7 +4,7 @@ permalink: get-started/whats-next.html
 keywords: get started, manage apps, manage account 
 summary: 现在，您已登录并将集群添加到 Astra Control ，即可开始使用 Astra Control 的应用程序数据管理功能。 
 ---
-= 接下来是什么？
+= 下一步是什么？
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/get-started/
