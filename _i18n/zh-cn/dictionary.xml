@@ -1243,14 +1243,12 @@
   <block id="9c92b8240042e913292ad9bea8c7698f" category="inline-link">了解有关 Azure 受管磁盘的更多信息</block>
   <block id="ff42fb74ba93da15d304e42948c0b518" category="paragraph"><block ref="250fe5b998dd6cb4de09bf9afa3806e9" category="inline-link-rx"></block>。</block>
   <block id="044c3fd83fc36378aaf291c493c120cd" category="paragraph">在使用 Astra Control Service 管理 Azure Kubernetes Service 集群之前，需要执行一些步骤来准备 Microsoft Azure 订阅。如果您计划使用 Azure 托管磁盘作为存储后端，请按照以下说明进行操作。</block>
-  <block id="2c2ded73ed7719aa3f82dedb9fcccda6" category="paragraph">确保集群运行状况良好且运行的是 Kubernetes 1.19 或更高版本，节点池处于联机状态并运行的是 * Linux * 等。 <block ref="9395dc33116d67c7ef7cce28cc804b43" category="inline-xref-macro-rx"></block>。</block>
   <block id="8aa1542b70e952ef5856c8311f2c94f8" category="section-title">注册 Microsoft Azure</block>
   <block id="2b79be68afb828e7eb71cb1b196b7111" category="paragraph">创建 Microsoft Azure 帐户。 <block ref="581a71540631d8d2bdd05d7929716426" category="inline-xref-macro-rx"></block>。</block>
   <block id="ff995866d25bc69c6a4d1dd3ab5c9c3d" category="paragraph">创建具有 " 贡献者 " 角色的 Azure 服务主体。 <block ref="a379c52bbe48fbf08d1c2a7e32e5d3a9" category="inline-xref-macro-rx"></block>。</block>
   <block id="5681ad899d1f22587d8d342af5438aa3" category="section-title">配置容器存储接口（ CSI ）驱动程序详细信息</block>
   <block id="739d0375408beba597cfd0a12ccae908" category="paragraph">您需要配置 Azure 订阅和集群以使用 CSI 驱动程序。 <block ref="a971cfcc29ff09bfcb84183e7004bd4b" category="inline-xref-macro-rx"></block>。</block>
   <block id="d8b41394afbf9355465b26daa3b4af72" category="section-title">Azure Kubernetes Service 集群要求</block>
-  <block id="eff252d1819f3f2a4c09f10dd2d087ff" category="list-text">集群必须运行 Kubernetes 1.19 或更高版本。</block>
   <block id="35878b9641dbe3802b4757bd1077fbb8" category="list-text">作为最佳实践，您应选择一个支持 Azure NetApp Files 的区域，即使您不将其用作存储后端也是如此。这样，如果性能要求发生变化，将来可以更轻松地将 Azure NetApp Files 用作存储后端。<block ref="044693425a398e22f4ef06b4ccda4a31" category="inline-link-rx"></block>。</block>
   <block id="7d653ff1ba76f45cb793405b89658cd9" category="list-text">集群必须安装 CSI 卷快照控制器。默认情况下，此控制器从 K8s 1.21 版开始安装，但您需要检查运行 1.19 和 1.20 版的集群。<block ref="005ac06c428589f925784bc23d35b2d8" category="inline-link-rx"></block>。</block>
   <block id="f275a504c54ea3a90abc00bfebfe7a7a" category="list-text">CSI 驱动程序</block>
@@ -1495,4 +1493,6 @@
   <block id="bd48cb856a5ec10f9c3c2bf8d62fc86c" category="paragraph">Astra Control 可以从快照或备份还原应用程序。将应用程序还原到同一集群时，从现有快照进行还原的速度会更快。您可以使用 Astra Control UI 或<block ref="c3bdc3d9b521474044010a53b984c85e" category="inline-link-rx"></block> 还原应用程序。</block>
   <block id="124d123607fcd1192a3750d68c2110f7" category="doc">Astra Control Service 的新增功能</block>
   <block id="3f297ef15cde0668e93b35f2752fd4fd" category="doc">下一步是什么？</block>
+  <block id="335ec88aa40e31324e3514bfa4d50447" category="paragraph">确保集群运行状况良好且运行的是 Kubernetes 1.19 至 1.21.x 版，节点池已联机并运行的是 * Linux * 等。 <block ref="9395dc33116d67c7ef7cce28cc804b43" category="inline-xref-macro-rx"></block>。</block>
+  <block id="921d48280175d3cba9bde766993561d2" category="list-text">集群必须运行 Kubernetes 1.19 至 1.21.x 版</block>
 </blocks>
