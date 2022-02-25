@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: use/view-account-activity.html 
+permalink: use/monitor-account-activity.html 
 keywords: activity, log, activities, download log, download csv, csv 
 summary: 您可以在 Astra Control 帐户中查看有关活动的详细信息。例如，邀请新用户时，添加计算时或创建快照时。您还可以将帐户活动导出到 CSV 文件。 
 ---
-= 查看帐户活动
+= 监控帐户活动
 :hardbreaks:
 :icons: font
 :imagesdir: ../media/use/
@@ -13,18 +13,27 @@ summary: 您可以在 Astra Control 帐户中查看有关活动的详细信息�
 [role="lead"]
 您可以在 Astra Control 帐户中查看有关活动的详细信息。例如，邀请新用户时，添加集群时或创建快照时。您还可以将帐户活动导出到 CSV 文件。
 
-.在 Astra Control 中查看所有帐户活动的步骤
+.在 Astra Control 中查看所有帐户活动
 . 选择 * 活动 * 。
 . 使用筛选器缩小活动列表的范围，或者使用搜索框准确查找所需内容。
 . 选择 * 导出到 CSV* 将您的帐户活动下载到 CSV 文件。
 
 
-.查看特定应用程序的帐户活动的步骤
+.查看特定应用程序的帐户活动
 . 选择 * 应用程序 * ，然后选择应用程序的名称。
 . 选择 * 活动 * 。
 
 
-.查看集群帐户活动的步骤
+.查看集群的帐户活动
 . 选择 * 集群 * ，然后选择集群的名称。
 . 选择 * 活动 * 。
+
+
+.查看事件的可能操作
+. 选择 * 活动 * 。
+. 选择需要关注的事件。
+. 选择 * 执行操作 * 下拉选项。
++
+从此列表中，您可以查看可能采取的更正操作，查看与问题描述 相关的文档，并获得支持以帮助解决问题描述 。
+
 

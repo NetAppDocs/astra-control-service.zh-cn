@@ -37,8 +37,8 @@ entries:
     url: "/use/manage-users.html"
   - title: 管理云提供商凭据
     url: "/use/manage-credentials.html"
-  - title: 查看帐户活动
-    url: "/use/view-account-activity.html"
+  - title: 监控帐户活动
+    url: "/use/monitor-account-activity.html"
   - title: 管理通知
     url: "/use/manage-notifications.html"
   - title: 关闭您的帐户

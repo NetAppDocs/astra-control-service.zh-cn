@@ -437,10 +437,7 @@
   <block id="1e7a041da379048b21a55b1ea2d128df" category="list-text"><block ref="879194b01b570dff0dfd634e5021bfcd" category="inline-link-macro-rx"></block>。</block>
   <block id="5149827aee9a1b3679a5a603cac08040" category="list-text">输入您的帐户名称并确认关闭该帐户。</block>
   <block id="84de49bc066902d3d70c7241951d032d" category="summary">您可以在 Astra Control 帐户中查看有关活动的详细信息。例如，邀请新用户时，添加计算时或创建快照时。您还可以将帐户活动导出到 CSV 文件。</block>
-  <block id="c15b88e97cd76ab0758a6b1564baf469" category="doc">查看帐户活动</block>
-  <block id="211c3b7674a50de37dfbfef385156740" category="list-title">在 Astra Control 中查看所有帐户活动的步骤</block>
   <block id="da7c0d21607588079696a48048b93c4f" category="list-text">使用筛选器缩小活动列表的范围，或者使用搜索框准确查找所需内容。</block>
-  <block id="fea3fe6a4c68375faa8ac65f03e247b0" category="list-title">查看特定应用程序的帐户活动的步骤</block>
   <block id="d95c69c43af6837af2e7b735550c3894" category="summary">邀请用户加入您的 Astra Control 帐户并删除不应再访问您的帐户的用户。</block>
   <block id="42fea43246af353c517277bafa8f94d3" category="doc">邀请和删除用户</block>
   <block id="9a0112e9326bfb2ebbe8296f89fd4be9" category="paragraph">邀请用户加入您的 Astra Control 帐户，并删除不应再访问此帐户的用户。</block>
@@ -1023,7 +1020,6 @@
   <block id="27d8eb96b8855de99b3d83a8dddb866d" category="inline-link-macro">取消管理所有应用程序和集群</block>
   <block id="2b356495c12c2da0eb155e11f761b771" category="list-text"><block ref="7dcb035fef79797af91668373cd2575c" category="inline-link-macro-rx"></block>。</block>
   <block id="c24664a07eb6e40162f3e96c142b0bdc" category="paragraph">您可以在 Astra Control 帐户中查看有关活动的详细信息。例如，邀请新用户时，添加集群时或创建快照时。您还可以将帐户活动导出到 CSV 文件。</block>
-  <block id="8880ee0a5839add89e472ce8439b06c6" category="list-title">查看集群帐户活动的步骤</block>
   <block id="6f3fbb9cfba40c61792c736fe0dbe824" category="list-text">* 成员 * 可以全面管理应用程序和集群。</block>
   <block id="d26452462c91effb2d4d1c161e5bc211" category="summary">将 Kubernetes 集群添加到 Astra Control 后，您可以查看有关集群的详细信息，例如集群的位置，工作节点，永久性卷和存储类。</block>
   <block id="f9824e06c16a04674594e1386954134a" category="doc">查看集群的运行状况和详细信息</block>
@@ -1495,4 +1491,12 @@
   <block id="3f297ef15cde0668e93b35f2752fd4fd" category="doc">下一步是什么？</block>
   <block id="335ec88aa40e31324e3514bfa4d50447" category="paragraph">确保集群运行状况良好且运行的是 Kubernetes 1.19 至 1.21.x 版，节点池已联机并运行的是 * Linux * 等。 <block ref="9395dc33116d67c7ef7cce28cc804b43" category="inline-xref-macro-rx"></block>。</block>
   <block id="921d48280175d3cba9bde766993561d2" category="list-text">集群必须运行 Kubernetes 1.19 至 1.21.x 版</block>
+  <block id="d112e0a58a044eb2c083fe74be3c2923" category="doc">监控帐户活动</block>
+  <block id="ab8e74263d81fdf9aa776a7d093168b7" category="list-title">在 Astra Control 中查看所有帐户活动</block>
+  <block id="1fe93cae1894af91bbbf239212b98d90" category="list-title">查看特定应用程序的帐户活动</block>
+  <block id="870305fca27f62b3e2f62ab8aadb0791" category="list-title">查看集群的帐户活动</block>
+  <block id="b71311741b86078332a7057a0982cd42" category="list-title">查看事件的可能操作</block>
+  <block id="91b0fccd50fc200b9aa9a40a0cc5a82d" category="list-text">选择需要关注的事件。</block>
+  <block id="e2900726473d9bdf15d18c496f0edc96" category="list-text">选择 * 执行操作 * 下拉选项。</block>
+  <block id="02251349687d4a85c56e4346486d3ad4" category="paragraph">从此列表中，您可以查看可能采取的更正操作，查看与问题描述 相关的文档，并获得支持以帮助解决问题描述 。</block>
 </blocks>
