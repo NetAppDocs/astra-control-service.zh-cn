@@ -25,6 +25,15 @@ summary: 设置环境后，您可以创建 Kubernetes 集群，然后将其添�
 
 登录到 Astra Control Service 后，第一步是开始管理集群。
 
+[NOTE]
+====
+当 Astra Control 管理集群时，它会跟踪集群的默认 StorageClass 。如果使用 `kubectl` 命令更改 StorageClass ，则 Astra Control 将还原此更改。要更改由 Astra Control 管理的集群中的默认 StorageClass ，请使用以下方法之一：
+
+* 使用 Astra Control API `PUT /managedClusters` Endpoint ，并使用 `DefaultStorageClass` 参数分配其他默认 StorageClass
+* 从 Astra Control 管理中删除集群，然后在选择其他默认 StorageClass 后重新添加
+
+
+====
 .您需要什么？ #8217 ；将需要什么
 * 对于 GKE- ，您应该拥有具有所需权限的服务帐户的服务帐户密钥文件。 link:../get-started/set-up-google-cloud.html#create-a-service-account["了解如何设置服务帐户"]。
 * 对于 AKS ，您应具有包含创建服务主体时 Azure 命令行界面输出的 JSON 文件。 link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2["了解如何设置服务主体"]。
