@@ -1,6 +1,7 @@
 ---
 settings:
   name: Astra Control Service
+  platform: cloud
   internal:
     pdf_enabled: true
   prod:
@@ -89,3 +90,4 @@ homepage:
       url: https://cloud.netapp.com/blog/blg-astra-control-simplifying-kubernetes-application-data-management-for-the-hybrid-cloud
     - title: Cloud Central 上的 Kubernetes Hub
       url: https://cloud.netapp.com/kubernetes-hub
+product-family: {}
