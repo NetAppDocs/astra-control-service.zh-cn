@@ -109,7 +109,7 @@ image:diagram-managed-app1.png["一个概念映像，显示 Astra 管理命名�
 +
 image:diagram-managed-app2.png["一个概念映像，用于显示 Astra 管理在包含其他应用程序的命名空间中部署的单个应用程序。"]
 
-* 一组通过 Kubernetes 标签标识的资源（在 Astra Control 中称为 _custom app_ ）
+* 命名空间中一组通过 Kubernetes 标签（在 Astra Control 中称为 _custom app_ ）标识的资源
 +
 image:diagram-managed-app3.png["一个概念映像，显示 Astra 根据 Kubernetes 标签管理自定义应用程序。"]
 

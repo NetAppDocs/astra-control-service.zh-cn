@@ -550,7 +550,6 @@
   <block id="e050bda24d0aab071d42300cbd046e22" category="list-text">在命名空间中使用 helm3 部署的单个应用程序</block>
   <block id="bc02e113923823bd80cf4509ac5dd0ea" category="inline-image-macro">一个概念映像，用于显示 Astra 管理在包含其他应用程序的命名空间中部署的单个应用程序。</block>
   <block id="aaa30264edbceaac1a9c4ae46e684508" category="paragraph"><block ref="aaa30264edbceaac1a9c4ae46e684508" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="ae686937d504e3cd859c9520838b6c99" category="list-text">一组通过 Kubernetes 标签标识的资源（在 Astra Control 中称为 _custom app_ ）</block>
   <block id="1984643c8908376406c99cfdc708bfe1" category="inline-image-macro">一个概念映像，显示 Astra 根据 Kubernetes 标签管理自定义应用程序。</block>
   <block id="cebcf4cdc27ea2de41ca4d36d92600e4" category="paragraph"><block ref="cebcf4cdc27ea2de41ca4d36d92600e4" category="inline-image-macro-rx" type="image"></block></block>
   <block id="85247f8021c87aa8ad33e2806beb6767" category="paragraph">以下各节介绍如何使用这些选项管理应用程序。</block>
@@ -1502,4 +1501,5 @@
   <block id="f4105577bf107396cef41e7fc8b36c75" category="paragraph">当 Astra Control 管理集群时，它会跟踪集群的默认 StorageClass 。如果使用 `kubectl` 命令更改 StorageClass ，则 Astra Control 将还原此更改。要更改由 Astra Control 管理的集群中的默认 StorageClass ，请使用以下方法之一：</block>
   <block id="e9fac85aa2673b1b448faa45d2eeb596" category="list-text">使用 Astra Control API `PUT /managedClusters` Endpoint ，并使用 `DefaultStorageClass` 参数分配其他默认 StorageClass</block>
   <block id="11937632e52ddd422c6068df5f4a8641" category="list-text">从 Astra Control 管理中删除集群，然后在选择其他默认 StorageClass 后重新添加</block>
+  <block id="88555feb409cba41792254e4f06581c9" category="list-text">命名空间中一组通过 Kubernetes 标签（在 Astra Control 中称为 _custom app_ ）标识的资源</block>
 </blocks>
