@@ -6,6 +6,7 @@ summary: 如果您只是想快速了解问题解答，此常见问题解答会�
 ---
 = 有关 Astra 控制服务的常见问题
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

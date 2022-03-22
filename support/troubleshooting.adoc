@@ -6,6 +6,7 @@ summary: 查找常见问题的故障排除提示。
 ---
 = 故障排除
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/support/
 

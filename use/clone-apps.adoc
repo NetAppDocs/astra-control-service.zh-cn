@@ -6,6 +6,7 @@ summary: 克隆现有应用程序以在同一个 Kubernetes 集群或另一个�
 ---
 = 克隆和迁移应用程序
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/use/
 

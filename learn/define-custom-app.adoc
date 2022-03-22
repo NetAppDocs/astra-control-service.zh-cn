@@ -6,6 +6,7 @@ summary: 通过创建自定义应用程序，您可以将 Kubernetes 集群中�
 ---
 = 定义自定义应用程序
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/learn/
 

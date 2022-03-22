@@ -6,6 +6,7 @@ summary: '将 Kubernetes 集群添加到 Astra Control 后，您可以在该集�
 ---
 = 开始管理应用程序
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/use/
 

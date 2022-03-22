@@ -6,6 +6,7 @@ summary: Astra 控制服务可以在 Google Kubernetes Engine （ GKEE ）和 Az
 ---
 = 支持的 Kubernetes 部署
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/get-started/
 

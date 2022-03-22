@@ -6,6 +6,7 @@ summary: 在使用 Astra Control Service 管理 Azure Kubernetes Service 集群�
 ---
 = 使用 Azure 受管磁盘设置 Microsoft Azure
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/get-started/
 

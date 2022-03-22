@@ -6,6 +6,7 @@ summary: 在使用 Astra Control Service 管理 Azure Kubernetes Service 集群�
 ---
 = 使用 Azure NetApp Files 设置 Microsoft Azure
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/get-started/
 
@@ -78,7 +79,7 @@ Kubernetes 版本:: 集群必须运行 Kubernetes 1.19 至 1.21.x 版
 集群状态:: 集群必须运行状况良好，并且至少有一个联机辅助节点，并且没有处于故障状态的辅助节点。
 Azure 区域:: 集群必须位于 Azure NetApp Files 可用的区域。 https://azure.microsoft.com/en-us/global-infrastructure/services/?products=netapp["按区域查看 Azure 产品"^]。
 订阅。:: 集群必须位于启用了 Azure NetApp Files 的订阅中。您可以选择订阅 <<Register for Azure NetApp Files,注册 Azure NetApp Files>>。
-vNet::
+vNet:: 请考虑以下 vNet 要求：
 +
 --
 * 集群必须位于可直接访问 Azure NetApp Files 委派子网的 vNet 中。 <<Delegate a subnet to Azure NetApp Files,了解如何设置委派子网>>。

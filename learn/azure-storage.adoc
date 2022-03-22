@@ -6,6 +6,7 @@ summary: Astra 控制服务使用 Azure NetApp Files 作为 Azure Kubernetes Ser
 ---
 = AKS 集群的存储类和 PV 大小
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/learn/
 

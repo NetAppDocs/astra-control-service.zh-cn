@@ -6,6 +6,7 @@ summary: 开始管理某个应用程序后， Astra Control 会提供有关该�
 ---
 = 查看应用程序的运行状况和详细信息
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/use/
 
@@ -20,7 +21,7 @@ image:screenshot-app-overview.gif["应用程序的 \" 概述 \" 页面的屏幕�
 . 选择 " 周围 " 以查找所需的信息：
 +
 应用程序状态:: 提供反映应用程序在 Kubernetes 中的状态的状态。例如， Pod 和永久性卷是否联机？如果某个应用程序运行状况不正常，您需要查看 Kubernetes 日志，对集群上的问题描述进行故障排除。Astra Control 不会提供信息来帮助您修复损坏的应用程序。
-应用程序保护状态::
+应用程序保护状态:: 提供应用程序受保护程度的状态：
 +
 --
 ** * 完全保护 * ：应用程序具有一个活动备份计划，并且备份成功完成不到一周

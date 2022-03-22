@@ -7,6 +7,7 @@ summary: Astra Control Service 是一项由 NetApp 管理的服务，可在 Goog
 ---
 = Astra Control Service 文档
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

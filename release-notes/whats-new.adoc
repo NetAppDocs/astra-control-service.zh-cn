@@ -6,6 +6,7 @@ summary: NetApp 会定期更新 Astra Control Service ，为您提供新功能�
 ---
 = Astra Control Service 的新增功能
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/release-notes/
 
@@ -22,7 +23,7 @@ NetApp 会定期更新 Astra Control Service ，为您提供新功能，增强�
 
 现在， Astra Control Service 支持使用 Google Persistent Disk 和 Azure 托管磁盘作为存储后端选项。
 
-link:../get-started/set-up-google-cloud.html["设置 Google Cloud"]。。
+link:../get-started/set-up-google-cloud.html["设置 Google Cloud"]。link:../get-started/set-up-microsoft-azure-with-amd.html["使用 Azure 受管磁盘设置 Microsoft Azure"]。
 
 
 

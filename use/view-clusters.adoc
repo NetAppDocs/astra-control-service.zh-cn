@@ -6,6 +6,7 @@ summary: 将 Kubernetes 集群添加到 Astra Control 后，您可以查看有�
 ---
 = 查看集群的运行状况和详细信息
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/use/
 

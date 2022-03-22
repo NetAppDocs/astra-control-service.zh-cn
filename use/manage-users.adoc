@@ -6,6 +6,7 @@ summary: 邀请用户加入您的 Astra Control 帐户并删除不应再访问�
 ---
 = 邀请和删除用户
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/use/
 

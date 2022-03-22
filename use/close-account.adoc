@@ -6,6 +6,7 @@ summary: 如果您不再需要 Astra Control 帐户，可以随时关闭该帐�
 ---
 = 关闭您的帐户
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/use/
 

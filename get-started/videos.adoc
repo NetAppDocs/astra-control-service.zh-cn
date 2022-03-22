@@ -6,6 +6,7 @@ summary: 此文档站点上的许多页面都包含一些视频，用于展示�
 ---
 = Astra Control Service 视频
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

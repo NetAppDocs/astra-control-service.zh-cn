@@ -6,6 +6,7 @@ summary: 操作完成或失败时， Astra Control 会向您发出通知。例�
 ---
 = 查看和管理通知
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/use/
 

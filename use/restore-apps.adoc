@@ -6,6 +6,7 @@ summary: Astra Control 可以从快照或备份还原应用程序配置和永久
 ---
 = 还原应用程序
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/use/
 

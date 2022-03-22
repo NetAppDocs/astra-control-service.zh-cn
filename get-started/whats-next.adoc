@@ -6,6 +6,7 @@ summary: 现在，您已登录并将集群添加到 Astra Control ，即可开�
 ---
 = 下一步是什么？
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/get-started/
 

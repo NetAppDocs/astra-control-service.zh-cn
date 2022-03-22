@@ -6,6 +6,7 @@ summary: 在设置帐户时， Astra Control 会尝试自动注册您的帐户�
 ---
 = 注册以获得支持
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/support/
 

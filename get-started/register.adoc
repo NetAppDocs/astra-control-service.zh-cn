@@ -6,6 +6,7 @@ summary: Astra Control Service 集成在 NetApp Cloud Central 的身份验证服
 ---
 = 注册 Astra Control Service 帐户
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/get-started/
 

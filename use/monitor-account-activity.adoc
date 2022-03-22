@@ -6,6 +6,7 @@ summary: 您可以在 Astra Control 帐户中查看有关活动的详细信息�
 ---
 = 监控帐户活动
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/use/
 

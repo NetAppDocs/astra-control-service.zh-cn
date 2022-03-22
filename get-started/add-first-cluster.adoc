@@ -6,6 +6,7 @@ summary: 设置环境后，您可以创建 Kubernetes 集群，然后将其添�
 ---
 = 从 Astra Control Service 开始管理 Kubernetes 集群
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/get-started/
 
@@ -17,7 +18,7 @@ summary: 设置环境后，您可以创建 Kubernetes 集群，然后将其添�
 
 == 创建 Kubernetes 集群
 
-如果您还没有集群，请创建一个满足要求的集群 link:set-up-google-cloud.html#gke-cluster-requirements["Google Kubernetes Engine （ GKEE ）的 Astra Control Service 要求"]， 或  。
+如果您还没有集群，请创建一个满足要求的集群 link:set-up-google-cloud.html#gke-cluster-requirements["Google Kubernetes Engine （ GKEE ）的 Astra Control Service 要求"]， link:set-up-microsoft-azure-with-anf.html["采用 Azure NetApp Files 的 Azure Kubernetes Service （ AKS ）的 Astra 控制服务要求"]或 link:set-up-microsoft-azure-with-amd.html["采用 Azure 受管磁盘的 Azure Kubernetes Service （ AKS ）的 Astra Control Service 要求"] 。
 
 
 
@@ -79,7 +80,7 @@ Astra 控制服务使用此服务帐户发现在 Google Kubernetes Engine 中运
 ** https://cloud.netapp.com/azure-netapp-files["Azure NetApp Files"^]
 ** https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["Azure 受管磁盘"^]
 +
-了解更多信息 link:../learn/choose-class-and-size.html["GKE 集群的存储类"] 和 。
+了解更多信息 link:../learn/choose-class-and-size.html["GKE 集群的存储类"] 和 link:../learn/azure-storage.html["AKS 集群的存储类"]。
 
 
 

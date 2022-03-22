@@ -6,6 +6,7 @@ summary: Astra 控制服务使用适用于 Google Cloud 的 Cloud Volumes Servic
 ---
 = GKE- 集群的服务类型，存储类和 PV 大小
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/learn/
 

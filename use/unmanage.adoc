@@ -6,6 +6,7 @@ summary: 从 Astra Control 中删除不再需要管理的任何应用程序或�
 ---
 = 取消管理应用程序和集群
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/use/
 
