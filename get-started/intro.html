@@ -45,31 +45,61 @@
   <link rel="stylesheet" href='/zh-cn/astra-control-service/css/na-utility.css' type='text/css'>
   <link rel="stylesheet" href='/zh-cn/astra-control-service/css/na-sidebar.css' type='text/css'>
   <link rel='stylesheet' href='/zh-cn/astra-control-service/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/zh-cn/astra-control-service/css/custom-dropdown.css' type='text/css'>
   <link rel='stylesheet' href='/zh-cn/astra-control-service/css/na-pagenav.css' type='text/css'>
 
   
   <link rel="stylesheet" href="/zh-cn/astra-control-service/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/zh-cn/astra-control-service/css/tabbed-blocks.css" type="text/css">
-  <link rel='stylesheet' href='/zh-cn/astra-control-service/css/na-feature.css' type='text/css'><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!-- Canonical url -->
+  <link rel='stylesheet' href='/zh-cn/astra-control-service/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
+    if (document.location.hostname === "docs.netapp.com") {
+      var head = document.getElementsByTagName('head')[0];
+      var onetrustConsent = document.createElement("script");
+      onetrustConsent.type = "text/javascript";
+      onetrustConsent.src = "https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js";
+      head.appendChild(onetrustConsent);
+
+      var onetrustScript = document.createElement("script");
+      onetrustScript.type = "text/javascript";
+      onetrustScript.src = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js";
+      onetrustScript.charset = "UTF-8";
+      onetrustScript.dataset.documentLanguage = "true";
+      onetrustScript.dataset.domainScript = "72570c5c-fe30-465f-b0e0-b77f7fb4ae34";
+      head.appendChild(onetrustScript);
+    }
+
+    function OptanonWrapper() { }
+
+    if (document.location.hostname === "docs.netapp.com") {
+      var adobe = document.createElement("script");
+      adobe.type = "text/plain";
+      adobe.className = "optanon-category-C0002";
+      adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+      head.appendChild(adobe);
+
+      var google = document.createElement("script");
+      google.type = "text/plain";
+      google.className = "optanon-category-C0002";
+      google.src = "https://www.googletagmanager.com/gtag/js?id=UA-81697994-3";
+      head.appendChild(google);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-81697994-3');
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
-  <!-- Used for Product Family Page Sidebar Visibility --><link rel="stylesheet" href='/zh-cn/astra-control-service/css/product-family.css' type="text/css">
-  <script src='/zh-cn/astra-control-service/js/product-family.js'></script><!-- Used to import Promise for IE. Required for SearchKit -->
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/zh-cn/astra-control-service/js/na-search.js'></script><script src='/zh-cn/astra-control-service/js/na-pagenav.js'></script><link rel='stylesheet' href='/zh-cn/astra-control-service/css/prism.css' type='text/css'>
   <link rel='stylesheet' href='/zh-cn/astra-control-service/css/prism-netapp.css' type='text/css'>
 
 
   <script src='/zh-cn/astra-control-service/js/na-utility.js'></script>
   <script src='/zh-cn/astra-control-service/js/clouddocs.js'></script>
-  <script>
-  if (document.location.hostname === "docs.netapp.com") {
-    var head = document.getElementsByTagName('head')[0];
-    var adobe = document.createElement("script");
-    adobe.type = "text/javascript";
-    adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
-    head.appendChild(adobe);
-  }
-  </script>
   <script src='/zh-cn/astra-control-service/js/jquery.navgoco.min.js'></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src='/zh-cn/astra-control-service/js/toc.js'></script>
@@ -122,16 +152,8 @@
               $("#tg-sb-icon").toggleClass('fa-toggle-off');
           });
       });
-  </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
-  <script>
-  if (document.location.hostname === "docs.netapp.com") {
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-81697994-3');
-  }
   </script>
-  <script src='/zh-cn/astra-control-service/js/version-dropdown.js'></script>
+  <script src='/zh-cn/astra-control-service/js/custom-dropdown.js'></script>
   <script src='/zh-cn/astra-control-service/js/FileSaver.min.js'></script>
   <script src='/zh-cn/astra-control-service/js/jszip-utils.min.js'></script>
   <script src='/zh-cn/astra-control-service/js/jszip.min.js'></script>
@@ -139,20 +161,15 @@
 </head>
 
 
-  <body class role="document">
+  <body class role="document" data-flavor="">
     <div id="page" class="n-off-canvas-menu">
       <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
       <div class="n-off-canvas-menu__content-wrap">
         <header class="site-header" id="banner">
   
   <!-- Start Page Toolbar -->
-  <div class="page-nav-toolbar">
-    <div id="version-dropdown"></div>
-    <div class="page-nav-contribute"  >
-      <a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/issues/new?body=Page%3A%20[Astra Control 简介](https://docs.netapp.com/zh-cn/astra-control-service/get-started/intro.html)" class="page-nav-contribute-link" role="button"><img src="/zh-cn/astra-control-service/images/discuss-sm.svg" class="github-icon" />请求文档变更</a>
-      <a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/blob/main/get-started/intro.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-cn/astra-control-service/images/edit-sm.svg" class="github-icon" />在 GitHub 上编辑</a>
-      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-cn/astra-control-service/images/article-sm.svg" class="github-icon" />提供者指南</a>
-    </div>
+  
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/issues/new?body=Page%3A%20[Astra Control 简介](https://docs.netapp.com/zh-cn/astra-control-service/get-started/intro.html)" class="page-nav-contribute-link" role="button"><img src="/zh-cn/astra-control-service/images/discuss-sm.svg" class="github-icon" />请求文档变更</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/blob/main/get-started/intro.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-cn/astra-control-service/images/edit-sm.svg" class="github-icon" />在 GitHub 上编辑</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-cn/astra-control-service/images/article-sm.svg" class="github-icon" />提供者指南</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">在此页面上</div>
@@ -162,6 +179,7 @@
       </nav>
     </div>
   </div>
+  
   
   <!-- Start top_hat -->
   <div class="n-top-hat">
@@ -245,7 +263,8 @@
           data-did-you-mean="搜索 {suggestion}。" 
           data-no-results-found-did-you-mean="未找到与 {query} 匹配的结果。您是否要搜索 {suggestion}?" 
           data-results-found="找到 {hitCount} 个结果"  
-          data-sk-es-pf-indexes=""></div>
+          data-sk-es-pf-indexes=""
+          data-flavor=""></div>
           <button class="n-property-bar__search-toggle-button" type="button">
             <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
               <title>search</title>
@@ -334,6 +353,9 @@
 </div>
 <div class="n-pdf-body-container">
   <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        
+        
+        
         <a target="_blank" href="/zh-cn/astra-control-service/pdfs/fullsite-sidebar/Astra_Control_Service_文档.pdf" >
           <img src="/zh-cn/astra-control-service/images/pdf.png" width="16" height="16"/>此文档站点的 PDF</a>
 
@@ -342,6 +364,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/astra-control-service/pdfs/sidebar/发行说明.pdf" 
@@ -370,6 +395,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/astra-control-service/pdfs/sidebar/入门.pdf" 
@@ -398,6 +426,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/astra-control-service/pdfs/sidebar/设置您的云提供商.pdf" 
@@ -445,6 +476,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/astra-control-service/pdfs/sidebar/使用_Astra_控制服务.pdf" 
@@ -460,6 +494,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/astra-control-service/pdfs/sidebar/管理和保护应用程序.pdf" 
@@ -481,6 +518,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/astra-control-service/pdfs/sidebar/管理应用程序执行挂钩.pdf" 
@@ -514,6 +554,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/astra-control-service/pdfs/sidebar/查看应用程序和计算运行状况.pdf" 
@@ -544,6 +587,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/astra-control-service/pdfs/sidebar/管理您的帐户.pdf" 
@@ -591,6 +637,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/astra-control-service/pdfs/sidebar/概念.pdf" 
@@ -623,6 +672,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/astra-control-service/pdfs/sidebar/部署应用程序.pdf" 
@@ -653,6 +705,9 @@
     
       <ul class="subfolders" style="display:none;">
         <li class="pdf-ux-container">
+          
+          
+          
           <a target="_blank" 
             
               href="/zh-cn/astra-control-service/pdfs/sidebar/知识和支持.pdf" 
@@ -853,6 +908,7 @@
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
 <script>$("li.active").parents('li').toggleClass("active");</script>
 
+
   </div>
   
 
@@ -867,7 +923,7 @@
         </li>
         
         <li class="n-breadcrumb__list-item">
-          <a href="https://docs.netapp.com/zh-cn/cloud/">云文档</a>
+          <a href="https://docs.netapp.com/us-en/cloud/">云文档</a>
         </li>
         
 
@@ -905,15 +961,328 @@
 <p class="page-details">
   
     
-    <time datetime="2021-10-15 04:06:27 +0000">10/15/2021</time>
+    <time datetime="2022-04-13 06:58:09 +0000">04/13/2022</time>
     
   
 
 
 </p>
 
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://raw.githubusercontent.com/NetAppDocs/astra-control-center/main/_include/source-intro.adoc">""</a></p>
+<p>Astra Control 是 Kubernetes 应用程序数据生命周期管理解决方案，可简化有状态应用程序的操作。轻松保护，备份和迁移 Kubernetes 工作负载，并即时创建有效的应用程序克隆。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="功能">功能</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Astra Control 为 Kubernetes 应用程序数据生命周期管理提供了关键功能：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>自动管理永久性存储</p>
+</li>
+<li>
+<p>创建应用程序感知型按需快照和备份</p>
+</li>
+<li>
+<p>自动执行策略驱动的快照和备份操作</p>
+</li>
+<li>
+<p>将应用程序和数据从一个 Kubernetes 集群迁移到另一个集群</p>
+</li>
+<li>
+<p>轻松地将应用程序从生产环境克隆到暂存环境</p>
+</li>
+<li>
+<p>直观显示应用程序运行状况和保护状态</p>
+</li>
+<li>
+<p>使用用户界面或 API 实施备份和迁移工作流</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Astra Control 会持续监控您的计算状态变化，因此它可以识别您在此过程中添加的任何新应用程序。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="部署模式">部署模式</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Astra Control 有两种部署模式：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* Astra Control Service* ： NetApp 管理的一项服务，可在 Google Kubernetes Engine （ GKEE ）和 Azure Kubernetes Service （ AKS ）中为 Kubernetes 集群提供应用程序感知型数据管理。</p>
+</li>
+<li>
+<p>* Astra Control Center* ：自管理软件，可为内部环境中运行的 Kubernetes 集群提供应用程序感知型数据管理。</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">Astra 控制服务</th>
+<th class="tableblock halign-left valign-top">Astra 控制中心</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">如何提供？</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">作为 NetApp 提供的一项完全托管的云服务</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>作为您下载，安装和管理的软件</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">它托管在何处？</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">基于 NetApp 选择的公有云</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>在您提供的 Kubernetes 集群上</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">如何更新？</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">由 NetApp 管理</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>您可以管理任何更新</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">应用程序数据管理功能是什么？</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">两个平台上的功能相同，但存储后端或外部服务除外</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>两个平台上的功能相同，但存储后端或外部服务除外</p>
+</div></div></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">什么是存储后端支持？</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NetApp 云服务产品</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>NetApp ONTAP AFF 和 FAS 系统</p>
+</li>
+<li>
+<p>作为存储后端的 Astra 数据存储</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="支持的应用程序">支持的应用程序</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>NetApp 已对某些应用程序进行了验证，以确保快照和备份的安全性和一致性。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/astra/learn/validated-vs-standard.html" target="_blank" rel="noopener">"了解经过验证的应用程序与 Astra Control Service 中的标准应用程序之间的区别"</a>。</p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/astra-control-center/concepts/validated-vs-standard.html" target="_blank" rel="noopener">"在 Astra 控制中心了解经过验证的应用程序与标准应用程序之间的区别"</a>。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>无论与 Astra Control 结合使用哪种类型的应用程序，您都应始终自行测试备份和还原工作流，以确保满足灾难恢复要求。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="astra-控制服务的工作原理">Astra 控制服务的工作原理</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Astra Control Service 是一种由 NetApp 管理的云服务，它始终处于启用状态，并使用最新功能进行更新。它利用多个组件实现应用程序数据生命周期管理。</p>
+</div>
+<div class="paragraph">
+<p>从较高的层面来看， Astra Control Service 的工作原理如下：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>您可以通过设置云提供商并注册 Astra 帐户开始使用 Astra Control Service 。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>对于 GKE- 集群， Astra Control Service 使用 <a href="https://cloud.netapp.com/cloud-volumes-service-for-gcp" target="_blank" rel="noopener">"适用于 Google Cloud 的 NetApp Cloud Volumes Service"</a> 或 Google Persistent Disk 作为永久性卷的存储后端。</p>
+</li>
+<li>
+<p>对于 AKS 集群， Astra Control Service 使用 <a href="https://cloud.netapp.com/azure-netapp-files" target="_blank" rel="noopener">"Azure NetApp Files"</a> 或 Azure 磁盘存储作为永久性卷的存储后端。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>您可以将第一个 Kubernetes 计算添加到 Astra Control Service 中。然后， Astra 控制服务将执行以下操作：</p>
+<div class="ulist">
+<ul>
+<li>
+<p>在云提供商帐户中创建一个对象存储，该帐户是备份副本的存储位置。</p>
+<div class="paragraph">
+<p>在 Azure 中， Astra Control Service 还会为 Blob 容器创建资源组，存储帐户和密钥。</p>
+</div>
+</li>
+<li>
+<p>在集群上创建新的管理员角色和 Kubernetes 服务帐户。</p>
+</li>
+<li>
+<p>使用此新管理员角色进行安装 <a href="https://docs.netapp.com/us-en/trident/index.html" target="_blank" rel="noopener">"Astra Trident"</a> 以创建一个或多个存储类。</p>
+</li>
+<li>
+<p>如果您使用 Azure NetApp Files 或 NetApp Cloud Volumes Service for Google Cloud 作为存储后端，则 Astra 控制服务将使用 Astra Trident 为应用程序配置永久性卷。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>此时，您可以向集群添加应用程序。将在新的默认存储类上配置永久性卷。</p>
+</li>
+<li>
+<p>然后，您可以使用 Astra Control Service 管理这些应用程序，并开始创建快照，备份和克隆。</p>
+<div class="paragraph">
+<p>Astra Control Service 会持续监控您的计算状态变化，因此它可以识别您在此过程中添加的任何新应用程序。</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Astra Control 的免费计划支持您管理帐户中多达 10 个应用程序。如果您要管理 10 个以上的应用程序，则需要通过从 " 免费计划 " 升级到 " 高级计划 " 来设置计费。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="astra-控制中心的工作原理">Astra 控制中心的工作原理</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Astra 控制中心在您自己的私有云中本地运行。</p>
+</div>
+<div class="paragraph">
+<p>Astra 控制中心支持具有以下功能的 OpenShift Kubernetes 集群：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>ONTAP 9.5 及更高版本的 Trident 存储后端</p>
+</li>
+<li>
+<p>Astra 数据存储存储后端</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>在云互联环境中， Astra 控制中心使用 Cloud Insights 提供高级监控和遥测功能。如果没有 Cloud Insights 连接，则 Astra 控制中心可提供有限的（ 7 天的指标）监控和遥测功能，并通过开放式指标端点导出到 Kubernetes 原生监控工具（例如 Prometheus 和 Grafana ）。</p>
+</div>
+<div class="paragraph">
+<p>Astra 控制中心完全集成到 AutoSupport 和 Active IQ 生态系统中，可为用户和 NetApp 支持提供故障排除和使用信息。</p>
+</div>
+<div class="paragraph">
+<p>您可以使用 90 天评估许可证试用 Astra Control Center 。评估版可通过电子邮件和社区（ Slack 通道）选项来支持。此外，您还可以从产品支持信息板访问知识库文章和文档。</p>
+</div>
+<div class="paragraph">
+<p>要安装和使用 Astra 控制中心，您需要满足特定的要求 <a href="https://docs.netapp.com/us-en/astra-control-center/get-started/requirements.html">"要求"</a>。</p>
+</div>
+<div class="paragraph">
+<p>从较高的层面来看， Astra 控制中心的工作原理如下：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>您可以在本地环境中安装 Astra Control Center 。详细了解如何操作 <a href="https://docs.netapp.com/us-en/astra-control-center/get-started/install_acc.html">"安装 Astra 控制中心"</a>。</p>
+</li>
+<li>
+<p>您可以完成一些设置任务，例如：</p>
+<div class="ulist">
+<ul>
+<li>
+<p>设置许可</p>
+</li>
+<li>
+<p>添加第一个集群。</p>
+</li>
+<li>
+<p>添加在添加集群时发现的存储后端。</p>
+</li>
+<li>
+<p>添加用于存储应用程序备份的对象存储分段。</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>详细了解如何操作 <a href="https://docs.netapp.com/us-en/astra-control-center/get-started/setup_overview.html">"设置 Astra 控制中心"</a>。</p>
+</div>
+<div class="paragraph">
+<p>Astra 控制中心可执行以下操作：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>发现有关受管 Kubernetes 集群的详细信息。</p>
+</li>
+<li>
+<p>在您选择管理的集群上发现您的 Astra Trident 或 Astra 数据存储配置，并可用于监控存储后端。</p>
+</li>
+<li>
+<p>发现这些集群上的应用程序，并使您能够管理和保护这些应用程序。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>您可以将应用程序添加到集群中。或者，如果要管理的集群中已有一些应用程序，则可以使用 Astra 控制中心来发现和管理它们。然后，使用 Astra 控制中心创建快照，备份和克隆。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="有关详细信息">有关详细信息 &#8230;&#8203;</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/astra/index.html" target="_blank" rel="noopener">"Astra Control Service 文档"</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/astra-control-center/index.html" target="_blank" rel="noopener">"Astra 控制中心文档"</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/astra-data-store/index.html">"Astra Data Store 文档"</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/trident/index.html" target="_blank" rel="noopener">"Astra Trident 文档"</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/astra-automation/index.html" target="_blank" rel="noopener">"使用 Astra Control API"</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/cloudinsights/" target="_blank" rel="noopener">"Cloud Insights 文档"</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/ontap/index.html" target="_blank" rel="noopener">"ONTAP 文档"</a></p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 
     </article>
@@ -928,98 +1297,122 @@
   <div class="n-footer__bottom">
     <div class="n-container">
       <div class="n-footer__bottom-left">
-
         <div class="n-footer__copyright">
           <ul class="n-footer__copyright-list">
             <li class="n-footer__copyright-link">
-            <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+              <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
             </li>
-
-</ul>
-</div>
-<div class="n-footer__social-links">
-<ul class="n-footer__social-link-list">
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com" target="_blank" title="blog" alt="blog">
-<span class="n-footer__social-link-text">blog</span>
-<svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
-  <title>blog@</title>
-  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-cn/astra-control-service/common/svg/sprite.svg#blog"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/" target="_blank" title="community" alt="community">
-<span class="n-footer__social-link-text">community</span>
-<svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
-<title>community@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-cn/astra-control-service/common/svg/sprite.svg#comments"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp" target="_blank" title="twitter" alt="twitter">
-<span class="n-footer__social-link-text">twitter</span>
-<svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
-<title>twitter@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-cn/astra-control-service/common/svg/sprite.svg#twitter"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp" target="_blank" title="facebook" alt="facebook">
-<span class="n-footer__social-link-text">facebook</span>
-<svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
-<title>facebook@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-cn/astra-control-service/common/svg/sprite.svg#facebook"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-linkedin" href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
-<span class="n-footer__social-link-text">linkedin</span>
-<svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
-<title>linkedin@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-cn/astra-control-service/common/svg/sprite.svg#linkedin"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
-<span class="n-footer__social-link-text">youtube</span>
-<svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
-<title>youtube@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-cn/astra-control-service/common/svg/sprite.svg#youtube"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-slideshare" href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
-<span class="n-footer__social-link-text">slideshare</span>
-<svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
-<title>slideshare@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-cn/astra-control-service/common/svg/sprite.svg#slideshare"></use>
-</svg>
-
-</a>
-</li>
-</ul>
-</div>
-
-</div>
-<div class="n-footer__bottom-right">
-  <p class="n-footer__fine-print">想就我们的网站提供反馈?<a target="_self" href="javascript:netapp_mailto()" class="n-footer__copyright">请告诉我们</a>
-  <a href="https://docs.netapp.com/zh-cn/announcements/" class="n-footer__copyright">通知</a>
-  </p>
-</div>
-</div>
-</div>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">条款和条件</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">隐私政策</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">Cookie 政策</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">Cookie 设置</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="n-footer__bottom-right">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <span class="n-footer__fine-print">想就我们的网站提供反馈?</span>
+              <a target="_self" href="javascript:netapp_mailto()">请告诉我们</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://docs.netapp.com/zh-cn/announcements/">通知</a>
+            </li>
+          </ul>
+        </div>
+        <div class="n-footer__social-links">
+          <ul class="n-footer__social-link-list">
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com"
+                target="_blank" title="blog" alt="blog">
+                <span class="n-footer__social-link-text">blog</span>
+                <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+                  <title>blog@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-cn/astra-control-service/common/svg/sprite.svg#blog"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/"
+                target="_blank" title="community" alt="community">
+                <span class="n-footer__social-link-text">community</span>
+                <svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+                  <title>community@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-cn/astra-control-service/common/svg/sprite.svg#comments"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp"
+                target="_blank" title="twitter" alt="twitter">
+                <span class="n-footer__social-link-text">twitter</span>
+                <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                  <title>twitter@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-cn/astra-control-service/common/svg/sprite.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp"
+                target="_blank" title="facebook" alt="facebook">
+                <span class="n-footer__social-link-text">facebook</span>
+                <svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+                  <title>facebook@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-cn/astra-control-service/common/svg/sprite.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-linkedin"
+                href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+                <span class="n-footer__social-link-text">linkedin</span>
+                <svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+                  <title>linkedin@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-cn/astra-control-service/common/svg/sprite.svg#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-youtube"
+                href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+                <span class="n-footer__social-link-text">youtube</span>
+                <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+                  <title>youtube@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-cn/astra-control-service/common/svg/sprite.svg#youtube"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-slideshare"
+                href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+                <span class="n-footer__social-link-text">slideshare</span>
+                <svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+                  <title>slideshare@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/zh-cn/astra-control-service/common/svg/sprite.svg#slideshare"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
 
       </div><!-- Elasticsearch JS -->
