@@ -24,10 +24,12 @@ image:astra-ads-architecture-diagram-v3.png["Astra Control 架构图和组件"]
 * * 存储后端 * ：
 +
 ** Astra Control Service 使用 https://www.netapp.com/cloud-services/cloud-volumes-service-for-google-cloud/["适用于 Google Cloud 的 NetApp Cloud Volumes Service"^] 作为 GKE- 集群和的存储后端 https://www.netapp.com/cloud-services/azure-netapp-files/["Azure NetApp Files"^] 作为 AKS 集群的存储后端。
+** Astra 控制服务还支持将 Azure 受管磁盘和 Google 永久性磁盘用作后端存储选项。
 ** Astra 控制中心使用以下存储后端：
 +
 *** Astra Data Store 存储后端
 *** ONTAP AFF 和 FAS 存储后端。作为存储软件和硬件平台， ONTAP 可提供核心存储服务，支持多个存储访问协议以及快照和镜像等存储管理功能。
+*** Cloud Volumes ONTAP 存储后端
 
 
 

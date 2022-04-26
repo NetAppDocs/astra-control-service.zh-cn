@@ -27,7 +27,7 @@ NOTE: 如果您不开始使用 Google Cloud Volumes Service for Google Cloud 作
 ==== 查看 Google Kubernetes Engine 的 Astra Control Service 要求
 
 [role="quick-margin-para"]
-确保集群运行状况良好且运行的 Kubernetes 版本介于 1.19 到 1.21.x 之间，并且工作节点处于联机状态并运行容器优化操作系统或 Ubuntu 等。 <<GKE cluster requirements,了解有关此步骤的更多信息>>。
+确保集群运行状况良好且运行的 Kubernetes 版本介于 1.19 到 1.23 之间，工作节点处于联机状态并运行容器优化操作系统或 Ubuntu 等。 <<GKE cluster requirements,了解有关此步骤的更多信息>>。
 
 
 
@@ -104,7 +104,7 @@ NOTE: 如果您不开始使用 Google Cloud Volumes Service for Google Cloud 作
 
 Kubernetes 集群必须满足以下要求，才能通过 Astra Control Service 发现和管理它。请注意，只有当您计划使用适用于 Google Cloud 的 Cloud Volumes Service 作为存储后端时，其中某些要求才适用。
 
-Kubernetes 版本:: 集群运行的 Kubernetes 版本必须介于 1.19 到 1.21.x 之间
+Kubernetes 版本:: 集群运行的 Kubernetes 版本必须介于 1.19 到 1.23 之间。
 映像类型:: 每个工作节点的映像类型必须为以下类型之一：
 +
 --

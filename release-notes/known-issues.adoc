@@ -15,14 +15,18 @@ summary: 已知问题可确定可能妨碍您成功使用此版本产品的问�
 
 以下已知问题会影响当前版本：
 
+.应用程序
 * <<App clones fail after an application is deployed with a set storage class>>
+
+
+.备份，还原和克隆
+* <<Restore of an app results in PV size larger than original PV>>
 * <<App clones fail using a specific version of PostgreSQL>>
-* <<Backup taken from new snapshot instead of existing snapshot>>
-* <<Custom app execution hook scripts time out and cause post-snapshot scripts not to execute>>
-* <<Clone performance impacted by large persistent volumes>>
-* <<Simultaneous app restore operations in the same namespace can fail>>
+
+
+.其他问题
 * <<Snapshots eventually begin to fail when using external-snapshotter version 4.2.0>>
-* <<Unable to stop running app backup>>
+* <<App data management operations fail with Internal Service Error (500) when Astra Trident is offline>>
 
 
 
@@ -33,35 +37,15 @@ summary: 已知问题可确定可能妨碍您成功使用此版本产品的问�
 
 
 
+== 还原应用程序会导致 PV 大小大于原始 PV
+
+如果在创建备份后调整永久性卷的大小，然后从该备份还原，则此永久性卷的大小将与 PV 的新大小匹配，而不是使用备份的大小。
+
+
+
 == 使用特定版本的 PostgreSQL 时应用程序克隆失败
 
 使用 BitNami PostgreSQL 11.5.0 图表时，同一集群中的应用程序克隆始终会失败。要成功克隆，请使用图表的早期或更高版本。
-
-
-
-== 从新快照而非现有快照进行备份
-
-创建备份并选择 * 从现有快照备份 * 时， Astra Control 会创建临时快照并使用该快照创建备份。Astra Control 不使用现有快照。
-
-
-
-== 自定义应用程序执行钩脚本超时，发生原因快照后脚本不可执行
-
-如果执行挂机运行时间超过 25 分钟，则此挂机将失败，从而创建返回代码为不适用的事件日志条目。任何受影响的快照都将超时并标记为失败，并会生成一个事件日志条目，用于记录超时情况。
-
-由于执行挂钩通常会减少或完全禁用其运行的应用程序的功能，因此您应始终尽量缩短自定义执行挂钩运行所需的时间。
-
-
-
-== 克隆性能受大型永久性卷影响
-
-非常大且已使用的永久性卷的克隆可能会间歇性地速度较慢，具体取决于集群对对象存储的访问权限。如果克隆挂起且未复制任何数据超过 30 分钟，则 Astra Control 将终止克隆操作。
-
-
-
-== 同一命名空间中的同时应用程序还原操作可能会失败
-
-如果您尝试同时还原命名空间中的一个或多个单独管理的应用程序，还原操作可能会在很长时间后失败。作为临时解决策，一次还原一个应用程序。
 
 
 
@@ -69,8 +53,14 @@ summary: 已知问题可确定可能妨碍您成功使用此版本产品的问�
 
 如果将 Kubernetes Snapshot-controller （也称为外部快照程序） 4.2.0 与 Kubernetes 1.20 或 1.21 结合使用，则快照最终可能会开始失败。要防止出现这种情况，请使用其他 https://kubernetes-csi.github.io/docs/snapshot-controller.html["支持的版本"^] 使用 Kubernetes 版本 1.20 或 1.21 的外部快照程序，例如 4.2.1 版。
 
+. 运行 POST 调用，将更新后的 kubeconfig 文件添加到 ` 凭据` 端点，并从响应正文中检索分配的 `id` 。
+. 使用适当的集群 ID 从 ` 集群` 端点运行 PUT 调用，并将 `credentialId` 设置为上一步中的 `id` 值。
 
 
-== 无法停止运行应用程序备份
+完成这些步骤后，将更新与集群关联的凭据，集群应重新连接并将其状态更新为 `Available` 。
 
-无法停止正在运行的备份。如果需要删除备份，请等待备份完成，然后按照中的说明进行操作 link:../use/protect-apps.html#delete-backups["删除备份"]。要删除失败的备份，请使用 link:https://docs.netapp.com/us-en/astra-automation/index.html["Astra API"^]。
+
+
+== 当 Astra Trident 脱机时，应用程序数据管理操作失败，并显示内部服务错误（ 500 ）
+
+如果应用程序集群上的 Astra Trident 脱机（并恢复联机），并且在尝试应用程序数据管理时遇到 500 个内部服务错误，请重新启动应用程序集群中的所有 Kubernetes 节点以还原功能。

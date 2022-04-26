@@ -21,12 +21,6 @@ summary: 已知限制确定了本产品版本不支持的平台、设备或功�
 
 
 
-=== 运行状况不正常的 Pod 会影响应用程序管理
-
-如果受管应用程序中的 Pod 运行状况不正常，则 Astra Control Service 无法创建新的备份和克隆。
-
-
-
 === 未从集群中卸载 Astra Trident
 
 从 Astra 控制服务取消管理集群时，不会自动从集群中卸载 Astra Trident 。要卸载 Astra Trident ，您需要 https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["请按照 Astra Trident 文档中的以下步骤进行操作"^]。
@@ -59,12 +53,6 @@ NetApp 尚未验证从 Google Marketplace 部署的应用程序。某些用户�
 
 
 
-=== 永久性卷限制
-
-每个 Google Cloud 区域最多可以有 100 个卷。如果达到此限制，则创建新克隆或卷将失败。 link:../support/get-help.html["请联系支持部门以增加卷限制"]。
-
-
-
 == 应用程序管理限制
 
 以下限制会影响 Astra Control Service 对应用程序的管理。
@@ -76,8 +64,36 @@ NetApp 尚未验证从 Google Marketplace 部署的应用程序。某些用户�
 Astra Control 支持使用命名空间范围的运算符安装的应用程序。这些操作员通常采用 " 按价值传递 " 架构，而不是 " 按参考传递 " 架构。以下是一些遵循这些模式的操作员应用程序：
 
 * https://github.com/k8ssandra/cass-operator/tree/v1.7.1["Apache K8ssandra"^]
++
+
+NOTE: 对于 K8ssandra ，支持原位还原操作。要对新命名空间或集群执行还原操作，需要关闭应用程序的原始实例。这是为了确保传输的对等组信息不会导致跨实例通信。不支持克隆应用程序。
+
 * https://github.com/jenkinsci/kubernetes-operator["Jenkins CI"^]
 * https://github.com/percona/percona-xtradb-cluster-operator["Percona XtraDB 集群"^]
 
 
 请注意， Astra Control 可能无法克隆使用 " 按参考传递 " 架构设计的运算符（例如 CockroachDB 运算符）。在这些类型的克隆操作期间，克隆的操作员会尝试引用源操作员提供的 Kubernetes 机密，尽管在克隆过程中他们拥有自己的新机密。克隆操作可能会失败，因为 Astra Control 不知道源运算符中的 Kubernetes 密钥。
+
+
+
+== 无法停止正在进行的应用程序备份
+
+无法取消正在运行的备份。如果需要删除备份，请等待备份完成，然后按照中的说明进行操作 link:../use/protect-apps.html#delete-backups["删除备份"]。要删除失败的备份，请使用 link:https://docs.netapp.com/us-en/astra-automation/index.html["Astra API"^]。
+
+
+
+== 基于角色的访问控制（ Role-Based Access Control ， RBAC ）限制
+
+以下限制适用于 Astra Control 限制用户访问资源或功能的方式。
+
+
+
+=== 具有命名空间 RBAC 限制的用户可以添加和取消管理集群
+
+不应允许具有命名空间 RBAC 限制的用户添加或取消管理集群。由于当前的限制， Astra 不会阻止此类用户取消管理集群。
+
+
+
+=== 具有命名空间约束的成员用户无法访问克隆或还原的应用程序，除非管理员用户将命名空间添加到此限制中
+
+受命名空间名称 /ID 或命名空间标签约束的任何 `m成员` 用户均可将应用程序克隆或还原到同一集群上的新命名空间或其组织帐户中的任何其他集群。但是，同一用户无法访问新命名空间中的克隆或还原应用程序。通过克隆或还原操作创建新命名空间后，帐户管理员 / 所有者可以编辑 `m成员` 用户帐户并更新受影响用户的角色约束，以授予对新命名空间的访问权限。

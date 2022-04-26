@@ -24,7 +24,7 @@ summary: 在使用 Astra Control Service 管理 Azure Kubernetes Service 集群�
 ==== 查看 Azure Kubernetes Service 的 Astra Control Service 要求
 
 [role="quick-margin-para"]
-确保集群运行状况良好且运行的是 Kubernetes 1.19 至 1.21.x 版，节点池已联机并运行的是 * Linux * 等。 <<Azure Kubernetes Service cluster requirements,了解有关此步骤的更多信息>>。
+确保集群运行状况良好且运行的是 Kubernetes 1.21.x 到 1.23 版，节点池已联机且运行的是 * Linux * 等。 <<Azure Kubernetes Service cluster requirements,了解有关此步骤的更多信息>>。
 
 
 
@@ -74,7 +74,7 @@ summary: 在使用 Astra Control Service 管理 Azure Kubernetes Service 集群�
 
 Kubernetes 集群必须满足以下要求，才能通过 Astra Control Service 发现和管理它。
 
-Kubernetes 版本:: 集群必须运行 Kubernetes 1.19 至 1.21.x 版
+Kubernetes 版本:: 集群必须运行 Kubernetes 1.21.x 至 1.23 版。
 映像类型:: 所有节点池的映像类型必须为 Linux 。
 集群状态:: 集群必须运行状况良好，并且至少有一个联机辅助节点，并且没有处于故障状态的辅助节点。
 Azure 区域:: 集群必须位于 Azure NetApp Files 可用的区域。 https://azure.microsoft.com/en-us/global-infrastructure/services/?products=netapp["按区域查看 Azure 产品"^]。

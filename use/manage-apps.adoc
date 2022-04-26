@@ -23,32 +23,38 @@ summary: '将 Kubernetes 集群添加到 Astra Control 后，您可以在该集�
 * * 命名空间 * ： Astra Control 要求一个应用程序不能跨越多个命名空间，但一个命名空间可以包含多个应用程序。
 * * 存储类 * ：如果您安装的应用程序明确设置了 StorageClass ，并且需要克隆该应用程序，则克隆操作的目标集群必须具有最初指定的 StorageClass 。将显式设置了 StorageClass 的应用程序克隆到不具有相同 StorageClass 的集群将失败。
 * * Kubernetes Resources* ：使用非 Astra Control 收集的 Kubernetes 资源的应用程序可能没有完整的应用程序数据管理功能。Astra Control 收集以下 Kubernetes 资源：
-+
-** ClusterRole
-** ClusterRoleBinding.
-** 配置映射
-** 自定义资源定义
-** 自定义资源
-** DemonSet
-** 部署
-** DeploymentConfig
-** 传入
-** MutatingWebhook
-** PersistentVolumeClaim
-** POD
-** ReplicaSet
-** RoleBinding.
-** Role
-** 路由
-** 机密
-** 服务
-** ServiceAccount
-** 状态集
-** 验证 Webhook
 
 
+[cols="1,1,1"]
+|===
 
 
+| ClusterRole | ClusterRoleBinding. | 配置映射 
+
+
+| 自定义资源定义 | 自定义资源 | cronjob 
+
+
+| DemonSet | HorizontalPodAutoscaler | 传入 
+
+
+| DeploymentConfig | MutatingWebhook | PersistentVolumeClaim 
+
+
+| POD | PodDisruptionBuget | 播客模板 
+
+
+| 网络策略 | ReplicaSet | Role 
+
+
+| RoleBinding. | 路由 | 机密 
+
+
+| 服务 | ServiceAccount | 状态集 
+
+
+| 验证 Webhook |  |  
+|===
 
 
 === 支持的应用程序安装方法
@@ -65,6 +71,10 @@ kubectl apply -f myapp.yaml
 * * 操作员部署的应用程序 * ： Astra Control 支持使用命名空间范围的运算符安装的应用程序。这些操作员通常采用 " 按价值传递 " 架构，而不是 " 按参考传递 " 架构。以下是一些遵循这些模式的操作员应用程序：
 +
 ** https://github.com/k8ssandra/cass-operator/tree/v1.7.1["Apache K8ssandra"^]
++
+
+NOTE: 对于 k8ssandra ，支持原位还原操作。要对新命名空间或集群执行还原操作，需要关闭应用程序的原始实例。这是为了确保传输的对等组信息不会导致跨实例通信。不支持克隆应用程序。
+
 ** https://github.com/jenkinsci/kubernetes-operator["Jenkins CI"^]
 ** https://github.com/percona/percona-xtradb-cluster-operator["Percona XtraDB 集群"^]
 
@@ -130,30 +140,15 @@ image:diagram-managed-app3.png["一个概念映像，显示 Astra 根据 Kuberne
 
 .步骤
 . 选择 * 应用程序 * ，然后选择 * 已发现 * 。
-+
-image:screenshot-app-discovery.gif["\"Apps\" 页面的屏幕截图，其中显示了 \"Discovered \" 选项卡。"]
-
 . 查看已发现的命名空间列表并展开命名空间以查看应用程序和关联资源。
 +
 Astra Control 会在命名空间中显示 Helm 应用程序和自定义标记的应用程序。如果 Helm 标签可用，则会使用标记图标来指定这些标签。
 
-+
-以下是一个命名空间中包含两个应用程序的示例：
-
-+
-image:screenshot-group.gif["应用程序页面的屏幕截图，其中扩展了一个命名空间，以显示该命名空间中的两个应用程序。"]
-
 . 确定是单独管理每个应用程序，还是在命名空间级别管理每个应用程序。
 . 在层次结构中的所需级别，选择 * 操作 * 列中的下拉列表，然后选择 * 管理 * 。
-+
-image:screenshot-app-manage.gif["应用程序页面中展开的下拉列表的屏幕截图，您可以在其中选择管理或忽略命名空间或应用程序。"]
-
 . 如果您不想管理某个应用程序，请选择所需应用程序的 * 操作 * 列中的下拉列表，然后选择 * 忽略 * 。
 +
-例如，如果您希望同时管理 "Jenkins " 命名空间下的所有应用程序，以便它们具有相同的快照和备份策略，则可以管理此命名空间并忽略此命名空间中的应用程序：
-
-+
-image:screenshot-app-manage-and-ignore.gif["应用程序页面中展开的下拉列表的屏幕截图，您可以在其中选择管理或忽略命名空间或应用程序。"]
+例如，如果您希望同时管理 "Jenkins " 命名空间下的所有应用程序，以便它们具有相同的快照和备份策略，则可以管理此命名空间并忽略此命名空间中的应用程序。
 
 
 
@@ -171,33 +166,18 @@ Astra Control 在应用程序页面顶部包含一个名为 * 定义自定义应
 +
 .. * 新建应用程序 * ：输入应用程序的显示名称。
 .. * 集群 * ：选择应用程序所在的集群。
-.. * 命名空间： * 选择应用程序的命名空间。
-.. * 标签： * 输入标签或从以下资源中选择标签。
+.. * 命名空间 * ：选择应用程序的命名空间。
+.. * 标签 * ：输入标签或从以下资源中选择标签。
 .. * 选定资源 * ：查看和管理要保护的选定 Kubernetes 资源（ Pod ，机密，永久性卷等）。
 +
-以下是一个示例：
-
-+
-image:screenshot-selected-resources.gif["您可以保护的资源的屏幕截图，例如配置映射和永久性卷声明。"]
-
-+
 *** 通过展开资源并选择标签数量来查看可用标签。
-+
-image:screenshot-view-labels.gif["一个屏幕截图，显示已展开的资源以及该资源的标签数量。"]
-
 *** 选择一个标签。
-+
-image:screenshot-select-label.gif["屏幕截图显示了选择标签数量后可以从中选择的标签列表。"]
-
 +
 选择标签后，它将显示在 * 标签 * 字段中。Astra Control 还会更新 * 未选定资源 * 部分，以显示与选定标签不匹配的资源。
 
 
 
 .. * 未选择资源 * ：验证您不想保护的应用程序资源。
-+
-image:screenshot-selected-label.gif["从 \" 资源 \" 窗格中选择标签后，屏幕截图将在 \" 标签 \" 字段中显示标签。"]
-
 
 
 . 选择 * 定义自定义应用程序 * 。
@@ -211,6 +191,6 @@ image:screenshot-selected-label.gif["从 \" 资源 \" 窗格中选择标签后�
 
 Astra Control 还会发现 Kubernetes 集群上运行的系统应用程序。您可以通过筛选应用程序列表来查看这些应用程序。
 
-image:screenshot-system-apps.gif["屏幕截图显示了在应用程序屏幕中选择所有集群时可用的显示系统应用程序选项。"]
+image:acs_apps_system_apps3.png["屏幕截图显示了在应用程序屏幕中选择所有集群时可用的显示系统应用程序选项。"]
 
 默认情况下，我们不会向您显示这些系统应用程序，因为您很少需要备份这些应用程序。

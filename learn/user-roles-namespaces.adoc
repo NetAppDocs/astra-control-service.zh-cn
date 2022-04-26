@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: learn/user-roles-namespaces.html 
+keywords: users, roles, user roles, namespace, namespaces, account, accounts, permissions, restriction, restrict, constraint 
+summary: 了解 Astra 控制中心提供的数据保护类型，以及如何以最佳方式使用它们来保护您的应用程序。 
+---
+= 用户角色和命名空间
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/learn/
+
+
+了解 Astra Control 中的用户角色和命名空间，以及如何使用它们控制对组织中资源的访问。
+
+
+
+== 用户角色
+
+您可以使用角色控制用户对 Astra Control 资源或功能的访问权限。以下是 Astra Control 中的用户角色：
+
+* * 所有者 * 具有管理员权限，可以删除帐户。
+* * 管理员 * 具有成员权限，可以邀请其他用户。
+* * 成员 * 可以全面管理应用程序和集群。
+* * 查看器 * 可以查看资源。
+
+
+您可以向 " 成员 " 或 " 查看器 " 用户添加限制，以将用户限制为一个或多个 <<Namespaces>>。
+
+
+
+== 命名空间
+
+命名空间是指您可以分配给由 Astra Control 管理的集群中的特定资源的范围。将集群添加到 Astra Control 时， Astra Control 会发现集群的命名空间。发现后，可以将命名空间作为约束分配给用户。只有有权访问该命名空间的成员才能使用该资源。您可以使用命名空间来控制对资源的访问，方法是采用对您的组织有意义的模式；例如，按公司内的物理区域或部门进行访问。向用户添加约束时，您可以将该用户配置为可以访问所有命名空间或仅访问一组特定命名空间。您还可以使用命名空间标签分配命名空间约束。
+
+
+
+== 了解更多信息
+
+link:../use/manage-roles.html["管理角色"]

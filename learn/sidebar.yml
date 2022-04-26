@@ -12,3 +12,5 @@ entries:
   url: "/learn/validated-vs-standard.html"
 - title: 定义自定义应用程序
   url: "/learn/define-custom-app.html"
+- title: 用户角色和命名空间
+  url: "/learn/user-roles-namespaces.html"

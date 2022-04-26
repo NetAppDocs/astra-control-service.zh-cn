@@ -35,6 +35,8 @@ entries:
     url: "/use/set-up-billing.html"
   - title: 邀请和管理用户
     url: "/use/manage-users.html"
+  - title: 管理角色
+    url: "/use/manage-roles.html"
   - title: 管理云提供商凭据
     url: "/use/manage-credentials.html"
   - title: 监控帐户活动

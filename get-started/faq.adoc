@@ -67,18 +67,23 @@ Astra Control 要求您在入职部分提供准确的客户信息。如果您提
 
 
 
+== 注册 AKS 集群
+
+* 是否可以将专用 AKS 集群添加到 Astra Control Service ？ *
+
+可以，您可以将专用 AKS 集群添加到 Astra Control Service 。要添加专用 AKS 集群，请参见 link:add-first-cluster.html["从 Astra Control Service 开始管理 Kubernetes 集群"]。
+
+
+
 == 注册 GKEE 集群
 
 * 是否可以将专用 GKEE 集群添加到 Astra Control Service ？ *
 
-可以，您可以将专用集群添加到 Astra Control Service 。要创建 Google Kubernetes Engine （ GKEE ）专用集群， https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Project_Astra/How_to_create_a_private_GKE_cluster_to_work_with_project_Astra["按照此知识库文章中的说明进行操作"^]。
+可以，您可以将专用 GKE- 集群添加到 Astra Control Service 中。要创建 Google Kubernetes Engine （ GKEE ）专用集群， https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Project_Astra/How_to_create_a_private_GKE_cluster_to_work_with_project_Astra["按照此知识库文章中的说明进行操作"^]。
 
 专用集群必须具有 https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept["授权网络"^] 设置为允许 Astra Control IP 地址：
 
-* 54.164.233.140/32
-* 3.218.120.204/32
-* 34.193.99.138/32
-
+52.188.218.166/32
 
 * 我的 GKE 集群是否可以位于共享 VPC 上？ *
 

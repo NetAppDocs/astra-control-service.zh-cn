@@ -41,6 +41,12 @@ summary: 设置环境后，您可以创建 Kubernetes 集群，然后将其添�
 +
 如果未将 Azure 订阅 ID 添加到 JSON 文件中，您也需要此 ID 。
 
+* 对于专用 AKS 集群：
++
+** 集群应满足中所述的要求 https://docs.microsoft.com/en-us/azure/aks/private-clusters["Azure 文档"^]。
+** 您需要在 AKS 服务集群上安装 Astra Connector ，以便 Astra Control Service 可以管理此集群。要安装 Astra Connector ， <<Manage a private cluster,请按照以下说明进行操作>>。
+
+
 
 
 .步骤
@@ -67,6 +73,9 @@ Astra 控制服务使用此服务帐户发现在 Google Kubernetes Engine 中运
 +
 如果您选择的集群尚未配置 Cloud Volumes Service for Google Cloud 或 Azure NetApp Files ，则会显示一条警告。此集群未安装和配置 NetApp Trident 。如果要使用其他存储服务，您可以继续添加集群。
 
++
+如果您选择的集群标记有 "private" 图标，则它将使用专用 IP 地址，并且 Astra Control 需要使用 Astra Connector 来管理集群。如果您看到一条消息，指出您需要安装 Astra Connector ， <<Manage a private cluster,请按照以下说明进行操作>> 安装 Astra Connector 并启用集群管理。安装 Astra Connector 后，集群应符合条件，您可以继续添加集群。
+
 . * 存储 * ：选择希望部署到此集群的 Kubernetes 应用程序默认使用的存储类。
 +
 列表中的每个 Cloud Volumes Service for Google Cloud 服务都会显示价格，性能和弹性信息。此时将显示每个 Azure NetApp Files 服务的性能和弹性信息。对于 Google Persistent Disk 或 Azure 受管磁盘等非 NetApp 存储类，不提供价格，性能和弹性信息。
@@ -88,3 +97,51 @@ Astra 控制服务使用此服务帐户发现在 Google Kubernetes Engine 中运
 
 
 Astra Control Service 会在符合条件的集群上创建用于应用程序备份的对象存储，在集群上创建管理员帐户，并设置您指定的默认存储类。此过程最多可能需要 5 分钟。
+
+
+
+== 管理专用集群
+
+您可以使用 Astra Control Service 管理专用 AKS 集群。为此，您需要在专用 AKS 服务集群上安装 Astra Connector 操作员。您可以在添加要管理的集群之前完成此步骤，也可以在系统提示时在添加集群期间完成此步骤。
+
+.步骤
+. 为 Astra Connector 运算符创建命名空间。
++
+[listing]
+----
+kubectl create ns astra-connector-operator
+----
+. 将 `asaconnector_operator.yaml` 文件应用于操作员命名空间。
++
+[listing]
+----
+kubectl apply -f astraconnector_operator.yaml -n astra-connector-operator
+----
+. 为专用集群组件创建命名空间。
++
+[listing]
+----
+kubectl create ns astra-connector
+----
+. 应用 Astra Connector 自定义资源定义（ CRD ）。
++
+[listing]
+----
+kubectl apply -f config/samples/astraconnector_v1.yaml -n astra-connector
+----
+. 检查 Astra 连接器的状态。
++
+[listing]
+----
+kubectl get astraconnector astra-connector -n astra-connector
+----
++
+您应看到类似于以下内容的输出：
+
++
+[listing]
+----
+NAME              REGISTERED   ASTRACONNECTORID
+astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
+----
+
