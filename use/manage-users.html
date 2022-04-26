@@ -292,13 +292,13 @@
           <ul class="n-menu__list">
             <li class="n-menu__list-column">
               <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/astra-control-service/use/manage-users.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/us-en/astra-control-service/use/manage-users.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ja-jp/astra-control-service/use/manage-users.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ko-kr/astra-control-service/use/manage-users.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/astra-control-service/use/manage-users.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -612,6 +612,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -649,6 +651,8 @@
             概念
           </a>
           
+
+
 
 
 
@@ -849,6 +853,8 @@
         设置计费
       </a></li><li class="  active "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/use/manage-users.html">
         邀请和管理用户
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/use/manage-roles.html">
+        管理角色
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/use/manage-credentials.html">
         管理云提供商凭据
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/use/monitor-account-activity.html">
@@ -874,6 +880,8 @@
         经验证的应用程序与标准应用程序
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/learn/define-custom-app.html">
         定义自定义应用程序
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/learn/user-roles-namespaces.html">
+        用户角色和命名空间
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 部署应用程序</div>
       </a>
@@ -961,7 +969,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-13 06:58:09 +0000">04/13/2022</time>
+    <time datetime="2022-04-26 16:28:36 +0000">04/26/2022</time>
     
   
 
@@ -991,7 +999,7 @@
 <p>选择 * 帐户 * 。</p>
 </li>
 <li>
-<p>在 * 用户 * 选项卡中，选择 * + 邀请用户 * 。</p>
+<p>在 * 用户 * 选项卡中，选择 * 邀请 * 。</p>
 </li>
 <li>
 <p>输入用户的名称，电子邮件地址及其角色。</p>
@@ -1018,9 +1026,6 @@
 </li>
 <li>
 <p>* 查看器 * 可以查看资源。</p>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-invite-users.gif" alt="&quot; 邀请用户 &quot; 屏幕的屏幕截图，您可以在此输入名称，电子邮件地址并选择角色。"></span></p>
-</div>
 </li>
 </ul>
 </div>
@@ -1029,7 +1034,19 @@
 </div>
 </li>
 <li>
-<p>选择 * 发送邀请 * 。</p>
+<p>要为具有成员或查看器角色的用户添加约束，请启用 * 将角色限制为约束条件 * 复选框。</p>
+<div class="paragraph">
+<p>有关添加约束的详细信息，请参见 <a href="manage-roles.html">"管理角色"</a>。</p>
+</div>
+</li>
+<li>
+<p>要邀请其他用户，请选择 * 添加其他用户 * 并输入新用户的信息。</p>
+<div class="paragraph">
+<p>一次最多可以邀请 10 个用户。您可以在 * 邀请用户 * 对话框左侧邀请的用户之间导航。</p>
+</div>
+</li>
+<li>
+<p>选择 * 邀请用户 * 。</p>
 </li>
 </ol>
 </div>
@@ -1051,10 +1068,22 @@
 <p>选择 * 帐户 * 。</p>
 </li>
 <li>
-<p>在 * 用户 * 选项卡中，选择用户 * 角色 * 列中的下拉列表。</p>
+<p>在 * 用户 * 选项卡的 * 操作 * 列中为用户选择菜单。</p>
 </li>
 <li>
-<p>选择一个新角色，然后在出现提示时选择 * 更改角色 * 。</p>
+<p>选择 * 编辑角色 * 。</p>
+</li>
+<li>
+<p>选择一个新角色。</p>
+</li>
+<li>
+<p>要为具有成员或查看器角色的用户添加约束，请启用 * 将角色限制为约束条件 * 复选框。</p>
+<div class="paragraph">
+<p>有关添加约束的详细信息，请参见 <a href="manage-roles.html">"管理角色"</a>。</p>
+</div>
+</li>
+<li>
+<p>选择 * 确认 * 。</p>
 </li>
 </ol>
 </div>
@@ -1067,7 +1096,7 @@
 <h2 id="删除用户">删除用户</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>帐户所有者可以随时从帐户中删除其他用户。</p>
+<p>具有所有者角色的用户可以随时从此帐户中删除其他用户。</p>
 </div>
 <div class="olist arabic">
 <div class="title">步骤</div>
@@ -1079,10 +1108,10 @@
 <p>在 * 用户 * 选项卡中，选择要删除的用户。</p>
 </li>
 <li>
-<p>选择 * 操作 * 并选择 * 删除用户 / 秒 * 。</p>
+<p>在 * 操作 * 列中选择菜单，然后选择 * 删除用户 * 。</p>
 </li>
 <li>
-<p>出现提示时，键入用户名并选择 * 是，删除用户 * 以确认删除。</p>
+<p>出现提示时，键入 "remove" 确认删除，然后选择 * 是，删除用户 * 。</p>
 </li>
 </ol>
 </div>

@@ -292,13 +292,13 @@
           <ul class="n-menu__list">
             <li class="n-menu__list-column">
               <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/astra-control-service/use/clone-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/us-en/astra-control-service/use/clone-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ja-jp/astra-control-service/use/clone-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ko-kr/astra-control-service/use/clone-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/astra-control-service/use/clone-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -612,6 +612,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -649,6 +651,8 @@
             概念
           </a>
           
+
+
 
 
 
@@ -849,6 +853,8 @@
         设置计费
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/use/manage-users.html">
         邀请和管理用户
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/use/manage-roles.html">
+        管理角色
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/use/manage-credentials.html">
         管理云提供商凭据
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/use/monitor-account-activity.html">
@@ -874,6 +880,8 @@
         经验证的应用程序与标准应用程序
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/learn/define-custom-app.html">
         定义自定义应用程序
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/learn/user-roles-namespaces.html">
+        用户角色和命名空间
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 部署应用程序</div>
       </a>
@@ -961,7 +969,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-13 06:58:09 +0000">04/13/2022</time>
+    <time datetime="2022-04-26 16:28:36 +0000">04/26/2022</time>
     
   
 
@@ -981,19 +989,19 @@
 <img src="/us-en/astra-control-service/images/note.svg" alt="注">
 </td>
 <td class="content">
-如果克隆操作员部署的 Jenkins CI 实例，则需要手动还原永久性数据。这是应用程序部署模式的一个限制。
-</td>
-</tr>
-</table>
+<div class="ulist">
+<ul>
+<li>
+<p>如果克隆操作员部署的 Jenkins CI 实例，则需要手动还原永久性数据。这是应用程序部署模式的一个限制。</p>
+</li>
+<li>
+<p>如果您部署的应用程序明确设置了 StorageClass ，并且需要克隆该应用程序，则目标集群必须具有最初指定的 StorageClass 。将显式设置了 StorageClass 的应用程序克隆到不具有相同 StorageClass 的集群将失败。</p>
+</li>
+<li>
+<p>在应用程序备份或应用程序还原期间，您可以选择指定存储分段 ID 。但是，应用程序克隆操作始终使用已定义的默认分段。没有选项可用于更改克隆的分段。如果要控制使用哪个存储分段，您可以选择 <a href="../use/manage-buckets.html#edit-a-bucket">"更改存储分段默认值"</a> 或者执行 <a href="../use/protect-apps.html#create-a-backup">"backup"</a> 后跟 A <a href="../use/restore-apps.html">"还原"</a> 请单独使用。</p>
+</li>
+</ul>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/astra-control-service/images/note.svg" alt="注">
-</td>
-<td class="content">
-如果您部署的应用程序明确设置了 StorageClass ，并且需要克隆该应用程序，则目标集群必须具有最初指定的 StorageClass 。将显式设置了 StorageClass 的应用程序克隆到不具有相同 StorageClass 的集群将失败。
 </td>
 </tr>
 </table>
@@ -1009,9 +1017,6 @@
 </li>
 <li>
 <p>选择 * 克隆 * 。</p>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-create-clone.gif" alt="应用程序页面的屏幕截图，在此可以选择操作列中的下拉列表并选择克隆。"></span></p>
-</div>
 </li>
 <li>
 <p>* 克隆详细信息 * ：指定克隆的详细信息：</p>

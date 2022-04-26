@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
   <head class="at-element-marker">
-  <title>使用 Azure 受管磁盘设置 Microsoft Azure | NetApp Documentation</title>
+  <title>用户角色和命名空间 | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="使用 Azure 受管磁盘设置 Microsoft Azure | NetApp Documentation" />
+  <meta property="og:title" content="用户角色和命名空间 | NetApp Documentation" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/zh-cn/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html" />
-	<meta property="og:description" content="在使用 Astra Control Service 管理 Azure Kubernetes Service 集群之前，需要执行一些步骤来准备 Microsoft Azure 订阅。" />
+	<meta property="og:url" content="https://docs.netapp.com/zh-cn/astra-control-service/learn/user-roles-namespaces.html" />
+	<meta property="og:description" content="了解 Astra 控制中心提供的数据保护类型，以及如何以最佳方式使用它们来保护您的应用程序。" />
   <meta property="og:image" content="https://docs.netapp.com/zh-cn/astra-control-service/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="在使用 Astra Control Service 管理 Azure Kubernetes Service 集群之前，需要执行一些步骤来准备 Microsoft Azure 订阅。">
-  <meta name="keywords" content=" azure, azure netapp files, register, create account, create netapp account, azure subscription, azure permissions, service principal, create service principal, set up azure permissions, set up service principal, setup service principal, setup azure permissions, permissions, create capacity pool, setup capacity pool, set up capacity pool, kubernetes cluster, cluster requirements, version requirements, supported versions, supported regions, azure regions, kubernetes version, linux, image type, networking"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="了解 Astra 控制中心提供的数据保护类型，以及如何以最佳方式使用它们来保护您的应用程序。">
+  <meta name="keywords" content=" users, roles, user roles, namespace, namespaces, account, accounts, permissions, restriction, restrict, constraint"><!-- Icons -->
   <link rel="icon" href="/zh-cn/astra-control-service/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/zh-cn/astra-control-service/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -169,7 +169,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/issues/new?body=Page%3A%20[使用 Azure 受管磁盘设置 Microsoft Azure](https://docs.netapp.com/zh-cn/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html)" class="page-nav-contribute-link" role="button"><img src="/zh-cn/astra-control-service/images/discuss-sm.svg" class="github-icon" />请求文档变更</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/blob/main/get-started/set-up-microsoft-azure-with-amd.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-cn/astra-control-service/images/edit-sm.svg" class="github-icon" />在 GitHub 上编辑</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-cn/astra-control-service/images/article-sm.svg" class="github-icon" />提供者指南</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/issues/new?body=Page%3A%20[用户角色和命名空间](https://docs.netapp.com/zh-cn/astra-control-service/learn/user-roles-namespaces.html)" class="page-nav-contribute-link" role="button"><img src="/zh-cn/astra-control-service/images/discuss-sm.svg" class="github-icon" />请求文档变更</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/blob/main/learn/user-roles-namespaces.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-cn/astra-control-service/images/edit-sm.svg" class="github-icon" />在 GitHub 上编辑</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-cn/astra-control-service/images/article-sm.svg" class="github-icon" />提供者指南</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">在此页面上</div>
@@ -292,13 +292,13 @@
           <ul class="n-menu__list">
             <li class="n-menu__list-column">
               <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                  <a href="https://docs.netapp.com/us-en/astra-control-service/learn/user-roles-namespaces.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                  <a href="https://docs.netapp.com/ja-jp/astra-control-service/learn/user-roles-namespaces.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                  <a href="https://docs.netapp.com/ko-kr/astra-control-service/learn/user-roles-namespaces.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                  <a href="https://docs.netapp.com/zh-cn/astra-control-service/learn/user-roles-namespaces.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -433,15 +433,6 @@
 
 
 
-    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
-  <a target="_blank" href="/zh-cn/astra-control-service/pdfs/pages/get-started/set-up-microsoft-azure-with-amd.pdf" >
-    <img src="/zh-cn/astra-control-service/images/pdf.png" width="16" height="16"/>
-    PDF of this page
-  </a>
-</li>
-
-</ul>
-  
 
 
 
@@ -661,6 +652,15 @@
 
 
 
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/zh-cn/astra-control-service/pdfs/pages/learn/user-roles-namespaces.pdf" >
+    <img src="/zh-cn/astra-control-service/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
 
 
 
@@ -802,7 +802,7 @@
         设置 Google Cloud
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/get-started/set-up-microsoft-azure-with-anf.html">
         使用 Azure NetApp Files 设置 Microsoft Azure
-      </a></li><li class="  active "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html">
         使用 Azure 受管磁盘设置 Microsoft Azure
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/get-started/register.html">
         注册帐户
@@ -880,7 +880,7 @@
         经验证的应用程序与标准应用程序
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/learn/define-custom-app.html">
         定义自定义应用程序
-      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/learn/user-roles-namespaces.html">
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/learn/user-roles-namespaces.html">
         用户角色和命名空间
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 部署应用程序</div>
@@ -962,7 +962,7 @@
     </div>
   </span>
 </div><div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">使用 Azure 受管磁盘设置 Microsoft Azure</h1>
+  <h1 class="n-doc__component-detail-heading">用户角色和命名空间</h1>
 </div>
 
 
@@ -979,352 +979,50 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>在使用 Astra Control Service 管理 Azure Kubernetes Service 集群之前，需要执行一些步骤来准备 Microsoft Azure 订阅。如果您计划使用 Azure 托管磁盘作为存储后端，请按照以下说明进行操作。</p>
+<p>了解 Astra Control 中的用户角色和命名空间，以及如何使用它们控制对组织中资源的访问。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="快速开始设置-azure">快速开始设置 Azure</h2>
+<h2 id="用户角色">用户角色</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>按照以下步骤快速入门，或者向下滚动到其余部分以了解完整详细信息。</p>
-</div>
-<div class="sect3">
-<h4 id="查看-azure-kubernetes-service-的-astra-control-service-要求">查看 Azure Kubernetes Service 的 Astra Control Service 要求</h4>
-<div class="paragraph quick-margin-para">
-<p>确保集群运行状况良好且运行的是 Kubernetes 1.21.x 到 1.23 版，节点池已联机且运行的是 * Linux * 等。 <a href="#Azure Kubernetes Service cluster requirements">了解有关此步骤的更多信息</a>。</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="注册-microsoft-azure">注册 Microsoft Azure</h4>
-<div class="paragraph quick-margin-para">
-<p>创建 Microsoft Azure 帐户。 <a href="#Sign up for Microsoft Azure">了解有关此步骤的更多信息</a>。</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="创建-azure-服务主体">创建 Azure 服务主体</h4>
-<div class="paragraph quick-margin-para">
-<p>创建具有 " 贡献者 " 角色的 Azure 服务主体。 <a href="#Create an Azure service principal">了解有关此步骤的更多信息</a>。</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="配置容器存储接口-csi-驱动程序详细信息">配置容器存储接口（ CSI ）驱动程序详细信息</h4>
-<div class="paragraph quick-margin-para">
-<p>您需要配置 Azure 订阅和集群以使用 CSI 驱动程序。 <a href="#Configure Container Storage Interface (CSI) driver details">了解有关此步骤的更多信息</a>。</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="azure-kubernetes-service-集群要求">Azure Kubernetes Service 集群要求</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Kubernetes 集群必须满足以下要求，才能通过 Astra Control Service 发现和管理它。</p>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Kubernetes 版本</dt>
-<dd>
-<p>集群必须运行 Kubernetes 1.21.x 至 1.23 版。</p>
-</dd>
-<dt class="hdlist1">映像类型</dt>
-<dd>
-<p>所有节点池的映像类型必须为 Linux 。</p>
-</dd>
-<dt class="hdlist1">集群状态</dt>
-<dd>
-<p>集群必须运行状况良好，并且至少有一个联机辅助节点，并且没有处于故障状态的辅助节点。</p>
-</dd>
-<dt class="hdlist1">Azure 区域</dt>
-<dd>
-<p>作为最佳实践，您应选择一个支持 Azure NetApp Files 的区域，即使您不将其用作存储后端也是如此。这样，如果性能要求发生变化，将来可以更轻松地将 Azure NetApp Files 用作存储后端。 <a href="https://azure.microsoft.com/en-us/global-infrastructure/services/?products=netapp" target="_blank" rel="noopener">"按区域查看 Azure 产品"</a>。</p>
-</dd>
-<dt class="hdlist1">专用网络</dt>
-<dd>
-<p>不得在集群上启用专用网络。</p>
-</dd>
-<dt class="hdlist1">外部卷快照控制器</dt>
-<dd>
-<p>集群必须安装 CSI 卷快照控制器。默认情况下，此控制器从 K8s 1.21 版开始安装，但您需要检查运行 1.19 和 1.20 版的集群。 <a href="https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html" target="_blank" rel="noopener">"了解有关用于按需卷快照的外部快照控制器的更多信息"</a>。</p>
-</dd>
-<dt class="hdlist1">CSI 驱动程序</dt>
-<dd>
-<p>集群必须安装适当的 CSI 驱动程序。</p>
-</dd>
-</dl>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="注册-microsoft-azure-2">注册 Microsoft Azure</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>如果您没有 Microsoft Azure 帐户，请先注册 Microsoft Azure 。</p>
-</div>
-<div class="olist arabic">
-<div class="title">步骤</div>
-<ol class="arabic">
-<li>
-<p>转至 <a href="https://azure.microsoft.com/en-us/free/" target="_blank" rel="noopener">"Azure 订阅页面"</a> 订阅 Azure 服务。</p>
-</li>
-<li>
-<p>选择一个计划并按照说明完成订阅。</p>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="创建-azure-服务主体-2">创建 Azure 服务主体</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Astra 控制服务需要分配有贡献者角色的 Azure 服务主体。Astra 控制服务使用此服务主体来代表您促进 Kubernetes 应用程序数据管理。</p>
-</div>
-<div class="paragraph">
-<p>服务主体是指专为应用程序，服务和工具而创建的身份。为服务主体分配角色将限制对特定 Azure 资源的访问。</p>
-</div>
-<div class="paragraph">
-<p>按照以下步骤使用 Azure 命令行界面创建服务主体。您需要将输出保存在 JSON 文件中，并稍后将其提供给 Astra Control Service 。 <a href="https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli" target="_blank" rel="noopener">"有关使用 CLI 的详细信息，请参见 Azure 文档"</a>。</p>
-</div>
-<div class="paragraph">
-<p>以下步骤假定您有权创建服务主体，并且计算机上已安装 Microsoft Azure SDK （ AZ 命令）。</p>
-</div>
-<div class="ulist">
-<div class="title">要求</div>
-<ul>
-<li>
-<p>服务主体必须使用常规身份验证。不支持证书。</p>
-</li>
-<li>
-<p>必须为服务主体授予对您的 Azure 订阅的贡献者或所有者访问权限。</p>
-</li>
-<li>
-<p>您为范围选择的订阅或资源组必须包含 AKS 集群和您的 Azure NetApp Files 帐户。</p>
-</li>
-</ul>
-</div>
-<div class="olist arabic">
-<div class="title">步骤</div>
-<ol class="arabic">
-<li>
-<p>确定 AKS 集群所在的订阅和租户 ID （这些集群是您要在 Astra Control Service 中管理的集群）。</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-azureCLI" data-lang="azureCLI">az configure --list-defaults
-az account list --output table</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>根据您使用的是整个订阅还是资源组，执行以下操作之一：</p>
-<div class="ulist">
-<ul>
-<li>
-<p>创建服务主体，分配 " 贡献者 " 角色，并指定集群所在的整个订阅的范围。</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-azurecli" data-lang="azurecli">az ad sp create-for-rbac --name service-principal-name --role contributor --scopes /subscriptions/SUBSCRIPTION-ID</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>创建服务主体，分配 " 贡献者 " 角色，并指定集群所在的资源组。</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-azurecli" data-lang="azurecli">az ad sp create-for-rbac --name service-principal-name --role contributor --scopes /subscriptions/SUBSCRIPTION-ID/resourceGroups/RESOURCE-GROUP-ID</code></pre>
-</div>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>将生成的 Azure 命令行界面输出存储为 JSON 文件。</p>
-<div class="paragraph">
-<p>您需要提供此文件，以便 Astra Control Service 能够发现您的 AKS 集群并管理 Kubernetes 数据管理操作。 <a href="../use/manage-credentials.html">"了解如何在 Astra Control Service 中管理凭据"</a>。</p>
-</div>
-</li>
-<li>
-<p>可选：将订阅 ID 添加到 JSON 文件中，以便 Astra 控制服务在您选择此文件时自动填充此 ID 。</p>
-<div class="paragraph">
-<p>否则，您需要在出现提示时在 Astra Control Service 中输入订阅 ID 。</p>
+<p>您可以使用角色控制用户对 Astra Control 资源或功能的访问权限。以下是 Astra Control 中的用户角色：</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>示例 *</p>
+<p>* 所有者 * 具有管理员权限，可以删除帐户。</p>
+</li>
+<li>
+<p>* 管理员 * 具有成员权限，可以邀请其他用户。</p>
+</li>
+<li>
+<p>* 成员 * 可以全面管理应用程序和集群。</p>
+</li>
+<li>
+<p>* 查看器 * 可以查看资源。</p>
 </li>
 </ul>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-JSON" data-lang="JSON">{
-  "appId": "0db3929a-bfb0-4c93-baee-aaf8",
-  "displayName": "sp-example-dev-sandbox",
-  "name": "http://sp-example-dev-sandbox",
-  "password": "mypassword",
-  "tenant": "011cdf6c-7512-4805-aaf8-7721afd8ca37",
-  "subscriptionId": "99ce999a-8c99-99d9-a9d9-99cce99f99ad"
-}</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>可选：测试您的服务主体。根据您的服务主体使用的范围，从以下示例命令中进行选择。</p>
-<div class="listingblock">
-<div class="title">订阅范围</div>
-<div class="content">
-<pre class="highlight"><code class="language-azurecli" data-lang="azurecli">az login --service-principal --username APP-ID-SERVICEPRINCIPAL --password PASSWORD --tenant TENANT-ID
-az group list --subscription SUBSCRIPTION-ID
-az aks list --subscription SUBSCRIPTION-ID
-az storage container list --subscription SUBSCRIPTION-ID</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">资源组范围</div>
-<div class="content">
-<pre class="highlight"><code class="language-azurecli" data-lang="azurecli">az login --service-principal --username APP-ID-SERVICEPRINCIPAL --password PASSWORD --tenant TENANT-ID
-az aks list --subscription SUBSCRIPTION-ID --resource-group RESOURCE-GROUP-ID</code></pre>
-</div>
-</div>
-</li>
-</ol>
+<div class="paragraph">
+<p>您可以向 " 成员 " 或 " 查看器 " 用户添加限制，以将用户限制为一个或多个 <a href="#Namespaces">[Namespaces]</a>。</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="配置容器存储接口-csi-驱动程序详细信息-2">配置容器存储接口（ CSI ）驱动程序详细信息</h2>
+<h2 id="命名空间">命名空间</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>要将 Azure 受管磁盘与 Astra Control Service 结合使用，您首先需要为低于 1.21 的 Kubernetes 版本配置 CSI 卷快照功能，并安装所需的 CSI 驱动程序。</p>
+<p>命名空间是指您可以分配给由 Astra Control 管理的集群中的特定资源的范围。将集群添加到 Astra Control 时， Astra Control 会发现集群的命名空间。发现后，可以将命名空间作为约束分配给用户。只有有权访问该命名空间的成员才能使用该资源。您可以使用命名空间来控制对资源的访问，方法是采用对您的组织有意义的模式；例如，按公司内的物理区域或部门进行访问。向用户添加约束时，您可以将该用户配置为可以访问所有命名空间或仅访问一组特定命名空间。您还可以使用命名空间标签分配命名空间约束。</p>
 </div>
-<div class="sect2">
-<h3 id="为-kubernetes-1-19-安装-csi-卷快照控制器">为 Kubernetes 1.19 安装 CSI 卷快照控制器</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="了解更多信息">了解更多信息</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>如果您使用的是 Kubernetes 1.19 版，请按照以下说明安装卷快照控制器。</p>
-</div>
-<div class="olist arabic">
-<div class="title">步骤</div>
-<ol class="arabic">
-<li>
-<p>安装卷快照 CRD 。</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-kubectl" data-lang="kubectl">kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>创建快照控制器。</p>
-<div class="paragraph">
-<p>如果您希望 Snapshot 控制器位于特定命名空间中，请先下载并编辑以下文件，然后再应用它们。</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-kubectl" data-lang="kubectl">kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="为-kubernetes-1-20-安装-csi-卷快照控制器">为 Kubernetes 1.20 安装 CSI 卷快照控制器</h3>
-<div class="paragraph">
-<p>如果您使用的是 Kubernetes 版本 1.20 ，请按照以下说明安装卷快照控制器。</p>
-</div>
-<div class="olist arabic">
-<div class="title">步骤</div>
-<ol class="arabic">
-<li>
-<p>安装卷快照 CRD 。</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-kubectl" data-lang="kubectl">kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>创建快照控制器。</p>
-<div class="paragraph">
-<p>如果您希望 Snapshot 控制器位于特定命名空间中，请先下载并编辑以下文件，然后再应用它们。</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-kubectl" data-lang="kubectl">kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml</code></pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="在-azure-订阅中启用-csi-驱动程序功能">在 Azure 订阅中启用 CSI 驱动程序功能</h3>
-<div class="paragraph">
-<p>在安装 CSI 驱动程序之前，您需要在 Azure 订阅中启用 CSI 驱动程序功能。</p>
-</div>
-<div class="olist arabic">
-<div class="title">步骤</div>
-<ol class="arabic">
-<li>
-<p>打开 Azure 命令行界面。</p>
-</li>
-<li>
-<p>运行以下命令以注册驱动程序：</p>
-<div class="listingblock">
-<div class="content">
-<pre>az feature register --namespace "Microsoft.ContainerService" --name "EnableAzureDiskFileCSIDriver"</pre>
-</div>
-</div>
-</li>
-<li>
-<p>运行以下命令以确保更改已被禁止：</p>
-<div class="listingblock">
-<div class="content">
-<pre>'az provider register -n Microsoft.ContainerService</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>您应看到类似于以下内容的输出：</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>{
-"id": "/subscriptions/b200155f-001a-43be-87be-3edde83acef4/providers/Microsoft.Features/providers/Microsoft.ContainerService/features/EnableAzureDiskFileCSIDriver",
-"name": "Microsoft.ContainerService/EnableAzureDiskFileCSIDriver",
-"properties": {
-   "state": "Registering"
-},
-"type": "Microsoft.Features/providers/features"
-}</pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="在-azure-kubernetes-service-集群中安装-azure-托管磁盘-csi-驱动程序">在 Azure Kubernetes Service 集群中安装 Azure 托管磁盘 CSI 驱动程序</h3>
-<div class="paragraph">
-<p>您可以安装 Azure CSI 驱动程序以完成准备工作。</p>
-</div>
-<div class="olist arabic">
-<div class="title">步骤</div>
-<ol class="arabic">
-<li>
-<p>转至 <a href="https://docs.microsoft.com/en-us/azure/aks/csi-storage-drivers" target="_blank" rel="noopener">"Microsoft CSI 驱动程序文档"</a>。</p>
-</li>
-<li>
-<p>按照说明安装所需的 CSI 驱动程序。</p>
-</li>
-</ol>
-</div>
+<p><a href="../use/manage-roles.html">"管理角色"</a></p>
 </div>
 </div>
 </div>

@@ -292,13 +292,13 @@
           <ul class="n-menu__list">
             <li class="n-menu__list-column">
               <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/astra-control-service/release-notes/known-limitations.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/us-en/astra-control-service/release-notes/known-limitations.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ja-jp/astra-control-service/release-notes/known-limitations.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ko-kr/astra-control-service/release-notes/known-limitations.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/astra-control-service/release-notes/known-limitations.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -612,6 +612,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -649,6 +651,8 @@
             概念
           </a>
           
+
+
 
 
 
@@ -849,6 +853,8 @@
         设置计费
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/use/manage-users.html">
         邀请和管理用户
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/use/manage-roles.html">
+        管理角色
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/use/manage-credentials.html">
         管理云提供商凭据
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/use/monitor-account-activity.html">
@@ -874,6 +880,8 @@
         经验证的应用程序与标准应用程序
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/learn/define-custom-app.html">
         定义自定义应用程序
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/learn/user-roles-namespaces.html">
+        用户角色和命名空间
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 部署应用程序</div>
       </a>
@@ -961,7 +969,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-13 06:58:09 +0000">04/13/2022</time>
+    <time datetime="2022-04-26 16:28:36 +0000">04/26/2022</time>
     
   
 
@@ -980,12 +988,6 @@
 <div class="sectionbody">
 <div class="paragraph">
 <p>以下限制会影响 Astra Control Service 在任何受支持的 Kubernetes 部署中对 Kubernetes 集群的管理。</p>
-</div>
-<div class="sect2">
-<h3 id="运行状况不正常的-pod-会影响应用程序管理">运行状况不正常的 Pod 会影响应用程序管理</h3>
-<div class="paragraph">
-<p>如果受管应用程序中的 Pod 运行状况不正常，则 Astra Control Service 无法创建新的备份和克隆。</p>
-</div>
 </div>
 <div class="sect2">
 <h3 id="未从集群中卸载-astra-trident">未从集群中卸载 Astra Trident</h3>
@@ -1022,12 +1024,6 @@
 <p>无论您在 Astra Control Service 中使用哪种类型的应用程序，您都应始终自行测试备份和还原工作流，以确保满足灾难恢复要求。</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="永久性卷限制">永久性卷限制</h3>
-<div class="paragraph">
-<p>每个 Google Cloud 区域最多可以有 100 个卷。如果达到此限制，则创建新克隆或卷将失败。 <a href="../support/get-help.html">"请联系支持部门以增加卷限制"</a>。</p>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1045,6 +1041,18 @@
 <ul>
 <li>
 <p><a href="https://github.com/k8ssandra/cass-operator/tree/v1.7.1" target="_blank" rel="noopener">"Apache K8ssandra"</a></p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="注">
+</td>
+<td class="content">
+对于 K8ssandra ，支持原位还原操作。要对新命名空间或集群执行还原操作，需要关闭应用程序的原始实例。这是为了确保传输的对等组信息不会导致跨实例通信。不支持克隆应用程序。
+</td>
+</tr>
+</table>
+</div>
 </li>
 <li>
 <p><a href="https://github.com/jenkinsci/kubernetes-operator" target="_blank" rel="noopener">"Jenkins CI"</a></p>
@@ -1056,6 +1064,34 @@
 </div>
 <div class="paragraph">
 <p>请注意， Astra Control 可能无法克隆使用 " 按参考传递 " 架构设计的运算符（例如 CockroachDB 运算符）。在这些类型的克隆操作期间，克隆的操作员会尝试引用源操作员提供的 Kubernetes 机密，尽管在克隆过程中他们拥有自己的新机密。克隆操作可能会失败，因为 Astra Control 不知道源运算符中的 Kubernetes 密钥。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="无法停止正在进行的应用程序备份">无法停止正在进行的应用程序备份</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>无法取消正在运行的备份。如果需要删除备份，请等待备份完成，然后按照中的说明进行操作 <a href="../use/protect-apps.html#delete-backups">"删除备份"</a>。要删除失败的备份，请使用 <a href="https://docs.netapp.com/us-en/astra-automation/index.html" target="_blank" rel="noopener">"Astra API"</a>。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="基于角色的访问控制-role-based-access-control-rbac-限制">基于角色的访问控制（ Role-Based Access Control ， RBAC ）限制</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>以下限制适用于 Astra Control 限制用户访问资源或功能的方式。</p>
+</div>
+<div class="sect2">
+<h3 id="具有命名空间-rbac-限制的用户可以添加和取消管理集群">具有命名空间 RBAC 限制的用户可以添加和取消管理集群</h3>
+<div class="paragraph">
+<p>不应允许具有命名空间 RBAC 限制的用户添加或取消管理集群。由于当前的限制， Astra 不会阻止此类用户取消管理集群。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="具有命名空间约束的成员用户无法访问克隆或还原的应用程序除非管理员用户将命名空间添加到此限制中">具有命名空间约束的成员用户无法访问克隆或还原的应用程序，除非管理员用户将命名空间添加到此限制中</h3>
+<div class="paragraph">
+<p>受命名空间名称 /ID 或命名空间标签约束的任何 <code>m成员</code> 用户均可将应用程序克隆或还原到同一集群上的新命名空间或其组织帐户中的任何其他集群。但是，同一用户无法访问新命名空间中的克隆或还原应用程序。通过克隆或还原操作创建新命名空间后，帐户管理员 / 所有者可以编辑 <code>m成员</code> 用户帐户并更新受影响用户的角色约束，以授予对新命名空间的访问权限。</p>
 </div>
 </div>
 </div>

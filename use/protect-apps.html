@@ -292,13 +292,13 @@
           <ul class="n-menu__list">
             <li class="n-menu__list-column">
               <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/astra-control-service/use/protect-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/us-en/astra-control-service/use/protect-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ja-jp/astra-control-service/use/protect-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ko-kr/astra-control-service/use/protect-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/astra-control-service/use/protect-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -612,6 +612,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -649,6 +651,8 @@
             概念
           </a>
           
+
+
 
 
 
@@ -849,6 +853,8 @@
         设置计费
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/use/manage-users.html">
         邀请和管理用户
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/use/manage-roles.html">
+        管理角色
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/use/manage-credentials.html">
         管理云提供商凭据
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/use/monitor-account-activity.html">
@@ -874,6 +880,8 @@
         经验证的应用程序与标准应用程序
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/learn/define-custom-app.html">
         定义自定义应用程序
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/learn/user-roles-namespaces.html">
+        用户角色和命名空间
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 部署应用程序</div>
       </a>
@@ -961,7 +969,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-13 06:58:09 +0000">04/13/2022</time>
+    <time datetime="2022-04-26 16:28:36 +0000">04/26/2022</time>
     
   
 
@@ -1015,9 +1023,6 @@
 </li>
 <li>
 <p>选择 * 配置保护策略 * 。</p>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-configure-protection-policy.gif" alt="应用程序的数据保护选项卡的屏幕截图，可用于配置保护策略。"></span></p>
-</div>
 </li>
 <li>
 <p>通过选择每小时，每天，每周和每月计划要保留的快照和备份数量来定义保护计划。</p>
@@ -1074,9 +1079,6 @@ Your browser does not support the video tag.
 </li>
 <li>
 <p>选择 * 快照 * 。</p>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-create-snapshot.gif" alt="应用程序页面的屏幕截图，在此可以选择操作列中的下拉列表并选择 Snapshot 。"></span></p>
-</div>
 </li>
 <li>
 <p>自定义快照的名称，然后选择 * 查看信息 * 。</p>
@@ -1108,9 +1110,6 @@ Your browser does not support the video tag.
 </li>
 <li>
 <p>选择 * 备份 * 。</p>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-create-backup.gif" alt="应用程序页面的屏幕截图，在此可以选择操作列中的下拉列表并选择备份。"></span></p>
-</div>
 </li>
 <li>
 <p>自定义备份的名称，选择是否从现有快照备份应用程序，然后选择 * 查看信息 * 。</p>
@@ -1142,9 +1141,6 @@ Your browser does not support the video tag.
 <div class="paragraph">
 <p>默认情况下会显示快照。</p>
 </div>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-snapshots.gif" alt="应用程序的数据保护选项卡的屏幕截图，您可以在此查看当前快照和备份的列表。"></span></p>
-</div>
 </li>
 <li>
 <p>选择 * 备份 * 可查看备份列表。</p>
@@ -1173,9 +1169,6 @@ Your browser does not support the video tag.
 </li>
 <li>
 <p>选择 * 删除快照 * 。</p>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-delete-snapshot.gif" alt="您可以从中删除快照的应用程序的数据保护选项卡的屏幕截图。"></span></p>
-</div>
 </li>
 <li>
 <p>键入快照的名称以确认删除，然后选择 * 是，删除快照 * 。</p>
@@ -1203,18 +1196,12 @@ Your browser does not support the video tag.
 </li>
 <li>
 <p>选择 * 备份 * 。</p>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-data-protection-backups.gif" alt="数据保护选项卡最右侧提供的备份选项的屏幕截图。"></span></p>
-</div>
 </li>
 <li>
 <p>在 * 操作 * 列中选择所需备份的下拉列表。</p>
 </li>
 <li>
 <p>选择 * 删除备份 * 。</p>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-delete-backup.gif" alt="您可以从中删除快照的应用程序的数据保护选项卡的屏幕截图。"></span></p>
-</div>
 </li>
 <li>
 <p>键入备份的名称以确认删除，然后选择 * 是，删除备份 * 。</p>

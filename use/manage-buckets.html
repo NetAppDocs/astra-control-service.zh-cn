@@ -292,13 +292,13 @@
           <ul class="n-menu__list">
             <li class="n-menu__list-column">
               <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/astra-control-service/use/manage-buckets.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/us-en/astra-control-service/use/manage-buckets.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ja-jp/astra-control-service/use/manage-buckets.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ko-kr/astra-control-service/use/manage-buckets.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/astra-control-service/use/manage-buckets.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -612,6 +612,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -649,6 +651,8 @@
             概念
           </a>
           
+
+
 
 
 
@@ -849,6 +853,8 @@
         设置计费
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/use/manage-users.html">
         邀请和管理用户
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/use/manage-roles.html">
+        管理角色
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/use/manage-credentials.html">
         管理云提供商凭据
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/use/monitor-account-activity.html">
@@ -874,6 +880,8 @@
         经验证的应用程序与标准应用程序
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/learn/define-custom-app.html">
         定义自定义应用程序
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/learn/user-roles-namespaces.html">
+        用户角色和命名空间
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 部署应用程序</div>
       </a>
@@ -961,7 +969,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-13 06:58:09 +0000">04/13/2022</time>
+    <time datetime="2022-04-26 16:28:36 +0000">04/26/2022</time>
     
   
 
@@ -1044,12 +1052,6 @@
 <div class="paragraph">
 <p>此时将显示可供 Astra Control Service 使用的存储分段列表。</p>
 </div>
-<div class="paragraph">
-<p>从以下示例中可以看出，只有一个存储分段可用： Astra 创建的默认存储分段。</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot_buckets_list.png" alt="屏幕截图显示了 &quot; 分段 &quot; 页面中的一个分段。"></span></p>
-</div>
 </li>
 </ol>
 </div>
@@ -1102,14 +1104,8 @@
 </li>
 <li>
 <p>* 选择凭据 * ：选择可为 Astra 控制服务提供管理存储分段所需权限的凭据。</p>
-<div class="paragraph">
-<p>以下示例显示了如何在 Google Cloud Platform 中添加新存储分段。</p>
-</div>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot_buckets_add.png" alt="屏幕截图显示了 &quot; 分段 &quot; 页面中的一个分段。"></span></p>
 </div>
 </li>
 <li>
@@ -1147,6 +1143,72 @@
 <p>选择 * 更新 * 。</p>
 </li>
 </ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="删除存储分段">删除存储分段</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>您可以删除不再使用或运行状况不佳的存储分段。您可能需要执行此操作以使对象存储配置简单且最新。</p>
+</div>
+<div class="paragraph">
+<p>您不能删除默认存储分段。如果要删除此存储分段，请先选择另一个存储分段作为默认存储。</p>
+</div>
+<div class="ulist">
+<div class="title">您需要什么？ #8217 ；将需要什么</div>
+<ul>
+<li>
+<p>开始之前，应检查以确保此存储分段没有正在运行或已完成的备份。</p>
+</li>
+<li>
+<p>您应进行检查，以确保存储分段未用于任何计划的备份。</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>如果存在，您将无法继续。</p>
+</div>
+<div class="olist arabic">
+<div class="title">步骤</div>
+<ol class="arabic">
+<li>
+<p>从左侧导航栏中，选择 * 分段器 * 。</p>
+</li>
+<li>
+<p>从 * 操作 * 菜单中，选择 * 删除 * 。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="注">
+</td>
+<td class="content">
+Astra Control 可首先确保没有使用存储分段进行备份的计划策略，并且要删除的存储分段中没有活动备份。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>键入 "remove" 确认此操作。</p>
+</li>
+<li>
+<p>选择 * 是，删除存储分段 * 。</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="了解更多信息">了解更多信息</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/astra-automation/index.html" target="_blank" rel="noopener">"使用 Astra Control API"</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>

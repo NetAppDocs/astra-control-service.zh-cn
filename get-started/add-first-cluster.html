@@ -292,13 +292,13 @@
           <ul class="n-menu__list">
             <li class="n-menu__list-column">
               <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/astra-control-service/get-started/add-first-cluster.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/us-en/astra-control-service/get-started/add-first-cluster.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ja-jp/astra-control-service/get-started/add-first-cluster.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ko-kr/astra-control-service/get-started/add-first-cluster.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/astra-control-service/get-started/add-first-cluster.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -612,6 +612,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -649,6 +651,8 @@
             概念
           </a>
           
+
+
 
 
 
@@ -849,6 +853,8 @@
         设置计费
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/use/manage-users.html">
         邀请和管理用户
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/use/manage-roles.html">
+        管理角色
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/use/manage-credentials.html">
         管理云提供商凭据
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/use/monitor-account-activity.html">
@@ -874,6 +880,8 @@
         经验证的应用程序与标准应用程序
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/learn/define-custom-app.html">
         定义自定义应用程序
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/learn/user-roles-namespaces.html">
+        用户角色和命名空间
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 部署应用程序</div>
       </a>
@@ -961,7 +969,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-13 06:58:09 +0000">04/13/2022</time>
+    <time datetime="2022-04-26 16:28:36 +0000">04/26/2022</time>
     
   
 
@@ -1025,6 +1033,19 @@
 <p>如果未将 Azure 订阅 ID 添加到 JSON 文件中，您也需要此 ID 。</p>
 </div>
 </li>
+<li>
+<p>对于专用 AKS 集群：</p>
+<div class="ulist">
+<ul>
+<li>
+<p>集群应满足中所述的要求 <a href="https://docs.microsoft.com/en-us/azure/aks/private-clusters" target="_blank" rel="noopener">"Azure 文档"</a>。</p>
+</li>
+<li>
+<p>您需要在 AKS 服务集群上安装 Astra Connector ，以便 Astra Control Service 可以管理此集群。要安装 Astra Connector ， <a href="#Manage a private cluster">请按照以下说明进行操作</a>。</p>
+</li>
+</ul>
+</div>
+</li>
 </ul>
 </div>
 <div class="olist arabic">
@@ -1063,6 +1084,9 @@
 <div class="paragraph">
 <p>如果您选择的集群尚未配置 Cloud Volumes Service for Google Cloud 或 Azure NetApp Files ，则会显示一条警告。此集群未安装和配置 NetApp Trident 。如果要使用其他存储服务，您可以继续添加集群。</p>
 </div>
+<div class="paragraph">
+<p>如果您选择的集群标记有 "private" 图标，则它将使用专用 IP 地址，并且 Astra Control 需要使用 Astra Connector 来管理集群。如果您看到一条消息，指出您需要安装 Astra Connector ， <a href="#Manage a private cluster">请按照以下说明进行操作</a> 安装 Astra Connector 并启用集群管理。安装 Astra Connector 后，集群应符合条件，您可以继续添加集群。</p>
+</div>
 </li>
 <li>
 <p>* 存储 * ：选择希望部署到此集群的 Kubernetes 应用程序默认使用的存储类。</p>
@@ -1099,6 +1123,68 @@
 </div>
 <div class="paragraph">
 <p>Astra Control Service 会在符合条件的集群上创建用于应用程序备份的对象存储，在集群上创建管理员帐户，并设置您指定的默认存储类。此过程最多可能需要 5 分钟。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="管理专用集群">管理专用集群</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>您可以使用 Astra Control Service 管理专用 AKS 集群。为此，您需要在专用 AKS 服务集群上安装 Astra Connector 操作员。您可以在添加要管理的集群之前完成此步骤，也可以在系统提示时在添加集群期间完成此步骤。</p>
+</div>
+<div class="olist arabic">
+<div class="title">步骤</div>
+<ol class="arabic">
+<li>
+<p>为 Astra Connector 运算符创建命名空间。</p>
+<div class="listingblock">
+<div class="content">
+<pre>kubectl create ns astra-connector-operator</pre>
+</div>
+</div>
+</li>
+<li>
+<p>将 <code>asaconnector_operator.yaml</code> 文件应用于操作员命名空间。</p>
+<div class="listingblock">
+<div class="content">
+<pre>kubectl apply -f astraconnector_operator.yaml -n astra-connector-operator</pre>
+</div>
+</div>
+</li>
+<li>
+<p>为专用集群组件创建命名空间。</p>
+<div class="listingblock">
+<div class="content">
+<pre>kubectl create ns astra-connector</pre>
+</div>
+</div>
+</li>
+<li>
+<p>应用 Astra Connector 自定义资源定义（ CRD ）。</p>
+<div class="listingblock">
+<div class="content">
+<pre>kubectl apply -f config/samples/astraconnector_v1.yaml -n astra-connector</pre>
+</div>
+</div>
+</li>
+<li>
+<p>检查 Astra 连接器的状态。</p>
+<div class="listingblock">
+<div class="content">
+<pre>kubectl get astraconnector astra-connector -n astra-connector</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>您应看到类似于以下内容的输出：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>NAME              REGISTERED   ASTRACONNECTORID
+astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19</pre>
+</div>
+</div>
+</li>
+</ol>
 </div>
 </div>
 </div>

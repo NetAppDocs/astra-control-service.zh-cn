@@ -292,13 +292,13 @@
           <ul class="n-menu__list">
             <li class="n-menu__list-column">
               <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/astra-control-service/use/manage-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/us-en/astra-control-service/use/manage-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ja-jp/astra-control-service/use/manage-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
                   <a href="https://docs.netapp.com/ko-kr/astra-control-service/use/manage-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/astra-control-service/use/manage-apps.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -612,6 +612,8 @@
 
 
 
+
+
           
         </li>
       </ul>
@@ -649,6 +651,8 @@
             概念
           </a>
           
+
+
 
 
 
@@ -849,6 +853,8 @@
         设置计费
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/use/manage-users.html">
         邀请和管理用户
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/use/manage-roles.html">
+        管理角色
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/use/manage-credentials.html">
         管理云提供商凭据
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/use/monitor-account-activity.html">
@@ -874,6 +880,8 @@
         经验证的应用程序与标准应用程序
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/learn/define-custom-app.html">
         定义自定义应用程序
+      </a></li><li class=" "><a class="na-navbar-padding" href="/zh-cn/astra-control-service/learn/user-roles-namespaces.html">
+        用户角色和命名空间
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> 部署应用程序</div>
       </a>
@@ -961,7 +969,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-13 06:58:09 +0000">04/13/2022</time>
+    <time datetime="2022-04-26 16:28:36 +0000">04/26/2022</time>
     
   
 
@@ -994,76 +1002,63 @@
 </li>
 <li>
 <p>* Kubernetes Resources* ：使用非 Astra Control 收集的 Kubernetes 资源的应用程序可能没有完整的应用程序数据管理功能。Astra Control 收集以下 Kubernetes 资源：</p>
-<div class="ulist">
-<ul>
-<li>
-<p>ClusterRole</p>
-</li>
-<li>
-<p>ClusterRoleBinding.</p>
-</li>
-<li>
-<p>配置映射</p>
-</li>
-<li>
-<p>自定义资源定义</p>
-</li>
-<li>
-<p>自定义资源</p>
-</li>
-<li>
-<p>DemonSet</p>
-</li>
-<li>
-<p>部署</p>
-</li>
-<li>
-<p>DeploymentConfig</p>
-</li>
-<li>
-<p>传入</p>
-</li>
-<li>
-<p>MutatingWebhook</p>
-</li>
-<li>
-<p>PersistentVolumeClaim</p>
-</li>
-<li>
-<p>POD</p>
-</li>
-<li>
-<p>ReplicaSet</p>
-</li>
-<li>
-<p>RoleBinding.</p>
-</li>
-<li>
-<p>Role</p>
-</li>
-<li>
-<p>路由</p>
-</li>
-<li>
-<p>机密</p>
-</li>
-<li>
-<p>服务</p>
-</li>
-<li>
-<p>ServiceAccount</p>
-</li>
-<li>
-<p>状态集</p>
-</li>
-<li>
-<p>验证 Webhook</p>
 </li>
 </ul>
 </div>
-</li>
-</ul>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ClusterRole</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ClusterRoleBinding.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">配置映射</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">自定义资源定义</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">自定义资源</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cronjob</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DemonSet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HorizontalPodAutoscaler</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">传入</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DeploymentConfig</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MutatingWebhook</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PersistentVolumeClaim</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">POD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PodDisruptionBuget</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">播客模板</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">网络策略</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ReplicaSet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Role</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RoleBinding.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">路由</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">机密</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">服务</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ServiceAccount</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">状态集</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">验证 Webhook</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
 <div class="sect2">
 <h3 id="支持的应用程序安装方法">支持的应用程序安装方法</h3>
 <div class="paragraph">
@@ -1088,6 +1083,18 @@
 <ul>
 <li>
 <p><a href="https://github.com/k8ssandra/cass-operator/tree/v1.7.1" target="_blank" rel="noopener">"Apache K8ssandra"</a></p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="注">
+</td>
+<td class="content">
+对于 k8ssandra ，支持原位还原操作。要对新命名空间或集群执行还原操作，需要关闭应用程序的原始实例。这是为了确保传输的对等组信息不会导致跨实例通信。不支持克隆应用程序。
+</td>
+</tr>
+</table>
+</div>
 </li>
 <li>
 <p><a href="https://github.com/jenkinsci/kubernetes-operator" target="_blank" rel="noopener">"Jenkins CI"</a></p>
@@ -1205,20 +1212,11 @@
 <ol class="arabic">
 <li>
 <p>选择 * 应用程序 * ，然后选择 * 已发现 * 。</p>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-app-discovery.gif" alt="&quot;Apps&quot; 页面的屏幕截图，其中显示了 &quot;Discovered &quot; 选项卡。"></span></p>
-</div>
 </li>
 <li>
 <p>查看已发现的命名空间列表并展开命名空间以查看应用程序和关联资源。</p>
 <div class="paragraph">
 <p>Astra Control 会在命名空间中显示 Helm 应用程序和自定义标记的应用程序。如果 Helm 标签可用，则会使用标记图标来指定这些标签。</p>
-</div>
-<div class="paragraph">
-<p>以下是一个命名空间中包含两个应用程序的示例：</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-group.gif" alt="应用程序页面的屏幕截图，其中扩展了一个命名空间，以显示该命名空间中的两个应用程序。"></span></p>
 </div>
 </li>
 <li>
@@ -1226,17 +1224,11 @@
 </li>
 <li>
 <p>在层次结构中的所需级别，选择 * 操作 * 列中的下拉列表，然后选择 * 管理 * 。</p>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-app-manage.gif" alt="应用程序页面中展开的下拉列表的屏幕截图，您可以在其中选择管理或忽略命名空间或应用程序。"></span></p>
-</div>
 </li>
 <li>
 <p>如果您不想管理某个应用程序，请选择所需应用程序的 * 操作 * 列中的下拉列表，然后选择 * 忽略 * 。</p>
 <div class="paragraph">
-<p>例如，如果您希望同时管理 "Jenkins " 命名空间下的所有应用程序，以便它们具有相同的快照和备份策略，则可以管理此命名空间并忽略此命名空间中的应用程序：</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-app-manage-and-ignore.gif" alt="应用程序页面中展开的下拉列表的屏幕截图，您可以在其中选择管理或忽略命名空间或应用程序。"></span></p>
+<p>例如，如果您希望同时管理 "Jenkins " 命名空间下的所有应用程序，以便它们具有相同的快照和备份策略，则可以管理此命名空间并忽略此命名空间中的应用程序。</p>
 </div>
 </li>
 </ol>
@@ -1267,48 +1259,29 @@
 <p>* 集群 * ：选择应用程序所在的集群。</p>
 </li>
 <li>
-<p>* 命名空间： * 选择应用程序的命名空间。</p>
+<p>* 命名空间 * ：选择应用程序的命名空间。</p>
 </li>
 <li>
-<p>* 标签： * 输入标签或从以下资源中选择标签。</p>
+<p>* 标签 * ：输入标签或从以下资源中选择标签。</p>
 </li>
 <li>
 <p>* 选定资源 * ：查看和管理要保护的选定 Kubernetes 资源（ Pod ，机密，永久性卷等）。</p>
-<div class="paragraph">
-<p>以下是一个示例：</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-selected-resources.gif" alt="您可以保护的资源的屏幕截图，例如配置映射和永久性卷声明。"></span></p>
-</div>
 <div class="ulist">
 <ul>
 <li>
 <p>通过展开资源并选择标签数量来查看可用标签。</p>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-view-labels.gif" alt="一个屏幕截图，显示已展开的资源以及该资源的标签数量。"></span></p>
-</div>
 </li>
 <li>
 <p>选择一个标签。</p>
 <div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-select-label.gif" alt="屏幕截图显示了选择标签数量后可以从中选择的标签列表。"></span></p>
+<p>选择标签后，它将显示在 * 标签 * 字段中。Astra Control 还会更新 * 未选定资源 * 部分，以显示与选定标签不匹配的资源。</p>
 </div>
 </li>
 </ul>
 </div>
 </li>
-</ol>
-</div>
-<div class="paragraph">
-<p>选择标签后，它将显示在 * 标签 * 字段中。Astra Control 还会更新 * 未选定资源 * 部分，以显示与选定标签不匹配的资源。</p>
-</div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
 <li>
 <p>* 未选择资源 * ：验证您不想保护的应用程序资源。</p>
-<div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-selected-label.gif" alt="从 &quot; 资源 &quot; 窗格中选择标签后，屏幕截图将在 &quot; 标签 &quot; 字段中显示标签。"></span></p>
-</div>
 </li>
 </ol>
 </div>
@@ -1331,7 +1304,7 @@
 <p>Astra Control 还会发现 Kubernetes 集群上运行的系统应用程序。您可以通过筛选应用程序列表来查看这些应用程序。</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="../media/use/screenshot-system-apps.gif" alt="屏幕截图显示了在应用程序屏幕中选择所有集群时可用的显示系统应用程序选项。"></span></p>
+<p><span class="image"><img src="../media/use/acs_apps_system_apps3.png" alt="屏幕截图显示了在应用程序屏幕中选择所有集群时可用的显示系统应用程序选项。"></span></p>
 </div>
 <div class="paragraph">
 <p>默认情况下，我们不会向您显示这些系统应用程序，因为您很少需要备份这些应用程序。</p>
