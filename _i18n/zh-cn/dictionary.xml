@@ -64,10 +64,6 @@
   <block id="e331f2158e8a2c43fd57da1664a0b981" category="inline-xref">下面介绍了此步骤</block>
   <block id="3ac3ca38058e110d3ec68b15254acc3d" category="list-text">专用集群</block>
   <block id="14404c0506ad155270835b42ac26b048" category="inline-link">授权网络</block>
-  <block id="2759281c69a073d0b21e0c4c3fa41f45" category="list-text">如果集群为专用集群，则会显示<block ref="aa255aeede553f15509fbd44536f790e" category="inline-link-rx"></block> 必须允许 Astra 控制服务 IP 地址：</block>
-  <block id="56fa60a47ccea8de7170a804c7c6f55e" category="list-text">54.164.233.140/32</block>
-  <block id="140e22bd8ad031ca24c71c31ce79a35d" category="list-text">3.218.120.204/32</block>
-  <block id="cdf095b957c15904a44d58b2a45c542d" category="list-text">34.193.99.138/32</block>
   <block id="dfe8825579611c3ae8bc76ce43418ff7" category="list-text">GKEE 集群的操作模式</block>
   <block id="b3ed7c2761e0232b50826c6e775de3c3" category="inline-link-macro">了解有关操作模式的更多信息</block>
   <block id="2a0e9ff9904e5e354b8e6cd4dcecc515" category="list-text">您应使用标准操作模式。目前尚未测试自动驾驶模式。 <block ref="e2d664915f7de952ab4692151347e3dd" category="inline-link-macro-rx"></block>。</block>
@@ -1701,4 +1697,5 @@
   <block id="e5c2d65f2a0a3504c7fb94d2f3f8e408" category="paragraph">完成这些步骤后，将更新与集群关联的凭据，集群应重新连接并将其状态更新为 `Available` 。</block>
   <block id="f64cab133147d09d35d2708459ada555" category="section-title">当 Astra Trident 脱机时，应用程序数据管理操作失败，并显示内部服务错误（ 500 ）</block>
   <block id="5ffd50b83740bc0749b40034cddea615" category="paragraph">如果应用程序集群上的 Astra Trident 脱机（并恢复联机），并且在尝试应用程序数据管理时遇到 500 个内部服务错误，请重新启动应用程序集群中的所有 Kubernetes 节点以还原功能。</block>
+  <block id="d551a2e881c7a8c13113e2a9e28d0b91" category="list-text">如果集群为专用集群，则会显示<block ref="aa255aeede553f15509fbd44536f790e" category="inline-link-rx"></block> 必须允许 Astra 控制服务 IP 地址：</block>
 </blocks>
