@@ -1698,4 +1698,5 @@
   <block id="f64cab133147d09d35d2708459ada555" category="section-title">当 Astra Trident 脱机时，应用程序数据管理操作失败，并显示内部服务错误（ 500 ）</block>
   <block id="5ffd50b83740bc0749b40034cddea615" category="paragraph">如果应用程序集群上的 Astra Trident 脱机（并恢复联机），并且在尝试应用程序数据管理时遇到 500 个内部服务错误，请重新启动应用程序集群中的所有 Kubernetes 节点以还原功能。</block>
   <block id="d551a2e881c7a8c13113e2a9e28d0b91" category="list-text">如果集群为专用集群，则会显示<block ref="aa255aeede553f15509fbd44536f790e" category="inline-link-rx"></block> 必须允许 Astra 控制服务 IP 地址：</block>
+  <block id="81a948049e34f0b0478cdb4d7fee5cb1" category="list-text">任何按命名空间名称 /ID 或命名空间标签限制命名空间的成员用户都可以将应用程序克隆或还原到同一集群上的新命名空间或其组织帐户中的任何其他集群。但是，同一用户无法访问新命名空间中的克隆或还原应用程序。通过克隆或还原操作创建新命名空间后，帐户管理员 / 所有者可以编辑成员用户帐户并更新受影响用户的角色约束，以授予对新命名空间的访问权限。</block>
 </blocks>
