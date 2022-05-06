@@ -287,8 +287,6 @@
   <block id="55173b12ad5e4823a240086f6f847275" category="paragraph">如果您即将达到限制，您有两种选择：</block>
   <block id="46a463f45d760c104b72522e58a98d80" category="inline-link">提交增加限制的请求</block>
   <block id="6db1177280cdf1c407b10901a43f2d5d" category="list-text">您可以<block ref="80367e2e66953979f4f73611214577d4" category="inline-link-rx"></block>。如需帮助，请联系您的 NetApp 代表。</block>
-  <block id="609775d4b1f048a0f6500161bd460e47" category="list-text">专用网络</block>
-  <block id="bc287e95f5c3144752a8a8d09fbe96b1" category="list-text">不得在集群上启用专用网络。</block>
   <block id="5b033d6a3f89da3c19247af957fdeadd" category="list-text">外部卷快照控制器</block>
   <block id="fe86e9ef31fe3697198ba10d3c208d2d" category="inline-link">了解有关用于按需卷快照的外部快照控制器的更多信息</block>
   <block id="4e145f73e74518d9ca0febd4ca5ceaa2" category="section-title">安装 CSI 卷快照控制器</block>
@@ -946,7 +944,6 @@
   <block id="f47da5928482ec16270b3f4a38fd29b2" category="paragraph">向 Astra Control 添加凭据的最常见方法是管理集群，但您也可以从帐户页面添加凭据。然后，在管理其他 Kubernetes 集群时，您可以选择这些凭据。</block>
   <block id="d8fcf72bfd3b99486c35821d3f2e44f4" category="paragraph">现在，您可以在向 Astra Control 添加集群时选择这些凭据。</block>
   <block id="82f2b96e6fd3cf7bfa88172cb51c9afc" category="inline-link-macro">取消管理所有集群</block>
-  <block id="5074e7a91e497a22dc0714abe6e771dd" category="paragraph">随时从帐户中删除凭据。您只能在之后删除凭据 <block ref="7193f1b7f27bd5505d89cc1e5724fb4b" category="inline-link-macro-rx"></block>。</block>
   <block id="658342e883e065c182f9a1f9b59425a0" category="list-text">选择应用程序的目标集群。</block>
   <block id="e78b0b14ef505bb78e615dad8a884310" category="list-text">选择克隆的目标集群。</block>
   <block id="ba2e9840531cec7c445b2572e7ce6428" category="summary">将 Kubernetes 集群添加到 Astra Control 后，您可以在该集群上安装应用程序（在 Astra Control 之外），然后转到 Astra Control 中的 "Apps" 页面开始管理这些应用程序。</block>
@@ -1699,4 +1696,14 @@
   <block id="5ffd50b83740bc0749b40034cddea615" category="paragraph">如果应用程序集群上的 Astra Trident 脱机（并恢复联机），并且在尝试应用程序数据管理时遇到 500 个内部服务错误，请重新启动应用程序集群中的所有 Kubernetes 节点以还原功能。</block>
   <block id="d551a2e881c7a8c13113e2a9e28d0b91" category="list-text">如果集群为专用集群，则会显示<block ref="aa255aeede553f15509fbd44536f790e" category="inline-link-rx"></block> 必须允许 Astra 控制服务 IP 地址：</block>
   <block id="81a948049e34f0b0478cdb4d7fee5cb1" category="list-text">任何按命名空间名称 /ID 或命名空间标签限制命名空间的成员用户都可以将应用程序克隆或还原到同一集群上的新命名空间或其组织帐户中的任何其他集群。但是，同一用户无法访问新命名空间中的克隆或还原应用程序。通过克隆或还原操作创建新命名空间后，帐户管理员 / 所有者可以编辑成员用户帐户并更新受影响用户的角色约束，以授予对新命名空间的访问权限。</block>
+  <block id="ae67f9136c5a827541839e278a3b8b0a" category="paragraph">随时从帐户中删除凭据。您只能在之后删除凭据 <block ref="7193f1b7f27bd5505d89cc1e5724fb4b" category="inline-link-macro-rx"></block>、除非您正在轮换凭据(请参见 <block ref="029b7394eded829c95ca3b86c4cd802d" category="inline-xref-macro-rx"></block>）。</block>
+  <block id="85149e5821bdf494d4eaf0a96d8f46a8" category="section-title">轮换凭据</block>
+  <block id="8e945e6a79e0bf8da80606ed9d20bc53" category="paragraph">您可以轮换帐户中的凭据。如果要轮换凭据、请在维护窗口中没有正在进行的备份(计划备份或按需备份)时轮换凭据。</block>
+  <block id="d05c0825b09f53538ae182820f680709" category="list-text">按照中的步骤删除现有凭据 <block ref="d2f3a923bca17e66f3f1dad217fa3a1a" category="inline-xref-macro-rx"></block>。</block>
+  <block id="60ab1991a8b8c64a87882fcdf3740be4" category="list-text">按照中的步骤添加新凭据 <block ref="3ba4bf3dfb819b290465624916ee777a" category="inline-xref-macro-rx"></block>。</block>
+  <block id="dc8364087e4f87791e74e061f41f25d8" category="list-text">更新所有分段以使用新凭据：</block>
+  <block id="071ef8ace6c74c9a1515550077974172" category="list-text">选择 * 编辑 * 。</block>
+  <block id="d2b49295684369e8eca9915ebf3725b5" category="list-text">在*选择凭据*部分中、选择添加到Astra Control的新凭据。</block>
+  <block id="fe7fbb88eb579dd44896aecd5e694bc8" category="list-text">对系统上的任何剩余存储分段重复步骤* b*到* e*。</block>
+  <block id="83a2a676c481bd5eeebf1ca2831091df" category="paragraph">Astra Control开始使用新的云提供商凭据。</block>
 </blocks>
