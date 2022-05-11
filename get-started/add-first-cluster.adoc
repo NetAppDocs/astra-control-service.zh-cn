@@ -21,6 +21,9 @@ summary: 设置环境后，您可以创建 Kubernetes 集群，然后将其添�
 如果您还没有集群，请创建一个满足要求的集群 link:set-up-google-cloud.html#gke-cluster-requirements["Google Kubernetes Engine （ GKEE ）的 Astra Control Service 要求"]， link:set-up-microsoft-azure-with-anf.html["采用 Azure NetApp Files 的 Azure Kubernetes Service （ AKS ）的 Astra 控制服务要求"]或 link:set-up-microsoft-azure-with-amd.html["采用 Azure 受管磁盘的 Azure Kubernetes Service （ AKS ）的 Astra Control Service 要求"] 。
 
 
+NOTE: Astra控制服务支持使用Azure Active Directory (Azure AD)进行身份验证和身份管理的AKS集群。创建集群时、请按照中的说明进行操作 https://docs.microsoft.com/en-us/azure/aks/managed-aad["正式文档"^] 将集群配置为使用Azure AD。您需要确保集群满足AKS管理的Azure AD集成的要求。
+
+
 
 == 开始管理 Kubernetes 集群
 
@@ -28,10 +31,10 @@ summary: 设置环境后，您可以创建 Kubernetes 集群，然后将其添�
 
 [NOTE]
 ====
-当 Astra Control 管理集群时，它会跟踪集群的默认 StorageClass 。如果使用 `kubectl` 命令更改 StorageClass ，则 Astra Control 将还原此更改。要更改由 Astra Control 管理的集群中的默认 StorageClass ，请使用以下方法之一：
+当Astra Control管理集群时、它会跟踪集群的默认存储类。如果使用`kubectl`命令更改存储类、则Astra Control将还原此更改。要更改由Astra Control管理的集群中的默认存储类、请使用以下方法之一：
 
-* 使用 Astra Control API `PUT /managedClusters` Endpoint ，并使用 `DefaultStorageClass` 参数分配其他默认 StorageClass
-* 从 Astra Control 管理中删除集群，然后在选择其他默认 StorageClass 后重新添加
+* 使用Astra Control API `PUT /managedClusters` Endpoint、并使用`DefaultStorageClass`参数分配其他默认存储类。
+* 使用Astra Control Web UI分配其他默认存储类。请参见 <<Change the default storage class>>。
 
 
 ====
@@ -144,4 +147,19 @@ kubectl get astraconnector astra-connector -n astra-connector
 NAME              REGISTERED   ASTRACONNECTORID
 astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
 ----
+
+
+
+
+== 更改默认存储类
+
+您可以更改集群的默认存储类。
+
+.步骤
+. 在 Astra 控制服务 UI 中，选择 * 集群 * 。
+. 在*集群*页面上、选择要更改的集群。
+. 选择 * 存储 * 选项卡。
+. 选择*存储类*类别。
+. 选择要设置为默认值的存储类的*操作*菜单。
+. 选择*设置为默认值*。
 

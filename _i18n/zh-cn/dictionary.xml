@@ -1373,9 +1373,6 @@
   <block id="91b0fccd50fc200b9aa9a40a0cc5a82d" category="list-text">选择需要关注的事件。</block>
   <block id="e2900726473d9bdf15d18c496f0edc96" category="list-text">选择 * 执行操作 * 下拉选项。</block>
   <block id="02251349687d4a85c56e4346486d3ad4" category="paragraph">从此列表中，您可以查看可能采取的更正操作，查看与问题描述 相关的文档，并获得支持以帮助解决问题描述 。</block>
-  <block id="f4105577bf107396cef41e7fc8b36c75" category="paragraph">当 Astra Control 管理集群时，它会跟踪集群的默认 StorageClass 。如果使用 `kubectl` 命令更改 StorageClass ，则 Astra Control 将还原此更改。要更改由 Astra Control 管理的集群中的默认 StorageClass ，请使用以下方法之一：</block>
-  <block id="e9fac85aa2673b1b448faa45d2eeb596" category="list-text">使用 Astra Control API `PUT /managedClusters` Endpoint ，并使用 `DefaultStorageClass` 参数分配其他默认 StorageClass</block>
-  <block id="11937632e52ddd422c6068df5f4a8641" category="list-text">从 Astra Control 管理中删除集群，然后在选择其他默认 StorageClass 后重新添加</block>
   <block id="88555feb409cba41792254e4f06581c9" category="list-text">命名空间中一组通过 Kubernetes 标签（在 Astra Control 中称为 _custom app_ ）标识的资源</block>
   <block id="17f47137e3c74939946bb140e4cbdf1d" category="inline-link">BitNami Helm 图表</block>
   <block id="63b460525cdf532239754239be0dd49b" category="paragraph">了解如何从部署 Postgres<block ref="c1944f63284fe1469cc0b7628473e785" category="inline-link-rx"></block>。在集群上部署 Postgres 后，您可以向 Astra Control 注册该应用程序。</block>
@@ -1666,7 +1663,6 @@
   <block id="67dec75e07f11637dbb129889d6bf6ae" category="section-title">2022 年 4 月 26 日</block>
   <block id="0097e428776046ceb8cd1fcde6d6fa2e" category="section-title">命名空间基于角色的访问控制（ RBAC ）</block>
   <block id="382d0f3f80a6edc90145fa9f5e248570" category="paragraph">Astra 控制服务现在支持将命名空间约束分配给成员或查看器用户。</block>
-  <block id="20f1bb3f9f567f6aa7b19e591c3a1f51" category="paragraph"><block ref="73b2ad293eda73ca2acff9008e7ac0e8" category="inline-link-macro-rx"></block>。</block>
   <block id="81c45fdf5fa9c193ad7e22c5fd4785ef" category="section-title">支持专用 AKS 集群</block>
   <block id="c490fa82068b0f1b8aef0ce959352ea7" category="paragraph">现在，您可以管理使用专用 IP 地址的 AKS 集群。</block>
   <block id="2a37eca094676cc6b6a4bfa0ea9fcc57" category="paragraph"><block ref="04d97bec7f4fa11002764129cf40d13a" category="inline-link-macro-rx"></block>。</block>
@@ -1706,4 +1702,21 @@
   <block id="d2b49295684369e8eca9915ebf3725b5" category="list-text">在*选择凭据*部分中、选择添加到Astra Control的新凭据。</block>
   <block id="fe7fbb88eb579dd44896aecd5e694bc8" category="list-text">对系统上的任何剩余存储分段重复步骤* b*到* e*。</block>
   <block id="83a2a676c481bd5eeebf1ca2831091df" category="paragraph">Astra Control开始使用新的云提供商凭据。</block>
+  <block id="600875fce016d4eddadf3675fe4ec0a6" category="paragraph"><block ref="24c3dfd752dd86b23d8384546f638c63" category="inline-link-macro-rx"></block>。</block>
+  <block id="c232f387cd35833fa7dbddc853981552" category="section-title">Azure Active Directory支持</block>
+  <block id="19a67907b2de4999a969b7863b0d05e9" category="paragraph">Astra控制服务支持使用Azure Active Directory进行身份验证和身份管理的AKS集群。</block>
+  <block id="54d90be7ed2f484693994a0a44b349d2" category="inline-link">正式文档</block>
+  <block id="ac4eb04549d46b875b9c5a712e733c6f" category="admonition">Astra控制服务支持使用Azure Active Directory (Azure AD)进行身份验证和身份管理的AKS集群。创建集群时、请按照中的说明进行操作<block ref="ba1ce5a57a4d347a0e1e2ecf2a2c91ba" category="inline-link-rx"></block> 将集群配置为使用Azure AD。您需要确保集群满足AKS管理的Azure AD集成的要求。</block>
+  <block id="846cdda4ee8e60864d52aaeeb040485c" category="paragraph">当Astra Control管理集群时、它会跟踪集群的默认存储类。如果使用`kubectl`命令更改存储类、则Astra Control将还原此更改。要更改由Astra Control管理的集群中的默认存储类、请使用以下方法之一：</block>
+  <block id="d284e4138e540279377b96192064bb64" category="list-text">使用Astra Control API `PUT /managedClusters` Endpoint、并使用`DefaultStorageClass`参数分配其他默认存储类。</block>
+  <block id="4cb8b00c0937a1220b88468763322f15" category="list-text">使用Astra Control Web UI分配其他默认存储类。请参见 <block ref="5b6a21e2a1084a5e4b159e62f7829741" category="inline-xref-macro-rx"></block>。</block>
+  <block id="3664703675e6ea0fab0e620eb7c74fb0" category="section-title">更改默认存储类</block>
+  <block id="38219c9a076c4f4be6883cf24fcb296d" category="paragraph">您可以更改集群的默认存储类。</block>
+  <block id="fe575e20478d6256f2449963730fd738" category="list-text">在*集群*页面上、选择要更改的集群。</block>
+  <block id="b84cf83ec24af3992507d72057b607f6" category="list-text">选择 * 存储 * 选项卡。</block>
+  <block id="a57d95e33fbdffe3b4bd71d5b0be74cd" category="list-text">选择*存储类*类别。</block>
+  <block id="b76660fac98aeb4fc46b77e989e6d8b0" category="list-text">选择要设置为默认值的存储类的*操作*菜单。</block>
+  <block id="b4789b0ec041cd5e51f32c2f901a0951" category="list-text">选择*设置为默认值*。</block>
+  <block id="2dd2a1bdae3516df1950c153f6135366" category="paragraph">*是否可以使用Active Directory管理AKS集群的身份验证？*</block>
+  <block id="e4b4463df81090495a7820578ac936d9" category="paragraph">可以、您可以将AKS集群配置为使用Azure Active Directory (Azure AD)进行身份验证和身份管理。创建集群时、请按照中的说明进行操作<block ref="ba1ce5a57a4d347a0e1e2ecf2a2c91ba" category="inline-link-rx"></block> 将集群配置为使用Azure AD。您需要确保集群满足AKS管理的Azure AD集成的要求。</block>
 </blocks>

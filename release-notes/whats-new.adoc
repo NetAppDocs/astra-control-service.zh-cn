@@ -25,7 +25,15 @@ NetApp 会定期更新 Astra Control Service ，为您提供新功能，增强�
 
 Astra 控制服务现在支持将命名空间约束分配给成员或查看器用户。
 
-link:../use/manage-roles.html["管理角色"]。
+link:../learn/user-roles-namespaces.html["命名空间基于角色的访问控制（ RBAC ）"]。
+
+
+
+=== Azure Active Directory支持
+
+Astra控制服务支持使用Azure Active Directory进行身份验证和身份管理的AKS集群。
+
+link:../get-started/add-first-cluster.html["从 Astra Control Service 开始管理 Kubernetes 集群"]。
 
 
 
