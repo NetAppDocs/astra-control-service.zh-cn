@@ -21,28 +21,28 @@ summary: 在使用 Astra Control Service 管理 Azure Kubernetes Service 集群�
 
 
 
-==== 查看 Azure Kubernetes Service 的 Astra Control Service 要求
+=== 查看 Azure Kubernetes Service 的 Astra Control Service 要求
 
 [role="quick-margin-para"]
 确保集群运行状况良好且运行的是 Kubernetes 1.21.x 到 1.23 版，节点池已联机且运行的是 * Linux * 等。 <<Azure Kubernetes Service cluster requirements,了解有关此步骤的更多信息>>。
 
 
 
-==== 注册 Microsoft Azure
+=== 注册 Microsoft Azure
 
 [role="quick-margin-para"]
 创建 Microsoft Azure 帐户。 <<Sign up for Microsoft Azure,了解有关此步骤的更多信息>>。
 
 
 
-==== 创建 Azure 服务主体
+=== 创建 Azure 服务主体
 
 [role="quick-margin-para"]
 创建具有 " 贡献者 " 角色的 Azure 服务主体。 <<Create an Azure service principal,了解有关此步骤的更多信息>>。
 
 
 
-==== 配置容器存储接口（ CSI ）驱动程序详细信息
+=== 配置容器存储接口（ CSI ）驱动程序详细信息
 
 [role="quick-margin-para"]
 您需要配置 Azure 订阅和集群以使用 CSI 驱动程序。 <<Configure Container Storage Interface (CSI) driver details,了解有关此步骤的更多信息>>。

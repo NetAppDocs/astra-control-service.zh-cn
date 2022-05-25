@@ -21,49 +21,49 @@ summary: 在使用 Astra Control Service 管理 Azure Kubernetes Service 集群�
 
 
 
-==== 查看 Azure Kubernetes Service 的 Astra Control Service 要求
+=== 查看 Azure Kubernetes Service 的 Astra Control Service 要求
 
 [role="quick-margin-para"]
 确保集群运行状况良好且运行的是 Kubernetes 1.21.x 到 1.23 版，节点池已联机且运行的是 * Linux * 等。 <<Azure Kubernetes Service cluster requirements,了解有关此步骤的更多信息>>。
 
 
 
-==== 注册 Microsoft Azure
+=== 注册 Microsoft Azure
 
 [role="quick-margin-para"]
 创建 Microsoft Azure 帐户。 <<Sign up for Microsoft Azure,了解有关此步骤的更多信息>>。
 
 
 
-==== 对于 Azure NetApp Files ，
+=== 对于 Azure NetApp Files ，
 
 [role="quick-margin-para"]
 注册 NetApp 资源提供商。 <<Register for Azure NetApp Files,了解有关此步骤的更多信息>>。
 
 
 
-==== Create a NetApp account
+=== Create a NetApp account
 
 [role="quick-margin-para"]
 转到 Azure 门户中的 Azure NetApp Files 并创建 NetApp 帐户。 <<Create a NetApp account,了解有关此步骤的更多信息>>。
 
 
 
-==== 设置容量池
+=== 设置容量池
 
 [role="quick-margin-para"]
 为永久性卷设置一个或多个容量池。 <<Set up a capacity pool,了解有关此步骤的更多信息>>。
 
 
 
-==== Delegate a subnet to Azure NetApp Files
+=== Delegate a subnet to Azure NetApp Files
 
 [role="quick-margin-para"]
 将子网委派给 Azure NetApp Files ，以便 Astra 控制服务可以在该子网中创建永久性卷。 <<Delegate a subnet to Azure NetApp Files,了解有关此步骤的更多信息>>。
 
 
 
-==== 创建 Azure 服务主体
+=== 创建 Azure 服务主体
 
 [role="quick-margin-para"]
 创建具有 " 贡献者 " 角色的 Azure 服务主体。 <<Create an Azure service principal,了解有关此步骤的更多信息>>。

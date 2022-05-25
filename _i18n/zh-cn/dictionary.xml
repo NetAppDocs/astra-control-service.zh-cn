@@ -229,7 +229,6 @@
   <block id="5fabf021c8fb95cd2d38139cc7c5ff89" category="paragraph">* 是否可以直接通过云提供商管理 Astra Control 创建的快照？ *</block>
   <block id="70e9aa86ac0b41ade7ad4fce41b6d744" category="paragraph">否Astra Control 创建的快照和备份只能使用 Astra Control 进行管理。</block>
   <block id="0e1998253be388fcd1c18fc76ead9054" category="summary">Astra Control 是 Kubernetes 应用程序数据生命周期管理解决方案，可简化有状态应用程序的操作。轻松保护，备份和迁移 Kubernetes 工作负载，并即时创建有效的应用程序克隆。</block>
-  <block id="7e073986fe6af6ce1775bdfd558def36" category="doc">Astra Control 简介</block>
   <block id="620e99caf2b3d803b4dd22b70d895fde" category="summary">此文档站点上的许多页面都包含一些视频，用于展示如何使用 Astra Control Service 完成任务。如果您只是对视频感兴趣，我们会通过在这个页面上收集所有视频（类似于播放列表）来简化您的操作。</block>
   <block id="cec4f0bbb3f7119930f9ff4d721ad21a" category="doc">Astra Control Service 视频</block>
   <block id="54c5307863ad46506a3935148faf8976" category="paragraph">此文档站点上的许多页面都包含一些视频，用于向您展示如何完成 Astra Control Service 的任务。如果您只是对视频感兴趣，我们会在这个页面上收集所有视频（类似于播放列表），让您轻松地观看视频。</block>
@@ -1719,4 +1718,5 @@
   <block id="b4789b0ec041cd5e51f32c2f901a0951" category="list-text">选择*设置为默认值*。</block>
   <block id="2dd2a1bdae3516df1950c153f6135366" category="paragraph">*是否可以使用Active Directory管理AKS集群的身份验证？*</block>
   <block id="e4b4463df81090495a7820578ac936d9" category="paragraph">可以、您可以将AKS集群配置为使用Azure Active Directory (Azure AD)进行身份验证和身份管理。创建集群时、请按照中的说明进行操作<block ref="ba1ce5a57a4d347a0e1e2ecf2a2c91ba" category="inline-link-rx"></block> 将集群配置为使用Azure AD。您需要确保集群满足AKS管理的Azure AD集成的要求。</block>
+  <block id="35766360770e699f50fa8f51d1c6ff36" category="doc">了解Astra Control</block>
 </blocks>
