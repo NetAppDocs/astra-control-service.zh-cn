@@ -1163,7 +1163,6 @@
   <block id="c83ec598afcfd8eb8180685a01d0e884" category="paragraph">在安装 CSI 驱动程序之前，您需要在 Azure 订阅中启用 CSI 驱动程序功能。</block>
   <block id="88bcc5f12a365174fce5ed9581217c0f" category="list-text">打开 Azure 命令行界面。</block>
   <block id="d7b43ba09446a633f575c51655477a58" category="list-text">运行以下命令以注册驱动程序：</block>
-  <block id="e0b4ff61d0820f6567af9482613f2a5d" category="list-text">运行以下命令以确保更改已被禁止：</block>
   <block id="daae3454c5ca21f3cde2542bf9240548" category="section-title">在 Azure Kubernetes Service 集群中安装 Azure 托管磁盘 CSI 驱动程序</block>
   <block id="0b1f7cc28b0b37ff72c091633f22b694" category="paragraph">您可以安装 Azure CSI 驱动程序以完成准备工作。</block>
   <block id="5c45917f00ad20e0e5789b736021ac07" category="inline-link">Microsoft CSI 驱动程序文档</block>
@@ -1719,4 +1718,18 @@
   <block id="2dd2a1bdae3516df1950c153f6135366" category="paragraph">*是否可以使用Active Directory管理AKS集群的身份验证？*</block>
   <block id="e4b4463df81090495a7820578ac936d9" category="paragraph">可以、您可以将AKS集群配置为使用Azure Active Directory (Azure AD)进行身份验证和身份管理。创建集群时、请按照中的说明进行操作<block ref="ba1ce5a57a4d347a0e1e2ecf2a2c91ba" category="inline-link-rx"></block> 将集群配置为使用Azure AD。您需要确保集群满足AKS管理的Azure AD集成的要求。</block>
   <block id="35766360770e699f50fa8f51d1c6ff36" category="doc">了解Astra Control</block>
+  <block id="7a224873743ae07878fa35eb8d081112" category="list-text"><block ref="3286c558b43bd6d377809c21300aee77" category="inline-xref-macro-rx"></block></block>
+  <block id="8100875d88782acfb46a30b4101b2280" category="section-title">默认情况下、Azure备份存储分段使用LRS冗余</block>
+  <block id="7b51ea6a21b6966c72987eb0afc24995" category="paragraph">默认情况下、Astra Control Service用于存储Azure Kubernetes Service备份的存储分段使用本地冗余存储(LRS)冗余选项。要对Azure存储分段使用更持久的冗余选项、请参见Azure云提供商设置说明中的可选步骤：</block>
+  <block id="22e9bb5a03504aaee4ab910d594c8096" category="list-text"><block ref="22e9bb5a03504aaee4ab910d594c8096" category="inline-link-macro-rx"></block></block>
+  <block id="864e3787d69e889ea2ae67aeb999effd" category="list-text"><block ref="864e3787d69e889ea2ae67aeb999effd" category="inline-link-macro-rx"></block></block>
+  <block id="87e0c6ecd728fb0d791237540ebc2d13" category="section-title">可选：为Azure备份存储分段配置冗余</block>
+  <block id="e6870002b2d5d13ce9775b063bc8ba38" category="paragraph">默认情况下、Astra Control Service用于存储Azure Kubernetes Service备份的存储分段使用本地冗余存储(LRS)冗余选项。作为一个可选步骤、您可以为Azure存储分段配置更持久的冗余级别。 <block ref="01e018c18178f59acc7c2fe24b863d36" category="inline-xref-macro-rx"></block>。</block>
+  <block id="59007fdeff44241e1503f2d5988af0c3" category="list-text">运行以下命令以确保更改已传播：</block>
+  <block id="1fbdfcbad2340990dd9a4235c70ce4d7" category="paragraph">您可以为Azure备份存储分段配置更持久的冗余级别。默认情况下、Astra Control Service用于存储Azure Kubernetes Service备份的存储分段使用本地冗余存储(LRS)冗余选项。要对Azure存储分段使用更持久的冗余选项、您需要执行以下操作：</block>
+  <block id="9ac0dd27d420b7b48ca72e463ae95e18" category="inline-link">这些说明</block>
+  <block id="e42b53a05e4dc8d35c19c6e591938326" category="list-text">使用创建使用所需冗余级别的Azure存储帐户<block ref="c9a7cb9a074b3428e720b565b7629c69" category="inline-link-rx"></block>。</block>
+  <block id="71f57bd63430dbba34c12daa373f7996" category="list-text">使用在新存储帐户中创建Azure容器<block ref="ba03a3cb851c493aa05900ed20930895" category="inline-link-rx"></block>。</block>
+  <block id="4a9b46e4514936c3267b624e9c48f76b" category="list-text">将此容器作为分段添加到Astra Control Service中。请参见 <block ref="3ecbb82ace41389a409b1cc92181a5a8" category="inline-link-macro-rx"></block>。</block>
+  <block id="695f1c0a89ac16190399389b6dfdcb1b" category="list-text">(可选)要使用新创建的存储分段作为Azure备份的默认存储分段、请将其设置为Azure的默认存储分段。请参见 <block ref="d1523cf11113b501cc0e7216254bf527" category="inline-link-macro-rx"></block>。</block>
 </blocks>

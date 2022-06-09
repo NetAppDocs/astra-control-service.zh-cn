@@ -49,6 +49,13 @@ summary: 在使用 Astra Control Service 管理 Azure Kubernetes Service 集群�
 
 
 
+=== 可选：为Azure备份存储分段配置冗余
+
+[role="quick-margin-para"]
+默认情况下、Astra Control Service用于存储Azure Kubernetes Service备份的存储分段使用本地冗余存储(LRS)冗余选项。作为一个可选步骤、您可以为Azure存储分段配置更持久的冗余级别。 <<Optional: Configure redundancy for Azure backup buckets,了解有关此步骤的更多信息>>。
+
+
+
 == Azure Kubernetes Service 集群要求
 
 Kubernetes 集群必须满足以下要求，才能通过 Astra Control Service 发现和管理它。
@@ -232,7 +239,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 ----
 az feature register --namespace "Microsoft.ContainerService" --name "EnableAzureDiskFileCSIDriver"
 ----
-. 运行以下命令以确保更改已被禁止：
+. 运行以下命令以确保更改已传播：
 +
 [listing]
 ----
@@ -263,4 +270,17 @@ az feature register --namespace "Microsoft.ContainerService" --name "EnableAzure
 .步骤
 . 转至 https://docs.microsoft.com/en-us/azure/aks/csi-storage-drivers["Microsoft CSI 驱动程序文档"^]。
 . 按照说明安装所需的 CSI 驱动程序。
+
+
+
+
+== 可选：为Azure备份存储分段配置冗余
+
+您可以为Azure备份存储分段配置更持久的冗余级别。默认情况下、Astra Control Service用于存储Azure Kubernetes Service备份的存储分段使用本地冗余存储(LRS)冗余选项。要对Azure存储分段使用更持久的冗余选项、您需要执行以下操作：
+
+.步骤
+. 使用创建使用所需冗余级别的Azure存储帐户 https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal["这些说明"^]。
+. 使用在新存储帐户中创建Azure容器 https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal["这些说明"^]。
+. 将此容器作为分段添加到Astra Control Service中。请参见 link:../use/manage-buckets.html#add-an-additional-bucket["添加一个额外的存储分段"]。
+. (可选)要使用新创建的存储分段作为Azure备份的默认存储分段、请将其设置为Azure的默认存储分段。请参见 link:../use/manage-buckets.html#change-the-default-bucket["更改默认分段"]。
 

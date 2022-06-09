@@ -22,6 +22,7 @@ summary: 已知问题可确定可能妨碍您成功使用此版本产品的问�
 .备份，还原和克隆
 * <<Restore of an app results in PV size larger than original PV>>
 * <<App clones fail using a specific version of PostgreSQL>>
+* <<Azure backup buckets use LRS redundancy by default>>
 
 
 .其他问题
@@ -46,6 +47,16 @@ summary: 已知问题可确定可能妨碍您成功使用此版本产品的问�
 == 使用特定版本的 PostgreSQL 时应用程序克隆失败
 
 使用 BitNami PostgreSQL 11.5.0 图表时，同一集群中的应用程序克隆始终会失败。要成功克隆，请使用图表的早期或更高版本。
+
+
+
+== 默认情况下、Azure备份存储分段使用LRS冗余
+
+默认情况下、Astra Control Service用于存储Azure Kubernetes Service备份的存储分段使用本地冗余存储(LRS)冗余选项。要对Azure存储分段使用更持久的冗余选项、请参见Azure云提供商设置说明中的可选步骤：
+
+* link:../get-started/set-up-microsoft-azure-with-amd.html["使用 Azure 受管磁盘设置 Microsoft Azure"]
+* link:../get-started/set-up-microsoft-azure-with-anf.html["使用 Azure NetApp Files 设置 Microsoft Azure"]
+
 
 
 
