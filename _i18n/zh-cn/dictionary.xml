@@ -1732,4 +1732,5 @@
   <block id="71f57bd63430dbba34c12daa373f7996" category="list-text">使用在新存储帐户中创建Azure容器<block ref="ba03a3cb851c493aa05900ed20930895" category="inline-link-rx"></block>。</block>
   <block id="4a9b46e4514936c3267b624e9c48f76b" category="list-text">将此容器作为分段添加到Astra Control Service中。请参见 <block ref="3ecbb82ace41389a409b1cc92181a5a8" category="inline-link-macro-rx"></block>。</block>
   <block id="695f1c0a89ac16190399389b6dfdcb1b" category="list-text">(可选)要使用新创建的存储分段作为Azure备份的默认存储分段、请将其设置为Azure的默认存储分段。请参见 <block ref="d1523cf11113b501cc0e7216254bf527" category="inline-link-macro-rx"></block>。</block>
+  <block id="f2ab44c105acc97c54a227f6c52ad099" category="admonition">如果还原到先前已删除的命名空间、则在还原过程中会创建一个同名的新命名空间。任何有权管理先前删除的命名空间中的应用程序的用户都需要手动还原对新重新创建的命名空间的权限。</block>
 </blocks>
