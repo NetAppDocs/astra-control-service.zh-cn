@@ -169,7 +169,33 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/issues/new?body=Page%3A%20[从 Astra Control Service 开始管理 Kubernetes 集群](https://docs.netapp.com/zh-cn/astra-control-service/get-started/add-first-cluster.html)" class="page-nav-contribute-link" role="button"><img src="/zh-cn/astra-control-service/images/discuss-sm.svg" alt="" class="github-icon" />请求文档变更</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/blob/main/get-started/add-first-cluster.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-cn/astra-control-service/images/edit-sm.svg" alt="" class="github-icon" />在 GitHub 上编辑</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-cn/astra-control-service/images/article-sm.svg" alt="" class="github-icon" />提供者指南</a></div>
+  <div class="page-nav-toolbar">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/zh-cn/astra-control-service/get-started/add-first-cluster.html">
+  
+  <div class="custom-dropdown-select unselected" title="所有云提供商">
+    <label>云提供商</label>
+    <span>所有云提供商</span>
+    <img src="/zh-cn/astra-control-service/images/filter.svg" class="custom-icon" alt="" />
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="gcp" data-url="/zh-cn/astra-control-service/gcp/get-started/add-first-cluster.html">
+      <img alt="" src="/zh-cn/astra-control-service/images/gcp-ico.svg" onerror="this.src='/zh-cn/astra-control-service/images/blank-ico.png'" class="custom-icon" />Google Cloud
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/zh-cn/astra-control-service/azure/get-started/add-first-cluster.html">
+      <img alt="" src="/zh-cn/astra-control-service/images/azure-ico.svg" onerror="this.src='/zh-cn/astra-control-service/images/blank-ico.png'" class="custom-icon" />Microsoft Azure
+    </li>
+    
+    
+  </ul>
+</div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/issues/new?body=Page%3A%20[从 Astra Control Service 开始管理 Kubernetes 集群](https://docs.netapp.com/zh-cn/astra-control-service/get-started/add-first-cluster.html)" class="page-nav-contribute-link" role="button"><img src="/zh-cn/astra-control-service/images/discuss-sm.svg" alt="" class="github-icon" />请求文档变更</a><a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/blob/main/get-started/add-first-cluster.adoc" class="page-nav-contribute-link" role="button"><img src="/zh-cn/astra-control-service/images/edit-sm.svg" alt="" class="github-icon" />在 GitHub 上编辑</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/zh-cn/astra-control-service/images/article-sm.svg" alt="" class="github-icon" />提供者指南</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">在此页面上</div>
@@ -258,11 +284,13 @@
           <div id="react-search" 
           data-search-html="/zh-cn/astra-control-service/search.html"
           data-type="widget" 
-          data-placeholder="搜索文档" 
-          data-no-results-found="未找到与 {query} 匹配的结果。" 
-          data-did-you-mean="搜索 {suggestion}。" 
-          data-no-results-found-did-you-mean="未找到与 {query} 匹配的结果。您是否要搜索 {suggestion}?" 
-          data-results-found="找到 {hitCount} 个结果"  
+          data-placeholder="搜索文档"
+          data-no-results-found="未找到与 {query} 匹配的结果。"
+          data-did-you-mean="搜索 {suggestion}。"
+          data-no-results-found-did-you-mean="未找到与 {query} 匹配的结果。您是否要搜索 {suggestion}?"
+          data-results-found="找到 {hitCount} 个结果"
+          data-error-message="We're sorry, an issue occurred when fetching your results. Please try again."
+          data-error-reset="Reset Search"
           data-sk-es-pf-indexes=""
           data-flavor=""></div>
           <button class="n-property-bar__search-toggle-button" type="button">
@@ -937,7 +965,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-11 14:45:34 +0000">05/11/2022</time>
+    <time datetime="2022-07-13 16:59:10 +0000">07/13/2022</time>
     
   
 
@@ -955,7 +983,10 @@
 <h2 id="创建-kubernetes-集群">创建 Kubernetes 集群</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>如果您还没有集群，请创建一个满足要求的集群 <a href="set-up-google-cloud.html#gke-cluster-requirements">"Google Kubernetes Engine （ GKEE ）的 Astra Control Service 要求"</a>， <a href="set-up-microsoft-azure-with-anf.html">"采用 Azure NetApp Files 的 Azure Kubernetes Service （ AKS ）的 Astra 控制服务要求"</a>或 <a href="set-up-microsoft-azure-with-amd.html">"采用 Azure 受管磁盘的 Azure Kubernetes Service （ AKS ）的 Astra Control Service 要求"</a> 。</p>
+<p>如果您还没有集群，请创建一个满足要求的集群 <a href="set-up-google-cloud.html#gke-cluster-requirements">"Google Kubernetes Engine （ GKEE ）的 Astra Control Service 要求"</a>。</p>
+</div>
+<div class="paragraph">
+<p>如果您还没有集群，请创建一个满足要求的集群 <a href="set-up-microsoft-azure-with-anf.html">"采用 Azure NetApp Files 的 Azure Kubernetes Service （ AKS ）的 Astra 控制服务要求"</a> 或 <a href="set-up-microsoft-azure-with-amd.html">"采用 Azure 受管磁盘的 Azure Kubernetes Service （ AKS ）的 Astra Control Service 要求"</a>。</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1002,7 +1033,6 @@ Astra控制服务支持使用Azure Active Directory (Azure AD)进行身份验证
 </table>
 </div>
 <div class="ulist">
-<div class="title">您需要什么？ #8217 ；将需要什么</div>
 <ul>
 <li>
 <p>对于 GKE- ，您应该拥有具有所需权限的服务帐户的服务帐户密钥文件。 <a href="../get-started/set-up-google-cloud.html#create-a-service-account">"了解如何设置服务帐户"</a>。</p>
@@ -1039,8 +1069,7 @@ Astra控制服务支持使用Azure Active Directory (Azure AD)进行身份验证
 </li>
 <li>
 <p>* 提供商 * ：选择您的云提供商，然后提供所需的凭据。</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</li>
 <li>
 <p>* Microsoft Azure* ：通过上传 JSON 文件或从剪贴板粘贴此 JSON 文件的内容来提供有关 Azure 服务主体的详细信息。</p>
 <div class="paragraph">
@@ -1053,25 +1082,62 @@ Astra控制服务支持使用Azure Active Directory (Azure AD)进行身份验证
 <p>Astra 控制服务使用此服务帐户发现在 Google Kubernetes Engine 中运行的集群。</p>
 </div>
 </li>
-</ol>
-</div>
-</li>
 <li>
 <p>* 集群 * ：选择要添加的集群。</p>
 <div class="paragraph">
 <p>请仔细查看 " 符合条件 " 选项卡。如果出现警告，请将鼠标悬停在警告上以确定集群是否存在问题描述。例如，它可能会标识集群没有工作节点。</p>
 </div>
 <div class="paragraph">
-<p>如果您选择的集群尚未配置 Cloud Volumes Service for Google Cloud 或 Azure NetApp Files ，则会显示一条警告。此集群未安装和配置 NetApp Trident 。如果要使用其他存储服务，您可以继续添加集群。</p>
+<p>如果您选择的集群尚未配置Cloud Volumes Service for Google Cloud、则会显示一条警告。此集群未安装和配置 NetApp Trident 。如果要使用其他存储服务，您可以继续添加集群。</p>
 </div>
 <div class="paragraph">
 <p>如果您选择的集群标记有 "private" 图标，则它将使用专用 IP 地址，并且 Astra Control 需要使用 Astra Connector 来管理集群。如果您看到一条消息，指出您需要安装 Astra Connector ， <a href="#Manage a private cluster">请按照以下说明进行操作</a> 安装 Astra Connector 并启用集群管理。安装 Astra Connector 后，集群应符合条件，您可以继续添加集群。</p>
 </div>
 </li>
+</ol>
+</div>
+<div class="paragraph">
+<p>+请仔细查看"符合条件"选项卡。如果出现警告，请将鼠标悬停在警告上以确定集群是否存在问题描述。例如，它可能会标识集群没有工作节点。</p>
+</div>
+<div class="paragraph">
+<p>+如果您选择的集群尚未配置Azure NetApp Files 、则会显示一条警告。此集群未安装和配置 NetApp Trident 。如果要使用其他存储服务，您可以继续添加集群。</p>
+</div>
+<div class="paragraph">
+<p>+如果您选择的集群标有"专用"图标、则它将使用专用IP地址、并且Astra Control需要使用Astra Connector来管理集群。如果您看到一条消息，指出您需要安装 Astra Connector ， <a href="#Manage a private cluster">请按照以下说明进行操作</a> 安装 Astra Connector 并启用集群管理。安装 Astra Connector 后，集群应符合条件，您可以继续添加集群。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>* 存储 * ：选择希望部署到此集群的 Kubernetes 应用程序默认使用的存储类。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="注">
+</td>
+<td class="content">
 <div class="paragraph">
-<p>列表中的每个 Cloud Volumes Service for Google Cloud 服务都会显示价格，性能和弹性信息。此时将显示每个 Azure NetApp Files 服务的性能和弹性信息。对于 Google Persistent Disk 或 Azure 受管磁盘等非 NetApp 存储类，不提供价格，性能和弹性信息。</p>
+<p>每个云提供商存储服务都会显示以下价格、性能和弹性信息：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Cloud Volumes Service for Google Cloud：价格、性能和弹性信息</p>
+</li>
+<li>
+<p>Google Persistent Disk：没有价格、性能或弹性信息</p>
+</li>
+<li>
+<p>Azure NetApp Files ：性能和弹性信息</p>
+</li>
+<li>
+<p>Azure受管磁盘：无可用的价格、性能或弹性信息</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>每个存储类均可使用以下服务之一：</p>
@@ -1089,13 +1155,20 @@ Astra控制服务支持使用Azure Active Directory (Azure AD)进行身份验证
 </li>
 <li>
 <p><a href="https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview" target="_blank" rel="noopener">"Azure 受管磁盘"</a></p>
-<div class="paragraph">
-<p>了解更多信息 <a href="../learn/choose-class-and-size.html">"GKE 集群的存储类"</a> 和 <a href="../learn/azure-storage.html">"AKS 集群的存储类"</a>。</p>
-</div>
 </li>
 </ul>
 </div>
 </li>
+</ol>
+</div>
+<div class="paragraph">
+<p>+了解更多信息 <a href="../learn/azure-storage.html">"AKS 集群的存储类"</a>。</p>
+</div>
+<div class="paragraph">
+<p>了解更多信息 <a href="../learn/choose-class-and-size.html">"GKE 集群的存储类"</a>。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>* 审核并批准 * ：查看配置详细信息并选择 * 添加集群 * 。</p>
 </li>
