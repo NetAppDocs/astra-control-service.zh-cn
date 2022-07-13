@@ -17,7 +17,7 @@ summary: 如果您只是想快速了解问题解答，此常见问题解答会�
 
 == 概述
 
-Astra Control 旨在简化 Kubernetes 原生应用程序的应用程序数据生命周期管理操作。Astra 控制服务支持在 Google Kubernetes Engine （ GKEE ）和 Azure Kubernetes Service （ AKS ）上运行的 Kubernetes 集群。
+Astra Control 旨在简化 Kubernetes 原生应用程序的应用程序数据生命周期管理操作。Astra控制服务支持在多个云提供商环境中运行的Kubernetes集群。
 
 以下各节将为您在使用 Astra Control 时可能遇到的其他一些问题提供解答。如有任何其他澄清，请联系 astra.feedback@netapp.com
 
@@ -51,7 +51,7 @@ Astra Control 要求您在入职部分提供准确的客户信息。如果您提
 
 * 我正在使用免费计划，是否会为永久性卷申请付费？ *
 
-是的，您需要为 Cloud Volumes Service for Google Cloud 中的 GKS 集群或 Azure NetApp Files 中的 AKS 集群使用的永久性卷付费。
+是的、您需要为云提供商提供的集群使用的永久性卷付费。
 
 
 
@@ -59,11 +59,13 @@ Astra Control 要求您在入职部分提供准确的客户信息。如果您提
 
 * 在将集群添加到 Astra Control Service 之前，是否需要在集群上安装 CSI 驱动程序？ *
 
-否将集群添加到 Astra Control 后，该服务将自动在 Kubernetes 集群上安装 NetApp 的 Trident 容器存储接口（ Trident Container Storage Interface ， CSI ）驱动程序。此 CSI 驱动程序用于为 NetApp Cloud Volumes Service for Google Cloud 支持的 GKS 集群和 Azure NetApp Files 支持的 AKS 集群配置永久性卷。
+否将集群添加到 Astra Control 后，该服务将自动在 Kubernetes 集群上安装 NetApp 的 Trident 容器存储接口（ Trident Container Storage Interface ， CSI ）驱动程序。此CSI驱动程序用于为云提供商支持的集群配置永久性卷。
 
 * 添加到 Astra Control Service 后，我需要向集群添加工作节点。我该怎么办？ *
 
 可以将新的工作节点添加到现有池中，也可以创建新池，只要它们是 Ubuntu 映像类型即可。这些信息将由 Astra Control 自动发现。如果新节点在 Astra Control 中不可见，请检查新工作节点是否正在运行受支持的映像类型。您也可以使用 `kubectl get nodes` 命令验证新工作节点的运行状况。
+
+ifdef::azure[]
 
 
 
@@ -76,6 +78,10 @@ Astra Control 要求您在入职部分提供准确的客户信息。如果您提
 *是否可以使用Active Directory管理AKS集群的身份验证？*
 
 可以、您可以将AKS集群配置为使用Azure Active Directory (Azure AD)进行身份验证和身份管理。创建集群时、请按照中的说明进行操作 https://docs.microsoft.com/en-us/azure/aks/managed-aad["正式文档"^] 将集群配置为使用Azure AD。您需要确保集群满足AKS管理的Azure AD集成的要求。
+
+endif::azure[]
+
+ifdef::gcp[]
 
 
 
@@ -101,6 +107,8 @@ Astra Control 要求您在入职部分提供准确的客户信息。如果您提
 
 不支持，此配置不受支持。仅支持一个 GCP 项目。
 
+endif::gcp[]
+
 
 
 == 删除集群
@@ -117,8 +125,12 @@ Astra Control 要求您在入职部分提供准确的客户信息。如果您提
 
 从 Astra Control 中删除集群不会对集群的配置（应用程序和永久性存储）进行任何更改。对该集群上的应用程序执行的任何 Astra Control 快照或备份都将无法还原。存储在存储后端的卷快照数据不会被删除。由 Astra Control 创建的永久性存储备份将保留在云提供商的对象存储中，但无法还原。
 
+ifdef::gcp[]
+
 
 WARNING: 在通过 GCP 删除集群之前，请始终从 Astra Control 中将其删除。如果在集群仍由 Astra Control 管理时从 GCP 中删除集群，则可能会对您的 Astra Control 帐户产生发生原因问题。
+
+endif::gcp[]
 
 * 从 Astra Control 中删除集群时是否会卸载 Astra Trident ？ *
 
@@ -140,6 +152,8 @@ Astra Control 不会部署应用程序。应用程序必须部署在 Astra Contr
 
 否虽然 Astra Control 可以发现使用非 NetApp 存储的应用程序，但它无法管理使用非 NetApp 存储的应用程序。
 
+ifdef::gcp[]
+
 * 我看不到应用程序的任何 PVC 绑定到 GCP CVS 。有什么问题？ *
 
 在成功添加到 Astra Control 后， Astra Trident 运算符会将默认存储类设置为 `netapp-cvs-perf-Premium` 。如果应用程序的 PVC 未绑定到适用于 Google Cloud 的 Cloud Volumes Service ，您可以执行以下几个步骤：
@@ -148,6 +162,8 @@ Astra Control 不会部署应用程序。应用程序必须部署在 Astra Contr
 * 检查用于部署应用程序的 YAML 文件或 Helm 图表，查看是否定义了其他存储类。
 * 检查以确保工作节点映像类型为 Ubuntu 且 NFS 挂载成功。
 
+
+endif::gcp[]
 
 * 停止从 Astra Control 管理应用程序后，应用程序会发生什么情况？ *
 

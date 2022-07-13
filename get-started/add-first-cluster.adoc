@@ -18,10 +18,16 @@ summary: 设置环境后，您可以创建 Kubernetes 集群，然后将其添�
 
 == 创建 Kubernetes 集群
 
-如果您还没有集群，请创建一个满足要求的集群 link:set-up-google-cloud.html#gke-cluster-requirements["Google Kubernetes Engine （ GKEE ）的 Astra Control Service 要求"]， link:set-up-microsoft-azure-with-anf.html["采用 Azure NetApp Files 的 Azure Kubernetes Service （ AKS ）的 Astra 控制服务要求"]或 link:set-up-microsoft-azure-with-amd.html["采用 Azure 受管磁盘的 Azure Kubernetes Service （ AKS ）的 Astra Control Service 要求"] 。
+如果您还没有集群，请创建一个满足要求的集群 link:set-up-google-cloud.html#gke-cluster-requirements["Google Kubernetes Engine （ GKEE ）的 Astra Control Service 要求"]。
+
+endif::azure[]
+
+如果您还没有集群，请创建一个满足要求的集群 link:set-up-microsoft-azure-with-anf.html["采用 Azure NetApp Files 的 Azure Kubernetes Service （ AKS ）的 Astra 控制服务要求"] 或 link:set-up-microsoft-azure-with-amd.html["采用 Azure 受管磁盘的 Azure Kubernetes Service （ AKS ）的 Astra Control Service 要求"]。
 
 
 NOTE: Astra控制服务支持使用Azure Active Directory (Azure AD)进行身份验证和身份管理的AKS集群。创建集群时、请按照中的说明进行操作 https://docs.microsoft.com/en-us/azure/aks/managed-aad["正式文档"^] 将集群配置为使用Azure AD。您需要确保集群满足AKS管理的Azure AD集成的要求。
+
+endif::gcp[]
 
 
 
@@ -38,8 +44,15 @@ NOTE: Astra控制服务支持使用Azure Active Directory (Azure AD)进行身份
 
 
 ====
-.您需要什么？ #8217 ；将需要什么
+ifdef::gcp[]
+
 * 对于 GKE- ，您应该拥有具有所需权限的服务帐户的服务帐户密钥文件。 link:../get-started/set-up-google-cloud.html#create-a-service-account["了解如何设置服务帐户"]。
+
+
+endif::gcp[]
+
+ifdef::azure[]
+
 * 对于 AKS ，您应具有包含创建服务主体时 Azure 命令行界面输出的 JSON 文件。 link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2["了解如何设置服务主体"]。
 +
 如果未将 Azure 订阅 ID 添加到 JSON 文件中，您也需要此 ID 。
@@ -52,54 +65,116 @@ NOTE: Astra控制服务支持使用Azure Active Directory (Azure AD)进行身份
 
 
 
+endif::azure[]
+
 .步骤
 . 在信息板上，选择 * 管理 Kubernetes 集群 * 。
 +
 按照提示添加集群。
 
 . * 提供商 * ：选择您的云提供商，然后提供所需的凭据。
-+
-.. * Microsoft Azure* ：通过上传 JSON 文件或从剪贴板粘贴此 JSON 文件的内容来提供有关 Azure 服务主体的详细信息。
+
+
+ifdef::azure[]
+
+. * Microsoft Azure* ：通过上传 JSON 文件或从剪贴板粘贴此 JSON 文件的内容来提供有关 Azure 服务主体的详细信息。
 +
 JSON 文件应包含创建服务主体时 Azure 命令行界面的输出。它还可以包含您的订阅 ID ，以便自动添加到 Astra 。否则，您需要在提供 JSON 后手动输入 ID 。
 
-.. * Google Cloud Platform* ：通过上传文件或粘贴剪贴板中的内容来提供服务帐户密钥文件。
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+. * Google Cloud Platform* ：通过上传文件或粘贴剪贴板中的内容来提供服务帐户密钥文件。
 +
 Astra 控制服务使用此服务帐户发现在 Google Kubernetes Engine 中运行的集群。
 
 
+
+endif::gcp[]
 
 . * 集群 * ：选择要添加的集群。
 +
 请仔细查看 " 符合条件 " 选项卡。如果出现警告，请将鼠标悬停在警告上以确定集群是否存在问题描述。例如，它可能会标识集群没有工作节点。
 
 +
-如果您选择的集群尚未配置 Cloud Volumes Service for Google Cloud 或 Azure NetApp Files ，则会显示一条警告。此集群未安装和配置 NetApp Trident 。如果要使用其他存储服务，您可以继续添加集群。
+如果您选择的集群尚未配置Cloud Volumes Service for Google Cloud、则会显示一条警告。此集群未安装和配置 NetApp Trident 。如果要使用其他存储服务，您可以继续添加集群。
 
 +
 如果您选择的集群标记有 "private" 图标，则它将使用专用 IP 地址，并且 Astra Control 需要使用 Astra Connector 来管理集群。如果您看到一条消息，指出您需要安装 Astra Connector ， <<Manage a private cluster,请按照以下说明进行操作>> 安装 Astra Connector 并启用集群管理。安装 Astra Connector 后，集群应符合条件，您可以继续添加集群。
 
+
+
+endif::gcp[]
+
++请仔细查看"符合条件"选项卡。如果出现警告，请将鼠标悬停在警告上以确定集群是否存在问题描述。例如，它可能会标识集群没有工作节点。
+
++如果您选择的集群尚未配置Azure NetApp Files 、则会显示一条警告。此集群未安装和配置 NetApp Trident 。如果要使用其他存储服务，您可以继续添加集群。
+
++如果您选择的集群标有"专用"图标、则它将使用专用IP地址、并且Astra Control需要使用Astra Connector来管理集群。如果您看到一条消息，指出您需要安装 Astra Connector ， <<Manage a private cluster,请按照以下说明进行操作>> 安装 Astra Connector 并启用集群管理。安装 Astra Connector 后，集群应符合条件，您可以继续添加集群。
+
+endif::azure[]
+
 . * 存储 * ：选择希望部署到此集群的 Kubernetes 应用程序默认使用的存储类。
 +
-列表中的每个 Cloud Volumes Service for Google Cloud 服务都会显示价格，性能和弹性信息。此时将显示每个 Azure NetApp Files 服务的性能和弹性信息。对于 Google Persistent Disk 或 Azure 受管磁盘等非 NetApp 存储类，不提供价格，性能和弹性信息。
+[NOTE]
+====
+每个云提供商存储服务都会显示以下价格、性能和弹性信息：
 
+ifdef::gcp[]
+
+** Cloud Volumes Service for Google Cloud：价格、性能和弹性信息
+** Google Persistent Disk：没有价格、性能或弹性信息
+
+
+endif::gcp[]
+
+ifdef::azure[]
+
+** Azure NetApp Files ：性能和弹性信息
+** Azure受管磁盘：无可用的价格、性能或弹性信息
+
+
+endif::azure[]
+
+====
 +
 每个存储类均可使用以下服务之一：
 
-+
-** https://cloud.netapp.com/cloud-volumes-service-for-gcp["适用于 Google Cloud 的 Cloud Volumes Service"^]
-** https://cloud.google.com/persistent-disk/["Google 持久磁盘"^]
-** https://cloud.netapp.com/azure-netapp-files["Azure NetApp Files"^]
-** https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["Azure 受管磁盘"^]
-+
-了解更多信息 link:../learn/choose-class-and-size.html["GKE 集群的存储类"] 和 link:../learn/azure-storage.html["AKS 集群的存储类"]。
 
 
+ifdef::gcp[]
+
+* https://cloud.netapp.com/cloud-volumes-service-for-gcp["适用于 Google Cloud 的 Cloud Volumes Service"^]
+* https://cloud.google.com/persistent-disk/["Google 持久磁盘"^]
+
+
+endif::gcp[]
+
+ifdef::azure[]
+
+* https://cloud.netapp.com/azure-netapp-files["Azure NetApp Files"^]
+* https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["Azure 受管磁盘"^]
+
+
+endif::azure[]
+
++了解更多信息 link:../learn/azure-storage.html["AKS 集群的存储类"]。
+
+endif::gcp[]
+
+了解更多信息 link:../learn/choose-class-and-size.html["GKE 集群的存储类"]。
+
+endif::azure[]
 
 . * 审核并批准 * ：查看配置详细信息并选择 * 添加集群 * 。
 
 
 Astra Control Service 会在符合条件的集群上创建用于应用程序备份的对象存储，在集群上创建管理员帐户，并设置您指定的默认存储类。此过程最多可能需要 5 分钟。
+
+ifdef::azure[]
 
 
 
@@ -148,6 +223,8 @@ NAME              REGISTERED   ASTRACONNECTORID
 astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
 ----
 
+
+endif::azure[]
 
 
 

@@ -41,6 +41,8 @@ Astra 控制服务提供三个计划：
 
 您可以随时升级到高级计划。升级后， Astra Control 会开始为帐户中的 _all_ 受管应用程序收取费用。前 10 个应用程序不会保留在免费计划中。
 
+ifdef::gcp[]
+
 
 
 === Google Cloud 计费
@@ -54,6 +56,10 @@ Astra 控制服务提供三个计划：
 * https://cloud.google.com/storage/pricing["查看 Google Cloud 存储分段的定价详细信息"^]。
 
 
+endif::gcp[]
+
+ifdef::azure[]
+
 
 
 === Microsoft Azure 计费
@@ -63,6 +69,8 @@ Astra 控制服务提供三个计划：
 * https://azure.microsoft.com/en-us/pricing/details/netapp["查看 Azure NetApp Files 的定价详细信息"^]。
 * https://azure.microsoft.com/en-us/pricing/details/storage/blobs["查看 Microsoft Azure Blob 存储的定价详细信息"^]。
 
+
+endif::azure[]
 
 
 

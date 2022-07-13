@@ -36,7 +36,7 @@ Astra Control 会持续监控您的计算状态变化，因此它可以识别您
 
 Astra Control 有两种部署模式：
 
-* * Astra Control Service* ： NetApp 管理的一项服务，可在 Google Kubernetes Engine （ GKEE ）和 Azure Kubernetes Service （ AKS ）中为 Kubernetes 集群提供应用程序感知型数据管理。
+* * Astra Control Service*：NetApp管理的一项服务、可为多个云提供商环境中的Kubernetes集群提供应用程序感知型数据管理。
 * * Astra Control Center* ：自管理软件，可为内部环境中运行的 Kubernetes 集群提供应用程序感知型数据管理。
 
 
@@ -93,26 +93,43 @@ Astra Control Service 是一种由 NetApp 管理的云服务，它始终处于�
 从较高的层面来看， Astra Control Service 的工作原理如下：
 
 * 您可以通过设置云提供商并注册 Astra 帐户开始使用 Astra Control Service 。
-+
-** 对于 GKE- 集群， Astra Control Service 使用 https://cloud.netapp.com/cloud-volumes-service-for-gcp["适用于 Google Cloud 的 NetApp Cloud Volumes Service"^] 或 Google Persistent Disk 作为永久性卷的存储后端。
-** 对于 AKS 集群， Astra Control Service 使用 https://cloud.netapp.com/azure-netapp-files["Azure NetApp Files"^] 或 Azure 磁盘存储作为永久性卷的存储后端。
 
+
+ifdef::gcp[]
+
++*对于GKEE集群、Astra Control Service使用 https://cloud.netapp.com/cloud-volumes-service-for-gcp["适用于 Google Cloud 的 NetApp Cloud Volumes Service"^] 或 Google Persistent Disk 作为永久性卷的存储后端。
+
+endif::gcp[]
+
+ifdef::azure[]
+
++*对于AKS集群、Astra Control Service使用 https://cloud.netapp.com/azure-netapp-files["Azure NetApp Files"^] 或 Azure 磁盘存储作为永久性卷的存储后端。
+
+endif::azure[]
 
 * 您可以将第一个 Kubernetes 计算添加到 Astra Control Service 中。然后， Astra 控制服务将执行以下操作：
 +
 ** 在云提供商帐户中创建一个对象存储，该帐户是备份副本的存储位置。
+
+
+
+
+ifdef::azure[]
+
++在Azure中、Astra Control Service还会为Blob容器创建资源组、存储帐户和密钥。
+
+endif::azure[]
+
+* 在集群上创建新的管理员角色和 Kubernetes 服务帐户。
+* 使用此新管理员角色进行安装 https://docs.netapp.com/us-en/trident/index.html["Astra Trident"^] 以创建一个或多个存储类。
+* 如果您使用云提供商存储服务作为存储后端、则Astra Control Service将使用Astra Trident为应用程序配置永久性卷。
 +
-在 Azure 中， Astra Control Service 还会为 Blob 容器创建资源组，存储帐户和密钥。
-
-** 在集群上创建新的管理员角色和 Kubernetes 服务帐户。
-** 使用此新管理员角色进行安装 https://docs.netapp.com/us-en/trident/index.html["Astra Trident"^] 以创建一个或多个存储类。
-** 如果您使用 Azure NetApp Files 或 NetApp Cloud Volumes Service for Google Cloud 作为存储后端，则 Astra 控制服务将使用 Astra Trident 为应用程序配置永久性卷。
-
-
-* 此时，您可以向集群添加应用程序。将在新的默认存储类上配置永久性卷。
-* 然后，您可以使用 Astra Control Service 管理这些应用程序，并开始创建快照，备份和克隆。
+** 此时，您可以向集群添加应用程序。将在新的默认存储类上配置永久性卷。
+** 然后，您可以使用 Astra Control Service 管理这些应用程序，并开始创建快照，备份和克隆。
 +
 Astra Control Service 会持续监控您的计算状态变化，因此它可以识别您在此过程中添加的任何新应用程序。
+
+
 
 
 

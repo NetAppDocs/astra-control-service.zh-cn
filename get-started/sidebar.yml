@@ -11,10 +11,13 @@ entries:
 - title: 设置您的云提供商
   entries:
   - title: 设置 Google Cloud
+    flavor: gcp
     url: "/get-started/set-up-google-cloud.html"
   - title: 使用 Azure NetApp Files 设置 Microsoft Azure
+    flavor: azure
     url: "/get-started/set-up-microsoft-azure-with-anf.html"
   - title: 使用 Azure 受管磁盘设置 Microsoft Azure
+    flavor: azure
     url: "/get-started/set-up-microsoft-azure-with-amd.html"
 - title: 注册帐户
   url: "/get-started/register.html"

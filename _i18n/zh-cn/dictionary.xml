@@ -15,7 +15,6 @@
   <block id="39a9cd4c5a8b26df94de4486fbceaf05" category="doc">从 Helm 图表部署 PostgreSQL</block>
   <block id="8af1c34244700f810760890ac853ae2b" category="summary">从 BitNami Helm 图表中了解如何部署 Jenkins 。在集群上部署 Jenkins 后，您可以向 Astra Control 注册此应用程序。</block>
   <block id="7357cc85e416b3744a3f46ea90fb01cc" category="doc">从 Helm 图表中部署 Jenkins</block>
-  <block id="4e0607432990160c5925f87a3a84fa17" category="summary">Astra 控制服务可以在 Google Kubernetes Engine （ GKEE ）和 Azure Kubernetes Service （ AKS ）中管理受管 Kubernetes 集群上运行的应用程序。</block>
   <block id="acb13b8754d0f14e58090cb4826d589f" category="doc">支持的 Kubernetes 部署</block>
   <block id="06b1a7d4e1877b69bcb6fcbd9fc3f7d2" category="inline-link-macro">了解如何为 Astra Control Service 设置 Google Cloud</block>
   <block id="b5e7bcb71963764cb139d9e8c6cb7f39" category="list-text"><block ref="6c77616d0b34601c48f50b97c8cb436f" category="inline-link-macro-rx"></block>。</block>
@@ -158,7 +157,6 @@
   <block id="b1151aae9531d2f5e85d085e8878cea6" category="summary">如果您只是想快速了解问题解答，此常见问题解答会很有帮助。</block>
   <block id="8de7ff5f7f2186929bf88ea5dcfc0fb3" category="doc">有关 Astra 控制服务的常见问题</block>
   <block id="3b878279a04dc47d60932cb294d96259" category="section-title">概述</block>
-  <block id="4ac8b350945a48f97d34005f453d04a4" category="paragraph">Astra Control 旨在简化 Kubernetes 原生应用程序的应用程序数据生命周期管理操作。Astra 控制服务支持在 Google Kubernetes Engine （ GKEE ）和 Azure Kubernetes Service （ AKS ）上运行的 Kubernetes 集群。</block>
   <block id="7138c9866f92caa6559eeb16dedcead9" category="paragraph">以下各节将为您在使用 Astra Control 时可能遇到的其他一些问题提供解答。如有任何其他澄清，请联系 astra.feedback@netapp.com</block>
   <block id="3783e7bdb365c30dbefc88440e625d44" category="section-title">访问 Astra Control</block>
   <block id="03069a991fdd2077c62785ce41219767" category="paragraph">* 注册 Astra Control 时，为什么需要提供如此多的详细信息？ *</block>
@@ -174,10 +172,8 @@
   <block id="12e5e74341c47b0e02245229810cdaff" category="paragraph">* 我在一个月中升级到高级 PayGO 计划。我是否会在整个月内支付费用？ *</block>
   <block id="1492d479a5b127f5adba75def1fef7ed" category="paragraph">不可以，从升级到高级计划开始计费。</block>
   <block id="f18b7956b816c9fe4217adec72e97c14" category="paragraph">* 我正在使用免费计划，是否会为永久性卷申请付费？ *</block>
-  <block id="1c04fecf8d8596e8c9694831b457854d" category="paragraph">是的，您需要为 Cloud Volumes Service for Google Cloud 中的 GKS 集群或 Azure NetApp Files 中的 AKS 集群使用的永久性卷付费。</block>
   <block id="b892fe302a6a7df4519761ccd72b7c2f" category="section-title">注册 Kubernetes 集群</block>
   <block id="b588fb2a2e55643a23cbafdb1879e478" category="paragraph">* 在将集群添加到 Astra Control Service 之前，是否需要在集群上安装 CSI 驱动程序？ *</block>
-  <block id="e7cb049d9b5ec1b95d031fd6c843c4f9" category="paragraph">否将集群添加到 Astra Control 后，该服务将自动在 Kubernetes 集群上安装 NetApp 的 Trident 容器存储接口（ Trident Container Storage Interface ， CSI ）驱动程序。此 CSI 驱动程序用于为 NetApp Cloud Volumes Service for Google Cloud 支持的 GKS 集群和 Azure NetApp Files 支持的 AKS 集群配置永久性卷。</block>
   <block id="a48e52ca315005bd57971ddff57c7bf1" category="paragraph">* 添加到 Astra Control Service 后，我需要向集群添加工作节点。我该怎么办？ *</block>
   <block id="c75b6dbbff39cab276daeced2d984b76" category="paragraph">可以将新的工作节点添加到现有池中，也可以创建新池，只要它们是 Ubuntu 映像类型即可。这些信息将由 Astra Control 自动发现。如果新节点在 Astra Control 中不可见，请检查新工作节点是否正在运行受支持的映像类型。您也可以使用 `kubectl get nodes` 命令验证新工作节点的运行状况。</block>
   <block id="286454d2267ba294af28bc43c31f1c1a" category="section-title">注册 GKEE 集群</block>
@@ -358,7 +354,6 @@
   <block id="ddf1663ccbe93fbad389abace27b7e96" category="list-text">* 方法 1* ：从集群中删除应用程序工作负载命名空间。请勿删除 Trident 命名空间。</block>
   <block id="ff4e57e53b65417841ea3ba24cb7ede1" category="list-text">* 方法 2* ：删除 PVC 和 Pod ，或者删除挂载 PV 的部署。</block>
   <block id="65acd6481734ae302871922c7cda00aa" category="paragraph">使用上述方法之一将从集群中删除相应的 PV 。在删除集群之前，请确保集群上的 NetApp 存储类中不存在任何 PV 。</block>
-  <block id="eca26114d62d763790af044b8d7b68a1" category="paragraph">如果在删除集群之前未删除永久性卷，则需要从适用于 Google Cloud 的 Cloud Volumes Service 或 Azure NetApp Files 中手动删除后端卷。</block>
   <block id="c6cfc4d3d9cea002c667dea6f191ebaf" category="summary">Astra Control 的免费计划支持您管理帐户中多达 10 个应用程序。如果您要管理 10 个以上的应用程序，则需要通过从 " 免费计划 " 升级到 " 高级计划 " 来设置计费。</block>
   <block id="13af76c117dbd9492fae97f4a28dfba5" category="section-title">计费概述</block>
   <block id="5ecfb1cc769c9fff768f475e2fa5c859" category="paragraph">使用 Astra Control Service 会产生两种成本：由 NetApp 为 Astra Control Service 收取费用，由云提供商为永久性卷和对象存储收取费用。</block>
@@ -473,7 +468,6 @@
   <block id="7b758bf36ef17d1879863c969ac42d38" category="paragraph">请注意， Astra Control 中的所有用户都共享相同的凭据集。</block>
   <block id="0f391d5482822722d86585c248878517" category="section-title">添加凭据</block>
   <block id="d1d2df683ec3a42a861cfb62b75272b0" category="list-text">对于 GKE- ，您应该拥有具有所需权限的服务帐户的服务帐户密钥文件。 <block ref="253b0a52b10e4210af2fe90c716fc07d" category="inline-link-macro-rx"></block>。</block>
-  <block id="08a6527af98e29d0d830ea9505c7f7c6" category="list-text">选择 * Microsoft Azure* 或 * Google Cloud Platform* 。</block>
   <block id="782e3a607190389d89929f59add176e9" category="list-text">在 Astra Control 中输入凭据名称，以便将其与其他凭据区分开。</block>
   <block id="eb48a4c8b56c5d829a90bedb591ab180" category="list-text">提供所需的凭据。</block>
   <block id="014c14c5512caaa6fd3b7a442dba0aa0" category="list-text">* Microsoft Azure* ：通过上传 JSON 文件或从剪贴板粘贴 JSON 文件的内容，为 Astra Control 提供有关 Azure 服务主体的详细信息。</block>
@@ -852,7 +846,6 @@
   <block id="09fcc57d953e448e733bfa37d444c81b" category="paragraph">创建这两个自定义应用程序后，管理员可以将这些资源视为任何其他 Astra Control 应用程序。管理员可以克隆这些资源，创建备份和快照，并根据 Kubernetes 标签为每个资源组创建自定义保护策略。</block>
   <block id="ef8ee09fa3337e5d951394563bcf6ba8" category="summary">下面简要介绍了 Astra Control 环境的各个组件。</block>
   <block id="9282ad3aef7e124a3b2b9c7eab52b33d" category="doc">架构和组件</block>
-  <block id="46c8ce0480dfb453a068efd5c148d585" category="summary">Astra Control Service 是一项由 NetApp 管理的服务，可在 Google Kubernetes Engine （ GKEE ）和 Azure Kubernetes Service （ AKS ）中为 Kubernetes 集群提供应用程序感知型数据管理。如果您需要管理在内部环境中运行的 Kubernetes 应用程序，请访问 Astra Control Center 的文档。</block>
   <block id="ef22ff17624b3faeed227ce5c717eb5f" category="doc">Astra Control Service 文档</block>
   <block id="ce8c3cae4f2c01197a36e6ffb040472a" category="summary">Astra Control 具有一个 REST API ，可用于使用编程语言或 Curl 等实用程序直接访问 Astra Control 功能。您还可以使用 Ansible 和其他自动化技术管理 Astra Control 部署。</block>
   <block id="d755391e5d933eadfa1864b13155afeb" category="doc">使用 Astra Control REST API 实现自动化</block>
@@ -930,7 +923,6 @@
   <block id="ad37cec77527ba2b72ebad59937415a8" category="summary">从 Astra Control 中删除不再需要管理的任何应用程序或集群。</block>
   <block id="e22a0ea89c99a70578a25d6819a17c5e" category="doc">取消管理应用程序和集群</block>
   <block id="206a0e294af13e6b2a4934eec5f74d10" category="section-title">停止管理集群</block>
-  <block id="d931a44781fa712ba9e029f16cdb5f49" category="paragraph">停止从 Astra Control 管理您不再需要管理的集群。作为最佳实践，我们建议您先从 Astra Control 中删除集群，然后再通过 GCP 将其删除。</block>
   <block id="2b884629e58e22d2c3893c02ed13d791" category="list-text">此操作将停止由 Astra Control 管理集群。它不会对集群的配置进行任何更改，也不会删除集群。</block>
   <block id="f923faa470b669c2fe512be025422520" category="paragraph">Astra Control 将停止管理集群。</block>
   <block id="27d8eb96b8855de99b3d83a8dddb866d" category="inline-link-macro">取消管理所有应用程序和集群</block>
@@ -982,7 +974,6 @@
   <block id="2e622d4e702129954e1bcffaa396cd0c" category="inline-link-macro">Astra API</block>
   <block id="d3af82049064083c07416b3ed040dba2" category="section-title">2021 年 12 月 14 日</block>
   <block id="87716101cfca255da11056a624dbce47" category="inline-link-macro">使用 Azure 受管磁盘设置 Microsoft Azure</block>
-  <block id="727aad970dc4f9da832a886a6c56b88b" category="paragraph"><block ref="c57970c371fd2484630c6a7929047957" category="inline-link-macro-rx"></block>。<block ref="22e9bb5a03504aaee4ab910d594c8096" category="inline-link-macro-rx"></block>。</block>
   <block id="7b3573ea6db30898defcb7febd2bdcfa" category="section-title">原位应用程序还原</block>
   <block id="e86cc6374d62a2872beb0208da0813b0" category="paragraph">现在，您可以通过还原到同一集群和命名空间来原位还原应用程序的快照，克隆或备份。</block>
   <block id="8e5ee9c2a1b184da5a35efa5d7871c5a" category="paragraph"><block ref="57b180faef2287140b0abcde93ffc94f" category="inline-link-macro-rx"></block>。</block>
@@ -1218,9 +1209,7 @@
   <block id="ae361e798f83cc34514b5bc74d5ec5d6" category="list-text"><block ref="2152ce675eb0b9d88dfc2e125645113a" category="inline-link-macro-rx"></block>。</block>
   <block id="61ff50e91bc9118602e803e489f0e42f" category="inline-link-macro">采用 Azure NetApp Files 的 Azure Kubernetes Service （ AKS ）的 Astra 控制服务要求</block>
   <block id="e2517379d9a14736369ae8b5b851ca0a" category="inline-link-macro">采用 Azure 受管磁盘的 Azure Kubernetes Service （ AKS ）的 Astra Control Service 要求</block>
-  <block id="68324e985558c5c0e27eed8eb0d54d55" category="paragraph">如果您还没有集群，请创建一个满足要求的集群 <block ref="c14ce2b90a6d517d28f6a149c4e1ddd7" category="inline-link-macro-rx"></block>， <block ref="26225e7fb486798018db81609e04ff4b" category="inline-link-macro-rx"></block>或 <block ref="4367f6239877b226051b2a69dcda335c" category="inline-link-macro-rx"></block> 。</block>
   <block id="3bda726609d17e2981e60b23a6e4c978" category="list-text">对于 AKS ，您应具有包含创建服务主体时 Azure 命令行界面输出的 JSON 文件。 <block ref="63026405246b8ab97c47baaea735ffe8" category="inline-link-macro-rx"></block>。</block>
-  <block id="66f66890d5eab7f564eab22e8111acd0" category="paragraph">如果您选择的集群尚未配置 Cloud Volumes Service for Google Cloud 或 Azure NetApp Files ，则会显示一条警告。此集群未安装和配置 NetApp Trident 。如果要使用其他存储服务，您可以继续添加集群。</block>
   <block id="0397bb04b1ca291a49cf76be15c2f6e4" category="paragraph">每个存储类均可使用以下服务之一：</block>
   <block id="31e7239cc507a58a4794b36df4448093" category="list-text"><block ref="31e7239cc507a58a4794b36df4448093" category="inline-link-rx"></block></block>
   <block id="f3c86dfec3bf21996638520b54f5d64e" category="list-text"><block ref="f3c86dfec3bf21996638520b54f5d64e" category="inline-link-rx"></block></block>
@@ -1228,7 +1217,6 @@
   <block id="c6a7824e4b3ef243db20452d107827b3" category="list-text"><block ref="c6a7824e4b3ef243db20452d107827b3" category="inline-link-rx"></block></block>
   <block id="b03ad30a5cf7205451cf9d1c28fb3b46" category="inline-link-macro">GKE 集群的存储类</block>
   <block id="388b49ca6772164d2fe62455b28ba25e" category="inline-link-macro">AKS 集群的存储类</block>
-  <block id="a3ee580d6f94fdbf5cb0aa45e2439e28" category="paragraph">了解更多信息 <block ref="fd0a3bed584d87df18438d86772a2aaf" category="inline-link-macro-rx"></block> 和 <block ref="b4547358b744ca3b28812f444dc5a38f" category="inline-link-macro-rx"></block>。</block>
   <block id="e58ad76e34d50bf44f9e038d674c2fb9" category="paragraph">Astra Control Service 会在符合条件的集群上创建用于应用程序备份的对象存储，在集群上创建管理员帐户，并设置您指定的默认存储类。此过程最多可能需要 5 分钟。</block>
   <block id="30334fc03d9c154571a9c7384dc2fdef" category="sidebar">使用 Astra Control REST API 实现自动化</block>
   <block id="3a003da24f6641529c763cb023871157" category="sidebar">使用 Astra Control REST API</block>
@@ -1239,7 +1227,6 @@
   <block id="ddcfd610f74c256985ea230159f499b4" category="list-text">选择 * 提交注册 * 。</block>
   <block id="0786589eb7392bc413e898e8782cef99" category="list-text">选择 * 我不是 NetApp 注册客户 * 。</block>
   <block id="8f82aca9abb16b6ff389726d5fbe355a" category="section-title">新的存储后端选项</block>
-  <block id="6342303186505a566b90049c44a51b8e" category="paragraph">现在， Astra Control Service 支持使用 Google Persistent Disk 和 Azure 托管磁盘作为存储后端选项。</block>
   <block id="8527c0ab84fa8956acb7ba13d5e3ad9d" category="inline-link-macro">了解 Astra 控制服务如何使用适用于 Google Cloud 的 Cloud Volumes Service 作为永久性卷的存储后端</block>
   <block id="033c399986bd3d9b7ef54b989611f70b" category="paragraph"><block ref="ae94f8298ace086e6c054e879241557e" category="inline-link-macro-rx"></block>。</block>
   <block id="2c86b251dbdee05a59434e44da5fb462" category="paragraph">Astra Control Service 现在支持<block ref="1760b78b440a877c4a7a7d217ccc8ada" category="inline-link-rx"></block> 借助适用于 Google Cloud 的 Cloud Volumes Service 。这是对 _cvs-Performance_ 服务类型的补充。请注意， Astra 控制服务使用适用于 Google Cloud 的 Cloud Volumes Service 作为永久性卷的存储后端。</block>
@@ -1263,7 +1250,6 @@
   <block id="bbc9aa35732a63162cdf17006a04e715" category="list-text">选中不再需要管理的集群对应的复选框。</block>
   <block id="8c7785ee86e6ea06b15e32e693cf25fb" category="list-text">选择 * 操作 * 下拉列表并选择 * 取消管理 * 。</block>
   <block id="f28b587beff3cce52991931fc64ca32c" category="list-text">确认要取消管理集群，然后选择 * 是，取消管理集群 * 。</block>
-  <block id="b0353002f67af1f9b60233c6f8d929df" category="paragraph">从 Astra Control 管理 Kubernetes 集群时，该集群上的应用程序会使用 Cloud Volumes Service 或 Azure NetApp Files 作为永久性卷的存储后端。如果从云提供商中删除集群而未先删除 PV ，则后端卷将与集群一起被删除。</block>
   <block id="0569fe01ec1262e14c93b5ee1e86fc59" category="list-text">选择 * 帐户 &gt; 凭据 * 。</block>
   <block id="f6af3538e9fd62f100b17501fa28a839" category="list-text">选择 * 添加凭据 * 。</block>
   <block id="1a5f98a95779208d9234fca9491f7096" category="list-text">在 * 状态 * 列中选择要删除的凭据的下拉列表。</block>
@@ -1431,7 +1417,6 @@
   <block id="894b9b2b2a66efc8393eed6013d32a66" category="paragraph">Astra Control 会持续监控您的计算状态变化，因此它可以识别您在此过程中添加的任何新应用程序。</block>
   <block id="6762973af9b127d271f0d2b2aea0bc96" category="section-title">部署模式</block>
   <block id="db1905d057dd6fde6f8b7bd6afe60e41" category="paragraph">Astra Control 有两种部署模式：</block>
-  <block id="5ac9f21bb5ada8cf5c614ea23fce4131" category="list-text">* Astra Control Service* ： NetApp 管理的一项服务，可在 Google Kubernetes Engine （ GKEE ）和 Azure Kubernetes Service （ AKS ）中为 Kubernetes 集群提供应用程序感知型数据管理。</block>
   <block id="ddbf9f0ee6e908772df862b9cb9312d3" category="list-text">* Astra Control Center* ：自管理软件，可为内部环境中运行的 Kubernetes 集群提供应用程序感知型数据管理。</block>
   <block id="72fa0b165b80dd423c3cca71e56e6e85" category="cell">如何提供？</block>
   <block id="f7b1d494056b7a9289f329a721d9f318" category="cell">作为 NetApp 提供的一项完全托管的云服务</block>
@@ -1456,15 +1441,11 @@
   <block id="29346571353a36c4c8e378195149db77" category="paragraph">从较高的层面来看， Astra Control Service 的工作原理如下：</block>
   <block id="5e44a260fc47d95ab78eb0e97efe4e7d" category="list-text">您可以通过设置云提供商并注册 Astra 帐户开始使用 Astra Control Service 。</block>
   <block id="a3b5183ae6f5c3f1d6644448f795b5cb" category="inline-link">适用于 Google Cloud 的 NetApp Cloud Volumes Service</block>
-  <block id="052766753c4902f7b4dda44f55923c85" category="list-text">对于 GKE- 集群， Astra Control Service 使用<block ref="33441d63a8e7ace6860eab2024320819" category="inline-link-rx"></block> 或 Google Persistent Disk 作为永久性卷的存储后端。</block>
-  <block id="e6b1925e4e775a70bcb5b95deee417b9" category="list-text">对于 AKS 集群， Astra Control Service 使用<block ref="16e1ab965c1d673c5cb3b5a28e77c1c1" category="inline-link-rx"></block> 或 Azure 磁盘存储作为永久性卷的存储后端。</block>
   <block id="1ae8e0ca715d9854cf1c69ead32e4931" category="list-text">您可以将第一个 Kubernetes 计算添加到 Astra Control Service 中。然后， Astra 控制服务将执行以下操作：</block>
   <block id="e99f973393b40d224e0166ec9b211177" category="list-text">在云提供商帐户中创建一个对象存储，该帐户是备份副本的存储位置。</block>
-  <block id="2fe87449d125b0daf20d2fc8de53081e" category="paragraph">在 Azure 中， Astra Control Service 还会为 Blob 容器创建资源组，存储帐户和密钥。</block>
   <block id="c2fd5ecb26eed8762bfa518199e6199f" category="list-text">在集群上创建新的管理员角色和 Kubernetes 服务帐户。</block>
   <block id="086e6c16e3fe8e13c336612ef636aa02" category="inline-link">Astra Trident</block>
   <block id="51fbabc51080a419e6a5019a1c169ab4" category="list-text">使用此新管理员角色进行安装<block ref="0ff0cd427dac64ddc62afadc9a52e9d0" category="inline-link-rx"></block> 以创建一个或多个存储类。</block>
-  <block id="53a30ad173bc821551d7bc21cfd2f4c8" category="list-text">如果您使用 Azure NetApp Files 或 NetApp Cloud Volumes Service for Google Cloud 作为存储后端，则 Astra 控制服务将使用 Astra Trident 为应用程序配置永久性卷。</block>
   <block id="a853ecb1e1044a3ae5762294407c0fda" category="list-text">此时，您可以向集群添加应用程序。将在新的默认存储类上配置永久性卷。</block>
   <block id="67d2a2db6f77778acc532b68658f63cc" category="list-text">然后，您可以使用 Astra Control Service 管理这些应用程序，并开始创建快照，备份和克隆。</block>
   <block id="a7eb0ba32f9706a479c6037bea16e1ca" category="paragraph">Astra Control Service 会持续监控您的计算状态变化，因此它可以识别您在此过程中添加的任何新应用程序。</block>
@@ -1512,8 +1493,6 @@
   <block id="a8d77bbb11d2e1a349811767d194e9ba" category="list-text">* Kubernetes 集群 * ： Kubernetes 是一个可移植，可扩展的开源平台，用于管理容器化工作负载和服务，便于进行声明性配置和自动化。Astra 为 Kubernetes 集群中托管的应用程序提供管理服务。</block>
   <block id="b11f09eb1179914138fa8f5a15ba016a" category="list-text">* Astra Trident * ：作为 NetApp 维护的完全受支持的开源存储配置程序和编排程序， Trident 使您能够为 Docker 和 Kubernetes 管理的容器化应用程序创建存储卷。在使用 Astra 控制中心部署时， Trident 会包括一个已配置的 ONTAP 存储后端，并支持将 Astra 数据存储作为存储后端。</block>
   <block id="951fe18cc6e59e05fca3c0ca7de399fa" category="list-text">* 存储后端 * ：</block>
-  <block id="e64a7ac3db2aba4dd93ec2430e457fd3" category="list-text">Astra Control Service 使用<block ref="d804c793f302b1f3285300e6253aaac6" category="inline-link-rx"></block> 作为 GKE- 集群和的存储后端<block ref="9e2d15731749abbc242896b41a1be2ef" category="inline-link-rx"></block> 作为 AKS 集群的存储后端。</block>
-  <block id="dd069ab6d74011bb108bf219e092a2d0" category="list-text">Astra 控制中心使用以下存储后端：</block>
   <block id="69a0ead95fc9c4c42592c123ebbf437a" category="list-text">Astra Data Store 存储后端</block>
   <block id="fc8adf6067b9e369fbebc9abf2891bce" category="list-text">ONTAP AFF 和 FAS 存储后端。作为存储软件和硬件平台， ONTAP 可提供核心存储服务，支持多个存储访问协议以及快照和镜像等存储管理功能。</block>
   <block id="415ba7b6a21fb373d9c5b72207313c1c" category="list-text">* Cloud Insights * ： Cloud Insights 是一款 NetApp 云基础架构监控工具，可用于监控由 控制中心管理的 Kubernetes 集群的性能和利用率。Cloud Insights 将存储使用量与工作负载相关联。在 Astra 控制中心中启用 Cloud Insights 连接后，遥测信息将显示在 Astra 控制中心 UI 页面中。</block>
@@ -1580,7 +1559,6 @@
   <block id="683680341c1485a9254d81c06fc946e1" category="admonition">如果集群处于 `removed` 状态，而集群和网络连接运行状况良好（外部尝试使用 Kubernetes API 访问集群成功），则您为 Astra Control 提供的 kubeconfig 可能不再有效。这可能是由于集群上的证书轮换或到期造成的。要更正此问题描述，请使用在 Astra Control 中更新与集群关联的凭据 <block ref="a2191a9273bc54ae2e00dd51b40d424f" category="inline-link-macro-rx"></block>。</block>
   <block id="2d3a33198a03ea06faef99430efd1075" category="list-text">查看 * 概述 * ， * 存储 * 和 * 活动 * 选项卡上的信息，找到您要查找的信息。</block>
   <block id="1825841c7b132cb5df31c466db49d616" category="list-text">* 存储 * ：与计算关联的永久性卷，包括存储类和状态。</block>
-  <block id="8cdf38b43bbfef71f87824a668308050" category="list-text">* 活动 * ：与集群相关的活动。</block>
   <block id="ebc29e291abaa5cc608adb022dd00da3" category="admonition">您还可以从 Astra 控制服务 * 信息板 * 开始查看集群信息。在 * 资源摘要 * 下的 * 集群 * 选项卡上，您可以选择受管集群，此操作将转到 * 集群 * 页面。进入 * 集群 * 页面后，请按照上述步骤进行操作。</block>
   <block id="7a2b0219114311a3dca473e810708a62" category="paragraph">未读通知的数量显示在界面右上角。</block>
   <block id="9f097dac85ac3ea6adc46bf130f734ac" category="inline-link-macro">更改存储分段默认值</block>
@@ -1631,7 +1609,6 @@
   <block id="998487d1e577c27c456cf380d499a1ec" category="inline-xref">请按照以下说明进行操作</block>
   <block id="5a737c67c0b2ac2e4c643d72c95e0526" category="list-text">您需要在 AKS 服务集群上安装 Astra Connector ，以便 Astra Control Service 可以管理此集群。要安装 Astra Connector ， <block ref="fc3252390c96b6337e381be01d1e4c4d" category="inline-xref-macro-rx"></block>。</block>
   <block id="40d304e5f3629b7ff733d026fd7435db" category="paragraph">如果您选择的集群标记有 "private" 图标，则它将使用专用 IP 地址，并且 Astra Control 需要使用 Astra Connector 来管理集群。如果您看到一条消息，指出您需要安装 Astra Connector ， <block ref="fc3252390c96b6337e381be01d1e4c4d" category="inline-xref-macro-rx"></block> 安装 Astra Connector 并启用集群管理。安装 Astra Connector 后，集群应符合条件，您可以继续添加集群。</block>
-  <block id="5b9e2c28bcfea155c6ec70057922953e" category="paragraph">列表中的每个 Cloud Volumes Service for Google Cloud 服务都会显示价格，性能和弹性信息。此时将显示每个 Azure NetApp Files 服务的性能和弹性信息。对于 Google Persistent Disk 或 Azure 受管磁盘等非 NetApp 存储类，不提供价格，性能和弹性信息。</block>
   <block id="e2422705f78eff49e43f16a31a8f0847" category="section-title">管理专用集群</block>
   <block id="e3b8879cdcd728379544300db10524e6" category="paragraph">您可以使用 Astra Control Service 管理专用 AKS 集群。为此，您需要在专用 AKS 服务集群上安装 Astra Connector 操作员。您可以在添加要管理的集群之前完成此步骤，也可以在系统提示时在添加集群期间完成此步骤。</block>
   <block id="37d0b0adf169e682e19c955d0cd73c29" category="list-text">为 Astra Connector 运算符创建命名空间。</block>
@@ -1649,7 +1626,6 @@
   <block id="280c70bfab5c7c30f1836f8337f04744" category="paragraph">可以，您可以将专用 GKE- 集群添加到 Astra Control Service 中。要创建 Google Kubernetes Engine （ GKEE ）专用集群，<block ref="5476475ab72cd9cb8fccc685eb30acef" category="inline-link-rx"></block>。</block>
   <block id="51e84df52b4888344ecda584885aaabd" category="paragraph">专用集群必须具有<block ref="aa255aeede553f15509fbd44536f790e" category="inline-link-rx"></block> 设置为允许 Astra Control IP 地址：</block>
   <block id="0cc78d43619515d263f8e91071f2ed83" category="paragraph">52.188.218.166/32</block>
-  <block id="3501ebb9ad570ed4f4987af3dd48dc47" category="list-text">Astra 控制服务还支持将 Azure 受管磁盘和 Google 永久性磁盘用作后端存储选项。</block>
   <block id="242b16009698fe8de90e3b0966885de7" category="summary">了解 Astra 控制中心提供的数据保护类型，以及如何以最佳方式使用它们来保护您的应用程序。</block>
   <block id="f26ee8a93c95de7a50a14b73f85172c5" category="paragraph">了解 Astra Control 中的用户角色和命名空间，以及如何使用它们控制对组织中资源的访问。</block>
   <block id="f4040f71a7d553f2519487070892b115" category="section-title">用户角色</block>
@@ -1683,9 +1659,6 @@
   <block id="440441988db4dd1a631f18e5ce228880" category="list-text"><block ref="4791c8debe5295c527a6dd0dc7f0957f" category="inline-xref-macro-rx"></block></block>
   <block id="ca318d6b4eed133149be28dcaf9203ab" category="section-title">还原应用程序会导致 PV 大小大于原始 PV</block>
   <block id="c1ab420107ece0814547044cc11d2689" category="paragraph">如果在创建备份后调整永久性卷的大小，然后从该备份还原，则此永久性卷的大小将与 PV 的新大小匹配，而不是使用备份的大小。</block>
-  <block id="66edf4995b8868e964c7fcd7d02a19e0" category="list-text">运行 POST 调用，将更新后的 kubeconfig 文件添加到 ` 凭据` 端点，并从响应正文中检索分配的 `id` 。</block>
-  <block id="d0becff2191f0fa6114340d29cd03f72" category="list-text">使用适当的集群 ID 从 ` 集群` 端点运行 PUT 调用，并将 `credentialId` 设置为上一步中的 `id` 值。</block>
-  <block id="e5c2d65f2a0a3504c7fb94d2f3f8e408" category="paragraph">完成这些步骤后，将更新与集群关联的凭据，集群应重新连接并将其状态更新为 `Available` 。</block>
   <block id="f64cab133147d09d35d2708459ada555" category="section-title">当 Astra Trident 脱机时，应用程序数据管理操作失败，并显示内部服务错误（ 500 ）</block>
   <block id="5ffd50b83740bc0749b40034cddea615" category="paragraph">如果应用程序集群上的 Astra Trident 脱机（并恢复联机），并且在尝试应用程序数据管理时遇到 500 个内部服务错误，请重新启动应用程序集群中的所有 Kubernetes 节点以还原功能。</block>
   <block id="d551a2e881c7a8c13113e2a9e28d0b91" category="list-text">如果集群为专用集群，则会显示<block ref="aa255aeede553f15509fbd44536f790e" category="inline-link-rx"></block> 必须允许 Astra 控制服务 IP 地址：</block>
@@ -1733,4 +1706,55 @@
   <block id="4a9b46e4514936c3267b624e9c48f76b" category="list-text">将此容器作为分段添加到Astra Control Service中。请参见 <block ref="3ecbb82ace41389a409b1cc92181a5a8" category="inline-link-macro-rx"></block>。</block>
   <block id="695f1c0a89ac16190399389b6dfdcb1b" category="list-text">(可选)要使用新创建的存储分段作为Azure备份的默认存储分段、请将其设置为Azure的默认存储分段。请参见 <block ref="d1523cf11113b501cc0e7216254bf527" category="inline-link-macro-rx"></block>。</block>
   <block id="f2ab44c105acc97c54a227f6c52ad099" category="admonition">如果还原到先前已删除的命名空间、则在还原过程中会创建一个同名的新命名空间。任何有权管理先前删除的命名空间中的应用程序的用户都需要手动还原对新重新创建的命名空间的权限。</block>
+  <block id="121863f3c706ebd2d945f908b000591c" category="paragraph">Astra Control Service现在支持将Azure托管磁盘作为存储后端选项。</block>
+  <block id="e1f2675073a94e88072d9a8109916ab6" category="paragraph"><block ref="22e9bb5a03504aaee4ab910d594c8096" category="inline-link-macro-rx"></block>。</block>
+  <block id="0c1c4111adfcf68fad6f4e6775c5c793" category="paragraph">Astra Control Service现在支持将Google Persistent Disk作为存储后端选项。</block>
+  <block id="31a7227dfd927db6eb4e951126c58fd7" category="paragraph"><block ref="c57970c371fd2484630c6a7929047957" category="inline-link-macro-rx"></block>。</block>
+  <block id="5a86157a3052fc9bb31e17ca06630acf" category="summary">Astra Control Service是一项由NetApp管理的服务、可为多个云环境中的Kubernetes集群提供应用程序感知型数据管理。如果您需要管理在内部环境中运行的 Kubernetes 应用程序，请访问 Astra Control Center 的文档。</block>
+  <block id="202728ed0a31fb39489893fef0fc7f1d" category="paragraph">停止从 Astra Control 管理您不再需要管理的集群。</block>
+  <block id="de0e795d4df19783d74744629602d74a" category="paragraph">作为最佳实践，我们建议您先从 Astra Control 中删除集群，然后再通过 GCP 将其删除。</block>
+  <block id="9aafd9166133200ad3561aea554f609f" category="paragraph">当您从Astra Control管理Kubernetes集群时、该集群上的应用程序会使用您的云提供商作为永久性卷的存储后端。如果从云提供商中删除集群而未先删除 PV ，则后端卷将与集群一起被删除。</block>
+  <block id="6344e8b71894baae80a8a9ce205fa292" category="paragraph">如果在删除集群之前未删除永久性卷、则需要手动从Azure NetApp Files 中删除后端卷。</block>
+  <block id="a453fc138bb9c338a81262f4d0deb403" category="paragraph">如果在删除集群之前未删除永久性卷，则需要从适用于 Google Cloud 的 Cloud Volumes Service 中手动删除后端卷。</block>
+  <block id="c3aa52286a024f12766276c915da0768" category="list-text">*活动*：与集群相关的活动。</block>
+  <block id="2083c7d3800af1239db96fe1162f3655" category="list-text">选择* Microsoft Azure*。</block>
+  <block id="9581f4ad188e6563d0593b866d14de7d" category="list-text">选择* Google Cloud Platform*。</block>
+  <block id="414385607184a4404a07220748471e4a" category="summary">Astra Control Service可以管理云提供商环境中受管Kubernetes集群上运行的应用程序。</block>
+  <block id="40b2cee8858441c9c1f5967bceea641c" category="paragraph">Astra控制服务可以在Google Kubernetes Engine (GKEE)中管理受管Kubernetes集群上运行的应用程序。</block>
+  <block id="5b30810a5290fa4bfedb84bac0ef0cd6" category="paragraph">Astra Control Service可以管理Azure Kubernetes Service (AKS)中受管Kubernetes集群上运行的应用程序。</block>
+  <block id="56f4faf7900c9ffcdd4c855bd5f7eb4e" category="paragraph">如果您还没有集群，请创建一个满足要求的集群 <block ref="c14ce2b90a6d517d28f6a149c4e1ddd7" category="inline-link-macro-rx"></block>。</block>
+  <block id="4551de7617da7fdeac551cb463c35252" category="paragraph">如果您还没有集群，请创建一个满足要求的集群 <block ref="26225e7fb486798018db81609e04ff4b" category="inline-link-macro-rx"></block> 或 <block ref="4367f6239877b226051b2a69dcda335c" category="inline-link-macro-rx"></block>。</block>
+  <block id="cfd1dc29a3da3b678b65b5a95d2159a4" category="paragraph">如果您选择的集群尚未配置Cloud Volumes Service for Google Cloud、则会显示一条警告。此集群未安装和配置 NetApp Trident 。如果要使用其他存储服务，您可以继续添加集群。</block>
+  <block id="3dcc1fc73381830a10c6857d278473ef" category="paragraph">+请仔细查看"符合条件"选项卡。如果出现警告，请将鼠标悬停在警告上以确定集群是否存在问题描述。例如，它可能会标识集群没有工作节点。</block>
+  <block id="e647067dd1838cc272b30e0cf6f49dea" category="paragraph">+如果您选择的集群尚未配置Azure NetApp Files 、则会显示一条警告。此集群未安装和配置 NetApp Trident 。如果要使用其他存储服务，您可以继续添加集群。</block>
+  <block id="c0b29f50e4b0ff8bb4f9497e384feadb" category="paragraph">+如果您选择的集群标有"专用"图标、则它将使用专用IP地址、并且Astra Control需要使用Astra Connector来管理集群。如果您看到一条消息，指出您需要安装 Astra Connector ， <block ref="fc3252390c96b6337e381be01d1e4c4d" category="inline-xref-macro-rx"></block> 安装 Astra Connector 并启用集群管理。安装 Astra Connector 后，集群应符合条件，您可以继续添加集群。</block>
+  <block id="1cfc244ccf0243a2cefc9845f9e18538" category="paragraph">每个云提供商存储服务都会显示以下价格、性能和弹性信息：</block>
+  <block id="364203d12e96171427426216e32a6c65" category="list-text">Cloud Volumes Service for Google Cloud：价格、性能和弹性信息</block>
+  <block id="ec8c93c2223996f4782ebf5dd6b871a1" category="list-text">Google Persistent Disk：没有价格、性能或弹性信息</block>
+  <block id="3e480f1bbd52d8ad4613f2bbb89ca847" category="list-text">Azure NetApp Files ：性能和弹性信息</block>
+  <block id="c5e2734ed937951c4604f55129ebf6bb" category="list-text">Azure受管磁盘：无可用的价格、性能或弹性信息</block>
+  <block id="f74455a20acd3fc0d185337236828d6b" category="paragraph">+了解更多信息 <block ref="b4547358b744ca3b28812f444dc5a38f" category="inline-link-macro-rx"></block>。</block>
+  <block id="0f349256e24e084ccf865274903e64d3" category="paragraph">了解更多信息 <block ref="fd0a3bed584d87df18438d86772a2aaf" category="inline-link-macro-rx"></block>。</block>
+  <block id="26816f4f023579253517240a64829a70" category="list-text">* Astra Control Service*：NetApp管理的一项服务、可为多个云提供商环境中的Kubernetes集群提供应用程序感知型数据管理。</block>
+  <block id="368def07c6bfa29b38f6913d1a01d925" category="paragraph">+*对于GKEE集群、Astra Control Service使用<block ref="33441d63a8e7ace6860eab2024320819" category="inline-link-rx"></block> 或 Google Persistent Disk 作为永久性卷的存储后端。</block>
+  <block id="020ac10d47f71d04e485e8c8328f7cdf" category="paragraph">+*对于AKS集群、Astra Control Service使用<block ref="16e1ab965c1d673c5cb3b5a28e77c1c1" category="inline-link-rx"></block> 或 Azure 磁盘存储作为永久性卷的存储后端。</block>
+  <block id="eb1ac977ae8f3dc0832dd982e309d50b" category="paragraph">+在Azure中、Astra Control Service还会为Blob容器创建资源组、存储帐户和密钥。</block>
+  <block id="a3927a5a13e226c44dac47ff649fa5fa" category="list-text">如果您使用云提供商存储服务作为存储后端、则Astra Control Service将使用Astra Trident为应用程序配置永久性卷。</block>
+  <block id="47de31b9013ca59e1620936759a1c481" category="paragraph">Astra Control 旨在简化 Kubernetes 原生应用程序的应用程序数据生命周期管理操作。Astra控制服务支持在多个云提供商环境中运行的Kubernetes集群。</block>
+  <block id="121738f88be5081da60af30c2d97627d" category="paragraph">是的、您需要为云提供商提供的集群使用的永久性卷付费。</block>
+  <block id="e38d8867cf0f53988fd0376aa2e1f81d" category="paragraph">否将集群添加到 Astra Control 后，该服务将自动在 Kubernetes 集群上安装 NetApp 的 Trident 容器存储接口（ Trident Container Storage Interface ， CSI ）驱动程序。此CSI驱动程序用于为云提供商支持的集群配置永久性卷。</block>
+  <block id="d9fb8fc5098e2510fea5d41e9b622800" category="list-text">Astra Control Service 使用<block ref="9e2d15731749abbc242896b41a1be2ef" category="inline-link-rx"></block> 作为 AKS 集群的存储后端。</block>
+  <block id="1f48567c4d8264b0d2ce3dfd0bc13535" category="list-text">Astra Control Service还支持将Azure受管磁盘作为后端存储选项。</block>
+  <block id="90afda4a017638813f2738caa85bf7fd" category="list-text">Astra Control Service 使用<block ref="d804c793f302b1f3285300e6253aaac6" category="inline-link-rx"></block> 作为GKE集群的存储后端。</block>
+  <block id="ed58ed973747b5e4d1bbb7ec337ddb9f" category="list-text">Astra Control Service还支持将Google Persistent Disk用作后端存储选项。</block>
+  <block id="06d6db61224b1a7337b5c34e094f9e10" category="paragraph">+** Astra控制中心使用以下存储后端：</block>
+  <block id="e29d7c0b36af68edd13ebac84f15b44b" category="sidebar">云提供商</block>
+  <block id="46aef2e5080a5347df1ce7546e1be1df" category="sidebar">所有云提供商</block>
+  <block id="56ef2682280ac110060b881925a87b80" category="sidebar">Google Cloud</block>
+  <block id="1668ca1bd914c1d847f23b491319ac91" category="sidebar">Microsoft Azure</block>
+  <block id="3a580f142203677f1f0bc30898f63f53" category="sidebar">Azure 酒店</block>
+  <block id="b010c7530103ef9947582474d65ff9a3" category="paragraph">ifdef::azure[]</block>
+  <block id="879701946bb2bc7241d0f85fd843455a" category="paragraph">endif::azure[]</block>
+  <block id="310c228207a0f8446bbe4c5d16978cb7" category="paragraph">endif::gcp[]</block>
+  <block id="6e1e9c83b80f4d22d34cbdf60a71383b" category="paragraph">ifdef::gcp[]</block>
 </blocks>

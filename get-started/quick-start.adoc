@@ -17,6 +17,8 @@ summary: 只需几步即可开始使用 Astra Control Service 。
 
 == 设置您的云提供商
 
+ifdef::gcp[]
+
 . Google Cloud
 +
 ** 查看 Google Kubernetes Engine 集群要求。
@@ -28,6 +30,12 @@ summary: 只需几步即可开始使用 Astra Control Service 。
 link:set-up-google-cloud.html["了解有关 Google Cloud 要求的更多信息"]。
 
 
+
+
+
+endif::gcp[]
+
+ifdef::azure[]
 
 . Microsoft Azure
 +
@@ -41,6 +49,8 @@ link:set-up-microsoft-azure-with-amd.html["了解有关 Microsoft Azure 和 Azur
 
 
 
+
+endif::azure[]
 
 
 

@@ -5,8 +5,10 @@ entries:
 - title: 架构和组件
   url: "/learn/architecture.html"
 - title: 用于 AKS 集群的存储
+  flavor: azure
   url: "/learn/azure-storage.html"
 - title: 适用于 GKEE 集群的存储
+  flavor: gcp
   url: "/learn/choose-class-and-size.html"
 - title: 经验证的应用程序与标准应用程序
   url: "/learn/validated-vs-standard.html"

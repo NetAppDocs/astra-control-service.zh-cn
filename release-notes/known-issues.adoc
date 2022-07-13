@@ -22,8 +22,14 @@ summary: 已知问题可确定可能妨碍您成功使用此版本产品的问�
 .备份，还原和克隆
 * <<Restore of an app results in PV size larger than original PV>>
 * <<App clones fail using a specific version of PostgreSQL>>
+
+
+ifdef::azure[]
+
 * <<Azure backup buckets use LRS redundancy by default>>
 
+
+endif::azure[]
 
 .其他问题
 * <<Snapshots eventually begin to fail when using external-snapshotter version 4.2.0>>
@@ -48,6 +54,8 @@ summary: 已知问题可确定可能妨碍您成功使用此版本产品的问�
 
 使用 BitNami PostgreSQL 11.5.0 图表时，同一集群中的应用程序克隆始终会失败。要成功克隆，请使用图表的早期或更高版本。
 
+ifdef::azure[]
+
 
 
 == 默认情况下、Azure备份存储分段使用LRS冗余
@@ -57,6 +65,8 @@ summary: 已知问题可确定可能妨碍您成功使用此版本产品的问�
 * link:../get-started/set-up-microsoft-azure-with-amd.html["使用 Azure 受管磁盘设置 Microsoft Azure"]
 * link:../get-started/set-up-microsoft-azure-with-anf.html["使用 Azure NetApp Files 设置 Microsoft Azure"]
 
+
+endif::azure[]
 
 
 

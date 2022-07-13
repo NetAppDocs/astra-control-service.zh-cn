@@ -36,7 +36,13 @@ Astra Control 停止管理应用程序。
 
 == 停止管理集群
 
-停止从 Astra Control 管理您不再需要管理的集群。作为最佳实践，我们建议您先从 Astra Control 中删除集群，然后再通过 GCP 将其删除。
+停止从 Astra Control 管理您不再需要管理的集群。
+
+ifdef::gcp[]
+
+作为最佳实践，我们建议您先从 Astra Control 中删除集群，然后再通过 GCP 将其删除。
+
+endif::gcp[]
 
 * 此操作将停止由 Astra Control 管理集群。它不会对集群的配置进行任何更改，也不会删除集群。
 * 不会从集群中卸载 Astra Trident 。 https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["了解如何卸载 Astra Trident"^]。
@@ -61,8 +67,18 @@ Astra Control 将停止管理集群。
 * * 方法 2* ：删除 PVC 和 Pod ，或者删除挂载 PV 的部署。
 
 
-从 Astra Control 管理 Kubernetes 集群时，该集群上的应用程序会使用 Cloud Volumes Service 或 Azure NetApp Files 作为永久性卷的存储后端。如果从云提供商中删除集群而未先删除 PV ，则后端卷将与集群一起被删除。
+当您从Astra Control管理Kubernetes集群时、该集群上的应用程序会使用您的云提供商作为永久性卷的存储后端。如果从云提供商中删除集群而未先删除 PV ，则后端卷将与集群一起被删除。
 
 使用上述方法之一将从集群中删除相应的 PV 。在删除集群之前，请确保集群上的 NetApp 存储类中不存在任何 PV 。
 
-如果在删除集群之前未删除永久性卷，则需要从适用于 Google Cloud 的 Cloud Volumes Service 或 Azure NetApp Files 中手动删除后端卷。
+ifdef::azure[]
+
+如果在删除集群之前未删除永久性卷、则需要手动从Azure NetApp Files 中删除后端卷。
+
+endif::azure[]
+
+ifdef::gcp[]
+
+如果在删除集群之前未删除永久性卷，则需要从适用于 Google Cloud 的 Cloud Volumes Service 中手动删除后端卷。
+
+endif::gcp[]

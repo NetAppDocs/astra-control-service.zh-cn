@@ -2,8 +2,8 @@
 layout: landing-page 
 sidebar: sidebar 
 permalink: index.html 
-lead: 'Astra Control Service is a NetApp-managed service that provides application-aware data management of Kubernetes clusters in Google Kubernetes Engine (GKE) and Azure Kubernetes Service (AKS). Go to the docs for Astra Control Center if you need to manage Kubernetes apps running in your on-premises environment.' 
-summary: Astra Control Service 是一项由 NetApp 管理的服务，可在 Google Kubernetes Engine （ GKEE ）和 Azure Kubernetes Service （ AKS ）中为 Kubernetes 集群提供应用程序感知型数据管理。如果您需要管理在内部环境中运行的 Kubernetes 应用程序，请访问 Astra Control Center 的文档。 
+lead: Astra Control Service is a NetApp-managed service that provides application-aware data management of Kubernetes clusters in multiple cloud environments. Go to the docs for Astra Control Center if you need to manage Kubernetes apps running in your on-premises environment. 
+summary: Astra Control Service是一项由NetApp管理的服务、可为多个云环境中的Kubernetes集群提供应用程序感知型数据管理。如果您需要管理在内部环境中运行的 Kubernetes 应用程序，请访问 Astra Control Center 的文档。 
 ---
 = Astra Control Service 文档
 :hardbreaks:
