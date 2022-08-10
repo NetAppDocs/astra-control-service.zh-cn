@@ -11,12 +11,16 @@ settings:
     label: 云提供商
     default: 所有云提供商
     options:
+    - name: Amazon Web Services
+      alias: Amazon Web Services
+      id: aws
     - name: Google Cloud
       alias: Google Cloud
       id: gcp
     - name: Microsoft Azure
       alias: Azure 酒店
       id: azure
+  rss_page: release-notes/whats-new.html
   langs: zh-cn,us-en,ja-jp,zh-tw,ko-kr
 sidebar:
   entries:
@@ -28,7 +32,6 @@ sidebar:
   - title: 使用 Astra Control REST API 实现自动化
     url: "/automation.html"
   - section: learn
-  - section: solutions
   - section: support
   - title: 法律声明
     url: "/legal-notices.html"
@@ -64,14 +67,6 @@ homepage:
     links:
     - title: Astra Control Service 视频
       url: "/get-started/videos.html"
-    - title: 部署 Jenkins
-      url: "/solutions/jenkins-deploy-from-helm-chart.html"
-    - title: 部署 MariaDB
-      url: "/solutions/mariadb-deploy-from-helm-chart.html"
-    - title: 部署 MySQL
-      url: "/solutions/mysql-deploy-from-helm-chart.html"
-    - title: 部署 Postgres
-      url: "/solutions/postgres-deploy-from-helm-chart.html"
   - title: Astra 控制中心
     links:
     - title: Astra 控制中心简介

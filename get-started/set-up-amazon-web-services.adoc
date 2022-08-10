@@ -1,0 +1,280 @@
+---
+sidebar: sidebar 
+permalink: get-started/set-up-amazon-web-services.html 
+keywords: set up service account, create service account, project, permissions, service account permissions, key, service account key, json, key json, roles, service account roles, apis, networking, private service access, kubernetes cluster, cluster requirements, version requirements, supported versions, supported regions, kubernetes version, ubuntu, image type, networking, container os 
+summary: 要使用Astra Control Service管理Amazon Elastic Kubernetes Service集群、需要执行几个步骤来准备Amazon Web Services项目。 
+---
+= 设置Amazon Web Services
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+要使用Astra Control Service管理Amazon Elastic Kubernetes Service (EKS)集群、需要执行几个步骤来准备Amazon Web Services项目。
+
+
+
+== 快速开始设置Amazon Web Services
+
+按照以下步骤快速入门，或者向下滚动到其余部分以了解完整详细信息。
+
+
+
+=== 查看适用于Amazon Web Services的Astra Control Service要求
+
+[role="quick-margin-para"]
+确保集群运行状况良好并运行受支持的Kubernetes版本、工作节点处于联机状态并运行Linux或Windows等。 <<EKS cluster requirements,了解有关此步骤的更多信息>>。
+
+
+
+=== 创建Amazon帐户
+
+[role="quick-margin-para"]
+如果您还没有Amazon帐户、则需要创建一个帐户、以便可以使用EKS。 <<Create an Amazon account,了解有关此步骤的更多信息>>。
+
+
+
+=== 安装Amazon Web Services CLI
+
+[role="quick-margin-para"]
+安装AWS命令行界面、以便从命令行管理AWS。 <<Install the Amazon Web Services CLI,按照分步说明进行操作>>。
+
+
+
+=== 可选：创建IAM用户
+
+[role="quick-margin-para"]
+创建Amazon身份和访问管理(IAM)用户。您也可以跳过此步骤并将现有IAM用户与Astra Control Service结合使用。
+
+[role="quick-margin-para"]
+<<Optional: Create an IAM user,阅读分步说明>>。
+
+
+
+=== 创建并附加权限策略
+
+[role="quick-margin-para"]
+创建具有所需权限的策略、以使Astra Control Service能够与您的AWS帐户进行交互。
+
+[role="quick-margin-para"]
+<<Create and attach a permissions policy,阅读分步说明>>。
+
+
+
+=== 保存IAM用户的凭据
+
+[role="quick-margin-para"]
+保存IAM用户的凭据、以便将这些凭据导入到Astra Control Service中。
+
+[role="quick-margin-para"]
+<<Save the credentials for the IAM user,阅读分步说明>>。
+
+
+
+== EKS集群要求
+
+Kubernetes 集群必须满足以下要求，才能通过 Astra Control Service 发现和管理它。
+
+Kubernetes 版本:: 集群运行的Kubernetes版本必须介于1.20到1.22之间。
+映像类型:: 每个工作节点的映像类型必须为Linux。
+集群状态:: 集群必须运行状况良好，并且至少有一个联机辅助节点，并且没有处于故障状态的辅助节点。
+
+
+适用于Amazon FSX for NetApp ONTAP 的Astra Trident:: 如果您使用适用于NetApp ONTAP 存储后端的Amazon FSX、则需要安装Astra Trident。有关说明，请参见 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Astra Trident部署概述"^]。有关将Astra Trident与适用于NetApp ONTAP 的FSX结合使用的详细信息、请参见 https://docs.netapp.com/us-en/trident/trident-use/trident-fsx.html["将 Astra Trident 与适用于 NetApp ONTAP 的 Amazon FSX 结合使用"^]。
+适用于Amazon Elastic Block Store (EBS)的CSI驱动程序:: 如果您使用Amazon EBS存储后端、则需要为EBS安装容器存储接口(Container Storage Interface、CSI)驱动程序(它不会自动安装)。
++
+--
+有关安装CSI驱动程序的说明、请参见详细信息。
+
+====
+.安装外部快照程序
+. 创建卷快照CRD。
++
+对于Kubernetes 1.20及更高版本、请使用v5.0 Snapshot组件的v1 Snapshot CRD。
+
++
+[role="tabbed-block"]
+=====
+.5.0版组件
+--
+[source, yaml]
+----
+$ cat snapshot-setup.sh
+#!/bin/bash
+# Create volume snapshot CRDs
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
+----
+--
+=====
+. 在所需命名空间中创建Snapshot控制器。编辑以下 YAML 清单以修改命名空间。
++
+对于Kubernetes 1.20及更高版本、请使用5.0版。
+
++
+[role="tabbed-block"]
+=====
+.5.0版控制器
+--
+[source, yaml]
+----
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
+----
+--
+=====
+
+
+.将CSI驱动程序作为Amazon EKS加载项进行安装
+. 为服务帐户创建Amazon EBS CSI驱动程序IAM角色。按照说明进行操作 https://docs.aws.amazon.com/eks/latest/userguide/csi-iam-role.html["在Amazon文档中"^]、使用说明中的AWS命令行界面命令。
+. 使用以下AWS命令行界面命令添加Amazon EBS CSI加载项、将括号<>中的信息替换为特定于您的环境的值。将<driver_role>替换为您在上一步中创建的EBS CSI驱动程序角色的名称：
++
+[listing]
+----
+aws eks create-addon \
+  --cluster-name <CLUSTER_NAME> \
+  --addon-name aws-ebs-csi-driver \
+  --service-account-role-arn arn:aws:iam::<ACCOUNT_ID>:role/<DRIVER_ROLE>
+----
+
+
+.配置EBS存储类
+. 将Amazon EBS CSI驱动程序GitHub存储库克隆到您的系统。
++
+[listing]
+----
+git clone https://github.com/kubernetes-sigs/aws-ebs-csi-driver.git
+----
+. 导航到动态配置示例目录。
++
+[listing]
+----
+cd aws-ebs-csi-driver/examples/kubernetes/dynamic-provisioning/
+----
+. 从清单目录部署EBS SC存储类和EBS声明永久性卷声明。
++
+[listing]
+----
+kubectl apply -f manifests/storageclass.yaml
+kubectl apply -f manifests/claim.yaml
+----
+. 描述EBS-SC存储类。
++
+[listing]
+----
+kubectl describe storageclass ebs-sc
+----
++
+您应看到描述存储类属性的输出。
+
+
+
+====
+--
+
+
+
+
+== 创建Amazon帐户
+
+如果您还没有Amazon帐户、则需要创建一个帐户来为Amazon EKS启用计费。
+
+.步骤
+. 转至 https://www.amazon.com["Amazon主页"^] 、选择右上角的*登录*、然后选择*从此处开始*。
+. 按照提示创建帐户。
+
+
+
+
+== 安装Amazon Web Services CLI
+
+安装AWS命令行界面、以便从命令行管理AWS资源。
+
+.步骤
+. 转至 https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html["AWS命令行界面入门"^] 并按照说明安装CLI。
+
+
+
+
+== 可选：创建IAM用户
+
+创建IAM用户、以便您可以使用和管理AWS服务和资源、并提高安全性。您也可以跳过此步骤、并将现有IAM用户与Astra Control Service结合使用。
+
+.步骤
+. 转至 https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_cliwpsapi["创建IAM用户"^] 并按照说明创建IAM用户。
+
+
+
+
+== 创建并附加权限策略
+
+创建具有所需权限的策略、以使Astra Control Service能够与您的AWS帐户进行交互。
+
+.步骤
+. 创建一个名为`policy.json`的新文件。
+. 将以下JSON内容复制到文件中：
++
+[listing]
+----
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "cloudwatch:GetMetricData",
+                "fsx:DescribeVolumes",
+                "ec2:DescribeRegions",
+                "s3:CreateBucket",
+                "s3:ListBucket",
+                "s3:PutObject",
+                "s3:GetObject",
+                "iam:SimulatePrincipalPolicy",
+                "s3:ListAllMyBuckets",
+                "eks:DescribeCluster",
+                "eks:ListNodegroups",
+                "eks:DescribeNodegroup",
+                "eks:ListClusters",
+                "iam:GetUser",
+                "s3:DeleteObject",
+                "s3:DeleteBucket",
+                "autoscaling:DescribeAutoScalingGroups"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
+----
+. 创建策略：
++
+[listing]
+----
+POLICY_ARN=$(aws iam create-policy  --policy-name <policy-name> --policy-document file://policy.json  --query='Policy.Arn' --output=text)
+----
+. 将策略附加到 IAM 用户。将`<IAM用户名>`替换为您创建的IAM用户或现有IAM用户的用户名：
++
+[listing]
+----
+aws iam attach-user-policy --user-name <IAM-USER-NAME> --policy-arn=$POLICY_ARN
+----
+
+
+
+
+== 保存IAM用户的凭据
+
+保存IAM用户的凭据、以便让Astra Control Service能够识别该用户。
+
+.步骤
+. 下载凭据。将`<IAM用户名>`替换为要使用的IAM用户的用户名：
++
+[listing]
+----
+aws iam create-access-key --user-name <IAM-USER-NAME> --output json > credential.json
+----
+
+
+此时将创建`credential.json`文件、您可以将凭据导入到Astra Control Service中。

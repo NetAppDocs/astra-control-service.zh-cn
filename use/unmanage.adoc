@@ -71,14 +71,4 @@ Astra Control 将停止管理集群。
 
 使用上述方法之一将从集群中删除相应的 PV 。在删除集群之前，请确保集群上的 NetApp 存储类中不存在任何 PV 。
 
-ifdef::azure[]
-
-如果在删除集群之前未删除永久性卷、则需要手动从Azure NetApp Files 中删除后端卷。
-
-endif::azure[]
-
-ifdef::gcp[]
-
-如果在删除集群之前未删除永久性卷，则需要从适用于 Google Cloud 的 Cloud Volumes Service 中手动删除后端卷。
-
-endif::gcp[]
+如果在删除集群之前未删除永久性卷、则需要从云提供商中手动删除后端卷。

@@ -24,7 +24,7 @@ summary: 在使用 Astra Control Service 管理 Azure Kubernetes Service 集群�
 === 查看 Azure Kubernetes Service 的 Astra Control Service 要求
 
 [role="quick-margin-para"]
-确保集群运行状况良好且运行的是 Kubernetes 1.21.x 到 1.23 版，节点池已联机且运行的是 * Linux * 等。 <<Azure Kubernetes Service cluster requirements,了解有关此步骤的更多信息>>。
+确保集群运行状况良好并运行受支持的Kubernetes版本、节点池处于联机状态并运行Linux等。 <<Azure Kubernetes Service cluster requirements,了解有关此步骤的更多信息>>。
 
 
 
@@ -60,7 +60,7 @@ summary: 在使用 Astra Control Service 管理 Azure Kubernetes Service 集群�
 
 Kubernetes 集群必须满足以下要求，才能通过 Astra Control Service 发现和管理它。
 
-Kubernetes 版本:: 集群必须运行 Kubernetes 1.21.x 至 1.23 版。
+Kubernetes 版本:: 集群必须运行Kubernetes 1.21至1.24版。
 映像类型:: 所有节点池的映像类型必须为 Linux 。
 集群状态:: 集群必须运行状况良好，并且至少有一个联机辅助节点，并且没有处于故障状态的辅助节点。
 Azure 区域:: 作为最佳实践，您应选择一个支持 Azure NetApp Files 的区域，即使您不将其用作存储后端也是如此。这样，如果性能要求发生变化，将来可以更轻松地将 Azure NetApp Files 用作存储后端。 https://azure.microsoft.com/en-us/global-infrastructure/services/?products=netapp["按区域查看 Azure 产品"^]。
@@ -154,7 +154,7 @@ az ad sp create-for-rbac --name service-principal-name --role contributor --scop
 az login --service-principal --username APP-ID-SERVICEPRINCIPAL --password PASSWORD --tenant TENANT-ID
 az group list --subscription SUBSCRIPTION-ID
 az aks list --subscription SUBSCRIPTION-ID
-az storage container list --subscription SUBSCRIPTION-ID
+az storage container list --account-name STORAGE-ACCOUNT-NAME
 ----
 +
 .资源组范围

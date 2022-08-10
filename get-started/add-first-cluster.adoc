@@ -14,26 +14,43 @@ summary: 设置环境后，您可以创建 Kubernetes 集群，然后将其添�
 [role="lead"]
 设置环境后，您可以创建 Kubernetes 集群，然后将其添加到 Astra Control Service 。
 
+* <<Create a Kubernetes cluster>>
+* <<Start managing Kubernetes clusters>>
+
+
+ifdef::azure[]
+
+* <<Manage a private cluster>>
+
+
+endif::azure[]
+
+ifdef::aws[]
+
+* <<Provide cluster access to other users>>
+
+
+endif::aws[]
+
+* <<Change the default storage class>>
+
+
 
 
 == 创建 Kubernetes 集群
 
-如果您还没有集群，请创建一个满足要求的集群 link:set-up-google-cloud.html#gke-cluster-requirements["Google Kubernetes Engine （ GKEE ）的 Astra Control Service 要求"]。
-
-endif::azure[]
-
-如果您还没有集群，请创建一个满足要求的集群 link:set-up-microsoft-azure-with-anf.html["采用 Azure NetApp Files 的 Azure Kubernetes Service （ AKS ）的 Astra 控制服务要求"] 或 link:set-up-microsoft-azure-with-amd.html["采用 Azure 受管磁盘的 Azure Kubernetes Service （ AKS ）的 Astra Control Service 要求"]。
+如果您还没有集群，请创建一个满足要求的集群 link:set-up-amazon-web-services.html#eks-cluster-requirements["Amazon Elastic Kubernetes Service (EKS)的Astra Control Service要求"]。如果您还没有集群，请创建一个满足要求的集群 link:set-up-google-cloud.html#gke-cluster-requirements["Google Kubernetes Engine （ GKEE ）的 Astra Control Service 要求"]。如果您还没有集群，请创建一个满足要求的集群 link:set-up-microsoft-azure-with-anf.html["采用 Azure NetApp Files 的 Azure Kubernetes Service （ AKS ）的 Astra 控制服务要求"] 或 link:set-up-microsoft-azure-with-amd.html["采用 Azure 受管磁盘的 Azure Kubernetes Service （ AKS ）的 Astra Control Service 要求"]。
 
 
 NOTE: Astra控制服务支持使用Azure Active Directory (Azure AD)进行身份验证和身份管理的AKS集群。创建集群时、请按照中的说明进行操作 https://docs.microsoft.com/en-us/azure/aks/managed-aad["正式文档"^] 将集群配置为使用Azure AD。您需要确保集群满足AKS管理的Azure AD集成的要求。
-
-endif::gcp[]
 
 
 
 == 开始管理 Kubernetes 集群
 
 登录到 Astra Control Service 后，第一步是开始管理集群。
+
+如果在添加集群时未配置任何卷快照类、则Astra控制服务会尝试安装一个具有默认配置的快照类。
 
 [NOTE]
 ====
@@ -44,6 +61,14 @@ endif::gcp[]
 
 
 ====
+ifdef::aws[]
+
+* 对于Amazon Web Services、您应拥有包含创建集群的IAM用户凭据的JSON文件。 link:../get-started/set-up-amazon-web-services.html#create-an-iam-user["了解如何创建IAM用户"]。
+* 适用于NetApp ONTAP 的Amazon FSX需要Astra Trident。如果您计划使用适用于NetApp ONTAP 的Amazon FSx作为EKS集群的存储后端、请确保已完成 link:set-up-amazon-web-services.html#optional-configure-astra-trident-for-amazon-fsx-for-netapp-ontap["步骤7"] 设置说明。
+
+
+endif::aws[]
+
 ifdef::gcp[]
 
 * 对于 GKE- ，您应该拥有具有所需权限的服务帐户的服务帐户密钥文件。 link:../get-started/set-up-google-cloud.html#create-a-service-account["了解如何设置服务帐户"]。
@@ -75,6 +100,16 @@ endif::azure[]
 . * 提供商 * ：选择您的云提供商，然后提供所需的凭据。
 
 
+ifdef::aws[]
+
+. * Amazon Web Services*：上传JSON文件或从剪贴板粘贴JSON文件的内容、以提供有关Amazon Web Services IAM用户帐户的详细信息。
++
+JSON文件应包含创建集群的IAM用户的凭据。
+
+
+
+endif::aws[]
+
 ifdef::azure[]
 
 . * Microsoft Azure* ：通过上传 JSON 文件或从剪贴板粘贴此 JSON 文件的内容来提供有关 Azure 服务主体的详细信息。
@@ -103,19 +138,19 @@ endif::gcp[]
 如果您选择的集群尚未配置Cloud Volumes Service for Google Cloud、则会显示一条警告。此集群未安装和配置 NetApp Trident 。如果要使用其他存储服务，您可以继续添加集群。
 
 +
+请仔细查看 " 符合条件 " 选项卡。如果出现警告，请将鼠标悬停在警告上以确定集群是否存在问题描述。例如，它可能会标识集群没有工作节点。
+
++
+如果您选择的集群尚未配置Amazon Web Services、则会显示一条警告。此集群未安装和配置 NetApp Trident 。如果要使用其他存储服务，您可以继续添加集群。
+
++
+请仔细查看 " 符合条件 " 选项卡。如果出现警告，请将鼠标悬停在警告上以确定集群是否存在问题描述。例如，它可能会标识集群没有工作节点。
+
++
+如果您选择的集群尚未配置Azure NetApp Files 、则会显示一条警告。此集群未安装和配置 NetApp Trident 。如果要使用其他存储服务，您可以继续添加集群。
+
++
 如果您选择的集群标记有 "private" 图标，则它将使用专用 IP 地址，并且 Astra Control 需要使用 Astra Connector 来管理集群。如果您看到一条消息，指出您需要安装 Astra Connector ， <<Manage a private cluster,请按照以下说明进行操作>> 安装 Astra Connector 并启用集群管理。安装 Astra Connector 后，集群应符合条件，您可以继续添加集群。
-
-
-
-endif::gcp[]
-
-+请仔细查看"符合条件"选项卡。如果出现警告，请将鼠标悬停在警告上以确定集群是否存在问题描述。例如，它可能会标识集群没有工作节点。
-
-+如果您选择的集群尚未配置Azure NetApp Files 、则会显示一条警告。此集群未安装和配置 NetApp Trident 。如果要使用其他存储服务，您可以继续添加集群。
-
-+如果您选择的集群标有"专用"图标、则它将使用专用IP地址、并且Astra Control需要使用Astra Connector来管理集群。如果您看到一条消息，指出您需要安装 Astra Connector ， <<Manage a private cluster,请按照以下说明进行操作>> 安装 Astra Connector 并启用集群管理。安装 Astra Connector 后，集群应符合条件，您可以继续添加集群。
-
-endif::azure[]
 
 . * 存储 * ：选择希望部署到此集群的 Kubernetes 应用程序默认使用的存储类。
 +
@@ -139,6 +174,14 @@ ifdef::azure[]
 
 endif::azure[]
 
+ifdef::aws[]
+
+** Amazon Elastic Block Store：没有价格、性能或弹性信息
+** 适用于NetApp ONTAP 的Amazon FSX：没有价格、性能或弹性信息
+
+
+endif::aws[]
+
 ====
 +
 每个存储类均可使用以下服务之一：
@@ -161,13 +204,15 @@ ifdef::azure[]
 
 endif::azure[]
 
-+了解更多信息 link:../learn/azure-storage.html["AKS 集群的存储类"]。
+ifdef::aws[]
 
-endif::gcp[]
+* https://docs.aws.amazon.com/ebs/["Amazon Elastic Block Store"^]
+* https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["适用于 NetApp ONTAP 的 Amazon FSX"^]
 
-了解更多信息 link:../learn/choose-class-and-size.html["GKE 集群的存储类"]。
 
-endif::azure[]
+endif::aws[]
+
++了解更多信息 link:../learn/aws-storage.html["Amazon Web Services集群的存储类"]。了解更多信息 link:../learn/azure-storage.html["AKS 集群的存储类"]。了解更多信息 link:../learn/choose-class-and-size.html["GKE 集群的存储类"]。
 
 . * 审核并批准 * ：查看配置详细信息并选择 * 添加集群 * 。
 
@@ -225,6 +270,18 @@ astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
 
 
 endif::azure[]
+
+ifdef::aws[]
+
+
+
+== 为其他用户提供集群访问权限
+
+您可以选择为集群提供`kubectl`命令访问权限、使其访问不是集群创建者的其他IAM用户。
+
+有关说明，请参见 https://aws.amazon.com/premiumsupport/knowledge-center/amazon-eks-cluster-access/["在Amazon EKS中创建集群后、如何为其他IAM用户和角色提供访问权限？"^]。
+
+endif::aws[]
 
 
 

@@ -65,11 +65,23 @@ Astra Control 要求您在入职部分提供准确的客户信息。如果您提
 
 可以将新的工作节点添加到现有池中，也可以创建新池，只要它们是 Ubuntu 映像类型即可。这些信息将由 Astra Control 自动发现。如果新节点在 Astra Control 中不可见，请检查新工作节点是否正在运行受支持的映像类型。您也可以使用 `kubectl get nodes` 命令验证新工作节点的运行状况。
 
+ifdef::aws[]
+
+
+
+== 注册Elastic Kubernetes Service (EKS)集群
+
+*是否可以将专用EKS集群添加到Astra Control Service？*
+
+目前、Astra控制服务不支持专用EKS集群。
+
+endif::aws[]
+
 ifdef::azure[]
 
 
 
-== 注册 AKS 集群
+== 注册Azure Kubernetes Service (AKS)集群
 
 * 是否可以将专用 AKS 集群添加到 Astra Control Service ？ *
 
@@ -85,11 +97,11 @@ ifdef::gcp[]
 
 
 
-== 注册 GKEE 集群
+== 注册Google Kubernetes Engine (GKEE)集群
 
 * 是否可以将专用 GKEE 集群添加到 Astra Control Service ？ *
 
-可以，您可以将专用 GKE- 集群添加到 Astra Control Service 中。要创建 Google Kubernetes Engine （ GKEE ）专用集群， https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Project_Astra/How_to_create_a_private_GKE_cluster_to_work_with_project_Astra["按照此知识库文章中的说明进行操作"^]。
+可以，您可以将专用 GKE- 集群添加到 Astra Control Service 中。要创建专用GKEE集群、 https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Project_Astra/How_to_create_a_private_GKE_cluster_to_work_with_project_Astra["按照此知识库文章中的说明进行操作"^]。
 
 专用集群必须具有 https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept["授权网络"^] 设置为允许 Astra Control IP 地址：
 
@@ -134,7 +146,7 @@ endif::gcp[]
 
 * 从 Astra Control 中删除集群时是否会卸载 Astra Trident ？ *
 
-从 Astra Control 中删除 Astra Trident 后，它不会从集群中卸载。
+从Astra Control中删除集群时、不会从集群中卸载Astra Trident。
 
 
 
@@ -143,10 +155,6 @@ endif::gcp[]
 * Astra Control 是否可以部署应用程序？ *
 
 Astra Control 不会部署应用程序。应用程序必须部署在 Astra Control 之外。
-
-* 我的应用程序未显示在发现的应用程序列表中。我可以检查哪些内容来确定问题？ *
-
-如果应用程序未列在 * 已发现应用程序 * 中，请运行 `kubectl get pod -a |grep [pod name]` 以检查 Kubernetes Pod 的状态和运行状况。如果 Pod 运行状况良好且正在运行，请检查此应用程序是否列在 * 忽略的应用程序 * 下。
 
 * Astra Control 是否可以管理非 NetApp 存储上的应用程序？ *
 

@@ -15,6 +15,66 @@ NetApp 会定期更新 Astra Control Service ，为您提供新功能，增强�
 
 
 
+== 2022年8月10日
+
+此版本包含以下新增功能和增强功能：
+
+
+
+=== 改进了应用程序管理工作流
+
+改进的应用程序管理工作流提高了定义由Astra Control管理的应用程序的灵活性。
+
+link:../use/manage-apps.html#manage-apps["管理应用程序"]。
+
+ifdef::aws[]
+
+
+
+=== 支持Amazon Web Services集群
+
+Astra Control Service现在可以管理在Amazon Elastic Kubernetes Service中托管的集群上运行的应用程序。您可以将集群配置为使用Amazon Elastic Block Store或Amazon FSx for NetApp ONTAP 作为存储后端。
+
+link:../get-started/set-up-amazon-web-services.html["设置Amazon Web Services"]。
+
+endif::aws[]
+
+
+
+=== 增强的执行挂钩
+
+除了快照前和快照后执行挂钩之外、您现在还可以配置以下类型的执行挂钩：
+
+* 预备份
+* 备份后
+* 还原后
+
+
+除了其他改进之外、Astra Control现在还支持对多个执行挂钩使用同一个脚本。
+
+
+NOTE: 此版本已删除NetApp为特定应用程序提供的默认快照前和快照后执行挂钩。如果您不为快照提供自己的执行挂钩、则Astra控制服务将仅从2022年8月4日开始创建崩溃状态一致的快照。请访问 https://github.com/NetApp/Verda["NetApp Verda GitHub存储库"^] 示例执行钩脚本、您可以根据环境进行修改。
+
+link:../use/manage-app-execution-hooks.html["管理应用程序执行挂钩"]。
+
+ifdef::azure[]
+
+
+
+=== Azure Marketplace支持
+
+现在、您可以通过Azure Marketplace注册到Astra Control服务。
+
+endif::azure[]
+
+
+
+=== 选择云提供商
+
+阅读Astra Control Service文档时、您现在可以选择页面右上角的云提供商。您将看到仅与您选择的云提供商相关的文档。
+
+
+
 == 2022 年 4 月 26 日
 
 此版本包含以下新增功能和增强功能：

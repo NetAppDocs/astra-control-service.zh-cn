@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: use/view-dashboard.html 
-keywords: dashboard, cluster health, unhealthy apps, protected apps, discovered apps 
+keywords: dashboard, cluster health, unhealthy apps, protected apps, managed apps 
 summary: 单击信息板可查看应用程序，集群及其运行状况的详细视图。 
 ---
 = 查看应用程序和集群运行状况摘要
@@ -19,10 +19,6 @@ summary: 单击信息板可查看应用程序，集群及其运行状况的详�
 * 您当前管理的应用程序数量。
 * 这些受管应用程序是否运行正常。
 * 应用程序是否受到完全保护（如果有最新备份可用，则会对其进行保护）。
-* 已发现但尚未管理的应用程序的数量。
-+
-理想情况下，此数字为零，因为您可能会在发现应用程序后对其进行管理或忽略。然后，您将监控信息板上发现的应用程序的数量，以确定开发人员何时向集群添加新应用程序。
-
 
 
 请注意，这些不仅仅是数字或状态，您可以从其中的每种状态深入了解。例如，如果应用程序未得到完全保护，您可以将鼠标悬停在图标上以确定哪些应用程序未得到完全保护，这包括原因。

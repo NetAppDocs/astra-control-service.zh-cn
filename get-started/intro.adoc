@@ -107,6 +107,10 @@ ifdef::azure[]
 
 endif::azure[]
 
+ifdef::aws[]
+
++*对于Amazon EKS集群、Astra Control Service使用 https://docs.aws.amazon.com/ebs/["Amazon Elastic Block Store"^] 或 https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["适用于 NetApp ONTAP 的 Amazon FSX"^] 作为永久性卷的存储后端。
+
 * 您可以将第一个 Kubernetes 计算添加到 Astra Control Service 中。然后， Astra 控制服务将执行以下操作：
 +
 ** 在云提供商帐户中创建一个对象存储，该帐户是备份副本的存储位置。

@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: learn/app-management.html 
+keywords: custom app, labels, kubernetes labels, kubernetes resources, pods, define custom app 
+summary: 介绍了Astra Control中的受管应用程序类型。 
+---
+= 了解应用程序管理
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/learn/
+
+
+[role="lead"]
+当Astra Control发现集群时、这些集群上的应用程序将不受管理、直到您选择要如何管理它们为止。Astra Control 中的受管应用程序可以是以下任一项：
+
+* 命名空间，包括该命名空间中的所有资源
++
+image:diagram-managed-app1.png["一个概念映像，显示 Astra 管理命名空间中的所有资源。"]
+
+* 在命名空间中部署的单个应用程序(此示例使用Helm 3)
++
+image:diagram-managed-app2.png["一个概念映像，用于显示 Astra 管理在包含其他应用程序的命名空间中部署的单个应用程序。"]
+
+* 命名空间中一组通过Kubernetes标签标识的资源
++
+image:diagram-managed-app3.png["一个概念映像，显示 Astra 根据 Kubernetes 标签管理自定义应用程序。"]
+
+

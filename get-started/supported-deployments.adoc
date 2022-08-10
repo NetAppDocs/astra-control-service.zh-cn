@@ -11,13 +11,18 @@ summary: Astra Control Service可以管理云提供商环境中受管Kubernetes�
 :imagesdir: ../media/get-started/
 
 
-Astra控制服务可以在Google Kubernetes Engine (GKEE)中管理受管Kubernetes集群上运行的应用程序。
+Astra控制服务可以在Amazon Elastic Kubernetes Service (EKS)中管理受管Kubernetes集群上运行的应用程序。
 
-endif::azure[]
+Astra控制服务可以在Google Kubernetes Engine (GKEE)中管理受管Kubernetes集群上运行的应用程序。
 
 Astra Control Service可以管理Azure Kubernetes Service (AKS)中受管Kubernetes集群上运行的应用程序。
 
-endif::gcp[]
+ifdef::aws[]
+
+* link:set-up-amazon-web-services.html["了解如何为Astra Control Service设置Amazon Web Services"]。
+
+
+endif::aws[]
 
 ifdef::gcp[]
 

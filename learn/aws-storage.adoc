@@ -1,0 +1,36 @@
+---
+sidebar: sidebar 
+permalink: learn/aws-storage.html 
+keywords: service level, storage class, storage classes, pv size, persistent volume size, volume size, bandwidth, performance 
+summary: 'Astra控制服务可以使用Amazon Elastic Block Store (EBS)或Amazon FSx for NetApp ONTAP 作为Elastic Kubernetes Service (EKS)集群的存储后端。您应了解选择存储类和永久性卷大小如何帮助您实现性能目标。' 
+---
+= AWS集群的存储类和性能
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/learn/
+
+
+[role="lead"]
+Astra控制服务可以使用Amazon Elastic Block Store (EBS)或Amazon FSx for NetApp ONTAP 作为Amazon Elastic Kubernetes Service (EKS)集群的存储后端。
+
+
+
+== Amazon Elastic Block Store (EBS)
+
+使用EBS作为EKS集群的存储后端时、您可以配置一些存储类参数。有关参数的含义以及如何配置参数的详细信息、请参见 https://kubernetes.io/docs/concepts/storage/storage-classes/#aws-ebs["Kubernetes文档"^]。
+
+您可以在EBS中使用多种不同类型的卷：
+
+* 固态驱动器(SSD)
+* 硬盘驱动器(HDD)
+* 上一代产品
+
+
+有关每种类型的卷及其性能的详细信息、请参见 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html["Amazon EBS文档"^]。有关定价信息、请参见 https://aws.amazon.com/ebs/pricing/["Amazon EBS定价"^]。
+
+
+
+== 适用于 NetApp ONTAP 的 Amazon FSX
+
+使用适用于NetApp ONTAP 的FSX作为AWS集群的存储后端时、I/O性能取决于文件系统的配置以及工作负载的特征。有关适用于NetApp ONTAP 性能的FSX的具体信息、请参见 https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/performance.html["适用于NetApp ONTAP 性能的Amazon FSX"^]。有关定价信息、请参见 https://aws.amazon.com/fsx/netapp-ontap/pricing/["适用于NetApp ONTAP 的Amazon FSX定价"^]。

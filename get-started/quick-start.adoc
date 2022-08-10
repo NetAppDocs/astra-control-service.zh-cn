@@ -35,6 +35,25 @@ link:set-up-google-cloud.html["了解有关 Google Cloud 要求的更多信息"]
 
 endif::gcp[]
 
+ifdef::aws[]
+
+. Amazon Web Services：
++
+** 查看Amazon Web Services集群要求。
+** 创建Amazon帐户。
+** 安装Amazon Web Services CLI。
+** 创建IAM用户。
+** 创建并附加权限策略。
+** 保存IAM用户的凭据。
++
+link:set-up-amazon-web-services.html["了解有关Amazon Web Services要求的更多信息"]。
+
+
+
+
+
+endif::aws[]
+
 ifdef::azure[]
 
 . Microsoft Azure

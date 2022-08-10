@@ -17,11 +17,14 @@ summary: 已知问题可确定可能妨碍您成功使用此版本产品的问�
 
 .应用程序
 * <<App clones fail after an application is deployed with a set storage class>>
+* <<Applications page loads forever when trying to restore a deleted application>>
+* <<Unable to define an app on a namespace that has been deleted and recreated>>
 
 
 .备份，还原和克隆
 * <<Restore of an app results in PV size larger than original PV>>
 * <<App clones fail using a specific version of PostgreSQL>>
+* <<App backups and snapshots fail if the volumesnapshotclass is added after a cluster is managed>>
 
 
 ifdef::azure[]
@@ -44,6 +47,18 @@ endif::azure[]
 
 
 
+== 尝试还原已删除的应用程序时、应用程序页面将永久加载
+
+当您尝试使用应用程序页面从已删除的集群还原应用程序时、应用程序页面永远不会完成加载。作为临时解决策 、可从应用程序列表中的应用程序操作菜单还原应用程序。
+
+
+
+== 无法在已删除并重新创建的命名空间上定义应用程序
+
+如果使用命名空间定义应用程序、删除命名空间、然后在同一命名空间中重新安装此应用程序、则此操作将失败、并显示409错误代码。要使用重新创建的命名空间定义应用程序、请先删除旧应用程序实例。
+
+
+
 == 还原应用程序会导致 PV 大小大于原始 PV
 
 如果在创建备份后调整永久性卷的大小，然后从该备份还原，则此永久性卷的大小将与 PV 的新大小匹配，而不是使用备份的大小。
@@ -53,6 +68,12 @@ endif::azure[]
 == 使用特定版本的 PostgreSQL 时应用程序克隆失败
 
 使用 BitNami PostgreSQL 11.5.0 图表时，同一集群中的应用程序克隆始终会失败。要成功克隆，请使用图表的早期或更高版本。
+
+
+
+== 如果在管理集群后添加了volumesnapshotclass、则应用程序备份和快照将失败
+
+在这种情况下、备份和快照失败、并显示UI 500错误。作为临时解决策 、刷新应用程序列表。
 
 ifdef::azure[]
 

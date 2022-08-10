@@ -23,29 +23,19 @@ image:astra-ads-architecture-diagram-v3.png["Astra Control 架构图和组件"]
 * * Astra Trident * ：作为 NetApp 维护的完全受支持的开源存储配置程序和编排程序， Trident 使您能够为 Docker 和 Kubernetes 管理的容器化应用程序创建存储卷。在使用 Astra 控制中心部署时， Trident 会包括一个已配置的 ONTAP 存储后端，并支持将 Astra 数据存储作为存储后端。
 * * 存储后端 * ：
 +
-** Astra Control Service 使用 https://www.netapp.com/cloud-services/azure-netapp-files/["Azure NetApp Files"^] 作为 AKS 集群的存储后端。
-** Astra Control Service还支持将Azure受管磁盘作为后端存储选项。
-
-
-
-
-endif::gcp[]
-
-* Astra Control Service 使用 https://www.netapp.com/cloud-services/cloud-volumes-service-for-google-cloud/["适用于 Google Cloud 的 NetApp Cloud Volumes Service"^] 作为GKE集群的存储后端。
-* Astra Control Service还支持将Google Persistent Disk用作后端存储选项。
-
-
-endif::azure[]
-
-+** Astra控制中心使用以下存储后端：
-
-* Astra Data Store 存储后端
-* ONTAP AFF 和 FAS 存储后端。作为存储软件和硬件平台， ONTAP 可提供核心存储服务，支持多个存储访问协议以及快照和镜像等存储管理功能。
-* Cloud Volumes ONTAP 存储后端
+** Astra Control Service 使用 https://www.netapp.com/cloud-services/azure-netapp-files/["Azure NetApp Files"^] 或Azure受管磁盘作为AKS集群的存储后端。
+** Astra Control Service 使用 https://www.netapp.com/cloud-services/cloud-volumes-service-for-google-cloud/["适用于 Google Cloud 的 NetApp Cloud Volumes Service"^] 或Google Persistent Disk作为GKE集群的存储后端。
+** Astra Control Service 使用 https://docs.aws.amazon.com/ebs/["Amazon Elastic Block Store"^] 和 https://docs.aws.amazon.com/fsx/["适用于 NetApp ONTAP 的 Amazon FSX"^] 作为EKS集群的存储后端。
+** Astra 控制中心使用以下存储后端：
 +
-** * Cloud Insights * ： Cloud Insights 是一款 NetApp 云基础架构监控工具，可用于监控由 控制中心管理的 Kubernetes 集群的性能和利用率。Cloud Insights 将存储使用量与工作负载相关联。在 Astra 控制中心中启用 Cloud Insights 连接后，遥测信息将显示在 Astra 控制中心 UI 页面中。
+*** Astra Data Store 存储后端
+*** ONTAP AFF 和 FAS 存储后端。作为存储软件和硬件平台， ONTAP 可提供核心存储服务，支持多个存储访问协议以及快照和镜像等存储管理功能。
+*** Cloud Volumes ONTAP 存储后端
 
 
+
+
+* * Cloud Insights * ： Cloud Insights 是一款 NetApp 云基础架构监控工具，可用于监控由 控制中心管理的 Kubernetes 集群的性能和利用率。Cloud Insights 将存储使用量与工作负载相关联。在 Astra 控制中心中启用 Cloud Insights 连接后，遥测信息将显示在 Astra 控制中心 UI 页面中。
 
 
 

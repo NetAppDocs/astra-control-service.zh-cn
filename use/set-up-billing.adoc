@@ -72,6 +72,19 @@ ifdef::azure[]
 
 endif::azure[]
 
+ifdef::aws[]
+
+
+
+=== Amazon Web Services计费
+
+使用Astra控制服务管理AWS集群时、永久性卷由EBS或FSX for NetApp ONTAP 提供支持、应用程序的备份存储在AWS存储分段中。
+
+* https://aws.amazon.com/eks/pricing/["查看Amazon Web Services的定价详细信息"^]。
+
+
+endif::aws[]
+
 
 
 == 重要注意事项
