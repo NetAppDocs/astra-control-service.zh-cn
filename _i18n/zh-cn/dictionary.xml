@@ -1543,12 +1543,9 @@
   <block id="879701946bb2bc7241d0f85fd843455a" category="paragraph">endif::azure[]</block>
   <block id="310c228207a0f8446bbe4c5d16978cb7" category="paragraph">endif::gcp[]</block>
   <block id="6e1e9c83b80f4d22d34cbdf60a71383b" category="paragraph">ifdef::gcp[]</block>
-  <block id="fd047d25a2a9b2ef34ee24ff5c9ea9bf" category="list-text"><block ref="09fabaad32e4dddeaea039f6573c7c2c" category="inline-xref-macro-rx"></block></block>
   <block id="f71e012ed046328c8d64aaabfb2eaac1" category="list-text"><block ref="cbe527e26a3f74a21725a85c9fa46b07" category="inline-xref-macro-rx"></block></block>
   <block id="f4c36c8148a1c2baf23d917e226d50fa" category="list-text"><block ref="703e5962f4e6c982183fbea5d4a0ed0f" category="inline-xref-macro-rx"></block></block>
   <block id="ea9063ae1f93b97201fb6f5157ef64b8" category="paragraph">在使用显式设置的存储类（例如， `helm install ...-set global.storageClass=netapp-cvs-perf-至 至至` ）部署应用程序后，后续克隆应用程序的尝试要求目标集群具有最初指定的存储类。将具有显式设置的存储类的应用程序克隆到没有相同存储类的集群将失败。此情况下没有恢复步骤。</block>
-  <block id="b0db64e4be5840028b999177c14ba4c0" category="section-title">尝试还原已删除的应用程序时、应用程序页面将永久加载</block>
-  <block id="078b19fac0594ce7699c6bd310d7010f" category="paragraph">当您尝试使用应用程序页面从已删除的集群还原应用程序时、应用程序页面永远不会完成加载。作为临时解决策 、可从应用程序列表中的应用程序操作菜单还原应用程序。</block>
   <block id="bc2727235d82d8b7c78a69fd565295f3" category="section-title">无法在已删除并重新创建的命名空间上定义应用程序</block>
   <block id="586ace51c405474a5c0172b8c1cf7afd" category="paragraph">如果使用命名空间定义应用程序、删除命名空间、然后在同一命名空间中重新安装此应用程序、则此操作将失败、并显示409错误代码。要使用重新创建的命名空间定义应用程序、请先删除旧应用程序实例。</block>
   <block id="3460be97ad18de8f927ac029b73aea1e" category="section-title">如果在管理集群后添加了volumesnapshotclass、则应用程序备份和快照将失败</block>
@@ -1903,4 +1900,7 @@
   <block id="b45f0d80639ec80f5586318d3c5bd31d" category="sidebar">AWS集群的存储</block>
   <block id="5a81378cdc7edd9ea960cf02d6ca78d2" category="paragraph">ifdef::aws[]</block>
   <block id="6beb2fa01dc121194547db1bfbe03408" category="paragraph">endif::aws[]</block>
+  <block id="868ecbbbd8b1e28b5199c1b1690c500b" category="list-text"><block ref="9db9aa8838c1418469991d8a206fd28d" category="inline-xref-macro-rx"></block></block>
+  <block id="e43994c24bb8c97f2a5c5d923ac69298" category="section-title">尝试还原属于已删除集群的应用程序时、应用程序页面将永久加载</block>
+  <block id="f578c128901fc5a492793e5a929e4673" category="paragraph">当您尝试从"应用程序"页面中的已删除集群还原应用程序时、"应用程序"页面永远不会完成加载。作为临时解决策 、从应用程序列表页面中的应用程序操作菜单还原应用程序。</block>
 </blocks>
