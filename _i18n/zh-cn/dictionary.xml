@@ -647,53 +647,27 @@
   <block id="1ccff085c8843e6df85f630c0b00453e" category="section-title">2021 年 8 月 5 日</block>
   <block id="40bde2f2e0e627e3fcf147169d6d315a" category="paragraph">此版本包含以下新增功能和增强功能：</block>
   <block id="9c634046a90a62883b122e76b9afcef2" category="section-title">Astra 控制中心</block>
-  <block id="62c9dab192d8f9ab4d7cd7911733ef29" category="paragraph">Astra Control 现在可采用新的部署模式。_Astra Control Center_ 是一款自行管理的软件，您可以在数据中心内安装和操作该软件，以便管理内部 Kubernetes 集群的 Kubernetes 应用程序生命周期管理。</block>
-  <block id="abfdb9f2d7a3f5fa316aeadc9b445686" category="inline-link">请访问 Astra 控制中心文档以了解更多信息</block>
-  <block id="05173e614bc0b70e60d1d4b3e3e97ed4" category="paragraph"><block ref="f2d10d61e6e0a9ccbbf78572bc3e924a" category="inline-link-rx"></block>。</block>
-  <block id="b6499b702792935e1dcdcf779a235102" category="section-title">自带存储分段</block>
-  <block id="07ffe678baf83de33dc19f54ba3cbb06" category="paragraph">现在，您可以通过添加其他存储分段以及在云提供商中更改 Kubernetes 集群的默认存储分段来管理 Astra 用于备份和克隆的存储分段。</block>
-  <block id="cbcc3434ec87f9bd0124da85deb3d887" category="inline-link-macro">了解有关管理存储分段的更多信息</block>
-  <block id="6303b90da1849b1864e8f0225e4a3771" category="paragraph"><block ref="719975be4054e5a4ae8b00295e148e13" category="inline-link-macro-rx"></block>。</block>
   <block id="40e5c10855fbafbea8290f73a6d04f70" category="section-title">2021 年 6 月 2 日</block>
   <block id="0f71f0ee6bed3d528b8e76714ee6a81d" category="paragraph">此版本包含错误修复以及 Google Cloud 支持的以下增强功能。</block>
-  <block id="368a0f395e7ed3d60e644249869eaaf5" category="section-title">支持共享 vPC</block>
-  <block id="c4347d9a1a55302a6a5732a2b178cc8c" category="paragraph">现在，您可以使用共享 VPC 网络配置管理 GCP 项目中的 GKEE 集群。</block>
-  <block id="bd22d4946fa8221cd4c679fd384c0f31" category="section-title">CVS 服务类型的永久性卷大小</block>
-  <block id="5bbb59d92b5c32d2e8188c236d55271c" category="paragraph">现在，使用 CVS 服务类型时， Astra Control Service 会创建最小大小为 300 GiB 的永久性卷。</block>
-  <block id="34ecb536aed5c059a4e74f121e92dc44" category="section-title">支持容器优化操作系统</block>
-  <block id="139516545fd3d422e363e0d9f3f9b31a" category="paragraph">现在， GKE- 工作节点支持容器优化操作系统。这是对 Ubuntu 支持的补充。</block>
   <block id="33b49ba36195927db2411b412cfe0b4c" category="inline-link-macro">了解有关 GKEE 集群要求的更多信息</block>
   <block id="94aa6fa7719fbfefbbd46c4b08c22b4b" category="paragraph"><block ref="c3bd8fba045cfa6e89cf51e6e5781d5d" category="inline-link-macro-rx"></block>。</block>
   <block id="d969bda7dc53cca4ba270eee303936b3" category="section-title">2021 年 4 月 15 日</block>
-  <block id="d4e399a1961669ef4191b171a0a4eb03" category="section-title">支持 AKS 集群</block>
-  <block id="8e10df2546204872b3da1dc12a263e27" category="paragraph">现在， Astra Control Service 可以管理 Azure Kubernetes Service （ AKS ）中受管 Kubernetes 集群上运行的应用程序。</block>
   <block id="7d782479a41a3941b57cc7c2b60d318a" category="inline-link-macro">了解如何开始使用</block>
-  <block id="aba3d4b49c454e1974970e7b5514b001" category="section-title">REST API</block>
-  <block id="2060fc67fc5c061f438a3545c894960f" category="paragraph">Astra Control REST API 现在可供使用。API 基于现代技术和当前最佳实践。</block>
   <block id="d0c288db47307237677ead5ae8dbf32b" category="inline-link">了解如何使用 REST API 自动执行应用程序数据生命周期管理</block>
   <block id="9a4e809cf5b98aab76642ac595e658d8" category="paragraph"><block ref="d96242c4026b1863ec2b29df005dc070" category="inline-link-rx"></block>。</block>
-  <block id="9595062433880226b71cec95a1cc654e" category="section-title">按年订阅</block>
-  <block id="ec6586c886d119bf8ac0fa45679000ca" category="paragraph">Astra Control Service 现在可提供 _Premium 订阅 _ 。</block>
   <block id="9908394cca5993b5d280b7ec9749f2d1" category="paragraph">按折扣价预付费，每年订阅一次，您可以在每个应用程序软件包中管理多达 10 个应用程序。请联系 NetApp 销售部门，根据您的组织需要购买任意数量的软件包—例如，从 Astra Control Service 购买 3 个软件包来管理 30 个应用程序。</block>
   <block id="2a5cf8d74e69ce024c7b1a65f9caeaf7" category="paragraph">如果您管理的应用程序超过年度订阅所允许的数量，则每个应用程序的超额费用为每分钟 0.005 美元（与高级 PayGo 相同）。</block>
   <block id="e59328f35d0a769573f1f66bb3b269cf" category="inline-link-macro">了解有关 Astra Control 服务定价的更多信息</block>
   <block id="2691bc250518e01fc8a64e87887765c4" category="paragraph"><block ref="3315f5b8eeab7eb8e59fe4f651ae450a" category="inline-link-macro-rx"></block>。</block>
-  <block id="3bc814094963fb5b1091e096c0698bc9" category="section-title">命名空间和应用程序可视化</block>
-  <block id="05c5b2b1695d0dca76b7f83c935acc72" category="paragraph">我们对 " 发现的应用程序 " 页面进行了改进，以更好地显示命名空间和应用程序之间的层次结构。只需展开一个命名空间即可查看该命名空间中包含的应用程序。</block>
   <block id="7056b3684820e2ba6827e9d27c85715f" category="inline-link-macro">了解有关管理应用程序的更多信息</block>
   <block id="5ee8d4e880da1ab6adf2ef58cad52bc3" category="paragraph"><block ref="b64ad29284518b0972171e8bbb41ea75" category="inline-link-macro-rx"></block>。</block>
   <block id="58a37706ad29b91b5ea0febd18591e9e" category="inline-image-macro">"Apps" 页面的屏幕截图，其中已选择 "Discovered （已发现） " 选项卡。</block>
   <block id="dc52ad8a88f5c9ee3cb4fe055db4e1dc" category="paragraph"><block ref="dc52ad8a88f5c9ee3cb4fe055db4e1dc" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="9282f0c6796e0f17265209c00c2346fc" category="section-title">用户界面增强功能</block>
-  <block id="ea71bdbbb619c5a614a77af5d8214a33" category="paragraph">数据保护向导已进行了增强，易于使用。例如，我们优化了保护策略向导，以便在定义保护计划时更轻松地查看该计划。</block>
   <block id="159d293f53335411fd6cc5fe00714c00" category="inline-image-macro">配置保护策略对话框的屏幕截图，您可以在其中启用每小时，每天，每周和每月计划。</block>
   <block id="21f09c3d76f30b003457dd7343c1e7bc" category="paragraph"><block ref="21f09c3d76f30b003457dd7343c1e7bc" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="f8d60fe9ffb24efb6e2d553fde81d26f" category="section-title">活动增强功能</block>
-  <block id="df190078d46dda49c8775fd8c265a726" category="paragraph">我们可以更轻松地在您的 Astra Control 帐户中查看有关活动的详细信息。</block>
   <block id="a2b88dc15f93478f0229d71a6d7b0e3d" category="list-text">按受管应用程序，严重性级别，用户和时间范围筛选活动列表。</block>
   <block id="ed9548dfd7d1dc91cfcaf2dcc939a60a" category="list-text">将您的 Astra Control 帐户活动下载到 CSV 文件中。</block>
   <block id="44a04d6eee1ac7c339c8312bc5e23831" category="inline-link-macro">了解有关查看帐户活动的更多信息</block>
-  <block id="0cf5c9bf114ef5773454f994588250d2" category="paragraph"><block ref="a2d0b2ac9c203d6a895e81ae74812b8d" category="inline-link-macro-rx"></block>。</block>
   <block id="be80b8547cba74eaaaa246128e9f505b" category="section-title">2021 年 3 月 1 日</block>
   <block id="176950460e5100915fe78bc4e6ffe82b" category="inline-link">_CVS_ 服务类型</block>
   <block id="429b81900737e151eef475ff31869fa3" category="inline-link">支持 Cloud Volumes Service 的 Google 云区域</block>
@@ -894,19 +868,7 @@
   <block id="b07ba4d88165e7d28588bdffecc7b23e" category="paragraph">如果将 Kubernetes Snapshot-controller （也称为外部快照程序） 4.2.0 与 Kubernetes 1.20 或 1.21 结合使用，则快照最终可能会开始失败。要防止出现这种情况，请使用其他<block ref="4a7fe4e7f109667d1c8972a591d16348" category="inline-link-rx"></block> 使用 Kubernetes 版本 1.20 或 1.21 的外部快照程序，例如 4.2.1 版。</block>
   <block id="d3af82049064083c07416b3ed040dba2" category="section-title">2021 年 12 月 14 日</block>
   <block id="87716101cfca255da11056a624dbce47" category="inline-link-macro">使用 Azure 受管磁盘设置 Microsoft Azure</block>
-  <block id="7b3573ea6db30898defcb7febd2bdcfa" category="section-title">原位应用程序还原</block>
-  <block id="e86cc6374d62a2872beb0208da0813b0" category="paragraph">现在，您可以通过还原到同一集群和命名空间来原位还原应用程序的快照，克隆或备份。</block>
-  <block id="8e5ee9c2a1b184da5a35efa5d7871c5a" category="paragraph"><block ref="57b180faef2287140b0abcde93ffc94f" category="inline-link-macro-rx"></block>。</block>
-  <block id="fd992c0b09e92e279eda8917fa43c758" category="section-title">使用执行挂钩对事件进行脚本处理</block>
-  <block id="a478a8a85e8d5b4261344d3f3155e9f7" category="paragraph">Astra Control 支持自定义脚本，您可以在为应用程序创建快照之前或之后运行这些脚本。这样，您就可以执行暂停数据库事务等任务，以使数据库应用程序的快照保持一致。</block>
   <block id="372ba25517e6092baf2e0abc0ae2ef65" category="inline-link-macro">管理应用程序执行挂钩</block>
-  <block id="fd97dbf49f60060858d27ec2f39f9852" category="paragraph"><block ref="708d69a9cfe8326e5c6ce3c8ad6ac757" category="inline-link-macro-rx"></block>。</block>
-  <block id="0aea14b5509034ec7bfda96240032b87" category="section-title">操作员部署的应用程序</block>
-  <block id="001cfeadec5d2655b94c41c2f8e9ffb9" category="paragraph">当某些应用程序与操作员一起部署时， Astra Control 支持这些应用程序。</block>
-  <block id="4d3589c66697aed7276e133624ab14c4" category="paragraph"><block ref="2ea11a36f6164d1bd0f8d6a42682dfb9" category="inline-link-macro-rx"></block>。</block>
-  <block id="f6b11c5982f8d301941ff34e63d86306" category="section-title">具有资源组范围的服务主体</block>
-  <block id="44505870450dee16371965f84479e2ae" category="paragraph">Astra 控制服务现在支持使用资源组范围的服务主体。</block>
-  <block id="0e2b1c17ba5bdc75276878ba355660f8" category="paragraph"><block ref="e654c32bea1b21fec8de7bcafdd49dec" category="inline-link-macro-rx"></block>。</block>
   <block id="a916818021b3f228baef189d6dcd5538" category="paragraph"><block ref="bc25b49e1030874d11222c9fe6a36711" category="inline-link-macro-rx"></block>。</block>
   <block id="ec566a7ae96d8d40feeed984810bbeaa" category="section-title">应用程序管理限制</block>
   <block id="b9637d46b079194a13bb9ba833e4a23b" category="paragraph">以下限制会影响 Astra Control Service 对应用程序的管理。</block>
@@ -1439,13 +1401,6 @@
   <block id="73b2ad293eda73ca2acff9008e7ac0e8" category="paragraph"><block ref="73b2ad293eda73ca2acff9008e7ac0e8" category="inline-link-macro-rx"></block></block>
   <block id="67dec75e07f11637dbb129889d6bf6ae" category="section-title">2022 年 4 月 26 日</block>
   <block id="0097e428776046ceb8cd1fcde6d6fa2e" category="section-title">命名空间基于角色的访问控制（ RBAC ）</block>
-  <block id="382d0f3f80a6edc90145fa9f5e248570" category="paragraph">Astra 控制服务现在支持将命名空间约束分配给成员或查看器用户。</block>
-  <block id="81c45fdf5fa9c193ad7e22c5fd4785ef" category="section-title">支持专用 AKS 集群</block>
-  <block id="c490fa82068b0f1b8aef0ce959352ea7" category="paragraph">现在，您可以管理使用专用 IP 地址的 AKS 集群。</block>
-  <block id="2a37eca094676cc6b6a4bfa0ea9fcc57" category="paragraph"><block ref="04d97bec7f4fa11002764129cf40d13a" category="inline-link-macro-rx"></block>。</block>
-  <block id="ec4f18f5d437fda081d810a9841b26d4" category="section-title">从 Astra Control 中删除存储分段</block>
-  <block id="4e91a2727b766b1568f3e291589f6fbe" category="paragraph">现在，您可以从 Astra Control Service 中删除存储分段。</block>
-  <block id="3b6b60219128e85a19a4f275bf664352" category="paragraph"><block ref="aac55694044199d5b6c6c57c331459cc" category="inline-link-macro-rx"></block>。</block>
   <block id="1815092c8149587d0b20c39d938df877" category="admonition">对于 K8ssandra ，支持原位还原操作。要对新命名空间或集群执行还原操作，需要关闭应用程序的原始实例。这是为了确保传输的对等组信息不会导致跨实例通信。不支持克隆应用程序。</block>
   <block id="19c1911c15404b466d1dbdce1f447fa5" category="section-title">基于角色的访问控制（ Role-Based Access Control ， RBAC ）限制</block>
   <block id="5b06c01df203c0160efefa98ada2bcc1" category="paragraph">以下限制适用于 Astra Control 限制用户访问资源或功能的方式。</block>
@@ -1473,9 +1428,6 @@
   <block id="d2b49295684369e8eca9915ebf3725b5" category="list-text">在*选择凭据*部分中、选择添加到Astra Control的新凭据。</block>
   <block id="fe7fbb88eb579dd44896aecd5e694bc8" category="list-text">对系统上的任何剩余存储分段重复步骤* b*到* e*。</block>
   <block id="83a2a676c481bd5eeebf1ca2831091df" category="paragraph">Astra Control开始使用新的云提供商凭据。</block>
-  <block id="600875fce016d4eddadf3675fe4ec0a6" category="paragraph"><block ref="24c3dfd752dd86b23d8384546f638c63" category="inline-link-macro-rx"></block>。</block>
-  <block id="c232f387cd35833fa7dbddc853981552" category="section-title">Azure Active Directory支持</block>
-  <block id="19a67907b2de4999a969b7863b0d05e9" category="paragraph">Astra控制服务支持使用Azure Active Directory进行身份验证和身份管理的AKS集群。</block>
   <block id="54d90be7ed2f484693994a0a44b349d2" category="inline-link">正式文档</block>
   <block id="ac4eb04549d46b875b9c5a712e733c6f" category="admonition">Astra控制服务支持使用Azure Active Directory (Azure AD)进行身份验证和身份管理的AKS集群。创建集群时、请按照中的说明进行操作<block ref="ba1ce5a57a4d347a0e1e2ecf2a2c91ba" category="inline-link-rx"></block> 将集群配置为使用Azure AD。您需要确保集群满足AKS管理的Azure AD集成的要求。</block>
   <block id="846cdda4ee8e60864d52aaeeb040485c" category="paragraph">当Astra Control管理集群时、它会跟踪集群的默认存储类。如果使用`kubectl`命令更改存储类、则Astra Control将还原此更改。要更改由Astra Control管理的集群中的默认存储类、请使用以下方法之一：</block>
@@ -1506,10 +1458,6 @@
   <block id="4a9b46e4514936c3267b624e9c48f76b" category="list-text">将此容器作为分段添加到Astra Control Service中。请参见 <block ref="3ecbb82ace41389a409b1cc92181a5a8" category="inline-link-macro-rx"></block>。</block>
   <block id="695f1c0a89ac16190399389b6dfdcb1b" category="list-text">(可选)要使用新创建的存储分段作为Azure备份的默认存储分段、请将其设置为Azure的默认存储分段。请参见 <block ref="d1523cf11113b501cc0e7216254bf527" category="inline-link-macro-rx"></block>。</block>
   <block id="f2ab44c105acc97c54a227f6c52ad099" category="admonition">如果还原到先前已删除的命名空间、则在还原过程中会创建一个同名的新命名空间。任何有权管理先前删除的命名空间中的应用程序的用户都需要手动还原对新重新创建的命名空间的权限。</block>
-  <block id="121863f3c706ebd2d945f908b000591c" category="paragraph">Astra Control Service现在支持将Azure托管磁盘作为存储后端选项。</block>
-  <block id="e1f2675073a94e88072d9a8109916ab6" category="paragraph"><block ref="22e9bb5a03504aaee4ab910d594c8096" category="inline-link-macro-rx"></block>。</block>
-  <block id="0c1c4111adfcf68fad6f4e6775c5c793" category="paragraph">Astra Control Service现在支持将Google Persistent Disk作为存储后端选项。</block>
-  <block id="31a7227dfd927db6eb4e951126c58fd7" category="paragraph"><block ref="c57970c371fd2484630c6a7929047957" category="inline-link-macro-rx"></block>。</block>
   <block id="5a86157a3052fc9bb31e17ca06630acf" category="summary">Astra Control Service是一项由NetApp管理的服务、可为多个云环境中的Kubernetes集群提供应用程序感知型数据管理。如果您需要管理在内部环境中运行的 Kubernetes 应用程序，请访问 Astra Control Center 的文档。</block>
   <block id="202728ed0a31fb39489893fef0fc7f1d" category="paragraph">停止从 Astra Control 管理您不再需要管理的集群。</block>
   <block id="de0e795d4df19783d74744629602d74a" category="paragraph">作为最佳实践，我们建议您先从 Astra Control 中删除集群，然后再通过 GCP 将其删除。</block>
@@ -1554,25 +1502,13 @@
   <block id="0d7cda4c63f06aa1eaf0682a607c5601" category="paragraph">此版本的Astra控制服务不支持使用证书管理器原位还原应用程序。支持将还原操作还原到其他命名空间和克隆操作。</block>
   <block id="33e9a46dfde5bb0f5a8b8327623cb998" category="paragraph">受命名空间名称/ID约束的任何`m成员`用户均可将应用程序克隆或还原到同一集群上的新命名空间或其组织帐户中的任何其他集群。但是，同一用户无法访问新命名空间中的克隆或还原应用程序。通过克隆或还原操作创建新命名空间后，帐户管理员 / 所有者可以编辑 `m成员` 用户帐户并更新受影响用户的角色约束，以授予对新命名空间的访问权限。</block>
   <block id="99715e391085188513c21fdab4ee4d3f" category="section-title">2022年8月10日</block>
-  <block id="378554cc9d9dffa504e342c63c5083b0" category="section-title">改进了应用程序管理工作流</block>
-  <block id="a66d58cad77ddf9587f3992f14c9775f" category="paragraph">改进的应用程序管理工作流提高了定义由Astra Control管理的应用程序的灵活性。</block>
-  <block id="4ae836abe15f9ae28c18443c127f016c" category="paragraph"><block ref="c95f6f2f106554a6104ed5adae027443" category="inline-link-macro-rx"></block>。</block>
-  <block id="d164cf8b37ce88fb6cfdd93dd60b0b75" category="section-title">支持Amazon Web Services集群</block>
-  <block id="139d5b5e2fb42ebcc34766c6ea9d4c70" category="paragraph">Astra Control Service现在可以管理在Amazon Elastic Kubernetes Service中托管的集群上运行的应用程序。您可以将集群配置为使用Amazon Elastic Block Store或Amazon FSx for NetApp ONTAP 作为存储后端。</block>
   <block id="d55b05877d0dd6743f47d3442323323e" category="inline-link-macro">设置Amazon Web Services</block>
-  <block id="83643b0f33f69dbd1648490ecfd7d22f" category="paragraph"><block ref="e0b52dea31d68bd0cdc1c14efa59da85" category="inline-link-macro-rx"></block>。</block>
-  <block id="af736baece6eb001076ea13376da2146" category="section-title">增强的执行挂钩</block>
-  <block id="e5edd1405cdb817d654bb8c6b6344fd5" category="paragraph">除了快照前和快照后执行挂钩之外、您现在还可以配置以下类型的执行挂钩：</block>
   <block id="0a2055495a94f091655a2e4d421cffe2" category="list-text">预备份</block>
   <block id="cf6e97e89c4b36c29252fcb7b0728d2f" category="list-text">备份后</block>
   <block id="349b93d2884e6ca3d41d0d9dab41dcd8" category="list-text">还原后</block>
   <block id="8f5271a20010afb30c9a84ef4d0c77a6" category="paragraph">除了其他改进之外、Astra Control现在还支持对多个执行挂钩使用同一个脚本。</block>
   <block id="be29f0ac9c1734e9dab2565393c4b0f9" category="inline-link">NetApp Verda GitHub存储库</block>
   <block id="26ae3a5d2c5a3a4f3c4f0b04cfffc752" category="admonition">此版本已删除NetApp为特定应用程序提供的默认快照前和快照后执行挂钩。如果您不为快照提供自己的执行挂钩、则Astra控制服务将仅从2022年8月4日开始创建崩溃状态一致的快照。请访问<block ref="69dbcb4811fc57c117bef8c6ba2044f3" category="inline-link-rx"></block> 示例执行钩脚本、您可以根据环境进行修改。</block>
-  <block id="7a8d4ce70b02a1dbd6fd667a766598c9" category="section-title">Azure Marketplace支持</block>
-  <block id="9c2f2d6f5da00b1c1367a3832322c5eb" category="paragraph">现在、您可以通过Azure Marketplace注册到Astra Control服务。</block>
-  <block id="79ba71b9f168506d18b4718cd3fbd8ea" category="section-title">选择云提供商</block>
-  <block id="395ab4ec34db688c4ba06a76ebae098a" category="paragraph">阅读Astra Control Service文档时、您现在可以选择页面右上角的云提供商。您将看到仅与您选择的云提供商相关的文档。</block>
   <block id="adabbba2cda50397a2a91db015a0fb30" category="list-text"><block ref="f2d47b38ed223b066a7a87406f2f9770" category="inline-xref-macro-rx"></block></block>
   <block id="d78023f397f8f2b4e5064ff5b049c27d" category="list-text"><block ref="fedf37c1e98889c2b8f08b9cf9723656" category="inline-xref-macro-rx"></block></block>
   <block id="b298fe033ee9c6e6fa6b70e12da0ba4c" category="list-text"><block ref="4acbdba125acbc504ebdea4084fa75ab" category="inline-xref-macro-rx"></block></block>
@@ -1903,4 +1839,43 @@
   <block id="868ecbbbd8b1e28b5199c1b1690c500b" category="list-text"><block ref="9db9aa8838c1418469991d8a206fd28d" category="inline-xref-macro-rx"></block></block>
   <block id="e43994c24bb8c97f2a5c5d923ac69298" category="section-title">尝试还原属于已删除集群的应用程序时、应用程序页面将永久加载</block>
   <block id="f578c128901fc5a492793e5a929e4673" category="paragraph">当您尝试从"应用程序"页面中的已删除集群还原应用程序时、"应用程序"页面永远不会完成加载。作为临时解决策 、从应用程序列表页面中的应用程序操作菜单还原应用程序。</block>
+  <block id="b6a9320279ef3d24bad38497af1f9eb9" category="list-text">改进的应用程序管理工作流改进的应用程序管理工作流提高了定义由Astra Control管理的应用程序的灵活性。</block>
+  <block id="c95f6f2f106554a6104ed5adae027443" category="paragraph"><block ref="c95f6f2f106554a6104ed5adae027443" category="inline-link-macro-rx"></block></block>
+  <block id="177b32024bced380eccf349123cd8965" category="list-text">支持Amazon Web Services集群Astra Control Service现在可以管理在Amazon Elastic Kubernetes Service托管的集群上运行的应用程序。您可以将集群配置为使用Amazon Elastic Block Store或Amazon FSx for NetApp ONTAP 作为存储后端。</block>
+  <block id="e0b52dea31d68bd0cdc1c14efa59da85" category="paragraph"><block ref="e0b52dea31d68bd0cdc1c14efa59da85" category="inline-link-macro-rx"></block></block>
+  <block id="1dbb809aab63af6c10fa08a732739c10" category="list-text">增强的执行挂钩除了快照前和快照后执行挂钩之外、您现在还可以配置以下类型的执行挂钩：</block>
+  <block id="708d69a9cfe8326e5c6ce3c8ad6ac757" category="paragraph"><block ref="708d69a9cfe8326e5c6ce3c8ad6ac757" category="inline-link-macro-rx"></block></block>
+  <block id="518c2494a2c756dd2dd87536a60d5143" category="list-text">Azure Marketplace支持您现在可以通过Azure Marketplace注册到Astra Control Service。</block>
+  <block id="9c9f134c049ff9c2a442218abf4331d1" category="list-text">选择云提供商阅读Astra Control Service文档时、您现在可以选择页面右上角的云提供商。您将看到仅与您选择的云提供商相关的文档。</block>
+  <block id="15e9aaa51586aa57547422044c2341dc" category="inline-image-macro">Cloud Provider下拉菜单的屏幕截图、您可以从中选择云提供商以获取云提供商专用文档。</block>
+  <block id="de50b13f47ea18120714d7459edc3ba7" category="paragraph"><block ref="de50b13f47ea18120714d7459edc3ba7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="48bb90ecaac353cdb16c91a6a455b560" category="list-text">命名空间基于角色的访问控制(RBAC) Astra控制服务现在支持向成员或查看器用户分配命名空间约束。</block>
+  <block id="24c3dfd752dd86b23d8384546f638c63" category="paragraph"><block ref="24c3dfd752dd86b23d8384546f638c63" category="inline-link-macro-rx"></block></block>
+  <block id="2221301e5f320330a2ff23a7f92dae75" category="list-text">Azure Active Directory支持Astra控制服务支持使用Azure Active Directory进行身份验证和身份管理的AKS集群。</block>
+  <block id="04d97bec7f4fa11002764129cf40d13a" category="paragraph"><block ref="04d97bec7f4fa11002764129cf40d13a" category="inline-link-macro-rx"></block></block>
+  <block id="2db9c37d1e2c8254e3a6c338f50945e5" category="list-text">支持专用AKS集群现在、您可以管理使用专用IP地址的AKS集群。</block>
+  <block id="971c8f5be55b8948fecdbae5902f8226" category="list-text">从Astra Control中删除存储分段现在、您可以从Astra Control Service中删除存储分段。</block>
+  <block id="aac55694044199d5b6c6c57c331459cc" category="paragraph"><block ref="aac55694044199d5b6c6c57c331459cc" category="inline-link-macro-rx"></block></block>
+  <block id="6375b2643d0c645e023d1f597c848293" category="list-text">原位应用程序还原现在、您可以通过还原到同一集群和命名空间来原位还原应用程序的快照、克隆或备份。</block>
+  <block id="57b180faef2287140b0abcde93ffc94f" category="paragraph"><block ref="57b180faef2287140b0abcde93ffc94f" category="inline-link-macro-rx"></block></block>
+  <block id="461f26d1f3faec3478ece1e0d794f9cc" category="list-text">使用执行挂钩的脚本事件Astra Control支持自定义脚本、您可以在为应用程序创建快照之前或之后运行这些脚本。这样，您就可以执行暂停数据库事务等任务，以使数据库应用程序的快照保持一致。</block>
+  <block id="a20299ad7f2e64a95e7cc3284a9906a5" category="list-text">操作员部署的应用程序Astra Control支持一些与操作员一起部署的应用程序。</block>
+  <block id="2ea11a36f6164d1bd0f8d6a42682dfb9" category="paragraph"><block ref="2ea11a36f6164d1bd0f8d6a42682dfb9" category="inline-link-macro-rx"></block></block>
+  <block id="d64b4db98e014f5440d1f843fea08e3e" category="list-text">具有资源组范围的服务主体Astra控制服务现在支持使用资源组范围的服务主体。</block>
+  <block id="e654c32bea1b21fec8de7bcafdd49dec" category="paragraph"><block ref="e654c32bea1b21fec8de7bcafdd49dec" category="inline-link-macro-rx"></block></block>
+  <block id="d965fac9eadc89088435d79a0e46882b" category="list-text">Astra Control Center Astra Control现在可采用新的部署模式。_Astra Control Center_ 是一款自行管理的软件，您可以在数据中心内安装和操作该软件，以便管理内部 Kubernetes 集群的 Kubernetes 应用程序生命周期管理。</block>
+  <block id="1966afd91050d7e96fceb59f9fd13f32" category="inline-link">转至Astra控制中心文档</block>
+  <block id="80bfdf6309549a7797f10098e05bccc1" category="paragraph">了解更多信息。<block ref="ba5556fa094f10e77f4fa7086cec4749" category="inline-link-rx"></block>。</block>
+  <block id="eb98a9a286b93bcf890e03ce1c9063eb" category="list-text">自带存储分段现在、您可以通过添加其他存储分段以及更改云提供商中Kubernetes集群的默认存储分段来管理Astra用于备份和克隆的存储分段。</block>
+  <block id="b8e0d8248d4ced7bc854879cb8922db8" category="paragraph"><block ref="b8e0d8248d4ced7bc854879cb8922db8" category="inline-link-macro-rx"></block></block>
+  <block id="590485080b61fb4aa0eecd594141c835" category="list-text">支持共享VPC现在、您可以使用共享VPC网络配置管理GCP项目中的GKEE集群。</block>
+  <block id="3ac7bce9a68f7416551081de0fb809db" category="list-text">现在、如果使用CVS服务类型Astra Control Service、则CVS服务类型的永久性卷大小将在使用CVS服务类型时创建最小大小为300 GiB的永久性卷。</block>
+  <block id="0bf2090aa53a447008516a1f0e59ef29" category="list-text">现在、GKE-工作节点支持容器优化操作系统容器优化操作系统。这是对 Ubuntu 支持的补充。</block>
+  <block id="70339406f3840508cf82f629e157269a" category="list-text">现在、支持AKS集群Astra控制服务可以管理Azure Kubernetes Service (AKS)中受管Kubernetes集群上运行的应用程序。</block>
+  <block id="35ab436e138a3881de6d54adede1f476" category="list-text">REST API Astra Control REST API现在可供使用。API 基于现代技术和当前最佳实践。</block>
+  <block id="010437f0938b645d495f214461f7519d" category="list-text">每年订阅Astra Control Service现在可提供_Premium订阅_。</block>
+  <block id="a5691fb92ce2acabdd947ea4e3dfaa70" category="list-text">命名空间和应用程序可视化我们改进了"发现的应用程序"页面、以更好地显示命名空间和应用程序之间的层次结构。只需展开一个命名空间即可查看该命名空间中包含的应用程序。</block>
+  <block id="a13f2262ff8b5ec001ba8f41398e1a6c" category="list-text">用户界面增强功能数据保护向导已进行了增强、易于使用。例如，我们优化了保护策略向导，以便在定义保护计划时更轻松地查看该计划。</block>
+  <block id="aad7f3d472e654aef7d2a492a3d54210" category="list-text">活动增强功能我们可以更轻松地在您的Astra Control帐户中查看有关活动的详细信息。</block>
+  <block id="ca0a782901da0ca119f401851ac90842" category="paragraph"><block ref="78b785a9e2d028de12ce9f3f40284661" category="inline-link-macro-rx"></block>。</block>
 </blocks>

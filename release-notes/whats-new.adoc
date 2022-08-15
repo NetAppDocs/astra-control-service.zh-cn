@@ -19,59 +19,53 @@ NetApp 会定期更新 Astra Control Service ，为您提供新功能，增强�
 
 此版本包含以下新增功能和增强功能：
 
+* 改进的应用程序管理工作流改进的应用程序管理工作流提高了定义由Astra Control管理的应用程序的灵活性。
++
+link:../use/manage-apps.html#manage-apps["管理应用程序"]
 
 
-=== 改进了应用程序管理工作流
-
-改进的应用程序管理工作流提高了定义由Astra Control管理的应用程序的灵活性。
-
-link:../use/manage-apps.html#manage-apps["管理应用程序"]。
 
 ifdef::aws[]
 
+* 支持Amazon Web Services集群Astra Control Service现在可以管理在Amazon Elastic Kubernetes Service托管的集群上运行的应用程序。您可以将集群配置为使用Amazon Elastic Block Store或Amazon FSx for NetApp ONTAP 作为存储后端。
++
+link:../get-started/set-up-amazon-web-services.html["设置Amazon Web Services"]
 
 
-=== 支持Amazon Web Services集群
-
-Astra Control Service现在可以管理在Amazon Elastic Kubernetes Service中托管的集群上运行的应用程序。您可以将集群配置为使用Amazon Elastic Block Store或Amazon FSx for NetApp ONTAP 作为存储后端。
-
-link:../get-started/set-up-amazon-web-services.html["设置Amazon Web Services"]。
 
 endif::aws[]
 
-
-
-=== 增强的执行挂钩
-
-除了快照前和快照后执行挂钩之外、您现在还可以配置以下类型的执行挂钩：
-
-* 预备份
-* 备份后
-* 还原后
-
-
+* 增强的执行挂钩除了快照前和快照后执行挂钩之外、您现在还可以配置以下类型的执行挂钩：
++
+** 预备份
+** 备份后
+** 还原后
++
 除了其他改进之外、Astra Control现在还支持对多个执行挂钩使用同一个脚本。
 
++
 
 NOTE: 此版本已删除NetApp为特定应用程序提供的默认快照前和快照后执行挂钩。如果您不为快照提供自己的执行挂钩、则Astra控制服务将仅从2022年8月4日开始创建崩溃状态一致的快照。请访问 https://github.com/NetApp/Verda["NetApp Verda GitHub存储库"^] 示例执行钩脚本、您可以根据环境进行修改。
 
-link:../use/manage-app-execution-hooks.html["管理应用程序执行挂钩"]。
++
+link:../use/manage-app-execution-hooks.html["管理应用程序执行挂钩"]
+
+
+
+
 
 ifdef::azure[]
 
+* Azure Marketplace支持您现在可以通过Azure Marketplace注册到Astra Control Service。
 
-
-=== Azure Marketplace支持
-
-现在、您可以通过Azure Marketplace注册到Astra Control服务。
 
 endif::azure[]
 
+* 选择云提供商阅读Astra Control Service文档时、您现在可以选择页面右上角的云提供商。您将看到仅与您选择的云提供商相关的文档。
++
+image:select-cloud-provider.png["Cloud Provider下拉菜单的屏幕截图、您可以从中选择云提供商以获取云提供商专用文档。"]
 
 
-=== 选择云提供商
-
-阅读Astra Control Service文档时、您现在可以选择页面右上角的云提供商。您将看到仅与您选择的云提供商相关的文档。
 
 
 
@@ -79,41 +73,31 @@ endif::azure[]
 
 此版本包含以下新增功能和增强功能：
 
+* 命名空间基于角色的访问控制(RBAC) Astra控制服务现在支持向成员或查看器用户分配命名空间约束。
++
+link:../learn/user-roles-namespaces.html["命名空间基于角色的访问控制（ RBAC ）"]
 
 
-=== 命名空间基于角色的访问控制（ RBAC ）
-
-Astra 控制服务现在支持将命名空间约束分配给成员或查看器用户。
-
-link:../learn/user-roles-namespaces.html["命名空间基于角色的访问控制（ RBAC ）"]。
 
 ifdef::azure[]
 
+* Azure Active Directory支持Astra控制服务支持使用Azure Active Directory进行身份验证和身份管理的AKS集群。
++
+link:../get-started/add-first-cluster.html["从 Astra Control Service 开始管理 Kubernetes 集群"]
+
+* 支持专用AKS集群现在、您可以管理使用专用IP地址的AKS集群。
++
+link:../get-started/add-first-cluster.html["从 Astra Control Service 开始管理 Kubernetes 集群"]
 
 
-=== Azure Active Directory支持
-
-Astra控制服务支持使用Azure Active Directory进行身份验证和身份管理的AKS集群。
-
-link:../get-started/add-first-cluster.html["从 Astra Control Service 开始管理 Kubernetes 集群"]。
-
-
-
-=== 支持专用 AKS 集群
-
-现在，您可以管理使用专用 IP 地址的 AKS 集群。
-
-link:../get-started/add-first-cluster.html["从 Astra Control Service 开始管理 Kubernetes 集群"]。
 
 endif::azure[]
 
+* 从Astra Control中删除存储分段现在、您可以从Astra Control Service中删除存储分段。
++
+link:../use/manage-buckets.html["删除存储分段"]
 
 
-=== 从 Astra Control 中删除存储分段
-
-现在，您可以从 Astra Control Service 中删除存储分段。
-
-link:../use/manage-buckets.html["删除存储分段"]。
 
 
 
@@ -121,55 +105,34 @@ link:../use/manage-buckets.html["删除存储分段"]。
 
 此版本包含以下新增功能和增强功能：
 
+* 新的存储后端选项
 
-
-=== 新的存储后端选项
-
-Astra Control Service现在支持将Azure托管磁盘作为存储后端选项。
-
-link:../get-started/set-up-microsoft-azure-with-amd.html["使用 Azure 受管磁盘设置 Microsoft Azure"]。
 
 endif::gcp[]
 
-Astra Control Service现在支持将Google Persistent Disk作为存储后端选项。
-
-link:../get-started/set-up-google-cloud.html["设置 Google Cloud"]。
-
 endif::azure[]
 
+* 原位应用程序还原现在、您可以通过还原到同一集群和命名空间来原位还原应用程序的快照、克隆或备份。
++
+link:../use/restore-apps.html["还原应用程序"]
+
+* 使用执行挂钩的脚本事件Astra Control支持自定义脚本、您可以在为应用程序创建快照之前或之后运行这些脚本。这样，您就可以执行暂停数据库事务等任务，以使数据库应用程序的快照保持一致。
++
+link:../use/manage-app-execution-hooks.html["管理应用程序执行挂钩"]
+
+* 操作员部署的应用程序Astra Control支持一些与操作员一起部署的应用程序。
++
+link:../use/manage-apps.html#app-management-requirements["开始管理应用程序"]
 
 
-=== 原位应用程序还原
-
-现在，您可以通过还原到同一集群和命名空间来原位还原应用程序的快照，克隆或备份。
-
-link:../use/restore-apps.html["还原应用程序"]。
-
-
-
-=== 使用执行挂钩对事件进行脚本处理
-
-Astra Control 支持自定义脚本，您可以在为应用程序创建快照之前或之后运行这些脚本。这样，您就可以执行暂停数据库事务等任务，以使数据库应用程序的快照保持一致。
-
-link:../use/manage-app-execution-hooks.html["管理应用程序执行挂钩"]。
-
-
-
-=== 操作员部署的应用程序
-
-当某些应用程序与操作员一起部署时， Astra Control 支持这些应用程序。
-
-link:../use/manage-apps.html#app-management-requirements["开始管理应用程序"]。
 
 ifdef::azure[]
 
+* 具有资源组范围的服务主体Astra控制服务现在支持使用资源组范围的服务主体。
++
+link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2["创建 Azure 服务主体"]
 
 
-=== 具有资源组范围的服务主体
-
-Astra 控制服务现在支持使用资源组范围的服务主体。
-
-link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2["创建 Azure 服务主体"]。
 
 endif::azure[]
 
@@ -179,21 +142,15 @@ endif::azure[]
 
 此版本包含以下新增功能和增强功能：
 
+* Astra Control Center Astra Control现在可采用新的部署模式。_Astra Control Center_ 是一款自行管理的软件，您可以在数据中心内安装和操作该软件，以便管理内部 Kubernetes 集群的 Kubernetes 应用程序生命周期管理。
++
+了解更多信息。 https://docs.netapp.com/us-en/astra-control-center["转至Astra控制中心文档"^]。
+
+* 自带存储分段现在、您可以通过添加其他存储分段以及更改云提供商中Kubernetes集群的默认存储分段来管理Astra用于备份和克隆的存储分段。
++
+link:../use/manage-buckets.html["管理存储分段"]
 
 
-=== Astra 控制中心
-
-Astra Control 现在可采用新的部署模式。_Astra Control Center_ 是一款自行管理的软件，您可以在数据中心内安装和操作该软件，以便管理内部 Kubernetes 集群的 Kubernetes 应用程序生命周期管理。
-
-https://docs.netapp.com/us-en/astra-control-center["请访问 Astra 控制中心文档以了解更多信息"^]。
-
-
-
-=== 自带存储分段
-
-现在，您可以通过添加其他存储分段以及在云提供商中更改 Kubernetes 集群的默认存储分段来管理 Astra 用于备份和克隆的存储分段。
-
-link:../use/manage-buckets.html["了解有关管理存储分段的更多信息"]。
 
 
 
@@ -203,27 +160,16 @@ ifdef::gcp[]
 
 此版本包含错误修复以及 Google Cloud 支持的以下增强功能。
 
-
-
-=== 支持共享 vPC
-
-现在，您可以使用共享 VPC 网络配置管理 GCP 项目中的 GKEE 集群。
-
-
-
-=== CVS 服务类型的永久性卷大小
-
-现在，使用 CVS 服务类型时， Astra Control Service 会创建最小大小为 300 GiB 的永久性卷。
-
+* 支持共享VPC现在、您可以使用共享VPC网络配置管理GCP项目中的GKEE集群。
+* 现在、如果使用CVS服务类型Astra Control Service、则CVS服务类型的永久性卷大小将在使用CVS服务类型时创建最小大小为300 GiB的永久性卷。
++
 link:../learn/choose-class-and-size.html["了解 Astra 控制服务如何使用适用于 Google Cloud 的 Cloud Volumes Service 作为永久性卷的存储后端"]。
 
-
-
-=== 支持容器优化操作系统
-
-现在， GKE- 工作节点支持容器优化操作系统。这是对 Ubuntu 支持的补充。
-
+* 现在、GKE-工作节点支持容器优化操作系统容器优化操作系统。这是对 Ubuntu 支持的补充。
++
 link:../get-started/set-up-google-cloud.html#gke-cluster-requirements["了解有关 GKEE 集群要求的更多信息"]。
+
+
 
 endif::gcp[]
 
@@ -235,66 +181,50 @@ endif::gcp[]
 
 ifdef::azure[]
 
-
-
-=== 支持 AKS 集群
-
-现在， Astra Control Service 可以管理 Azure Kubernetes Service （ AKS ）中受管 Kubernetes 集群上运行的应用程序。
-
+* 现在、支持AKS集群Astra控制服务可以管理Azure Kubernetes Service (AKS)中受管Kubernetes集群上运行的应用程序。
++
 link:../get-started/set-up-microsoft-azure-with-anf.html["了解如何开始使用"]。
+
+
 
 endif::azure[]
 
-
-
-=== REST API
-
-Astra Control REST API 现在可供使用。API 基于现代技术和当前最佳实践。
-
+* REST API Astra Control REST API现在可供使用。API 基于现代技术和当前最佳实践。
++
 https://docs.netapp.com/us-en/astra-automation["了解如何使用 REST API 自动执行应用程序数据生命周期管理"^]。
 
-
-
-=== 按年订阅
-
-Astra Control Service 现在可提供 _Premium 订阅 _ 。
-
+* 每年订阅Astra Control Service现在可提供_Premium订阅_。
++
 按折扣价预付费，每年订阅一次，您可以在每个应用程序软件包中管理多达 10 个应用程序。请联系 NetApp 销售部门，根据您的组织需要购买任意数量的软件包—例如，从 Astra Control Service 购买 3 个软件包来管理 30 个应用程序。
 
++
 如果您管理的应用程序超过年度订阅所允许的数量，则每个应用程序的超额费用为每分钟 0.005 美元（与高级 PayGo 相同）。
 
++
 link:../get-started/intro.html#pricing["了解有关 Astra Control 服务定价的更多信息"]。
 
-
-
-=== 命名空间和应用程序可视化
-
-我们对 " 发现的应用程序 " 页面进行了改进，以更好地显示命名空间和应用程序之间的层次结构。只需展开一个命名空间即可查看该命名空间中包含的应用程序。
-
+* 命名空间和应用程序可视化我们改进了"发现的应用程序"页面、以更好地显示命名空间和应用程序之间的层次结构。只需展开一个命名空间即可查看该命名空间中包含的应用程序。
++
 link:../use/manage-apps.html["了解有关管理应用程序的更多信息"]。
 
++
 image:screenshot-group.gif["\"Apps\" 页面的屏幕截图，其中已选择 \"Discovered （已发现） \" 选项卡。"]
 
-
-
-=== 用户界面增强功能
-
-数据保护向导已进行了增强，易于使用。例如，我们优化了保护策略向导，以便在定义保护计划时更轻松地查看该计划。
-
+* 用户界面增强功能数据保护向导已进行了增强、易于使用。例如，我们优化了保护策略向导，以便在定义保护计划时更轻松地查看该计划。
++
 image:screenshot-protection-policy.gif["配置保护策略对话框的屏幕截图，您可以在其中启用每小时，每天，每周和每月计划。"]
 
+* 活动增强功能我们可以更轻松地在您的Astra Control帐户中查看有关活动的详细信息。
++
+** 按受管应用程序，严重性级别，用户和时间范围筛选活动列表。
+** 将您的 Astra Control 帐户活动下载到 CSV 文件中。
+** 选择集群或应用程序后，直接从集群页面或应用程序页面查看活动。
++
+link:../use/monitor-account-activity.html["了解有关查看帐户活动的更多信息"]。
 
 
-=== 活动增强功能
-
-我们可以更轻松地在您的 Astra Control 帐户中查看有关活动的详细信息。
-
-* 按受管应用程序，严重性级别，用户和时间范围筛选活动列表。
-* 将您的 Astra Control 帐户活动下载到 CSV 文件中。
-* 选择集群或应用程序后，直接从集群页面或应用程序页面查看活动。
 
 
-link:../use/view-account-activity.html["了解有关查看帐户活动的更多信息"]。
 
 
 
