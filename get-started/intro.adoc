@@ -187,6 +187,7 @@ Astra 控制中心可执行以下操作：
 
 == 有关详细信息 ...
 
+* https://docs.netapp.com/us-en/astra-family/["NetApp Astra产品系列的文档"^]
 * https://docs.netapp.com/us-en/astra/index.html["Astra Control Service 文档"^]
 * https://docs.netapp.com/us-en/astra-control-center/index.html["Astra 控制中心文档"^]
 * https://docs.netapp.com/us-en/astra-data-store/index.html["Astra Data Store 文档"]
