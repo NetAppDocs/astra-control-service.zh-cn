@@ -561,7 +561,6 @@
   <block id="297027aff4b7b85d7c2e1a0e4bc4a6c7" category="list-text">用于验证正在备份和管理哪些资源。</block>
   <block id="ecfc2dffe568c10a67dbc6d3724cfde2" category="list-text">活动</block>
   <block id="65e352dceaad77df9cf6dd1a76755c5c" category="list-text">与应用程序相关的 Astra Control 活动。</block>
-  <block id="5bc8792f4d0618bc7421137123233c68" category="summary">NetApp 以多种方式为 Astra Control 提供支持。全天候提供丰富的免费自助支持选项，例如知识库（ KB ）文章和可宽延的渠道。您的 Astra Control 帐户包括通过 Web 服务单提供的远程技术支持。</block>
   <block id="fabfc25ef8996fd90836e58a4c0b26b6" category="doc">获取帮助</block>
   <block id="9f1a9252fa8e7cccfce329f81193d946" category="inline-link-macro">激活对您的 NetApp 序列号的支持</block>
   <block id="bc81d4a64e11b988c024ee890e91e099" category="paragraph">您必须先执行此操作 <block ref="50b527056876367f64e162872389171b" category="inline-link-macro-rx"></block> 以便使用这些非自助服务支持选项。聊天和 Web 服务单以及案例管理需要使用 NetApp 支持站点（ NSS ） SSO 帐户。</block>
@@ -573,9 +572,6 @@
   <block id="1cd3b87947307e63f017eb7a59b02313" category="paragraph">搜索与 Astra Control 相关的文章，常见问题解答或中断修复信息。</block>
   <block id="5b6cf869265c13af8566f192b4ab3d2a" category="list-text">文档。</block>
   <block id="9a4d3fdb6af496c18bc70f14153f8c4f" category="paragraph">这是您当前正在查看的文档站点。</block>
-  <block id="3561f3a3c5576e2ce0dc0d1e268bb9b2" category="inline-link">可宽延</block>
-  <block id="935d650ae57bf919ec511d8f5c18b480" category="list-text"><block ref="935d650ae57bf919ec511d8f5c18b480" category="inline-link-rx"></block></block>
-  <block id="7e8d8ed6b8d09e924666569bac3e7749" category="paragraph">转到 Pub 工作空间中的容器通道，与同行和专家进行交流。</block>
   <block id="9945b7c9f8a0452d5794aa8f1b4132db" category="list-text">反馈电子邮件</block>
   <block id="ddcadc1ed2a47b8718aecd096c744e15" category="paragraph">发送电子邮件至 astra.feedback@netapp.com ，告知我们您的想法，想法或顾虑。</block>
   <block id="8db3548aa0cf9e934fb9643f28ae8058" category="section-title">订阅支持</block>
@@ -1064,7 +1060,6 @@
   <block id="e58ad76e34d50bf44f9e038d674c2fb9" category="paragraph">Astra Control Service 会在符合条件的集群上创建用于应用程序备份的对象存储，在集群上创建管理员帐户，并设置您指定的默认存储类。此过程最多可能需要 5 分钟。</block>
   <block id="30334fc03d9c154571a9c7384dc2fdef" category="sidebar">使用 Astra Control REST API 实现自动化</block>
   <block id="3a003da24f6641529c763cb023871157" category="sidebar">使用 Astra Control REST API</block>
-  <block id="b97c82950a650a87db9198b9545b1715" category="sidebar">" 容器 " 通道可宽延</block>
   <block id="d041642ada570d9bb242a59ad36899fd" category="sidebar">查看应用程序和计算运行状况</block>
   <block id="0dac49ef5536e90243a4926670f88ef6" category="list-text">选择 * 支持 * 。</block>
   <block id="732ba767fce4bd62cecb026f6781e1a4" category="list-text">选择 * 我已注册为 NetApp 客户 * 。</block>
@@ -1278,13 +1273,10 @@
   <block id="eb75aeb3b4b2b9734ba3e52f5483f0b2" category="inline-link">ONTAP 文档</block>
   <block id="8217522f2b9eea86f1099a2aba54aebd" category="list-text"><block ref="8217522f2b9eea86f1099a2aba54aebd" category="inline-link-rx"></block></block>
   <block id="60f694f21643599c137f6c610e48124e" category="paragraph">下面简要介绍了 Astra Control 环境的各个组件。</block>
-  <block id="2325c645f4d2112a8e96b127fbad7bf2" category="inline-image-macro">Astra Control 架构图和组件</block>
-  <block id="28f3b0cd697bf5f33c7eab89e20baff4" category="paragraph"><block ref="28f3b0cd697bf5f33c7eab89e20baff4" category="inline-image-macro-rx" type="image"></block></block>
   <block id="51d249216b03414f10b242b851af7951" category="section-title">Astra Control 组件</block>
   <block id="a8d77bbb11d2e1a349811767d194e9ba" category="list-text">* Kubernetes 集群 * ： Kubernetes 是一个可移植，可扩展的开源平台，用于管理容器化工作负载和服务，便于进行声明性配置和自动化。Astra 为 Kubernetes 集群中托管的应用程序提供管理服务。</block>
   <block id="b11f09eb1179914138fa8f5a15ba016a" category="list-text">* Astra Trident * ：作为 NetApp 维护的完全受支持的开源存储配置程序和编排程序， Trident 使您能够为 Docker 和 Kubernetes 管理的容器化应用程序创建存储卷。在使用 Astra 控制中心部署时， Trident 会包括一个已配置的 ONTAP 存储后端，并支持将 Astra 数据存储作为存储后端。</block>
   <block id="951fe18cc6e59e05fca3c0ca7de399fa" category="list-text">* 存储后端 * ：</block>
-  <block id="69a0ead95fc9c4c42592c123ebbf437a" category="list-text">Astra Data Store 存储后端</block>
   <block id="fc8adf6067b9e369fbebc9abf2891bce" category="list-text">ONTAP AFF 和 FAS 存储后端。作为存储软件和硬件平台， ONTAP 可提供核心存储服务，支持多个存储访问协议以及快照和镜像等存储管理功能。</block>
   <block id="415ba7b6a21fb373d9c5b72207313c1c" category="list-text">* Cloud Insights * ： Cloud Insights 是一款 NetApp 云基础架构监控工具，可用于监控由 控制中心管理的 Kubernetes 集群的性能和利用率。Cloud Insights 将存储使用量与工作负载相关联。在 Astra 控制中心中启用 Cloud Insights 连接后，遥测信息将显示在 Astra 控制中心 UI 页面中。</block>
   <block id="de0c45e94d4b178203631d55e65d1b62" category="section-title">Astra Control 接口</block>
@@ -1880,4 +1872,9 @@
   <block id="ca0a782901da0ca119f401851ac90842" category="paragraph"><block ref="78b785a9e2d028de12ce9f3f40284661" category="inline-link-macro-rx"></block>。</block>
   <block id="3fc3ba3c5f20ea640e5be46d8c9ca467" category="inline-link">NetApp Astra产品系列的文档</block>
   <block id="c5bc786725b0b61976497d5d0c73be96" category="list-text"><block ref="c5bc786725b0b61976497d5d0c73be96" category="inline-link-rx"></block></block>
+  <block id="1c90591655cdfe7d885b02ed72ae2509" category="summary">NetApp 以多种方式为 Astra Control 提供支持。全天候提供广泛的免费自助支持选项、例如知识库(KB)文章和不和渠道。您的 Astra Control 帐户包括通过 Web 服务单提供的远程技术支持。</block>
+  <block id="693cb2bb220908f09f97aaa6a8b56df7" category="inline-link">通过不和获得帮助</block>
+  <block id="2f51207f8c21afcb21d10ae77181f276" category="list-text"><block ref="2f51207f8c21afcb21d10ae77181f276" category="inline-link-rx"></block></block>
+  <block id="157f95d9b7b20cbe9d3c3c22ffdfbe18" category="paragraph">转到"Pub类别"中的Astra、与同行和专家建立联系。</block>
+  <block id="d1b9bd0c14af2ff8d25891d12987a68b" category="sidebar">Astra不和渠道</block>
 </blocks>
