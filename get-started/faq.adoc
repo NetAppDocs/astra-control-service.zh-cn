@@ -156,10 +156,6 @@ endif::gcp[]
 
 Astra Control 不会部署应用程序。应用程序必须部署在 Astra Control 之外。
 
-* Astra Control 是否可以管理非 NetApp 存储上的应用程序？ *
-
-否虽然 Astra Control 可以发现使用非 NetApp 存储的应用程序，但它无法管理使用非 NetApp 存储的应用程序。
-
 ifdef::gcp[]
 
 * 我看不到应用程序的任何 PVC 绑定到 GCP CVS 。有什么问题？ *
