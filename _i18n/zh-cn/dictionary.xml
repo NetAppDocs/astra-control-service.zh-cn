@@ -194,8 +194,6 @@
   <block id="f75d983d4bc87e1a244c894a4357e93a" category="section-title">管理应用程序</block>
   <block id="eaeb56aabe324b7270ae7355bb58edcb" category="paragraph">* Astra Control 是否可以部署应用程序？ *</block>
   <block id="48df7f09a242df239385ebae869133b8" category="paragraph">Astra Control 不会部署应用程序。应用程序必须部署在 Astra Control 之外。</block>
-  <block id="b3d3212b84b66c52decacb83fca1191d" category="paragraph">* Astra Control 是否可以管理非 NetApp 存储上的应用程序？ *</block>
-  <block id="43c9583c5f06b5003113b84316a2a65c" category="paragraph">否虽然 Astra Control 可以发现使用非 NetApp 存储的应用程序，但它无法管理使用非 NetApp 存储的应用程序。</block>
   <block id="395007096dc9e0b54c09749dc82a8941" category="paragraph">* 我看不到应用程序的任何 PVC 绑定到 GCP CVS 。有什么问题？ *</block>
   <block id="baaf63e6e2361e11fa4ae44151218b4e" category="list-text">运行 `kubectl get SC` 并检查默认存储类。</block>
   <block id="c5f298a00c4f6a85ebf65b24eef94a12" category="list-text">检查用于部署应用程序的 YAML 文件或 Helm 图表，查看是否定义了其他存储类。</block>
@@ -640,14 +638,12 @@
   <block id="bd0e1e2eb280afdefcb2b4c6f1a09515" category="paragraph">NetApp 尚未验证从 Google Marketplace 部署的应用程序。某些用户报告发现或备份从 Google Marketplace 部署的 Postgres ， MariaDB 和 MySQL 应用程序时出现问题。</block>
   <block id="43056e2e7b2e99afa90bfb5acff55921" category="paragraph">无论您在 Astra Control Service 中使用哪种类型的应用程序，您都应始终自行测试备份和还原工作流，以确保满足灾难恢复要求。</block>
   <block id="598d6fe4e43f08217f8edf064d9a7fa3" category="summary">NetApp 会定期更新 Astra Control Service ，为您提供新功能，增强功能和错误修复。</block>
-  <block id="1ccff085c8843e6df85f630c0b00453e" category="section-title">2021 年 8 月 5 日</block>
   <block id="40bde2f2e0e627e3fcf147169d6d315a" category="paragraph">此版本包含以下新增功能和增强功能：</block>
   <block id="9c634046a90a62883b122e76b9afcef2" category="section-title">Astra 控制中心</block>
   <block id="40e5c10855fbafbea8290f73a6d04f70" category="section-title">2021 年 6 月 2 日</block>
   <block id="0f71f0ee6bed3d528b8e76714ee6a81d" category="paragraph">此版本包含错误修复以及 Google Cloud 支持的以下增强功能。</block>
   <block id="33b49ba36195927db2411b412cfe0b4c" category="inline-link-macro">了解有关 GKEE 集群要求的更多信息</block>
   <block id="94aa6fa7719fbfefbbd46c4b08c22b4b" category="paragraph"><block ref="c3bd8fba045cfa6e89cf51e6e5781d5d" category="inline-link-macro-rx"></block>。</block>
-  <block id="d969bda7dc53cca4ba270eee303936b3" category="section-title">2021 年 4 月 15 日</block>
   <block id="7d782479a41a3941b57cc7c2b60d318a" category="inline-link-macro">了解如何开始使用</block>
   <block id="d0c288db47307237677ead5ae8dbf32b" category="inline-link">了解如何使用 REST API 自动执行应用程序数据生命周期管理</block>
   <block id="9a4e809cf5b98aab76642ac595e658d8" category="paragraph"><block ref="d96242c4026b1863ec2b29df005dc070" category="inline-link-rx"></block>。</block>
@@ -664,20 +660,17 @@
   <block id="a2b88dc15f93478f0229d71a6d7b0e3d" category="list-text">按受管应用程序，严重性级别，用户和时间范围筛选活动列表。</block>
   <block id="ed9548dfd7d1dc91cfcaf2dcc939a60a" category="list-text">将您的 Astra Control 帐户活动下载到 CSV 文件中。</block>
   <block id="44a04d6eee1ac7c339c8312bc5e23831" category="inline-link-macro">了解有关查看帐户活动的更多信息</block>
-  <block id="be80b8547cba74eaaaa246128e9f505b" category="section-title">2021 年 3 月 1 日</block>
   <block id="176950460e5100915fe78bc4e6ffe82b" category="inline-link">_CVS_ 服务类型</block>
   <block id="429b81900737e151eef475ff31869fa3" category="inline-link">支持 Cloud Volumes Service 的 Google 云区域</block>
   <block id="28d262f7686b19b993c8250943518a7f" category="paragraph">此增强功能意味着， Astra Control Service 现在可以管理在 _any_ 中运行的 Kubernetes 集群的应用程序数据<block ref="69fa08b6ef6184ae8dd1a91cecb10b56" category="inline-link-rx"></block>。</block>
   <block id="b536aa5bb92e93036b2454d38b99f56f" category="inline-link-macro">了解有关选择服务类型的更多信息</block>
   <block id="7a5679db41601d3fecb409a68ce4c9b2" category="paragraph">如果您可以灵活地在 Google Cloud 区域之间进行选择，则可以根据性能要求选择 CVS 或 CVS-Performance 。 <block ref="89000b13767f1a83f8086c1cc2e31c7d" category="inline-link-macro-rx"></block>。</block>
-  <block id="6be34d6a2ee1ffb3d4e2e46cce282f44" category="section-title">2021 年 1 月 25 日</block>
   <block id="d13993f9f9e60a93ba268e59c921381d" category="paragraph">我们很高兴地宣布， Astra 控制服务现已全面上市。我们采纳了从测试版收到的许多反馈，并进行了一些其他显著的改进。</block>
   <block id="f1b3e68a6481f423fd5c59659b18560d" category="inline-link-macro">了解有关计费的更多信息</block>
   <block id="964a70c45a61f521ea1c4cb06403d4ee" category="list-text">现在，您可以通过计费从免费计划过渡到高级计划。 <block ref="2e7d11d76129cc6bc66120b2bffcd33e" category="inline-link-macro-rx"></block>。</block>
   <block id="ebb4cef6e957a3f3db21c2430ef1de91" category="list-text">现在，使用 CVS-Performance 服务类型时， Astra Control Service 会创建最小大小为 100 GiB 的永久性卷。</block>
   <block id="00d8253290bc1791dbe2e2f5445579ca" category="list-text">Astra Control Service 现在可以更快地发现应用程序。</block>
   <block id="f0823272d746557a316d9b1a6fcb7c28" category="list-text">现在，您可以自行创建和删除帐户。</block>
-  <block id="73980d377c8b298a2609da3a955bc2e8" category="section-title">2020 年 12 月 17 日（测试版更新）</block>
   <block id="b23449f655e47c7a7c436fa04f6dda52" category="paragraph">我们主要关注错误修复以改善您的体验，但我们还进行了一些其他显著的改进：</block>
   <block id="1a1973d9db3099685cb4f302f3120000" category="list-text">当您将第一个 Kubernetes 计算添加到 Astra Control Service 时，现在将在集群所在的地理位置创建对象存储。</block>
   <block id="0f46ccf25e283000bdf73f5292b4b20e" category="list-text">现在，当您在计算级别查看存储详细信息时，可以查看有关永久性卷的详细信息。</block>
@@ -862,7 +855,6 @@
   <block id="277d303328081a08d224ba1791474f8c" category="section-title">使用外部快照程序 4.2.0 版时，快照最终开始失败</block>
   <block id="989f15ab4fafcbe33b5c793f7c17921f" category="inline-link">支持的版本</block>
   <block id="b07ba4d88165e7d28588bdffecc7b23e" category="paragraph">如果将 Kubernetes Snapshot-controller （也称为外部快照程序） 4.2.0 与 Kubernetes 1.20 或 1.21 结合使用，则快照最终可能会开始失败。要防止出现这种情况，请使用其他<block ref="4a7fe4e7f109667d1c8972a591d16348" category="inline-link-rx"></block> 使用 Kubernetes 版本 1.20 或 1.21 的外部快照程序，例如 4.2.1 版。</block>
-  <block id="d3af82049064083c07416b3ed040dba2" category="section-title">2021 年 12 月 14 日</block>
   <block id="87716101cfca255da11056a624dbce47" category="inline-link-macro">使用 Azure 受管磁盘设置 Microsoft Azure</block>
   <block id="372ba25517e6092baf2e0abc0ae2ef65" category="inline-link-macro">管理应用程序执行挂钩</block>
   <block id="a916818021b3f228baef189d6dcd5538" category="paragraph"><block ref="bc25b49e1030874d11222c9fe6a36711" category="inline-link-macro-rx"></block>。</block>
@@ -1391,7 +1383,6 @@
   <block id="13d28e8dfc702e3456e0767dff9a128a" category="section-title">命名空间</block>
   <block id="d9cc676cc9f27a51d1e6de8201649cfb" category="paragraph">命名空间是指您可以分配给由 Astra Control 管理的集群中的特定资源的范围。将集群添加到 Astra Control 时， Astra Control 会发现集群的命名空间。发现后，可以将命名空间作为约束分配给用户。只有有权访问该命名空间的成员才能使用该资源。您可以使用命名空间来控制对资源的访问，方法是采用对您的组织有意义的模式；例如，按公司内的物理区域或部门进行访问。向用户添加约束时，您可以将该用户配置为可以访问所有命名空间或仅访问一组特定命名空间。您还可以使用命名空间标签分配命名空间约束。</block>
   <block id="73b2ad293eda73ca2acff9008e7ac0e8" category="paragraph"><block ref="73b2ad293eda73ca2acff9008e7ac0e8" category="inline-link-macro-rx"></block></block>
-  <block id="67dec75e07f11637dbb129889d6bf6ae" category="section-title">2022 年 4 月 26 日</block>
   <block id="0097e428776046ceb8cd1fcde6d6fa2e" category="section-title">命名空间基于角色的访问控制（ RBAC ）</block>
   <block id="1815092c8149587d0b20c39d938df877" category="admonition">对于 K8ssandra ，支持原位还原操作。要对新命名空间或集群执行还原操作，需要关闭应用程序的原始实例。这是为了确保传输的对等组信息不会导致跨实例通信。不支持克隆应用程序。</block>
   <block id="19c1911c15404b466d1dbdce1f447fa5" category="section-title">基于角色的访问控制（ Role-Based Access Control ， RBAC ）限制</block>
@@ -1493,7 +1484,6 @@
   <block id="2628d7b5cc84b024c4b920441addcb86" category="section-title">不支持对使用证书管理器的应用程序执行原位还原操作</block>
   <block id="0d7cda4c63f06aa1eaf0682a607c5601" category="paragraph">此版本的Astra控制服务不支持使用证书管理器原位还原应用程序。支持将还原操作还原到其他命名空间和克隆操作。</block>
   <block id="33e9a46dfde5bb0f5a8b8327623cb998" category="paragraph">受命名空间名称/ID约束的任何`m成员`用户均可将应用程序克隆或还原到同一集群上的新命名空间或其组织帐户中的任何其他集群。但是，同一用户无法访问新命名空间中的克隆或还原应用程序。通过克隆或还原操作创建新命名空间后，帐户管理员 / 所有者可以编辑 `m成员` 用户帐户并更新受影响用户的角色约束，以授予对新命名空间的访问权限。</block>
-  <block id="99715e391085188513c21fdab4ee4d3f" category="section-title">2022年8月10日</block>
   <block id="d55b05877d0dd6743f47d3442323323e" category="inline-link-macro">设置Amazon Web Services</block>
   <block id="0a2055495a94f091655a2e4d421cffe2" category="list-text">预备份</block>
   <block id="cf6e97e89c4b36c29252fcb7b0728d2f" category="list-text">备份后</block>
@@ -1877,4 +1867,14 @@
   <block id="2f51207f8c21afcb21d10ae77181f276" category="list-text"><block ref="2f51207f8c21afcb21d10ae77181f276" category="inline-link-rx"></block></block>
   <block id="157f95d9b7b20cbe9d3c3c22ffdfbe18" category="paragraph">转到"Pub类别"中的Astra、与同行和专家建立联系。</block>
   <block id="d1b9bd0c14af2ff8d25891d12987a68b" category="sidebar">Astra不和渠道</block>
+  <block id="bc820d3a1aae6d8ead4b69263979fc38" category="section-title">2022年9月7日</block>
+  <block id="511d4d523a06b0375a96d77287f62ee1" category="paragraph">此版本为Astra Control Service基础架构提供了稳定性和故障恢复能力增强功能。</block>
+  <block id="d682eef4b137af2945bc67775777a9ae" category="section-title">2022年8月10日</block>
+  <block id="ae4d5046a6cc232f0a797ff6885ed980" category="section-title">2022年4月26日</block>
+  <block id="574a814695667d43e14497d0d18ea597" category="section-title">2021年12月14日</block>
+  <block id="bf2952986042f5403c53bded609c0d9b" category="section-title">2021 年 8 月 5 日</block>
+  <block id="12b25d2d9c1a5b6acd85bf6a54697871" category="section-title">2021 年 4 月 15 日</block>
+  <block id="f0f3d2a56548b1d53077b0b5eff5bb54" category="section-title">2021年3月1日</block>
+  <block id="3bdf2e1f16a21b037f1f56168c9e298b" category="section-title">2021年1月25日</block>
+  <block id="c8b4516515e1372ec542880d39c0b12d" category="section-title">2020年12月17日(测试版更新)</block>
 </blocks>
