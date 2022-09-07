@@ -13,6 +13,8 @@ summary: 下面简要介绍了 Astra Control 环境的各个组件。
 
 下面简要介绍了 Astra Control 环境的各个组件。
 
+image:astra-ads-architecture-diagram-v4.png["Astra Control 架构图和组件"]
+
 
 
 == Astra Control 组件
