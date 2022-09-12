@@ -1879,4 +1879,7 @@
   <block id="c8b4516515e1372ec542880d39c0b12d" category="section-title">2020年12月17日(测试版更新)</block>
   <block id="2325c645f4d2112a8e96b127fbad7bf2" category="inline-image-macro">Astra Control 架构图和组件</block>
   <block id="98918f261da964e04189c67d73791199" category="paragraph"><block ref="98918f261da964e04189c67d73791199" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="0e7f3e02eec3115e69bf39331337aa40" category="list-text">*存储帐户*(仅限Azure)：输入Azure存储帐户的名称。此存储分段必须属于名为_Astra-backup-rg_的资源组。</block>
+  <block id="46c53b029194c1de2930d506c617135a" category="inline-link">Amazon文档</block>
+  <block id="67923dd978919e4cfb6eefb99c5e9b2b" category="list-text">* S3服务器名称或IP地址*(仅限AWS)：输入与您所在地区对应的S3端点的完全限定域名、而不包含`https：//`。请参见<block ref="398d47c523652edc934ec11e2f213d87" category="inline-link-rx"></block> 有关详细信息 ...</block>
 </blocks>
