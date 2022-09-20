@@ -29,13 +29,13 @@ NOTE: 如果您执行快照或备份、但操作失败并显示错误"The resour
 
 您可以执行以下与保护应用程序数据相关的任务：
 
-* <<Configure a protection policy>>
-* <<Create a snapshot>>
-* <<Create a backup>>
-* <<View snapshots and backups>>
-* <<Delete snapshots>>
-* <<Cancel backups>>
-* <<Delete backups>>
+*  a protection policy
+*  a snapshot
+*  a backup
+*  snapshots and backups
+*  snapshots
+*  backups
+*  backups
 
 
 

@@ -24,35 +24,35 @@ summary: 在使用 Astra Control Service 管理 Azure Kubernetes Service 集群�
 === 查看 Azure Kubernetes Service 的 Astra Control Service 要求
 
 [role="quick-margin-para"]
-确保集群运行状况良好并运行受支持的Kubernetes版本、节点池处于联机状态并运行Linux等。 <<Azure Kubernetes Service cluster requirements,了解有关此步骤的更多信息>>。
+确保集群运行状况良好并运行受支持的Kubernetes版本、节点池处于联机状态并运行Linux等。  Kubernetes Service cluster requirements,了解有关此步骤的更多信息。
 
 
 
 === 注册 Microsoft Azure
 
 [role="quick-margin-para"]
-创建 Microsoft Azure 帐户。 <<Sign up for Microsoft Azure,了解有关此步骤的更多信息>>。
+创建 Microsoft Azure 帐户。  up for Microsoft Azure,了解有关此步骤的更多信息。
 
 
 
 === 创建 Azure 服务主体
 
 [role="quick-margin-para"]
-创建具有 " 贡献者 " 角色的 Azure 服务主体。 <<Create an Azure service principal,了解有关此步骤的更多信息>>。
+创建具有 " 贡献者 " 角色的 Azure 服务主体。  an Azure service principal,了解有关此步骤的更多信息。
 
 
 
 === 配置容器存储接口（ CSI ）驱动程序详细信息
 
 [role="quick-margin-para"]
-您需要配置 Azure 订阅和集群以使用 CSI 驱动程序。 <<Configure Container Storage Interface (CSI) driver details,了解有关此步骤的更多信息>>。
+您需要配置 Azure 订阅和集群以使用 CSI 驱动程序。  Container Storage Interface (CSI) driver details,了解有关此步骤的更多信息。
 
 
 
 === 可选：为Azure备份存储分段配置冗余
 
 [role="quick-margin-para"]
-默认情况下、Astra Control Service用于存储Azure Kubernetes Service备份的存储分段使用本地冗余存储(LRS)冗余选项。作为一个可选步骤、您可以为Azure存储分段配置更持久的冗余级别。 <<Optional: Configure redundancy for Azure backup buckets,了解有关此步骤的更多信息>>。
+默认情况下、Astra Control Service用于存储Azure Kubernetes Service备份的存储分段使用本地冗余存储(LRS)冗余选项。作为一个可选步骤、您可以为Azure存储分段配置更持久的冗余级别。  Configure redundancy for Azure backup buckets,了解有关此步骤的更多信息。
 
 
 

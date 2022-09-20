@@ -14,25 +14,25 @@ summary: 设置环境后，您可以创建 Kubernetes 集群，然后将其添�
 [role="lead"]
 设置环境后，您可以创建 Kubernetes 集群，然后将其添加到 Astra Control Service 。
 
-* <<Create a Kubernetes cluster>>
-* <<Start managing Kubernetes clusters>>
+*  a Kubernetes cluster
+*  managing Kubernetes clusters
 
 
 ifdef::azure[]
 
-* <<Manage a private cluster>>
+*  a private cluster
 
 
 endif::azure[]
 
 ifdef::aws[]
 
-* <<Provide cluster access to other users>>
+*  cluster access to other users
 
 
 endif::aws[]
 
-* <<Change the default storage class>>
+*  the default storage class
 
 
 
@@ -57,7 +57,7 @@ NOTE: Astra控制服务支持使用Azure Active Directory (Azure AD)进行身份
 当Astra Control管理集群时、它会跟踪集群的默认存储类。如果使用`kubectl`命令更改存储类、则Astra Control将还原此更改。要更改由Astra Control管理的集群中的默认存储类、请使用以下方法之一：
 
 * 使用Astra Control API `PUT /managedClusters` Endpoint、并使用`DefaultStorageClass`参数分配其他默认存储类。
-* 使用Astra Control Web UI分配其他默认存储类。请参见 <<Change the default storage class>>。
+* 使用Astra Control Web UI分配其他默认存储类。请参见  the default storage class。
 
 
 ====
@@ -85,7 +85,7 @@ ifdef::azure[]
 * 对于专用 AKS 集群：
 +
 ** 集群应满足中所述的要求 https://docs.microsoft.com/en-us/azure/aks/private-clusters["Azure 文档"^]。
-** 您需要在 AKS 服务集群上安装 Astra Connector ，以便 Astra Control Service 可以管理此集群。要安装 Astra Connector ， <<Manage a private cluster,请按照以下说明进行操作>>。
+** 您需要在 AKS 服务集群上安装 Astra Connector ，以便 Astra Control Service 可以管理此集群。要安装 Astra Connector ，  a private cluster,请按照以下说明进行操作。
 
 
 
@@ -150,7 +150,7 @@ endif::gcp[]
 如果您选择的集群尚未配置Azure NetApp Files 、则会显示一条警告。此集群未安装和配置 NetApp Trident 。如果要使用其他存储服务，您可以继续添加集群。
 
 +
-如果您选择的集群标记有 "private" 图标，则它将使用专用 IP 地址，并且 Astra Control 需要使用 Astra Connector 来管理集群。如果您看到一条消息，指出您需要安装 Astra Connector ， <<Manage a private cluster,请按照以下说明进行操作>> 安装 Astra Connector 并启用集群管理。安装 Astra Connector 后，集群应符合条件，您可以继续添加集群。
+如果您选择的集群标记有 "private" 图标，则它将使用专用 IP 地址，并且 Astra Control 需要使用 Astra Connector 来管理集群。如果您看到一条消息，指出您需要安装 Astra Connector ，  a private cluster,请按照以下说明进行操作 安装 Astra Connector 并启用集群管理。安装 Astra Connector 后，集群应符合条件，您可以继续添加集群。
 
 . * 存储 * ：选择希望部署到此集群的 Kubernetes 应用程序默认使用的存储类。
 +

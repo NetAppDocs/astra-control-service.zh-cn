@@ -24,56 +24,56 @@ summary: 在使用 Astra Control Service 管理 Azure Kubernetes Service 集群�
 === 查看 Azure Kubernetes Service 的 Astra Control Service 要求
 
 [role="quick-margin-para"]
-确保集群运行状况良好并运行受支持的Kubernetes版本、节点池处于联机状态并运行Linux等。 <<Azure Kubernetes Service cluster requirements,了解有关此步骤的更多信息>>。
+确保集群运行状况良好并运行受支持的Kubernetes版本、节点池处于联机状态并运行Linux等。  Kubernetes Service cluster requirements,了解有关此步骤的更多信息。
 
 
 
 === 注册 Microsoft Azure
 
 [role="quick-margin-para"]
-创建 Microsoft Azure 帐户。 <<Sign up for Microsoft Azure,了解有关此步骤的更多信息>>。
+创建 Microsoft Azure 帐户。  up for Microsoft Azure,了解有关此步骤的更多信息。
 
 
 
 === 对于 Azure NetApp Files ，
 
 [role="quick-margin-para"]
-注册 NetApp 资源提供商。 <<Register for Azure NetApp Files,了解有关此步骤的更多信息>>。
+注册 NetApp 资源提供商。  for Azure NetApp Files,了解有关此步骤的更多信息。
 
 
 
 === Create a NetApp account
 
 [role="quick-margin-para"]
-转到 Azure 门户中的 Azure NetApp Files 并创建 NetApp 帐户。 <<Create a NetApp account,了解有关此步骤的更多信息>>。
+转到 Azure 门户中的 Azure NetApp Files 并创建 NetApp 帐户。  a NetApp account,了解有关此步骤的更多信息。
 
 
 
 === 设置容量池
 
 [role="quick-margin-para"]
-为永久性卷设置一个或多个容量池。 <<Set up a capacity pool,了解有关此步骤的更多信息>>。
+为永久性卷设置一个或多个容量池。  up a capacity pool,了解有关此步骤的更多信息。
 
 
 
 === Delegate a subnet to Azure NetApp Files
 
 [role="quick-margin-para"]
-将子网委派给 Azure NetApp Files ，以便 Astra 控制服务可以在该子网中创建永久性卷。 <<Delegate a subnet to Azure NetApp Files,了解有关此步骤的更多信息>>。
+将子网委派给 Azure NetApp Files ，以便 Astra 控制服务可以在该子网中创建永久性卷。  a subnet to Azure NetApp Files,了解有关此步骤的更多信息。
 
 
 
 === 创建 Azure 服务主体
 
 [role="quick-margin-para"]
-创建具有 " 贡献者 " 角色的 Azure 服务主体。 <<Create an Azure service principal,了解有关此步骤的更多信息>>。
+创建具有 " 贡献者 " 角色的 Azure 服务主体。  an Azure service principal,了解有关此步骤的更多信息。
 
 
 
 === 可选：为Azure备份存储分段配置冗余
 
 [role="quick-margin-para"]
-默认情况下、Astra Control Service用于存储Azure Kubernetes Service备份的存储分段使用本地冗余存储(LRS)冗余选项。作为一个可选步骤、您可以为Azure存储分段配置更持久的冗余级别。 <<Optional: Configure redundancy for Azure backup buckets,了解有关此步骤的更多信息>>。
+默认情况下、Astra Control Service用于存储Azure Kubernetes Service备份的存储分段使用本地冗余存储(LRS)冗余选项。作为一个可选步骤、您可以为Azure存储分段配置更持久的冗余级别。  Configure redundancy for Azure backup buckets,了解有关此步骤的更多信息。
 
 
 
@@ -85,11 +85,11 @@ Kubernetes 版本:: 集群必须运行Kubernetes 1.21至1.24版。
 映像类型:: 所有节点池的映像类型必须为 Linux 。
 集群状态:: 集群必须运行状况良好，并且至少有一个联机辅助节点，并且没有处于故障状态的辅助节点。
 Azure 区域:: 集群必须位于 Azure NetApp Files 可用的区域。 https://azure.microsoft.com/en-us/global-infrastructure/services/?products=netapp["按区域查看 Azure 产品"^]。
-订阅。:: 集群必须位于启用了 Azure NetApp Files 的订阅中。您可以选择订阅 <<Register for Azure NetApp Files,注册 Azure NetApp Files>>。
+订阅。:: 集群必须位于启用了 Azure NetApp Files 的订阅中。您可以选择订阅  for Azure NetApp Files,注册 Azure NetApp Files。
 vNet:: 请考虑以下 vNet 要求：
 +
 --
-* 集群必须位于可直接访问 Azure NetApp Files 委派子网的 vNet 中。 <<Delegate a subnet to Azure NetApp Files,了解如何设置委派子网>>。
+* 集群必须位于可直接访问 Azure NetApp Files 委派子网的 vNet 中。  a subnet to Azure NetApp Files,了解如何设置委派子网。
 * 如果您的 Kubernetes 集群位于与另一个 vNet 中的 Azure NetApp Files 委派子网建立对等关系的 vNet 中，则对等连接的两端必须处于联机状态。
 * 请注意， vNet （包括对等 VNet ）与 Azure NetApp Files 中使用的 IP 数量的默认限制为 1 ， 000 。 https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-resource-limits["查看 Azure NetApp Files 资源限制"^]。
 +
@@ -112,7 +112,7 @@ vNet:: 请考虑以下 vNet 要求：
 
 === 安装 CSI 卷快照控制器
 
-如中所述 <<Azure Kubernetes Service cluster requirements>>， Kubernetes 集群必须安装 CSI 卷快照控制器。按照以下步骤在集群上安装控制器。
+如中所述  Kubernetes Service cluster requirements， Kubernetes 集群必须安装 CSI 卷快照控制器。按照以下步骤在集群上安装控制器。
 
 .K8s 1.19 版的步骤
 . 安装卷快照 CRD 。

@@ -128,7 +128,7 @@ TIP: 例如、您可能希望为"Maria"设置一个每周节奏的备份策略�
 
 .您需要什么？ #8217 ；将需要什么
 * 已将Kubernetes集群添加到Astra Control中。
-* 集群上安装的一个或多个应用程序。 <<Supported app installation methods,阅读有关支持的应用程序安装方法的更多信息>>。
+* 集群上安装的一个或多个应用程序。  app installation methods,阅读有关支持的应用程序安装方法的更多信息。
 * 一个或多个活动Pod。
 * 在已添加到Astra Control的Kubernetes集群上指定的命名空间。
 * (可选)任何上的Kubernetes标签 link:../use/manage-apps.html#app-management-requirements["支持的Kubernetes资源"]。
@@ -141,8 +141,8 @@ TIP: 标签是一个键 / 值对，您可以将其分配给 Kubernetes 对象进
 开始之前、您还应了解相关信息 link:../use/manage-apps.html#what-about-system-namespaces["管理标准命名空间和系统命名空间"]。有关如何使用 Astra Control API 管理应用程序的说明，请参见 link:https://docs.netapp.com/us-en/astra-automation/["Astra Automation 和 API 信息"^]。
 
 .应用程序管理选项
-* <<Define resources to manage as an app>>
-* <<Define a namespace to manage as an app>>
+*  resources to manage as an app
+*  a namespace to manage as an app
 
 
 

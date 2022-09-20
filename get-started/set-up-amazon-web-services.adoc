@@ -24,21 +24,21 @@ summary: 要使用Astra Control Service管理Amazon Elastic Kubernetes Service�
 === 查看适用于Amazon Web Services的Astra Control Service要求
 
 [role="quick-margin-para"]
-确保集群运行状况良好并运行受支持的Kubernetes版本、工作节点处于联机状态并运行Linux或Windows等。 <<EKS cluster requirements,了解有关此步骤的更多信息>>。
+确保集群运行状况良好并运行受支持的Kubernetes版本、工作节点处于联机状态并运行Linux或Windows等。  cluster requirements,了解有关此步骤的更多信息。
 
 
 
 === 创建Amazon帐户
 
 [role="quick-margin-para"]
-如果您还没有Amazon帐户、则需要创建一个帐户、以便可以使用EKS。 <<Create an Amazon account,了解有关此步骤的更多信息>>。
+如果您还没有Amazon帐户、则需要创建一个帐户、以便可以使用EKS。  an Amazon account,了解有关此步骤的更多信息。
 
 
 
 === 安装Amazon Web Services CLI
 
 [role="quick-margin-para"]
-安装AWS命令行界面、以便从命令行管理AWS。 <<Install the Amazon Web Services CLI,按照分步说明进行操作>>。
+安装AWS命令行界面、以便从命令行管理AWS。  the Amazon Web Services CLI,按照分步说明进行操作。
 
 
 
@@ -48,7 +48,7 @@ summary: 要使用Astra Control Service管理Amazon Elastic Kubernetes Service�
 创建Amazon身份和访问管理(IAM)用户。您也可以跳过此步骤并将现有IAM用户与Astra Control Service结合使用。
 
 [role="quick-margin-para"]
-<<Optional: Create an IAM user,阅读分步说明>>。
+ Create an IAM user,阅读分步说明。
 
 
 
@@ -58,7 +58,7 @@ summary: 要使用Astra Control Service管理Amazon Elastic Kubernetes Service�
 创建具有所需权限的策略、以使Astra Control Service能够与您的AWS帐户进行交互。
 
 [role="quick-margin-para"]
-<<Create and attach a permissions policy,阅读分步说明>>。
+ and attach a permissions policy,阅读分步说明。
 
 
 
@@ -68,7 +68,7 @@ summary: 要使用Astra Control Service管理Amazon Elastic Kubernetes Service�
 保存IAM用户的凭据、以便将这些凭据导入到Astra Control Service中。
 
 [role="quick-margin-para"]
-<<Save the credentials for the IAM user,阅读分步说明>>。
+ the credentials for the IAM user,阅读分步说明。
 
 
 

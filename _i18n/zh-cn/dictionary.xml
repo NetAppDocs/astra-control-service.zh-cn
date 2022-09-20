@@ -1459,7 +1459,6 @@
   <block id="c5e2734ed937951c4604f55129ebf6bb" category="list-text">Azure受管磁盘：无可用的价格、性能或弹性信息</block>
   <block id="26816f4f023579253517240a64829a70" category="list-text">* Astra Control Service*：NetApp管理的一项服务、可为多个云提供商环境中的Kubernetes集群提供应用程序感知型数据管理。</block>
   <block id="368def07c6bfa29b38f6913d1a01d925" category="paragraph">+*对于GKEE集群、Astra Control Service使用<block ref="33441d63a8e7ace6860eab2024320819" category="inline-link-rx"></block> 或 Google Persistent Disk 作为永久性卷的存储后端。</block>
-  <block id="020ac10d47f71d04e485e8c8328f7cdf" category="paragraph">+*对于AKS集群、Astra Control Service使用<block ref="16e1ab965c1d673c5cb3b5a28e77c1c1" category="inline-link-rx"></block> 或 Azure 磁盘存储作为永久性卷的存储后端。</block>
   <block id="eb1ac977ae8f3dc0832dd982e309d50b" category="paragraph">+在Azure中、Astra Control Service还会为Blob容器创建资源组、存储帐户和密钥。</block>
   <block id="a3927a5a13e226c44dac47ff649fa5fa" category="list-text">如果您使用云提供商存储服务作为存储后端、则Astra Control Service将使用Astra Trident为应用程序配置永久性卷。</block>
   <block id="47de31b9013ca59e1620936759a1c481" category="paragraph">Astra Control 旨在简化 Kubernetes 原生应用程序的应用程序数据生命周期管理操作。Astra控制服务支持在多个云提供商环境中运行的Kubernetes集群。</block>
@@ -1882,4 +1881,5 @@
   <block id="0e7f3e02eec3115e69bf39331337aa40" category="list-text">*存储帐户*(仅限Azure)：输入Azure存储帐户的名称。此存储分段必须属于名为_Astra-backup-rg_的资源组。</block>
   <block id="46c53b029194c1de2930d506c617135a" category="inline-link">Amazon文档</block>
   <block id="67923dd978919e4cfb6eefb99c5e9b2b" category="list-text">* S3服务器名称或IP地址*(仅限AWS)：输入与您所在地区对应的S3端点的完全限定域名、而不包含`https：//`。请参见<block ref="398d47c523652edc934ec11e2f213d87" category="inline-link-rx"></block> 有关详细信息 ...</block>
+  <block id="00aad21491943f355fbfdfc6d4402aab" category="paragraph">+*对于AKS集群、Astra Control Service使用<block ref="16e1ab965c1d673c5cb3b5a28e77c1c1" category="inline-link-rx"></block> 或Azure受管磁盘作为永久性卷的存储后端。</block>
 </blocks>
