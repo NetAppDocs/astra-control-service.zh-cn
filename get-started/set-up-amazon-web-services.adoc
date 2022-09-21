@@ -131,7 +131,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 . 为服务帐户创建Amazon EBS CSI驱动程序IAM角色。按照说明进行操作 https://docs.aws.amazon.com/eks/latest/userguide/csi-iam-role.html["在Amazon文档中"^]、使用说明中的AWS命令行界面命令。
 . 使用以下AWS命令行界面命令添加Amazon EBS CSI加载项、将括号<>中的信息替换为特定于您的环境的值。将<driver_role>替换为您在上一步中创建的EBS CSI驱动程序角色的名称：
 +
-[listing]
+[source, sh]
 ----
 aws eks create-addon \
   --cluster-name <CLUSTER_NAME> \
@@ -143,26 +143,26 @@ aws eks create-addon \
 .配置EBS存储类
 . 将Amazon EBS CSI驱动程序GitHub存储库克隆到您的系统。
 +
-[listing]
+[source, sh]
 ----
 git clone https://github.com/kubernetes-sigs/aws-ebs-csi-driver.git
 ----
 . 导航到动态配置示例目录。
 +
-[listing]
+[source, sh]
 ----
 cd aws-ebs-csi-driver/examples/kubernetes/dynamic-provisioning/
 ----
 . 从清单目录部署EBS SC存储类和EBS声明永久性卷声明。
 +
-[listing]
+[source, sh]
 ----
 kubectl apply -f manifests/storageclass.yaml
 kubectl apply -f manifests/claim.yaml
 ----
 . 描述EBS-SC存储类。
 +
-[listing]
+[source, sh]
 ----
 kubectl describe storageclass ebs-sc
 ----
@@ -216,7 +216,7 @@ kubectl describe storageclass ebs-sc
 . 创建一个名为`policy.json`的新文件。
 . 将以下JSON内容复制到文件中：
 +
-[listing]
+[source, JSON]
 ----
 {
     "Version": "2012-10-17",
@@ -250,13 +250,13 @@ kubectl describe storageclass ebs-sc
 ----
 . 创建策略：
 +
-[listing]
+[source, sh]
 ----
 POLICY_ARN=$(aws iam create-policy  --policy-name <policy-name> --policy-document file://policy.json  --query='Policy.Arn' --output=text)
 ----
 . 将策略附加到 IAM 用户。将`<IAM用户名>`替换为您创建的IAM用户或现有IAM用户的用户名：
 +
-[listing]
+[source, sh]
 ----
 aws iam attach-user-policy --user-name <IAM-USER-NAME> --policy-arn=$POLICY_ARN
 ----
@@ -271,7 +271,7 @@ aws iam attach-user-policy --user-name <IAM-USER-NAME> --policy-arn=$POLICY_ARN
 .步骤
 . 下载凭据。将`<IAM用户名>`替换为要使用的IAM用户的用户名：
 +
-[listing]
+[source, sh]
 ----
 aws iam create-access-key --user-name <IAM-USER-NAME> --output json > credential.json
 ----

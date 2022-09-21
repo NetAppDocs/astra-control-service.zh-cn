@@ -235,15 +235,15 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 . 打开 Azure 命令行界面。
 . 运行以下命令以注册驱动程序：
 +
-[listing]
+[source, sh]
 ----
 az feature register --namespace "Microsoft.ContainerService" --name "EnableAzureDiskFileCSIDriver"
 ----
 . 运行以下命令以确保更改已传播：
 +
-[listing]
+[source, sh]
 ----
-'az provider register -n Microsoft.ContainerService
+az provider register -n Microsoft.ContainerService
 ----
 +
 您应看到类似于以下内容的输出：

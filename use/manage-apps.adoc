@@ -63,7 +63,7 @@ Astra Control 具有以下应用程序管理要求：
 
 * * 清单文件 * ： Astra Control 支持使用 kubectl 从清单文件安装的应用程序。例如：
 +
-[listing]
+[source, sh]
 ----
 kubectl apply -f myapp.yaml
 ----

@@ -26,6 +26,8 @@ entries:
   url: "/get-started/register.html"
 - title: 管理集群
   url: "/get-started/add-first-cluster.html"
+- title: 管理专用集群
+  url: "/get-started/manage-private-cluster.html"
 - title: 下一步是什么？
   url: "/get-started/whats-next.html"
 - title: 视频

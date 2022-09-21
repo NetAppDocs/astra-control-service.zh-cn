@@ -18,13 +18,6 @@ summary: 设置环境后，您可以创建 Kubernetes 集群，然后将其添�
 *  managing Kubernetes clusters
 
 
-ifdef::azure[]
-
-*  a private cluster
-
-
-endif::azure[]
-
 ifdef::aws[]
 
 *  cluster access to other users
@@ -219,58 +212,6 @@ endif::aws[]
 
 Astra Control Service 会在符合条件的集群上创建用于应用程序备份的对象存储，在集群上创建管理员帐户，并设置您指定的默认存储类。此过程最多可能需要 5 分钟。
 
-ifdef::azure[]
-
-
-
-== 管理专用集群
-
-您可以使用 Astra Control Service 管理专用 AKS 集群。为此，您需要在专用 AKS 服务集群上安装 Astra Connector 操作员。您可以在添加要管理的集群之前完成此步骤，也可以在系统提示时在添加集群期间完成此步骤。
-
-.步骤
-. 为 Astra Connector 运算符创建命名空间。
-+
-[listing]
-----
-kubectl create ns astra-connector-operator
-----
-. 将 `asaconnector_operator.yaml` 文件应用于操作员命名空间。
-+
-[listing]
-----
-kubectl apply -f astraconnector_operator.yaml -n astra-connector-operator
-----
-. 为专用集群组件创建命名空间。
-+
-[listing]
-----
-kubectl create ns astra-connector
-----
-. 应用 Astra Connector 自定义资源定义（ CRD ）。
-+
-[listing]
-----
-kubectl apply -f config/samples/astraconnector_v1.yaml -n astra-connector
-----
-. 检查 Astra 连接器的状态。
-+
-[listing]
-----
-kubectl get astraconnector astra-connector -n astra-connector
-----
-+
-您应看到类似于以下内容的输出：
-
-+
-[listing]
-----
-NAME              REGISTERED   ASTRACONNECTORID
-astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
-----
-
-
-endif::azure[]
-
 ifdef::aws[]
 
 
@@ -297,3 +238,14 @@ endif::aws[]
 . 选择要设置为默认值的存储类的*操作*菜单。
 . 选择*设置为默认值*。
 
+
+ifdef::azure[]
+
+
+
+== 有关详细信息 ...
+
+* link:manage-private-cluster.html["管理专用集群"]
+
+
+endif::azure[]
