@@ -1901,4 +1901,5 @@
   <block id="d33c63b2eec196ebbb8a7cfc84258759" category="paragraph">现在、您可以将专用AKS集群添加到Astra Control Service。按照标准工作流将集群添加到Astra Control Service：<block ref="240044c611ecbc1dfa48c963d44f13ca" category="inline-link-rx"></block>。</block>
   <block id="e722e71a936852b8a6cd89cd5c31feb9" category="list-text"><block ref="e722e71a936852b8a6cd89cd5c31feb9" category="inline-link-macro-rx"></block></block>
   <block id="b0a64c8dbe133ff5b49120ddb00f788a" category="sidebar">管理专用集群</block>
+  <block id="f21f22dde0e0692333a7a28cce456b08" category="sidebar">所有Astra文档</block>
 </blocks>
