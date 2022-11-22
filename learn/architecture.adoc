@@ -21,7 +21,7 @@ image:astra-architecture-diagram-v5.png["Astra Control 架构图和组件"]
 == Astra Control 组件
 
 * * Kubernetes 集群 * ： Kubernetes 是一个可移植，可扩展的开源平台，用于管理容器化工作负载和服务，便于进行声明性配置和自动化。Astra 为 Kubernetes 集群中托管的应用程序提供管理服务。
-* * Astra Trident * ：作为 NetApp 维护的完全受支持的开源存储配置程序和编排程序， Trident 使您能够为 Docker 和 Kubernetes 管理的容器化应用程序创建存储卷。在使用 Astra 控制中心部署时， Trident 会包括一个已配置的 ONTAP 存储后端，并支持将 Astra 数据存储作为存储后端。
+* * Astra Trident * ：作为由 NetApp 维护的完全受支持的开源存储配置程序和编排程序， Astra Trident 使您能够为 Docker 和 Kubernetes 管理的容器化应用程序创建存储卷。使用Astra控制中心部署时、Astra Trident会包括一个已配置的ONTAP 存储后端。
 * * 存储后端 * ：
 +
 ** Astra Control Service 使用 https://www.netapp.com/cloud-services/azure-netapp-files/["Azure NetApp Files"^] 或Azure受管磁盘作为AKS集群的存储后端。

@@ -68,7 +68,6 @@ Astra Control 有两种部署模式：
 
 | 什么是存储后端支持？ | NetApp 云服务产品  a| 
 * NetApp ONTAP AFF 和 FAS 系统
-* 作为存储后端的 Astra 数据存储
 * Cloud Volumes ONTAP 存储后端
 
 
@@ -170,7 +169,6 @@ Astra 控制中心完全集成到 AutoSupport 和 Active IQ 生态系统中，�
 * https://docs.netapp.com/us-en/astra-family/["NetApp Astra产品系列的文档"^]
 * https://docs.netapp.com/us-en/astra/index.html["Astra Control Service 文档"^]
 * https://docs.netapp.com/us-en/astra-control-center/index.html["Astra 控制中心文档"^]
-* https://docs.netapp.com/us-en/astra-data-store/index.html["Astra Data Store 文档"]
 * https://docs.netapp.com/us-en/trident/index.html["Astra Trident 文档"^]
 * https://docs.netapp.com/us-en/astra-automation/index.html["使用 Astra Control API"^]
 * https://docs.netapp.com/us-en/cloudinsights/["Cloud Insights 文档"^]
