@@ -11,9 +11,10 @@ summary: 下面简要介绍了 Astra Control 环境的各个组件。
 :imagesdir: ../media/learn/
 
 
+[role="lead"]
 下面简要介绍了 Astra Control 环境的各个组件。
 
-image:astra-architecture-diagram-v4.png["Astra Control 架构图和组件"]
+image:astra-architecture-diagram-v5.png["Astra Control 架构图和组件"]
 
 
 

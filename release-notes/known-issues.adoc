@@ -11,6 +11,7 @@ summary: 已知问题可确定可能妨碍您成功使用此版本产品的问�
 :imagesdir: ../media/release-notes/
 
 
+[role="lead"]
 已知问题可确定可能妨碍您成功使用此版本产品的问题。
 
 以下已知问题会影响当前版本：

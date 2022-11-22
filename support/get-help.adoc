@@ -11,6 +11,7 @@ summary: 'NetApp 以多种方式为 Astra Control 提供支持。全天候提供
 :imagesdir: ../media/support/
 
 
+[role="lead"]
 NetApp 以多种方式为 Astra Control 提供支持。全天候提供广泛的免费自助支持选项、例如知识库(KB)文章和不和渠道。您的 Astra Control 帐户包括通过 Web 服务单提供的远程技术支持。
 
 您必须先执行此操作 link:register-support.html["激活对您的 NetApp 序列号的支持"] 以便使用这些非自助服务支持选项。聊天和 Web 服务单以及案例管理需要使用 NetApp 支持站点（ NSS ） SSO 帐户。

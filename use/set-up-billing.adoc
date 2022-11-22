@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: use/set-up-billing.html 
 keywords: billing, set up billing, payments, set up payments, credit card, update credit card, change credit card, free plan, free trial, premium, premium plan 
-summary: 'Astra Control 的免费计划支持您管理帐户中多达 10 个应用程序。如果您要管理 10 个以上的应用程序，则需要通过从 " 免费计划 " 升级到 " 高级计划 " 来设置计费。' 
+summary: 'Astra Control Service提供了两种命名空间计费方式。通过免费计划、您可以管理帐户中最多10个应用程序。如果您要管理10个以上的命名空间、则需要通过从"免费计划"升级到"高级计划"来设置计费。或者、您也可以通过Azure或AWS市场管理Azure或AWS的计费。' 
 ---
 = 设置计费
 :hardbreaks:
@@ -11,7 +11,10 @@ summary: 'Astra Control 的免费计划支持您管理帐户中多达 10 个应�
 :imagesdir: ../media/use/
 
 
-Astra Control 的免费计划支持您管理帐户中多达 10 个应用程序。如果您要管理 10 个以上的应用程序，则需要通过从 " 免费计划 " 升级到 " 高级计划 " 来设置计费。
+[role="lead"]
+您可以使用多种方法管理Astra Control Service帐户计费。如果您使用的是Azure或Amazon AWS、则可以通过Microsoft Azure Marketplace或AWS Marketplace订阅Astra Control服务计划。执行此操作时、您可以通过Marketplace管理您的计费详细信息。或者、您也可以直接向NetApp订阅。如果您直接向NetApp订阅、则可以通过Astra Control Service管理您的计费详细信息。如果您在未订阅的情况下使用Astra控制服务、则系统会自动订阅免费计划。
+
+您可以通过Astra Control Service Free Plan管理帐户中多达10个命名空间。如果您要管理10个以上的命名空间、则需要通过从免费计划升级到高级计划来设置计费、或者通过Azure Marketplace或AWS Marketplace进行订阅。
 
 
 
@@ -25,9 +28,9 @@ Astra Control 的免费计划支持您管理帐户中多达 10 个应用程序�
 
 Astra 控制服务提供三个计划：
 
-免费计划:: 免费管理多达 10 个应用程序。
-高级 PayGo:: 管理数量不限的应用程序，每个应用程序的速率为每分钟 005 美元。
-高级订阅:: 按折扣价预付费，每年订阅一次，您可以在每个应用程序软件包中管理多达 10 个应用程序。请联系 NetApp 销售部门，根据您的组织需要购买任意数量的软件包—例如，从 Astra Control Service 购买 3 个软件包来管理 30 个应用程序。如果您管理的应用程序超过年度订阅所允许的数量，则每个应用程序的超额费用为每分钟 0.005 美元（与高级 PayGo 相同）。
+免费计划:: 免费管理多达10个命名空间。
+高级 PayGo:: 按每个命名空间的特定速率管理不限数量的命名空间。
+高级订阅:: 按折扣价预付费、每年订阅一次、您可以为每个_namespace pack_管理多达10个命名空间。请联系NetApp销售部门、根据您的组织需要购买任意数量的软件包。例如、从Astra Control Service购买3个包来管理30个命名空间。如果您管理的命名空间超过年度订阅所允许的数量、则会按每个额外命名空间的订阅相关超额使用率向您收取费用。
 +
 --
 如果您还没有 Astra Control 帐户，则购买高级订阅会自动为您创建一个 Astra Control 帐户。如果您已有免费计划，则会自动转换为高级订阅。
@@ -35,11 +38,11 @@ Astra 控制服务提供三个计划：
 --
 
 
-创建 Astra Control 帐户时，您将自动注册免费计划。Astra Control 的信息板显示了您当前管理的 10 个免费应用程序中的多少个应用程序。
+创建Astra Control帐户时、您会自动订阅免费计划。Astra Control的信息板显示了您当前在10个可用命名空间中管理的命名空间数量。在管理包含命名空间的第一个应用程序时、开始为某个命名空间计费；在管理包含此命名空间的最后一个应用程序时、该命名空间的计费将停止。
 
-如果您尝试管理第 11 个应用程序，则 Astra Control 会通知您已达到免费计划的限制。然后，系统会提示您从免费计划升级到高级计划。
+如果您尝试管理第11个命名空间、则Astra Control会通知您已达到免费计划的限制。然后，系统会提示您从免费计划升级到高级计划。您将按每个额外命名空间的订阅相关超额使用率付费。
 
-您可以随时升级到高级计划。升级后， Astra Control 会开始为帐户中的 _all_ 受管应用程序收取费用。前 10 个应用程序不会保留在免费计划中。
+您可以随时升级到高级计划。升级后、Astra Control开始为帐户中的_all_命名空间收费。前10个命名空间不会保留在免费计划中。
 
 ifdef::gcp[]
 
@@ -87,25 +90,39 @@ endif::aws[]
 
 
 
-== 重要注意事项
+== 在Azure Marketplace中订阅Astra Control服务
 
-* 您的计费计划按 Astra Control 帐户制定。
-+
-如果您有多个帐户，则每个帐户都有自己的计费计划。
+您可以使用Azure Marketplace订阅Astra控制服务。您的帐户和计费详细信息通过Marketplace进行管理。
 
-* 您的 Astra Control 费用包括管理 Kubernetes 应用程序的费用。云提供商会为永久性卷的存储后端单独收取费用。
-+
-link:../get-started/intro.html["了解有关 Astra Control 定价的更多信息"]。
-
-* 每个计费周期都在一个月的最后一天结束。
-* 您不能从高级版计划降级到免费版计划。
+.步骤
+. 转至 https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-astra-acs?tab=Overview["Azure Marketplace"^]。
+. 选择*立即获取*。
+. 按照说明订阅计划。
 
 
 
 
-== 从免费计划升级到高级 PayGo 计划
+== 在AWS Marketplace中订阅Astra Control服务
 
-随时升级您的计费计划，通过按需购买从 Astra Control 开始管理 10 多个应用程序。您只需要一张有效的信用卡即可。
+您可以使用AWS Marketplace订阅Astra控制服务。您的帐户和计费详细信息通过Marketplace进行管理。
+
+.步骤
+. 转至 https://aws.amazon.com/marketplace/["AWS Marketplace"^]。
+. 选择*继续订阅*。
+. 按照说明订阅计划。
+
+
+
+
+== 直接向NetApp订阅Astra控制服务
+
+您可以在Astra控制服务UI中订阅Astra控制服务、也可以联系NetApp销售部门。
+
+
+
+=== 从免费计划升级到高级 PayGo 计划
+
+随时升级您的计费计划、通过按需购买从Astra Control开始管理10多个命名空间。您只需要一张有效的信用卡即可。
 
 .步骤
 . 选择 * 帐户 * ，然后选择 * 账单 * 。
@@ -117,11 +134,11 @@ NOTE: 如果信用卡即将到期， Astra Control 将通过电子邮件向您�
 
 
 
-现在，您可以管理 10 多个应用程序。Astra Control 开始为您当前管理的 _all_ 应用程序收费。
+现在、您可以管理10个以上的命名空间。Astra Control开始为您当前管理的_all_命名空间收费。
 
 
 
-== 从免费计划升级到高级订阅
+=== 从免费计划升级到高级订阅
 
 请联系 NetApp 销售部门，以折扣价按年订阅预付费用。
 
@@ -131,22 +148,22 @@ NOTE: 如果信用卡即将到期， Astra Control 将通过电子邮件向您�
 . 向销售团队提供详细信息以启动此流程。
 
 
-NetApp 销售代表将与您联系以处理您的采购订单。订单完成后， Astra Control 将在计费选项卡上反映您的当前计划。
+NetApp 销售代表将与您联系以处理您的采购订单。订单完成后、Astra Control将在*计费*选项卡上反映您的当前计划。
 
 
 
 == 查看当前成本和计费历史记录
 
-Astra Control 可按应用程序显示您当前的每月成本以及详细的计费历史记录。
+Astra Control可按命名空间显示当前的每月成本以及详细的计费历史记录。如果您通过Marketplace订阅了计划、则不会显示计费历史记录(但您可以通过登录到Marketplace来查看此历史记录。)
 
 .步骤
 . 选择 * 帐户 * ，然后选择 * 账单 * 。
 +
 您的当前成本将显示在计费概述下。
 
-. 要按应用程序查看计费历史记录，请选择 * 计费历史记录 * 。
+. 要按命名空间查看计费历史记录、请选择*计费历史记录*。
 +
-Astra Control 可为您显示每个应用程序的使用分钟数和成本。使用分钟数是 Astra Control 在计费期间管理您的应用程序的分钟数。
+Astra Control可为您显示每个命名空间的使用分钟数和成本。使用分钟数是Astra Control在计费期间管理您的命名空间的分钟数。
 
 . 选择下拉列表以选择上个月。
 
@@ -161,4 +178,20 @@ Astra Control 可为您显示每个应用程序的使用分钟数和成本。使
 . 选择 * 帐户 > 计费 > 付款方式 * 。
 . 选择配置图标。
 . 修改信用卡。
+
+
+
+
+== 重要注意事项
+
+* 您的计费计划按 Astra Control 帐户制定。
++
+如果您有多个帐户，则每个帐户都有自己的计费计划。
+
+* 您的Astra Control费用包括命名空间管理费用。您的云提供商会单独为永久性卷的存储后端付费。
++
+link:../get-started/intro.html["了解有关 Astra Control 定价的更多信息"]。
+
+* 每个计费周期都在一个月的最后一天结束。
+* 您不能从高级版计划降级到免费版计划。
 

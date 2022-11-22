@@ -29,6 +29,8 @@ entries:
     url: "/use/view-apps.html"
 - title: 管理存储分段
   url: "/use/manage-buckets.html"
+- title: 监控正在运行的任务
+  url: "/use/monitor-running-tasks.html"
 - title: 管理您的帐户
   entries:
   - title: 设置计费
@@ -45,5 +47,7 @@ entries:
     url: "/use/manage-notifications.html"
   - title: 关闭您的帐户
     url: "/use/close-account.html"
+- title: 管理云实例
+  url: "/use/manage-cloud-instances.html"
 - title: 取消管理应用程序和集群
   url: "/use/unmanage.html"

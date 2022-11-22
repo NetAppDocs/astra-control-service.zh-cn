@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: use/manage-apps.html 
-keywords: manage app, discover app, ignore app 
-summary: '将 Kubernetes 集群添加到 Astra Control 后，您可以在该集群上安装应用程序（在 Astra Control 之外），然后转到 Astra Control 中的 "Apps" 页面开始管理这些应用程序。' 
+keywords: manage app, discover app, how to manage kubernetes apps, astra control, astra 
+summary: '将Kubernetes集群添加到Astra Control后、您可以在该集群上安装应用程序(在Astra Control之外)、然后转到Astra Control中的"Applications"页面开始管理这些应用程序。' 
 ---
 = 开始管理应用程序
 :hardbreaks:
@@ -11,7 +11,8 @@ summary: '将 Kubernetes 集群添加到 Astra Control 后，您可以在该集�
 :imagesdir: ../media/use/
 
 
-你先请 link:../get-started/add-first-cluster.html["将 Kubernetes 集群添加到 Astra Control"]，您可以在集群上安装应用程序（在 Astra Control 之外），然后转到 Astra Control 中的应用程序页面开始管理这些应用程序。
+[role="lead"]
+你先请 link:../get-started/add-first-cluster.html["将 Kubernetes 集群添加到 Astra Control"]、您可以在集群上安装应用程序(在Astra Control之外)、然后转到Astra Control中的应用程序页面来定义应用程序。
 
 
 
@@ -19,12 +20,11 @@ summary: '将 Kubernetes 集群添加到 Astra Control 后，您可以在该集�
 
 Astra Control 具有以下应用程序管理要求：
 
-* * 许可 * ：要使用 Astra 控制中心管理应用程序，您需要获得 Astra 控制中心许可证。
-* * 命名空间 * ： Astra Control 要求一个应用程序不能跨越多个命名空间，但一个命名空间可以包含多个应用程序。
+* *许可*：要管理10个以上的命名空间、您需要订阅Astra Control Center。
+* *命名空间*：可以使用Astra Control在单个集群上的一个或多个指定命名空间内定义应用程序。一个应用程序可以包含跨越同一集群中多个命名空间的资源。Astra Control不支持在多个集群之间定义应用程序。
 * * 存储类 * ：如果您安装的应用程序明确设置了 StorageClass ，并且需要克隆该应用程序，则克隆操作的目标集群必须具有最初指定的 StorageClass 。将显式设置了 StorageClass 的应用程序克隆到不具有相同 StorageClass 的集群将失败。
 * * Kubernetes Resources* ：使用非 Astra Control 收集的 Kubernetes 资源的应用程序可能没有完整的应用程序数据管理功能。Astra Control 收集以下 Kubernetes 资源：
-
-
++
 [cols="1,1,1"]
 |===
 
@@ -32,19 +32,19 @@ Astra Control 具有以下应用程序管理要求：
 | ClusterRole | ClusterRoleBinding. | 配置映射 
 
 
-| 自定义资源定义 | 自定义资源 | cronjob 
+| cronjob | 自定义资源定义 | 自定义资源 
 
 
-| DemonSet | HorizontalPodAutoscaler | 传入 
+| DemonSet | DeploymentConfig | HorizontalPodAutoscaler 
 
 
-| DeploymentConfig | MutatingWebhook | PersistentVolumeClaim 
+| 传入 | MutatingWebhook | 网络策略 
 
 
-| POD | PodDisruptionBuget | 播客模板 
+| PersistentVolumeClaim | POD | PodDisruptionBuget 
 
 
-| 网络策略 | ReplicaSet | Role 
+| 播客模板 | ReplicaSet | Role 
 
 
 | RoleBinding. | 路由 | 机密 
@@ -57,13 +57,15 @@ Astra Control 具有以下应用程序管理要求：
 |===
 
 
-=== 支持的应用程序安装方法
 
-您可以使用以下方法安装要使用 Astra Control 管理的应用程序：
+
+== 支持的应用程序安装方法
+
+Astra Control 支持以下应用程序安装方法：
 
 * * 清单文件 * ： Astra Control 支持使用 kubectl 从清单文件安装的应用程序。例如：
 +
-[source, sh]
+[source, console]
 ----
 kubectl apply -f myapp.yaml
 ----
@@ -82,17 +84,18 @@ NOTE: 对于 K8ssandra ，支持原位还原操作。要对新命名空间或集
 ** https://github.com/percona/percona-xtradb-cluster-operator["Percona XtraDB 集群"^]
 
 
-
-
++
 Astra Control可能无法克隆使用"按参考传递"架构设计的运算符(例如CockroachDB运算符)。在这些类型的克隆操作期间，克隆的操作员会尝试引用源操作员提供的 Kubernetes 机密，尽管在克隆过程中他们拥有自己的新机密。克隆操作可能会失败，因为 Astra Control 不知道源运算符中的 Kubernetes 密钥。
+
+
 
 
 
 == 在集群上安装应用程序
 
-你先请 link:../get-started/add-first-cluster.html["已添加集群"] 对于Astra Control、您可以在集群上安装应用程序或管理现有应用程序。可以管理范围仅限于单个命名空间的任何应用程序。
+你先请 link:../get-started/add-first-cluster.html["已添加集群"] 对于Astra Control、您可以在集群上安装应用程序或管理现有应用程序。可以管理范围限定为一个或多个命名空间的任何应用程序。
 
-只有当存储位于由 Astra Control 安装的存储类上时， Astra Control 才会管理有状态应用程序。
+只有当存储位于Astra Control支持的存储类上时、Astra Control才会管理有状态应用程序。Astra控制服务支持由Astra Trident或通用CSI驱动程序支持的任何存储类。
 
 ifdef::gcp[]
 
@@ -117,11 +120,11 @@ endif::aws[]
 
 
 
-== 管理应用程序
+== 定义应用程序
 
-在Astra Control发现集群上的命名空间后、您可以定义要管理的应用程序。您可以选择 link:../learn/app-management.html["将整个命名空间作为一个应用程序进行管理、或者单独管理命名空间中的一个或多个应用程序"]。这一切都可以细化到数据保护操作所需的粒度级别。
+在Astra Control发现集群上的命名空间后、您可以定义要管理的应用程序。您可以选择  resources to manage as an app,管理跨越一个或多个命名空间的应用程序 或  a namespace to manage as an app,将整个命名空间作为一个应用程序进行管理。这一切都可以细化到数据保护操作所需的粒度级别。
 
-虽然您可以使用Astra Control单独管理层次结构的两个级别(命名空间和该命名空间中的应用程序)、但最佳做法是选择一个或另一个。如果在命名空间和应用程序级别同时执行操作，则在 Astra Control 中执行的操作可能会失败。
+虽然您可以使用Astra Control单独管理层次结构的两个级别(命名空间和该命名空间中的应用程序或跨命名空间)、但最佳做法是选择一个或另一个。如果在命名空间和应用程序级别同时执行操作，则在 Astra Control 中执行的操作可能会失败。
 
 
 TIP: 例如、您可能希望为"Maria"设置一个每周节奏的备份策略、但您可能需要比该策略更频繁地备份"MariaDB"(位于同一命名空间中)。根据这些需求、您需要单独管理这些应用程序、而不是作为单命名空间应用程序来管理。
@@ -130,15 +133,19 @@ TIP: 例如、您可能希望为"Maria"设置一个每周节奏的备份策略�
 * 已将Kubernetes集群添加到Astra Control中。
 * 集群上安装的一个或多个应用程序。  app installation methods,阅读有关支持的应用程序安装方法的更多信息。
 * 一个或多个活动Pod。
-* 在已添加到Astra Control的Kubernetes集群上指定的命名空间。
-* (可选)任何上的Kubernetes标签 link:../use/manage-apps.html#app-management-requirements["支持的Kubernetes资源"]。
+* 已添加到Astra Control的Kubernetes集群上的现有命名空间。
+* (可选) Any上的Kubernetes标签 link:../use/manage-apps.html#app-management-requirements["支持的Kubernetes资源"]。
 +
 
 TIP: 标签是一个键 / 值对，您可以将其分配给 Kubernetes 对象进行标识。通过标签，可以更轻松地对 Kubernetes 对象进行排序，组织和查找。要了解有关 Kubernetes 标签的更多信息， https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/["请参见 Kubernetes 官方文档"^]。
 
 
 
-开始之前、您还应了解相关信息 link:../use/manage-apps.html#what-about-system-namespaces["管理标准命名空间和系统命名空间"]。有关如何使用 Astra Control API 管理应用程序的说明，请参见 link:https://docs.netapp.com/us-en/astra-automation/["Astra Automation 和 API 信息"^]。
+.关于此任务
+* 开始之前、您还应了解相关信息 link:../use/manage-apps.html#what-about-system-namespaces["管理标准命名空间和系统命名空间"]。
+* 如果您计划在Astra Control中对应用程序使用多个命名空间、请考虑 link:../use/manage-roles.html["修改具有命名空间限制的用户角色"] 定义应用程序之前。
+* 有关如何使用 Astra Control API 管理应用程序的说明，请参见 link:https://docs.netapp.com/us-en/astra-automation/["Astra Automation 和 API 信息"^]。
+
 
 .应用程序管理选项
 *  resources to manage as an app
@@ -156,24 +163,76 @@ TIP: 标签是一个键 / 值对，您可以将其分配给 Kubernetes 对象进
 
 WARNING: 定义应用程序时、请确保不在具有保护策略的多个应用程序中包含Kubernetes资源。Kubernetes资源上重叠的保护策略可能会发生发生原因 数据冲突。
 
+
+CAUTION: 在与其他应用程序共享资源的应用程序上执行原位还原操作可能会产生意外结果。
+
+.<strong> 广告宣传</strong> 中有关将集群范围的资源添加到应用程序命名空间的信息。
+====
+除了自动包含的Astra Control之外、您还可以导入与命名空间资源关联的集群资源。您可以添加一个规则、该规则将包含特定组的资源、种类、版本以及标签(可选)。如果存在Astra Control不会自动包含的资源、您可能需要执行此操作。
+
+您不能排除Astra Control自动包含的任何集群范围的资源。
+
+您可以添加以下内容 `apiVersions` (这些组与API版本结合使用)：
+
+[cols="1h,2d"]
+|===
+| 资源种类 | apiVersions (组+版本) 
+
+
+| `ClusterRole` | rbac.authorization.k8s.io/v1 
+
+
+| `ClusterRoleBinding` | rbac.authorization.k8s.io/v1 
+
+
+| `CustomResource` | apiextensions.k8s.io/v1、apiextensions.k8s.io/v1bea1 
+
+
+| `CustomResourceDefinition` | apiextensions.k8s.io/v1、apiextensions.k8s.io/v1bea1 
+
+
+| `MutatingWebhookConfiguration` | 可批准registration.K8s.IO/v1 
+
+
+| `ValidatingWebhookConfiguration` | 可批准registration.K8s.IO/v1 
+|===
+====
 .步骤
 . 从应用程序页面中、选择*定义*。
 . 在*定义应用程序*窗口中、输入应用程序名称。
 . 在*集群*下拉列表中选择运行应用程序的集群。
-. 从*命名空间*下拉列表中选择应用程序的命名空间。
+. 从*命名空间*下拉列表中为应用程序选择一个命名空间。
 +
 
-NOTE: 只能在单个集群上的指定命名空间中定义应用程序。Astra Control不支持应用程序跨越多个命名空间或集群。
+NOTE: 可以使用Astra Control在单个集群上的一个或多个指定命名空间中定义应用程序。一个应用程序可以包含跨越同一集群中多个命名空间的资源。Astra Control不支持在多个集群之间定义应用程序。
 
-. 输入应用程序和命名空间的标签。您可以指定单个标签或标签选择器条件(查询)。
+. (可选)为每个命名空间中的Kubernetes资源输入一个标签。您可以指定单个标签或标签选择器条件(查询)。
 +
 
 TIP: 要了解有关 Kubernetes 标签的更多信息， https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/["请参见 Kubernetes 官方文档"^]。
 
+. (可选)通过选择*添加命名空间*并从下拉列表中选择命名空间来为应用程序添加其他命名空间。
+. (可选)为您添加的任何其他命名空间输入单个标签或标签选择器条件。
+. (可选)要在Astra Control自动包含的资源之外还包括集群范围的资源、请选中*包括其他集群范围的资源*并完成以下操作：
++
+.. 选择*添加包含规则*。
+.. *组*：从下拉列表中、选择API资源组。
+.. *种类*：从下拉列表中、选择对象架构的名称。
+.. *版本*：输入API版本。
+.. *标签选择器*：也可以包括要添加到规则中的标签。此标签仅用于检索与此标签匹配的资源。如果不提供标签、则Astra Control将收集为该集群指定的所有资源类型的实例。
+.. 查看根据条目创建的规则。
+.. 选择 * 添加 * 。
++
+
+TIP: 您可以根据需要创建任意数量的集群范围资源规则。这些规则将显示在"定义应用程序摘要"中。
+
+
+
+. 选择 * 定义 * 。
 . 选择*定义*后、根据需要对其他应用程序重复此过程。
 
 
-定义完应用程序后、该应用程序将显示在应用程序页面上的应用程序列表中。现在、您可以克隆它并创建备份和快照。
+定义完应用程序后、该应用程序将显示在中 `Healthy` 在应用程序页面上的应用程序列表中的状态。现在、您可以克隆它并创建备份和快照。
 
 
 NOTE: 您刚刚添加的应用程序在 " 受保护 " 列下可能会显示一个警告图标，表示它尚未备份，并且尚未计划备份。
@@ -181,11 +240,13 @@ NOTE: 您刚刚添加的应用程序在 " 受保护 " 列下可能会显示一�
 
 TIP: 要查看特定应用程序的详细信息，请选择应用程序名称。
 
+要查看添加到此应用程序的资源、请选择*资源*选项卡。在资源列中选择资源名称后面的数字、或者在搜索中输入资源名称、以查看包含的其他集群范围资源。
+
 
 
 === 定义要作为应用程序进行管理的命名空间
 
-您可以通过将命名空间的资源定义为应用程序来将命名空间中的所有Kubernetes资源添加到Astra Control管理中。如果您要以类似的方式并以通用间隔管理和保护特定命名空间中的所有资源、则此方法比单独定义应用程序更好。
+您可以通过将命名空间的资源定义为应用程序来将命名空间中的所有Kubernetes资源添加到Astra Control管理中。如果您需要单独定义应用程序、则最好使用此方法 link:../learn/app-management.html["打算管理和保护特定命名空间中的所有资源"] 以类似的方式并按通用间隔执行。
 
 .步骤
 . 从集群页面中、选择一个集群。
@@ -193,7 +254,7 @@ TIP: 要查看特定应用程序的详细信息，请选择应用程序名称。
 . 选择包含要管理的应用程序资源的命名空间的"Actions"菜单、然后选择*定义为应用程序*。
 +
 
-TIP: 如果要管理多个命名空间、请选择这些命名空间、然后选择左上角的*操作*按钮并选择*管理*。
+TIP: 如果要定义多个应用程序、请从命名空间列表中进行选择、然后选择左上角的*操作*按钮并选择*定义为应用程序*。这将在各个命名空间中定义多个单独的应用程序。有关多命名空间应用程序、请参见  resources to manage as an app。
 
 +
 

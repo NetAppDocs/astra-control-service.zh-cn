@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: use/monitor-running-tasks.html 
+keywords: activity, log, activities, running, tasks, monitor, status, state 
+summary: 您可以在Astra Control中查看有关正在运行的任务的详细信息。例如、执行快照、备份或克隆时。 
+---
+= 监控正在运行的任务
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+您可以在Astra Control中查看有关过去24小时内已完成、失败或已取消的正在运行的任务和任务的详细信息。例如、您可以查看正在运行的备份、还原或克隆操作的状态、并查看完成百分比和估计剩余时间等详细信息。您可以查看已运行的已计划操作或手动启动的操作的状态。
+
+查看正在运行或已完成的任务时、您可以展开任务详细信息以查看每个子任务的状态。对于正在进行的或已完成的任务、任务进度条为绿色、对于已取消的任务、任务进度条为蓝色、对于因错误而失败的任务、任务进度条为红色。
+
+
+NOTE: 对于克隆操作、任务子任务由快照和快照还原操作组成。
+
+要查看有关失败任务的详细信息、请参见 link:monitor-account-activity.html["监控帐户活动"]。
+
+.步骤
+. 在任务运行期间、转到*应用程序*。
+. 从列表中选择应用程序的名称。
+. 在应用程序的详细信息中、选择*任务*选项卡。
++
+您可以查看当前或过去任务的详细信息、并按任务状态进行筛选。
+
+
+
+
+NOTE: 任务将在*任务*列表中保留长达24小时。您可以使用配置此限制以及其他任务监控器设置 https://docs.netapp.com/us-en/astra-automation/["Astra Control API"^]。

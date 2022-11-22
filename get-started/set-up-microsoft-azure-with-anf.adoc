@@ -11,6 +11,7 @@ summary: 在使用 Astra Control Service 管理 Azure Kubernetes Service 集群�
 :imagesdir: ../media/get-started/
 
 
+[role="lead"]
 在使用 Astra Control Service 管理 Azure Kubernetes Service 集群之前，需要执行一些步骤来准备 Microsoft Azure 订阅。如果您计划使用 Azure NetApp Files 作为存储后端，请按照以下说明进行操作。
 
 
@@ -81,7 +82,7 @@ summary: 在使用 Astra Control Service 管理 Azure Kubernetes Service 集群�
 
 Kubernetes 集群必须满足以下要求，才能通过 Astra Control Service 发现和管理它。
 
-Kubernetes 版本:: 集群必须运行Kubernetes 1.21至1.24版。
+Kubernetes 版本:: 集群必须运行Kubernetes 1.23至1.25版。
 映像类型:: 所有节点池的映像类型必须为 Linux 。
 集群状态:: 集群必须运行状况良好，并且至少有一个联机辅助节点，并且没有处于故障状态的辅助节点。
 Azure 区域:: 集群必须位于 Azure NetApp Files 可用的区域。 https://azure.microsoft.com/en-us/global-infrastructure/services/?products=netapp["按区域查看 Azure 产品"^]。
@@ -103,57 +104,6 @@ vNet:: 请考虑以下 vNet 要求：
 
 
 --
-
-
-外部卷快照控制器:: 集群必须安装 CSI 卷快照控制器。默认情况下，此控制器从 K8s 1.21 版开始安装，但您需要检查运行 1.19 和 1.20 版的集群。 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html["了解有关用于按需卷快照的外部快照控制器的更多信息"^]。
-
-
-
-
-=== 安装 CSI 卷快照控制器
-
-如中所述  Kubernetes Service cluster requirements， Kubernetes 集群必须安装 CSI 卷快照控制器。按照以下步骤在集群上安装控制器。
-
-.K8s 1.19 版的步骤
-. 安装卷快照 CRD 。
-+
-[source, kubectl]
-----
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
-----
-. 创建快照控制器。
-+
-如果您希望 Snapshot 控制器位于特定命名空间中，请先下载并编辑以下文件，然后再应用它们。
-
-+
-[source, kubectl]
-----
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
-----
-
-
-.K8s 1.20 版的步骤
-. 安装卷快照 CRD 。
-+
-[source, kubectl]
-----
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
-----
-. 创建快照控制器。
-+
-如果您希望 Snapshot 控制器位于特定命名空间中，请先下载并编辑以下文件，然后再应用它们。
-
-+
-[source, kubectl]
-----
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v4.0.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
-----
 
 
 

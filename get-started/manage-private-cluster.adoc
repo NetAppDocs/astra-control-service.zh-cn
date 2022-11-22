@@ -28,26 +28,26 @@ summary: 设置环境后，您可以创建 Kubernetes 集群，然后将其添�
 .步骤
 . 克隆Astra Connector操作员GitHub存储库：
 +
-[source, sh]
+[source, console]
 ----
 git clone https://github.com/NetApp/astra-connector-operator.git
 ----
 . 将目录更改为已解压缩运算符包的顶层、以便您可以使用`ls`命令查看`astor_operator.yaml`文件。
 . 为 Astra Connector 运算符创建命名空间。
 +
-[source, sh]
+[source, console]
 ----
 kubectl create ns astra-connector-operator
 ----
 . 将 `asaconnector_operator.yaml` 文件应用于操作员命名空间。
 +
-[source, sh]
+[source, console]
 ----
 kubectl apply -f astraconnector_operator.yaml -n astra-connector-operator
 ----
 . 为专用集群组件创建命名空间。
 +
-[source, sh]
+[source, console]
 ----
 kubectl create ns astra-connector
 ----
@@ -55,13 +55,13 @@ kubectl create ns astra-connector
 . 根据需要修改Astra Connector操作员存储库的config/samples目录中的示例配置文件。
 . 应用 Astra Connector 自定义资源定义（ CRD ）。
 +
-[source, sh]
+[source, console]
 ----
 kubectl apply -f config/samples/astraconnector_v1.yaml -n astra-connector
 ----
 . 检查 Astra 连接器的状态。
 +
-[source, sh]
+[source, console]
 ----
 kubectl get astraconnector astra-connector -n astra-connector
 ----
@@ -69,7 +69,7 @@ kubectl get astraconnector astra-connector -n astra-connector
 您应看到类似于以下内容的输出：
 
 +
-[source, sh]
+[source, console]
 ----
 NAME              REGISTERED   ASTRACONNECTORID
 astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19

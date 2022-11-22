@@ -11,6 +11,7 @@ summary: 查找常见问题的故障排除提示。
 :imagesdir: ../media/support/
 
 
+[role="lead"]
 了解如何解决您可能遇到的一些常见问题。
 
 https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Astra[]

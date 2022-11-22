@@ -1,0 +1,54 @@
+---
+sidebar: sidebar 
+permalink: use/manage-cloud-instances.html 
+keywords: cloud, instance, manage, delete, remove, edit 
+summary: 管理添加新集群时添加的云实例。 
+---
+= 管理云实例
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+云实例是云提供商中的一个唯一域。您可以为每个云提供商创建多个云实例、每个云实例都有自己的名称、凭据和关联集群。
+
+在向Astra Control添加新集群时、您可以创建一个云实例。您可以使用Astra Control UI编辑云实例以更改其名称或默认存储分段、并使用Astra Control API对云实例执行其他操作。
+
+
+
+== 添加云实例
+
+在向Astra Control添加新集群时、您可以添加新的云实例。请参见 link:../add-first-cluster.html["从 Astra Control Service 开始管理 Kubernetes 集群"] 有关详细信息 ...
+
+
+
+== 编辑云实例
+
+您可以修改云提供商的现有云实例。
+
+.步骤
+. 转至*云实例*。
+. 在云实例列表中、选择要编辑的云实例的*操作*菜单。
+. 选择 * 编辑 * 。
++
+在此页面上、您可以更新云实例的名称和默认存储分段。
+
++
+
+NOTE: Astra Control中的每个云实例都必须具有唯一的名称。
+
+
+
+
+
+== 轮换云实例的凭据
+
+您可以使用Astra Control API轮换云实例的凭据。了解更多信息。 https://docs.netapp.com/us-en/astra-automation["转到 Astra 自动化文档"^]。
+
+
+
+== 删除云实例
+
+您可以使用Astra Control API从云提供商中删除云实例。了解更多信息。 https://docs.netapp.com/us-en/astra-automation["转到 Astra 自动化文档"^]。

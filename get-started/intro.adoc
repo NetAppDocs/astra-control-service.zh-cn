@@ -11,6 +11,7 @@ summary: Astra Control 是 Kubernetes 应用程序数据生命周期管理解决
 :imagesdir: ../media/get-started/
 
 
+[role="lead"]
 Astra Control 是 Kubernetes 应用程序数据生命周期管理解决方案，可简化有状态应用程序的操作。轻松保护，备份和迁移 Kubernetes 工作负载，并即时创建有效的应用程序克隆。
 
 
@@ -74,18 +75,6 @@ Astra Control 有两种部署模式：
 |===
 
 
-== 支持的应用程序
-
-NetApp 已对某些应用程序进行了验证，以确保快照和备份的安全性和一致性。
-
-* https://docs.netapp.com/us-en/astra/learn/validated-vs-standard.html["了解经过验证的应用程序与 Astra Control Service 中的标准应用程序之间的区别"^]。
-* https://docs.netapp.com/us-en/astra-control-center/concepts/validated-vs-standard.html["在 Astra 控制中心了解经过验证的应用程序与标准应用程序之间的区别"^]。
-
-
-无论与 Astra Control 结合使用哪种类型的应用程序，您都应始终自行测试备份和还原工作流，以确保满足灾难恢复要求。
-
-
-
 == Astra 控制服务的工作原理
 
 Astra Control Service 是一种由 NetApp 管理的云服务，它始终处于启用状态，并使用最新功能进行更新。它利用多个组件实现应用程序数据生命周期管理。
@@ -139,7 +128,7 @@ Astra Control Service 会持续监控您的计算状态变化，因此它可以�
 
 
 
-Astra Control 的免费计划支持您管理帐户中多达 10 个应用程序。如果您要管理 10 个以上的应用程序，则需要通过从 " 免费计划 " 升级到 " 高级计划 " 来设置计费。
+Astra Control的免费计划支持您管理帐户中多达10个命名空间。如果您要管理10个以上的命名空间、则需要通过从"免费计划"升级到"高级计划"来设置计费。
 
 
 
@@ -147,17 +136,13 @@ Astra Control 的免费计划支持您管理帐户中多达 10 个应用程序�
 
 Astra 控制中心在您自己的私有云中本地运行。
 
-Astra 控制中心支持具有以下功能的 OpenShift Kubernetes 集群：
-
-* ONTAP 9.5 及更高版本的 Trident 存储后端
-* Astra 数据存储存储后端
-
+Astra控制中心支持具有基于Trident的存储类以及ONTAP 9.5及更高版本的存储后端的Kubernetes集群。
 
 在云互联环境中， Astra 控制中心使用 Cloud Insights 提供高级监控和遥测功能。如果没有 Cloud Insights 连接，则 Astra 控制中心可提供有限的（ 7 天的指标）监控和遥测功能，并通过开放式指标端点导出到 Kubernetes 原生监控工具（例如 Prometheus 和 Grafana ）。
 
 Astra 控制中心完全集成到 AutoSupport 和 Active IQ 生态系统中，可为用户和 NetApp 支持提供故障排除和使用信息。
 
-您可以使用 90 天评估许可证试用 Astra Control Center 。评估版可通过电子邮件和社区（ Slack 通道）选项来支持。此外，您还可以从产品支持信息板访问知识库文章和文档。
+您可以使用 90 天评估许可证试用 Astra Control Center 。评估版可通过电子邮件和社区选项获得支持。此外，您还可以从产品支持信息板访问知识库文章和文档。
 
 要安装和使用 Astra 控制中心，您需要满足特定的要求 https://docs.netapp.com/us-en/astra-control-center/get-started/requirements.html["要求"]。
 
@@ -176,14 +161,7 @@ Astra 控制中心完全集成到 AutoSupport 和 Active IQ 生态系统中，�
 
 详细了解如何操作 https://docs.netapp.com/us-en/astra-control-center/get-started/setup_overview.html["设置 Astra 控制中心"]。
 
-Astra 控制中心可执行以下操作：
-
-* 发现有关受管 Kubernetes 集群的详细信息。
-* 在您选择管理的集群上发现您的 Astra Trident 或 Astra 数据存储配置，并可用于监控存储后端。
-* 发现这些集群上的应用程序，并使您能够管理和保护这些应用程序。
-
-
-您可以将应用程序添加到集群中。或者，如果要管理的集群中已有一些应用程序，则可以使用 Astra 控制中心来发现和管理它们。然后，使用 Astra 控制中心创建快照，备份和克隆。
+您可以将应用程序添加到集群中。或者、如果要管理的集群中已有一些应用程序、则可以使用Astra控制中心对其进行管理。然后、使用Astra控制中心创建快照、备份、克隆和复制关系。
 
 
 

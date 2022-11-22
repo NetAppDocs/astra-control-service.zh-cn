@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: get-started/set-up-amazon-web-services.html 
-keywords: set up service account, create service account, project, permissions, service account permissions, key, service account key, json, key json, roles, service account roles, apis, networking, private service access, kubernetes cluster, cluster requirements, version requirements, supported versions, supported regions, kubernetes version, ubuntu, image type, networking, container os 
+keywords: set up service account, create service account, project, permissions, service account permissions, key, service account key, json, key json, roles, service account roles, apis, networking, private service access, kubernetes cluster, cluster requirements, version requirements, supported versions, supported regions, kubernetes version, image type, networking, container os 
 summary: 要使用Astra Control Service管理Amazon Elastic Kubernetes Service集群、需要执行几个步骤来准备Amazon Web Services项目。 
 ---
 = 设置Amazon Web Services
@@ -11,6 +11,7 @@ summary: 要使用Astra Control Service管理Amazon Elastic Kubernetes Service�
 :imagesdir: ../media/get-started/
 
 
+[role="lead"]
 要使用Astra Control Service管理Amazon Elastic Kubernetes Service (EKS)集群、需要执行几个步骤来准备Amazon Web Services项目。
 
 
@@ -76,7 +77,7 @@ summary: 要使用Astra Control Service管理Amazon Elastic Kubernetes Service�
 
 Kubernetes 集群必须满足以下要求，才能通过 Astra Control Service 发现和管理它。
 
-Kubernetes 版本:: 集群运行的Kubernetes版本必须介于1.20到1.22之间。
+Kubernetes 版本:: 集群运行的Kubernetes版本必须介于1.22到1.24之间。
 映像类型:: 每个工作节点的映像类型必须为Linux。
 集群状态:: 集群必须运行状况良好，并且至少有一个联机辅助节点，并且没有处于故障状态的辅助节点。
 
@@ -131,7 +132,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 . 为服务帐户创建Amazon EBS CSI驱动程序IAM角色。按照说明进行操作 https://docs.aws.amazon.com/eks/latest/userguide/csi-iam-role.html["在Amazon文档中"^]、使用说明中的AWS命令行界面命令。
 . 使用以下AWS命令行界面命令添加Amazon EBS CSI加载项、将括号<>中的信息替换为特定于您的环境的值。将<driver_role>替换为您在上一步中创建的EBS CSI驱动程序角色的名称：
 +
-[source, sh]
+[source, console]
 ----
 aws eks create-addon \
   --cluster-name <CLUSTER_NAME> \
@@ -143,26 +144,26 @@ aws eks create-addon \
 .配置EBS存储类
 . 将Amazon EBS CSI驱动程序GitHub存储库克隆到您的系统。
 +
-[source, sh]
+[source, console]
 ----
 git clone https://github.com/kubernetes-sigs/aws-ebs-csi-driver.git
 ----
 . 导航到动态配置示例目录。
 +
-[source, sh]
+[source, console]
 ----
 cd aws-ebs-csi-driver/examples/kubernetes/dynamic-provisioning/
 ----
 . 从清单目录部署EBS SC存储类和EBS声明永久性卷声明。
 +
-[source, sh]
+[source, console]
 ----
 kubectl apply -f manifests/storageclass.yaml
 kubectl apply -f manifests/claim.yaml
 ----
 . 描述EBS-SC存储类。
 +
-[source, sh]
+[source, console]
 ----
 kubectl describe storageclass ebs-sc
 ----
@@ -250,13 +251,13 @@ kubectl describe storageclass ebs-sc
 ----
 . 创建策略：
 +
-[source, sh]
+[source, console]
 ----
 POLICY_ARN=$(aws iam create-policy  --policy-name <policy-name> --policy-document file://policy.json  --query='Policy.Arn' --output=text)
 ----
 . 将策略附加到 IAM 用户。将`<IAM用户名>`替换为您创建的IAM用户或现有IAM用户的用户名：
 +
-[source, sh]
+[source, console]
 ----
 aws iam attach-user-policy --user-name <IAM-USER-NAME> --policy-arn=$POLICY_ARN
 ----
@@ -271,7 +272,7 @@ aws iam attach-user-policy --user-name <IAM-USER-NAME> --policy-arn=$POLICY_ARN
 .步骤
 . 下载凭据。将`<IAM用户名>`替换为要使用的IAM用户的用户名：
 +
-[source, sh]
+[source, console]
 ----
 aws iam create-access-key --user-name <IAM-USER-NAME> --output json > credential.json
 ----

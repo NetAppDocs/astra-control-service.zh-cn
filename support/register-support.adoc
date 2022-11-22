@@ -11,6 +11,7 @@ summary: 在设置帐户时， Astra Control 会尝试自动注册您的帐户�
 :imagesdir: ../media/support/
 
 
+[role="lead"]
 在设置帐户时， Astra Control 会尝试自动注册您的帐户以获得支持。如果无法注册，您可以手动注册以获得支持。要获得 NetApp 技术支持的帮助，需要注册支持。
 
 

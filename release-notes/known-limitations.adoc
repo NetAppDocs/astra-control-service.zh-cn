@@ -11,6 +11,7 @@ summary: 已知限制确定了本产品版本不支持的平台、设备或功�
 :imagesdir: ../media/release-notes/
 
 
+[role="lead"]
 已知限制确定了本产品版本不支持的平台、设备或功能、或者这些平台、设备或功能无法与产品正确交互操作。仔细审查这些限制。
 
 
@@ -43,7 +44,7 @@ ifdef::gcp[]
 
 === 支持一个 GCP 项目和一个服务帐户
 
-Astra Control Service 支持一个 Google Cloud Platform 项目和一个服务帐户。您不应向 Astra Control Service 添加多个服务帐户，也不应轮换服务帐户凭据。
+Astra Control Service 支持一个 Google Cloud Platform 项目和一个服务帐户。您不应向Astra Control Service添加多个服务帐户、也不应轮换服务帐户凭据。
 
 
 
@@ -60,6 +61,18 @@ endif::gcp[]
 == 应用程序管理限制
 
 以下限制会影响 Astra Control Service 对应用程序的管理。
+
+
+
+=== 使用同一命名空间的多个应用程序不能一起还原到不同的命名空间
+
+如果您通过在Astra Control中创建多个应用程序定义来管理多个使用同一命名空间的应用程序、则无法将所有应用程序还原到另一个命名空间。您需要将每个应用程序还原到其自己单独的命名空间。
+
+
+
+=== Astra Control不会自动为云实例分配默认分段
+
+Astra Control不会自动为任何云实例分配默认分段。您需要手动设置云实例的默认存储分段。如果未设置默认分段、您将无法在两个集群之间执行应用程序克隆操作。
 
 
 
@@ -88,7 +101,10 @@ NOTE: 对于 K8ssandra ，支持原位还原操作。要对新命名空间或集
 * https://github.com/percona/percona-xtradb-cluster-operator["Percona XtraDB 集群"^]
 
 
-请注意， Astra Control 可能无法克隆使用 " 按参考传递 " 架构设计的运算符（例如 CockroachDB 运算符）。在这些类型的克隆操作期间，克隆的操作员会尝试引用源操作员提供的 Kubernetes 机密，尽管在克隆过程中他们拥有自己的新机密。克隆操作可能会失败，因为 Astra Control 不知道源运算符中的 Kubernetes 密钥。
+请注意、Astra Control可能无法克隆使用"按参考传递"架构设计的运算符(例如CockroachDB运算符)。在这些类型的克隆操作期间，克隆的操作员会尝试引用源操作员提供的 Kubernetes 机密，尽管在克隆过程中他们拥有自己的新机密。克隆操作可能会失败，因为 Astra Control 不知道源运算符中的 Kubernetes 密钥。
+
+
+NOTE: 在克隆操作期间、需要IngressClass资源或webhooks才能正常运行的应用程序不能在目标集群上定义这些资源。
 
 
 

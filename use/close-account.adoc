@@ -11,6 +11,7 @@ summary: 如果您不再需要 Astra Control 帐户，可以随时关闭该帐�
 :imagesdir: ../media/use/
 
 
+[role="lead"]
 如果您不再需要 Astra Control 帐户，可以随时关闭该帐户。
 
 
