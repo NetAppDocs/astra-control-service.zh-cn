@@ -13,7 +13,7 @@ entries:
 - title: 适用于 GKEE 集群的存储
   flavor: gcp
   url: "/learn/choose-class-and-size.html"
-- title: 了解应用程序管理
+- title: 应用程序管理
   url: "/learn/app-management.html"
 - title: 用户角色和命名空间
   url: "/learn/user-roles-namespaces.html"

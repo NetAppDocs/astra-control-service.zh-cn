@@ -1480,7 +1480,6 @@
   <block id="1574db16d74f7537711f20b07293065e" category="list-text">Astra Control Service 使用<block ref="a65cb6c91d35e755c3763fe01aedac72" category="inline-link-rx"></block> 和<block ref="789fe92e2b55f108a4e50dd78da73d71" category="inline-link-rx"></block> 作为EKS集群的存储后端。</block>
   <block id="dd069ab6d74011bb108bf219e092a2d0" category="list-text">Astra 控制中心使用以下存储后端：</block>
   <block id="a7da53d86332105dcae80a12f3e8b7a5" category="summary">介绍了Astra Control中的受管应用程序类型。</block>
-  <block id="0aec310f3808bce2063a2292e6052cf8" category="doc">了解应用程序管理</block>
   <block id="848f207b3c4594754aa82fd21b5fc5e0" category="paragraph">当Astra Control发现集群时、这些集群上的应用程序将不受管理、直到您选择要如何管理它们为止。Astra Control 中的受管应用程序可以是以下任一项：</block>
   <block id="594284cddefbf771912acc53c31ca2b3" category="list-text">提供反映应用程序在 Kubernetes 中的状态的状态。</block>
   <block id="07eb1eefb9996b52d1fdfe23101a2b03" category="paragraph">Astra Control 具有以下应用程序管理要求：</block>
@@ -2043,4 +2042,5 @@
   <block id="400b9c72badfc397898ae034a400c0f8" category="section-title">删除云实例</block>
   <block id="f4e39691a17b55519cdcd9b3fe953c77" category="paragraph">您可以使用Astra Control API从云提供商中删除云实例。了解更多信息。<block ref="bfa33a3653b9adb3eeffbdd741a1c8dc" category="inline-link-rx"></block>。</block>
   <block id="2af1f66f8f47d8339a96c1cd543cd3a8" category="list-text">* Astra Trident * ：作为由 NetApp 维护的完全受支持的开源存储配置程序和编排程序， Astra Trident 使您能够为 Docker 和 Kubernetes 管理的容器化应用程序创建存储卷。使用Astra控制中心部署时、Astra Trident会包括一个已配置的ONTAP 存储后端。</block>
+  <block id="934c5edffa8e732ecb866cb319c8454a" category="doc">应用程序管理</block>
 </blocks>
