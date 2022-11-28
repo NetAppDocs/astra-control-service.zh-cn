@@ -42,12 +42,6 @@ ifdef::gcp[]
 
 
 
-=== 支持一个 GCP 项目和一个服务帐户
-
-Astra Control Service 支持一个 Google Cloud Platform 项目和一个服务帐户。您不应向Astra Control Service添加多个服务帐户、也不应轮换服务帐户凭据。
-
-
-
 === Google Marketplace 应用程序尚未经过验证
 
 NetApp 尚未验证从 Google Marketplace 部署的应用程序。某些用户报告发现或备份从 Google Marketplace 部署的 Postgres ， MariaDB 和 MySQL 应用程序时出现问题。
