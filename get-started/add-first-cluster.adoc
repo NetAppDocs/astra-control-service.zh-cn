@@ -46,6 +46,7 @@ NOTE: Astra控制服务支持使用Azure Active Directory (Azure AD)进行身份
 登录到 Astra Control Service 后，第一步是开始管理集群。您可以添加由云提供商管理的集群或自管理集群。在将集群添加到Astra Control Service之前、您需要执行某些任务并确保集群满足特定要求。
 
 .由云提供商管理的集群需要什么？#8217
+[%collapsible]
 ====
 ifdef::aws[]
 
@@ -75,6 +76,7 @@ endif::azure[]
 
 ====
 .自我管理集群需要什么？#8217
+[%collapsible]
 ====
 您的集群需要满足以下要求：
 

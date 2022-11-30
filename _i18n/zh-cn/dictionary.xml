@@ -590,7 +590,6 @@
   <block id="b9f8e20735440b893e92df9f8f191ee9" category="paragraph">在 Postgres Pod 上执行操作时，不应直接在 Pod 中连接以使用 psql 命令。Astra 控制服务需要使用 psql 访问权限来冻结和解冻数据库。如果已建立连接，则快照，备份或克隆将失败。</block>
   <block id="6bfe142cec74b24abd2888a936579280" category="section-title">GKEE 集群管理的限制</block>
   <block id="3265b2231bbb5d69811830c739f49e98" category="paragraph">以下限制适用于在 Google Kubernetes Engine （ GKEE ）中管理 Kubernetes 集群。</block>
-  <block id="df9a18dc00ea6a1c967125aba394e84f" category="section-title">支持一个 GCP 项目和一个服务帐户</block>
   <block id="339effc40f2ec827523a251742b3ca79" category="section-title">Google Marketplace 应用程序尚未经过验证</block>
   <block id="bd0e1e2eb280afdefcb2b4c6f1a09515" category="paragraph">NetApp 尚未验证从 Google Marketplace 部署的应用程序。某些用户报告发现或备份从 Google Marketplace 部署的 Postgres ， MariaDB 和 MySQL 应用程序时出现问题。</block>
   <block id="43056e2e7b2e99afa90bfb5acff55921" category="paragraph">无论您在 Astra Control Service 中使用哪种类型的应用程序，您都应始终自行测试备份和还原工作流，以确保满足灾难恢复要求。</block>
@@ -1087,7 +1086,6 @@
   <block id="053d6e036cc8c9d7a8c57234d6bfc574" category="list-text">轻松地将应用程序从生产环境克隆到暂存环境</block>
   <block id="1c26e7db082840fcbfcd87527c92e1aa" category="list-text">直观显示应用程序运行状况和保护状态</block>
   <block id="3e09a55ad40337db37927865855151a9" category="list-text">使用用户界面或 API 实施备份和迁移工作流</block>
-  <block id="894b9b2b2a66efc8393eed6013d32a66" category="paragraph">Astra Control 会持续监控您的计算状态变化，因此它可以识别您在此过程中添加的任何新应用程序。</block>
   <block id="6762973af9b127d271f0d2b2aea0bc96" category="section-title">部署模式</block>
   <block id="db1905d057dd6fde6f8b7bd6afe60e41" category="paragraph">Astra Control 有两种部署模式：</block>
   <block id="ddbf9f0ee6e908772df862b9cb9312d3" category="list-text">* Astra Control Center* ：自管理软件，可为内部环境中运行的 Kubernetes 集群提供应用程序感知型数据管理。</block>
@@ -1103,7 +1101,6 @@
   <block id="cef5c6ab0b7d20ab7cd426689afb9fa5" category="cell">应用程序数据管理功能是什么？</block>
   <block id="1598aaab2cb9865732925d064c6978c2" category="cell">两个平台上的功能相同，但存储后端或外部服务除外</block>
   <block id="c1d5f7fc5daa2ea9189ee2df5ca15da2" category="cell">什么是存储后端支持？</block>
-  <block id="d1c86529e5adfef0855455a2e0bd54bd" category="cell">NetApp 云服务产品</block>
   <block id="d6fc0eb1930e7e56affc953c237c5514" category="list-text">NetApp ONTAP AFF 和 FAS 系统</block>
   <block id="5f4b9e6660ba4e73dc9c6aa214e60cde" category="section-title">Astra 控制服务的工作原理</block>
   <block id="972dbc054c14df6a8a668ad2c71b9afa" category="paragraph">Astra Control Service 是一种由 NetApp 管理的云服务，它始终处于启用状态，并使用最新功能进行更新。它利用多个组件实现应用程序数据生命周期管理。</block>
@@ -1120,7 +1117,6 @@
   <block id="a7eb0ba32f9706a479c6037bea16e1ca" category="paragraph">Astra Control Service 会持续监控您的计算状态变化，因此它可以识别您在此过程中添加的任何新应用程序。</block>
   <block id="b714fdd25acef8e71be758de7ff02f0b" category="section-title">Astra 控制中心的工作原理</block>
   <block id="90d397f2aa31c2e6d9f5dfda5d12adca" category="paragraph">Astra 控制中心在您自己的私有云中本地运行。</block>
-  <block id="51269e2584d26b04961877ec77db6da7" category="paragraph">在云互联环境中， Astra 控制中心使用 Cloud Insights 提供高级监控和遥测功能。如果没有 Cloud Insights 连接，则 Astra 控制中心可提供有限的（ 7 天的指标）监控和遥测功能，并通过开放式指标端点导出到 Kubernetes 原生监控工具（例如 Prometheus 和 Grafana ）。</block>
   <block id="b4851e92b19af0c5c82447fc0937709d" category="inline-link">要求</block>
   <block id="e63cc3795b9216d59b085bd3111a248d" category="paragraph">要安装和使用 Astra 控制中心，您需要满足特定的要求<block ref="bdde32b2c988689d803729c06660acb4" category="inline-link-rx"></block>。</block>
   <block id="6319f881d45c326a5f6222a746f50981" category="paragraph">从较高的层面来看， Astra 控制中心的工作原理如下：</block>
@@ -1291,11 +1287,6 @@
   <block id="2dd2a1bdae3516df1950c153f6135366" category="paragraph">*是否可以使用Active Directory管理AKS集群的身份验证？*</block>
   <block id="e4b4463df81090495a7820578ac936d9" category="paragraph">可以、您可以将AKS集群配置为使用Azure Active Directory (Azure AD)进行身份验证和身份管理。创建集群时、请按照中的说明进行操作<block ref="ba1ce5a57a4d347a0e1e2ecf2a2c91ba" category="inline-link-rx"></block> 将集群配置为使用Azure AD。您需要确保集群满足AKS管理的Azure AD集成的要求。</block>
   <block id="35766360770e699f50fa8f51d1c6ff36" category="doc">了解Astra Control</block>
-  <block id="7a224873743ae07878fa35eb8d081112" category="list-text"><block ref="3286c558b43bd6d377809c21300aee77" category="inline-xref-macro-rx"></block></block>
-  <block id="8100875d88782acfb46a30b4101b2280" category="section-title">默认情况下、Azure备份存储分段使用LRS冗余</block>
-  <block id="7b51ea6a21b6966c72987eb0afc24995" category="paragraph">默认情况下、Astra Control Service用于存储Azure Kubernetes Service备份的存储分段使用本地冗余存储(LRS)冗余选项。要对Azure存储分段使用更持久的冗余选项、请参见Azure云提供商设置说明中的可选步骤：</block>
-  <block id="22e9bb5a03504aaee4ab910d594c8096" category="list-text"><block ref="22e9bb5a03504aaee4ab910d594c8096" category="inline-link-macro-rx"></block></block>
-  <block id="864e3787d69e889ea2ae67aeb999effd" category="list-text"><block ref="864e3787d69e889ea2ae67aeb999effd" category="inline-link-macro-rx"></block></block>
   <block id="87e0c6ecd728fb0d791237540ebc2d13" category="section-title">可选：为Azure备份存储分段配置冗余</block>
   <block id="e6870002b2d5d13ce9775b063bc8ba38" category="paragraph">默认情况下、Astra Control Service用于存储Azure Kubernetes Service备份的存储分段使用本地冗余存储(LRS)冗余选项。作为一个可选步骤、您可以为Azure存储分段配置更持久的冗余级别。 <block ref="01e018c18178f59acc7c2fe24b863d36" category="inline-xref-macro-rx"></block>。</block>
   <block id="59007fdeff44241e1503f2d5988af0c3" category="list-text">运行以下命令以确保更改已传播：</block>
@@ -1322,7 +1313,6 @@
   <block id="26816f4f023579253517240a64829a70" category="list-text">* Astra Control Service*：NetApp管理的一项服务、可为多个云提供商环境中的Kubernetes集群提供应用程序感知型数据管理。</block>
   <block id="368def07c6bfa29b38f6913d1a01d925" category="paragraph">+*对于GKEE集群、Astra Control Service使用<block ref="33441d63a8e7ace6860eab2024320819" category="inline-link-rx"></block> 或 Google Persistent Disk 作为永久性卷的存储后端。</block>
   <block id="eb1ac977ae8f3dc0832dd982e309d50b" category="paragraph">+在Azure中、Astra Control Service还会为Blob容器创建资源组、存储帐户和密钥。</block>
-  <block id="a3927a5a13e226c44dac47ff649fa5fa" category="list-text">如果您使用云提供商存储服务作为存储后端、则Astra Control Service将使用Astra Trident为应用程序配置永久性卷。</block>
   <block id="47de31b9013ca59e1620936759a1c481" category="paragraph">Astra Control 旨在简化 Kubernetes 原生应用程序的应用程序数据生命周期管理操作。Astra控制服务支持在多个云提供商环境中运行的Kubernetes集群。</block>
   <block id="121738f88be5081da60af30c2d97627d" category="paragraph">是的、您需要为云提供商提供的集群使用的永久性卷付费。</block>
   <block id="e38d8867cf0f53988fd0376aa2e1f81d" category="paragraph">否将集群添加到 Astra Control 后，该服务将自动在 Kubernetes 集群上安装 NetApp 的 Trident 容器存储接口（ Trident Container Storage Interface ， CSI ）驱动程序。此CSI驱动程序用于为云提供商支持的集群配置永久性卷。</block>
@@ -1821,7 +1811,6 @@
   <block id="e9ca84d66f1908e5a75b18227ca36fe4" category="paragraph">Astra Control的免费计划支持您管理帐户中多达10个命名空间。如果您要管理10个以上的命名空间、则需要通过从"免费计划"升级到"高级计划"来设置计费。</block>
   <block id="9fec972e16132554b3f6d7a367b20c12" category="paragraph">Astra控制中心支持具有基于Trident的存储类以及ONTAP 9.5及更高版本的存储后端的Kubernetes集群。</block>
   <block id="46d0a394f0b8bd48b4ad9f07551cc671" category="paragraph">您可以使用 90 天评估许可证试用 Astra Control Center 。评估版可通过电子邮件和社区选项获得支持。此外，您还可以从产品支持信息板访问知识库文章和文档。</block>
-  <block id="7bdf577f01fcd7e69831589d7d8fd532" category="paragraph">您可以将应用程序添加到集群中。或者、如果要管理的集群中已有一些应用程序、则可以使用Astra控制中心对其进行管理。然后、使用Astra控制中心创建快照、备份、克隆和复制关系。</block>
   <block id="4ab09e6ec2618aab5b687375bc8af5e3" category="paragraph">Astra控制服务可以管理Amazon Elastic Kubernetes Service (EKS)中受管Kubernetes集群上运行的应用程序以及您自己管理的集群。</block>
   <block id="216024a83a2e1678233eed10a91e734b" category="paragraph">Astra控制服务可以管理Google Kubernetes Engine (GKEE)中受管Kubernetes集群上运行的应用程序以及您自己管理的集群。</block>
   <block id="6ec207aab97232ca1415b850644d8db1" category="paragraph">Astra控制服务可以管理Azure Kubernetes Service (AKS)中受管Kubernetes集群上运行的应用程序以及您自己管理的集群。</block>
@@ -1829,7 +1818,6 @@
   <block id="c379fb5d3471815ca5903618ec9a0127" category="list-text"><block ref="38f602f93892997d8d639af2e6194620" category="inline-link-macro-rx"></block>。</block>
   <block id="f9f340044ba2c8e439d738fbf950f528" category="paragraph">确保集群运行状况良好并运行受支持的Kubernetes版本、工作节点处于联机状态并运行受支持的映像类型等。 <block ref="e5d6d79c6a6c0b51cbb3547ebf53c7a2" category="inline-xref-macro-rx"></block>。</block>
   <block id="7799e999430ad853dc7956148b19c972" category="list-text">每个工作节点的映像类型必须为<block ref="bba3d88d28186b91a2b3165d6143a600" prefix=" " category="inline-code"></block>。</block>
-  <block id="b4a8cd3b4b16dd62a142b1e0c101cb76" category="paragraph">Astra Control Service 支持一个 Google Cloud Platform 项目和一个服务帐户。您不应向Astra Control Service添加多个服务帐户、也不应轮换服务帐户凭据。</block>
   <block id="871723f146538bf56de3fff54b4d80e5" category="section-title">使用同一命名空间的多个应用程序不能一起还原到不同的命名空间</block>
   <block id="2a19d8753285e180b79dd3712e6973e6" category="paragraph">如果您通过在Astra Control中创建多个应用程序定义来管理多个使用同一命名空间的应用程序、则无法将所有应用程序还原到另一个命名空间。您需要将每个应用程序还原到其自己单独的命名空间。</block>
   <block id="c100d276c1827c4f44d955c38bd1a856" category="section-title">Astra Control不会自动为云实例分配默认分段</block>
@@ -2043,4 +2031,10 @@
   <block id="f4e39691a17b55519cdcd9b3fe953c77" category="paragraph">您可以使用Astra Control API从云提供商中删除云实例。了解更多信息。<block ref="bfa33a3653b9adb3eeffbdd741a1c8dc" category="inline-link-rx"></block>。</block>
   <block id="2af1f66f8f47d8339a96c1cd543cd3a8" category="list-text">* Astra Trident * ：作为由 NetApp 维护的完全受支持的开源存储配置程序和编排程序， Astra Trident 使您能够为 Docker 和 Kubernetes 管理的容器化应用程序创建存储卷。使用Astra控制中心部署时、Astra Trident会包括一个已配置的ONTAP 存储后端。</block>
   <block id="934c5edffa8e732ecb866cb319c8454a" category="doc">应用程序管理</block>
+  <block id="eb7e7a3aeccca526c3baa843ca15c287" category="paragraph">Astra Control会持续监控您的计算状态变化、因此它可以识别您在此过程中添加的任何新应用程序。</block>
+  <block id="516729a7c0562425406a22cfe6a2c163" category="list-text">Amazon EBS</block>
+  <block id="79c9c43a409053927cc323915dbf1c06" category="list-text">Azure受管磁盘</block>
+  <block id="55a5776613a7a49b0fb7fc4800c3065f" category="list-text">如果您使用NetApp云服务存储产品作为存储后端、则Astra Control Service将使用Astra Trident为应用程序配置永久性卷。如果您使用Amazon EBS或Azure托管磁盘作为存储后端、则需要安装特定于提供商的CSI驱动程序。中提供了安装说明 <block ref="ebf2a7f1b6295b0b8e4d97b888cb809e" category="inline-link-macro-rx"></block> 和 <block ref="1938f6af50a8259a0bb98bac4f34eeeb" category="inline-link-macro-rx"></block>。</block>
+  <block id="43e71b094d6e4df1d87b41898754d340" category="paragraph">在云互联环境中， Astra 控制中心使用 Cloud Insights 提供高级监控和遥测功能。如果没有Cloud Insights 连接、则Astra控制中心可提供有限的(7天的指标)监控和遥测功能、并通过开放式指标端点导出到Kubernetes原生 监控工具(例如Prometheus和Grafana)。</block>
+  <block id="736df34727d37ee0029df106be139889" category="paragraph">您可以向集群添加应用程序。或者、如果要管理的集群中已有一些应用程序、则可以使用Astra控制中心来管理它们。然后、使用Astra控制中心创建快照、备份、克隆和复制关系。</block>
 </blocks>

@@ -88,6 +88,7 @@ Kubernetes 版本:: 集群运行的Kubernetes版本必须介于1.22到1.24之间
 --
 有关安装CSI驱动程序的说明、请参见详细信息。
 
+[%collapsible%open]
 ====
 .安装外部快照程序
 . 创建卷快照CRD。

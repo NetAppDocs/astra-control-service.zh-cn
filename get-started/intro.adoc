@@ -29,7 +29,7 @@ Astra Control 为 Kubernetes 应用程序数据生命周期管理提供了关键
 * 使用用户界面或 API 实施备份和迁移工作流
 
 
-Astra Control 会持续监控您的计算状态变化，因此它可以识别您在此过程中添加的任何新应用程序。
+Astra Control会持续监控您的计算状态变化、因此它可以识别您在此过程中添加的任何新应用程序。
 
 
 
@@ -66,7 +66,27 @@ Astra Control 有两种部署模式：
 
 
 
-| 什么是存储后端支持？ | NetApp 云服务产品  a| 
+| 什么是存储后端支持？  a| 
+* Amazon Web Services：
++
+** Amazon EBS
+** 适用于 NetApp ONTAP 的 Amazon FSX
+
+
+* Google Cloud
++
+** Google 持久磁盘
+** NetApp Cloud Volumes Service
+
+
+* Microsoft Azure
++
+** Azure受管磁盘
+** Azure NetApp Files
+
+
+
+ a| 
 * NetApp ONTAP AFF 和 FAS 系统
 * Cloud Volumes ONTAP 存储后端
 
@@ -116,7 +136,7 @@ endif::azure[]
 
 * 在集群上创建新的管理员角色和 Kubernetes 服务帐户。
 * 使用此新管理员角色进行安装 https://docs.netapp.com/us-en/trident/index.html["Astra Trident"^] 以创建一个或多个存储类。
-* 如果您使用云提供商存储服务作为存储后端、则Astra Control Service将使用Astra Trident为应用程序配置永久性卷。
+* 如果您使用NetApp云服务存储产品作为存储后端、则Astra Control Service将使用Astra Trident为应用程序配置永久性卷。如果您使用Amazon EBS或Azure托管磁盘作为存储后端、则需要安装特定于提供商的CSI驱动程序。中提供了安装说明 link:set-up-amazon-web-services.html["设置Amazon Web Services"^] 和 link:set-up-microsoft-azure-with-amd.html["使用 Azure 受管磁盘设置 Microsoft Azure"^]。
 +
 ** 此时，您可以向集群添加应用程序。将在新的默认存储类上配置永久性卷。
 ** 然后，您可以使用 Astra Control Service 管理这些应用程序，并开始创建快照，备份和克隆。
@@ -137,7 +157,7 @@ Astra 控制中心在您自己的私有云中本地运行。
 
 Astra控制中心支持具有基于Trident的存储类以及ONTAP 9.5及更高版本的存储后端的Kubernetes集群。
 
-在云互联环境中， Astra 控制中心使用 Cloud Insights 提供高级监控和遥测功能。如果没有 Cloud Insights 连接，则 Astra 控制中心可提供有限的（ 7 天的指标）监控和遥测功能，并通过开放式指标端点导出到 Kubernetes 原生监控工具（例如 Prometheus 和 Grafana ）。
+在云互联环境中， Astra 控制中心使用 Cloud Insights 提供高级监控和遥测功能。如果没有Cloud Insights 连接、则Astra控制中心可提供有限的(7天的指标)监控和遥测功能、并通过开放式指标端点导出到Kubernetes原生 监控工具(例如Prometheus和Grafana)。
 
 Astra 控制中心完全集成到 AutoSupport 和 Active IQ 生态系统中，可为用户和 NetApp 支持提供故障排除和使用信息。
 
@@ -160,7 +180,7 @@ Astra 控制中心完全集成到 AutoSupport 和 Active IQ 生态系统中，�
 
 详细了解如何操作 https://docs.netapp.com/us-en/astra-control-center/get-started/setup_overview.html["设置 Astra 控制中心"]。
 
-您可以将应用程序添加到集群中。或者、如果要管理的集群中已有一些应用程序、则可以使用Astra控制中心对其进行管理。然后、使用Astra控制中心创建快照、备份、克隆和复制关系。
+您可以向集群添加应用程序。或者、如果要管理的集群中已有一些应用程序、则可以使用Astra控制中心来管理它们。然后、使用Astra控制中心创建快照、备份、克隆和复制关系。
 
 
 
