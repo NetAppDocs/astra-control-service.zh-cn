@@ -22,54 +22,54 @@ summary: 要使用Astra Control Service管理Amazon Elastic Kubernetes Service�
 
 
 
-=== 查看适用于Amazon Web Services的Astra Control Service要求
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一个"] 查看适用于Amazon Web Services的Astra Control Service要求
 
 [role="quick-margin-para"]
-确保集群运行状况良好并运行受支持的Kubernetes版本、工作节点处于联机状态并运行Linux或Windows等。  cluster requirements,了解有关此步骤的更多信息。
+确保集群运行状况良好并运行受支持的Kubernetes版本、工作节点处于联机状态并运行Linux或Windows等。 <<EKS集群要求,了解有关此步骤的更多信息>>。
 
 
 
-=== 创建Amazon帐户
-
-[role="quick-margin-para"]
-如果您还没有Amazon帐户、则需要创建一个帐户、以便可以使用EKS。  an Amazon account,了解有关此步骤的更多信息。
-
-
-
-=== 安装Amazon Web Services CLI
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["两个"] 创建Amazon帐户
 
 [role="quick-margin-para"]
-安装AWS命令行界面、以便从命令行管理AWS。  the Amazon Web Services CLI,按照分步说明进行操作。
+如果您还没有Amazon帐户、则需要创建一个帐户、以便可以使用EKS。 <<创建Amazon帐户,了解有关此步骤的更多信息>>。
 
 
 
-=== 可选：创建IAM用户
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三个"] 安装Amazon Web Services CLI
+
+[role="quick-margin-para"]
+安装AWS命令行界面、以便从命令行管理AWS。 <<安装Amazon Web Services CLI,按照分步说明进行操作>>。
+
+
+
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四个"] 可选：创建IAM用户
 
 [role="quick-margin-para"]
 创建Amazon身份和访问管理(IAM)用户。您也可以跳过此步骤并将现有IAM用户与Astra Control Service结合使用。
 
 [role="quick-margin-para"]
- Create an IAM user,阅读分步说明。
+<<可选：创建IAM用户,阅读分步说明>>。
 
 
 
-=== 创建并附加权限策略
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五个"] 创建并附加权限策略
 
 [role="quick-margin-para"]
 创建具有所需权限的策略、以使Astra Control Service能够与您的AWS帐户进行交互。
 
 [role="quick-margin-para"]
- and attach a permissions policy,阅读分步说明。
+<<创建并附加权限策略,阅读分步说明>>。
 
 
 
-=== 保存IAM用户的凭据
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["六个"] 保存IAM用户的凭据
 
 [role="quick-margin-para"]
 保存IAM用户的凭据、以便将这些凭据导入到Astra Control Service中。
 
 [role="quick-margin-para"]
- the credentials for the IAM user,阅读分步说明。
+<<保存IAM用户的凭据,阅读分步说明>>。
 
 
 
@@ -279,4 +279,5 @@ aws iam create-access-key --user-name <IAM-USER-NAME> --output json > credential
 ----
 
 
+.结果
 此时将创建`credential.json`文件、您可以将凭据导入到Astra Control Service中。

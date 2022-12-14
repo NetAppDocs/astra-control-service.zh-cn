@@ -14,9 +14,9 @@ summary: 设置环境后，您可以创建 Kubernetes 集群，然后将其添�
 [role="lead"]
 您可以使用 Astra Control Service 管理专用 AKS 集群。以下说明假定您已创建专用AKS集群并准备了一种远程访问此集群的安全方法；有关创建和访问专用AKS集群的详细信息、请参见 https://docs.microsoft.com/azure/aks/private-clusters["Azure 文档"^]。
 
-*  the Astra Connector operator
-*  up persistent storage
-*  the private cluster to Astra Control Service
+* <<安装Astra Connector操作员>>
+* <<设置永久性存储>>
+* <<将专用集群添加到Astra Control Service>>
 
 
 
@@ -66,7 +66,7 @@ kubectl apply -f config/samples/astraconnector_v1.yaml -n astra-connector
 kubectl get astraconnector astra-connector -n astra-connector
 ----
 +
-您应看到类似于以下内容的输出：
+您应参考类似于以下内容的输出：
 
 +
 [source, console]

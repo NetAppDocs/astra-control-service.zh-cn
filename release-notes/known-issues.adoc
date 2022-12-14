@@ -17,20 +17,20 @@ summary: 已知问题可确定可能妨碍您成功使用此版本产品的问�
 以下已知问题会影响当前版本：
 
 .应用程序
-*  clones fail after an application is deployed with a set storage class
-*  page loads forever when trying to restore an application belonging to a deleted cluster
-*  to define an app on a namespace that has been deleted and recreated
+* <<使用设置的存储类部署应用程序后，应用程序克隆将失败>>
+* <<尝试还原属于已删除集群的应用程序时、应用程序页面将永久加载>>
+* <<无法在已删除并重新创建的命名空间上定义应用程序>>
 
 
 .备份，还原和克隆
-*  of an app results in PV size larger than original PV
-*  clones fail using a specific version of PostgreSQL
-*  backups and snapshots fail if the volumesnapshotclass is added after a cluster is managed
+* <<还原应用程序会导致 PV 大小大于原始 PV>>
+* <<使用特定版本的 PostgreSQL 时应用程序克隆失败>>
+* <<如果在管理集群后添加了volumesnapshotclass、则应用程序备份和快照将失败>>
 
 
 .其他问题
-*  eventually begin to fail when using external-snapshotter version 4.2.0
-*  data management operations fail with Internal Service Error (500) when Astra Trident is offline
+* <<使用外部快照程序 4.2.0 版时，快照最终开始失败>>
+* <<当 Astra Trident 脱机时，应用程序数据管理操作失败，并显示内部服务错误（ 500 ）>>
 
 
 

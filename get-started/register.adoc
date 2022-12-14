@@ -70,6 +70,7 @@ image:screenshot-cloud-central-signup.gif["Cloud Central 注册页面的屏幕�
 . 电子邮件到达后，选择电子邮件中的链接以验证您的电子邮件地址。
 
 
+.结果
 现在，您已有活动的 Cloud Central 用户登录。
 
 注册后，您可以从使用 Cloud Central 凭据直接访问 Astra Control Service https://astra.netapp.io[]。

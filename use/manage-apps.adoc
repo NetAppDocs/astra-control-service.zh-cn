@@ -122,34 +122,34 @@ endif::aws[]
 
 == 定义应用程序
 
-在Astra Control发现集群上的命名空间后、您可以定义要管理的应用程序。您可以选择  resources to manage as an app,管理跨越一个或多个命名空间的应用程序 或  a namespace to manage as an app,将整个命名空间作为一个应用程序进行管理。这一切都可以细化到数据保护操作所需的粒度级别。
+在Astra Control发现集群上的命名空间后、您可以定义要管理的应用程序。您可以选择 <<定义要作为应用程序进行管理的资源,管理跨越一个或多个命名空间的应用程序>> 或 <<定义要作为应用程序进行管理的命名空间,将整个命名空间作为一个应用程序进行管理>>。这一切都可以细化到数据保护操作所需的粒度级别。
 
 虽然您可以使用Astra Control单独管理层次结构的两个级别(命名空间和该命名空间中的应用程序或跨命名空间)、但最佳做法是选择一个或另一个。如果在命名空间和应用程序级别同时执行操作，则在 Astra Control 中执行的操作可能会失败。
 
 
 TIP: 例如、您可能希望为"Maria"设置一个每周节奏的备份策略、但您可能需要比该策略更频繁地备份"MariaDB"(位于同一命名空间中)。根据这些需求、您需要单独管理这些应用程序、而不是作为单命名空间应用程序来管理。
 
-.您需要什么？ #8217 ；将需要什么
+.您需要的内容
 * 已将Kubernetes集群添加到Astra Control中。
-* 集群上安装的一个或多个应用程序。  app installation methods,阅读有关支持的应用程序安装方法的更多信息。
+* 集群上安装的一个或多个应用程序。 <<支持的应用程序安装方法,阅读有关支持的应用程序安装方法的更多信息>>。
 * 一个或多个活动Pod。
 * 已添加到Astra Control的Kubernetes集群上的现有命名空间。
 * (可选) Any上的Kubernetes标签 link:../use/manage-apps.html#app-management-requirements["支持的Kubernetes资源"]。
 +
 
-TIP: 标签是一个键 / 值对，您可以将其分配给 Kubernetes 对象进行标识。通过标签，可以更轻松地对 Kubernetes 对象进行排序，组织和查找。要了解有关 Kubernetes 标签的更多信息， https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/["请参见 Kubernetes 官方文档"^]。
+TIP: 标签是一个键 / 值对，您可以将其分配给 Kubernetes 对象进行标识。通过标签，可以更轻松地对 Kubernetes 对象进行排序，组织和查找。要了解有关 Kubernetes 标签的更多信息， https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/["请参阅Kubernetes官方文档"^]。
 
 
 
 .关于此任务
 * 开始之前、您还应了解相关信息 link:../use/manage-apps.html#what-about-system-namespaces["管理标准命名空间和系统命名空间"]。
 * 如果您计划在Astra Control中对应用程序使用多个命名空间、请考虑 link:../use/manage-roles.html["修改具有命名空间限制的用户角色"] 定义应用程序之前。
-* 有关如何使用 Astra Control API 管理应用程序的说明，请参见 link:https://docs.netapp.com/us-en/astra-automation/["Astra Automation 和 API 信息"^]。
+* 有关如何使用Astra Control API管理应用程序的说明、请参见 link:https://docs.netapp.com/us-en/astra-automation/["Astra Automation 和 API 信息"^]。
 
 
 .应用程序管理选项
-*  resources to manage as an app
-*  a namespace to manage as an app
+* <<定义要作为应用程序进行管理的资源>>
+* <<定义要作为应用程序进行管理的命名空间>>
 
 
 
@@ -210,7 +210,7 @@ NOTE: 可以使用Astra Control在单个集群上的一个或多个指定命名�
 . (可选)为每个命名空间中的Kubernetes资源输入一个标签。您可以指定单个标签或标签选择器条件(查询)。
 +
 
-TIP: 要了解有关 Kubernetes 标签的更多信息， https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/["请参见 Kubernetes 官方文档"^]。
+TIP: 要了解有关 Kubernetes 标签的更多信息， https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/["请参阅Kubernetes官方文档"^]。
 
 . (可选)通过选择*添加命名空间*并从下拉列表中选择命名空间来为应用程序添加其他命名空间。
 . (可选)为您添加的任何其他命名空间输入单个标签或标签选择器条件。
@@ -255,7 +255,7 @@ TIP: 要查看特定应用程序的详细信息，请选择应用程序名称。
 . 选择包含要管理的应用程序资源的命名空间的"Actions"菜单、然后选择*定义为应用程序*。
 +
 
-TIP: 如果要定义多个应用程序、请从命名空间列表中进行选择、然后选择左上角的*操作*按钮并选择*定义为应用程序*。这将在各个命名空间中定义多个单独的应用程序。有关多命名空间应用程序、请参见  resources to manage as an app。
+TIP: 如果要定义多个应用程序、请从命名空间列表中进行选择、然后选择左上角的*操作*按钮并选择*定义为应用程序*。这将在各个命名空间中定义多个单独的应用程序。有关多命名空间应用程序、请参见 <<定义要作为应用程序进行管理的资源>>。
 
 +
 

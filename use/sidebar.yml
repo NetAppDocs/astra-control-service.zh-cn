@@ -16,9 +16,6 @@ entries:
     url: "/use/clone-apps.html"
   - title: 管理应用程序执行挂钩
     url: "/use/manage-app-execution-hooks.html"
-    entries:
-    - title: 执行钩示例
-      url: "/use/execution-hook-examples.html"
 - title: 查看应用程序和计算运行状况
   entries:
   - title: 信息板摘要

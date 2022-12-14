@@ -27,7 +27,7 @@ Astra控制服务可以使用Amazon Elastic Block Store (EBS)或Amazon FSx for N
 * 上一代产品
 
 
-有关每种类型的卷及其性能的详细信息、请参见 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html["Amazon EBS文档"^]。有关定价信息、请参见 https://aws.amazon.com/ebs/pricing/["Amazon EBS定价"^]。
+有关每种卷类型及其性能的详细信息、请参见 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html["Amazon EBS文档"^]。有关定价信息、请参见 https://aws.amazon.com/ebs/pricing/["Amazon EBS定价"^]。
 
 
 

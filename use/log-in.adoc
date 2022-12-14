@@ -19,7 +19,7 @@ summary: 您可以通过基于 SaaS 的用户界面访问 Astra 控制服务，�
 
 TIP: 您可以使用单点登录使用公司目录中的凭据（联合身份）登录。要了解更多信息，请转到 https://cloud.netapp.com/help-center["Cloud Central 帮助中心"^] 然后选择 * Cloud Central 登录选项 * 。
 
-.您需要什么？ #8217 ；将需要什么
+.您需要的内容
 * link:../get-started/register.html["Cloud Central 用户 ID"]。
 * link:../get-started/register.html["新的 Astra Control 帐户"] 或 link:manage-users.html["邀请现有帐户"]。
 * 支持的 Web 浏览器。

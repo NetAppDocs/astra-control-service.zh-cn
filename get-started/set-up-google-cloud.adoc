@@ -25,25 +25,26 @@ NOTE: 如果您不开始使用 Google Cloud Volumes Service for Google Cloud 作
 
 
 
-=== 查看 Google Kubernetes Engine 的 Astra Control Service 要求
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一个"] 查看 Google Kubernetes Engine 的 Astra Control Service 要求
 
 [role="quick-margin-para"]
-确保集群运行状况良好并运行受支持的Kubernetes版本、工作节点处于联机状态并运行受支持的映像类型等。  cluster requirements,了解有关此步骤的更多信息。
+确保集群运行状况良好并运行受支持的Kubernetes版本、工作节点处于联机状态并运行受支持的映像类型等。 <<GKEE 集群要求,了解有关此步骤的更多信息>>。
 
 
 
-=== （可选）：购买适用于 Google Cloud 的 Cloud Volumes Service
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["两个"] （可选）：购买适用于 Google Cloud 的 Cloud Volumes Service
 
 [role="quick-margin-para"]
-如果您计划使用适用于 Google Cloud 的 Cloud Volumes Service 作为存储后端，请转到 Google 云市场中的 NetApp Cloud Volumes Service 页面，然后选择购买。  Purchase Cloud Volumes Service for Google Cloud,了解有关此步骤的更多信息。
+如果您计划使用适用于 Google Cloud 的 Cloud Volumes Service 作为存储后端，请转到 Google 云市场中的 NetApp Cloud Volumes Service 页面，然后选择购买。 <<可选：购买适用于Google Cloud的Cloud Volumes Service,了解有关此步骤的更多信息>>。
 
 
 
-=== 在 Google Cloud 项目中启用 API
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三个"] 在 Google Cloud 项目中启用 API
 
 [role="quick-margin-para"]
 启用以下 Google Cloud API ：
 
+[role="quick-margin-list"]
 * Google Kubernetes 引擎
 * 云存储
 * 云存储 JSON API
@@ -61,15 +62,16 @@ NOTE: 如果您不开始使用 Google Cloud Volumes Service for Google Cloud 作
 
 
 [role="quick-margin-para"]
- APIs in your project,按照分步说明进行操作。
+<<在项目中启用 API,按照分步说明进行操作>>。
 
 
 
-=== 创建具有所需权限的服务帐户
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四个"] 创建具有所需权限的服务帐户
 
 [role="quick-margin-para"]
 创建具有以下权限的 Google Cloud 服务帐户：
 
+[role="quick-margin-list"]
 * Kubernetes 引擎管理员
 * NetApp Cloud Volumes 管理员
 +
@@ -83,21 +85,21 @@ NOTE: 如果您不开始使用 Google Cloud Volumes Service for Google Cloud 作
 
 
 [role="quick-margin-para"]
- a service account,阅读分步说明。
+<<创建服务帐户,阅读分步说明>>。
 
 
 
-=== 创建服务帐户密钥
-
-[role="quick-margin-para"]
-为服务帐户创建密钥，并将密钥文件保存在安全位置。  a service account key,按照分步说明进行操作。
-
-
-
-=== （可选）：为 VPC 设置网络对等
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五个"] 创建服务帐户密钥
 
 [role="quick-margin-para"]
-如果您计划使用适用于 Google Cloud 的 Cloud Volumes Service 作为存储后端，请设置从 VPC 到适用于 Google Cloud 的 Cloud Volumes Service 的网络对等关系。  Set up network peering for your VPC,按照分步说明进行操作。
+为服务帐户创建密钥，并将密钥文件保存在安全位置。 <<创建服务帐户密钥,按照分步说明进行操作>>。
+
+
+
+=== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["六个"] （可选）：为 VPC 设置网络对等
+
+[role="quick-margin-para"]
+如果您计划使用适用于 Google Cloud 的 Cloud Volumes Service 作为存储后端，请设置从 VPC 到适用于 Google Cloud 的 Cloud Volumes Service 的网络对等关系。 <<可选：为VPC设置网络对等,按照分步说明进行操作>>。
 
 
 
@@ -109,7 +111,7 @@ Kubernetes 版本:: 集群运行的Kubernetes版本必须介于1.22到1.24之间
 映像类型:: 每个工作节点的映像类型必须为 `COS_CONTAINERD`。
 集群状态:: 集群必须运行状况良好，并且至少有一个联机辅助节点，并且没有处于故障状态的辅助节点。
 Google Cloud 地区:: 如果您计划使用 Cloud Volumes Service for Google Cloud 作为存储后端，则集群必须在中运行 https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc["支持 Cloud Volumes Service for Google Cloud 的 Google 云区域。"] 请注意， Astra 控制服务支持两种服务类型： CVS 和 CVS-Performance 。作为最佳实践，您应选择一个支持适用于 Google Cloud 的 Cloud Volumes Service 的区域，即使您不将其用作存储后端也是如此。这样，如果您的性能要求发生变化，将来可以更轻松地将 Cloud Volumes Service for Google Cloud 用作存储后端。
-网络:: 如果您计划使用适用于 Google Cloud 的 Cloud Volumes Service 作为存储后端，则集群必须位于与适用于 Google Cloud 的 Cloud Volumes Service 建立对等关系的 VPC 中。  Set up network peering for your VPC,下面介绍了此步骤。
+网络:: 如果您计划使用适用于 Google Cloud 的 Cloud Volumes Service 作为存储后端，则集群必须位于与适用于 Google Cloud 的 Cloud Volumes Service 建立对等关系的 VPC 中。 <<可选：为VPC设置网络对等,下面介绍了此步骤>>。
 专用集群:: 如果集群为专用集群，则会显示 https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept["授权网络"^] 必须允许 Astra 控制服务 IP 地址：
 +
 --
@@ -200,6 +202,7 @@ video::video-create-gcp-service-account.mp4[width=848,height=480]
 
 
 
+.结果
 使用共享 VPC 添加 GKEE 集群将完全适用于 Astra 。
 
 

@@ -86,7 +86,7 @@ ifdef::azure[]
 
 * 是否可以将专用 AKS 集群添加到 Astra Control Service ？ *
 
-可以，您可以将专用 AKS 集群添加到 Astra Control Service 。要添加专用 AKS 集群，请参见 link:add-first-cluster.html["从 Astra Control Service 开始管理 Kubernetes 集群"]。
+可以，您可以将专用 AKS 集群添加到 Astra Control Service 。要添加专用AKS集群、请参见 link:add-first-cluster.html["从 Astra Control Service 开始管理 Kubernetes 集群"]。
 
 *是否可以使用Active Directory管理AKS集群的身份验证？*
 
@@ -159,7 +159,7 @@ Astra Control 不会部署应用程序。应用程序必须部署在 Astra Contr
 
 ifdef::gcp[]
 
-* 我看不到应用程序的任何 PVC 绑定到 GCP CVS 。有什么问题？ *
+*我看不到应用程序的任何PVC绑定到GCP CVS。有什么问题？ *
 
 在成功添加到 Astra Control 后， Astra Trident 运算符会将默认存储类设置为 `netapp-cvs-perf-Premium` 。如果应用程序的 PVC 未绑定到适用于 Google Cloud 的 Cloud Volumes Service ，您可以执行以下几个步骤：
 

@@ -14,9 +14,7 @@
   <block id="40b96cc305f26bed96812c2920065f5d" category="doc">设置 Google Cloud</block>
   <block id="34d2a25ad50e70e09e72aeff2a894d06" category="section-title">快速开始设置 Google Cloud</block>
   <block id="2433628c53fed80ea9d352a1bcd9ce45" category="paragraph">按照以下步骤快速入门，或者向下滚动到其余部分以了解完整详细信息。</block>
-  <block id="04696f5c6f9ab48b84d14152c7d2d9e0" category="section-title">查看 Google Kubernetes Engine 的 Astra Control Service 要求</block>
   <block id="276169ccd2a2393a29e9402ab483c9e7" category="inline-xref">了解有关此步骤的更多信息</block>
-  <block id="877504ffbacff5a936df5d8b9380d0d7" category="section-title">在 Google Cloud 项目中启用 API</block>
   <block id="0b6062af6539588bd15a413087b36a5d" category="paragraph">启用以下 Google Cloud API ：</block>
   <block id="f366dda7f9a232a211cc6ca9117b457e" category="list-text">Google Kubernetes 引擎</block>
   <block id="5928c3e44960a9a5a42f9bc9303998af" category="list-text">云存储</block>
@@ -29,7 +27,6 @@
   <block id="a6fe26cb7a788bd1273103368fd7da8b" category="list-text">服务管理 API</block>
   <block id="cd444a79f98ccbe383b146279f3bb526" category="inline-xref">按照分步说明进行操作</block>
   <block id="f32f6cbeaae00eede51aaf17d478b6a2" category="paragraph"><block ref="6ae62877e87e210bd21c8227bd1a036c" category="inline-xref-macro-rx"></block>。</block>
-  <block id="cd3646ae9a4a0c77ad84c8ef07aaae21" category="section-title">创建具有所需权限的服务帐户</block>
   <block id="4bde2ad0fc4c457bbd9bd7d7748c1e09" category="paragraph">创建具有以下权限的 Google Cloud 服务帐户：</block>
   <block id="1760c8696f1d16c5ea53ed6387edd1bb" category="list-text">Kubernetes 引擎管理员</block>
   <block id="fcb1826d2de1027ddf306a73178428c2" category="list-text">NetApp Cloud Volumes 管理员</block>
@@ -130,7 +127,6 @@
   <block id="74b741fc3d54baf9d97610b2ee78aaef" category="summary">设置环境后，您可以创建 Kubernetes 集群，然后将其添加到 Astra Control Service 。</block>
   <block id="500d3c8defab0707486026a482b78c38" category="section-title">创建 Kubernetes 集群</block>
   <block id="b25e6cbe92376851fb2fc7b4e024274e" category="inline-link-macro">Google Kubernetes Engine （ GKEE ）的 Astra Control Service 要求</block>
-  <block id="a711863513c11f3a6d86294acc7be0ba" category="list-title">您需要什么？ #8217 ；将需要什么</block>
   <block id="46b491767cd12d81f9bf9593f5a96cf7" category="inline-link-macro">了解如何设置服务帐户</block>
   <block id="686cb20b1345505bc3b4d980227e595c" category="list-text">对于 GKE- ，您应该拥有具有所需权限的服务帐户的服务帐户密钥文件。 <block ref="9215258f7e020d0c05367a1a3bfd0982" category="inline-link-macro-rx"></block>。</block>
   <block id="2c620a037dcfb55d88e388bd87452f5c" category="inline-link-macro">了解如何设置服务主体</block>
@@ -187,7 +183,6 @@
   <block id="f75d983d4bc87e1a244c894a4357e93a" category="section-title">管理应用程序</block>
   <block id="eaeb56aabe324b7270ae7355bb58edcb" category="paragraph">* Astra Control 是否可以部署应用程序？ *</block>
   <block id="48df7f09a242df239385ebae869133b8" category="paragraph">Astra Control 不会部署应用程序。应用程序必须部署在 Astra Control 之外。</block>
-  <block id="395007096dc9e0b54c09749dc82a8941" category="paragraph">* 我看不到应用程序的任何 PVC 绑定到 GCP CVS 。有什么问题？ *</block>
   <block id="baaf63e6e2361e11fa4ae44151218b4e" category="list-text">运行 `kubectl get SC` 并检查默认存储类。</block>
   <block id="c5f298a00c4f6a85ebf65b24eef94a12" category="list-text">检查用于部署应用程序的 YAML 文件或 Helm 图表，查看是否定义了其他存储类。</block>
   <block id="44379fcc25f304b4401a09a7641dd567" category="paragraph">* 停止从 Astra Control 管理应用程序后，应用程序会发生什么情况？ *</block>
@@ -236,10 +231,8 @@
   <block id="dd8cd9eba2ecc51750e65a67f022145a" category="list-text"><block ref="dd8cd9eba2ecc51750e65a67f022145a" category="inline-link-macro-rx"></block></block>
   <block id="739ea6bf2562737f66933a182c8d0c06" category="summary">在使用 Astra Control Service 管理 Azure Kubernetes Service 集群之前，需要执行一些步骤来准备 Microsoft Azure 订阅。</block>
   <block id="dc76c51bff59af0886e7f54ab9ef049d" category="section-title">快速开始设置 Azure</block>
-  <block id="6114e8a8f2850be98581400acbf88b6f" category="section-title">查看 Azure Kubernetes Service 的 Astra Control Service 要求</block>
   <block id="64f071aa545dfea3fd68ea0ca25cad17" category="section-title">对于 Azure NetApp Files ，</block>
   <block id="1a58284cd0ffb72aa1652378f4ae9b61" category="section-title">Create a NetApp account</block>
-  <block id="e82e5070cbce17a76f8a1282c7e2df78" category="section-title">设置容量池</block>
   <block id="fc5cc13d4c63e16c62deed1c25a97cfa" category="paragraph">为永久性卷设置一个或多个容量池。 <block ref="e481f2b64bd3b8137ad15772007d7292" category="inline-xref-macro-rx"></block>。</block>
   <block id="42e9b5ee697da49886fd18e89e6ab1af" category="section-title">Delegate a subnet to Azure NetApp Files</block>
   <block id="a5c5eef72d8371c545403ac8f92f1188" category="paragraph">将子网委派给 Azure NetApp Files ，以便 Astra 控制服务可以在该子网中创建永久性卷。 <block ref="246c727b900a21096813106e7733a9c4" category="inline-xref-macro-rx"></block>。</block>
@@ -307,7 +300,6 @@
   <block id="685dc5e480cdeda5182e7aab430776b5" category="inline-link-macro">了解有关 Google Cloud 要求的更多信息</block>
   <block id="0e83f156b469d1d40bbeec0d0d789b4c" category="paragraph"><block ref="09d2265f114d20963d659b923bd35923" category="inline-link-macro-rx"></block>。</block>
   <block id="4bce0cadbd95655804d72e0df4ac6d7b" category="list-text">Microsoft Azure</block>
-  <block id="5cc7c722edeff02a4b01646c0e3fa3ad" category="section-title">完成 Astra Control 注册</block>
   <block id="d4e2866a87cb36aa53ac9d94e7402e45" category="list-text">创建<block ref="acbb6886c35e57125998fe7d6c5eea1f" category="inline-link-rx"></block> 帐户。</block>
   <block id="ecefaf3209c4e5c804b1d3c466a9d510" category="inline-link">从 Astra 产品页面</block>
   <block id="fdcff977492d72bd4bad80358b5b7d99" category="list-text">创建 Astra Control 帐户时，请指定您的 NetApp Cloud Central 电子邮件 ID<block ref="778ba27a5b5fe872bd25f23635cb760f" category="inline-link-rx"></block>。</block>
@@ -386,7 +378,6 @@
   <block id="009fbfbca46589505e571105aa553afd" category="list-text">* 所有者 * 具有管理员权限，可以删除帐户。</block>
   <block id="bb382507e845750265db4d4c275e9d90" category="list-text">* 管理员 * 具有成员权限，可以邀请其他用户。</block>
   <block id="12683a08e59030d6f53d51de7d346b89" category="list-text">* 查看器 * 可以查看资源。</block>
-  <block id="a3f6d57c07e3d951867e570c6f3e5028" category="section-title">更改用户的角色</block>
   <block id="b0f57f653f46b0fd636400edc6408e25" category="paragraph">帐户所有者可以更改所有用户的角色，而帐户管理员可以更改具有管理员，成员或查看器角色的用户的角色。</block>
   <block id="341e74781153cd183a6ffbc1cfb02eb6" category="paragraph">Astra Control 会根据您选择的新角色更新用户的权限。</block>
   <block id="8c7e9f2dfcd0125922dfbce36a1a4c2a" category="section-title">删除用户</block>
@@ -583,14 +574,12 @@
   <block id="482723983a4f2af954e36ff41e567451" category="doc">已知限制</block>
   <block id="1ac484b7039a7a63fa107c6b607c9db1" category="section-title">一般限制</block>
   <block id="623db30e78541159ce87dfd621c82f08" category="paragraph">以下限制会影响 Astra Control Service 在任何受支持的 Kubernetes 部署中对 Kubernetes 集群的管理。</block>
-  <block id="82adec1884becbf1b5df647fed914628" category="section-title">未从集群中卸载 Astra Trident</block>
   <block id="2ffc1b9c31ec02503b31e837127256d6" category="inline-link">请按照 Astra Trident 文档中的以下步骤进行操作</block>
   <block id="684d9922c22d027489e3cb0caa3d50ca" category="paragraph">从 Astra 控制服务取消管理集群时，不会自动从集群中卸载 Astra Trident 。要卸载 Astra Trident ，您需要<block ref="63f898d0a9f06a9c415a80b9d724603c" category="inline-link-rx"></block>。</block>
   <block id="52613a0e2a34040faff2fa3713d61414" category="section-title">与 Postgres Pod 的现有连接导致故障</block>
   <block id="b9f8e20735440b893e92df9f8f191ee9" category="paragraph">在 Postgres Pod 上执行操作时，不应直接在 Pod 中连接以使用 psql 命令。Astra 控制服务需要使用 psql 访问权限来冻结和解冻数据库。如果已建立连接，则快照，备份或克隆将失败。</block>
   <block id="6bfe142cec74b24abd2888a936579280" category="section-title">GKEE 集群管理的限制</block>
   <block id="3265b2231bbb5d69811830c739f49e98" category="paragraph">以下限制适用于在 Google Kubernetes Engine （ GKEE ）中管理 Kubernetes 集群。</block>
-  <block id="339effc40f2ec827523a251742b3ca79" category="section-title">Google Marketplace 应用程序尚未经过验证</block>
   <block id="bd0e1e2eb280afdefcb2b4c6f1a09515" category="paragraph">NetApp 尚未验证从 Google Marketplace 部署的应用程序。某些用户报告发现或备份从 Google Marketplace 部署的 Postgres ， MariaDB 和 MySQL 应用程序时出现问题。</block>
   <block id="43056e2e7b2e99afa90bfb5acff55921" category="paragraph">无论您在 Astra Control Service 中使用哪种类型的应用程序，您都应始终自行测试备份和还原工作流，以确保满足灾难恢复要求。</block>
   <block id="598d6fe4e43f08217f8edf064d9a7fa3" category="summary">NetApp 会定期更新 Astra Control Service ，为您提供新功能，增强功能和错误修复。</block>
@@ -693,7 +682,6 @@
   <block id="ff24590464659ee8cdec688128c35f89" category="list-text">克隆</block>
   <block id="d4e2713d1b1725a1592f9268589f990d" category="list-text">Snapshot</block>
   <block id="3500ba09d0538297440ca620c9dd46bf" category="list-text">备份</block>
-  <block id="a24daf3d2d584a2ee6adcd097ffde406" category="inline-link">请参见 Kubernetes 官方文档</block>
   <block id="ef8ee09fa3337e5d951394563bcf6ba8" category="summary">下面简要介绍了 Astra Control 环境的各个组件。</block>
   <block id="9282ad3aef7e124a3b2b9c7eab52b33d" category="doc">架构和组件</block>
   <block id="ef22ff17624b3faeed227ce5c717eb5f" category="doc">Astra Control Service 文档</block>
@@ -756,7 +744,6 @@
   <block id="f4753a613899e6c5fa411aae13fc0512" category="list-text">登录 Azure 门户。</block>
   <block id="8ea322965c1b00e5dc2b32f6b44cbbd2" category="list-text"><block ref="f31b4593573f8f3173b74083d2b4942a" category="inline-link-rx"></block>。</block>
   <block id="9350d2c562eac87f39f2b4d0643884b6" category="paragraph">等待大约 10 分钟，然后发现在委派子网中运行的集群。</block>
-  <block id="94eecee45e93b07731a5b0419e759fd0" category="section-title">将集群添加到 Astra Control</block>
   <block id="ce22cdbaf9c7b2a84e52b372cf44f51d" category="inline-link-macro">了解有关添加集群的更多信息</block>
   <block id="83a7557c5cbaf7c83dfb60426a040f0d" category="paragraph"><block ref="08870732ab38e40fc73b515a443d25f4" category="inline-link-macro-rx"></block>。</block>
   <block id="ad37cec77527ba2b72ebad59937415a8" category="summary">从 Astra Control 中删除不再需要管理的任何应用程序或集群。</block>
@@ -853,7 +840,6 @@
   <block id="4a921c3efaab8bbadecfb6a807d12e69" category="list-text">选择 * 执行挂钩 * 选项卡。</block>
   <block id="c45dea86b5befe190795d48755984936" category="section-title">创建自定义执行挂钩</block>
   <block id="f1ec6389b6d19d3be02f29f4a7d29051" category="inline-link-macro">执行钩示例</block>
-  <block id="accd1f6705376b7c94fe544977e50545" category="paragraph">您可以为应用程序创建自定义执行挂钩。请参见 <block ref="6d8239255f3b956e54f6aae8a56a0ae9" category="inline-link-macro-rx"></block> 有关挂机示例。要创建执行挂钩，您需要拥有所有者，管理员或成员权限。</block>
   <block id="8418a36d2778041af8e3f737ec1644a7" category="list-text">选择 * 应用程序 * ，然后选择受管应用程序的名称。</block>
   <block id="4069b8bd7c11bc17efc85c9bb6d794c1" category="list-text">输入此挂钩的唯一名称。</block>
   <block id="cc56ac336e2ae46c348055eabdb31910" category="list-text">（可选）输入执行期间传递到挂机的任何参数，在输入的每个参数之后按 Enter 键以记录每个参数。</block>
@@ -873,26 +859,6 @@
   <block id="2ac3de7754eb6e2a50dccc9a566f5b2c" category="section-title">删除执行挂钩</block>
   <block id="da5e9c066635008b4b3ce13bb28ca328" category="paragraph">如果您不再需要执行挂钩，则可以将其完全移除。要删除执行挂钩，您需要拥有所有者，管理员或成员权限。</block>
   <block id="0f024621e0673f1f4e657983682d6e72" category="list-text">选择 * 删除 * 。</block>
-  <block id="a77683ae8edcb3cd1537700411834ab9" category="summary">使用以下示例了解如何构建执行挂钩。</block>
-  <block id="3a93b0a9cf88ddc06d563489a2895c27" category="paragraph">使用以下示例了解如何构建执行挂钩。您可以将这些挂钩用作模板或测试脚本。</block>
-  <block id="4080d94759fa38e6a6b1dba142b2c090" category="section-title">简单的成功示例</block>
-  <block id="0633de588be1b9b7ef2ce544cc43b805" category="paragraph">这是一个简单的钩子示例，它成功地将消息写入标准输出和标准错误。</block>
-  <block id="2140ca0b50b65cc33e13b1693e8f7d29" category="section-title">简单成功示例（ bash 版本）</block>
-  <block id="ef53d64aad9e1800233c6ff7ad7659a6" category="paragraph">这是一个简单的钩子示例，该钩子成功地将消息写入标准输出和标准错误，并写入 bash 。</block>
-  <block id="d803bd21292822cc57f6cea1b26277a6" category="section-title">简单成功示例（ zsh 版本）</block>
-  <block id="66b0025d5aab9045e3b45a4d66a48753" category="paragraph">这是一个简单的钩子示例，该钩子成功地将消息写入标准输出和标准错误，并写入 Z shell 。</block>
-  <block id="404a19c311e695f744083ec2c8a6a1aa" category="section-title">成功使用参数示例</block>
-  <block id="824760aa066fdf7d7264404530eab6de" category="paragraph">以下示例演示了如何在挂机中使用 args 。</block>
-  <block id="82319328d67378fb8ea8de76b217a7b1" category="section-title">快照前 / 快照后挂钩示例</block>
-  <block id="98fa2db3a9b66ee5684a718840275afc" category="paragraph">以下示例演示了如何对快照前和快照后挂钩使用同一脚本。</block>
-  <block id="07feeb75b51e9098527fcce368e18ba4" category="section-title">故障示例</block>
-  <block id="76214508e53f6a5210da5d087deabd64" category="paragraph">以下示例演示了如何处理挂机故障。</block>
-  <block id="3619ce0a3177781c10d45dcef727f469" category="section-title">详细故障示例</block>
-  <block id="e29a5c052b79db2027518d6f91a1bf51" category="paragraph">以下示例演示了如何处理挂机故障，并提供更详细的日志记录。</block>
-  <block id="b1eef973caa0256ee30c734876bbea52" category="section-title">退出代码示例失败</block>
-  <block id="72a1fa5b5d8898a40469febc542a9fb1" category="paragraph">以下示例显示了一个连接失败并显示退出代码。</block>
-  <block id="19913f9a3a2b84a8e9235b0b3b542efb" category="section-title">失败后成功示例</block>
-  <block id="bb2f4bbf1bdeef5e734446fc84fd577d" category="paragraph">以下示例显示了首次运行时发生故障的挂钩，但在第二次运行后仍会成功。</block>
   <block id="4ea21227490cfda88113ac9e09c3d896" category="section-title">Google 持久磁盘</block>
   <block id="c533b58a8522da4b56509ffdf8f54226" category="inline-link">了解有关 Google 持久磁盘的更多信息</block>
   <block id="39c44ccf09904735b47f23a89ee2e724" category="paragraph"><block ref="055a60e2d0748ea0284ea572aa51a82d" category="inline-link-rx"></block>。</block>
@@ -946,10 +912,8 @@
   <block id="01196ab9b910cb225df67b416b3d977b" category="list-text">等待收到 NetApp Cloud Central 发送的电子邮件。此电子邮件来自地址 saas.support@netapp.com ，可能需要几分钟才能收到。请务必检查您的垃圾邮件文件夹。</block>
   <block id="22f598e03124be388e74fc380a10d131" category="paragraph">注册后，您可以从使用 Cloud Central 凭据直接访问 Astra Control Service<block ref="8c65d1fc4cf122e461b28ceccd26064c" category="inline-link-rx"></block>。</block>
   <block id="17bdc960e77c5de3d2f3da5e6e1affeb" category="admonition">如果您不开始使用 Google Cloud Volumes Service for Google Cloud 作为存储后端，而打算稍后再使用，则应完成必要的步骤立即配置 Google Cloud Volumes Service for Google Cloud 。稍后创建服务帐户意味着您可能无法访问现有存储分段。</block>
-  <block id="fbbc27547284c3072e2071336248818b" category="section-title">（可选）：购买适用于 Google Cloud 的 Cloud Volumes Service</block>
   <block id="5aab0b483e616de978f7efe5b7fd9904" category="list-text">Cloud Volumes Service for Google Cloud 必需</block>
   <block id="8e0a04bff2763ed7bba0f6b73b241e6e" category="list-text">Google Persistent Disk 的可选（但建议）</block>
-  <block id="6598aaca4a8279b1c9ab7c8c82b638d8" category="section-title">（可选）：为 VPC 设置网络对等</block>
   <block id="7f89d8636a0619ff67eeed64dfc8e783" category="paragraph">Kubernetes 集群必须满足以下要求，才能通过 Astra Control Service 发现和管理它。请注意，只有当您计划使用适用于 Google Cloud 的 Cloud Volumes Service 作为存储后端时，其中某些要求才适用。</block>
   <block id="48c8939d34f428e6bd9fc34603223f50" category="list-text">如果您计划使用 Cloud Volumes Service for Google Cloud 作为存储后端，则集群必须在中运行<block ref="971594277e407eb62311208ac22b5d26" category="inline-link-rx"></block> 请注意， Astra 控制服务支持两种服务类型： CVS 和 CVS-Performance 。作为最佳实践，您应选择一个支持适用于 Google Cloud 的 Cloud Volumes Service 的区域，即使您不将其用作存储后端也是如此。这样，如果您的性能要求发生变化，将来可以更轻松地将 Cloud Volumes Service for Google Cloud 用作存储后端。</block>
   <block id="4e40453871bcb6e051f205dcbae576db" category="list-text">NetApp Cloud Volumes Service （适用于 Google Cloud 的 Cloud Volumes Service 所需）</block>
@@ -1024,7 +988,6 @@
   <block id="dea95de7f2633f161384f311ab180946" category="list-text">选择 * 数据保护 * 。</block>
   <block id="991b4d6d3f0be95d8e0ca4853eea90a9" category="list-text">选择 * 配置保护策略 * 。</block>
   <block id="b99a9a5879442c5ad3ae30c94964ccb3" category="list-text">选择 * 审阅 * 。</block>
-  <block id="21edb917a28989ae581923ea55405922" category="list-text">选择 * 备份 * 可查看备份列表。</block>
   <block id="c629829cf1bc7915fff12e8f5be0438f" category="list-text">选择 * 备份 * 。</block>
   <block id="9de0e2b17d7e1e2da6c0ce7e9dc6e377" category="list-text">选择 * 克隆 * 。</block>
   <block id="b21aa3a75aa9fe5b7c4320c651dd6004" category="list-text">选择 * 添加 * ，然后按照提示添加存储分段。</block>
@@ -1202,7 +1165,6 @@
   <block id="bb2ac0b8da1f64a3498af147ba43fc10" category="inline-link-macro">还原</block>
   <block id="138a4950d3aca53bd8c1976b5cf5410d" category="list-text">在 * 用户 * 选项卡中，选择 * 邀请 * 。</block>
   <block id="7db390618915f5cf14f0a045ddccc95f" category="list-text">要为具有成员或查看器角色的用户添加约束，请启用 * 将角色限制为约束条件 * 复选框。</block>
-  <block id="42adeb90b0f3a4a988d809b0aa25dd99" category="paragraph">有关添加约束的详细信息，请参见 <block ref="f9b0c5590ff6fff298698f3844cae23c" category="inline-link-macro-rx"></block>。</block>
   <block id="fc578ea915be6294495556998e7ae8b8" category="list-text">要邀请其他用户，请选择 * 添加其他用户 * 并输入新用户的信息。</block>
   <block id="bea14784e79282fdab76fc601ca83f89" category="paragraph">一次最多可以邀请 10 个用户。您可以在 * 邀请用户 * 对话框左侧邀请的用户之间导航。</block>
   <block id="b9e9a0596a083c96a1f0e81b4b4439db" category="list-text">选择 * 邀请用户 * 。</block>
@@ -1237,7 +1199,6 @@
   <block id="570fa99ce4fbf8deb198b97a6931d63a" category="list-text">Cloud Volumes ONTAP 存储后端</block>
   <block id="ea2708b459fc0cad6936ec216bd9405e" category="paragraph">Astra 控制中心完全集成到 AutoSupport 和 Active IQ 生态系统中，可为用户和 NetApp 支持提供故障排除和使用信息。</block>
   <block id="970cfe22b76fecaa99669dbc6dd2643e" category="paragraph">* 是否可以将专用 AKS 集群添加到 Astra Control Service ？ *</block>
-  <block id="dc20c422489ccc5588373c1641e476be" category="paragraph">可以，您可以将专用 AKS 集群添加到 Astra Control Service 。要添加专用 AKS 集群，请参见 <block ref="d51718998c7312025a3cf72e62416cc2" category="inline-link-macro-rx"></block>。</block>
   <block id="51e84df52b4888344ecda584885aaabd" category="paragraph">专用集群必须具有<block ref="aa255aeede553f15509fbd44536f790e" category="inline-link-rx"></block> 设置为允许 Astra Control IP 地址：</block>
   <block id="0cc78d43619515d263f8e91071f2ed83" category="paragraph">52.188.218.166/32</block>
   <block id="242b16009698fe8de90e3b0966885de7" category="summary">了解 Astra 控制中心提供的数据保护类型，以及如何以最佳方式使用它们来保护您的应用程序。</block>
@@ -1265,7 +1226,6 @@
   <block id="f64cab133147d09d35d2708459ada555" category="section-title">当 Astra Trident 脱机时，应用程序数据管理操作失败，并显示内部服务错误（ 500 ）</block>
   <block id="5ffd50b83740bc0749b40034cddea615" category="paragraph">如果应用程序集群上的 Astra Trident 脱机（并恢复联机），并且在尝试应用程序数据管理时遇到 500 个内部服务错误，请重新启动应用程序集群中的所有 Kubernetes 节点以还原功能。</block>
   <block id="d551a2e881c7a8c13113e2a9e28d0b91" category="list-text">如果集群为专用集群，则会显示<block ref="aa255aeede553f15509fbd44536f790e" category="inline-link-rx"></block> 必须允许 Astra 控制服务 IP 地址：</block>
-  <block id="ae67f9136c5a827541839e278a3b8b0a" category="paragraph">随时从帐户中删除凭据。您只能在之后删除凭据 <block ref="7193f1b7f27bd5505d89cc1e5724fb4b" category="inline-link-macro-rx"></block>、除非您正在轮换凭据(请参见 <block ref="029b7394eded829c95ca3b86c4cd802d" category="inline-xref-macro-rx"></block>）。</block>
   <block id="85149e5821bdf494d4eaf0a96d8f46a8" category="section-title">轮换凭据</block>
   <block id="8e945e6a79e0bf8da80606ed9d20bc53" category="paragraph">您可以轮换帐户中的凭据。如果要轮换凭据、请在维护窗口中没有正在进行的备份(计划备份或按需备份)时轮换凭据。</block>
   <block id="d05c0825b09f53538ae182820f680709" category="list-text">按照中的步骤删除现有凭据 <block ref="d2f3a923bca17e66f3f1dad217fa3a1a" category="inline-xref-macro-rx"></block>。</block>
@@ -1294,8 +1254,6 @@
   <block id="9ac0dd27d420b7b48ca72e463ae95e18" category="inline-link">这些说明</block>
   <block id="e42b53a05e4dc8d35c19c6e591938326" category="list-text">使用创建使用所需冗余级别的Azure存储帐户<block ref="c9a7cb9a074b3428e720b565b7629c69" category="inline-link-rx"></block>。</block>
   <block id="71f57bd63430dbba34c12daa373f7996" category="list-text">使用在新存储帐户中创建Azure容器<block ref="ba03a3cb851c493aa05900ed20930895" category="inline-link-rx"></block>。</block>
-  <block id="4a9b46e4514936c3267b624e9c48f76b" category="list-text">将此容器作为分段添加到Astra Control Service中。请参见 <block ref="3ecbb82ace41389a409b1cc92181a5a8" category="inline-link-macro-rx"></block>。</block>
-  <block id="695f1c0a89ac16190399389b6dfdcb1b" category="list-text">(可选)要使用新创建的存储分段作为Azure备份的默认存储分段、请将其设置为Azure的默认存储分段。请参见 <block ref="d1523cf11113b501cc0e7216254bf527" category="inline-link-macro-rx"></block>。</block>
   <block id="f2ab44c105acc97c54a227f6c52ad099" category="admonition">如果还原到先前已删除的命名空间、则在还原过程中会创建一个同名的新命名空间。任何有权管理先前删除的命名空间中的应用程序的用户都需要手动还原对新重新创建的命名空间的权限。</block>
   <block id="5a86157a3052fc9bb31e17ca06630acf" category="summary">Astra Control Service是一项由NetApp管理的服务、可为多个云环境中的Kubernetes集群提供应用程序感知型数据管理。如果您需要管理在内部环境中运行的 Kubernetes 应用程序，请访问 Astra Control Center 的文档。</block>
   <block id="202728ed0a31fb39489893fef0fc7f1d" category="paragraph">停止从 Astra Control 管理您不再需要管理的集群。</block>
@@ -1362,7 +1320,6 @@
   <block id="457022d51f2e6150dfa70037b30d57b5" category="section-title">为其他用户提供集群访问权限</block>
   <block id="436e78c3dd196f680aab83eb69543658" category="paragraph">您可以选择为集群提供`kubectl`命令访问权限、使其访问不是集群创建者的其他IAM用户。</block>
   <block id="043e32602230f742d954f613b7b5ce25" category="inline-link">在Amazon EKS中创建集群后、如何为其他IAM用户和角色提供访问权限？</block>
-  <block id="093a92b145f56040f6587b882873553a" category="paragraph">有关说明，请参见<block ref="47c83e7583e126455b2245655ede1c60" category="inline-link-rx"></block>。</block>
   <block id="03505e86c100771649c5c405d210f3de" category="paragraph">+*对于Amazon EKS集群、Astra Control Service使用<block ref="a65cb6c91d35e755c3763fe01aedac72" category="inline-link-rx"></block> 或<block ref="554e81ff0c0b44a91e38efe479d6c57c" category="inline-link-rx"></block> 作为永久性卷的存储后端。</block>
   <block id="9ab46041ac5136f2300b8e64c19f0964" category="section-title">注册Elastic Kubernetes Service (EKS)集群</block>
   <block id="cfab7aa3599d78d5f3c56857f2175c5f" category="paragraph">*是否可以将专用EKS集群添加到Astra Control Service？*</block>
@@ -1374,7 +1331,6 @@
   <block id="de67786285afec6fafad0eaf1b94a4b7" category="summary">要使用Astra Control Service管理Amazon Elastic Kubernetes Service集群、需要执行几个步骤来准备Amazon Web Services项目。</block>
   <block id="fb10da4ac3f6d496bf8994feb7a9260a" category="paragraph">要使用Astra Control Service管理Amazon Elastic Kubernetes Service (EKS)集群、需要执行几个步骤来准备Amazon Web Services项目。</block>
   <block id="21ddeedfeb4fe63a0174daa1cdf3f918" category="section-title">快速开始设置Amazon Web Services</block>
-  <block id="db5cb6099819813775320e6db9122409" category="section-title">查看适用于Amazon Web Services的Astra Control Service要求</block>
   <block id="341834e3353602e1a37c88a86b97ca5e" category="paragraph">确保集群运行状况良好并运行受支持的Kubernetes版本、工作节点处于联机状态并运行Linux或Windows等。 <block ref="90f42ed2b1d825a48f1b470bf3220e90" category="inline-xref-macro-rx"></block>。</block>
   <block id="8b21b2a5aa0ab4306661248f68c1404c" category="section-title">创建Amazon帐户</block>
   <block id="111efdc979f2ffefe4c216f07093039e" category="paragraph">如果您还没有Amazon帐户、则需要创建一个帐户、以便可以使用EKS。 <block ref="dd5a6c6e5aa2a8e0057f2f400ec690dc" category="inline-xref-macro-rx"></block>。</block>
@@ -1394,10 +1350,8 @@
   <block id="73faaa1b4bb064878667455dd879f4ba" category="list-text">适用于Amazon FSX for NetApp ONTAP 的Astra Trident</block>
   <block id="7c7909b36280dd94e57f2ee6a575a583" category="inline-link">Astra Trident部署概述</block>
   <block id="337de5d45c69b1e4dcf87a8e7ec9ff76" category="inline-link">将 Astra Trident 与适用于 NetApp ONTAP 的 Amazon FSX 结合使用</block>
-  <block id="4a22a3053e036485081d787be11fdcae" category="list-text">如果您使用适用于NetApp ONTAP 存储后端的Amazon FSX、则需要安装Astra Trident。有关说明，请参见<block ref="f6fce076fe7d8cd53c920b1f42e7a384" category="inline-link-rx"></block>。有关将Astra Trident与适用于NetApp ONTAP 的FSX结合使用的详细信息、请参见<block ref="720d51d7c9f57e4a266e8e3a5ab469c6" category="inline-link-rx"></block>。</block>
   <block id="0377220eb132179cb3e77bfec468b6e7" category="list-text">适用于Amazon Elastic Block Store (EBS)的CSI驱动程序</block>
   <block id="45a3701ecc9be7702921ca0e93420bfb" category="list-text">如果您使用Amazon EBS存储后端、则需要为EBS安装容器存储接口(Container Storage Interface、CSI)驱动程序(它不会自动安装)。</block>
-  <block id="8bfa23c838ad7a955dfb8629f1cbb4f4" category="paragraph">有关安装CSI驱动程序的说明、请参见详细信息。</block>
   <block id="ffb90b59a71f73d5ffa61affe6f83805" category="list-title">安装外部快照程序</block>
   <block id="469f7ca16938508b5dcb777767828b70" category="list-text">创建卷快照CRD。</block>
   <block id="cb9d6d1ca0b4fda3b1206ae38a007824" category="paragraph">对于Kubernetes 1.20及更高版本、请使用v5.0 Snapshot组件的v1 Snapshot CRD。</block>
@@ -1454,17 +1408,14 @@
   <block id="d819b60633fd5eee6a163e88aa81da4e" category="paragraph">Astra控制服务可以使用Amazon Elastic Block Store (EBS)或Amazon FSx for NetApp ONTAP 作为Amazon Elastic Kubernetes Service (EKS)集群的存储后端。</block>
   <block id="8e276a5c4eecb9cd5c1fbb0729744eb5" category="section-title">Amazon Elastic Block Store (EBS)</block>
   <block id="f83a0018c18787e63139822b6dc279ca" category="inline-link">Kubernetes文档</block>
-  <block id="2cdb953d683ebf31f5a647fee041dc98" category="paragraph">使用EBS作为EKS集群的存储后端时、您可以配置一些存储类参数。有关参数的含义以及如何配置参数的详细信息、请参见<block ref="efa17ec338493b6d9caef44d32a8989a" category="inline-link-rx"></block>。</block>
   <block id="7de084a73e1235e817952e00c38561e0" category="paragraph">您可以在EBS中使用多种不同类型的卷：</block>
   <block id="6b69488d82bbe2d01d166e7d12047938" category="list-text">固态驱动器(SSD)</block>
   <block id="fa78e672adc4de65a148d9255690ef20" category="list-text">硬盘驱动器(HDD)</block>
   <block id="4d7d62280a9a403c050aed16a866aafe" category="list-text">上一代产品</block>
   <block id="6719d755d62147c2001683fc5b6abfa2" category="inline-link">Amazon EBS文档</block>
   <block id="978b82e4298231e68c6ac005c5e649aa" category="inline-link">Amazon EBS定价</block>
-  <block id="7cdf2c25ad58c3d19ca28eed712858d2" category="paragraph">有关每种类型的卷及其性能的详细信息、请参见<block ref="7ac340f30d3ddae2dcb4baa266ef78ba" category="inline-link-rx"></block>。有关定价信息、请参见<block ref="7729091ef10325fb607ffe76c346cfed" category="inline-link-rx"></block>。</block>
   <block id="bc4bb24d5e702fb79be623b84e7cf47e" category="inline-link">适用于NetApp ONTAP 性能的Amazon FSX</block>
   <block id="86305be6273e5fd50120867e93897613" category="inline-link">适用于NetApp ONTAP 的Amazon FSX定价</block>
-  <block id="216deec4f66c1acc8529a06df42142b8" category="paragraph">使用适用于NetApp ONTAP 的FSX作为AWS集群的存储后端时、I/O性能取决于文件系统的配置以及工作负载的特征。有关适用于NetApp ONTAP 性能的FSX的具体信息、请参见<block ref="45a884cbefaf34ae6fd7defa1c6be8c3" category="inline-link-rx"></block>。有关定价信息、请参见<block ref="1fe52440a36dc241abcf36facca2f97a" category="inline-link-rx"></block>。</block>
   <block id="64871be4acf54750c11b07ff3203cf03" category="list-text">Astra Control Service 使用<block ref="9e2d15731749abbc242896b41a1be2ef" category="inline-link-rx"></block> 或Azure受管磁盘作为AKS集群的存储后端。</block>
   <block id="bc808c2dc319f0278e897f16cfe24a95" category="list-text">Astra Control Service 使用<block ref="d804c793f302b1f3285300e6253aaac6" category="inline-link-rx"></block> 或Google Persistent Disk作为GKE集群的存储后端。</block>
   <block id="1574db16d74f7537711f20b07293065e" category="list-text">Astra Control Service 使用<block ref="a65cb6c91d35e755c3763fe01aedac72" category="inline-link-rx"></block> 和<block ref="789fe92e2b55f108a4e50dd78da73d71" category="inline-link-rx"></block> 作为EKS集群的存储后端。</block>
@@ -1485,7 +1436,6 @@
   <block id="c3443c90c9a8c8ae70d0708cc778b7b2" category="list-text">集群上安装的一个或多个应用程序。 <block ref="9a14b35f09704dd5c457f47f10cb55d6" category="inline-xref-macro-rx"></block>。</block>
   <block id="c7ba9d64e9c385851048858df4e26ef6" category="list-text">一个或多个活动Pod。</block>
   <block id="6f2886ca9812fade1ff2d6197498a80b" category="inline-link-macro">支持的Kubernetes资源</block>
-  <block id="0de4b069ef42dc2162b352a8d0c79120" category="admonition">标签是一个键 / 值对，您可以将其分配给 Kubernetes 对象进行标识。通过标签，可以更轻松地对 Kubernetes 对象进行排序，组织和查找。要了解有关 Kubernetes 标签的更多信息，<block ref="52425cbbdd8e653f3efe28de3861375f" category="inline-link-rx"></block>。</block>
   <block id="a7d4d20683a8972d07170d4ce5f3329b" category="inline-link-macro">管理标准命名空间和系统命名空间</block>
   <block id="eeda690c7ce6ed8c1c0aa2b723a685bf" category="inline-link-macro">Astra Automation 和 API 信息</block>
   <block id="8e53ab6973e348c5dae1439036057fb9" category="list-title">应用程序管理选项</block>
@@ -1499,7 +1449,6 @@
   <block id="3e88b428d08b8d89b8283702d678db03" category="list-text">从应用程序页面中、选择*定义*。</block>
   <block id="e2d8d6d70aac2542d44827bfcb764051" category="list-text">在*定义应用程序*窗口中、输入应用程序名称。</block>
   <block id="331f43fe2f77c6a01f41be4dfb5ef6c2" category="list-text">在*集群*下拉列表中选择运行应用程序的集群。</block>
-  <block id="a3c68e5320b67f406e968a257b3689d7" category="admonition">要了解有关 Kubernetes 标签的更多信息，<block ref="52425cbbdd8e653f3efe28de3861375f" category="inline-link-rx"></block>。</block>
   <block id="2aca38aa389f0e98ff0647310552fcae" category="list-text">选择*定义*后、根据需要对其他应用程序重复此过程。</block>
   <block id="4ea4809229f58272b813b2c68b742bc5" category="admonition">您刚刚添加的应用程序在 " 受保护 " 列下可能会显示一个警告图标，表示它尚未备份，并且尚未计划备份。</block>
   <block id="21bc83f1a45ccd9ced02ab96641c2f58" category="admonition">要查看特定应用程序的详细信息，请选择应用程序名称。</block>
@@ -1700,11 +1649,9 @@
   <block id="2325c645f4d2112a8e96b127fbad7bf2" category="inline-image-macro">Astra Control 架构图和组件</block>
   <block id="0e7f3e02eec3115e69bf39331337aa40" category="list-text">*存储帐户*(仅限Azure)：输入Azure存储帐户的名称。此存储分段必须属于名为_Astra-backup-rg_的资源组。</block>
   <block id="46c53b029194c1de2930d506c617135a" category="inline-link">Amazon文档</block>
-  <block id="67923dd978919e4cfb6eefb99c5e9b2b" category="list-text">* S3服务器名称或IP地址*(仅限AWS)：输入与您所在地区对应的S3端点的完全限定域名、而不包含`https：//`。请参见<block ref="398d47c523652edc934ec11e2f213d87" category="inline-link-rx"></block> 有关详细信息 ...</block>
   <block id="00aad21491943f355fbfdfc6d4402aab" category="paragraph">+*对于AKS集群、Astra Control Service使用<block ref="16e1ab965c1d673c5cb3b5a28e77c1c1" category="inline-link-rx"></block> 或Azure受管磁盘作为永久性卷的存储后端。</block>
   <block id="2e0924d60f841b17b95f6a2808bdd804" category="doc">通过Astra Control Service管理专用集群</block>
   <block id="3cedfb797d3e1bc073ba2b0b4d2502cf" category="inline-link">Azure 文档</block>
-  <block id="c8fcc51aeb3108d7803f70ec023b3a68" category="paragraph">您可以使用 Astra Control Service 管理专用 AKS 集群。以下说明假定您已创建专用AKS集群并准备了一种远程访问此集群的安全方法；有关创建和访问专用AKS集群的详细信息、请参见<block ref="bfdd887fc5c3338c9209fd10a121cfd7" category="inline-link-rx"></block>。</block>
   <block id="9e4605ceac83f35027fa891eaf2bb9eb" category="list-text"><block ref="05078d418bde535da37d6932b80e8a20" category="inline-xref-macro-rx"></block></block>
   <block id="e8ce2464bf37469ae2c62738acfbb711" category="list-text"><block ref="5e32b52882fb881cccde1bbea6854039" category="inline-xref-macro-rx"></block></block>
   <block id="4279e57b0ffd5584ad9180bad366d154" category="list-text"><block ref="a43da73cfccd4e57608242913dee505f" category="inline-xref-macro-rx"></block></block>
@@ -1716,7 +1663,6 @@
   <block id="e9c498c38ce73fcff282ff152abd7d47" category="list-text">按照中的说明生成Astra Control API令牌<block ref="c02899be0babfb1350e3b2576a6e8c97" category="inline-link-rx"></block>。</block>
   <block id="70160237033add78fccb2b80be4b76e6" category="list-text">根据需要修改Astra Connector操作员存储库的config/samples目录中的示例配置文件。</block>
   <block id="61ddd26ba79b5e63c1e52be1beb28889" category="section-title">设置永久性存储</block>
-  <block id="238fef6639bfc4fa1851b172d5f2391f" category="paragraph">为集群配置永久性存储。您可以使用Azure NetApp Files 或Azure受管磁盘。有关使用以下选项配置Azure的详细信息、请参见入门文档：</block>
   <block id="395e3e6bfbbde5a5e2d5c7679dcc81e9" category="list-text"><block ref="395e3e6bfbbde5a5e2d5c7679dcc81e9" category="inline-link-rx"></block></block>
   <block id="19d863b4572c9f53c276383bbf2540e0" category="list-text"><block ref="19d863b4572c9f53c276383bbf2540e0" category="inline-link-rx"></block></block>
   <block id="1cef3f8b6a3670bf3c09d6cab3c3c3d1" category="section-title">将专用集群添加到Astra Control Service</block>
@@ -1737,8 +1683,6 @@
   <block id="ba1383f60e0d2536b7ceee7e21cbf214" category="paragraph">您还可以创建要自行管理的内部或云托管集群。您可以通过上传将自管理集群添加到Astra Control Service<block ref="ea46161c66978a87802bc5b44682cbe0" prefix=" " category="inline-code"></block> 文件您需要确保集群满足中所述的要求 <block ref="fedf37c1e98889c2b8f08b9cf9723656" category="inline-xref-macro-rx"></block>。</block>
   <block id="a30241413c2751b1ad5c5a00e914e0a1" category="paragraph">登录到 Astra Control Service 后，第一步是开始管理集群。您可以添加由云提供商管理的集群或自管理集群。在将集群添加到Astra Control Service之前、您需要执行某些任务并确保集群满足特定要求。</block>
   <block id="75cea9c777f72349fb550387eafc09c1" category="example-title">由云提供商管理的集群需要什么？#8217</block>
-  <block id="e256d39ed41526a8b51a32a968630d6d" category="list-text">适用于NetApp ONTAP 的Amazon FSX需要Astra Trident。如果您计划使用适用于NetApp ONTAP 的Amazon FSx作为EKS集群的存储后端、请参见中的Astra Trident信息 <block ref="e68d00178a10629977a40b55006d1823" category="inline-link-macro-rx"></block>。</block>
-  <block id="d945cbaf850b022774182345b64bf993" category="list-text">对于专用AKS集群、请参见 <block ref="104a7dd39d72f9f66f9cd954ba655942" category="inline-link-macro-rx"></block>。</block>
   <block id="9eecb04f40bc3e3811b2fcfff6ea5b4f" category="example-title">自我管理集群需要什么？#8217</block>
   <block id="8795dc03295c2ac742d1936726a56ab0" category="paragraph">您的集群需要满足以下要求：</block>
   <block id="14f50fdd763a95c364923f6466b1bdfe" category="list-text">集群必须可通过Internet访问</block>
@@ -1762,9 +1706,7 @@
   <block id="617eb1530b145e1d6b1e3a0d2ec1478d" category="list-text">检查Astra Trident版本。</block>
   <block id="296a853ce5b2af1089a92d18fb98dbf2" category="paragraph">如果安装了Astra Trident、则会显示类似于以下内容的输出：</block>
   <block id="ffcc0feca3c8cd069d4965c88a5c1ebb" category="paragraph">如果未安装Astra Trident、您将看到类似于以下内容的输出：</block>
-  <block id="ebd6653aa1aac0d874d63044391eda8f" category="admonition">如果Astra Trident未安装或不是最新版本、并且您希望集群使用Astra Trident提供存储服务、则需要先安装最新版本的Astra Trident、然后再继续操作。请参见<block ref="0a4eeddcb63a166e3ea6149a4a33d4e7" category="inline-link-rx"></block> 有关说明，请参见。</block>
   <block id="6c8bc25bbb383bdd569b3a8b67462c4a" category="list-text">确保Pod正在运行：</block>
-  <block id="92010309b57bb643c5fe3dd115c6b2e3" category="list-text">检查存储类是否正在使用受支持的Astra Trident驱动程序。配置程序名称应为<block ref="08044207e9f63bb0fd474dab347a776c" prefix=" " category="inline-code"></block>。请参见以下示例：</block>
   <block id="6d55356ca8cb9b27cfa6e2bb46ebb089" category="paragraph">响应示例：</block>
   <block id="7e4e5121275b933eab9a9d5689c80875" category="paragraph">执行这些步骤之前，请确保您的计算机上具有以下内容：</block>
   <block id="f6ca4dc4443aea5e0b0f91e229709c7c" category="list-text">已安装kubectl v1.19或更高版本</block>
@@ -1787,13 +1729,10 @@
   <block id="aae2bc70406cacace4dfa6be8d857f2c" category="list-text">*提供商*：选择您的云提供商、然后提供创建新云实例所需的凭据或选择要使用的现有云实例。</block>
   <block id="38e2b31fd3dcdd65304ac201efd17f06" category="list-text">*其他*：通过上传提供有关自管理集群的详细信息<block ref="ea46161c66978a87802bc5b44682cbe0" prefix=" " category="inline-code"></block> 文件或粘贴的内容<block ref="ea46161c66978a87802bc5b44682cbe0" prefix=" " category="inline-code"></block> 文件。</block>
   <block id="d9348d075dc7b3c91cff99d56dfc327b" category="inline-link">Kubernetes 文档</block>
-  <block id="04b7edd723480f6d26b90b3374f8646b" category="admonition">创建自己的<block ref="deabc6332aa53495b56c51d2e3eca54f" prefix=" " category="inline-code"></block> file中、您只能定义*一*上下文元素。请参见<block ref="54676762f2eb4e7149fe4e9996a20b1c" category="inline-link-rx"></block> 有关创建的信息<block ref="deabc6332aa53495b56c51d2e3eca54f" prefix=" " category="inline-code"></block> 文件。</block>
   <block id="9fc84d64f86a2fb623a35c5692c96941" category="inline-link-macro">云实例</block>
   <block id="6d19112b98ccacfb730d0287c99eb91c" category="list-text">*云名称*(对于提供商管理的集群)：为添加此集群时要创建的新云实例提供一个名称。了解更多信息 <block ref="32e60ef2ecbf9cc1dffc20ea8b07ceea" category="inline-link-macro-rx"></block>。</block>
   <block id="5621ce04305fabeb5c1385e8b31521fa" category="admonition">从集群列表中进行选择时、请仔细查看"符合条件"选项卡。如果出现警告，请将鼠标悬停在警告上以确定集群是否存在问题描述。例如，它可能会标识集群没有工作节点。</block>
   <block id="26b17225b626fb9238849fd60eabdf60" category="paragraph">+</block>
-  <block id="17987e30da56ea153df5aba55c493f7c" category="inline-link-macro">请参见以下说明</block>
-  <block id="031c3e239320004bd86aa60fd1a30539" category="admonition">如果您选择的集群标记有 "private" 图标，则它将使用专用 IP 地址，并且 Astra Control 需要使用 Astra Connector 来管理集群。如果您看到一条消息，指出您需要安装 Astra Connector ， <block ref="266cc2dad673b77f83caf5ff93c48e8a" category="inline-link-macro-rx"></block> 安装 Astra Connector 并启用集群管理。安装 Astra Connector 后，集群应符合条件，您可以继续添加集群。</block>
   <block id="81fab8b5f502e0434de09d4adc1d85c4" category="list-text">*凭据名称*(对于自管理集群)：为要上传到Astra Control的自管理集群凭据提供一个名称。默认情况下，凭据名称会自动填充为集群的名称。</block>
   <block id="a9b424a4da712ff7a9f830c88c906e74" category="paragraph">*对于提供商管理的集群*：如果这是您为此云提供商添加的第一个集群、则Astra Control Service会为云提供商创建一个对象存储、用于在符合条件的集群上备份应用程序。(在为此云提供程序添加后续集群时、不会再创建其他对象存储。)Astra控制服务还会设置您指定的默认存储类。对于在Amazon Web Services或Google Cloud Platform中管理的集群、Astra Control Service还会在集群上创建管理员帐户。这些操作可能需要几分钟时间。</block>
   <block id="4af7310d5b749c4b7d353363bda2d5c4" category="section-title">使用Astra Control更改默认存储类</block>
@@ -1902,7 +1841,6 @@
   <block id="5c227ef4d58eed958f28dbf199bfbaad" category="list-text">开始之前、您还应了解相关信息 <block ref="8168216ca124f830e0a917cd26a29d8e" category="inline-link-macro-rx"></block>。</block>
   <block id="9c2493f3c86c9672c359e50cc2e1f743" category="inline-link-macro">修改具有命名空间限制的用户角色</block>
   <block id="64443e478ec258a769dbd46a51e212af" category="list-text">如果您计划在Astra Control中对应用程序使用多个命名空间、请考虑 <block ref="f6ecb96773fcc25458fe25947dd92e28" category="inline-link-macro-rx"></block> 定义应用程序之前。</block>
-  <block id="b04ceef112f40532368c375404526534" category="list-text">有关如何使用 Astra Control API 管理应用程序的说明，请参见 <block ref="ef5b26cd6e9ab40377842cc20d2b4ebf" category="inline-link-macro-rx"></block>。</block>
   <block id="23933fe5cfee8cef6dcf2e9c76674773" category="example-title">&lt;strong&gt; 广告宣传&lt;/strong&gt; 中有关将集群范围的资源添加到应用程序命名空间的信息。</block>
   <block id="42eb29ab06c150f146256489fbb31f3d" category="paragraph">除了自动包含的Astra Control之外、您还可以导入与命名空间资源关联的集群资源。您可以添加一个规则、该规则将包含特定组的资源、种类、版本以及标签(可选)。如果存在Astra Control不会自动包含的资源、您可能需要执行此操作。</block>
   <block id="86584cfcf6ac47eda80aaeeb3808d02b" category="paragraph">您不能排除Astra Control自动包含的任何集群范围的资源。</block>
@@ -1936,7 +1874,6 @@
   <block id="b68c0c3e6ec8a786f9d88def11c0d22c" category="paragraph">要查看添加到此应用程序的资源、请选择*资源*选项卡。在资源列中选择资源名称后面的数字、或者在搜索中输入资源名称、以查看包含的其他集群范围资源。</block>
   <block id="5f7e5cb76a5113fa38e3b934c6a4623f" category="inline-link-macro">打算管理和保护特定命名空间中的所有资源</block>
   <block id="dec3469ee6690fc78725637f5f9ea5f5" category="paragraph">您可以通过将命名空间的资源定义为应用程序来将命名空间中的所有Kubernetes资源添加到Astra Control管理中。如果您需要单独定义应用程序、则最好使用此方法 <block ref="94b1a34d6d3c751b2fbc11fdaaa51f20" category="inline-link-macro-rx"></block> 以类似的方式并按通用间隔执行。</block>
-  <block id="8dc42906386c941a51c185152af36f0b" category="admonition">如果要定义多个应用程序、请从命名空间列表中进行选择、然后选择左上角的*操作*按钮并选择*定义为应用程序*。这将在各个命名空间中定义多个单独的应用程序。有关多命名空间应用程序、请参见 <block ref="7befd9a72212c345f0396ef5748860f3" category="inline-xref-macro-rx"></block>。</block>
   <block id="0aac11ed4d1a1befcac30cb330cd159e" category="paragraph">您可以克隆现有应用程序、以便在同一个Kubernetes集群或另一个集群上创建重复的应用程序。当 Astra Control 克隆应用程序时，它会为您的应用程序配置和永久性存储创建一个克隆。</block>
   <block id="43448f8497139ffbc9a461d85db8c731" category="paragraph">如果您需要将应用程序和存储从一个 Kubernetes 集群移动到另一个集群，则克隆可以助您一臂之力。例如，您可能希望通过 CI/CD 管道以及在 Kubernetes 命名空间之间移动工作负载。</block>
   <block id="7d754e7d4f4a324710302cf0fc4d80c2" category="list-text">要将应用程序克隆到其他集群、您需要确保包含源集群和目标集群(如果不相同)的云实例具有默认分段。您需要为每个云实例分配一个默认分段。</block>
@@ -2009,7 +1946,6 @@
   <block id="0031b900a9efa545dbce2d1b75e6fecf" category="paragraph">您可以在Astra Control中查看有关过去24小时内已完成、失败或已取消的正在运行的任务和任务的详细信息。例如、您可以查看正在运行的备份、还原或克隆操作的状态、并查看完成百分比和估计剩余时间等详细信息。您可以查看已运行的已计划操作或手动启动的操作的状态。</block>
   <block id="de7882146042c47043f628bf68dc31c6" category="paragraph">查看正在运行或已完成的任务时、您可以展开任务详细信息以查看每个子任务的状态。对于正在进行的或已完成的任务、任务进度条为绿色、对于已取消的任务、任务进度条为蓝色、对于因错误而失败的任务、任务进度条为红色。</block>
   <block id="fd8bbaa51e80fe3b6399fc78854ea9db" category="admonition">对于克隆操作、任务子任务由快照和快照还原操作组成。</block>
-  <block id="6852d13b7b09322b98ac2f44c85545c8" category="paragraph">要查看有关失败任务的详细信息、请参见 <block ref="a18f0b9d9f08915c2171339d482533ca" category="inline-link-macro-rx"></block>。</block>
   <block id="9a40aef29913209f341068678ecca423" category="list-text">在任务运行期间、转到*应用程序*。</block>
   <block id="006fd45348a570db3c757ac6023ab537" category="list-text">从列表中选择应用程序的名称。</block>
   <block id="58ac13bbbf31fdfc6209f295d87d6f8c" category="list-text">在应用程序的详细信息中、选择*任务*选项卡。</block>
@@ -2019,7 +1955,6 @@
   <block id="ab5f5e22a67bb95be323d14eb496768a" category="paragraph">云实例是云提供商中的一个唯一域。您可以为每个云提供商创建多个云实例、每个云实例都有自己的名称、凭据和关联集群。</block>
   <block id="17b729b98794e7751851e44999370d04" category="paragraph">在向Astra Control添加新集群时、您可以创建一个云实例。您可以使用Astra Control UI编辑云实例以更改其名称或默认存储分段、并使用Astra Control API对云实例执行其他操作。</block>
   <block id="a9bc6d8e4d782bc598e38b2000d38494" category="section-title">添加云实例</block>
-  <block id="b665a96baa55a9ed7c372c2d7796a7d9" category="paragraph">在向Astra Control添加新集群时、您可以添加新的云实例。请参见 <block ref="957d53ce26004606b67720b5be4bf2a4" category="inline-link-macro-rx"></block> 有关详细信息 ...</block>
   <block id="ac724f89da6e1ee891ad387ee705b990" category="section-title">编辑云实例</block>
   <block id="fcc50ead8c65d9b32d8108741495ac8a" category="paragraph">您可以修改云提供商的现有云实例。</block>
   <block id="d5fd16efc8cbbd38442158f7b709dce9" category="list-text">在云实例列表中、选择要编辑的云实例的*操作*菜单。</block>
@@ -2037,4 +1972,81 @@
   <block id="55a5776613a7a49b0fb7fc4800c3065f" category="list-text">如果您使用NetApp云服务存储产品作为存储后端、则Astra Control Service将使用Astra Trident为应用程序配置永久性卷。如果您使用Amazon EBS或Azure托管磁盘作为存储后端、则需要安装特定于提供商的CSI驱动程序。中提供了安装说明 <block ref="ebf2a7f1b6295b0b8e4d97b888cb809e" category="inline-link-macro-rx"></block> 和 <block ref="1938f6af50a8259a0bb98bac4f34eeeb" category="inline-link-macro-rx"></block>。</block>
   <block id="43e71b094d6e4df1d87b41898754d340" category="paragraph">在云互联环境中， Astra 控制中心使用 Cloud Insights 提供高级监控和遥测功能。如果没有Cloud Insights 连接、则Astra控制中心可提供有限的(7天的指标)监控和遥测功能、并通过开放式指标端点导出到Kubernetes原生 监控工具(例如Prometheus和Grafana)。</block>
   <block id="736df34727d37ee0029df106be139889" category="paragraph">您可以向集群添加应用程序。或者、如果要管理的集群中已有一些应用程序、则可以使用Astra控制中心来管理它们。然后、使用Astra控制中心创建快照、备份、克隆和复制关系。</block>
+  <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">结果</block>
+  <block id="06c2cea18679d64399783748fa367bdd" category="inline-image-macro">一个</block>
+  <block id="34038b55331e81eb37ab84fa2523cace" category="section-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> 设置您的云提供商</block>
+  <block id="aada29daee1d64ed0fe907043855cb7e" category="inline-image-macro">两个</block>
+  <block id="91080aa55c36cb692c23826d45bd6b2d" category="section-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> 完成 Astra Control 注册</block>
+  <block id="ca8a2087e5557e317599344687a57391" category="inline-image-macro">三个</block>
+  <block id="45fa555347c1a658490523d14396d6f7" category="section-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> 将集群添加到 Astra Control</block>
+  <block id="672560be9cf97dc26e5d58123e1236bd" category="list-text">适用于NetApp ONTAP 的Amazon FSX需要Astra Trident。如果您计划使用适用于NetApp ONTAP 的Amazon FSx作为EKS集群的存储后端、请参阅中的Astra Trident信息 <block ref="e68d00178a10629977a40b55006d1823" category="inline-link-macro-rx"></block>。</block>
+  <block id="055c68f4a4baed3cf8af5f0b817d97aa" category="list-text">对于专用AKS集群、请参见 <block ref="104a7dd39d72f9f66f9cd954ba655942" category="inline-link-macro-rx"></block>。</block>
+  <block id="f18a26b9b45443052e0fe2464848258b" category="paragraph-title">(可选)检查Astra Trident版本</block>
+  <block id="133059778c759500900ac3e31f9124f6" category="admonition">如果Astra Trident未安装或不是最新版本、并且您希望集群使用Astra Trident提供存储服务、则需要先安装最新版本的Astra Trident、然后再继续操作。请参见<block ref="0a4eeddcb63a166e3ea6149a4a33d4e7" category="inline-link-rx"></block> 有关说明，请参见。</block>
+  <block id="ceb1396f571b46844bfc0042be1d74da" category="list-text">检查存储类是否正在使用受支持的Astra Trident驱动程序。配置程序名称应为<block ref="08044207e9f63bb0fd474dab347a776c" prefix=" " category="inline-code"></block>。请参见以下示例：</block>
+  <block id="212d0ab7b4f4eaebfa2a2c425d0fcbe3" category="paragraph-title">创建管理员角色 kubeconfig</block>
+  <block id="275b3f11dca994bdaad9403b50379839" category="admonition">创建自己的<block ref="deabc6332aa53495b56c51d2e3eca54f" prefix=" " category="inline-code"></block> file中、您只能定义*一*上下文元素。请参见<block ref="54676762f2eb4e7149fe4e9996a20b1c" category="inline-link-rx"></block> 有关创建的信息<block ref="deabc6332aa53495b56c51d2e3eca54f" prefix=" " category="inline-code"></block> 文件。</block>
+  <block id="053447830bdec16f5986aceb9a1d7b50" category="inline-link-macro">请参见以下说明</block>
+  <block id="a89f4b04c3ea15221d38351ec9978a7f" category="admonition">如果您选择的集群标记有 "private" 图标，则它将使用专用 IP 地址，并且 Astra Control 需要使用 Astra Connector 来管理集群。如果您看到一条消息，指出您需要安装 Astra Connector ， <block ref="fe5ffc6a80a56380f9f1d2cc32d84537" category="inline-link-macro-rx"></block> 安装 Astra Connector 并启用集群管理。安装 Astra Connector 后，集群应符合条件，您可以继续添加集群。</block>
+  <block id="ddd9f256d0cb9275fee543e9928cec5a" category="paragraph">有关说明，请参见<block ref="47c83e7583e126455b2245655ede1c60" category="inline-link-rx"></block>。</block>
+  <block id="d5d383f59aff1fd56faf3bc99a5e7447" category="section-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> 查看 Google Kubernetes Engine 的 Astra Control Service 要求</block>
+  <block id="ca3936801cc983f962aeed971f35e927" category="section-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> （可选）：购买适用于 Google Cloud 的 Cloud Volumes Service</block>
+  <block id="4ec76e316010fbd32edca0840bff69ab" category="section-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> 在 Google Cloud 项目中启用 API</block>
+  <block id="981b8fcee42e1e726a67a2b9a98ea6e9" category="inline-image-macro">四个</block>
+  <block id="53ffc364ad2946f902718e3758079557" category="section-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> 创建具有所需权限的服务帐户</block>
+  <block id="e5d9de39f7ca1ba2637e5640af3ae8aa" category="inline-image-macro">五个</block>
+  <block id="92c5eff50359c1858703b16b15aa983f" category="section-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> 创建服务帐户密钥</block>
+  <block id="e6fbc0b9673f8c86726688d7607fc8f5" category="inline-image-macro">六个</block>
+  <block id="0a0732da8f501abbcb3d81c193e30e1a" category="section-title"><block ref="ef78558f80439832e0f51cc22cee8b8c" category="inline-image-macro-rx" type="image"></block> （可选）：为 VPC 设置网络对等</block>
+  <block id="aaaa2a57035fcac6c05c4d3fcfef6d66" category="section-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> 查看 Azure Kubernetes Service 的 Astra Control Service 要求</block>
+  <block id="b5f98a3948cbf41b10381992031b841b" category="section-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> 注册 Microsoft Azure</block>
+  <block id="6631c325afb5caec102b5838b8a8c42c" category="section-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> 对于 Azure NetApp Files ，</block>
+  <block id="34fb5759426c79dd12db71b5fcc55ff7" category="section-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> Create a NetApp account</block>
+  <block id="3b172caf7ab477be61fc6aee93cb1ede" category="section-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> 设置容量池</block>
+  <block id="8fb147c41cb9fd7f2136f1bf8e8545ae" category="section-title"><block ref="ef78558f80439832e0f51cc22cee8b8c" category="inline-image-macro-rx" type="image"></block> Delegate a subnet to Azure NetApp Files</block>
+  <block id="12e67aac3e7f9227cc35f8f047d7dc74" category="inline-image-macro">七个</block>
+  <block id="e65bff663c62ab37fe0ce5a0b58c3994" category="section-title"><block ref="36915574c413876eaa75cbd48f69fd00" category="inline-image-macro-rx" type="image"></block> 创建 Azure 服务主体</block>
+  <block id="baca0ca6729684fd54206793ae4b5bd5" category="inline-image-macro">八个</block>
+  <block id="7833e2038681f7512fcb636d57db0649" category="section-title"><block ref="430057c670c01688e904ed2ba129a0b5" category="inline-image-macro-rx" type="image"></block> 可选：为Azure备份存储分段配置冗余</block>
+  <block id="7acb8defb656ebd5f9decf15c05926ca" category="paragraph-title">完成后</block>
+  <block id="08f1e852f149dc9bdf3a724bc95ed61a" category="list-text">将此容器作为分段添加到Astra Control Service中。请参见 <block ref="3ecbb82ace41389a409b1cc92181a5a8" category="inline-link-macro-rx"></block>。</block>
+  <block id="1d7c1d2f297451f6eaf4e76901db96d2" category="list-text">(可选)要使用新创建的存储分段作为Azure备份的默认存储分段、请将其设置为Azure的默认存储分段。请参见 <block ref="d1523cf11113b501cc0e7216254bf527" category="inline-link-macro-rx"></block>。</block>
+  <block id="463f412773d00aae6c4b3709aadd2b57" category="paragraph">可以，您可以将专用 AKS 集群添加到 Astra Control Service 。要添加专用AKS集群、请参见 <block ref="d51718998c7312025a3cf72e62416cc2" category="inline-link-macro-rx"></block>。</block>
+  <block id="0f0939624ea35d3dd7896d9216bee5d4" category="paragraph">*我看不到应用程序的任何PVC绑定到GCP CVS。有什么问题？ *</block>
+  <block id="00a0b131703dda75b87dad59c7d9a56f" category="paragraph">您可以使用 Astra Control Service 管理专用 AKS 集群。以下说明假定您已创建专用AKS集群并准备了一种远程访问此集群的安全方法；有关创建和访问专用AKS集群的详细信息、请参见<block ref="bfdd887fc5c3338c9209fd10a121cfd7" category="inline-link-rx"></block>。</block>
+  <block id="6a1ee7a7d4b8f2fc793568f158af438f" category="paragraph">您应参考类似于以下内容的输出：</block>
+  <block id="2497006a3d717fa05f4253255b4682d2" category="paragraph">为集群配置永久性存储。您可以使用Azure NetApp Files 或Azure受管磁盘。有关使用以下选项配置Azure的详细信息、请参见入门文档：</block>
+  <block id="0ab04539adb80fe9a1c9f5dc0be183d2" category="section-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> 查看适用于Amazon Web Services的Astra Control Service要求</block>
+  <block id="dd8153a2eaefa2ca6b22e74080a45577" category="section-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> 创建Amazon帐户</block>
+  <block id="d2d49f8b074c326544953d30a666756a" category="section-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> 安装Amazon Web Services CLI</block>
+  <block id="de0e0b190913ddd9905dc28e44369b4e" category="section-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> 可选：创建IAM用户</block>
+  <block id="c16b65c89a8a5d66f3283ff98e331948" category="section-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> 创建并附加权限策略</block>
+  <block id="bb6a13b106e48f792ea57b231c6c8429" category="section-title"><block ref="ef78558f80439832e0f51cc22cee8b8c" category="inline-image-macro-rx" type="image"></block> 保存IAM用户的凭据</block>
+  <block id="3ea391c9e6fd8068a48c5105ab95e68f" category="list-text">如果您使用适用于NetApp ONTAP 存储后端的Amazon FSX、则需要安装Astra Trident。有关说明，请参见<block ref="f6fce076fe7d8cd53c920b1f42e7a384" category="inline-link-rx"></block>。有关将Astra Trident与适用于NetApp ONTAP 的FSX结合使用的详细信息、请参见<block ref="720d51d7c9f57e4a266e8e3a5ab469c6" category="inline-link-rx"></block>。</block>
+  <block id="20fc0f0b676e68d276bd1ffa1267ac50" category="paragraph">有关安装CSI驱动程序的说明、请参见详细信息。</block>
+  <block id="adb43c383a88e1f2946ab2e72ac03918" category="section-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> 创建 Azure 服务主体</block>
+  <block id="115d465e8b862905dee97dfc00687f80" category="section-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> 配置容器存储接口（ CSI ）驱动程序详细信息</block>
+  <block id="4ba43802facfe67533d744cbe8965137" category="section-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> 可选：为Azure备份存储分段配置冗余</block>
+  <block id="c969f450a50c240b276b1959fc3eb534" category="paragraph">使用EBS作为EKS集群的存储后端时、您可以配置一些存储类参数。有关参数的含义以及如何配置参数的详细信息、请参见<block ref="efa17ec338493b6d9caef44d32a8989a" category="inline-link-rx"></block>。</block>
+  <block id="37a9edbcd89980d7a6ec52943de6e692" category="paragraph">有关每种卷类型及其性能的详细信息、请参见<block ref="7ac340f30d3ddae2dcb4baa266ef78ba" category="inline-link-rx"></block>。有关定价信息、请参见<block ref="7729091ef10325fb607ffe76c346cfed" category="inline-link-rx"></block>。</block>
+  <block id="573eae71a4ffbba9a137bcf0add56e46" category="paragraph">使用适用于NetApp ONTAP 的FSX作为AWS集群的存储后端时、I/O性能取决于文件系统的配置以及工作负载的特征。有关适用于NetApp ONTAP 性能的FSX的具体信息、请参见<block ref="45a884cbefaf34ae6fd7defa1c6be8c3" category="inline-link-rx"></block>。有关定价信息、请参见<block ref="1fe52440a36dc241abcf36facca2f97a" category="inline-link-rx"></block>。</block>
+  <block id="676a48d63ffa9fc8110c816cc1f05f58" category="section-title">未从集群中卸载Astra Trident</block>
+  <block id="5353c8647d31220e244ffd816499d2bb" category="section-title">Google Marketplace应用程序尚未经过验证</block>
+  <block id="d59db7846bd10b6d60d21543df9faa9e" category="list-title">您需要的内容</block>
+  <block id="2c5ea53cfeb8ab57dc70815f0a2146ab" category="inline-link">请参阅Kubernetes官方文档</block>
+  <block id="3877208b21ae15f0f4b867591555f309" category="admonition">标签是一个键 / 值对，您可以将其分配给 Kubernetes 对象进行标识。通过标签，可以更轻松地对 Kubernetes 对象进行排序，组织和查找。要了解有关 Kubernetes 标签的更多信息，<block ref="6258ba1c56e61c3e07dc318965d7f24b" category="inline-link-rx"></block>。</block>
+  <block id="307510f97d5f134d0b9ee5ee86d6a53f" category="list-text">有关如何使用Astra Control API管理应用程序的说明、请参见 <block ref="ef5b26cd6e9ab40377842cc20d2b4ebf" category="inline-link-macro-rx"></block>。</block>
+  <block id="b5e44ee7e6c2c0ee0f81c8df96014092" category="admonition">要了解有关 Kubernetes 标签的更多信息，<block ref="6258ba1c56e61c3e07dc318965d7f24b" category="inline-link-rx"></block>。</block>
+  <block id="e4b1bae16e2dcbf3661583ef6a1d3b0f" category="admonition">如果要定义多个应用程序、请从命名空间列表中进行选择、然后选择左上角的*操作*按钮并选择*定义为应用程序*。这将在各个命名空间中定义多个单独的应用程序。有关多命名空间应用程序、请参见 <block ref="7befd9a72212c345f0396ef5748860f3" category="inline-xref-macro-rx"></block>。</block>
+  <block id="f3ed27964ccf64e77e1488f7d2a16145" category="paragraph">在向Astra Control添加新集群时、您可以添加新的云实例。请参见 <block ref="957d53ce26004606b67720b5be4bf2a4" category="inline-link-macro-rx"></block> 有关详细信息 ...</block>
+  <block id="f500108e4498090784d5a65b95413035" category="paragraph">要查看有关失败任务的详细信息、请参见 <block ref="a18f0b9d9f08915c2171339d482533ca" category="inline-link-macro-rx"></block>。</block>
+  <block id="0370124d48bfc5af2def19c48f433283" category="inline-link">NetApp Verda GitHub项目</block>
+  <block id="a59e4fa5cc01a3a4bdebbff4cec60b47" category="paragraph">请访问<block ref="84d9961ef5a89731849bc2055780d0b6" category="inline-link-rx"></block> 为Apache Cassandra和Elasticsearch等常见应用程序下载真正的执行挂钩。您还可以查看示例并了解如何构建自己的自定义执行挂钩。</block>
+  <block id="f7dab4c8b3608b84fa8e0c583d18f33a" category="paragraph">您可以为应用程序创建自定义执行挂钩。请参见 <block ref="17e166b6ef6242446312ff693caa559b" category="inline-xref-macro-rx"></block> 有关挂机示例。要创建执行挂钩，您需要拥有所有者，管理员或成员权限。</block>
+  <block id="9ad3989601b59e755170866a5329554c" category="list-text"><block ref="9ad3989601b59e755170866a5329554c" category="inline-link-rx"></block></block>
+  <block id="fca22970b2f5908598868bf4b1bbda3b" category="list-text">选择*备份*以引用备份列表。</block>
+  <block id="3bbb62d82d2439f5a711823da7c1b762" category="paragraph">有关添加约束的详细信息、请参见 <block ref="f9b0c5590ff6fff298698f3844cae23c" category="inline-link-macro-rx"></block>。</block>
+  <block id="edb74efc05972c268b6cccf83996ac3e" category="section-title">更改用户的角色</block>
+  <block id="bfba5acdae4cf2cfa2c86cce302038d4" category="paragraph">随时从帐户中删除凭据。您只能在之后删除凭据 <block ref="7193f1b7f27bd5505d89cc1e5724fb4b" category="inline-link-macro-rx"></block>、除非您正在轮换凭据(请参见 <block ref="029b7394eded829c95ca3b86c4cd802d" category="inline-xref-macro-rx"></block>）。</block>
+  <block id="df1dd0475d7e25b9e368f8f45f636062" category="list-text">* S3服务器名称或IP地址*(仅限AWS)：输入与您所在地区对应的S3端点的完全限定域名、而不输入<block ref="f8eae6750519389e078e1eb1bcb3d708" prefix=" " category="inline-code"></block>。请参见<block ref="398d47c523652edc934ec11e2f213d87" category="inline-link-rx"></block> 有关详细信息 ...</block>
 </blocks>

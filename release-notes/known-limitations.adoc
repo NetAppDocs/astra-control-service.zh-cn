@@ -22,7 +22,7 @@ summary: 已知限制确定了本产品版本不支持的平台、设备或功�
 
 
 
-=== 未从集群中卸载 Astra Trident
+=== 未从集群中卸载Astra Trident
 
 从 Astra 控制服务取消管理集群时，不会自动从集群中卸载 Astra Trident 。要卸载 Astra Trident ，您需要 https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["请按照 Astra Trident 文档中的以下步骤进行操作"^]。
 
@@ -42,7 +42,7 @@ ifdef::gcp[]
 
 
 
-=== Google Marketplace 应用程序尚未经过验证
+=== Google Marketplace应用程序尚未经过验证
 
 NetApp 尚未验证从 Google Marketplace 部署的应用程序。某些用户报告发现或备份从 Google Marketplace 部署的 Postgres ， MariaDB 和 MySQL 应用程序时出现问题。
 

@@ -16,10 +16,11 @@ summary: 只需几步即可开始使用 Astra Control Service 。
 
 
 
-== 设置您的云提供商
+== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一个"] 设置您的云提供商
 
 ifdef::gcp[]
 
+[role="quick-margin-list"]
 . Google Cloud
 +
 ** 查看 Google Kubernetes Engine 集群要求。
@@ -76,8 +77,9 @@ endif::azure[]
 
 
 
-== 完成 Astra Control 注册
+== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["两个"] 完成 Astra Control 注册
 
+[role="quick-margin-list"]
 . 创建 https://cloud.netapp.com["NetApp Cloud Central"^] 帐户。
 . 创建 Astra Control 帐户时，请指定您的 NetApp Cloud Central 电子邮件 ID https://cloud.netapp.com/astra["从 Astra 产品页面"^]。
 
@@ -87,7 +89,7 @@ link:register.html["了解有关注册过程的更多信息"]。
 
 
 
-== 将集群添加到 Astra Control
+== image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三个"] 将集群添加到 Astra Control
 
 [role="quick-margin-para"]
 登录后，选择 * 添加集群 * 以开始使用 Astra Control 管理集群。
