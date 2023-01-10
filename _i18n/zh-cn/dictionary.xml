@@ -475,9 +475,7 @@
   <block id="5d2bbbb5e8eadfe7beda56382db3b48e" category="paragraph">此时将显示可供 Astra Control Service 使用的存储分段列表。</block>
   <block id="97051796d8399cbd22e680d3212aa1c0" category="section-title">添加一个额外的存储分段</block>
   <block id="9c6ebb12d9cd173ee88e3b73cabe77b4" category="paragraph">在云提供商中开始管理集群后，您可以随时添加其他分段。这样，您可以在创建保护策略时在分段之间进行选择，并更改临时备份和克隆的默认分段。</block>
-  <block id="59eaa325284587d87d8a183c0fcffbdf" category="paragraph">请注意， Astra 控制服务不允许您在添加某个存储分段后将其删除。</block>
   <block id="dd6354a9b0182f27b3ea1d07811a3bdd" category="list-text">云提供商中现有存储分段的名称。</block>
-  <block id="69655d7e1814b014798597363d3d2639" category="list-text">如果存储分段位于 Azure 中，则它必须属于名为 _Astra-backup-rg_ 的资源组。</block>
   <block id="833eb3b04501929e168dbcfe3328a358" category="list-text">* 类型 * ：选择您的云提供商。</block>
   <block id="3cb658c17327b8e0fdf35e63798291f2" category="paragraph">只有在 Astra Control Service 开始管理在该云提供商中运行的集群后，您的云提供商才可用。</block>
   <block id="48dbd6506b2a3bf46642f68dced2c90f" category="list-text">* 现有存储分段名称 * ：输入存储分段的名称。</block>
@@ -2049,4 +2047,7 @@
   <block id="bfba5acdae4cf2cfa2c86cce302038d4" category="paragraph">随时从帐户中删除凭据。您只能在之后删除凭据 <block ref="7193f1b7f27bd5505d89cc1e5724fb4b" category="inline-link-macro-rx"></block>、除非您正在轮换凭据(请参见 <block ref="029b7394eded829c95ca3b86c4cd802d" category="inline-xref-macro-rx"></block>）。</block>
   <block id="df1dd0475d7e25b9e368f8f45f636062" category="list-text">* S3服务器名称或IP地址*(仅限AWS)：输入与您所在地区对应的S3端点的完全限定域名、而不输入<block ref="f8eae6750519389e078e1eb1bcb3d708" prefix=" " category="inline-code"></block>。请参见<block ref="398d47c523652edc934ec11e2f213d87" category="inline-link-rx"></block> 有关详细信息 ...</block>
   <block id="ce461936438c7221ad2aecef67b1e35b" category="paragraph">在与其他应用程序共享资源的应用程序上执行原位还原操作可能会产生意外结果。对其中一个应用程序执行原位还原时、这些应用程序之间共享的任何资源都会被替换。</block>
+  <block id="e13d6ee2f9c34bcf7366950e0434777b" category="list-text">如果存储分段位于Azure中：</block>
+  <block id="49030d2f464d7bb39691809e5ab16174" category="list-text">此存储分段必须属于名为_Astra-backup-rg_的资源组。</block>
+  <block id="88bdaf7536fdf70e3c93df4a9b10bb82" category="list-text">如果Azure存储帐户实例性能设置为"Premium"、则"Premium account type"设置必须设置为"Block blobs"。</block>
 </blocks>
