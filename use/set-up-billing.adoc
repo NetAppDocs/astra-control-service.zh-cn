@@ -94,6 +94,9 @@ endif::aws[]
 
 您可以使用Azure Marketplace订阅Astra控制服务。您的帐户和计费详细信息通过Marketplace进行管理。
 
+
+NOTE: 要观看Azure Marketplace订阅流程的视频演练、请访问 https://www.netapp.tv/details/29979["NetApp TV"^]。
+
 .步骤
 . 转至 https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-astra-acs?tab=Overview["Azure Marketplace"^]。
 . 选择*立即获取*。
