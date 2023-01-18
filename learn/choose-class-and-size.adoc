@@ -12,7 +12,7 @@ summary: Astra 控制服务使用适用于 Google Cloud 的 Cloud Volumes Servic
 
 
 [role="lead"]
-Astra 控制服务支持将适用于 Google Cloud 的 Cloud Volumes Service 或 Google 永久性磁盘用作永久性卷的存储后端选项。
+Astra控制服务支持将适用于Google Cloud的Cloud Volumes Service 、Google永久性磁盘或NetApp Cloud Volumes ONTAP 作为永久性卷的存储后端选项。
 
 
 
@@ -118,3 +118,9 @@ Astra Control Service 支持将 Google Persistent Disk 作为存储后端选项�
 https://cloud.google.com/persistent-disk/["了解有关 Google 持久磁盘的更多信息"^]。
 
 https://cloud.google.com/compute/docs/disks/performance["详细了解 Google 持久磁盘的不同性能级别"^]。
+
+
+
+== NetApp Cloud Volumes ONTAP
+
+有关配置NetApp Cloud Volumes ONTAP 的具体信息、包括性能建议、请访问 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/["NetApp Cloud Volumes ONTAP 文档"^]。

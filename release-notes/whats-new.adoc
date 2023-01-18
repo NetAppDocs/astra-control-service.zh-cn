@@ -16,38 +16,53 @@ NetApp 会定期更新 Astra Control Service ，为您提供新功能，增强�
 
 
 
+== 2023年1月17日
+
+.新增功能和支持
+* 增强的执行挂钩功能以及其他筛选选项
++
+link:../use/manage-app-execution-hooks.html["管理应用程序执行挂钩"]
+
+* 支持将NetApp Cloud Volumes ONTAP 用作存储后端(Microsoft Azure和Google Cloud平台正式支持)
++
+link:../learn/architecture.html#astra-control-components["架构和组件"]
+
+
+
+
+
 == 2022年11月22日
 
 .新增功能和支持
-* 支持跨多个命名空间的应用程序。
+* 支持跨多个命名空间的应用程序
 +
 link:../use/manage-apps.html["定义应用程序"]
 
-* 支持在应用程序定义中包括集群资源。
+* 支持在应用程序定义中包括集群资源
 +
 link:../use/manage-apps.html["定义应用程序"]
 
-* 增强了备份、还原和克隆操作的进度报告功能。
+* 增强了备份、还原和克隆操作的进度报告功能
 +
 link:../use/monitor-running-tasks.html["监控正在运行的任务"]
 
-* 支持管理已安装兼容版本的Astra Trident的集群。
+* 支持管理已安装兼容版本的Astra Trident的集群
 +
 link:../get-started/add-first-cluster.html["从 Astra Control Service 开始管理 Kubernetes 集群"]
 
-* 支持在一个Astra Control Service帐户中管理多个云提供商订阅。
+* 支持在一个Astra Control Service帐户中管理多个云提供商订阅
 +
 link:../use/manage-cloud-instances.html["管理云实例"]
 
-* 支持将自管理Kubernetes集群添加到Astra Control Service。
+* 支持将自管理Kubernetes集群添加到Astra Control Service
 +
 link:../get-started/add-first-cluster.html["从 Astra Control Service 开始管理 Kubernetes 集群"]
 
-* 现在、Astra控制服务的计费按命名空间计费、而不是按应用程序计费。
+* 现在、Astra控制服务的计费按命名空间计费、而不是按应用程序计费
 +
 link:../use/set-up-billing.html["设置计费"]
 
-* 支持通过AWS Marketplace订阅Astra Control Service基于期限的服务。
+* 支持通过AWS Marketplace订阅Astra Control Service基于期限的服务
 +
 link:../use/set-up-billing.html["设置计费"]
 

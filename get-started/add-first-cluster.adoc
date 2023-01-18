@@ -433,6 +433,9 @@ ifdef::aws[]
 
 endif::aws[]
 
+** NetApp Cloud Volumes ONTAP ：没有价格、性能或弹性信息
+
+
 ====
 +
 每个存储类均可使用以下服务之一：
@@ -463,9 +466,14 @@ ifdef::aws[]
 
 endif::aws[]
 
-+了解更多信息 link:../learn/aws-storage.html["Amazon Web Services集群的存储类"]。了解更多信息 link:../learn/azure-storage.html["AKS 集群的存储类"]。了解更多信息 link:../learn/choose-class-and-size.html["GKE 集群的存储类"]。
+* https://www.netapp.com/cloud-services/cloud-volumes-ontap/what-is-cloud-volumes/["NetApp Cloud Volumes ONTAP"^]
++
+了解更多信息 link:../learn/aws-storage.html["Amazon Web Services集群的存储类"]。了解更多信息 link:../learn/azure-storage.html["AKS 集群的存储类"]。了解更多信息 link:../learn/choose-class-and-size.html["GKE 集群的存储类"]。
 
-. * 审核并批准 * ：查看配置详细信息并选择 * 添加集群 * 。
++
+.. * 审核并批准 * ：查看配置详细信息并选择 * 添加集群 * 。
+
+
 
 
 .结果

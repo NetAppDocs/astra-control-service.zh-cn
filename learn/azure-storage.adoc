@@ -12,7 +12,7 @@ summary: Astra 控制服务使用 Azure NetApp Files 作为 Azure Kubernetes Ser
 
 
 [role="lead"]
-Astra 控制服务支持将 Azure NetApp Files 或 Azure 托管磁盘用作 Azure Kubernetes Service （ AKS ）集群的存储后端。
+Astra控制服务支持将Azure NetApp Files 、Azure受管磁盘或NetApp Cloud Volumes ONTAP 作为Azure Kubernetes Service (AKS)集群的存储后端。
 
 
 
@@ -56,3 +56,9 @@ Astra 控制服务使用最小卷大小 100 GiB 来配置永久性卷，即使 P
 Astra Control Service 支持将 Azure 托管磁盘作为存储后端选项。此服务可提供由 Azure 管理的块级存储。
 
 https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["了解有关 Azure 受管磁盘的更多信息"^]。
+
+
+
+== NetApp Cloud Volumes ONTAP
+
+有关配置NetApp Cloud Volumes ONTAP 的具体信息、包括性能建议、请访问 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/["NetApp Cloud Volumes ONTAP 文档"^]。

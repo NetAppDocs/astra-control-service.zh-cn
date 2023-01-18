@@ -88,7 +88,7 @@ Astra Control 有两种部署模式：
 
  a| 
 * NetApp ONTAP AFF 和 FAS 系统
-* Cloud Volumes ONTAP 存储后端
+* Cloud Volumes ONTAP 存储后端(Azure和Google云平台正式支持)
 
 
 |===
