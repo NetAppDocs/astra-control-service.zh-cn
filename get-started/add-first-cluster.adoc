@@ -16,15 +16,6 @@ summary: 设置环境后，您可以创建 Kubernetes 集群，然后将其添�
 
 * <<创建 Kubernetes 集群>>
 * <<开始管理 Kubernetes 集群>>
-
-
-ifdef::aws[]
-
-* <<为其他用户提供集群访问权限>>
-
-
-endif::aws[]
-
 * <<更改默认存储类>>
 
 
@@ -37,7 +28,7 @@ endif::aws[]
 
 NOTE: Astra控制服务支持使用Azure Active Directory (Azure AD)进行身份验证和身份管理的AKS集群。创建集群时、请按照中的说明进行操作 https://docs.microsoft.com/en-us/azure/aks/managed-aad["正式文档"^] 将集群配置为使用Azure AD。您需要确保集群满足AKS管理的Azure AD集成的要求。
 
-您还可以创建要自行管理的内部或云托管集群。您可以通过上传将自管理集群添加到Astra Control Service `kubeconfig.yaml` 文件您需要确保集群满足中所述的要求 <<开始管理 Kubernetes 集群>>。
+您可以通过上传将自管理集群添加到Astra Control Service `kubeconfig.yaml` 文件您需要确保集群满足中所述的要求 <<开始管理 Kubernetes 集群>>。
 
 
 
@@ -50,22 +41,18 @@ NOTE: Astra控制服务支持使用Azure Active Directory (Azure AD)进行身份
 ====
 ifdef::aws[]
 
-* 对于Amazon Web Services、您应拥有包含创建集群的IAM用户凭据的JSON文件。 link:../get-started/set-up-amazon-web-services.html#create-an-iam-user["了解如何创建IAM用户"]。
+.Amazon Web Services
+* 您应拥有包含创建集群的IAM用户凭据的JSON文件。 link:../get-started/set-up-amazon-web-services.html#create-an-iam-user["了解如何创建IAM用户"]。
 * 适用于NetApp ONTAP 的Amazon FSX需要Astra Trident。如果您计划使用适用于NetApp ONTAP 的Amazon FSx作为EKS集群的存储后端、请参阅中的Astra Trident信息 link:set-up-amazon-web-services.html#eks-cluster-requirements["EKS集群要求"]。
+* (可选)如果需要提供 `kubectl` 集群对非集群创建者的其他IAM用户的命令访问权限、请参见中的说明 https://aws.amazon.com/premiumsupport/knowledge-center/amazon-eks-cluster-access/["在Amazon EKS中创建集群后、如何为其他IAM用户和角色提供访问权限？"^]。
 
 
 endif::aws[]
 
-ifdef::gcp[]
-
-* 对于 GKE- ，您应该拥有具有所需权限的服务帐户的服务帐户密钥文件。 link:../get-started/set-up-google-cloud.html#create-a-service-account["了解如何设置服务帐户"]。
-
-
-endif::gcp[]
-
 ifdef::azure[]
 
-* 对于 AKS ，您应具有包含创建服务主体时 Azure 命令行界面输出的 JSON 文件。 link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2["了解如何设置服务主体"]。
+.Microsoft Azure
+* 您应拥有包含在创建服务主体时Azure命令行界面输出的JSON文件。 link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2["了解如何设置服务主体"]。
 +
 如果未将 Azure 订阅 ID 添加到 JSON 文件中，您也需要此 ID 。
 
@@ -74,14 +61,32 @@ ifdef::azure[]
 
 endif::azure[]
 
+ifdef::gcp[]
+
+.Google Cloud
+* 您应拥有具有所需权限的服务帐户的服务帐户密钥文件。 link:../get-started/set-up-google-cloud.html#create-a-service-account["了解如何设置服务帐户"]。
+
+
+endif::gcp[]
+
 ====
 .自我管理集群需要什么？#8217
 [%collapsible]
 ====
-您的集群需要满足以下要求：
+您的自管理集群可以使用Astra Trident与NetApp存储服务连接、也可以使用容器存储接口(Container Storage Interface、CSI)驱动程序与其他存储服务连接。
 
-* 集群必须可通过Internet访问
-* 一个版本的Astra Trident link:../get-started/requirements.html#operational-environment-requirements["受Astra控制服务支持"^] 已安装：
+Astra Control Service支持使用以下Kubernetes分发版的自管理集群：
+
+* Red Hat OpenShift 容器平台
+* Rancher Kubernetes引擎
+* 上游Kubernetes
+
+
+您的自管理集群需要满足以下要求：
+
+* 集群必须可通过Internet访问。
+* 如果您正在使用或计划使用已启用CSI驱动程序的存储、则必须在集群上安装相应的CSI驱动程序。有关使用CSI驱动程序集成存储的详细信息、请参阅存储服务的文档。
+* 如果您正在使用或计划使用NetApp存储、请确保已安装Astra Trident的版本 link:../get-started/requirements.html#operational-environment-requirements["受Astra控制服务支持"^]：
 +
 
 NOTE: 您可以 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html#choose-the-deployment-method["部署Astra Trident"^] 使用Trident运算符(手动或使用Helm图表)或 `tridentctl`。在安装或升级Astra Trident之前、请查看 https://docs.netapp.com/us-en/trident/trident-get-started/requirements.html["支持的前端、后端和主机配置"^]。
@@ -92,17 +97,7 @@ NOTE: 您可以 https://docs.netapp.com/us-en/trident/trident-get-started/kubern
 ** 已安装并配置* Astra Trident卷快照控制器和卷快照类*：卷快照控制器必须为 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["已安装"^] 以便可以在Astra Control中创建快照。至少一个Astra Trident `VolumeSnapshotClass` 已经 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-set-up-a-volumesnapshotclass["设置"^] 由管理员执行。
 
 
-* * Kubeconfig accessible*：您可以访问 https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/["cluster kubeconfig"^] 这仅包括一个上下文元素。
-* * ONTAP 凭据*：您需要在备用ONTAP 系统上设置ONTAP 凭据以及超级用户和用户ID、以便使用Astra控制中心备份和还原应用程序。
-+
-在ONTAP 命令行中运行以下命令：
-
-+
-[listing]
-----
-export-policy rule modify -vserver <storage virtual machine name> -policyname <policy name> -ruleindex 1 -superuser sys
-export-policy rule modify -vserver <storage virtual machine name> -policyname <policy name> -ruleindex 1 -anon 65534
-----
+* * Kubeconfig accessible*：您可以访问 <<kubeconfig,cluster kubeconfig>> 这仅包括一个上下文元素。
 * *仅Rancher *：在Rancher环境中管理应用程序集群时、请修改Rancher提供的kubeconfig文件中的应用程序集群默认上下文、以使用控制平面上下文、而不是Rancher API服务器上下文。这样可以减少 Rancher API 服务器上的负载并提高性能。
 
 
@@ -160,7 +155,7 @@ ontap-gold (default)   csi.trident.netapp.io          Delete          Immediate 
 ----
 
 
-.创建管理员角色 kubeconfig
+.创建管理员角色kubeconfig (运行Rancher、OpenShift和上游Kubernetes的适用场景 集群)
 执行这些步骤之前，请确保您的计算机上具有以下内容：
 
 * 已安装kubectl v1.19或更高版本
@@ -384,7 +379,7 @@ endif::gcp[]
 NOTE: 创建自己的 `kubeconfig` file中、您只能定义*一*上下文元素。请参见 https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/["Kubernetes 文档"^] 有关创建的信息 `kubeconfig` 文件。
 
 +
-.. *云名称*(对于提供商管理的集群)：为添加此集群时要创建的新云实例提供一个名称。了解更多信息 link:../use/manage-cloud-instances.html["云实例"]。
+.. *云实例名称*(对于提供商管理的集群)：为添加此集群时要创建的新云实例提供一个名称。了解更多信息 link:../use/manage-cloud-instances.html["云实例"]。
 +
 
 NOTE: 从集群列表中进行选择时、请仔细查看"符合条件"选项卡。如果出现警告，请将鼠标悬停在警告上以确定集群是否存在问题描述。例如，它可能会标识集群没有工作节点。
@@ -403,7 +398,7 @@ NOTE: 如果您选择的集群标记有 "private" 图标，则它将使用专用
 endif::azure[]
 
 . *凭据名称*(对于自管理集群)：为要上传到Astra Control的自管理集群凭据提供一个名称。默认情况下，凭据名称会自动填充为集群的名称。
-. * 存储 * ：选择希望部署到此集群的 Kubernetes 应用程序默认使用的存储类。
+. (可选)*存储*：选择希望部署到此集群的Kubernetes应用程序默认使用的存储类。
 +
 [NOTE]
 ====
@@ -477,19 +472,7 @@ endif::aws[]
 
 
 .结果
-*对于提供商管理的集群*：如果这是您为此云提供商添加的第一个集群、则Astra Control Service会为云提供商创建一个对象存储、用于在符合条件的集群上备份应用程序。(在为此云提供程序添加后续集群时、不会再创建其他对象存储。)Astra控制服务还会设置您指定的默认存储类。对于在Amazon Web Services或Google Cloud Platform中管理的集群、Astra Control Service还会在集群上创建管理员帐户。这些操作可能需要几分钟时间。
-
-ifdef::aws[]
-
-
-
-== 为其他用户提供集群访问权限
-
-您可以选择为集群提供`kubectl`命令访问权限、使其访问不是集群创建者的其他IAM用户。
-
-有关说明，请参见 https://aws.amazon.com/premiumsupport/knowledge-center/amazon-eks-cluster-access/["在Amazon EKS中创建集群后、如何为其他IAM用户和角色提供访问权限？"^]。
-
-endif::aws[]
+*对于提供商管理的集群*：如果这是您为此云提供商添加的第一个集群、则Astra Control Service会为云提供商创建一个对象存储、用于备份在符合条件的集群上运行的应用程序。(在为此云提供程序添加后续集群时、不会再创建其他对象存储。)如果指定了默认存储类、则Astra控制服务将设置您指定的默认存储类。对于在Amazon Web Services或Google Cloud Platform中管理的集群、Astra Control Service还会在集群上创建管理员帐户。这些操作可能需要几分钟时间。
 
 
 

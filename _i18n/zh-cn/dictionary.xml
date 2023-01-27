@@ -128,7 +128,6 @@
   <block id="500d3c8defab0707486026a482b78c38" category="section-title">创建 Kubernetes 集群</block>
   <block id="b25e6cbe92376851fb2fc7b4e024274e" category="inline-link-macro">Google Kubernetes Engine （ GKEE ）的 Astra Control Service 要求</block>
   <block id="46b491767cd12d81f9bf9593f5a96cf7" category="inline-link-macro">了解如何设置服务帐户</block>
-  <block id="686cb20b1345505bc3b4d980227e595c" category="list-text">对于 GKE- ，您应该拥有具有所需权限的服务帐户的服务帐户密钥文件。 <block ref="9215258f7e020d0c05367a1a3bfd0982" category="inline-link-macro-rx"></block>。</block>
   <block id="2c620a037dcfb55d88e388bd87452f5c" category="inline-link-macro">了解如何设置服务主体</block>
   <block id="76bfd2350e4f4c3da0b233404caa674c" category="paragraph">如果未将 Azure 订阅 ID 添加到 JSON 文件中，您也需要此 ID 。</block>
   <block id="c455f809c2ef97e08167a8b008383167" category="list-text">* Microsoft Azure* ：通过上传 JSON 文件或从剪贴板粘贴此 JSON 文件的内容来提供有关 Azure 服务主体的详细信息。</block>
@@ -729,7 +728,6 @@
   <block id="7867ff317e101e02ab5ea31a9b4ff20b" category="section-title">开始管理 Kubernetes 集群</block>
   <block id="8c40408a36679e38f149928cbae2a380" category="paragraph">按照提示添加集群。</block>
   <block id="c1dc07e2cbb4b1eab0bbe317993aa03a" category="paragraph">Astra 控制服务使用此服务帐户发现在 Google Kubernetes Engine 中运行的集群。</block>
-  <block id="e64502cac6ddf009e109fec534b214a3" category="list-text">* 存储 * ：选择希望部署到此集群的 Kubernetes 应用程序默认使用的存储类。</block>
   <block id="6ef4f81aa2771acef00b9d3e191399de" category="section-title">从 Astra Control 管理集群</block>
   <block id="cbef4e1a90f30a40dd1adebddc2539f0" category="inline-link-macro">了解有关管理集群的更多信息</block>
   <block id="1a1827772ddf17a8cd2d63764c59c107" category="paragraph">登录到 Astra Control Service 后，第一步是添加 Kubernetes 计算。 <block ref="ab608f55f866da4e88a269204d3ea328" category="inline-link-macro-rx"></block>。</block>
@@ -932,7 +930,6 @@
   <block id="ae361e798f83cc34514b5bc74d5ec5d6" category="list-text"><block ref="2152ce675eb0b9d88dfc2e125645113a" category="inline-link-macro-rx"></block>。</block>
   <block id="61ff50e91bc9118602e803e489f0e42f" category="inline-link-macro">采用 Azure NetApp Files 的 Azure Kubernetes Service （ AKS ）的 Astra 控制服务要求</block>
   <block id="e2517379d9a14736369ae8b5b851ca0a" category="inline-link-macro">采用 Azure 受管磁盘的 Azure Kubernetes Service （ AKS ）的 Astra Control Service 要求</block>
-  <block id="3bda726609d17e2981e60b23a6e4c978" category="list-text">对于 AKS ，您应具有包含创建服务主体时 Azure 命令行界面输出的 JSON 文件。 <block ref="63026405246b8ab97c47baaea735ffe8" category="inline-link-macro-rx"></block>。</block>
   <block id="0397bb04b1ca291a49cf76be15c2f6e4" category="paragraph">每个存储类均可使用以下服务之一：</block>
   <block id="31e7239cc507a58a4794b36df4448093" category="list-text"><block ref="31e7239cc507a58a4794b36df4448093" category="inline-link-rx"></block></block>
   <block id="f3c86dfec3bf21996638520b54f5d64e" category="list-text"><block ref="f3c86dfec3bf21996638520b54f5d64e" category="inline-link-rx"></block></block>
@@ -1296,11 +1293,9 @@
   <block id="26ae3a5d2c5a3a4f3c4f0b04cfffc752" category="admonition">此版本已删除NetApp为特定应用程序提供的默认快照前和快照后执行挂钩。如果您不为快照提供自己的执行挂钩、则Astra控制服务将仅从2022年8月4日开始创建崩溃状态一致的快照。请访问<block ref="69dbcb4811fc57c117bef8c6ba2044f3" category="inline-link-rx"></block> 示例执行钩脚本、您可以根据环境进行修改。</block>
   <block id="adabbba2cda50397a2a91db015a0fb30" category="list-text"><block ref="f2d47b38ed223b066a7a87406f2f9770" category="inline-xref-macro-rx"></block></block>
   <block id="d78023f397f8f2b4e5064ff5b049c27d" category="list-text"><block ref="fedf37c1e98889c2b8f08b9cf9723656" category="inline-xref-macro-rx"></block></block>
-  <block id="ed7291e973c048296182e3f6f96d78cc" category="list-text"><block ref="1ec2d3ec46ffecb37d7f6e133c4431da" category="inline-xref-macro-rx"></block></block>
   <block id="5f058e70cc3d142ad7669a7f04b97b31" category="list-text"><block ref="5b6a21e2a1084a5e4b159e62f7829741" category="inline-xref-macro-rx"></block></block>
   <block id="630a415dcb42ff22d041d168cc5afc59" category="inline-link-macro">Amazon Elastic Kubernetes Service (EKS)的Astra Control Service要求</block>
   <block id="1c2b5221e36ed5b79e2c2e4262be6072" category="inline-link-macro">了解如何创建IAM用户</block>
-  <block id="74d5a75a12f662d4b8642c07e08beca2" category="list-text">对于Amazon Web Services、您应拥有包含创建集群的IAM用户凭据的JSON文件。 <block ref="5592dd611bfce65633cff7badbd7195f" category="inline-link-macro-rx"></block>。</block>
   <block id="0c57b232b24630cb803c381f66fc3054" category="list-text">* Amazon Web Services*：上传JSON文件或从剪贴板粘贴JSON文件的内容、以提供有关Amazon Web Services IAM用户帐户的详细信息。</block>
   <block id="fabc36541e1c6528fca8019ee23b2a18" category="paragraph">JSON文件应包含创建集群的IAM用户的凭据。</block>
   <block id="e06cf4196f8f3edb2e773a9258a28a47" category="list-text">Amazon Elastic Block Store：没有价格、性能或弹性信息</block>
@@ -1310,8 +1305,6 @@
   <block id="4d82a1ec1af02725042c8c785564ee7a" category="inline-link">适用于 NetApp ONTAP 的 Amazon FSX</block>
   <block id="6a2736fcbb5755dd03d114a5153506eb" category="list-text"><block ref="6a2736fcbb5755dd03d114a5153506eb" category="inline-link-rx"></block></block>
   <block id="37cb798eeadd3da7723607246ebf2339" category="inline-link-macro">Amazon Web Services集群的存储类</block>
-  <block id="457022d51f2e6150dfa70037b30d57b5" category="section-title">为其他用户提供集群访问权限</block>
-  <block id="436e78c3dd196f680aab83eb69543658" category="paragraph">您可以选择为集群提供`kubectl`命令访问权限、使其访问不是集群创建者的其他IAM用户。</block>
   <block id="043e32602230f742d954f613b7b5ce25" category="inline-link">在Amazon EKS中创建集群后、如何为其他IAM用户和角色提供访问权限？</block>
   <block id="03505e86c100771649c5c405d210f3de" category="paragraph">+*对于Amazon EKS集群、Astra Control Service使用<block ref="a65cb6c91d35e755c3763fe01aedac72" category="inline-link-rx"></block> 或<block ref="554e81ff0c0b44a91e38efe479d6c57c" category="inline-link-rx"></block> 作为永久性卷的存储后端。</block>
   <block id="9ab46041ac5136f2300b8e64c19f0964" category="section-title">注册Elastic Kubernetes Service (EKS)集群</block>
@@ -1665,14 +1658,10 @@
   <block id="3c7ad3a476ad730cdda13eafe57f371e" category="list-text">GKE1.24及更高版本不支持基于Docker的节点映像。检查以确保GKEE中的工作节点映像类型为<block ref="bba3d88d28186b91a2b3165d6143a600" prefix=" " category="inline-code"></block> NFS挂载成功。</block>
   <block id="da2c085b9d8d021307417125c20d3a83" category="paragraph">要将Azure受管磁盘与Astra Control Service结合使用、您需要安装所需的CSI驱动程序。</block>
   <block id="c9be99ba5f72a27dc67b1b94e7b90efd" category="paragraph">如果您还没有集群、则可以创建满足要求的集群 <block ref="e7658a1af56c46ed5b9cdfa6f95bb6cb" category="inline-link-macro-rx"></block>。如果您还没有集群、则可以创建满足要求的集群 <block ref="c14ce2b90a6d517d28f6a149c4e1ddd7" category="inline-link-macro-rx"></block>。如果您还没有集群、则可以创建满足要求的集群 <block ref="6bb2c6a064e406c3dfdba3642f8a72c0" category="inline-link-macro-rx"></block> 或 <block ref="26e75175e6e267eb6426de7596baf82e" category="inline-link-macro-rx"></block>。</block>
-  <block id="ba1383f60e0d2536b7ceee7e21cbf214" category="paragraph">您还可以创建要自行管理的内部或云托管集群。您可以通过上传将自管理集群添加到Astra Control Service<block ref="ea46161c66978a87802bc5b44682cbe0" prefix=" " category="inline-code"></block> 文件您需要确保集群满足中所述的要求 <block ref="fedf37c1e98889c2b8f08b9cf9723656" category="inline-xref-macro-rx"></block>。</block>
   <block id="a30241413c2751b1ad5c5a00e914e0a1" category="paragraph">登录到 Astra Control Service 后，第一步是开始管理集群。您可以添加由云提供商管理的集群或自管理集群。在将集群添加到Astra Control Service之前、您需要执行某些任务并确保集群满足特定要求。</block>
   <block id="75cea9c777f72349fb550387eafc09c1" category="example-title">由云提供商管理的集群需要什么？#8217</block>
   <block id="9eecb04f40bc3e3811b2fcfff6ea5b4f" category="example-title">自我管理集群需要什么？#8217</block>
-  <block id="8795dc03295c2ac742d1936726a56ab0" category="paragraph">您的集群需要满足以下要求：</block>
-  <block id="14f50fdd763a95c364923f6466b1bdfe" category="list-text">集群必须可通过Internet访问</block>
   <block id="46805ef7b4802d7324462bf8ddc43dd9" category="inline-link-macro">受Astra控制服务支持</block>
-  <block id="b8e9c69d0f08d77eccc6c4b82cee8615" category="list-text">一个版本的Astra Trident <block ref="3298582a629556efb23ae4ef06c101a7" category="inline-link-macro-rx"></block> 已安装：</block>
   <block id="f658d356d0697be75622e7d5d6d94798" category="inline-link">部署Astra Trident</block>
   <block id="e9f0d7eb2b9e30339763cb7819bdf45e" category="inline-link">支持的前端、后端和主机配置</block>
   <block id="3c172a48713bf18882de70235bb9b4ee" category="admonition">您可以<block ref="ec89e21f8106b8624273185ce464dfb2" category="inline-link-rx"></block> 使用Trident运算符(手动或使用Helm图表)或<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block>。在安装或升级Astra Trident之前、请查看<block ref="c11537a174ec95a098cfff995b6e8b14" category="inline-link-rx"></block>。</block>
@@ -1683,9 +1672,6 @@
   <block id="d5158c215f75d40b3dc3a9efd519b60a" category="inline-link">设置</block>
   <block id="6e623f58f3de0088c1a5e9284fd0aba0" category="list-text">已安装并配置* Astra Trident卷快照控制器和卷快照类*：卷快照控制器必须为<block ref="8c0af001953d4be1cc072658538e955b" category="inline-link-rx"></block> 以便可以在Astra Control中创建快照。至少一个Astra Trident<block ref="19476662cd814e0aa085eca121de89b8" prefix=" " category="inline-code"></block> 已经<block ref="75fbdf7a5c036fb3ab281101e48530be" category="inline-link-rx"></block> 由管理员执行。</block>
   <block id="9d9542e5b4db9b70118c8d71a180a912" category="inline-link">cluster kubeconfig</block>
-  <block id="71867f76c14caac59debbdb8695e4957" category="list-text">* Kubeconfig accessible*：您可以访问<block ref="ce846d28e96d94b77a3d27a6871f825b" category="inline-link-rx"></block> 这仅包括一个上下文元素。</block>
-  <block id="b904d7fe23037b9f2584ad98638fab08" category="list-text">* ONTAP 凭据*：您需要在备用ONTAP 系统上设置ONTAP 凭据以及超级用户和用户ID、以便使用Astra控制中心备份和还原应用程序。</block>
-  <block id="912fa11d62b00e0a43abbc717e1243df" category="paragraph">在ONTAP 命令行中运行以下命令：</block>
   <block id="cf6c596a44d2e4c76a3a7da085c47495" category="list-text">*仅Rancher *：在Rancher环境中管理应用程序集群时、请修改Rancher提供的kubeconfig文件中的应用程序集群默认上下文、以使用控制平面上下文、而不是Rancher API服务器上下文。这样可以减少 Rancher API 服务器上的负载并提高性能。</block>
   <block id="2ed51f16f28e4dd32dfd5df75788423d" category="paragraph">如果集群使用Astra Trident提供存储服务、请确保已安装的Astra Trident版本是最新的。</block>
   <block id="617eb1530b145e1d6b1e3a0d2ec1478d" category="list-text">检查Astra Trident版本。</block>
@@ -1715,11 +1701,9 @@
   <block id="38e2b31fd3dcdd65304ac201efd17f06" category="list-text">*其他*：通过上传提供有关自管理集群的详细信息<block ref="ea46161c66978a87802bc5b44682cbe0" prefix=" " category="inline-code"></block> 文件或粘贴的内容<block ref="ea46161c66978a87802bc5b44682cbe0" prefix=" " category="inline-code"></block> 文件。</block>
   <block id="d9348d075dc7b3c91cff99d56dfc327b" category="inline-link">Kubernetes 文档</block>
   <block id="9fc84d64f86a2fb623a35c5692c96941" category="inline-link-macro">云实例</block>
-  <block id="6d19112b98ccacfb730d0287c99eb91c" category="list-text">*云名称*(对于提供商管理的集群)：为添加此集群时要创建的新云实例提供一个名称。了解更多信息 <block ref="32e60ef2ecbf9cc1dffc20ea8b07ceea" category="inline-link-macro-rx"></block>。</block>
   <block id="5621ce04305fabeb5c1385e8b31521fa" category="admonition">从集群列表中进行选择时、请仔细查看"符合条件"选项卡。如果出现警告，请将鼠标悬停在警告上以确定集群是否存在问题描述。例如，它可能会标识集群没有工作节点。</block>
   <block id="26b17225b626fb9238849fd60eabdf60" category="paragraph">+</block>
   <block id="81fab8b5f502e0434de09d4adc1d85c4" category="list-text">*凭据名称*(对于自管理集群)：为要上传到Astra Control的自管理集群凭据提供一个名称。默认情况下，凭据名称会自动填充为集群的名称。</block>
-  <block id="a9b424a4da712ff7a9f830c88c906e74" category="paragraph">*对于提供商管理的集群*：如果这是您为此云提供商添加的第一个集群、则Astra Control Service会为云提供商创建一个对象存储、用于在符合条件的集群上备份应用程序。(在为此云提供程序添加后续集群时、不会再创建其他对象存储。)Astra控制服务还会设置您指定的默认存储类。对于在Amazon Web Services或Google Cloud Platform中管理的集群、Astra Control Service还会在集群上创建管理员帐户。这些操作可能需要几分钟时间。</block>
   <block id="4af7310d5b749c4b7d353363bda2d5c4" category="section-title">使用Astra Control更改默认存储类</block>
   <block id="ba3f4b327f0b419e726b9ab600a1e987" category="paragraph">您可以在Astra Control中更改集群的默认存储类。如果集群使用先前安装的存储后端服务、则可能无法使用此方法更改默认存储类(不能选择*设置为默认值*操作)。在这种情况下、您可以 <block ref="f71848a174c79d355f9a074af503a95d" category="inline-xref-macro-rx"></block>。</block>
   <block id="f2fd91e733b2002c4dcef63dcb2e1684" category="section-title">使用命令行更改默认存储类</block>
@@ -1960,11 +1944,9 @@
   <block id="f18a26b9b45443052e0fe2464848258b" category="paragraph-title">(可选)检查Astra Trident版本</block>
   <block id="133059778c759500900ac3e31f9124f6" category="admonition">如果Astra Trident未安装或不是最新版本、并且您希望集群使用Astra Trident提供存储服务、则需要先安装最新版本的Astra Trident、然后再继续操作。请参见<block ref="0a4eeddcb63a166e3ea6149a4a33d4e7" category="inline-link-rx"></block> 有关说明，请参见。</block>
   <block id="ceb1396f571b46844bfc0042be1d74da" category="list-text">检查存储类是否正在使用受支持的Astra Trident驱动程序。配置程序名称应为<block ref="08044207e9f63bb0fd474dab347a776c" prefix=" " category="inline-code"></block>。请参见以下示例：</block>
-  <block id="212d0ab7b4f4eaebfa2a2c425d0fcbe3" category="paragraph-title">创建管理员角色 kubeconfig</block>
   <block id="275b3f11dca994bdaad9403b50379839" category="admonition">创建自己的<block ref="deabc6332aa53495b56c51d2e3eca54f" prefix=" " category="inline-code"></block> file中、您只能定义*一*上下文元素。请参见<block ref="54676762f2eb4e7149fe4e9996a20b1c" category="inline-link-rx"></block> 有关创建的信息<block ref="deabc6332aa53495b56c51d2e3eca54f" prefix=" " category="inline-code"></block> 文件。</block>
   <block id="053447830bdec16f5986aceb9a1d7b50" category="inline-link-macro">请参见以下说明</block>
   <block id="a89f4b04c3ea15221d38351ec9978a7f" category="admonition">如果您选择的集群标记有 "private" 图标，则它将使用专用 IP 地址，并且 Astra Control 需要使用 Astra Connector 来管理集群。如果您看到一条消息，指出您需要安装 Astra Connector ， <block ref="fe5ffc6a80a56380f9f1d2cc32d84537" category="inline-link-macro-rx"></block> 安装 Astra Connector 并启用集群管理。安装 Astra Connector 后，集群应符合条件，您可以继续添加集群。</block>
-  <block id="ddd9f256d0cb9275fee543e9928cec5a" category="paragraph">有关说明，请参见<block ref="47c83e7583e126455b2245655ede1c60" category="inline-link-rx"></block>。</block>
   <block id="d5d383f59aff1fd56faf3bc99a5e7447" category="section-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> 查看 Google Kubernetes Engine 的 Astra Control Service 要求</block>
   <block id="ca3936801cc983f962aeed971f35e927" category="section-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> （可选）：购买适用于 Google Cloud 的 Cloud Volumes Service</block>
   <block id="4ec76e316010fbd32edca0840bff69ab" category="section-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> 在 Google Cloud 项目中启用 API</block>
@@ -2085,4 +2067,23 @@
   <block id="cf2023b42357e47bef18c127980bd1c6" category="list-text">NetApp Cloud Volumes ONTAP ：没有价格、性能或弹性信息</block>
   <block id="d52e07d1d595c838fa6dd650fe711cd0" category="list-text"><block ref="d52e07d1d595c838fa6dd650fe711cd0" category="inline-link-rx"></block></block>
   <block id="ec9e8ebd4a4bf176cd70f6a24863b17a" category="paragraph">了解更多信息 <block ref="669f060d339cad3efcb29baff91fd410" category="inline-link-macro-rx"></block>。了解更多信息 <block ref="b4547358b744ca3b28812f444dc5a38f" category="inline-link-macro-rx"></block>。了解更多信息 <block ref="fd0a3bed584d87df18438d86772a2aaf" category="inline-link-macro-rx"></block>。</block>
+  <block id="9f202fa58fc941e247e2f7786da19213" category="paragraph">您可以通过上传将自管理集群添加到Astra Control Service<block ref="ea46161c66978a87802bc5b44682cbe0" prefix=" " category="inline-code"></block> 文件您需要确保集群满足中所述的要求 <block ref="fedf37c1e98889c2b8f08b9cf9723656" category="inline-xref-macro-rx"></block>。</block>
+  <block id="aba973c684037589b32c06256909a7d8" category="list-text">您应拥有包含创建集群的IAM用户凭据的JSON文件。 <block ref="5592dd611bfce65633cff7badbd7195f" category="inline-link-macro-rx"></block>。</block>
+  <block id="bb17f0baba089b794a1fc9ae3b93d1ea" category="list-text">(可选)如果需要提供<block ref="0f12ee5c9f1dd90158580f1c292b0d37" prefix=" " category="inline-code"></block> 集群对非集群创建者的其他IAM用户的命令访问权限、请参见中的说明<block ref="47c83e7583e126455b2245655ede1c60" category="inline-link-rx"></block>。</block>
+  <block id="aeb77ff86c2121f885bfa9ef656948a5" category="list-text">您应拥有包含在创建服务主体时Azure命令行界面输出的JSON文件。 <block ref="63026405246b8ab97c47baaea735ffe8" category="inline-link-macro-rx"></block>。</block>
+  <block id="2419fe48841fc722c6b0c9167faf2fb9" category="list-text">您应拥有具有所需权限的服务帐户的服务帐户密钥文件。 <block ref="9215258f7e020d0c05367a1a3bfd0982" category="inline-link-macro-rx"></block>。</block>
+  <block id="ac3bb3e8177657e75082233c58971d93" category="paragraph">您的自管理集群可以使用Astra Trident与NetApp存储服务连接、也可以使用容器存储接口(Container Storage Interface、CSI)驱动程序与其他存储服务连接。</block>
+  <block id="3b9c73125ae4cc5ab9bb00104b4598d8" category="paragraph">Astra Control Service支持使用以下Kubernetes分发版的自管理集群：</block>
+  <block id="fd89bb4228981d3b22187eb451421cd6" category="list-text">Red Hat OpenShift 容器平台</block>
+  <block id="bbd7c7ef752c876494ec0af98dd0b63a" category="list-text">Rancher Kubernetes引擎</block>
+  <block id="1de3a8db0dcc39abe68ae2b506a8f0ac" category="list-text">上游Kubernetes</block>
+  <block id="c965062d34f97b8a807d6043b0889aa4" category="paragraph">您的自管理集群需要满足以下要求：</block>
+  <block id="58585810a4337be95bcfebedb828d056" category="list-text">集群必须可通过Internet访问。</block>
+  <block id="834a9cd206312978cd28b32979a72bf7" category="list-text">如果您正在使用或计划使用已启用CSI驱动程序的存储、则必须在集群上安装相应的CSI驱动程序。有关使用CSI驱动程序集成存储的详细信息、请参阅存储服务的文档。</block>
+  <block id="b8c13df983b97ca354ad7d646939f14d" category="list-text">如果您正在使用或计划使用NetApp存储、请确保已安装Astra Trident的版本 <block ref="3298582a629556efb23ae4ef06c101a7" category="inline-link-macro-rx"></block>：</block>
+  <block id="1aec847a00d9758f901c82fc829ba738" category="list-text">* Kubeconfig accessible*：您可以访问 <block ref="5c481c89be9c4fdcaa80bfd3c3829692" category="inline-xref-macro-rx"></block> 这仅包括一个上下文元素。</block>
+  <block id="1a6b6e95b95a8e0de09a6566562ea376" category="paragraph-title">创建管理员角色kubeconfig (运行Rancher、OpenShift和上游Kubernetes的适用场景 集群)</block>
+  <block id="17fc42c08affacba5657de8d171ed30e" category="list-text">*云实例名称*(对于提供商管理的集群)：为添加此集群时要创建的新云实例提供一个名称。了解更多信息 <block ref="32e60ef2ecbf9cc1dffc20ea8b07ceea" category="inline-link-macro-rx"></block>。</block>
+  <block id="1fe883570039bf797197aff2f9905e79" category="list-text">(可选)*存储*：选择希望部署到此集群的Kubernetes应用程序默认使用的存储类。</block>
+  <block id="a0652b7f26bfa45b4a805218ab132fd2" category="paragraph">*对于提供商管理的集群*：如果这是您为此云提供商添加的第一个集群、则Astra Control Service会为云提供商创建一个对象存储、用于备份在符合条件的集群上运行的应用程序。(在为此云提供程序添加后续集群时、不会再创建其他对象存储。)如果指定了默认存储类、则Astra控制服务将设置您指定的默认存储类。对于在Amazon Web Services或Google Cloud Platform中管理的集群、Astra Control Service还会在集群上创建管理员帐户。这些操作可能需要几分钟时间。</block>
 </blocks>
