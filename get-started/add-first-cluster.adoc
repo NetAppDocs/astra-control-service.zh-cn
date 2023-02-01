@@ -57,6 +57,7 @@ ifdef::azure[]
 如果未将 Azure 订阅 ID 添加到 JSON 文件中，您也需要此 ID 。
 
 * 对于专用AKS集群、请参见 link:manage-private-cluster.html["通过Astra Control Service管理专用集群"^]。
+* 如果您计划使用NetApp Cloud Volumes ONTAP 作为存储后端、则需要将Cloud Volumes ONTAP 配置为与Microsoft Azure配合使用。请参见Cloud Volumes ONTAP https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html["设置文档"^]。
 
 
 endif::azure[]
@@ -65,6 +66,7 @@ ifdef::gcp[]
 
 .Google Cloud
 * 您应拥有具有所需权限的服务帐户的服务帐户密钥文件。 link:../get-started/set-up-google-cloud.html#create-a-service-account["了解如何设置服务帐户"]。
+* 如果您计划使用NetApp Cloud Volumes ONTAP 作为存储后端、则需要将Cloud Volumes ONTAP 配置为与Google Cloud配合使用。请参见Cloud Volumes ONTAP https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html["设置文档"^]。
 
 
 endif::gcp[]

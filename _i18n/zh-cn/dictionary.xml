@@ -1089,8 +1089,6 @@
   <block id="60f694f21643599c137f6c610e48124e" category="paragraph">下面简要介绍了 Astra Control 环境的各个组件。</block>
   <block id="51d249216b03414f10b242b851af7951" category="section-title">Astra Control 组件</block>
   <block id="a8d77bbb11d2e1a349811767d194e9ba" category="list-text">* Kubernetes 集群 * ： Kubernetes 是一个可移植，可扩展的开源平台，用于管理容器化工作负载和服务，便于进行声明性配置和自动化。Astra 为 Kubernetes 集群中托管的应用程序提供管理服务。</block>
-  <block id="951fe18cc6e59e05fca3c0ca7de399fa" category="list-text">* 存储后端 * ：</block>
-  <block id="fc8adf6067b9e369fbebc9abf2891bce" category="list-text">ONTAP AFF 和 FAS 存储后端。作为存储软件和硬件平台， ONTAP 可提供核心存储服务，支持多个存储访问协议以及快照和镜像等存储管理功能。</block>
   <block id="415ba7b6a21fb373d9c5b72207313c1c" category="list-text">* Cloud Insights * ： Cloud Insights 是一款 NetApp 云基础架构监控工具，可用于监控由 控制中心管理的 Kubernetes 集群的性能和利用率。Cloud Insights 将存储使用量与工作负载相关联。在 Astra 控制中心中启用 Cloud Insights 连接后，遥测信息将显示在 Astra 控制中心 UI 页面中。</block>
   <block id="de0c45e94d4b178203631d55e65d1b62" category="section-title">Astra Control 接口</block>
   <block id="d015aca78df45458ee1d6533c5246919" category="paragraph">您可以使用不同的界面完成任务：</block>
@@ -1179,7 +1177,6 @@
   <block id="48812784c9e7b02bc76402c5a0c3ca10" category="list-text">为专用集群组件创建命名空间。</block>
   <block id="f831baeb7ae8c560addc2916d8b1096e" category="list-text">应用 Astra Connector 自定义资源定义（ CRD ）。</block>
   <block id="138db2318815f6b9fc7cc55dd6a6ad32" category="list-text">检查 Astra 连接器的状态。</block>
-  <block id="570fa99ce4fbf8deb198b97a6931d63a" category="list-text">Cloud Volumes ONTAP 存储后端</block>
   <block id="ea2708b459fc0cad6936ec216bd9405e" category="paragraph">Astra 控制中心完全集成到 AutoSupport 和 Active IQ 生态系统中，可为用户和 NetApp 支持提供故障排除和使用信息。</block>
   <block id="970cfe22b76fecaa99669dbc6dd2643e" category="paragraph">* 是否可以将专用 AKS 集群添加到 Astra Control Service ？ *</block>
   <block id="51e84df52b4888344ecda584885aaabd" category="paragraph">专用集群必须具有<block ref="aa255aeede553f15509fbd44536f790e" category="inline-link-rx"></block> 设置为允许 Astra Control IP 地址：</block>
@@ -1393,7 +1390,6 @@
   <block id="978b82e4298231e68c6ac005c5e649aa" category="inline-link">Amazon EBS定价</block>
   <block id="bc4bb24d5e702fb79be623b84e7cf47e" category="inline-link">适用于NetApp ONTAP 性能的Amazon FSX</block>
   <block id="86305be6273e5fd50120867e93897613" category="inline-link">适用于NetApp ONTAP 的Amazon FSX定价</block>
-  <block id="dd069ab6d74011bb108bf219e092a2d0" category="list-text">Astra 控制中心使用以下存储后端：</block>
   <block id="a7da53d86332105dcae80a12f3e8b7a5" category="summary">介绍了Astra Control中的受管应用程序类型。</block>
   <block id="848f207b3c4594754aa82fd21b5fc5e0" category="paragraph">当Astra Control发现集群时、这些集群上的应用程序将不受管理、直到您选择要如何管理它们为止。Astra Control 中的受管应用程序可以是以下任一项：</block>
   <block id="594284cddefbf771912acc53c31ca2b3" category="list-text">提供反映应用程序在 Kubernetes 中的状态的状态。</block>
@@ -2049,9 +2045,6 @@
   <block id="0f0b99ea2f70cd363c2c6a279f74e760" category="section-title">NetApp Cloud Volumes ONTAP</block>
   <block id="e472e0844cec8046d5a3eed1d37de0ed" category="inline-link">NetApp Cloud Volumes ONTAP 文档</block>
   <block id="b311f4f89f8edf2c494c59166cea789e" category="paragraph">有关配置NetApp Cloud Volumes ONTAP 的具体信息、包括性能建议、请访问<block ref="c94772fe83b69960a6ebea80e6f83cf2" category="inline-link-rx"></block>。</block>
-  <block id="1da547253b2bff6a97f16457ba6c7659" category="list-text">Astra Control Service 使用<block ref="9e2d15731749abbc242896b41a1be2ef" category="inline-link-rx"></block>、Azure受管磁盘和<block ref="3d43fd73820648564776fa140e465af6" category="inline-link-rx"></block> 作为AKS集群的存储后端。</block>
-  <block id="068755ba9601ac78582444cf9563d28b" category="list-text">Astra Control Service 使用<block ref="d804c793f302b1f3285300e6253aaac6" category="inline-link-rx"></block>、Google Persistent Disk和<block ref="3d43fd73820648564776fa140e465af6" category="inline-link-rx"></block> 作为GKE集群的存储后端。</block>
-  <block id="9ff64e735ff169bd9cc9554b0d5d8108" category="list-text">Astra Control Service 使用<block ref="a65cb6c91d35e755c3763fe01aedac72" category="inline-link-rx"></block> 和<block ref="789fe92e2b55f108a4e50dd78da73d71" category="inline-link-rx"></block> 作为AWS集群的存储后端。</block>
   <block id="88ede18f1c4b4384b20f2ce56a75bd80" category="paragraph">Astra控制服务支持将Azure NetApp Files 、Azure受管磁盘或NetApp Cloud Volumes ONTAP 作为Azure Kubernetes Service (AKS)集群的存储后端。</block>
   <block id="cf2023b42357e47bef18c127980bd1c6" category="list-text">NetApp Cloud Volumes ONTAP ：没有价格、性能或弹性信息</block>
   <block id="d52e07d1d595c838fa6dd650fe711cd0" category="list-text"><block ref="d52e07d1d595c838fa6dd650fe711cd0" category="inline-link-rx"></block></block>
@@ -2086,4 +2079,11 @@
   <block id="a3060d8563d84f399ad045a8f074e953" category="cell">支持哪些存储后端？</block>
   <block id="117bdbda976fe8b3212bc3b6327a0a1b" category="list-text">Cloud Volumes ONTAP</block>
   <block id="e76d01158a51318d708ef8185fb06b2d" category="list-text">此时、您可以从集群定义应用程序。永久性卷将通过新的默认存储类在存储后端配置。</block>
+  <block id="38e3b2d02a57ef89462103f8dcf36ab0" category="list-text"><block ref="38e3b2d02a57ef89462103f8dcf36ab0" category="inline-link-rx"></block></block>
+  <block id="ab819072ff4cb02cb39723b20e2ec373" category="list-text"><block ref="ab819072ff4cb02cb39723b20e2ec373" category="inline-link-rx"></block></block>
+  <block id="55b6146ebe43b01a290a7aad48a66943" category="list-text">自管理集群：</block>
+  <block id="ec2e9418f579c84a41733c6bb0adb789" category="list-text"><block ref="ec2e9418f579c84a41733c6bb0adb789" category="inline-link-rx"></block></block>
+  <block id="1bdec68ba7ba69d1cfefb7e18a857ef4" category="inline-link">设置文档</block>
+  <block id="e7f7ae1f9423fb8774a02e2ae647e158" category="list-text">如果您计划使用NetApp Cloud Volumes ONTAP 作为存储后端、则需要将Cloud Volumes ONTAP 配置为与Microsoft Azure配合使用。请参见Cloud Volumes ONTAP<block ref="8bd14818004729c0926343811de7e4e9" category="inline-link-rx"></block>。</block>
+  <block id="d75122947e3b2c3b0a4b44dfa3966432" category="list-text">如果您计划使用NetApp Cloud Volumes ONTAP 作为存储后端、则需要将Cloud Volumes ONTAP 配置为与Google Cloud配合使用。请参见Cloud Volumes ONTAP<block ref="3a89728ad1d2dcbb16e661d8af8129b1" category="inline-link-rx"></block>。</block>
 </blocks>
