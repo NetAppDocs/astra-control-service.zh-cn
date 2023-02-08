@@ -22,38 +22,38 @@ Astra Control 具有以下应用程序管理要求：
 
 * *许可*：要管理10个以上的命名空间、您需要订阅Astra Control Center。
 * *命名空间*：可以使用Astra Control在单个集群上的一个或多个指定命名空间内定义应用程序。一个应用程序可以包含跨越同一集群中多个命名空间的资源。Astra Control不支持在多个集群之间定义应用程序。
-* * 存储类 * ：如果您安装的应用程序明确设置了 StorageClass ，并且需要克隆该应用程序，则克隆操作的目标集群必须具有最初指定的 StorageClass 。将显式设置了 StorageClass 的应用程序克隆到不具有相同 StorageClass 的集群将失败。
+* *存储类*：如果您安装的应用程序明确设置了存储类、并且需要克隆该应用程序、则克隆操作的目标集群必须具有最初指定的存储类。将具有显式设置的存储类的应用程序克隆到没有相同存储类的集群将失败。
 * * Kubernetes Resources* ：使用非 Astra Control 收集的 Kubernetes 资源的应用程序可能没有完整的应用程序数据管理功能。Astra Control 收集以下 Kubernetes 资源：
 +
 [cols="1,1,1"]
 |===
 
 
-| ClusterRole | ClusterRoleBinding. | 配置映射 
+| `ClusterRole` | `ClusterRoleBinding` | `ConfigMap` 
 
 
-| cronjob | 自定义资源定义 | 自定义资源 
+| `CronJob` | `CustomResourceDefinition` | `CustomResource` 
 
 
-| DemonSet | DeploymentConfig | HorizontalPodAutoscaler 
+| `DaemonSet` | `DeploymentConfig` | `HorizontalPodAutoscaler` 
 
 
-| 传入 | MutatingWebhook | 网络策略 
+| `Ingress` | `MutatingWebhook` | `NetworkPolicy` 
 
 
-| PersistentVolumeClaim | POD | PodDisruptionBuget 
+| `PersistentVolumeClaim` | `Pod` | `PodDisruptionBudget` 
 
 
-| 播客模板 | ReplicaSet | Role 
+| `PodTemplate` | `ReplicaSet` | `Role` 
 
 
-| RoleBinding. | 路由 | 机密 
+| `RoleBinding` | `Route` | `Secret` 
 
 
-| 服务 | ServiceAccount | 状态集 
+| `Service` | `ServiceAccount` | `StatefulSet` 
 
 
-| 验证 Webhook |  |  
+| `ValidatingWebhook` |  |  
 |===
 
 
@@ -168,7 +168,7 @@ WARNING: 定义应用程序时、请确保不在具有保护策略的多个应�
 在与其他应用程序共享资源的应用程序上执行原位还原操作可能会产生意外结果。对其中一个应用程序执行原位还原时、这些应用程序之间共享的任何资源都会被替换。
 
 ====
-.<strong> 广告宣传</strong> 中有关将集群范围的资源添加到应用程序命名空间的信息。
+.阅读有关将集群范围的资源添加到应用程序命名空间的更多信息。
 [%collapsible]
 ====
 除了自动包含的Astra Control之外、您还可以导入与命名空间资源关联的集群资源。您可以添加一个规则、该规则将包含特定组的资源、种类、版本以及标签(可选)。如果存在Astra Control不会自动包含的资源、您可能需要执行此操作。
