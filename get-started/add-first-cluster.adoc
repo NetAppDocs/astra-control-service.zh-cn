@@ -88,7 +88,7 @@ Astra Control Service支持使用以下Kubernetes分发版的自管理集群：
 
 * 集群必须可通过Internet访问。
 * 如果您正在使用或计划使用已启用CSI驱动程序的存储、则必须在集群上安装相应的CSI驱动程序。有关使用CSI驱动程序集成存储的详细信息、请参阅存储服务的文档。
-* 如果您正在使用或计划使用NetApp存储、请确保已安装Astra Trident的版本 link:../get-started/requirements.html#operational-environment-requirements["受Astra控制服务支持"^]：
+* 如果您正在使用或计划使用NetApp存储、请确保已安装最新版本的Astra Trident：
 +
 
 NOTE: 您可以 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html#choose-the-deployment-method["部署Astra Trident"^] 使用Trident运算符(手动或使用Helm图表)或 `tridentctl`。在安装或升级Astra Trident之前、请查看 https://docs.netapp.com/us-en/trident/trident-get-started/requirements.html["支持的前端、后端和主机配置"^]。
