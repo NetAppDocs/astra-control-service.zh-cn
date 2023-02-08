@@ -21,7 +21,7 @@ settings:
       alias: Azure 酒店
       id: azure
   rss_page: release-notes/whats-new.html
-  langs: zh-cn,us-en,ja-jp,ko-kr,zh-tw,de-de,fr-fr
+  langs: zh-cn,us-en,ja-jp,ko-kr,zh-tw,de-de,es-es,fr-fr
 sidebar:
   entries:
   - title: Astra Control Service 文档
