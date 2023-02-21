@@ -2077,4 +2077,5 @@
   <block id="dcb9a5ddd39d8514ddcd5a64c129a6b0" category="example-title">阅读有关将集群范围的资源添加到应用程序命名空间的更多信息。</block>
   <block id="9497a649f72a465537e088cd33f63b26" category="paragraph">除了自动包含的Astra Control之外、您还可以导入与命名空间资源关联的集群资源。您可以添加一个规则、该规则将包含特定组的资源、种类、版本以及标签(可选)。如果存在Astra Control不会自动包含的资源、您可能需要执行此操作。</block>
   <block id="b9e5ceb3ee51c79795e57043d65ace4f" category="list-text">*显式存储类*：如果部署的应用程序已明确设置存储类、并且需要克隆此应用程序、则目标集群必须具有最初指定的存储类。将具有显式设置的存储类的应用程序克隆到没有相同存储类的集群将失败。</block>
+  <block id="2fae9bf7af2c006788415b299aad1207" category="admonition">对使用NetApp ONTAP 存储的应用程序执行原位还原时、还原的应用程序使用的空间可能会增加一倍。执行原位还原后、从还原的应用程序中删除所有不需要的快照以释放存储空间。</block>
 </blocks>
