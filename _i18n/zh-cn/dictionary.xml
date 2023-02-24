@@ -968,10 +968,8 @@
   <block id="35165f9b14f6cde03fa7f6f9b03732ba" category="list-text">选择 * 更新 * 。</block>
   <block id="bd5cde8fc544622a3633d73962bcd705" category="summary">Astra 控制服务使用适用于 Google Cloud 的 Cloud Volumes Service 作为永久性卷的存储后端。您应了解选择服务级别，存储类和永久性卷大小如何帮助您实现性能目标。</block>
   <block id="2cafdb551953c7afd397b12eee1ce505" category="paragraph">Astra 控制服务可以使用适用于 Google Cloud 的 Cloud Volumes Service 作为永久性卷的存储后端。您应了解选择服务类型，存储类和永久性卷大小如何帮助您实现性能目标。</block>
-  <block id="5165c93eed8a6988e2abc470bf4d0bbe" category="paragraph">Astra Control Service 支持将 Google Persistent Disk 作为存储后端选项。此服务可提供由 Google 管理的块级存储。</block>
   <block id="2938a5725f8de8bc6cfbe9bdd59f796f" category="summary">Astra 控制服务使用 Azure NetApp Files 作为 Azure Kubernetes Service （ AKS ）集群的存储后端。您应了解选择存储类和永久性卷大小如何帮助您实现性能目标。</block>
   <block id="45f2ca5e315e585458c55fea41d5b448" category="paragraph">Astra 控制服务支持将 Azure NetApp Files 作为 Azure Kubernetes Service （ AKS ）集群的存储后端。您应了解选择存储类和永久性卷大小如何帮助您实现性能目标。</block>
-  <block id="a78513acd713c2d45f9956aec22c3e19" category="paragraph">Astra Control Service 支持将 Azure 托管磁盘作为存储后端选项。此服务可提供由 Azure 管理的块级存储。</block>
   <block id="d0848afd8553c34945705222a97a4553" category="paragraph">您应看到类似于以下内容的输出：</block>
   <block id="26031f2b054a2a1f996995dc1b39cc4e" category="list-text">选择 * 开始使用 Astra Control* 。</block>
   <block id="b623e6ded9a852f4e7cd9765578d0c08" category="list-text">选择 * 提交 * 。</block>
@@ -1939,7 +1937,6 @@
   <block id="adb43c383a88e1f2946ab2e72ac03918" category="section-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> 创建 Azure 服务主体</block>
   <block id="115d465e8b862905dee97dfc00687f80" category="section-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> 配置容器存储接口（ CSI ）驱动程序详细信息</block>
   <block id="4ba43802facfe67533d744cbe8965137" category="section-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> 可选：为Azure备份存储分段配置冗余</block>
-  <block id="c969f450a50c240b276b1959fc3eb534" category="paragraph">使用EBS作为EKS集群的存储后端时、您可以配置一些存储类参数。有关参数的含义以及如何配置参数的详细信息、请参见<block ref="efa17ec338493b6d9caef44d32a8989a" category="inline-link-rx"></block>。</block>
   <block id="37a9edbcd89980d7a6ec52943de6e692" category="paragraph">有关每种卷类型及其性能的详细信息、请参见<block ref="7ac340f30d3ddae2dcb4baa266ef78ba" category="inline-link-rx"></block>。有关定价信息、请参见<block ref="7729091ef10325fb607ffe76c346cfed" category="inline-link-rx"></block>。</block>
   <block id="573eae71a4ffbba9a137bcf0add56e46" category="paragraph">使用适用于NetApp ONTAP 的FSX作为AWS集群的存储后端时、I/O性能取决于文件系统的配置以及工作负载的特征。有关适用于NetApp ONTAP 性能的FSX的具体信息、请参见<block ref="45a884cbefaf34ae6fd7defa1c6be8c3" category="inline-link-rx"></block>。有关定价信息、请参见<block ref="1fe52440a36dc241abcf36facca2f97a" category="inline-link-rx"></block>。</block>
   <block id="676a48d63ffa9fc8110c816cc1f05f58" category="section-title">未从集群中卸载Astra Trident</block>
@@ -2018,7 +2015,6 @@
   <block id="bb17f0baba089b794a1fc9ae3b93d1ea" category="list-text">(可选)如果需要提供<block ref="0f12ee5c9f1dd90158580f1c292b0d37" prefix=" " category="inline-code"></block> 集群对非集群创建者的其他IAM用户的命令访问权限、请参见中的说明<block ref="47c83e7583e126455b2245655ede1c60" category="inline-link-rx"></block>。</block>
   <block id="aeb77ff86c2121f885bfa9ef656948a5" category="list-text">您应拥有包含在创建服务主体时Azure命令行界面输出的JSON文件。 <block ref="63026405246b8ab97c47baaea735ffe8" category="inline-link-macro-rx"></block>。</block>
   <block id="2419fe48841fc722c6b0c9167faf2fb9" category="list-text">您应拥有具有所需权限的服务帐户的服务帐户密钥文件。 <block ref="9215258f7e020d0c05367a1a3bfd0982" category="inline-link-macro-rx"></block>。</block>
-  <block id="ac3bb3e8177657e75082233c58971d93" category="paragraph">您的自管理集群可以使用Astra Trident与NetApp存储服务连接、也可以使用容器存储接口(Container Storage Interface、CSI)驱动程序与其他存储服务连接。</block>
   <block id="3b9c73125ae4cc5ab9bb00104b4598d8" category="paragraph">Astra Control Service支持使用以下Kubernetes分发版的自管理集群：</block>
   <block id="fd89bb4228981d3b22187eb451421cd6" category="list-text">Red Hat OpenShift 容器平台</block>
   <block id="bbd7c7ef752c876494ec0af98dd0b63a" category="list-text">Rancher Kubernetes引擎</block>
@@ -2078,4 +2074,8 @@
   <block id="afe823403603f8e45a82a192de4f1f39" category="paragraph"><block ref="afe823403603f8e45a82a192de4f1f39" category="inline-link-macro-rx"></block></block>
   <block id="43f10e14cfc78f2dccf4af9115390a26" category="list-text"><block ref="43f10e14cfc78f2dccf4af9115390a26" category="inline-link-rx"></block></block>
   <block id="aa2317f5569d30b7aac1b41dd02ffe97" category="list-text">如果您计划使用NetApp Cloud Volumes ONTAP 作为存储后端、则需要将Cloud Volumes ONTAP 配置为使用Amazon Web Services。请参见Cloud Volumes ONTAP<block ref="c40ff22452592aa319388d1d94a0a32e" category="inline-link-rx"></block>。</block>
+  <block id="892bb983e85684c863a4bf11d26d064e" category="paragraph">Astra控制服务可以使用容器存储接口(Container Storage Interface、CSI)驱动程序作为存储后端与Azure受管磁盘进行连接。此服务可提供由 Azure 管理的块级存储。</block>
+  <block id="46625131314080c123c1a23c969aa3a8" category="paragraph">Astra控制服务可以使用容器存储接口(Container Storage Interface、CSI)驱动程序作为存储后端与Google Persistent Disk建立接口。此服务可提供由 Google 管理的块级存储。</block>
+  <block id="4d2a3e63d994334eaa09e7217ed0d01d" category="paragraph">您的集群可以使用容器存储接口(Container Storage Interface、CSI)驱动程序与EBS建立接口。使用EBS作为EKS集群的存储后端时、您可以配置一些存储类参数。有关参数的含义以及如何配置参数的详细信息、请参见<block ref="efa17ec338493b6d9caef44d32a8989a" category="inline-link-rx"></block>。</block>
+  <block id="4c59c334ed6b80e6cd8237e6f14cf9cb" category="paragraph">您的自管理集群可以使用Astra Trident与NetApp存储服务相连接、也可以使用容器存储接口(Container Storage Interface、CSI)驱动程序与Amazon Elastic Block Store (EBS)、Azure受管磁盘和Google Persistent Disk相连接。</block>
 </blocks>

@@ -51,9 +51,9 @@ Astra 控制服务使用最小卷大小 100 GiB 来配置永久性卷，即使 P
 
 
 
-== Azure 受管磁盘
+== Azure受管磁盘
 
-Astra Control Service 支持将 Azure 托管磁盘作为存储后端选项。此服务可提供由 Azure 管理的块级存储。
+Astra控制服务可以使用容器存储接口(Container Storage Interface、CSI)驱动程序作为存储后端与Azure受管磁盘进行连接。此服务可提供由 Azure 管理的块级存储。
 
 https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["了解有关 Azure 受管磁盘的更多信息"^]。
 

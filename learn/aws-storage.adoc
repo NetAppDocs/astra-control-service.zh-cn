@@ -18,7 +18,7 @@ Astra控制服务可以使用Amazon Elastic Block Store (EBS)或Amazon FSx for N
 
 == Amazon Elastic Block Store (EBS)
 
-使用EBS作为EKS集群的存储后端时、您可以配置一些存储类参数。有关参数的含义以及如何配置参数的详细信息、请参见 https://kubernetes.io/docs/concepts/storage/storage-classes/#aws-ebs["Kubernetes文档"^]。
+您的集群可以使用容器存储接口(Container Storage Interface、CSI)驱动程序与EBS建立接口。使用EBS作为EKS集群的存储后端时、您可以配置一些存储类参数。有关参数的含义以及如何配置参数的详细信息、请参见 https://kubernetes.io/docs/concepts/storage/storage-classes/#aws-ebs["Kubernetes文档"^]。
 
 您可以在EBS中使用多种不同类型的卷：
 

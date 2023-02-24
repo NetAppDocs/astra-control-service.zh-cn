@@ -76,7 +76,7 @@ endif::gcp[]
 .自我管理集群需要什么？#8217
 [%collapsible]
 ====
-您的自管理集群可以使用Astra Trident与NetApp存储服务连接、也可以使用容器存储接口(Container Storage Interface、CSI)驱动程序与其他存储服务连接。
+您的自管理集群可以使用Astra Trident与NetApp存储服务相连接、也可以使用容器存储接口(Container Storage Interface、CSI)驱动程序与Amazon Elastic Block Store (EBS)、Azure受管磁盘和Google Persistent Disk相连接。
 
 Astra Control Service支持使用以下Kubernetes分发版的自管理集群：
 

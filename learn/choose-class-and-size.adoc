@@ -113,7 +113,7 @@ Astra 控制服务使用最小卷大小 300 GiB 和 CVS 服务类型来配置永
 
 == Google 持久磁盘
 
-Astra Control Service 支持将 Google Persistent Disk 作为存储后端选项。此服务可提供由 Google 管理的块级存储。
+Astra控制服务可以使用容器存储接口(Container Storage Interface、CSI)驱动程序作为存储后端与Google Persistent Disk建立接口。此服务可提供由 Google 管理的块级存储。
 
 https://cloud.google.com/persistent-disk/["了解有关 Google 持久磁盘的更多信息"^]。
 
