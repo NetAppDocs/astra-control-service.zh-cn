@@ -45,6 +45,7 @@ ifdef::aws[]
 * 您应拥有包含创建集群的IAM用户凭据的JSON文件。 link:../get-started/set-up-amazon-web-services.html#create-an-iam-user["了解如何创建IAM用户"]。
 * 适用于NetApp ONTAP 的Amazon FSX需要Astra Trident。如果您计划使用适用于NetApp ONTAP 的Amazon FSx作为EKS集群的存储后端、请参阅中的Astra Trident信息 link:set-up-amazon-web-services.html#eks-cluster-requirements["EKS集群要求"]。
 * (可选)如果需要提供 `kubectl` 集群对非集群创建者的其他IAM用户的命令访问权限、请参见中的说明 https://aws.amazon.com/premiumsupport/knowledge-center/amazon-eks-cluster-access/["在Amazon EKS中创建集群后、如何为其他IAM用户和角色提供访问权限？"^]。
+* 如果您计划使用NetApp Cloud Volumes ONTAP 作为存储后端、则需要将Cloud Volumes ONTAP 配置为使用Amazon Web Services。请参见Cloud Volumes ONTAP https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html["设置文档"^]。
 
 
 endif::aws[]

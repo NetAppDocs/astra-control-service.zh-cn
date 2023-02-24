@@ -23,9 +23,9 @@ NetApp 会定期更新 Astra Control Service ，为您提供新功能，增强�
 +
 link:../use/manage-app-execution-hooks.html["管理应用程序执行挂钩"]
 
-* 支持将NetApp Cloud Volumes ONTAP 用作存储后端(Microsoft Azure和Google Cloud平台正式支持)
+* 支持将NetApp Cloud Volumes ONTAP 用作存储后端
 +
-link:../learn/architecture.html#astra-control-components["架构和组件"]
+link:../get-started/intro.html["了解Astra Control"]
 
 
 
