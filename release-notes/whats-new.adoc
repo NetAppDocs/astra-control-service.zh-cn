@@ -54,7 +54,7 @@ link:../get-started/add-first-cluster.html["从 Astra Control Service 开始管�
 +
 link:../use/manage-cloud-instances.html["管理云实例"]
 
-* 支持将自管理Kubernetes集群添加到Astra Control Service
+* 支持将公共云环境中托管的自管理Kubernetes集群添加到Astra Control Service
 +
 link:../get-started/add-first-cluster.html["从 Astra Control Service 开始管理 Kubernetes 集群"]
 

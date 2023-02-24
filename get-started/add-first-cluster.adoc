@@ -28,13 +28,17 @@ summary: 设置环境后，您可以创建 Kubernetes 集群，然后将其添�
 
 NOTE: Astra控制服务支持使用Azure Active Directory (Azure AD)进行身份验证和身份管理的AKS集群。创建集群时、请按照中的说明进行操作 https://docs.microsoft.com/en-us/azure/aks/managed-aad["正式文档"^] 将集群配置为使用Azure AD。您需要确保集群满足AKS管理的Azure AD集成的要求。
 
-您可以通过上传将自管理集群添加到Astra Control Service `kubeconfig.yaml` 文件您需要确保集群满足中所述的要求 <<开始管理 Kubernetes 集群>>。
+
+
+=== 自我管理的集群
+
+自管理集群是指直接配置和管理的集群。Astra Control Service支持在公共云环境中运行的自管理集群。您可以通过上传将自管理集群添加到Astra Control Service `kubeconfig.yaml` 文件您需要确保集群满足中所述的要求 <<开始管理 Kubernetes 集群>>。
 
 
 
 == 开始管理 Kubernetes 集群
 
-登录到 Astra Control Service 后，第一步是开始管理集群。您可以添加由云提供商管理的集群或自管理集群。在将集群添加到Astra Control Service之前、您需要执行某些任务并确保集群满足特定要求。
+登录到 Astra Control Service 后，第一步是开始管理集群。您可以添加由云提供商管理的集群或自管理集群。在将集群添加到Astra Control Service之前、您需要执行特定任务并确保集群满足特定要求。
 
 .由云提供商管理的集群需要什么？#8217
 [%collapsible]
@@ -76,9 +80,9 @@ endif::gcp[]
 .自我管理集群需要什么？#8217
 [%collapsible]
 ====
-您的自管理集群可以使用Astra Trident与NetApp存储服务相连接、也可以使用容器存储接口(Container Storage Interface、CSI)驱动程序与Amazon Elastic Block Store (EBS)、Azure受管磁盘和Google Persistent Disk相连接。
+自管理集群是指直接配置和管理的集群。Astra Control Service支持在公共云环境中运行的自管理集群。您的自管理集群可以使用Astra Trident与NetApp存储服务相连接、也可以使用容器存储接口(Container Storage Interface、CSI)驱动程序与Amazon Elastic Block Store (EBS)、Azure受管磁盘和Google Persistent Disk相连接。
 
-Astra Control Service支持使用以下Kubernetes分发版的自管理集群：
+Astra控制服务支持使用以下Kubernetes分发版的自管理集群：
 
 * Red Hat OpenShift 容器平台
 * Rancher Kubernetes引擎
@@ -88,6 +92,7 @@ Astra Control Service支持使用以下Kubernetes分发版的自管理集群：
 您的自管理集群需要满足以下要求：
 
 * 集群必须可通过Internet访问。
+* 集群不能托管在内部网络中；它必须托管在公共云环境中。
 * 如果您正在使用或计划使用已启用CSI驱动程序的存储、则必须在集群上安装相应的CSI驱动程序。有关使用CSI驱动程序集成存储的详细信息、请参阅存储服务的文档。
 * 如果您正在使用或计划使用NetApp存储、请确保已安装最新版本的Astra Trident：
 +

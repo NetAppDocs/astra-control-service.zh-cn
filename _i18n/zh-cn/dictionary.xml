@@ -1615,7 +1615,6 @@
   <block id="3c7ad3a476ad730cdda13eafe57f371e" category="list-text">GKE1.24及更高版本不支持基于Docker的节点映像。检查以确保GKEE中的工作节点映像类型为<block ref="bba3d88d28186b91a2b3165d6143a600" prefix=" " category="inline-code"></block> NFS挂载成功。</block>
   <block id="da2c085b9d8d021307417125c20d3a83" category="paragraph">要将Azure受管磁盘与Astra Control Service结合使用、您需要安装所需的CSI驱动程序。</block>
   <block id="c9be99ba5f72a27dc67b1b94e7b90efd" category="paragraph">如果您还没有集群、则可以创建满足要求的集群 <block ref="e7658a1af56c46ed5b9cdfa6f95bb6cb" category="inline-link-macro-rx"></block>。如果您还没有集群、则可以创建满足要求的集群 <block ref="c14ce2b90a6d517d28f6a149c4e1ddd7" category="inline-link-macro-rx"></block>。如果您还没有集群、则可以创建满足要求的集群 <block ref="6bb2c6a064e406c3dfdba3642f8a72c0" category="inline-link-macro-rx"></block> 或 <block ref="26e75175e6e267eb6426de7596baf82e" category="inline-link-macro-rx"></block>。</block>
-  <block id="a30241413c2751b1ad5c5a00e914e0a1" category="paragraph">登录到 Astra Control Service 后，第一步是开始管理集群。您可以添加由云提供商管理的集群或自管理集群。在将集群添加到Astra Control Service之前、您需要执行某些任务并确保集群满足特定要求。</block>
   <block id="75cea9c777f72349fb550387eafc09c1" category="example-title">由云提供商管理的集群需要什么？#8217</block>
   <block id="9eecb04f40bc3e3811b2fcfff6ea5b4f" category="example-title">自我管理集群需要什么？#8217</block>
   <block id="f658d356d0697be75622e7d5d6d94798" category="inline-link">部署Astra Trident</block>
@@ -1999,7 +1998,6 @@
   <block id="d57729d6a002792bd1640f00b3c60a6d" category="list-text">增强了备份、还原和克隆操作的进度报告功能</block>
   <block id="ee22ee616d03d0b788bbae8035a8d53d" category="list-text">支持管理已安装兼容版本的Astra Trident的集群</block>
   <block id="22289318dae293d59005c72969da78c0" category="list-text">支持在一个Astra Control Service帐户中管理多个云提供商订阅</block>
-  <block id="16522d4241295dd4aacfffd076bdab35" category="list-text">支持将自管理Kubernetes集群添加到Astra Control Service</block>
   <block id="340fb7807661130b471c746bcb32778d" category="list-text">现在、Astra控制服务的计费按命名空间计费、而不是按应用程序计费</block>
   <block id="7c560ce667e00f7fb7277e3e40274958" category="list-text">支持通过AWS Marketplace订阅Astra Control Service基于期限的服务</block>
   <block id="0bf305437e764438b0cefa4feeab361a" category="paragraph">Astra控制服务支持将适用于Google Cloud的Cloud Volumes Service 、Google永久性磁盘或NetApp Cloud Volumes ONTAP 作为永久性卷的存储后端选项。</block>
@@ -2010,12 +2008,10 @@
   <block id="cf2023b42357e47bef18c127980bd1c6" category="list-text">NetApp Cloud Volumes ONTAP ：没有价格、性能或弹性信息</block>
   <block id="d52e07d1d595c838fa6dd650fe711cd0" category="list-text"><block ref="d52e07d1d595c838fa6dd650fe711cd0" category="inline-link-rx"></block></block>
   <block id="ec9e8ebd4a4bf176cd70f6a24863b17a" category="paragraph">了解更多信息 <block ref="669f060d339cad3efcb29baff91fd410" category="inline-link-macro-rx"></block>。了解更多信息 <block ref="b4547358b744ca3b28812f444dc5a38f" category="inline-link-macro-rx"></block>。了解更多信息 <block ref="fd0a3bed584d87df18438d86772a2aaf" category="inline-link-macro-rx"></block>。</block>
-  <block id="9f202fa58fc941e247e2f7786da19213" category="paragraph">您可以通过上传将自管理集群添加到Astra Control Service<block ref="ea46161c66978a87802bc5b44682cbe0" prefix=" " category="inline-code"></block> 文件您需要确保集群满足中所述的要求 <block ref="fedf37c1e98889c2b8f08b9cf9723656" category="inline-xref-macro-rx"></block>。</block>
   <block id="aba973c684037589b32c06256909a7d8" category="list-text">您应拥有包含创建集群的IAM用户凭据的JSON文件。 <block ref="5592dd611bfce65633cff7badbd7195f" category="inline-link-macro-rx"></block>。</block>
   <block id="bb17f0baba089b794a1fc9ae3b93d1ea" category="list-text">(可选)如果需要提供<block ref="0f12ee5c9f1dd90158580f1c292b0d37" prefix=" " category="inline-code"></block> 集群对非集群创建者的其他IAM用户的命令访问权限、请参见中的说明<block ref="47c83e7583e126455b2245655ede1c60" category="inline-link-rx"></block>。</block>
   <block id="aeb77ff86c2121f885bfa9ef656948a5" category="list-text">您应拥有包含在创建服务主体时Azure命令行界面输出的JSON文件。 <block ref="63026405246b8ab97c47baaea735ffe8" category="inline-link-macro-rx"></block>。</block>
   <block id="2419fe48841fc722c6b0c9167faf2fb9" category="list-text">您应拥有具有所需权限的服务帐户的服务帐户密钥文件。 <block ref="9215258f7e020d0c05367a1a3bfd0982" category="inline-link-macro-rx"></block>。</block>
-  <block id="3b9c73125ae4cc5ab9bb00104b4598d8" category="paragraph">Astra Control Service支持使用以下Kubernetes分发版的自管理集群：</block>
   <block id="fd89bb4228981d3b22187eb451421cd6" category="list-text">Red Hat OpenShift 容器平台</block>
   <block id="bbd7c7ef752c876494ec0af98dd0b63a" category="list-text">Rancher Kubernetes引擎</block>
   <block id="1de3a8db0dcc39abe68ae2b506a8f0ac" category="list-text">上游Kubernetes</block>
@@ -2077,5 +2073,11 @@
   <block id="892bb983e85684c863a4bf11d26d064e" category="paragraph">Astra控制服务可以使用容器存储接口(Container Storage Interface、CSI)驱动程序作为存储后端与Azure受管磁盘进行连接。此服务可提供由 Azure 管理的块级存储。</block>
   <block id="46625131314080c123c1a23c969aa3a8" category="paragraph">Astra控制服务可以使用容器存储接口(Container Storage Interface、CSI)驱动程序作为存储后端与Google Persistent Disk建立接口。此服务可提供由 Google 管理的块级存储。</block>
   <block id="4d2a3e63d994334eaa09e7217ed0d01d" category="paragraph">您的集群可以使用容器存储接口(Container Storage Interface、CSI)驱动程序与EBS建立接口。使用EBS作为EKS集群的存储后端时、您可以配置一些存储类参数。有关参数的含义以及如何配置参数的详细信息、请参见<block ref="efa17ec338493b6d9caef44d32a8989a" category="inline-link-rx"></block>。</block>
-  <block id="4c59c334ed6b80e6cd8237e6f14cf9cb" category="paragraph">您的自管理集群可以使用Astra Trident与NetApp存储服务相连接、也可以使用容器存储接口(Container Storage Interface、CSI)驱动程序与Amazon Elastic Block Store (EBS)、Azure受管磁盘和Google Persistent Disk相连接。</block>
+  <block id="e250f15b25c098b957582ffccfb8ad32" category="list-text">支持将公共云环境中托管的自管理Kubernetes集群添加到Astra Control Service</block>
+  <block id="d9e6278e0d2ca01f55d0a29da9caa34f" category="section-title">自我管理的集群</block>
+  <block id="0e2b07a4ed9acdd8d61a9b4d0ed9ade5" category="paragraph">自管理集群是指直接配置和管理的集群。Astra Control Service支持在公共云环境中运行的自管理集群。您可以通过上传将自管理集群添加到Astra Control Service<block ref="ea46161c66978a87802bc5b44682cbe0" prefix=" " category="inline-code"></block> 文件您需要确保集群满足中所述的要求 <block ref="fedf37c1e98889c2b8f08b9cf9723656" category="inline-xref-macro-rx"></block>。</block>
+  <block id="68e3130ad56cb70abd861c843fa28587" category="paragraph">登录到 Astra Control Service 后，第一步是开始管理集群。您可以添加由云提供商管理的集群或自管理集群。在将集群添加到Astra Control Service之前、您需要执行特定任务并确保集群满足特定要求。</block>
+  <block id="8a69b368bc97dc428e1c6ae2e1c9127a" category="paragraph">自管理集群是指直接配置和管理的集群。Astra Control Service支持在公共云环境中运行的自管理集群。您的自管理集群可以使用Astra Trident与NetApp存储服务相连接、也可以使用容器存储接口(Container Storage Interface、CSI)驱动程序与Amazon Elastic Block Store (EBS)、Azure受管磁盘和Google Persistent Disk相连接。</block>
+  <block id="84f2be4894042bb275e318dfd8a0a200" category="paragraph">Astra控制服务支持使用以下Kubernetes分发版的自管理集群：</block>
+  <block id="285cc7142d57c8f6e6a93562de77e160" category="list-text">集群不能托管在内部网络中；它必须托管在公共云环境中。</block>
 </blocks>
