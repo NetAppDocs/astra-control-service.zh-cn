@@ -456,31 +456,20 @@
   <block id="26063f616424ab272dd4cd2f9441985c" category="paragraph">您可以查看这些通知并将其标记为已读（如果您希望像我们一样清除未读通知，则可以使用此功能）。</block>
   <block id="5dfe25ebe8ed6ed27f2613aa48ba8e44" category="summary">通过添加其他存储分段以及更改云提供商中集群的默认存储分段，管理 Astra 用于备份和克隆的存储分段。</block>
   <block id="79aa9197dc185dded5eb383a683a5219" category="doc">管理存储分段</block>
-  <block id="701fefec60508e3dfbab28e42cc34eec" category="paragraph">只有管理员才能添加和修改存储分段。</block>
   <block id="281b980af7a696eab76fe5424a68e4d7" category="section-title">Astra Control 如何使用存储分段</block>
-  <block id="7235bf4965aea4d7801668a2ba85f9bd" category="paragraph">开始管理第一个 Kubernetes 集群时， Astra Control Service 会在与受管集群位于同一地理位置的云提供商中创建默认分段。</block>
-  <block id="2a84d8a5024fb227d8832c858544bc54" category="paragraph">Astra 控制服务会对您创建的备份和克隆使用此默认存储分段。然后，您可以使用备份在集群之间还原和克隆应用程序。</block>
   <block id="1c5f75566062a39b61ef6696a869091d" category="admonition">在启动备份或克隆之前， Astra 控制服务会检查目标存储分段是否可访问。</block>
   <block id="29e296e0892cf7d05ecaa6f006dc0cfe" category="section-title">查看现有存储分段</block>
-  <block id="6565a5299bf8c25c8e365589000e2011" category="paragraph">查看可供 Astra Control Service 使用的存储分段列表，以确定其状态并确定云提供商的默认存储分段。</block>
   <block id="43d755e706daf2d2de44fad5f4d40c32" category="paragraph">存储分段可以具有以下任一状态：</block>
   <block id="2d13df6f8b5e4c5af9f87e0dc39df69d" category="list-text">待定</block>
-  <block id="7cd977582dd42dece1bfe950a66ada8d" category="list-text">添加存储分段后，它将以待定状态开始，而 Astra Control 会首次对其进行查看。</block>
   <block id="78945de8de090e90045d299651a68a9b" category="list-text">可用</block>
   <block id="b929c2e306e0e2ca8ce456f7f94f1faa" category="list-text">此存储分段可供 Astra Control 使用。</block>
   <block id="93f07b720ebf7d1246512569761a5804" category="list-text">已删除</block>
   <block id="b41363ff8976fae49b049f0329b8f1ba" category="list-text">存储分段目前无法正常运行。将鼠标悬停在状态图标上可确定问题所在。</block>
   <block id="3ad229e98a040883d52a865d289709ef" category="paragraph">如果某个存储分段处于 "Removed" 状态，您仍可以将其设置为默认存储分段并将其分配给保护计划。但是，如果数据保护操作开始时存储分段未处于可用状态，则该操作将失败。</block>
-  <block id="5d2bbbb5e8eadfe7beda56382db3b48e" category="paragraph">此时将显示可供 Astra Control Service 使用的存储分段列表。</block>
   <block id="97051796d8399cbd22e680d3212aa1c0" category="section-title">添加一个额外的存储分段</block>
-  <block id="9c6ebb12d9cd173ee88e3b73cabe77b4" category="paragraph">在云提供商中开始管理集群后，您可以随时添加其他分段。这样，您可以在创建保护策略时在分段之间进行选择，并更改临时备份和克隆的默认分段。</block>
-  <block id="dd6354a9b0182f27b3ea1d07811a3bdd" category="list-text">云提供商中现有存储分段的名称。</block>
   <block id="833eb3b04501929e168dbcfe3328a358" category="list-text">* 类型 * ：选择您的云提供商。</block>
-  <block id="3cb658c17327b8e0fdf35e63798291f2" category="paragraph">只有在 Astra Control Service 开始管理在该云提供商中运行的集群后，您的云提供商才可用。</block>
   <block id="48dbd6506b2a3bf46642f68dced2c90f" category="list-text">* 现有存储分段名称 * ：输入存储分段的名称。</block>
   <block id="2748cc7be12db184f15633496762281f" category="list-text">* 问题描述 * ：也可以输入存储分段的问题描述。</block>
-  <block id="833ccc7f60627a26323104a362bc1335" category="list-text">* 选择凭据 * ：选择可为 Astra 控制服务提供管理存储分段所需权限的凭据。</block>
-  <block id="eca980095ee0892315ee71b705935c75" category="paragraph">Astra Control Service 添加了额外的存储分段。现在，您可以在创建保护策略时选择存储分段。</block>
   <block id="05cec507b249987c2956da6a81ee5bfc" category="section-title">更改默认分段</block>
   <block id="4616f07e207a7f28d8d1077be554905d" category="paragraph">" 应用程序 " 图块可帮助您确定以下内容：</block>
   <block id="d72d4dcf59d18b1ee9c1df6e69c608ed" category="list-text">您当前管理的应用程序数量。</block>
@@ -995,7 +984,6 @@
   <block id="db14445bac1925559a170b4efeb32b37" category="list-text">netapp-vcs-perf-至 高性能</block>
   <block id="e006c2f00ca5a8ec47a9196763ca9c69" category="paragraph">存储类的名称包括 _netapp-cvs-perf-standard_ ， _netapp-cvs-perf-premium _ 和 _netapp-cvs-perf-Extreme 。</block>
   <block id="a90204b381b7967a04938156531da34e" category="paragraph">在成功添加到 Astra Control 后， Astra Trident 运算符会将默认存储类设置为 `netapp-cvs-perf-Premium` 。如果应用程序的 PVC 未绑定到适用于 Google Cloud 的 Cloud Volumes Service ，您可以执行以下几个步骤：</block>
-  <block id="29de4658324b1b89cfc8d2758855b3af" category="paragraph">如果向 Astra 控制服务添加其他分段，则可以在创建保护策略时从这些分段中进行选择。您还可以更改 Astra Control Service 用于临时备份和克隆的默认存储分段。您不能将存储分段从一个云提供商克隆到另一个云提供商。要将数据从一个云提供程序迁移到另一个云提供程序，请克隆关联的应用程序。</block>
   <block id="408410e994005339450ed31eabd8f6af" category="admonition">_You can't be Fully protected until you have a recent backup_ 。这一点非常重要，因为备份存储在对象存储中，而不是永久性卷。如果发生故障或意外事件会损坏集群及其永久性存储，则需要备份才能恢复。快照无法让您恢复。</block>
   <block id="592d363442bda9d231d57bf7cf1b36d3" category="inline-link">使用 Astra Control REST API 创建快照和备份</block>
   <block id="33e0dd7ca49703e72c3862b5ef0de975" category="paragraph">保护策略通过按定义的计划创建快照，备份或这两者来保护应用程序。您可以选择每小时，每天，每周和每月创建快照和备份，并且可以指定要保留的副本数。如果您需要备份或快照的运行频率高于每小时一次，则可以<block ref="e7190f2033c7866ebb246bbdd297729e" category="inline-link-rx"></block>。</block>
@@ -1732,10 +1720,7 @@
   <block id="bc044e78d97d319b1d70c1a7d2370e89" category="list-text">确认要取消管理集群，然后选择 * 是，取消管理集群 * 。</block>
   <block id="f4d5e36ed4f7235403e25ad1183d2684" category="paragraph">集群状态将更改为*正在删除*。之后、集群将从*集群*页面中删除、不再由Astra控制中心管理。</block>
   <block id="4271789f0046cfd66563e8d252266146" category="list-text">查找您需要的信息：</block>
-  <block id="9af184e84356995ac4c8918f51c7485b" category="paragraph">通过添加其他存储分段以及更改云实例中Kubernetes集群的默认存储分段、管理Astra用于备份和克隆的存储分段。</block>
   <block id="e1758c6f6621a3e5a0bfaa943496e946" category="list-text">转至*分段器*。</block>
-  <block id="4a886d9c605f2bf7f4aea900d070fe5d" category="paragraph">更改 Astra Control Service 用于备份和克隆的默认存储分段。每个云实例都有自己的默认存储分段。</block>
-  <block id="75af845e4fa71c7a41c06c0a3c88b4c9" category="paragraph">当您不选择从现有备份克隆时、Astra Control Service会对临时备份的云实例和临时克隆使用默认分段。</block>
   <block id="38867862280a9a74de68db4ff64b0c99" category="admonition">Astra Control不会自动为任何云实例分配默认分段。在两个集群之间执行应用程序克隆操作之前、您需要手动为云实例设置默认分段。</block>
   <block id="c8f4356f9cdb6220b5a26c45a1f08f5c" category="list-text">转至*云实例*。</block>
   <block id="a12bc220068e139158f916293280d5ca" category="list-text">在*操作*列中选择要编辑的云实例的配置菜单。</block>
@@ -1956,9 +1941,7 @@
   <block id="3bbb62d82d2439f5a711823da7c1b762" category="paragraph">有关添加约束的详细信息、请参见 <block ref="f9b0c5590ff6fff298698f3844cae23c" category="inline-link-macro-rx"></block>。</block>
   <block id="edb74efc05972c268b6cccf83996ac3e" category="section-title">更改用户的角色</block>
   <block id="bfba5acdae4cf2cfa2c86cce302038d4" category="paragraph">随时从帐户中删除凭据。您只能在之后删除凭据 <block ref="7193f1b7f27bd5505d89cc1e5724fb4b" category="inline-link-macro-rx"></block>、除非您正在轮换凭据(请参见 <block ref="029b7394eded829c95ca3b86c4cd802d" category="inline-xref-macro-rx"></block>）。</block>
-  <block id="df1dd0475d7e25b9e368f8f45f636062" category="list-text">* S3服务器名称或IP地址*(仅限AWS)：输入与您所在地区对应的S3端点的完全限定域名、而不输入<block ref="f8eae6750519389e078e1eb1bcb3d708" prefix=" " category="inline-code"></block>。请参见<block ref="398d47c523652edc934ec11e2f213d87" category="inline-link-rx"></block> 有关详细信息 ...</block>
   <block id="ce461936438c7221ad2aecef67b1e35b" category="paragraph">在与其他应用程序共享资源的应用程序上执行原位还原操作可能会产生意外结果。对其中一个应用程序执行原位还原时、这些应用程序之间共享的任何资源都会被替换。</block>
-  <block id="e13d6ee2f9c34bcf7366950e0434777b" category="list-text">如果存储分段位于Azure中：</block>
   <block id="49030d2f464d7bb39691809e5ab16174" category="list-text">此存储分段必须属于名为_Astra-backup-rg_的资源组。</block>
   <block id="88bdaf7536fdf70e3c93df4a9b10bb82" category="list-text">如果Azure存储帐户实例性能设置为"Premium"、则"Premium account type"设置必须设置为"Block blobs"。</block>
   <block id="ceeca391c3348d53722ec9783ba88430" category="inline-link">NetApp TV</block>
@@ -2080,4 +2063,27 @@
   <block id="8a69b368bc97dc428e1c6ae2e1c9127a" category="paragraph">自管理集群是指直接配置和管理的集群。Astra Control Service支持在公共云环境中运行的自管理集群。您的自管理集群可以使用Astra Trident与NetApp存储服务相连接、也可以使用容器存储接口(Container Storage Interface、CSI)驱动程序与Amazon Elastic Block Store (EBS)、Azure受管磁盘和Google Persistent Disk相连接。</block>
   <block id="84f2be4894042bb275e318dfd8a0a200" category="paragraph">Astra控制服务支持使用以下Kubernetes分发版的自管理集群：</block>
   <block id="285cc7142d57c8f6e6a93562de77e160" category="list-text">集群不能托管在内部网络中；它必须托管在公共云环境中。</block>
+  <block id="640efa26f79993654952b993dc173913" category="paragraph">您可以管理Astra用于备份和克隆的存储分段。您可以在云实例中添加其他分段、删除现有分段以及更改Kubernetes集群的默认分段。</block>
+  <block id="dc84232f20d32b91962832143f003245" category="paragraph">只有所有者和管理员才能管理存储分段。</block>
+  <block id="7848032099422e8ae377c985c3705168" category="inline-link-macro">云实例</block>
+  <block id="bf0bf04063e1cb468dd2fb54de6873a5" category="paragraph">当您开始管理云实例的第一个Kubernetes集群时、Astra Control Service会为此创建初始存储分段 <block ref="bdf25979e5bbf85e72ec962a155a6460" category="inline-link-macro-rx"></block>。</block>
+  <block id="aa0c2d75f93fb0c2505fd3e861c58f2b" category="paragraph">您可以手动将存储分段指定为云实例的默认存储分段。如果您这样做、则Astra控制服务会默认对您在该云实例中的任何受管集群上创建的备份和克隆使用此存储分段(您可以选择其他存储分段进行备份)。如果您将应用程序从云实例中的任何受管集群实时克隆到另一个集群、则Astra Control Service会使用源云实例的默认分段来执行克隆操作。</block>
+  <block id="040c36c32cc16921a0d8e76864205f97" category="paragraph">您可以为多个云实例设置与默认分段相同的分段。</block>
+  <block id="9cdc08c74979b53d19e32179009aee53" category="paragraph">您可以在创建保护策略或启动临时备份时从任何存储分段中进行选择。</block>
+  <block id="51cb52f23ae88bfed8fd836ebbd95b20" category="paragraph">查看可供Astra控制服务使用的分段列表、以确定其状态并确定云实例的默认分段(如果已定义)。</block>
+  <block id="e0fea9249f8803684ddfc8a69358dae3" category="list-text">添加存储分段后、它将以待定状态启动、而Astra Control会发现它。</block>
+  <block id="ebbb38114e12d2cf2a64401d66e59ee5" category="paragraph">此时将显示可供Astra控制服务使用的分段列表。</block>
+  <block id="b92c43f0ea0738d58f6db69143cc92c2" category="paragraph">您可以随时添加其他分段。这样、您可以在创建保护策略或启动临时备份时在存储分段之间进行选择、并可以更改云实例使用的默认存储分段。</block>
+  <block id="a2bebd837e70248fe12869981cf1dc7a" category="paragraph">您可以添加以下类型的存储分段：</block>
+  <block id="b2aa71ee04e531f0b6d1f084ba45f52f" category="list-text">通用 S3</block>
+  <block id="5c9ef0d871938dccceb29ee63fad8ddb" category="list-text">Google 云平台</block>
+  <block id="df2c24964ca3e99761acc48b2c8a75c9" category="list-text">NetApp ONTAP S3</block>
+  <block id="ddcd79fba6592bc379dfa1df9f804760" category="list-text">NetApp StorageGRID S3</block>
+  <block id="6672ccc56ea3c90a45c58fe80c9b4ffb" category="list-text">现有存储分段的名称。</block>
+  <block id="318c639fce992245cde7b30e3ffd90cc" category="list-text">用于为Astra Control Service提供管理存储分段所需权限的存储分段凭据。</block>
+  <block id="4405fa3b4f1902a766c5e3c5f421f98f" category="list-text">如果存储分段位于Microsoft Azure中：</block>
+  <block id="637233086f906601c1bf3c43f9e1503a" category="list-text">* S3服务器名称或IP地址*(仅限AWS和S3存储分段类型)：输入与您所在地区对应的S3端点的完全限定域名、而不输入<block ref="f8eae6750519389e078e1eb1bcb3d708" prefix=" " category="inline-code"></block>。请参见<block ref="398d47c523652edc934ec11e2f213d87" category="inline-link-rx"></block> 有关详细信息 ...</block>
+  <block id="8640a7c7370301ca0c61fe2e7d0e5170" category="list-text">*选择凭据*：输入为Astra控制服务提供管理存储分段所需权限的凭据。您需要提供的信息因存储分段类型而异。</block>
+  <block id="21f6901f1009f7b8fc1d4c9d614493d7" category="paragraph">Astra Control Service添加了存储分段。现在、您可以在创建保护策略或执行临时备份时选择此存储分段。您也可以将此分段设置为云实例的默认分段。</block>
+  <block id="68a2953dae168f957410960ed303cfe1" category="paragraph">您可以更改云实例的默认存储分段。默认情况下、Astra Control Service会将此存储分段用于备份和克隆。每个云实例都有自己的默认存储分段。</block>
 </blocks>
