@@ -1773,7 +1773,6 @@
   <block id="dec3469ee6690fc78725637f5f9ea5f5" category="paragraph">您可以通过将命名空间的资源定义为应用程序来将命名空间中的所有Kubernetes资源添加到Astra Control管理中。如果您需要单独定义应用程序、则最好使用此方法 <block ref="94b1a34d6d3c751b2fbc11fdaaa51f20" category="inline-link-macro-rx"></block> 以类似的方式并按通用间隔执行。</block>
   <block id="0aac11ed4d1a1befcac30cb330cd159e" category="paragraph">您可以克隆现有应用程序、以便在同一个Kubernetes集群或另一个集群上创建重复的应用程序。当 Astra Control 克隆应用程序时，它会为您的应用程序配置和永久性存储创建一个克隆。</block>
   <block id="43448f8497139ffbc9a461d85db8c731" category="paragraph">如果您需要将应用程序和存储从一个 Kubernetes 集群移动到另一个集群，则克隆可以助您一臂之力。例如，您可能希望通过 CI/CD 管道以及在 Kubernetes 命名空间之间移动工作负载。</block>
-  <block id="7d754e7d4f4a324710302cf0fc4d80c2" category="list-text">要将应用程序克隆到其他集群、您需要确保包含源集群和目标集群(如果不相同)的云实例具有默认分段。您需要为每个云实例分配一个默认分段。</block>
   <block id="81eb21a03d5ee9fbe847337ca76b57dc" category="list-title">克隆限制</block>
   <block id="d32d7bd30d168502b9d4ee99b9925378" category="list-text">*克隆和用户约束*：任何按命名空间名称/ID或命名空间标签限制命名空间的成员用户都可以将应用程序克隆或还原到同一集群上的新命名空间或其组织帐户中的任何其他集群。但是，同一用户无法访问新命名空间中的克隆或还原应用程序。通过克隆或还原操作创建新命名空间后，帐户管理员 / 所有者可以编辑成员用户帐户并更新受影响用户的角色约束，以授予对新命名空间的访问权限。</block>
   <block id="c65bdc145f9acf12c31ad3d52e08fe52" category="list-text">*克隆使用默认分段*：</block>
@@ -2086,4 +2085,5 @@
   <block id="21f6901f1009f7b8fc1d4c9d614493d7" category="paragraph">Astra Control Service添加了存储分段。现在、您可以在创建保护策略或执行临时备份时选择此存储分段。您也可以将此分段设置为云实例的默认分段。</block>
   <block id="68a2953dae168f957410960ed303cfe1" category="paragraph">您可以更改云实例的默认存储分段。默认情况下、Astra Control Service会将此存储分段用于备份和克隆。每个云实例都有自己的默认存储分段。</block>
   <block id="7c68315054de23a17c2a6febe9d9d149" category="sidebar">Astra Control—简化混合云的应用程序数据管理</block>
+  <block id="aa396af981d56ce9483fdf506c608dee" category="list-text">要将应用程序克隆到其他集群、您需要确保已为包含源集群的云实例分配默认分段。如果源云实例未设置默认分段、则跨集群克隆操作将失败。</block>
 </blocks>
