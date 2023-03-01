@@ -2086,4 +2086,5 @@
   <block id="68a2953dae168f957410960ed303cfe1" category="paragraph">您可以更改云实例的默认存储分段。默认情况下、Astra Control Service会将此存储分段用于备份和克隆。每个云实例都有自己的默认存储分段。</block>
   <block id="7c68315054de23a17c2a6febe9d9d149" category="sidebar">Astra Control—简化混合云的应用程序数据管理</block>
   <block id="aa396af981d56ce9483fdf506c608dee" category="list-text">要将应用程序克隆到其他集群、您需要确保已为包含源集群的云实例分配默认分段。如果源云实例未设置默认分段、则跨集群克隆操作将失败。</block>
+  <block id="4c004df391027b81952b788a3802e37c" category="list-text">如果将命名空间筛选器添加到在还原或克隆操作之后运行的执行挂钩、并且还原或克隆源和目标位于不同的命名空间中、则命名空间筛选器仅会应用于目标命名空间。</block>
 </blocks>
