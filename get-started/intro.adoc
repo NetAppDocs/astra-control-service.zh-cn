@@ -99,7 +99,9 @@ endif::azure[]
 
 * 自管理集群：
 +
-** NetApp ONTAP AFF 和 FAS 系统
+** Amazon EBS
+** Google 持久磁盘
+** Azure受管磁盘
 ** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/["Cloud Volumes ONTAP"^]
 
 
