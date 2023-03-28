@@ -384,9 +384,6 @@
   <block id="c5c9aadc2e109cc278865f3adfd4773d" category="paragraph">Astra Control 会将用户从帐户中删除。</block>
   <block id="60487fcdacfcf0e2feb2363106047906" category="summary">通过使用自动保护策略或临时创建快照和备份来保护应用程序。</block>
   <block id="c48341950d06dc5b2b657a869930da35" category="doc">通过快照和备份保护应用程序</block>
-  <block id="a21e997b73eef6d37e2890a1fa07e1a9" category="section-title">快照和备份</block>
-  <block id="703cd4ad217eb545975bc04b7fc26153" category="paragraph">_snapshot_ 是应用程序的时间点副本，它与应用程序存储在同一个已配置卷上。通常速度较快。本地快照用于将应用程序还原到较早的时间点。</block>
-  <block id="2747db310010aa1d5a7b961fb241fcb0" category="paragraph">_backup_ 存储在云中的对象存储上。与本地快照相比，备份速度可能较慢。但是，可以在云中的各个区域访问这些应用程序，以实现应用程序迁移。您还可以选择较长的备份保留期限。</block>
   <block id="25504345a275167f21fbd2cb1114c22b" category="admonition">_You can't be Fully protected until you have a recent backup_ 。这一点非常重要，因为备份存储在对象存储中，而不是永久性卷。如果发生故障或意外事件会擦除集群及其永久性存储，则需要备份才能恢复。快照无法让您恢复。</block>
   <block id="a080c1d6ad4654d9b12e290cb531df28" category="list-text">通过选择每小时，每天，每周和每月计划要保留的快照和备份数量来定义保护计划。</block>
   <block id="3c87cbf934c17bb682cfb8503e06cba9" category="paragraph">您可以同时定义每小时，每天，每周和每月计划。在为快照和备份设置保留级别之前，计划不会变为活动状态。</block>
@@ -983,7 +980,6 @@
   <block id="db14445bac1925559a170b4efeb32b37" category="list-text">netapp-vcs-perf-至 高性能</block>
   <block id="e006c2f00ca5a8ec47a9196763ca9c69" category="paragraph">存储类的名称包括 _netapp-cvs-perf-standard_ ， _netapp-cvs-perf-premium _ 和 _netapp-cvs-perf-Extreme 。</block>
   <block id="a90204b381b7967a04938156531da34e" category="paragraph">在成功添加到 Astra Control 后， Astra Trident 运算符会将默认存储类设置为 `netapp-cvs-perf-Premium` 。如果应用程序的 PVC 未绑定到适用于 Google Cloud 的 Cloud Volumes Service ，您可以执行以下几个步骤：</block>
-  <block id="408410e994005339450ed31eabd8f6af" category="admonition">_You can't be Fully protected until you have a recent backup_ 。这一点非常重要，因为备份存储在对象存储中，而不是永久性卷。如果发生故障或意外事件会损坏集群及其永久性存储，则需要备份才能恢复。快照无法让您恢复。</block>
   <block id="592d363442bda9d231d57bf7cf1b36d3" category="inline-link">使用 Astra Control REST API 创建快照和备份</block>
   <block id="33e0dd7ca49703e72c3862b5ef0de975" category="paragraph">保护策略通过按定义的计划创建快照，备份或这两者来保护应用程序。您可以选择每小时，每天，每周和每月创建快照和备份，并且可以指定要保留的副本数。如果您需要备份或快照的运行频率高于每小时一次，则可以<block ref="e7190f2033c7866ebb246bbdd297729e" category="inline-link-rx"></block>。</block>
   <block id="a656f2504cfb003f64d9d8ed061a01bd" category="list-text">需要在将使用 Astra Control Service 管理 AKS 集群的同一 Azure 区域中创建容量池。</block>
@@ -2087,4 +2083,18 @@
   <block id="7c68315054de23a17c2a6febe9d9d149" category="sidebar">Astra Control—简化混合云的应用程序数据管理</block>
   <block id="aa396af981d56ce9483fdf506c608dee" category="list-text">要将应用程序克隆到其他集群、您需要确保已为包含源集群的云实例分配默认分段。如果源云实例未设置默认分段、则跨集群克隆操作将失败。</block>
   <block id="4c004df391027b81952b788a3802e37c" category="list-text">如果将命名空间筛选器添加到在还原或克隆操作之后运行的执行挂钩、并且还原或克隆源和目标位于不同的命名空间中、则命名空间筛选器仅会应用于目标命名空间。</block>
+  <block id="a969ea74e186a4736ce18134eaf42f1a" category="summary">了解Astra控制服务中可用的数据保护类型、以及如何以最佳方式使用它们来保护您的应用程序。</block>
+  <block id="646e605e86066bd9485e0c23704757f2" category="section-title">快照，备份和保护策略</block>
+  <block id="cca8aaa6dccaa81bdbc26387b1f1bc63" category="paragraph">快照和备份均可保护以下类型的数据：</block>
+  <block id="adac08ac006f9d65c559347c106461c7" category="list-text">应用程序本身</block>
+  <block id="6c94a6e4d564092b6e6d44dbc8e77b07" category="list-text">与应用程序关联的任何永久性数据卷</block>
+  <block id="7dfd52c396a70e3d3406a3363ed74be4" category="list-text">属于应用程序的任何资源项目</block>
+  <block id="8d2f06a986c63f2706decd28b4e24967" category="paragraph">_snapshot_ 是应用程序的时间点副本，它与应用程序存储在同一个已配置卷上。通常速度较快。您可以使用本地快照将应用程序还原到较早的时间点。快照对于快速克隆很有用；快照包括应用程序的所有 Kubernetes 对象，包括配置文件。快照对于克隆或还原同一集群中的应用程序非常有用。</block>
+  <block id="d3472e0a53fc9484c0dd7ec15e76da1d" category="paragraph">_backup_基于快照。它存储在外部对象存储中、因此、与本地快照相比、创建速度可能会较慢。您可以将应用程序备份还原到同一集群，也可以通过将应用程序备份还原到其他集群来迁移应用程序。您还可以选择较长的备份保留期限。由于备份存储在外部对象存储中，因此在发生服务器故障或数据丢失时，备份通常比快照提供更好的保护。</block>
+  <block id="5becefddd70e438fb63cc4c816b5f6cc" category="paragraph">保护策略 _ 是一种通过根据您为应用程序定义的计划自动创建快照和 / 或备份来保护应用程序的方法。此外、您还可以通过保护策略选择要在计划中保留多少个快照和备份、并设置不同的计划粒度级别。使用保护策略自动执行备份和快照是确保每个应用程序根据组织的需求和服务级别协议(Service Level Agreement、SLA)要求进行保护的最佳方式。</block>
+  <block id="33bb9df0e608c1dab17890f54a41a8db" category="admonition">_You can't be Fully protected until you have a recent backup_ 。这一点非常重要，因为备份存储在对象存储中，而不是永久性卷。如果发生故障或意外事件会擦除集群及其关联的永久性存储，则需要备份才能恢复。快照无法让您恢复。</block>
+  <block id="999cc42b236c7aee1157ff02d6f1bcd5" category="section-title">克隆</block>
+  <block id="5d18a3d426ac931bca06d705d79d80cf" category="paragraph">_cloner_是应用程序、其配置及其永久性数据卷的精确副本。您可以在同一个 Kubernetes 集群或另一个集群上手动创建克隆。如果需要将应用程序和存储从一个 Kubernetes 集群移动到另一个 Kubernetes 集群，则克隆应用程序非常有用。</block>
+  <block id="ed732ea9c1e91d97f98c7332ade8ccdc" category="inline-link-macro">Astra Control中的数据保护</block>
+  <block id="efe10d9d842c9e231cc488725ee92859" category="paragraph">了解更多信息 <block ref="0675148237c2e40e6d4648cd7be7bdff" category="inline-link-macro-rx"></block>。</block>
 </blocks>

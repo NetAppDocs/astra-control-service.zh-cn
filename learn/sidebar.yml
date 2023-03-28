@@ -4,6 +4,8 @@ title: 概念
 entries:
 - title: 架构和组件
   url: "/learn/architecture.html"
+- title: 数据保护
+  url: "/learn/data-protection.html"
 - title: AWS集群的存储
   flavor: aws
   url: "/learn/aws-storage.html"

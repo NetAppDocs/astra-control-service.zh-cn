@@ -14,19 +14,7 @@ summary: 通过使用自动保护策略或临时创建快照和备份来保护�
 [role="lead"]
 通过使用自动保护策略或临时创建快照和备份来保护应用程序。您可以使用 Astra UI 或 https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API"^] 保护应用程序。
 
-
-
-== 快照和备份
-
-_snapshot_ 是应用程序的时间点副本，它与应用程序存储在同一个已配置卷上。通常速度较快。本地快照用于将应用程序还原到较早的时间点。
-
-_backup_ 存储在云中的对象存储上。与本地快照相比，备份速度可能较慢。但是，可以在云中的各个区域访问这些应用程序，以实现应用程序迁移。您还可以选择较长的备份保留期限。
-
-
-CAUTION: _You can't be Fully protected until you have a recent backup_ 。这一点非常重要，因为备份存储在对象存储中，而不是永久性卷。如果发生故障或意外事件会损坏集群及其永久性存储，则需要备份才能恢复。快照无法让您恢复。
-
-
-NOTE: 如果您执行快照或备份、但操作失败并显示错误"The resource was n't created because of an internal server问题描述 "、请检查以确保您正在使用的存储后端安装了正确的驱动程序。某些存储后端需要容器存储接口(CSI)驱动程序、而其他存储后端则需要外部快照控制器。
+了解更多信息 link:../learn/data-protection.html["Astra Control中的数据保护"^]。
 
 您可以执行以下与保护应用程序数据相关的任务：
 
