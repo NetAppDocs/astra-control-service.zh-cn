@@ -20,7 +20,7 @@ summary: '将Kubernetes集群添加到Astra Control后、您可以在该集群�
 
 Astra Control 具有以下应用程序管理要求：
 
-* *许可*：要管理10个以上的命名空间、您需要订阅Astra Control Center。
+* *许可*：要管理10个以上的名称空间，您需要订阅Astra Control。
 * *命名空间*：可以使用Astra Control在单个集群上的一个或多个指定命名空间内定义应用程序。一个应用程序可以包含跨越同一集群中多个命名空间的资源。Astra Control不支持在多个集群之间定义应用程序。
 * *存储类*：如果您安装的应用程序明确设置了存储类、并且需要克隆该应用程序、则克隆操作的目标集群必须具有最初指定的存储类。将具有显式设置的存储类的应用程序克隆到没有相同存储类的集群将失败。
 * * Kubernetes Resources* ：使用非 Astra Control 收集的 Kubernetes 资源的应用程序可能没有完整的应用程序数据管理功能。Astra Control 收集以下 Kubernetes 资源：
@@ -129,10 +129,9 @@ endif::aws[]
 
 TIP: 例如、您可能希望为"Maria"设置一个每周节奏的备份策略、但您可能需要比该策略更频繁地备份"MariaDB"(位于同一命名空间中)。根据这些需求、您需要单独管理这些应用程序、而不是作为单命名空间应用程序来管理。
 
-.您需要的内容
+.开始之前
 * 已将Kubernetes集群添加到Astra Control中。
 * 集群上安装的一个或多个应用程序。 <<支持的应用程序安装方法,阅读有关支持的应用程序安装方法的更多信息>>。
-* 一个或多个活动Pod。
 * 已添加到Astra Control的Kubernetes集群上的现有命名空间。
 * (可选) Any上的Kubernetes标签 link:../use/manage-apps.html#app-management-requirements["支持的Kubernetes资源"]。
 +
@@ -163,11 +162,6 @@ TIP: 标签是一个键 / 值对，您可以将其分配给 Kubernetes 对象进
 
 WARNING: 定义应用程序时、请确保不在具有保护策略的多个应用程序中包含Kubernetes资源。Kubernetes资源上重叠的保护策略可能会发生发生原因 数据冲突。
 
-[CAUTION]
-====
-在与其他应用程序共享资源的应用程序上执行原位还原操作可能会产生意外结果。对其中一个应用程序执行原位还原时、这些应用程序之间共享的任何资源都会被替换。
-
-====
 .阅读有关将集群范围的资源添加到应用程序命名空间的更多信息。
 [%collapsible]
 ====

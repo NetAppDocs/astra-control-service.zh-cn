@@ -31,7 +31,9 @@ summary: 通过使用自动保护策略或临时创建快照和备份来保护�
 
 == 配置保护策略
 
-保护策略通过按定义的计划创建快照，备份或这两者来保护应用程序。您可以选择每小时，每天，每周和每月创建快照和备份，并且可以指定要保留的副本数。如果您需要备份或快照的运行频率高于每小时一次，则可以 https://docs.netapp.com/us-en/astra-automation/workflows/workflows_before.html["使用 Astra Control REST API 创建快照和备份"^]。
+保护策略通过按定义的计划创建快照，备份或这两者来保护应用程序。您可以选择每小时，每天，每周和每月创建快照和备份，并且可以指定要保留的副本数。
+
+如果您需要备份或快照的运行频率高于每小时一次，则可以 https://docs.netapp.com/us-en/astra-automation/workflows/workflows_before.html["使用 Astra Control REST API 创建快照和备份"^]。
 
 .步骤
 . 选择 * 应用程序 * ，然后选择受管应用程序的名称。
@@ -78,6 +80,15 @@ Astra Control 通过使用您定义的计划和保留策略创建和保留快照
 == 创建备份
 
 您也可以随时备份应用程序。
+
+ifdef::azure[]
+
+[NOTE]
+====
+请注意在备份Azure NetApp Files 存储上托管的应用程序时如何处理存储空间。请参见 link:../learn/azure-storage.html#application-backups["应用程序备份"] 有关详细信息 ...
+
+====
+endif::azure[]
 
 .步骤
 . 选择 * 应用程序 * 。

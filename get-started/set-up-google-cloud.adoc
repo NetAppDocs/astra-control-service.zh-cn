@@ -107,7 +107,7 @@ NOTE: 如果您不开始使用 Google Cloud Volumes Service for Google Cloud 作
 
 Kubernetes 集群必须满足以下要求，才能通过 Astra Control Service 发现和管理它。请注意，只有当您计划使用适用于 Google Cloud 的 Cloud Volumes Service 作为存储后端时，其中某些要求才适用。
 
-Kubernetes 版本:: 集群运行的Kubernetes版本必须介于1.22到1.24之间。
+Kubernetes 版本:: 集群运行的Kubbernetes版本必须介于1.24到1.25之间。
 映像类型:: 每个工作节点的映像类型必须为 `COS_CONTAINERD`。
 集群状态:: 集群必须运行状况良好，并且至少有一个联机辅助节点，并且没有处于故障状态的辅助节点。
 Google Cloud 地区:: 如果您计划使用 Cloud Volumes Service for Google Cloud 作为存储后端，则集群必须在中运行 https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc["支持 Cloud Volumes Service for Google Cloud 的 Google 云区域。"] 请注意， Astra 控制服务支持两种服务类型： CVS 和 CVS-Performance 。作为最佳实践，您应选择一个支持适用于 Google Cloud 的 Cloud Volumes Service 的区域，即使您不将其用作存储后端也是如此。这样，如果您的性能要求发生变化，将来可以更轻松地将 Cloud Volumes Service for Google Cloud 用作存储后端。

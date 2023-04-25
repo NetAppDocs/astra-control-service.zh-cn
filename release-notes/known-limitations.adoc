@@ -32,6 +32,12 @@ summary: 已知限制确定了本产品版本不支持的平台、设备或功�
 
 在 Postgres Pod 上执行操作时，不应直接在 Pod 中连接以使用 psql 命令。Astra 控制服务需要使用 psql 访问权限来冻结和解冻数据库。如果已建立连接，则快照，备份或克隆将失败。
 
+
+
+=== "Activity"页面最多可显示100、000个事件
+
+Astra Control Activity页面最多可显示100、000个事件。要查看所有记录的事件、请使用检索这些事件 link:../rest-api/api-intro.html["Astra Control REST API"^]。
+
 ifdef::gcp[]
 
 
@@ -44,7 +50,7 @@ ifdef::gcp[]
 
 === Google Marketplace应用程序尚未经过验证
 
-NetApp 尚未验证从 Google Marketplace 部署的应用程序。某些用户报告发现或备份从 Google Marketplace 部署的 Postgres ， MariaDB 和 MySQL 应用程序时出现问题。
+NetApp 尚未验证从 Google Marketplace 部署的应用程序。一些用户报告了从Google Marketplace部署的Postgre、MariaDB和MySQL应用程序的发现或备份问题。
 
 无论您在 Astra Control Service 中使用哪种类型的应用程序，您都应始终自行测试备份和还原工作流，以确保满足灾难恢复要求。
 

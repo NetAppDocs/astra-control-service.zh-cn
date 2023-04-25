@@ -51,7 +51,15 @@ Astra 控制服务使用最小卷大小 100 GiB 来配置永久性卷，即使 P
 
 
 
-== Azure受管磁盘
+=== 应用程序备份
+
+如果备份Azure NetApp Files 存储上的应用程序、Astra控制服务会自动临时扩展容量池。备份完成后、Asta Control Service会将容量池缩减到其先前的大小。根据您的Azure订阅、在这种情况下、您可能会产生存储费用。您可以在*Activity*页面事件日志中查看容量池调整大小事件的历史记录。
+
+如果在调整大小操作期间、容量池超过Azure订阅允许的最大大小、则备份操作将失败、并会从Azure API触发警告。
+
+
+
+== Azure 受管磁盘
 
 Astra控制服务可以使用容器存储接口(Container Storage Interface、CSI)驱动程序作为存储后端与Azure受管磁盘进行连接。此服务可提供由 Azure 管理的块级存储。
 

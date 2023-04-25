@@ -12,56 +12,8 @@ summary: 此文档站点上的许多页面都包含一些视频，用于展示�
 
 
 [role="lead"]
-此文档站点上的许多页面都包含一些视频，用于向您展示如何完成 Astra Control Service 的任务。如果您只是对视频感兴趣，我们会在这个页面上收集所有视频（类似于播放列表），让您轻松地观看视频。
+查看NetApp TV、了解有关Astra Control Service的最新视频内容。NetApp TV中的视频演示了Astra Control Service的某些功能、或者向您展示了如何完成某些常见任务。
 
-ifdef::gcp[]
+https://www.netapp.tv/search/astra%20control%20service["Astra Control Service 视频"^]
 
-
-
-== 有关设置 Google Cloud 的视频
-
-以下视频介绍如何在发现 GCP 中运行的 Kubernetes 集群之前先在 Google Cloud 中完成设置要求。
-
-
-
-=== 启用 API
-
-您的项目需要访问特定 Google Cloud API 的权限。以下视频显示了如何从 Google Cloud 控制台启用 API 。 link:set-up-google-cloud.html#enable-apis-in-your-project["了解有关启用 API 的更多信息"]。
-
-video::get-started/video-enable-gcp-apis.mp4[width=848,height=480]
-
-
-=== 创建服务帐户
-
-Astra Control Service 使用 Google Cloud 服务帐户为您的 Kubernetes 应用程序数据管理提供便利。以下视频显示了如何从 Google Cloud 控制台创建服务帐户。 link:set-up-google-cloud.html#create-a-service-account["了解有关创建服务帐户的更多信息"]。
-
-video::get-started/video-create-gcp-service-account.mp4[width=848,height=480]
-
-
-=== 创建服务帐户密钥
-
-Astra 控制服务使用服务帐户密钥来建立您刚刚设置的服务帐户的身份。以下视频显示了如何从 Google Cloud 控制台创建服务帐户密钥。 link:set-up-google-cloud.html#create-a-service-account-key-2["了解有关创建服务帐户密钥的更多信息"]。
-
-video::get-started/video-create-gcp-service-account-key.mp4[width=848,height=480]
 endif::gcp[]
-
-
-
-== 有关使用 Astra Control 的视频
-
-以下视频介绍了如何使用 Astra Control 完成常见任务。
-
-
-
-=== 从 Astra Control 管理集群
-
-登录到 Astra Control Service 后，第一步是添加 Kubernetes 计算。 link:add-first-cluster.html["了解有关管理集群的更多信息"]。
-
-video::get-started/video-manage-cluster.mp4[width=848,height=480]
-
-
-=== 配置保护策略
-
-保护策略通过按定义的计划创建快照，备份或这两者来保护应用程序。您可以选择每小时，每天，每周和每月创建快照和备份，并且可以指定要保留的副本数。 link:../use/protect-apps.html["了解有关配置保护策略的更多信息"]。
-
-video::use/video-set-protection-policy.mp4[width=848,height=480]

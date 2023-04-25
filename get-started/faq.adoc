@@ -60,7 +60,7 @@ Astra Control 要求您在入职部分提供准确的客户信息。如果您提
 
 * 在将集群添加到 Astra Control Service 之前，是否需要在集群上安装 CSI 驱动程序？ *
 
-否将集群添加到 Astra Control 后，该服务将自动在 Kubernetes 集群上安装 NetApp 的 Trident 容器存储接口（ Trident Container Storage Interface ， CSI ）驱动程序。此CSI驱动程序用于为云提供商支持的集群配置永久性卷。
+否将集群添加到Astra Control后、该服务将自动在Kubbernetes集群上安装NetApp的三端容器存储接口(CSI)驱动程序。此CSI驱动程序用于为云提供商支持的集群配置永久性卷。
 
 * 添加到 Astra Control Service 后，我需要向集群添加工作节点。我该怎么办？ *
 
@@ -188,7 +188,7 @@ endif::gcp[]
 
 * 我的应用程序使用多个 PV 。Astra Control 是否会为所有这些 PVC 创建快照和备份？ *
 
-是的。Astra Control 对应用程序执行的快照操作包括绑定到应用程序 PVC 的所有 PV 的快照。
+是的。Astra Control对应用程序执行的快照操作包括绑定到应用程序PVC的所有PV的快照。
 
 * 是否可以直接通过云提供商管理 Astra Control 创建的快照？ *
 
