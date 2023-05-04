@@ -12,7 +12,7 @@ summary: Astra 控制服务使用 Azure NetApp Files 作为 Azure Kubernetes Ser
 
 
 [role="lead"]
-Astra控制服务支持将Azure NetApp Files 、Azure受管磁盘或NetApp Cloud Volumes ONTAP 作为Azure Kubernetes Service (AKS)集群的存储后端。
+Astra控制服务支持使用Azure NetApp Files 、Azure托管磁盘或NetApp Cloud Volumes ONTAP 作为Azure Kubornetes Service (AKS)集群的存储后端。
 
 
 
@@ -69,4 +69,4 @@ https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["
 
 == NetApp Cloud Volumes ONTAP
 
-有关配置NetApp Cloud Volumes ONTAP 的具体信息、包括性能建议、请访问 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/["NetApp Cloud Volumes ONTAP 文档"^]。
+有关配置NetApp Cloud Volumes ONTAP 的具体信息、包括性能建议、请访问 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-performance.html["NetApp Cloud Volumes ONTAP 文档"^]。

@@ -12,7 +12,7 @@ summary: 'Astra控制服务可以使用Amazon Elastic Block Store (EBS)或Amazon
 
 
 [role="lead"]
-Astra控制服务可以使用Amazon Elastic Block Store (EBS)或Amazon FSx for NetApp ONTAP 作为Amazon Elastic Kubernetes Service (EKS)集群的存储后端。
+Astra控制服务可以使用Amazon Elastic Block Store (EBS)、Amazon FSx for NetApp ONTAP 或NetApp Cloud Volumes ONTAP 作为Amazon Elastic Kubelnetes Service (EKS)集群的存储后端。
 
 
 
@@ -34,3 +34,9 @@ Astra控制服务可以使用Amazon Elastic Block Store (EBS)或Amazon FSx for N
 == 适用于 NetApp ONTAP 的 Amazon FSX
 
 使用适用于NetApp ONTAP 的FSX作为AWS集群的存储后端时、I/O性能取决于文件系统的配置以及工作负载的特征。有关适用于NetApp ONTAP 性能的FSX的具体信息、请参见 https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/performance.html["适用于NetApp ONTAP 性能的Amazon FSX"^]。有关定价信息、请参见 https://aws.amazon.com/fsx/netapp-ontap/pricing/["适用于NetApp ONTAP 的Amazon FSX定价"^]。
+
+
+
+== NetApp Cloud Volumes ONTAP
+
+有关配置NetApp Cloud Volumes ONTAP 的具体信息、包括性能建议、请访问 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-performance.html["NetApp Cloud Volumes ONTAP 文档"^]。
