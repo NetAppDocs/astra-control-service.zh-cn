@@ -20,7 +20,7 @@ summary: 管理添加新集群时添加的云实例。
 
 == 添加云实例
 
-在向Astra Control添加新集群时、您可以添加新的云实例。请参见 link:../add-first-cluster.html["从 Astra Control Service 开始管理 Kubernetes 集群"] 有关详细信息 ...
+在向Astra Control添加新集群时、您可以添加新的云实例。请参见 link:../get-started/add-first-cluster.html["从 Astra Control Service 开始管理 Kubernetes 集群"] 有关详细信息 ...
 
 
 
