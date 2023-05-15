@@ -14,4 +14,4 @@ summary: Astra Control 具有一个 REST API ，可用于使用编程语言或 C
 [role="lead"]
 Astra Control 具有一个 REST API ，可用于使用编程语言或 Curl 等实用程序直接访问 Astra Control 功能。您还可以使用 Ansible 和其他自动化技术管理 Astra Control 部署。
 
-了解更多信息。 https://docs.netapp.com/us-en/astra-automation["转到 Astra 自动化文档"^]。
+了解更多信息。 https://["转到 Astra 自动化文档"^]。

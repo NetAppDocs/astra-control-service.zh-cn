@@ -52,11 +52,11 @@ ifdef::gcp[]
 
 使用 Astra 控制服务管理 GKE- 集群时，持久卷由 NetApp Cloud Volumes Service 提供支持，应用程序的备份存储在 Google Cloud 存储分段中。
 
-* https://cloud.google.com/solutions/partners/netapp-cloud-volumes/costs["查看 Cloud Volumes Service 的定价详细信息"^]。
+* https://["查看 Cloud Volumes Service 的定价详细信息"^]。
 +
-请注意， Astra 控制服务支持所有服务类型和服务级别。您使用的服务类型取决于 https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["Google Cloud 地区"^]。
+请注意， Astra 控制服务支持所有服务类型和服务级别。您使用的服务类型取决于 https://["Google Cloud 地区"^]。
 
-* https://cloud.google.com/storage/pricing["查看 Google Cloud 存储分段的定价详细信息"^]。
+* https://["查看 Google Cloud 存储分段的定价详细信息"^]。
 
 
 endif::gcp[]
@@ -69,8 +69,8 @@ ifdef::azure[]
 
 使用 Astra 控制服务管理 AKS 集群时， Azure NetApp Files 会为永久性卷提供支持，应用程序的备份会存储在 Azure Blob 容器中。
 
-* https://azure.microsoft.com/en-us/pricing/details/netapp["查看 Azure NetApp Files 的定价详细信息"^]。
-* https://azure.microsoft.com/en-us/pricing/details/storage/blobs["查看 Microsoft Azure Blob 存储的定价详细信息"^]。
+* https://["查看 Azure NetApp Files 的定价详细信息"^]。
+* https://["查看 Microsoft Azure Blob 存储的定价详细信息"^]。
 
 
 endif::azure[]
@@ -83,7 +83,7 @@ ifdef::aws[]
 
 使用Astra控制服务管理AWS集群时、永久性卷由EBS或FSX for NetApp ONTAP 提供支持、应用程序的备份存储在AWS存储分段中。
 
-* https://aws.amazon.com/eks/pricing/["查看Amazon Web Services的定价详细信息"^]。
+* https://["查看Amazon Web Services的定价详细信息"^]。
 
 
 endif::aws[]
@@ -95,10 +95,10 @@ endif::aws[]
 您可以使用Azure Marketplace订阅Astra控制服务。您的帐户和计费详细信息通过Marketplace进行管理。
 
 
-NOTE: 要观看Azure Marketplace订阅流程的视频演练、请访问 https://www.netapp.tv/details/29979["NetApp TV"^]。
+NOTE: 要观看Azure Marketplace订阅流程的视频演练、请访问 https://["NetApp TV"^]。
 
 .步骤
-. 转至 https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-astra-acs?tab=Overview["Azure Marketplace"^]。
+. 转至 https://["Azure Marketplace"^]。
 . 选择*立即获取*。
 . 按照说明订阅计划。
 
@@ -110,7 +110,7 @@ NOTE: 要观看Azure Marketplace订阅流程的视频演练、请访问 https://
 您可以使用AWS Marketplace订阅Astra控制服务。您的帐户和计费详细信息通过Marketplace进行管理。
 
 .步骤
-. 转至 https://aws.amazon.com/marketplace/["AWS Marketplace"^]。
+. 转至 https://["AWS Marketplace"^]。
 . 选择*继续订阅*。
 . 按照说明订阅计划。
 

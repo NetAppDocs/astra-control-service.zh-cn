@@ -80,8 +80,8 @@ endif::azure[]
 == image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["两个"] 完成 Astra Control 注册
 
 [role="quick-margin-list"]
-. 创建 https://cloud.netapp.com["NetApp Cloud Central"^] 帐户。
-. 创建 Astra Control 帐户时，请指定您的 NetApp Cloud Central 电子邮件 ID https://cloud.netapp.com/astra["从 Astra 产品页面"^]。
+. 创建 https://["NetApp Cloud Central"^] 帐户。
+. 创建 Astra Control 帐户时，请指定您的 NetApp Cloud Central 电子邮件 ID https://["从 Astra 产品页面"^]。
 
 
 [role="quick-margin-para"]

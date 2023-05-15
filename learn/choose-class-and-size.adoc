@@ -24,7 +24,7 @@ Astra 控制服务可以使用适用于 Google Cloud 的 Cloud Volumes Service �
 
 === 概述
 
-Cloud Volumes Service for Google Cloud 提供两种服务类型： _CVS_ 和 _CVS-Performance_ 。特定 Google Cloud 地区支持这些服务类型。 https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["转到 NetApp Cloud Central 的全球区域地图"^] 确定集群所在的 Google Cloud 区域支持的服务类型。
+Cloud Volumes Service for Google Cloud 提供两种服务类型： _CVS_ 和 _CVS-Performance_ 。特定 Google Cloud 地区支持这些服务类型。 https://["转到 NetApp Cloud Central 的全球区域地图"^] 确定集群所在的 Google Cloud 区域支持的服务类型。
 
 如果您的 Kubernetes 集群必须位于特定区域，则您将使用该区域支持的服务类型。
 
@@ -41,7 +41,7 @@ Cloud Volumes Service for Google Cloud 提供两种服务类型： _CVS_ 和 _CV
 | 服务类型 | 用例 | 支持的区域 | 存储类 | 最小卷大小 
 
 
-| CVS 性能 | 具有中到高存储性能需求的应用程序 | https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["查看支持的 Google Cloud 区域"^]  a| 
+| CVS 性能 | 具有中到高存储性能需求的应用程序 | https://["查看支持的 Google Cloud 区域"^]  a| 
 * netapp-cvs-perf-standard
 * netapp-cvs-perf-Premium
 * netapp-vcs-perf-至 高性能
@@ -49,7 +49,7 @@ Cloud Volumes Service for Google Cloud 提供两种服务类型： _CVS_ 和 _CV
 | 100 GiB 
 
 
-| CVS | 具有中低端存储性能需求的应用程序 | https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["查看支持的 Google Cloud 区域"^] | netapp-cvs-standard | 300 GiB 
+| CVS | 具有中低端存储性能需求的应用程序 | https://["查看支持的 Google Cloud 区域"^] | netapp-cvs-standard | 300 GiB 
 |===
 
 
@@ -65,13 +65,13 @@ CVS-Performance 服务类型支持三种服务级别：标准，高级和极速�
 
 存储类的名称包括 _netapp-cvs-perf-standard_ ， _netapp-cvs-perf-premium _ 和 _netapp-cvs-perf-Extreme 。
 
-https://cloud.google.com/solutions/partners/netapp-cloud-volumes/selecting-the-appropriate-service-level-and-allocated-capacity-for-netapp-cloud-volumes-service#service_levels["有关这些服务级别的详细信息，请参见 Cloud Volumes Service for Google Cloud 文档"^]。
+https://["有关这些服务级别的详细信息，请参见 Cloud Volumes Service for Google Cloud 文档"^]。
 
 
 
 ==== 永久性卷大小和性能
 
-https://cloud.google.com/solutions/partners/netapp-cloud-volumes/selecting-the-appropriate-service-level-and-allocated-capacity-for-netapp-cloud-volumes-service#service_levels["如 Google Cloud 文档所说明"^]，每个服务级别允许的带宽均为所配置容量的每 GiB 。这意味着，较大的卷将提供更好的性能。
+https://["如 Google Cloud 文档所说明"^]，每个服务级别允许的带宽均为所配置容量的每 GiB 。这意味着，较大的卷将提供更好的性能。
 
 请务必通读上述链接的 Google Cloud 页面。其中包括成本比较和示例，可帮助您更好地了解如何将服务级别与卷大小结合使用以实现性能目标。
 
@@ -93,7 +93,7 @@ Astra 控制服务使用最小卷大小 100 GiB 和 CVS-Performance 服务类型
 
 CVS 服务类型支持一个服务级别：标准。在管理支持 CVS 服务类型的区域中的集群时， Astra 控制服务会使用标准服务级别作为永久性卷的默认存储类。此存储类名为 _netapp-cvs-standard_ 。
 
-https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-levels["有关标准服务级别的详细信息，请参见 Cloud Volumes Service for Google Cloud 文档"^]。
+https://["有关标准服务级别的详细信息，请参见 Cloud Volumes Service for Google Cloud 文档"^]。
 
 
 
@@ -115,12 +115,12 @@ Astra 控制服务使用最小卷大小 300 GiB 和 CVS 服务类型来配置永
 
 Astra控制服务可以使用容器存储接口(Container Storage Interface、CSI)驱动程序作为存储后端与Google Persistent Disk建立接口。此服务可提供由 Google 管理的块级存储。
 
-https://cloud.google.com/persistent-disk/["了解有关 Google 持久磁盘的更多信息"^]。
+https://["了解有关 Google 持久磁盘的更多信息"^]。
 
-https://cloud.google.com/compute/docs/disks/performance["详细了解 Google 持久磁盘的不同性能级别"^]。
+https://["详细了解 Google 持久磁盘的不同性能级别"^]。
 
 
 
 == NetApp Cloud Volumes ONTAP
 
-有关配置NetApp Cloud Volumes ONTAP 的具体信息、包括性能建议、请访问 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-performance.html["NetApp Cloud Volumes ONTAP 文档"^]。
+有关配置NetApp Cloud Volumes ONTAP 的具体信息、包括性能建议、请访问 https://["NetApp Cloud Volumes ONTAP 文档"^]。

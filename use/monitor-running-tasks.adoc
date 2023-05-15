@@ -31,4 +31,4 @@ NOTE: 对于克隆操作、任务子任务由快照和快照还原操作组成�
 
 
 
-NOTE: 任务将在*任务*列表中保留长达24小时。您可以使用配置此限制以及其他任务监控器设置 https://docs.netapp.com/us-en/astra-automation/["Astra Control API"^]。
+NOTE: 任务将在*任务*列表中保留长达24小时。您可以使用配置此限制以及其他任务监控器设置 https://["Astra Control API"^]。

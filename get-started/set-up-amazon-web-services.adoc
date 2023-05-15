@@ -82,55 +82,29 @@ Kubernetes 版本:: 集群运行的Kubbernetes版本必须介于1.23到1.25之�
 集群状态:: 集群必须运行状况良好，并且至少有一个联机辅助节点，并且没有处于故障状态的辅助节点。
 
 
-适用于Amazon FSX for NetApp ONTAP 的Astra Trident:: 如果您使用适用于NetApp ONTAP 存储后端的Amazon FSX、则需要安装Astra Trident。有关说明，请参见 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Astra Trident部署概述"^]。有关将Astra Trident与适用于NetApp ONTAP 的FSX结合使用的详细信息、请参见 https://docs.netapp.com/us-en/trident/trident-use/trident-fsx.html["将 Astra Trident 与适用于 NetApp ONTAP 的 Amazon FSX 结合使用"^]。
+Astra Trident:: 使用存储后端进行操作需要Astra三叉式映像和外部快照控制器。要安装它们、请执行以下操作：
+
+
+[%collapsible%open]
+====
+. https://["安装快照CRD和快照控制器"^]。
+. https://["安装最新版本的Astra Trdent"^]。
+. https://["创建卷快照类"^]。
+
+
+====
 适用于Amazon Elastic Block Store (EBS)的CSI驱动程序:: 如果您使用Amazon EBS存储后端、则需要为EBS安装容器存储接口(Container Storage Interface、CSI)驱动程序(它不会自动安装)。
 +
 --
-有关安装CSI驱动程序的说明、请参见详细信息。
+有关安装CSI驱动程序的说明、请参阅相关步骤。
 
 [%collapsible%open]
 ====
 .安装外部快照程序
-. 创建卷快照CRD。
-+
-对于Kubernetes 1.20及更高版本、请使用v5.0 Snapshot组件的v1 Snapshot CRD。
-
-+
-[role="tabbed-block"]
-=====
-.5.0版组件
---
-[source, yaml]
-----
-$ cat snapshot-setup.sh
-#!/bin/bash
-# Create volume snapshot CRDs
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
-----
---
-=====
-. 在所需命名空间中创建Snapshot控制器。编辑以下 YAML 清单以修改命名空间。
-+
-对于Kubernetes 1.20及更高版本、请使用5.0版。
-
-+
-[role="tabbed-block"]
-=====
-.5.0版控制器
---
-[source, yaml]
-----
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
-----
---
-=====
-
+如果您尚未执行此操作， https://["安装快照CRD和快照控制器"^]。
 
 .将CSI驱动程序作为Amazon EKS加载项进行安装
-. 为服务帐户创建Amazon EBS CSI驱动程序IAM角色。按照说明进行操作 https://docs.aws.amazon.com/eks/latest/userguide/csi-iam-role.html["在Amazon文档中"^]、使用说明中的AWS命令行界面命令。
+. 为服务帐户创建Amazon EBS CSI驱动程序IAM角色。按照说明进行操作 https://["在Amazon文档中"^]、使用说明中的AWS命令行界面命令。
 . 使用以下AWS命令行界面命令添加Amazon EBS CSI加载项、将括号<>中的信息替换为特定于您的环境的值。将<driver_role>替换为您在上一步中创建的EBS CSI驱动程序角色的名称：
 +
 [source, console]
@@ -184,7 +158,7 @@ kubectl describe storageclass ebs-sc
 如果您还没有Amazon帐户、则需要创建一个帐户来为Amazon EKS启用计费。
 
 .步骤
-. 转至 https://www.amazon.com["Amazon主页"^] 、选择右上角的*登录*、然后选择*从此处开始*。
+. 转至 https://["Amazon主页"^] 、选择右上角的*登录*、然后选择*从此处开始*。
 . 按照提示创建帐户。
 
 
@@ -195,7 +169,7 @@ kubectl describe storageclass ebs-sc
 安装AWS命令行界面、以便从命令行管理AWS资源。
 
 .步骤
-. 转至 https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html["AWS命令行界面入门"^] 并按照说明安装CLI。
+. 转至 https://["AWS命令行界面入门"^] 并按照说明安装CLI。
 
 
 
@@ -205,7 +179,7 @@ kubectl describe storageclass ebs-sc
 创建IAM用户、以便您可以使用和管理AWS服务和资源、并提高安全性。您也可以跳过此步骤、并将现有IAM用户与Astra Control Service结合使用。
 
 .步骤
-. 转至 https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_cliwpsapi["创建IAM用户"^] 并按照说明创建IAM用户。
+. 转至 https://["创建IAM用户"^] 并按照说明创建IAM用户。
 
 
 

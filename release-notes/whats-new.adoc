@@ -16,6 +16,13 @@ NetApp 会定期更新 Astra Control Service ，为您提供新功能，增强�
 
 
 
+== 2023年5月15日
+
+.新增功能和支持
+这是次要的错误修复版本。
+
+
+
 == 2023年4月25日
 
 .新增功能和支持
@@ -134,7 +141,7 @@ endif::aws[]
 
 +
 
-NOTE: 此版本已删除NetApp为特定应用程序提供的默认快照前和快照后执行挂钩。如果您不为快照提供自己的执行挂钩、则Astra控制服务将仅从2022年8月4日开始创建崩溃状态一致的快照。请访问 https://github.com/NetApp/Verda["NetApp Verda GitHub存储库"^] 示例执行钩脚本、您可以根据环境进行修改。
+NOTE: 此版本已删除NetApp为特定应用程序提供的默认快照前和快照后执行挂钩。如果您不为快照提供自己的执行挂钩、则Astra控制服务将仅从2022年8月4日开始创建崩溃状态一致的快照。请访问 https://["NetApp Verda GitHub存储库"^] 示例执行钩脚本、您可以根据环境进行修改。
 
 +
 link:../use/manage-app-execution-hooks.html["管理应用程序执行挂钩"]
@@ -233,7 +240,7 @@ endif::azure[]
 
 * Astra Control Center Astra Control现在可采用新的部署模式。_Astra Control Center_ 是一款自行管理的软件，您可以在数据中心内安装和操作该软件，以便管理内部 Kubernetes 集群的 Kubernetes 应用程序生命周期管理。
 +
-了解更多信息。 https://docs.netapp.com/us-en/astra-control-center["转至Astra控制中心文档"^]。
+了解更多信息。 https://["转至Astra控制中心文档"^]。
 
 * 自带存储分段现在、您可以通过添加其他存储分段以及更改云提供商中Kubernetes集群的默认存储分段来管理Astra用于备份和克隆的存储分段。
 +
@@ -280,7 +287,7 @@ endif::azure[]
 
 * REST API Astra Control REST API现在可供使用。API 基于现代技术和当前最佳实践。
 +
-https://docs.netapp.com/us-en/astra-automation["了解如何使用 REST API 自动执行应用程序数据生命周期管理"^]。
+https://["了解如何使用 REST API 自动执行应用程序数据生命周期管理"^]。
 
 * 每年订阅Astra Control Service现在可提供_Premium订阅_。
 +
@@ -321,9 +328,9 @@ link:../use/monitor-account-activity.html["了解有关查看帐户活动的更�
 
 ifdef::gcp[]
 
-Astra Control Service 现在支持 https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types["_CVS_ 服务类型"^] 借助适用于 Google Cloud 的 Cloud Volumes Service 。这是对 _cvs-Performance_ 服务类型的补充。请注意， Astra 控制服务使用适用于 Google Cloud 的 Cloud Volumes Service 作为永久性卷的存储后端。
+Astra Control Service 现在支持 https://["_CVS_ 服务类型"^] 借助适用于 Google Cloud 的 Cloud Volumes Service 。这是对 _cvs-Performance_ 服务类型的补充。请注意， Astra 控制服务使用适用于 Google Cloud 的 Cloud Volumes Service 作为永久性卷的存储后端。
 
-此增强功能意味着， Astra Control Service 现在可以管理在 _any_ 中运行的 Kubernetes 集群的应用程序数据 https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["支持 Cloud Volumes Service 的 Google 云区域"^]。
+此增强功能意味着， Astra Control Service 现在可以管理在 _any_ 中运行的 Kubernetes 集群的应用程序数据 https://["支持 Cloud Volumes Service 的 Google 云区域"^]。
 
 如果您可以灵活地在 Google Cloud 区域之间进行选择，则可以根据性能要求选择 CVS 或 CVS-Performance 。 link:../learn/choose-class-and-size.html["了解有关选择服务类型的更多信息"]。
 

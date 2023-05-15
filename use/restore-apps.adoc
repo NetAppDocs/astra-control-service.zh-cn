@@ -12,7 +12,7 @@ summary: Astra Control 可以从快照或备份还原应用程序配置和永久
 
 
 [role="lead"]
-Astra Control 可以从快照或备份还原应用程序。将应用程序还原到同一集群时，从现有快照进行还原的速度会更快。您可以使用 Astra Control UI 或 https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API"^] 还原应用程序。
+Astra Control 可以从快照或备份还原应用程序。将应用程序还原到同一集群时，从现有快照进行还原的速度会更快。您可以使用 Astra Control UI 或 https://["Astra Control API"^] 还原应用程序。
 
 
 NOTE: 如果将命名空间筛选器添加到在还原或克隆操作之后运行的执行挂钩、并且还原或克隆源和目标位于不同的命名空间中、则命名空间筛选器仅会应用于目标命名空间。
@@ -123,7 +123,7 @@ NOTE: 必须至少指定一个命名空间、标签或GVK。确保在应用筛�
 NOTE: 如果您的应用程序最初包含多个名称空间、而您将其还原到新的名称空间、则会创建所有名称空间、即使它们不包含资源也是如此。
 
 .. (可选)输入资源名称。
-.. (可选)*标签选择器*：包括A https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#label-selectors["标签选择器"^] 以添加到规则中。标签选择器用于仅筛选与选定标签匹配的资源。
+.. (可选)*标签选择器*：包括A https://["标签选择器"^] 以添加到规则中。标签选择器用于仅筛选与选定标签匹配的资源。
 .. (可选)选择*使用GVK (GroupVersion Kind)设置来筛选资源*以获取其他筛选选项。
 +
 
