@@ -126,11 +126,11 @@ NOTE: 在克隆操作期间、需要IngressClass资源或webhooks才能正常运
 
 
 
-=== 对于Amazon EKS 1.25或更高版本的集群、快照可能会失败
+=== 使用某些Snapshot控制器版本的Kubernetes 1.25或更高版本集群的快照可能会失败
 
-由于使用的快照控制器不正确、Amazon EKS集群中1.25或更高版本的快照可能会失败。
+如果在运行1.25或更高版本的Kubernetes集群上安装了v1beta1版本的快照控制器API、则该集群的快照可能会失败。
 
-作为临时解决策 、在升级现有EKS 1.25或更高版本安装时、请执行以下操作：
+作为临时解决策 、在升级现有Kubernetes 1.25或更高版本的安装时、请执行以下操作：
 
 . 删除任何现有的Snapshot CRD和任何现有的Snapshot控制器。
 . https://["卸载 Astra Trident"^]。

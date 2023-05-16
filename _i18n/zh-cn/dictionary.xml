@@ -2126,10 +2126,10 @@
   <block id="bbc78db47a3fe23dc96746668da3d287" category="list-text"><block ref="bbc78db47a3fe23dc96746668da3d287" category="inline-link-rx"></block></block>
   <block id="abfeaf5dc3fa1bf4a2a2cba84c5e546c" category="section-title">2023年5月15日</block>
   <block id="7dfc25c1548ba836ed04c79f8fbd1825" category="paragraph">这是次要的错误修复版本。</block>
-  <block id="8f80a6bba41c8f2f5d1a9b2f5ff1d87b" category="section-title">对于Amazon EKS 1.25或更高版本的集群、快照可能会失败</block>
-  <block id="b3794e2a706f8946cd7b6e8c2435538f" category="paragraph">由于使用的快照控制器不正确、Amazon EKS集群中1.25或更高版本的快照可能会失败。</block>
-  <block id="bfe0bca35535f01b62abdc5459c6610c" category="paragraph">作为临时解决策 、在升级现有EKS 1.25或更高版本安装时、请执行以下操作：</block>
   <block id="d5d53109cd766da789a263c6e2051051" category="list-text">删除任何现有的Snapshot CRD和任何现有的Snapshot控制器。</block>
   <block id="43f17763173fe230bdd78477152f5f7d" category="inline-link">卸载 Astra Trident</block>
   <block id="478393a7bc00211c00b84b91bd7270e1" category="list-text"><block ref="ae36d1cdd520df7c3eaefc0ce2deb814" category="inline-link-rx"></block>。</block>
+  <block id="5a5355eda2f1cf003d25254ee2c311a3" category="section-title">使用某些Snapshot控制器版本的Kubernetes 1.25或更高版本集群的快照可能会失败</block>
+  <block id="f9f1ea7c0040d9bdb077f9ce68de31e3" category="paragraph">如果在运行1.25或更高版本的Kubernetes集群上安装了v1beta1版本的快照控制器API、则该集群的快照可能会失败。</block>
+  <block id="2ad74d9f76ccccd37e4f9c6cb27f1cbd" category="paragraph">作为临时解决策 、在升级现有Kubernetes 1.25或更高版本的安装时、请执行以下操作：</block>
 </blocks>
