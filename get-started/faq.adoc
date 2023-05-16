@@ -100,14 +100,6 @@ ifdef::gcp[]
 
 == 注册Google Kubernetes Engine (GKEE)集群
 
-* 是否可以将专用 GKEE 集群添加到 Astra Control Service ？ *
-
-可以，您可以将专用 GKE- 集群添加到 Astra Control Service 中。要创建专用GKEE集群、 https://["按照此知识库文章中的说明进行操作"^]。
-
-专用集群必须具有 https://["授权网络"^] 设置为允许 Astra Control IP 地址：
-
-52.188.218.166/32
-
 * 我的 GKE 集群是否可以位于共享 VPC 上？ *
 
 可以， Astra Control 可以管理位于共享 VPC 中的集群。 link:set-up-google-cloud.html["了解如何为共享 VPC 配置设置 Astra 服务帐户"]。

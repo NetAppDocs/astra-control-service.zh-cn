@@ -82,52 +82,26 @@ Kubernetes 版本:: 集群运行的Kubbernetes版本必须介于1.23到1.25之�
 集群状态:: 集群必须运行状况良好，并且至少有一个联机辅助节点，并且没有处于故障状态的辅助节点。
 
 
-73faaa1b4bb064878667455dd879f4ba:: 3ea391c9e6fd8068a48c5105ab95e68f
+Astra Trident:: 使用存储后端进行操作需要Astra三叉式映像和外部快照控制器。要安装它们、请执行以下操作：
+
+
+[%collapsible%open]
+====
+. https://["安装快照CRD和快照控制器"^]。
+. https://["安装最新版本的Astra Trdent"^]。
+. https://["创建卷快照类"^]。
+
+
+====
 适用于Amazon Elastic Block Store (EBS)的CSI驱动程序:: 如果您使用Amazon EBS存储后端、则需要为EBS安装容器存储接口(Container Storage Interface、CSI)驱动程序(它不会自动安装)。
 +
 --
-20fc0f0b676e68d276bd1ffa1267ac50
+有关安装CSI驱动程序的说明、请参阅相关步骤。
 
 [%collapsible%open]
 ====
 .安装外部快照程序
-. 469f7ca16938508b5dcb777767828b70
-+
-cb9d6d1ca0b4fda3b1206ae38a007824
-
-+
-[role="tabbed-block"]
-=====
-.351d6da9c87ca81d91cd4755e4730d82
---
-[source, yaml]
-----
-$ cat snapshot-setup.sh
-#!/bin/bash
-# Create volume snapshot CRDs
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotcontents.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshots.yaml
-----
---
-=====
-. 65b146df7d5c27b212f54a7c9980960b
-+
-6b4ca223a0a2bf649306756ade54b043
-
-+
-[role="tabbed-block"]
-=====
-.5e393c0ca8392e0c84201770c8b544ca
---
-[source, yaml]
-----
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
-----
---
-=====
-
+如果您尚未执行此操作， https://["安装快照CRD和快照控制器"^]。
 
 .将CSI驱动程序作为Amazon EKS加载项进行安装
 . 为服务帐户创建Amazon EBS CSI驱动程序IAM角色。按照说明进行操作 https://["在Amazon文档中"^]、使用说明中的AWS命令行界面命令。
