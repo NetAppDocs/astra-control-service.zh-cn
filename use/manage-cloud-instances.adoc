@@ -45,10 +45,10 @@ NOTE: Astra Control中的每个云实例都必须具有唯一的名称。
 
 == 轮换云实例的凭据
 
-您可以使用Astra Control API轮换云实例的凭据。了解更多信息。 https://["转到 Astra 自动化文档"^]。
+您可以使用Astra Control API轮换云实例的凭据。了解更多信息。 https://docs.netapp.com/us-en/astra-automation["转到 Astra 自动化文档"^]。
 
 
 
 == 删除云实例
 
-您可以使用Astra Control API从云提供商中删除云实例。了解更多信息。 https://["转到 Astra 自动化文档"^]。
+您可以使用Astra Control API从云提供商中删除云实例。了解更多信息。 https://docs.netapp.com/us-en/astra-automation["转到 Astra 自动化文档"^]。

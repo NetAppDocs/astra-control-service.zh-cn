@@ -36,7 +36,7 @@ Astra Control 要求您在入职部分提供准确的客户信息。如果您提
 
 * 什么是 Astra 控制服务 URL ？ *
 
-您可以通过访问 Astra 控制服务 https://[]。
+您可以通过访问 Astra 控制服务 https://astra.netapp.io[]。
 
 * 我向同事发送了一封电子邮件邀请函，但他们尚未收到。我该怎么办？ *
 
@@ -90,7 +90,7 @@ ifdef::azure[]
 
 *是否可以使用Active Directory管理AKS集群的身份验证？*
 
-可以、您可以将AKS集群配置为使用Azure Active Directory (Azure AD)进行身份验证和身份管理。创建集群时、请按照中的说明进行操作 https://["正式文档"^] 将集群配置为使用Azure AD。您需要确保集群满足AKS管理的Azure AD集成的要求。
+可以、您可以将AKS集群配置为使用Azure Active Directory (Azure AD)进行身份验证和身份管理。创建集群时、请按照中的说明进行操作 https://docs.microsoft.com/en-us/azure/aks/managed-aad["正式文档"^] 将集群配置为使用Azure AD。您需要确保集群满足AKS管理的Azure AD集成的要求。
 
 endif::azure[]
 
@@ -106,7 +106,7 @@ ifdef::gcp[]
 
 在 GCP 上的何处可以找到我的服务帐户凭据？ *
 
-登录到后 https://["Google Cloud Console"^]，您的服务帐户详细信息将显示在 * IAM 和管理 * 部分中。有关详细信息，请参见 link:set-up-google-cloud.html["如何为 Astra Control 设置 Google Cloud"]。
+登录到后 https://console.cloud.google.com/["Google Cloud Console"^]，您的服务帐户详细信息将显示在 * IAM 和管理 * 部分中。有关详细信息，请参见 link:set-up-google-cloud.html["如何为 Astra Control 设置 Google Cloud"]。
 
 * 我想从不同的 GCP 项目添加不同的 GKEE 集群。Astra Control 是否支持此功能？ *
 

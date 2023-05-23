@@ -12,7 +12,7 @@ summary: 了解如何通过向角色添加限制来管理用户角色。
 
 
 [role="lead"]
-您可以通过添加命名空间限制并将用户角色限制为这些限制来管理角色。这样，您就可以控制对组织内资源的访问。您可以使用 Astra Control UI 或 https://["Astra Control API"^] 以管理角色。
+您可以通过添加命名空间限制并将用户角色限制为这些限制来管理角色。这样，您就可以控制对组织内资源的访问。您可以使用 Astra Control UI 或 https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API"^] 以管理角色。
 
 
 

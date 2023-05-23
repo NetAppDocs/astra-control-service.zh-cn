@@ -87,9 +87,9 @@ Astra Trident:: 使用存储后端进行操作需要Astra三叉式映像和外�
 
 [%collapsible%open]
 ====
-. https://["安装快照CRD和快照控制器"^]。
-. https://["安装最新版本的Astra Trdent"^]。
-. https://["创建卷快照类"^]。
+. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["安装快照CRD和快照控制器"^]。
+. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["安装最新版本的Astra Trdent"^]。
+. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-create-a-volumesnapshotclass["创建卷快照类"^]。
 
 
 ====
@@ -101,10 +101,10 @@ Astra Trident:: 使用存储后端进行操作需要Astra三叉式映像和外�
 [%collapsible%open]
 ====
 .安装外部快照程序
-如果您尚未执行此操作， https://["安装快照CRD和快照控制器"^]。
+如果您尚未执行此操作， https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["安装快照CRD和快照控制器"^]。
 
 .将CSI驱动程序作为Amazon EKS加载项进行安装
-. 为服务帐户创建Amazon EBS CSI驱动程序IAM角色。按照说明进行操作 https://["在Amazon文档中"^]、使用说明中的AWS命令行界面命令。
+. 为服务帐户创建Amazon EBS CSI驱动程序IAM角色。按照说明进行操作 https://docs.aws.amazon.com/eks/latest/userguide/csi-iam-role.html["在Amazon文档中"^]、使用说明中的AWS命令行界面命令。
 . 使用以下AWS命令行界面命令添加Amazon EBS CSI加载项、将括号<>中的信息替换为特定于您的环境的值。将<driver_role>替换为您在上一步中创建的EBS CSI驱动程序角色的名称：
 +
 [source, console]
@@ -158,7 +158,7 @@ kubectl describe storageclass ebs-sc
 如果您还没有Amazon帐户、则需要创建一个帐户来为Amazon EKS启用计费。
 
 .步骤
-. 转至 https://["Amazon主页"^] 、选择右上角的*登录*、然后选择*从此处开始*。
+. 转至 https://www.amazon.com["Amazon主页"^] 、选择右上角的*登录*、然后选择*从此处开始*。
 . 按照提示创建帐户。
 
 
@@ -169,7 +169,7 @@ kubectl describe storageclass ebs-sc
 安装AWS命令行界面、以便从命令行管理AWS资源。
 
 .步骤
-. 转至 https://["AWS命令行界面入门"^] 并按照说明安装CLI。
+. 转至 https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html["AWS命令行界面入门"^] 并按照说明安装CLI。
 
 
 
@@ -179,7 +179,7 @@ kubectl describe storageclass ebs-sc
 创建IAM用户、以便您可以使用和管理AWS服务和资源、并提高安全性。您也可以跳过此步骤、并将现有IAM用户与Astra Control Service结合使用。
 
 .步骤
-. 转至 https://["创建IAM用户"^] 并按照说明创建IAM用户。
+. 转至 https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_cliwpsapi["创建IAM用户"^] 并按照说明创建IAM用户。
 
 
 

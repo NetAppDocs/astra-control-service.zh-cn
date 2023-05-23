@@ -38,7 +38,7 @@ Astra Control支持以下类型的执行挂钩、具体取决于何时可以运�
 
 NOTE: 筛选器的正则表达式使用正则表达式2 (RE2)语法、不支持创建从匹配列表中排除容器的筛选器。
 
-有关Astra Control在执行挂钩筛选器中支持正则表达式语法的信息、请参见 https://["正则表达式2 (RE2)语法支持"^]。
+有关Astra Control在执行挂钩筛选器中支持正则表达式语法的信息、请参见 https://github.com/google/re2/wiki/Syntax["正则表达式2 (RE2)语法支持"^]。
 
 
 
@@ -147,7 +147,7 @@ NOTE: 在生产环境中启用执行钩脚本之前，应始终对其进行测�
 
 == 执行钩示例
 
-请访问 https://["NetApp Verda GitHub项目"] 为Apache Cassandra和Elasticsearch等常见应用程序下载真正的执行挂钩。您还可以查看示例并了解如何构建自己的自定义执行挂钩。
+请访问 https://github.com/NetApp/Verda["NetApp Verda GitHub项目"] 为Apache Cassandra和Elasticsearch等常见应用程序下载真正的执行挂钩。您还可以查看示例并了解如何构建自己的自定义执行挂钩。
 
 
 
@@ -254,7 +254,7 @@ NOTE: 创建用作执行挂钩的自定义Shell脚本时、请务必在文件开
 +
 .. 选择*添加筛选器*。
 .. 在*挂机筛选器类型*列中、从下拉菜单中选择要筛选的属性。
-.. 在*正则表达式*列中、输入要用作筛选器的正则表达式。Astra Control使用 https://["正则表达式2 (RE2)正则表达式语法"^]。
+.. 在*正则表达式*列中、输入要用作筛选器的正则表达式。Astra Control使用 https://github.com/google/re2/wiki/Syntax["正则表达式2 (RE2)正则表达式语法"^]。
 +
 
 NOTE: 如果在正则表达式字段中筛选某个属性的确切名称(例如Pod名称)而不包含其他文本、则会执行子字符串匹配。要匹配确切的名称以及仅匹配该名称、请使用精确的字符串匹配语法(例如、 `^exact_podname$`）。
@@ -386,5 +386,5 @@ NOTE: 一个执行钩的多个筛选器与一个逻辑运算符和运算符结�
 
 == 有关详细信息 ...
 
-* https://["NetApp Verda GitHub项目"]
+* https://github.com/NetApp/Verda["NetApp Verda GitHub项目"]
 

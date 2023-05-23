@@ -64,7 +64,7 @@ Kubernetes 集群必须满足以下要求，才能通过 Astra Control Service �
 Kubernetes 版本:: 集群必须运行Kubnetes 1.24到1.26版。
 映像类型:: 所有节点池的映像类型必须为 Linux 。
 集群状态:: 集群必须运行状况良好，并且至少有一个联机辅助节点，并且没有处于故障状态的辅助节点。
-Azure 区域:: 作为最佳实践，您应选择一个支持 Azure NetApp Files 的区域，即使您不将其用作存储后端也是如此。这样，如果性能要求发生变化，将来可以更轻松地将 Azure NetApp Files 用作存储后端。 https://["按区域查看 Azure 产品"^]。
+Azure 区域:: 作为最佳实践，您应选择一个支持 Azure NetApp Files 的区域，即使您不将其用作存储后端也是如此。这样，如果性能要求发生变化，将来可以更轻松地将 Azure NetApp Files 用作存储后端。 https://azure.microsoft.com/en-us/global-infrastructure/services/?products=netapp["按区域查看 Azure 产品"^]。
 
 
 CSI 驱动程序:: 集群必须安装适当的 CSI 驱动程序。
@@ -77,7 +77,7 @@ CSI 驱动程序:: 集群必须安装适当的 CSI 驱动程序。
 如果您没有 Microsoft Azure 帐户，请先注册 Microsoft Azure 。
 
 .步骤
-. 转至 https://["Azure 订阅页面"^] 订阅 Azure 服务。
+. 转至 https://azure.microsoft.com/en-us/free/["Azure 订阅页面"^] 订阅 Azure 服务。
 . 选择一个计划并按照说明完成订阅。
 
 
@@ -89,7 +89,7 @@ Astra 控制服务需要分配有贡献者角色的 Azure 服务主体。Astra �
 
 服务主体是指专为应用程序，服务和工具而创建的身份。为服务主体分配角色将限制对特定 Azure 资源的访问。
 
-按照以下步骤使用 Azure 命令行界面创建服务主体。您需要将输出保存在 JSON 文件中，并稍后将其提供给 Astra Control Service 。 https://["有关使用 CLI 的详细信息，请参见 Azure 文档"^]。
+按照以下步骤使用 Azure 命令行界面创建服务主体。您需要将输出保存在 JSON 文件中，并稍后将其提供给 Astra Control Service 。 https://docs.microsoft.com/en-us/cli/azure/create-an-azure-service-principal-azure-cli["有关使用 CLI 的详细信息，请参见 Azure 文档"^]。
 
 以下步骤假定您有权创建服务主体，并且计算机上已安装 Microsoft Azure SDK （ AZ 命令）。
 
@@ -214,7 +214,7 @@ az provider register -n Microsoft.ContainerService
 您可以安装 Azure CSI 驱动程序以完成准备工作。
 
 .步骤
-. 转至 https://["Microsoft CSI 驱动程序文档"^]。
+. 转至 https://docs.microsoft.com/en-us/azure/aks/csi-storage-drivers["Microsoft CSI 驱动程序文档"^]。
 . 按照说明安装所需的 CSI 驱动程序。
 
 
@@ -225,8 +225,8 @@ az provider register -n Microsoft.ContainerService
 您可以为Azure备份存储分段配置更持久的冗余级别。默认情况下、Astra Control Service用于存储Azure Kubernetes Service备份的存储分段使用本地冗余存储(LRS)冗余选项。要对Azure存储分段使用更持久的冗余选项、您需要执行以下操作：
 
 .步骤
-. 使用创建使用所需冗余级别的Azure存储帐户 https://["这些说明"^]。
-. 使用在新存储帐户中创建Azure容器 https://["这些说明"^]。
+. 使用创建使用所需冗余级别的Azure存储帐户 https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal["这些说明"^]。
+. 使用在新存储帐户中创建Azure容器 https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal["这些说明"^]。
 . 将此容器作为分段添加到Astra Control Service中。请参见 link:../use/manage-buckets.html#add-an-additional-bucket["添加一个额外的存储分段"]。
 . (可选)要使用新创建的存储分段作为Azure备份的默认存储分段、请将其设置为Azure的默认存储分段。请参见 link:../use/manage-buckets.html#change-the-default-bucket["更改默认分段"]。
 

@@ -26,7 +26,7 @@ summary: 设置环境后，您可以创建 Kubernetes 集群，然后将其添�
 如果您还没有集群、则可以创建满足要求的集群 link:set-up-amazon-web-services.html#eks-cluster-requirements["Amazon Elastic Kubernetes Service (EKS)的Astra Control Service要求"]。如果您还没有集群、则可以创建满足要求的集群 link:set-up-google-cloud.html#gke-cluster-requirements["Google Kubernetes Engine （ GKEE ）的 Astra Control Service 要求"]。如果您还没有集群、则可以创建满足要求的集群 link:set-up-microsoft-azure-with-anf.html#azure-kubernetes-service-cluster-requirements["采用 Azure NetApp Files 的 Azure Kubernetes Service （ AKS ）的 Astra 控制服务要求"] 或 link:set-up-microsoft-azure-with-amd.html#azure-kubernetes-service-cluster-requirements["采用 Azure 受管磁盘的 Azure Kubernetes Service （ AKS ）的 Astra Control Service 要求"]。
 
 
-NOTE: Astra控制服务支持使用Azure Active Directory (Azure AD)进行身份验证和身份管理的AKS集群。创建集群时、请按照中的说明进行操作 https://["正式文档"^] 将集群配置为使用Azure AD。您需要确保集群满足AKS管理的Azure AD集成的要求。
+NOTE: Astra控制服务支持使用Azure Active Directory (Azure AD)进行身份验证和身份管理的AKS集群。创建集群时、请按照中的说明进行操作 https://docs.microsoft.com/en-us/azure/aks/managed-aad["正式文档"^] 将集群配置为使用Azure AD。您需要确保集群满足AKS管理的Azure AD集成的要求。
 
 
 
@@ -48,8 +48,8 @@ ifdef::aws[]
 .Amazon Web Services
 * 您应拥有包含创建集群的IAM用户凭据的JSON文件。 link:../get-started/set-up-amazon-web-services.html#create-an-iam-user["了解如何创建IAM用户"]。
 * 适用于NetApp ONTAP 的Amazon FSX需要Astra Trident。如果您计划使用适用于NetApp ONTAP 的Amazon FSx作为EKS集群的存储后端、请参阅中的Astra Trident信息 link:set-up-amazon-web-services.html#eks-cluster-requirements["EKS集群要求"]。
-* (可选)如果需要提供 `kubectl` 集群对非集群创建者的其他IAM用户的命令访问权限、请参见中的说明 https://["在Amazon EKS中创建集群后、如何为其他IAM用户和角色提供访问权限？"^]。
-* 如果您计划使用NetApp Cloud Volumes ONTAP 作为存储后端、则需要将Cloud Volumes ONTAP 配置为使用Amazon Web Services。请参见Cloud Volumes ONTAP https://["设置文档"^]。
+* (可选)如果需要提供 `kubectl` 集群对非集群创建者的其他IAM用户的命令访问权限、请参见中的说明 https://aws.amazon.com/premiumsupport/knowledge-center/amazon-eks-cluster-access/["在Amazon EKS中创建集群后、如何为其他IAM用户和角色提供访问权限？"^]。
+* 如果您计划使用NetApp Cloud Volumes ONTAP 作为存储后端、则需要将Cloud Volumes ONTAP 配置为使用Amazon Web Services。请参见Cloud Volumes ONTAP https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html["设置文档"^]。
 
 
 endif::aws[]
@@ -62,7 +62,7 @@ ifdef::azure[]
 如果未将 Azure 订阅 ID 添加到 JSON 文件中，您也需要此 ID 。
 
 * 对于专用AKS集群、请参见 link:manage-private-cluster.html["通过Astra Control Service管理专用集群"^]。
-* 如果您计划使用NetApp Cloud Volumes ONTAP 作为存储后端、则需要将Cloud Volumes ONTAP 配置为与Microsoft Azure配合使用。请参见Cloud Volumes ONTAP https://["设置文档"^]。
+* 如果您计划使用NetApp Cloud Volumes ONTAP 作为存储后端、则需要将Cloud Volumes ONTAP 配置为与Microsoft Azure配合使用。请参见Cloud Volumes ONTAP https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html["设置文档"^]。
 
 
 endif::azure[]
@@ -71,7 +71,7 @@ ifdef::gcp[]
 
 .Google Cloud
 * 您应拥有具有所需权限的服务帐户的服务帐户密钥文件。 link:../get-started/set-up-google-cloud.html#create-a-service-account["了解如何设置服务帐户"]。
-* 如果您计划使用NetApp Cloud Volumes ONTAP 作为存储后端、则需要将Cloud Volumes ONTAP 配置为与Google Cloud配合使用。请参见Cloud Volumes ONTAP https://["设置文档"^]。
+* 如果您计划使用NetApp Cloud Volumes ONTAP 作为存储后端、则需要将Cloud Volumes ONTAP 配置为与Google Cloud配合使用。请参见Cloud Volumes ONTAP https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html["设置文档"^]。
 
 
 endif::gcp[]
@@ -97,12 +97,12 @@ Astra控制服务支持使用以下Kubernetes分发版的自管理集群：
 * 如果您正在使用或计划使用NetApp存储、请确保已安装最新版本的Astra Trident：
 +
 
-NOTE: 您可以 https://["部署Astra Trident"^] 使用Trident运算符(手动或使用Helm图表)或 `tridentctl`。在安装或升级Astra Trident之前、请查看 https://["支持的前端、后端和主机配置"^]。
+NOTE: 您可以 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html#choose-the-deployment-method["部署Astra Trident"^] 使用Trident运算符(手动或使用Helm图表)或 `tridentctl`。在安装或升级Astra Trident之前、请查看 https://docs.netapp.com/us-en/trident/trident-get-started/requirements.html["支持的前端、后端和主机配置"^]。
 
 +
-** *已配置Trident存储后端*：至少必须有一个Astra Trident存储后端 https://["已配置"^] 在集群上。
-** *已配置Trident存储类*：至少必须有一个Astra Trident存储类 https://["已配置"^] 在集群上。如果配置了默认存储类、请确保只有一个存储类具有此标注。
-** 已安装并配置* Astra Trident卷快照控制器和卷快照类*：卷快照控制器必须为 https://["已安装"^] 以便可以在Astra Control中创建快照。至少一个Astra Trident `VolumeSnapshotClass` 已经 https://["设置"^] 由管理员执行。
+** *已配置Trident存储后端*：至少必须有一个Astra Trident存储后端 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-postdeployment.html#step-1-create-a-backend["已配置"^] 在集群上。
+** *已配置Trident存储类*：至少必须有一个Astra Trident存储类 https://docs.netapp.com/us-en/trident/trident-use/manage-stor-class.html["已配置"^] 在集群上。如果配置了默认存储类、请确保只有一个存储类具有此标注。
+** 已安装并配置* Astra Trident卷快照控制器和卷快照类*：卷快照控制器必须为 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["已安装"^] 以便可以在Astra Control中创建快照。至少一个Astra Trident `VolumeSnapshotClass` 已经 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-set-up-a-volumesnapshotclass["设置"^] 由管理员执行。
 
 
 * * Kubeconfig accessible*：您可以访问 <<kubeconfig,cluster kubeconfig>> 这仅包括一个上下文元素。
@@ -138,7 +138,7 @@ error: the server doesn't have a resource type "tridentversions"
 ----
 +
 
-NOTE: 如果Astra Trident未安装或不是最新版本、并且您希望集群使用Astra Trident提供存储服务、则需要先安装最新版本的Astra Trident、然后再继续操作。请参见 https://["Astra Trident 文档"^] 有关说明，请参见。
+NOTE: 如果Astra Trident未安装或不是最新版本、并且您希望集群使用Astra Trident提供存储服务、则需要先安装最新版本的Astra Trident、然后再继续操作。请参见 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Astra Trident 文档"^] 有关说明，请参见。
 
 . 确保Pod正在运行：
 +
@@ -384,7 +384,7 @@ endif::gcp[]
 . *其他*：通过上传提供有关自管理集群的详细信息 `kubeconfig.yaml` 文件或粘贴的内容 `kubeconfig.yaml` 文件。
 +
 
-NOTE: 创建自己的 `kubeconfig` file中、您只能定义*一*上下文元素。请参见 https://["Kubernetes 文档"^] 有关创建的信息 `kubeconfig` 文件。
+NOTE: 创建自己的 `kubeconfig` file中、您只能定义*一*上下文元素。请参见 https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/["Kubernetes 文档"^] 有关创建的信息 `kubeconfig` 文件。
 
 +
 .. *云实例名称*(对于提供商管理的集群)：为添加此集群时要创建的新云实例提供一个名称。了解更多信息 link:../use/manage-cloud-instances.html["云实例"]。
@@ -452,29 +452,29 @@ endif::aws[]
 
 ifdef::gcp[]
 
-* https://["适用于 Google Cloud 的 Cloud Volumes Service"^]
-* https://["Google 持久磁盘"^]
+* https://cloud.netapp.com/cloud-volumes-service-for-gcp["适用于 Google Cloud 的 Cloud Volumes Service"^]
+* https://cloud.google.com/persistent-disk/["Google 持久磁盘"^]
 
 
 endif::gcp[]
 
 ifdef::azure[]
 
-* https://["Azure NetApp Files"^]
-* https://["Azure 受管磁盘"^]
+* https://cloud.netapp.com/azure-netapp-files["Azure NetApp Files"^]
+* https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["Azure 受管磁盘"^]
 
 
 endif::azure[]
 
 ifdef::aws[]
 
-* https://["Amazon Elastic Block Store"^]
-* https://["适用于 NetApp ONTAP 的 Amazon FSX"^]
+* https://docs.aws.amazon.com/ebs/["Amazon Elastic Block Store"^]
+* https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["适用于 NetApp ONTAP 的 Amazon FSX"^]
 
 
 endif::aws[]
 
-* https://["NetApp Cloud Volumes ONTAP"^]
+* https://www.netapp.com/cloud-services/cloud-volumes-ontap/what-is-cloud-volumes/["NetApp Cloud Volumes ONTAP"^]
 +
 了解更多信息 link:../learn/aws-storage.html["Amazon Web Services集群的存储类"]。了解更多信息 link:../learn/azure-storage.html["AKS 集群的存储类"]。了解更多信息 link:../learn/choose-class-and-size.html["GKE 集群的存储类"]。
 

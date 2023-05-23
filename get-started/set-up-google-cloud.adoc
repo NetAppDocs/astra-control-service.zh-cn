@@ -110,9 +110,9 @@ Kubernetes 集群必须满足以下要求，才能通过 Astra Control Service �
 Kubernetes 版本:: 集群运行的Kubbernetes版本必须介于1.24到1.25之间。
 映像类型:: 每个工作节点的映像类型必须为 `COS_CONTAINERD`。
 集群状态:: 集群必须运行状况良好，并且至少有一个联机辅助节点，并且没有处于故障状态的辅助节点。
-Google Cloud 地区:: 如果您计划使用 Cloud Volumes Service for Google Cloud 作为存储后端，则集群必须在中运行 https://["支持 Cloud Volumes Service for Google Cloud 的 Google 云区域。"] 请注意， Astra 控制服务支持两种服务类型： CVS 和 CVS-Performance 。作为最佳实践，您应选择一个支持适用于 Google Cloud 的 Cloud Volumes Service 的区域，即使您不将其用作存储后端也是如此。这样，如果您的性能要求发生变化，将来可以更轻松地将 Cloud Volumes Service for Google Cloud 用作存储后端。
+Google Cloud 地区:: 如果您计划使用 Cloud Volumes Service for Google Cloud 作为存储后端，则集群必须在中运行 https://cloud.netapp.com/cloud-volumes-global-regions#cvsGc["支持 Cloud Volumes Service for Google Cloud 的 Google 云区域。"] 请注意， Astra 控制服务支持两种服务类型： CVS 和 CVS-Performance 。作为最佳实践，您应选择一个支持适用于 Google Cloud 的 Cloud Volumes Service 的区域，即使您不将其用作存储后端也是如此。这样，如果您的性能要求发生变化，将来可以更轻松地将 Cloud Volumes Service for Google Cloud 用作存储后端。
 网络:: 如果您计划使用适用于 Google Cloud 的 Cloud Volumes Service 作为存储后端，则集群必须位于与适用于 Google Cloud 的 Cloud Volumes Service 建立对等关系的 VPC 中。 <<可选：为VPC设置网络对等,下面介绍了此步骤>>。
-专用集群:: 如果集群为专用集群，则会显示 https://["授权网络"^] 必须允许 Astra 控制服务 IP 地址：
+专用集群:: 如果集群为专用集群，则会显示 https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept["授权网络"^] 必须允许 Astra 控制服务 IP 地址：
 +
 --
 52.188.218.166/32
@@ -128,9 +128,9 @@ GKEE 集群的操作模式:: 您应使用标准操作模式。目前尚未测试
 Astra 控制服务可以使用适用于 Google Cloud 的 Cloud Volumes Service 作为永久性卷的存储后端。如果您计划使用此服务，则需要从 Google 云市场购买适用于 Google Cloud 的 Cloud Volumes Service ，以便为永久性卷开票。
 
 .步骤
-. 转至 https://["NetApp Cloud Volumes Service 页面"^] 在 Google Cloud Marketplace 中，选择 * 购买 * ，然后按照提示进行操作。
+. 转至 https://console.cloud.google.com/marketplace/product/endpoints/cloudvolumesgcp-api.netapp.com["NetApp Cloud Volumes Service 页面"^] 在 Google Cloud Marketplace 中，选择 * 购买 * ，然后按照提示进行操作。
 +
-https://["按照 Google Cloud 文档中的分步说明购买并启用此服务"^]。
+https://cloud.google.com/solutions/partners/netapp-cloud-volumes/quickstart#purchase_the_service["按照 Google Cloud 文档中的分步说明购买并启用此服务"^]。
 
 
 
@@ -141,7 +141,7 @@ https://["按照 Google Cloud 文档中的分步说明购买并启用此服务"^
 您的项目需要访问特定 Google Cloud API 的权限。API 用于与 Google 云资源进行交互，例如 Google Kubernetes Engine （ GKEE ）集群和 NetApp Cloud Volumes Service 存储。
 
 .步骤
-. https://["使用 Google Cloud 控制台或 gcloud CLI 启用以下 API"^]：
+. https://cloud.google.com/endpoints/docs/openapi/enable-api["使用 Google Cloud 控制台或 gcloud CLI 启用以下 API"^]：
 +
 ** Google Kubernetes 引擎
 ** 云存储
@@ -166,7 +166,7 @@ video::video-enable-gcp-apis.mp4[width=848,height=480]
 Astra Control Service 使用 Google Cloud 服务帐户为您的 Kubernetes 应用程序数据管理提供便利。
 
 .步骤
-. 转到 Google Cloud ，然后 https://["使用 console ， gcloud 命令或其他首选方法创建服务帐户"^]。
+. 转到 Google Cloud ，然后 https://cloud.google.com/iam/docs/creating-managing-service-accounts#creating_a_service_account["使用 console ， gcloud 命令或其他首选方法创建服务帐户"^]。
 . 为服务帐户授予以下角色：
 +
 ** * Kubernetes Engine Admin* —用于列出集群并创建管理员访问权限以管理应用程序。
@@ -216,7 +216,7 @@ video::video-create-gcp-service-account.mp4[width=848,height=480]
 您只能在创建密钥时查看或下载 JSON 文件。但是，您可以随时创建新密钥。
 
 .步骤
-. 转到 Google Cloud ，然后 https://["使用 console ， gcloud 命令或其他首选方法创建服务帐户密钥"^]。
+. 转到 Google Cloud ，然后 https://cloud.google.com/iam/docs/creating-managing-service-account-keys#creating_service_account_keys["使用 console ， gcloud 命令或其他首选方法创建服务帐户密钥"^]。
 . 出现提示时，将服务帐户密钥文件保存在安全位置。
 
 
@@ -232,11 +232,11 @@ video::video-create-gcp-service-account-key.mp4[width=848,height=480]
 设置网络对等关系的最简单方法是直接从 Cloud Volumes Service 获取 gcloud 命令。在创建新文件系统时，可以从 Cloud Volumes Service 访问这些命令。
 
 .步骤
-. https://["转到 NetApp Cloud Central 的全球区域地图"^] 并确定要在集群所在的 Google Cloud 区域中使用的服务类型。
+. https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["转到 NetApp Cloud Central 的全球区域地图"^] 并确定要在集群所在的 Google Cloud 区域中使用的服务类型。
 +
-Cloud Volumes Service 提供两种服务类型： CVS 和 CVS-Performance 。 https://["详细了解这些服务类型"^]。
+Cloud Volumes Service 提供两种服务类型： CVS 和 CVS-Performance 。 https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types["详细了解这些服务类型"^]。
 
-. https://["转到 Google Cloud Platform 中的 Cloud Volumes"^]。
+. https://console.cloud.google.com/netapp/cloud-volumes/volumes["转到 Google Cloud Platform 中的 Cloud Volumes"^]。
 . 在 * 卷 * 页面上，选择 * 创建 * 。
 . 在 * 服务类型 * 下，选择 * CVS* 或 * CVS-Performance* 。
 +
@@ -256,10 +256,10 @@ image:gcp-peering.gif["Google Cloud 控制台的屏幕截图，其中显示一�
 . 选择按钮以查看 network peering set up 命令。
 . 复制命令并在 Cloud Shell 中运行。
 +
-有关使用这些命令的详细信息，请参见 https://["适用于 GCP 的 Cloud Volumes Service 的快速入门"^]。
+有关使用这些命令的详细信息，请参见 https://cloud.google.com/solutions/partners/netapp-cloud-volumes/quickstart#configure_private_services_access_and_set_up_network_peering["适用于 GCP 的 Cloud Volumes Service 的快速入门"^]。
 
 +
-https://["了解有关配置私有服务访问和设置网络对等的更多信息"^]。
+https://cloud.google.com/solutions/partners/netapp-cloud-volumes/setting-up-private-services-access["了解有关配置私有服务访问和设置网络对等的更多信息"^]。
 
 . 完成后，您可以在 * 创建文件系统 * 页面上选择取消。
 +

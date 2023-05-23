@@ -35,7 +35,7 @@ Azure NetApp Files 支持三种服务级别：超存储，高级存储和标准�
 
 Astra 控制服务会将这些服务级别用作永久性卷的存储类。将 Kubernetes 集群添加到 Astra Control Service 时，系统会提示您选择 "ule" ， "Premium" 或 "Standard" 作为默认存储类。存储类的名称包括 _netapp-anf-perf-ulum_ ， _netapp-anf-perf-prem_ 和 _netapp-anf-perf-standard_ 。
 
-https://["有关这些服务级别的详细信息，请参见 Azure NetApp Files 文档"^]。
+https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-service-levels["有关这些服务级别的详细信息，请参见 Azure NetApp Files 文档"^]。
 
 
 
@@ -63,10 +63,10 @@ Astra 控制服务使用最小卷大小 100 GiB 来配置永久性卷，即使 P
 
 Astra控制服务可以使用容器存储接口(Container Storage Interface、CSI)驱动程序作为存储后端与Azure受管磁盘进行连接。此服务可提供由 Azure 管理的块级存储。
 
-https://["了解有关 Azure 受管磁盘的更多信息"^]。
+https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["了解有关 Azure 受管磁盘的更多信息"^]。
 
 
 
 == NetApp Cloud Volumes ONTAP
 
-有关配置NetApp Cloud Volumes ONTAP 的具体信息、包括性能建议、请访问 https://["NetApp Cloud Volumes ONTAP 文档"^]。
+有关配置NetApp Cloud Volumes ONTAP 的具体信息、包括性能建议、请访问 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-performance.html["NetApp Cloud Volumes ONTAP 文档"^]。

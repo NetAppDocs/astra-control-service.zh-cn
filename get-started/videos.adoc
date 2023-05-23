@@ -14,6 +14,6 @@ summary: 此文档站点上的许多页面都包含一些视频，用于展示�
 [role="lead"]
 查看NetApp TV、了解有关Astra Control Service的最新视频内容。NetApp TV中的视频演示了Astra Control Service的某些功能、或者向您展示了如何完成某些常见任务。
 
-https://["Astra Control Service 视频"^]
+https://www.netapp.tv/search/astra%20control%20service["Astra Control Service 视频"^]
 
 endif::gcp[]

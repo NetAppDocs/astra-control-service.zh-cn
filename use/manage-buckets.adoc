@@ -109,7 +109,7 @@ endif::azure[]
 
 ifdef::aws[]
 
-* * S3服务器名称或IP地址*(仅限AWS和S3存储分段类型)：输入与您所在地区对应的S3端点的完全限定域名、而不输入 `https://`。请参见 https://["Amazon文档"^] 有关详细信息 ...
+* * S3服务器名称或IP地址*(仅限AWS和S3存储分段类型)：输入与您所在地区对应的S3端点的完全限定域名、而不输入 `https://`。请参见 https://docs.aws.amazon.com/general/latest/gr/s3.html["Amazon文档"^] 有关详细信息 ...
 
 
 endif::aws[]
@@ -171,5 +171,5 @@ NOTE: Astra Control 可首先确保没有使用存储分段进行备份的计划
 
 == 了解更多信息
 
-* https://["使用 Astra Control API"^]
+* https://docs.netapp.com/us-en/astra-automation/index.html["使用 Astra Control API"^]
 

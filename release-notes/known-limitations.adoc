@@ -24,7 +24,7 @@ summary: 已知限制确定了本产品版本不支持的平台、设备或功�
 
 === 未从集群中卸载Astra Trident
 
-从 Astra 控制服务取消管理集群时，不会自动从集群中卸载 Astra Trident 。要卸载 Astra Trident ，您需要 https://["请按照 Astra Trident 文档中的以下步骤进行操作"^]。
+从 Astra 控制服务取消管理集群时，不会自动从集群中卸载 Astra Trident 。要卸载 Astra Trident ，您需要 https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["请按照 Astra Trident 文档中的以下步骤进行操作"^]。
 
 
 
@@ -92,13 +92,13 @@ Astra Control不会自动为任何云实例分配默认分段。您需要手动�
 
 Astra Control 支持使用命名空间范围的运算符安装的应用程序。这些操作员通常采用 " 按价值传递 " 架构，而不是 " 按参考传递 " 架构。以下是一些遵循这些模式的操作员应用程序：
 
-* https://["Apache K8ssandra"^]
+* https://github.com/k8ssandra/cass-operator/tree/v1.7.1["Apache K8ssandra"^]
 +
 
 NOTE: 对于 K8ssandra ，支持原位还原操作。要对新命名空间或集群执行还原操作，需要关闭应用程序的原始实例。这是为了确保传输的对等组信息不会导致跨实例通信。不支持克隆应用程序。
 
-* https://["Jenkins CI"^]
-* https://["Percona XtraDB 集群"^]
+* https://github.com/jenkinsci/kubernetes-operator["Jenkins CI"^]
+* https://github.com/percona/percona-xtradb-cluster-operator["Percona XtraDB 集群"^]
 
 
 请注意、Astra Control可能无法克隆使用"按参考传递"架构设计的运算符(例如CockroachDB运算符)。在这些类型的克隆操作期间，克隆的操作员会尝试引用源操作员提供的 Kubernetes 机密，尽管在克隆过程中他们拥有自己的新机密。克隆操作可能会失败，因为 Astra Control 不知道源运算符中的 Kubernetes 密钥。
@@ -133,8 +133,8 @@ NOTE: 在克隆操作期间、需要IngressClass资源或webhooks才能正常运
 作为临时解决策 、在升级现有Kubernetes 1.25或更高版本的安装时、请执行以下操作：
 
 . 删除任何现有的Snapshot CRD和任何现有的Snapshot控制器。
-. https://["卸载 Astra Trident"^]。
-. https://["安装快照CRD和快照控制器"^]。
-. https://["安装最新版本的Astra Trdent"^]。
-. https://["创建卷快照类"^]。
+. https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["卸载 Astra Trident"^]。
+. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["安装快照CRD和快照控制器"^]。
+. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["安装最新版本的Astra Trdent"^]。
+. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-create-a-volumesnapshotclass["创建卷快照类"^]。
 
