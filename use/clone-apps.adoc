@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: use/clone-apps.html 
-keywords: clone app, clone storage, clone persistent storage, clone data, move workload, clone data, migrate data, data migration, move storage, move application, move data 
+keywords: clone app, clone storage, clone persistent storage, clone data, move workload, clone data, migrate data, data migration, move storage, move application, move data, migrate storage class 
 summary: 克隆现有应用程序以在同一个 Kubernetes 集群或另一个集群上创建重复的应用程序。如果您需要将应用程序和存储从一个 Kubernetes 集群移动到另一个集群，则克隆可以助您一臂之力。例如，您可能希望通过 CI CD 管道和 Kubernetes 命名空间移动工作负载。 
 ---
 = 克隆和迁移应用程序

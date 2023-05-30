@@ -119,6 +119,7 @@ Google Cloud 地区:: 如果您计划使用 Cloud Volumes Service for Google Clo
 
 --
 GKEE 集群的操作模式:: 您应使用标准操作模式。目前尚未测试自动驾驶模式。 link:https://cloud.google.com/kubernetes-engine/docs/concepts/types-of-clusters#modes["了解有关操作模式的更多信息"^]。
+存储池:: 如果将NetApp Cloud Volumes Service用作CVS服务类型的存储后端、则需要先配置存储池、然后才能配置卷。请参见 link:../learn/choose-class-and-size.html#overview["GKE- 集群的服务类型，存储类和 PV 大小"^] 有关详细信息 ...
 
 
 

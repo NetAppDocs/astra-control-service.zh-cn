@@ -12,7 +12,7 @@ summary: Astra 控制服务使用适用于 Google Cloud 的 Cloud Volumes Servic
 
 
 [role="lead"]
-Astra控制服务支持将Cloud Volumes Service for Google Cloud、Google持久磁盘或NetApp Cloud Volumes ONTAP 作为永久性卷的存储后端选项。
+Astra控制服务支持将NetApp Cloud Volumes Service for Google Cloud、Google持久磁盘或NetApp Cloud Volumes ONTAP作为永久性卷的存储后端选项。
 
 
 
@@ -33,6 +33,9 @@ Cloud Volumes Service for Google Cloud 提供两种服务类型： _CVS_ 和 _CV
 * 对于具有中到高性能存储需求的 K8s 应用程序，请选择支持 CVS-Performance 并使用高级或至尊存储类的 Google Cloud 区域。此类工作负载包括 AI/ML 管道， CI/CD 管道，介质处理以及包括关系， NoSQL ，时间序列等在内的数据库
 * 对于具有中低端存储性能需求的 K8s 应用程序（ Web 应用程序，通用文件存储等），请选择支持 CVS 或 CVS-Performance 且具有标准存储类的 Google Cloud 区域。
 
+
+
+NOTE: 如果将CVS服务类型与Asta Trident 23.01或更高版本结合使用、则需要先配置存储池、然后才能配置卷。如果在未配置存储池的情况下配置卷、则卷配置将失败。请参见 https://cloud.google.com/architecture/partners/netapp-cloud-volumes/quickstart#create_a_volume_of_the_cvs_service_type["Cloud Volumes Service文档"^] 有关创建卷的详细信息、请参见。
 
 下表快速比较了此页面上所述的信息。
 

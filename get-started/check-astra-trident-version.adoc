@@ -1,0 +1,66 @@
+---
+sidebar: sidebar 
+permalink: get-started/check-astra-trident-version.html 
+keywords: astra trident, check, version 
+summary: 对于自行管理的集群、您可能需要确保使用正确的Asta三端技术支持版本。 
+---
+= 检查Asta三端安装版本
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+要添加使用Asta Trdent提供存储服务的自管理集群、请确保已安装的Asta Trdent版本为最新版本。
+
+.步骤
+. 检查Astra Trident版本。
++
+[source, console]
+----
+kubectl get tridentversions -n trident
+----
++
+如果安装了Astra Trident、则会显示类似于以下内容的输出：
+
++
+[listing]
+----
+NAME      VERSION
+trident   22.10.0
+----
++
+如果未安装Astra Trident、您将看到类似于以下内容的输出：
+
++
+[listing]
+----
+error: the server doesn't have a resource type "tridentversions"
+----
++
+
+NOTE: 如果Astra Trident未安装或不是最新版本、并且您希望集群使用Astra Trident提供存储服务、则需要先安装最新版本的Astra Trident、然后再继续操作。请参见 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Astra Trident 文档"^] 有关说明，请参见。
+
+. 确保Pod正在运行：
++
+[source, console]
+----
+kubectl get pods -n trident
+----
+. 检查存储类是否正在使用受支持的Astra Trident驱动程序。配置程序名称应为 `csi.trident.netapp.io`。请参见以下示例：
++
+[source, console]
+----
+kubectl get sc
+----
++
+响应示例：
+
++
+[listing]
+----
+NAME                   PROVISIONER                    RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+ontap-gold (default)   csi.trident.netapp.io          Delete          Immediate           true                   5d23h
+----
+

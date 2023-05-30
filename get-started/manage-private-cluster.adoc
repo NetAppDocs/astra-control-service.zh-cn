@@ -12,11 +12,19 @@ summary: 设置环境后，您可以创建 Kubernetes 集群，然后将其添�
 
 
 [role="lead"]
+您可以使用Astra Control Service管理AKS中的私有Azure Kubbernetes Service (AKS)和Red Hat OpenShift集群。以下说明假定您已创建专用AKS或OpenShift集群、并准备了一种安全方法来远程访问该集群；有关创建和访问专用AKS或OpenShift集群的详细信息、请参阅以下文档：
+
+* https://docs.microsoft.com/azure/aks/private-clusters["适用于私有AKS集群的Azure文档"^]
+* https://learn.microsoft.com/en-us/azure/openshift/howto-create-private-cluster-4x["适用于私有OpenShift集群的Azure文档"^]
+
+
 您可以使用Astra Control Service管理私有Azure Kubbernetes Service (AKS)集群以及AKS中的私有Red Hat OpenShift集群。以下说明假定您已创建专用AKS或OpenShift集群、并准备了一种安全方法来远程访问该集群；有关创建和访问专用AKS或OpenShift集群的详细信息、请参阅以下文档：
 
 * https://docs.microsoft.com/azure/aks/private-clusters["适用于私有AKS集群的Azure文档"^]
 * https://learn.microsoft.com/en-us/azure/openshift/howto-create-private-cluster-4x["适用于私有OpenShift集群的Azure文档"^]
 
+
+您可以使用Astra Control Service管理专用Amazon Elastic Kubelnetes Service (EKS)集群。以下说明假定您已创建一个专用EKS集群、并已准备好一种安全方法来远程访问该集群；有关创建和访问专用EKS集群的详细信息、请参阅 https://docs.aws.amazon.com/eks/latest/userguide/private-clusters.html["Amazon EKS文档"^]。
 
 
 
@@ -51,7 +59,15 @@ kubectl apply -f astraconnector_operator.yaml -n astra-connector-operator
 kubectl create ns astra-connector
 ----
 . 按照中的说明生成Astra Control API令牌 https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html["Astra Automation文档"^]。
-. 修改Asta Connector操作员存储库的config/semples/directory中的示例配置文件以包含 `spec.natssync-client.cloud-bridge-url` 密钥。例如：
+. 修改ASRA Connector操作程序存储库的config/sempls目录中的示例配置文件、使其包含特定于您的环境的以下项值：
++
+** `spec.natssync-client.cloud-bridge-url`
+** `spec.astra.token`
+** `spec.astra.clusterName`
+** `spec.astra.accountId`
++
+例如：
+
 +
 [listing]
 ----
@@ -77,6 +93,8 @@ spec:
     accountId: <Astra Control account id>
     acceptEULA: yes
 ----
+
+
 . 应用 Astra Connector 自定义资源定义（ CRD ）。
 +
 [source, console]
@@ -90,7 +108,7 @@ kubectl apply -f config/samples/astraconnector_v1.yaml -n astra-connector
 kubectl get astraconnector astra-connector -n astra-connector
 ----
 +
-您应参考类似于以下内容的输出：
+您应看到类似于以下内容的输出：
 
 +
 [source, console]
@@ -104,11 +122,7 @@ astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
 
 == 设置永久性存储
 
-为集群配置永久性存储。您可以使用Azure NetApp Files 或Azure受管磁盘。有关使用以下选项配置Azure的详细信息、请参见入门文档：
-
-* https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-microsoft-azure-with-anf.html["使用 Azure NetApp Files 设置 Microsoft Azure"]
-* https://docs.netapp.com/us-en/astra-control-service/get-started/set-up-microsoft-azure-with-amd.html["使用 Azure 受管磁盘设置 Microsoft Azure"]
-
+为集群配置永久性存储。有关配置永久性存储的详细信息、请参见入门文档：
 
 
 
