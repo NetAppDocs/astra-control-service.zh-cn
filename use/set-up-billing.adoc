@@ -29,7 +29,7 @@ summary: 'Astra Control Service提供了两种命名空间计费方式。通过�
 Astra 控制服务提供三个计划：
 
 免费计划:: 免费管理多达10个命名空间。
-高级 PayGo:: 按每个命名空间的特定速率管理不限数量的命名空间。
+高级 PayGo:: 按特定速率管理每个命名空间的数量不限。
 高级订阅:: 按折扣价预付费、每年订阅一次、您可以为每个_namespace pack_管理多达10个命名空间。请联系NetApp销售部门、根据您的组织需要购买任意数量的软件包。例如、从Astra Control Service购买3个包来管理30个命名空间。如果您管理的命名空间超过年度订阅所允许的数量、则会按每个额外命名空间的订阅相关超额使用率向您收取费用。
 +
 --
@@ -50,7 +50,7 @@ ifdef::gcp[]
 
 === Google Cloud 计费
 
-使用 Astra 控制服务管理 GKE- 集群时，持久卷由 NetApp Cloud Volumes Service 提供支持，应用程序的备份存储在 Google Cloud 存储分段中。
+永久性卷由NetApp Cloud Volumes Service提供支持、应用程序的备份存储在Google云存储分段中。
 
 * https://cloud.google.com/solutions/partners/netapp-cloud-volumes/costs["查看 Cloud Volumes Service 的定价详细信息"^]。
 +
@@ -67,12 +67,15 @@ ifdef::azure[]
 
 === Microsoft Azure 计费
 
-使用 Astra 控制服务管理 AKS 集群时， Azure NetApp Files 会为永久性卷提供支持，应用程序的备份会存储在 Azure Blob 容器中。
+永久性卷由Azure NetApp Files提供支持、应用程序的备份存储在Azure Blb容器中。
 
 * https://azure.microsoft.com/en-us/pricing/details/netapp["查看 Azure NetApp Files 的定价详细信息"^]。
 * https://azure.microsoft.com/en-us/pricing/details/storage/blobs["查看 Microsoft Azure Blob 存储的定价详细信息"^]。
 * https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-astra-acs?tab=PlansAndPrice["在Azure Marketplace中查看A作用 力控制服务计划和定价"]
 
+
+
+NOTE: Astra Control Service的Azure计费率为每小时一次、在使用时间超过29分钟后开始新的计费时间。
 
 endif::azure[]
 
@@ -82,7 +85,7 @@ ifdef::aws[]
 
 === Amazon Web Services计费
 
-使用Astra控制服务管理AWS集群时、永久性卷由EBS或FSX for NetApp ONTAP 提供支持、应用程序的备份存储在AWS存储分段中。
+永久性卷由EBS或FSx for NetApp ONTAP提供支持、应用程序的备份存储在AWS存储分段中。
 
 * https://aws.amazon.com/eks/pricing/["查看Amazon Web Services的定价详细信息"^]。
 

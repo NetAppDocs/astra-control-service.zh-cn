@@ -16,6 +16,17 @@ NetApp 会定期更新 Astra Control Service ，为您提供新功能，增强�
 
 
 
+== 2023年6月26日
+
+.新增功能和支持
+* Azure Marketplace订阅现在按小时计费、而不是按分钟计费
++
+link:../use/set-up-billing.html["设置计费"]
+
+
+
+
+
 == 2023年5月30日
 
 .新增功能和支持

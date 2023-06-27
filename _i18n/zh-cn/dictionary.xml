@@ -308,14 +308,12 @@
   <block id="5ddf59442786f24c8da307580d0ef431" category="list-text">高级订阅</block>
   <block id="b7b192852402c2ca345a411875aaae75" category="paragraph">如果您还没有 Astra Control 帐户，则购买高级订阅会自动为您创建一个 Astra Control 帐户。如果您已有免费计划，则会自动转换为高级订阅。</block>
   <block id="6b77f6ea2428949be628fe51587bf096" category="section-title">Google Cloud 计费</block>
-  <block id="4edd6e2cac5c4de2dfed17f138966576" category="paragraph">使用 Astra 控制服务管理 GKE- 集群时，持久卷由 NetApp Cloud Volumes Service 提供支持，应用程序的备份存储在 Google Cloud 存储分段中。</block>
   <block id="45f0f10c20d19ddc78bfdf6e608f069a" category="inline-link">查看 Cloud Volumes Service 的定价详细信息</block>
   <block id="e952d755f5ef5c7803cdfa78e9eadb1a" category="list-text"><block ref="89dd56840eed735019d241a1ba2301aa" category="inline-link-rx"></block>。</block>
   <block id="c8fe60ec36c245bbe4ad539a627f858f" category="paragraph">请注意， Astra 控制服务支持所有服务类型和服务级别。您使用的服务类型取决于<block ref="82044babe0850dc199b2a72a287a7a9c" category="inline-link-rx"></block>。</block>
   <block id="ad3fb6b690e4f991f4efd7c6f5faa57e" category="inline-link">查看 Google Cloud 存储分段的定价详细信息</block>
   <block id="a818db5e8b40448ca77b94e5a5ad28f2" category="list-text"><block ref="eb8eb935c0c14910141318c56c72ab57" category="inline-link-rx"></block>。</block>
   <block id="1a8745ef58feccdedbe914ac98126031" category="section-title">Microsoft Azure 计费</block>
-  <block id="386f63f35c235633bcba30f10411ff68" category="paragraph">使用 Astra 控制服务管理 AKS 集群时， Azure NetApp Files 会为永久性卷提供支持，应用程序的备份会存储在 Azure Blob 容器中。</block>
   <block id="1658b2532a0c8ef3d1a8919b2adca0b1" category="inline-link">查看 Azure NetApp Files 的定价详细信息</block>
   <block id="f3cb6a45114448521e0d760118c3450a" category="list-text"><block ref="5b54cd0a32569a83c26d011725a70e8f" category="inline-link-rx"></block>。</block>
   <block id="834f115f891f80f44d1e669ac9431329" category="inline-link">查看 Microsoft Azure Blob 存储的定价详细信息</block>
@@ -1348,7 +1346,6 @@
   <block id="2c1b2aa1361b2b30f079d2afc37936be" category="admonition">Astra Control 本身不是一个标准应用程序，而是一个 " 系统应用程序 " 。 您不应尝试管理 Astra Control 本身。默认情况下，用于管理的 Astra Control 本身不会显示。</block>
   <block id="f60b3d0d58c083c7ae2804ae31c0e422" category="paragraph">如果在删除集群之前未删除永久性卷、则需要从云提供商中手动删除后端卷。</block>
   <block id="3e00312869fede718a42b76c5ee6e2ff" category="section-title">Amazon Web Services计费</block>
-  <block id="7e2fa2a7770af29cbdd272c113a7fc4e" category="paragraph">使用Astra控制服务管理AWS集群时、永久性卷由EBS或FSX for NetApp ONTAP 提供支持、应用程序的备份存储在AWS存储分段中。</block>
   <block id="9e3c019abe231865229584e6f6e502de" category="inline-link">查看Amazon Web Services的定价详细信息</block>
   <block id="aa992a3ab98a373e82c93ded62f2d914" category="list-text"><block ref="31ae57f3df84273eeed4bc5214fec458" category="inline-link-rx"></block>。</block>
   <block id="0ea2d3938278fb80f86236d57c1fdd9f" category="paragraph">通过使用自动保护策略或临时创建快照和备份来保护应用程序。您可以使用 Astra UI 或<block ref="c3bdc3d9b521474044010a53b984c85e" category="inline-link-rx"></block> 保护应用程序。</block>
@@ -1724,7 +1721,6 @@
   <block id="d79e72b74c5b67b0661208c31b83584a" category="paragraph">您可以使用多种方法管理Astra Control Service帐户计费。如果您使用的是Azure或Amazon AWS、则可以通过Microsoft Azure Marketplace或AWS Marketplace订阅Astra Control服务计划。执行此操作时、您可以通过Marketplace管理您的计费详细信息。或者、您也可以直接向NetApp订阅。如果您直接向NetApp订阅、则可以通过Astra Control Service管理您的计费详细信息。如果您在未订阅的情况下使用Astra控制服务、则系统会自动订阅免费计划。</block>
   <block id="f5eb6d3938f47779581da936415d136a" category="paragraph">您可以通过Astra Control Service Free Plan管理帐户中多达10个命名空间。如果您要管理10个以上的命名空间、则需要通过从免费计划升级到高级计划来设置计费、或者通过Azure Marketplace或AWS Marketplace进行订阅。</block>
   <block id="89b4085fdb03b14f69ace6f96236c990" category="list-text">免费管理多达10个命名空间。</block>
-  <block id="c9a3db1f241c40ba4fb01ecd0f5f278c" category="list-text">按每个命名空间的特定速率管理不限数量的命名空间。</block>
   <block id="2f4b44f727ad34215a2cafb46fe686b5" category="list-text">按折扣价预付费、每年订阅一次、您可以为每个_namespace pack_管理多达10个命名空间。请联系NetApp销售部门、根据您的组织需要购买任意数量的软件包。例如、从Astra Control Service购买3个包来管理30个命名空间。如果您管理的命名空间超过年度订阅所允许的数量、则会按每个额外命名空间的订阅相关超额使用率向您收取费用。</block>
   <block id="651491e55c46a7d045ef58a80fa5e427" category="paragraph">创建Astra Control帐户时、您会自动订阅免费计划。Astra Control的信息板显示了您当前在10个可用命名空间中管理的命名空间数量。在管理包含命名空间的第一个应用程序时、开始为某个命名空间计费；在管理包含此命名空间的最后一个应用程序时、该命名空间的计费将停止。</block>
   <block id="3aa4dd0198751b5007ad998ab156a84c" category="paragraph">如果您尝试管理第11个命名空间、则Astra Control会通知您已达到免费计划的限制。然后，系统会提示您从免费计划升级到高级计划。您将按每个额外命名空间的订阅相关超额使用率付费。</block>
@@ -2046,7 +2042,6 @@
   <block id="5f116b62082ad46b96d2b6d9abbcf0ec" category="admonition">如果您选择了其他存储类、但在还原时此存储类不存在、则会返回错误。</block>
   <block id="ada8ec5cd268a153424f1f7cb79750a2" category="paragraph">集群状态将更改为*正在删除*。之后，该群集将从*Clusters页中删除，并且不再由Astra Control管理。</block>
   <block id="85fcb9615339f8f8ea462bcc5faea0c9" category="list-text">*首先保护您的应用程序*：强烈建议您在恢复应用程序之前为其创建快照或备份。这样、您可以在还原失败时从快照或备份克隆。</block>
-  <block id="dad130a6ad30a7802e5df566fbf9e7fc" category="list-text">*检查目标卷*：如果要还原到其他集群、请确保此集群使用相同的永久性卷访问模式(例如ReadWriteMany)。如果目标永久性卷访问模式不同，还原操作将失败。</block>
   <block id="4250100f234fe7960272e070cd21fe6e" category="list-text">*规划空间需求*：对使用NetApp ONTAP 存储的应用程序执行原位还原时、还原的应用程序使用的空间可能会增加一倍。执行原位还原后、从还原的应用程序中删除所有不需要的快照以释放存储空间。</block>
   <block id="fd09da9cdc1a428192d0b1e00adcc181" category="list-text">从“操作”列的“选项”菜单中，选择*Restore*。</block>
   <block id="fb43cf9ce5f31c6de66316a29725099b" category="list-text">选择要用于原位还原应用程序的快照或备份、这会将应用程序还原到其自身的早期版本。</block>
@@ -2137,10 +2132,7 @@
   <block id="0df1bbdefb6c7ab54388f20e615d6ff6" category="list-text">*已配置Astra三端存储类*：必须至少有一个Astra三端存储类<block ref="56eee92baaddefbebda4bc1d0011f25b" category="inline-link-rx"></block> 在集群上。如果配置了默认存储类、请确保只有一个存储类具有此标注。</block>
   <block id="eddf0b0c77ced4551605b01f9388baea" category="summary">您需要为自行管理的集群创建admin-Role-kubeconfigfile文件。</block>
   <block id="9dc913e0573023f0b54d8d304c10a592" category="doc">创建管理集群角色kubeconfigfile</block>
-  <block id="8737bd0c30a0b2e2c8127074a8e8ff3b" category="paragraph">要添加自管理集群、您需要创建一个管理集群角色kubeconfigfile文件。</block>
-  <block id="ddc9715607fb981646b02ffaaae9d35b" category="section-title">为然彻、上游Kubernetes和Red Hat OpenShift集群创建kubeconfigfile</block>
   <block id="bacde2d5f8907c39cfce03260081b849" category="section-title">为Amazon EKS集群创建kubeconfig.文件</block>
-  <block id="b54e0018cc383761560c8cea8c440181" category="paragraph">按照Amazon文档中的说明为Amazon EKS集群创建kubeconconfig文件：</block>
   <block id="219018d1a7fc0ccfc7ae0919efd38830" category="inline-link">为Amazon EKS集群创建或更新kubeconconfig文件</block>
   <block id="5efa640818add52a71a9634fe973dd16" category="paragraph"><block ref="5efa640818add52a71a9634fe973dd16" category="inline-link-rx"></block></block>
   <block id="0f2007d7b4634d1a7885862c6f181b9a" category="paragraph">Astra控制服务支持将NetApp Cloud Volumes Service for Google Cloud、Google持久磁盘或NetApp Cloud Volumes ONTAP作为永久性卷的存储后端选项。</block>
@@ -2158,4 +2150,24 @@
   <block id="a7a08622ee5c8019b57354b99b7693b2" category="list-text">选择以下选项之一：</block>
   <block id="42f6c62242bb567ac4a309a82717d6e9" category="list-text">*使用原始存储类还原*：除非目标集群上不存在、否则应用程序将使用最初关联的存储类。在这种情况下、将使用集群的默认存储类。</block>
   <block id="cc9916e812cf950bc0992213a1e5cc57" category="list-text">*使用其他存储类还原*：选择目标集群上的存储类。在还原过程中、所有应用程序卷(无论其最初关联的存储类是什么)都将迁移到此不同的存储类。</block>
+  <block id="9d9af3135a71ef374583f995f07a2539" category="list-text">*检查目标卷*：如果要还原到其他存储类、请确保该存储类使用相同的永久性卷访问模式(例如ReadWriteMany)。如果目标永久性卷访问模式不同，还原操作将失败。</block>
+  <block id="5856d66908e22cf434dbd9afeccf641a" category="list-text">按特定速率管理每个命名空间的数量不限。</block>
+  <block id="bf4f678d4a57f18576a93b45fbd878bd" category="paragraph">永久性卷由NetApp Cloud Volumes Service提供支持、应用程序的备份存储在Google云存储分段中。</block>
+  <block id="a56e21e29fdc4a1e8ca3d0fe83ad8ec3" category="paragraph">永久性卷由Azure NetApp Files提供支持、应用程序的备份存储在Azure Blb容器中。</block>
+  <block id="86a07afa8b9287decc7dfb566c79acd0" category="admonition">Astra Control Service的Azure计费率为每小时一次、在使用时间超过29分钟后开始新的计费时间。</block>
+  <block id="e981ded0727c1f04fd1694b122e20eaf" category="paragraph">永久性卷由EBS或FSx for NetApp ONTAP提供支持、应用程序的备份存储在AWS存储分段中。</block>
+  <block id="d4ae639645d553b896abe75ac8b8fb73" category="paragraph">您可以使用kubeconfig"文件将集群添加到Astra Control Service。根据要添加的集群类型、您可能需要使用特定步骤为集群手动创建kubeconfigfile文件。</block>
+  <block id="0a5ba28570aea2968b693d84884e128b" category="list-text"><block ref="270c1986302e0f0fbc9bdc7d3d446b6f" category="inline-xref-macro-rx"></block></block>
+  <block id="83b7dd6cfece02a28db9f2ac3e288f6b" category="list-text"><block ref="ff6d2cef6da4f3683aa2957d17e520ce" category="inline-xref-macro-rx"></block></block>
+  <block id="f4e3f91ab28afe92afe1b18439c87032" category="paragraph">按照以下说明为Amazon EKS集群创建kubeconfigfile文件和永久令牌密钥。EKS中托管的集群需要永久令牌密钥。</block>
+  <block id="86c2623498c303c25d17eef1213b105f" category="list-text">按照亚马逊文档中的说明生成kubeconfig:</block>
+  <block id="213438247a7298f2d7b9c6cacef2c596" category="paragraph">根据需要调整服务帐户名称。命名空间<block ref="7396424ab57f5865f0549a6bcf5fcba3" prefix=" " category="inline-code"></block> 这些步骤需要。如果您在此处更改了服务帐户名称、则应在以下步骤中应用相同的更改。</block>
+  <block id="258e85c2b71b211fc9c71a141998a89d" category="list-text">创建名为的服务帐户令牌机密文件<block ref="75341b94414ff18c92f49d4d7c83a188" prefix=" " category="inline-code"></block>。</block>
+  <block id="b73c5900cc67ec3996003ea18742f312" category="list-text">应用令牌密钥：</block>
+  <block id="0c4c0773122e9387cad53cff8068b18b" category="list-text">检索令牌密钥：</block>
+  <block id="84233ef8b39305d023ce1d5e237bbe9d" category="list-text">更换<block ref="ee11cbb19052e40b07aac0ca060c23ee" prefix=" " category="inline-code"></block> 部分的AWS EKS kubeconfigconfig文件以及令牌、如以下示例所示：</block>
+  <block id="393c821bd73b2367663c50c77fd00df6" category="section-title">为其他类型的集群创建kubeconfig.文件</block>
+  <block id="2b30723c9e7134241d748eae9faa73a6" category="paragraph">按照以下说明为然彻集群、上游Kubernetes集群和Red Hat OpenShift集群创建kubeconfig"文件。</block>
+  <block id="e6bab5933e86bee96753d8079fcceaed" category="section-title">2023年6月26日</block>
+  <block id="b77235e640ab8b5a90390081c423e880" category="list-text">Azure Marketplace订阅现在按小时计费、而不是按分钟计费</block>
 </blocks>
