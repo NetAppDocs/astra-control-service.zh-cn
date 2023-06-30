@@ -2148,7 +2148,6 @@
   <block id="a7a08622ee5c8019b57354b99b7693b2" category="list-text">选择以下选项之一：</block>
   <block id="42f6c62242bb567ac4a309a82717d6e9" category="list-text">*使用原始存储类还原*：除非目标集群上不存在、否则应用程序将使用最初关联的存储类。在这种情况下、将使用集群的默认存储类。</block>
   <block id="cc9916e812cf950bc0992213a1e5cc57" category="list-text">*使用其他存储类还原*：选择目标集群上的存储类。在还原过程中、所有应用程序卷(无论其最初关联的存储类是什么)都将迁移到此不同的存储类。</block>
-  <block id="9d9af3135a71ef374583f995f07a2539" category="list-text">*检查目标卷*：如果要还原到其他存储类、请确保该存储类使用相同的永久性卷访问模式(例如ReadWriteMany)。如果目标永久性卷访问模式不同，还原操作将失败。</block>
   <block id="5856d66908e22cf434dbd9afeccf641a" category="list-text">按特定速率管理每个命名空间的数量不限。</block>
   <block id="bf4f678d4a57f18576a93b45fbd878bd" category="paragraph">永久性卷由NetApp Cloud Volumes Service提供支持、应用程序的备份存储在Google云存储分段中。</block>
   <block id="a56e21e29fdc4a1e8ca3d0fe83ad8ec3" category="paragraph">永久性卷由Azure NetApp Files提供支持、应用程序的备份存储在Azure Blb容器中。</block>
@@ -2170,4 +2169,7 @@
   <block id="b77235e640ab8b5a90390081c423e880" category="list-text">Azure Marketplace订阅现在按小时计费、而不是按分钟计费</block>
   <block id="972d9f8e0e28ff88864515cf37f116b2" category="paragraph">在开始之前、请确保您的计算机上具有以下各项：</block>
   <block id="e518ff6eca9962a9ad470732191bb026" category="list-text">已安装kubec不得 安装v1.23或更高版本</block>
+  <block id="30136395f01879792198317c11831ea4" category="inline-link">Kubernetes</block>
+  <block id="501a7b3c879675fb528c68e904b076d1" category="list-text">*检查目标卷*：如果要还原到其他存储类、请确保该存储类使用相同的永久性卷访问模式(例如ReadWriteMany)。如果目标永久性卷访问模式不同，还原操作将失败。例如、如果源永久性卷使用rwx访问模式、请选择无法提供rwx的目标存储类、例如Azure托管磁盘、AWS EBS、Google持久磁盘或<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block>，发生原因则还原操作是否会失败。有关永久性卷访问模式的详细信息、请参阅<block ref="051768f02ea3f9f1a6b86b9d9b060248" category="inline-link-rx"></block> 文档。</block>
+  <block id="0f707c2e2c303edecbc57b2a451ad8a9" category="list-text">*检查目标卷*：如果克隆到其他存储类、请确保该存储类使用相同的永久性卷访问模式(例如ReadWriteMany)。如果目标永久性卷访问模式不同、则克隆操作将失败。例如、如果源永久性卷使用rwx访问模式、请选择无法提供rwx的目标存储类、例如Azure托管磁盘、AWS EBS、Google持久磁盘或<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block>，发生原因将使克隆操作失败。有关永久性卷访问模式的详细信息、请参阅<block ref="051768f02ea3f9f1a6b86b9d9b060248" category="inline-link-rx"></block> 文档。</block>
 </blocks>
