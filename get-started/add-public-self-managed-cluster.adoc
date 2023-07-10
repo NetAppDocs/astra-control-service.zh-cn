@@ -1,0 +1,253 @@
+---
+sidebar: sidebar 
+permalink: get-started/add-public-self-managed-cluster.html 
+keywords: discover cluster, add cluster, add kubernetes cluster, discover kubernetes cluster, add cluster 
+summary: 设置环境后，您可以创建 Kubernetes 集群，然后将其添加到 Astra Control Service 。 
+---
+= 将公共自管理集群添加到Astra Control Service
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+设置环境后，您可以创建 Kubernetes 集群，然后将其添加到 Astra Control Service 。
+
+自管理集群是指直接配置和管理的集群。Astra Control Service支持在公共云环境中运行的自管理集群。您可以通过上传将自管理集群添加到Astra Control Service `kubeconfig.yaml` 文件您需要确保集群满足此处所述的要求。
+
+
+
+== 支持的Kubnetes分发版
+
+您可以使用Astra Control Service管理以下类型的公共自管理集群：
+
+|===
+| Kubbernetes分发 | 支持的版本 
+
+
+| 基于Azure堆栈HCI的Azure Kubnetes Service | 采用AKS 1.23和1.24的Azure Stack HCI 21H2和22H2 
+
+
+| Google Anthos | 1.12到1.14 
+
+
+| Kubnetes (上游) | 1.24到1.26 (Kubirnetes 1.25或更高版本需要Asta Trident 22.10或更高版本) 
+
+
+| Rancher Kubernetes Engine （ RKE） | RKE 1.3与R能 手2.6
+RKE 1.4与R能 手2.7
+RKE 2 (v1.23.x)与R能 手2.6
+RKE 2 (v1.24.x)与R9cher 2.7 
+
+
+| Red Hat OpenShift 容器平台 | 4.10至4.12 
+
+
+| VMware Tanzu Kubernetes网格 | 1.6. 
+
+
+| VMware Tanzu Kubernetes Grid Integrated Edition | 1.14和1.15 
+|===
+以下说明假定您已创建一个自行管理的集群。
+
+* <<将集群添加到Asta Control Service>>
+* <<更改默认存储类>>
+
+
+
+
+== 将集群添加到Asta Control Service
+
+登录到 Astra Control Service 后，第一步是开始管理集群。在将集群添加到Astra Control Service之前、您需要执行特定任务并确保集群满足特定要求。
+
+.开始之前
+[%collapsible%open]
+====
+自管理集群是指直接配置和管理的集群。Astra Control Service支持在公共云环境中运行的自管理集群。您的自管理集群可以使用Astra Trident与NetApp存储服务相连接、也可以使用容器存储接口(Container Storage Interface、CSI)驱动程序与Amazon Elastic Block Store (EBS)、Azure受管磁盘和Google Persistent Disk相连接。
+
+Astra控制服务支持使用以下Kubernetes分发版的自管理集群：
+
+* Red Hat OpenShift 容器平台
+* Rancher Kubernetes引擎
+* 上游Kubernetes
+
+
+您的自管理集群需要满足以下要求：
+
+* 集群必须可通过Internet访问。
+* 集群不能托管在内部网络中；它必须托管在公共云环境中。
+* 如果您正在使用或计划使用已启用CSI驱动程序的存储、则必须在集群上安装相应的CSI驱动程序。有关使用CSI驱动程序集成存储的详细信息、请参阅存储服务的文档。
+* 您可以访问仅包含一个上下文元素的集群kubeconfigfile文件。请遵循 link:create-kubeconfig.html["这些说明"^] 生成kubeconfig.文件。
+* *仅Rancher *：在Rancher环境中管理应用程序集群时、请修改Rancher提供的kubeconfig文件中的应用程序集群默认上下文、以使用控制平面上下文、而不是Rancher API服务器上下文。这样可以减少 Rancher API 服务器上的负载并提高性能。
+* *Astra三端*：如果您正在使用或计划使用NetApp存储，请确保已安装最新版本的Astra三端。如果已安装Astra三端到子、 link:check-astra-trident-version.html["检查以确保它是最新版本"^]。
++
+
+NOTE: 您可以 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html#choose-the-deployment-method["部署Astra Trident"^] 使用Trident运算符(手动或使用Helm图表)或 `tridentctl`。在安装或升级Astra Trident之前、请查看 https://docs.netapp.com/us-en/trident/trident-get-started/requirements.html["支持的前端、后端和主机配置"^]。
+
++
+** *已配置Astra三端存储后端*：必须至少配置一个Astra三端存储后端 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-postdeployment.html#step-1-create-a-backend["已配置"^] 在集群上。
+** *已配置Astra三端存储类*：必须至少有一个Astra三端存储类 https://docs.netapp.com/us-en/trident/trident-use/manage-stor-class.html["已配置"^] 在集群上。如果配置了默认存储类、请确保只有一个存储类具有此标注。
+** 已安装并配置* Astra Trident卷快照控制器和卷快照类*：卷快照控制器必须为 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["已安装"^] 以便可以在Astra Control中创建快照。至少一个Astra Trident `VolumeSnapshotClass` 已经 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-set-up-a-volumesnapshotclass["设置"^] 由管理员执行。
+
+
+
+
+====
+.步骤
+. 在信息板上，选择 * 管理 Kubernetes 集群 * 。
++
+按照提示添加集群。
+
+. *提供程序*：选择*其他*选项卡以添加有关自行管理的集群的详细信息。
++
+.. *其他*：通过上传提供有关自管理集群的详细信息 `kubeconfig.yaml` 文件或粘贴的内容 `kubeconfig.yaml` 文件。
++
+
+NOTE: 创建自己的 `kubeconfig` file中、您只能定义*一*上下文元素。请参见 https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/["Kubernetes 文档"^] 有关创建的信息 `kubeconfig` 文件。
+
+
+
+. *凭据名称*：提供要上传到Astra Control的自管理集群凭据的名称。默认情况下，凭据名称会自动填充为集群的名称。
+. *专用路由标识符*：此字段仅适用于专用集群。
+. 选择 * 下一步 * 。
+. (可选)*存储*：(可选)选择默认情况下希望部署到此集群中的Kubernetes应用程序使用的存储类。
++
+.. 要为集群选择新的默认存储类，请启用*Assign a new default storage class*复选框。
+.. 从列表中选择新的默认存储类。
++
+[NOTE]
+====
+每个云提供商存储服务都会显示以下价格、性能和弹性信息：
+
+ifdef::gcp[]
+
+*** Cloud Volumes Service for Google Cloud：价格、性能和弹性信息
+*** Google Persistent Disk：没有价格、性能或弹性信息
+
+
+endif::gcp[]
+
+ifdef::azure[]
+
+*** Azure NetApp Files ：性能和弹性信息
+*** Azure受管磁盘：无可用的价格、性能或弹性信息
+
+
+endif::azure[]
+
+ifdef::aws[]
+
+*** Amazon Elastic Block Store：没有价格、性能或弹性信息
+*** 适用于NetApp ONTAP 的Amazon FSX：没有价格、性能或弹性信息
+
+
+endif::aws[]
+
+*** NetApp Cloud Volumes ONTAP ：没有价格、性能或弹性信息
+
+
+====
++
+每个存储类均可使用以下服务之一：
+
++
+ifdef::gcp[]
+
++
+*** https://cloud.netapp.com/cloud-volumes-service-for-gcp["适用于 Google Cloud 的 Cloud Volumes Service"^]
+*** https://cloud.google.com/persistent-disk/["Google 持久磁盘"^]
+
+
+
+
+
+
+endif::gcp[]
+
+ifdef::azure[]
+
+* https://cloud.netapp.com/azure-netapp-files["Azure NetApp Files"^]
+* https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["Azure 受管磁盘"^]
+
+
+endif::azure[]
+
+ifdef::aws[]
+
+* https://docs.aws.amazon.com/ebs/["Amazon Elastic Block Store"^]
+* https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["适用于 NetApp ONTAP 的 Amazon FSX"^]
+
+
+endif::aws[]
+
+* https://www.netapp.com/cloud-services/cloud-volumes-ontap/what-is-cloud-volumes/["NetApp Cloud Volumes ONTAP"^]
++
+了解更多信息 link:../learn/aws-storage.html["Amazon Web Services集群的存储类"]。了解更多信息 link:../learn/azure-storage.html["AKS 集群的存储类"]。了解更多信息 link:../learn/choose-class-and-size.html["GKE 集群的存储类"]。
+
++
+.. 选择 * 下一步 * 。
+.. *审核和批准*：审核配置详细信息。
+.. 选择*Add*将集群添加到Astra Control Service。
+
+
+
+
+
+
+== 更改默认存储类
+
+您可以更改集群的默认存储类。
+
+
+
+=== 使用Astra Control更改默认存储类
+
+您可以在Astra Control中更改集群的默认存储类。如果集群使用先前安装的存储后端服务、则可能无法使用此方法更改默认存储类(不能选择*设置为默认值*操作)。在这种情况下、您可以 <<使用命令行更改默认存储类>>。
+
+.步骤
+. 在 Astra 控制服务 UI 中，选择 * 集群 * 。
+. 在*集群*页面上、选择要更改的集群。
+. 选择 * 存储 * 选项卡。
+. 选择*存储类*类别。
+. 选择要设置为默认值的存储类的*操作*菜单。
+. 选择*设置为默认值*。
+
+
+
+
+=== 使用命令行更改默认存储类
+
+您可以使用Kubernetes命令更改集群的默认存储类。无论集群的配置如何、此方法都有效。
+
+.步骤
+. 登录到Kubernetes集群。
+. 列出集群中的存储类：
++
+[source, console]
+----
+kubectl get storageclass
+----
+. 从默认存储类中删除默认指定。将<SC_NAME> 替换为存储类的名称：
++
+[source, console]
+----
+kubectl patch storageclass <SC_NAME> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
+----
+. 将其他存储类标记为默认值。将<SC_NAME> 替换为存储类的名称：
++
+[source, console]
+----
+kubectl patch storageclass <SC_NAME> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+----
+. 确认新的默认存储类：
++
+[source, console]
+----
+kubectl get storageclass
+----
+
+
+ifdef::azure[]
+
+endif::azure[]

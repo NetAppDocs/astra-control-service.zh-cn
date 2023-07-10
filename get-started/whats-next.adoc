@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: get-started/whats-next.html 
 keywords: get started, manage apps, manage account 
-summary: 现在，您已登录并将集群添加到 Astra Control ，即可开始使用 Astra Control 的应用程序数据管理功能。 
+summary: 现在、您已登录Astra Control并将集群添加到Astra Control中、可以开始使用Astra Control的应用程序数据管理功能了。 
 ---
 = 下一步是什么？
 :hardbreaks:
@@ -12,7 +12,7 @@ summary: 现在，您已登录并将集群添加到 Astra Control ，即可开�
 
 
 [role="lead"]
-登录并向 Astra Control 添加集群后，您便可开始使用 Astra Control 的应用程序数据管理功能了。
+现在、您已登录并向Astra Control添加了集群、可以开始使用Astra Control的应用程序数据管理功能了。
 
 * link:../use/manage-apps.html["开始管理应用程序"]
 * link:../use/protect-apps.html["保护应用程序"]

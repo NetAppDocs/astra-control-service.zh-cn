@@ -1,0 +1,263 @@
+---
+sidebar: sidebar 
+permalink: get-started/add-public-provider-managed-cluster.html 
+keywords: discover cluster, add cluster, add kubernetes cluster, discover kubernetes cluster, add cluster 
+summary: 设置环境后，您可以创建 Kubernetes 集群，然后将其添加到 Astra Control Service 。 
+---
+= 将公共提供商管理的集群添加到Astra Control Service
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+设置云环境后、您可以创建Kubennetes集群、然后将其添加到Astra Control Service中。
+
+* <<创建 Kubernetes 集群>>
+* <<将集群添加到Asta Control Service>>
+* <<更改默认存储类>>
+
+
+
+
+== 创建 Kubernetes 集群
+
+如果您还没有集群、则可以创建满足要求的集群 link:set-up-amazon-web-services.html#eks-cluster-requirements["Amazon Elastic Kubernetes Service (EKS)的Astra Control Service要求"]。如果您还没有集群、则可以创建满足要求的集群 link:set-up-google-cloud.html#gke-cluster-requirements["Google Kubernetes Engine （ GKEE ）的 Astra Control Service 要求"]。如果您还没有集群、则可以创建满足要求的集群 link:set-up-microsoft-azure-with-anf.html#azure-kubernetes-service-cluster-requirements["采用 Azure NetApp Files 的 Azure Kubernetes Service （ AKS ）的 Astra 控制服务要求"] 或 link:set-up-microsoft-azure-with-amd.html#azure-kubernetes-service-cluster-requirements["采用 Azure 受管磁盘的 Azure Kubernetes Service （ AKS ）的 Astra Control Service 要求"]。
+
+
+NOTE: Astra控制服务支持使用Azure Active Directory (Azure AD)进行身份验证和身份管理的AKS集群。创建集群时、请按照中的说明进行操作 https://docs.microsoft.com/en-us/azure/aks/managed-aad["正式文档"^] 将集群配置为使用Azure AD。您需要确保集群满足AKS管理的Azure AD集成的要求。
+
+
+
+== 将集群添加到Asta Control Service
+
+登录到 Astra Control Service 后，第一步是开始管理集群。在将集群添加到Astra Control Service之前、您需要执行特定任务并确保集群满足特定要求。
+
+.开始之前
+[%collapsible]
+====
+ifdef::aws[]
+
+.Amazon Web Services
+* 您应拥有包含创建集群的IAM用户凭据的JSON文件。 link:../get-started/set-up-amazon-web-services.html#create-an-iam-user["了解如何创建IAM用户"]。
+* 适用于NetApp ONTAP 的Amazon FSX需要Astra Trident。如果您计划使用适用于NetApp ONTAP 的Amazon FSx作为EKS集群的存储后端、请参阅中的Astra Trident信息 link:set-up-amazon-web-services.html#eks-cluster-requirements["EKS集群要求"]。
+* (可选)如果需要提供 `kubectl` 集群对非集群创建者的其他IAM用户的命令访问权限、请参见中的说明 https://aws.amazon.com/premiumsupport/knowledge-center/amazon-eks-cluster-access/["在Amazon EKS中创建集群后、如何为其他IAM用户和角色提供访问权限？"^]。
+* 如果您计划使用NetApp Cloud Volumes ONTAP 作为存储后端、则需要将Cloud Volumes ONTAP 配置为使用Amazon Web Services。请参见Cloud Volumes ONTAP https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html["设置文档"^]。
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+.Microsoft Azure
+* 您应拥有包含在创建服务主体时Azure命令行界面输出的JSON文件。 link:../get-started/set-up-microsoft-azure-with-anf.html#create-an-azure-service-principal-2["了解如何设置服务主体"]。
++
+如果未将 Azure 订阅 ID 添加到 JSON 文件中，您也需要此 ID 。
+
+* 如果您计划使用NetApp Cloud Volumes ONTAP 作为存储后端、则需要将Cloud Volumes ONTAP 配置为与Microsoft Azure配合使用。请参见Cloud Volumes ONTAP https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-azure.html["设置文档"^]。
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+.Google Cloud
+* 您应拥有具有所需权限的服务帐户的服务帐户密钥文件。 link:../get-started/set-up-google-cloud.html#create-a-service-account["了解如何设置服务帐户"]。
+* 如果您计划使用NetApp Cloud Volumes ONTAP 作为存储后端、则需要将Cloud Volumes ONTAP 配置为与Google Cloud配合使用。请参见Cloud Volumes ONTAP https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-gcp.html["设置文档"^]。
+
+
+endif::gcp[]
+
+====
+.步骤
+. 在信息板上，选择 * 管理 Kubernetes 集群 * 。
++
+按照提示添加集群。
+
+. *提供商*：选择您的云提供商、然后提供创建新云实例所需的凭据或选择要使用的现有云实例。
+
+
+ifdef::aws[]
+
+. * Amazon Web Services*：上传JSON文件或从剪贴板粘贴JSON文件的内容、以提供有关Amazon Web Services IAM用户帐户的详细信息。
++
+JSON文件应包含创建集群的IAM用户的凭据。
+
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+. * Microsoft Azure* ：通过上传 JSON 文件或从剪贴板粘贴此 JSON 文件的内容来提供有关 Azure 服务主体的详细信息。
++
+JSON 文件应包含创建服务主体时 Azure 命令行界面的输出。它还可以包含您的订阅 ID ，以便自动添加到 Astra 。否则，您需要在提供 JSON 后手动输入 ID 。
+
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+. * Google Cloud Platform* ：通过上传文件或粘贴剪贴板中的内容来提供服务帐户密钥文件。
++
+Astra 控制服务使用此服务帐户发现在 Google Kubernetes Engine 中运行的集群。
+
+
+
+endif::gcp[]
+
+. *其他*：此选项卡仅适用于自行管理的集群。
++
+.. *云实例名称*：为要在添加此集群时创建的新云实例提供一个名称。了解更多信息 link:../use/manage-cloud-instances.html["云实例"]。
+.. 选择 * 下一步 * 。
++
+Astra Control Service会显示一个集群列表、您可以从中进行选择。
+
+.. *集群*：从列表中选择要添加到Astra Control Service的集群。
++
+
+NOTE: 从集群列表中选择时，请注意*Eligiblity*列。如果集群"不符合条件"或"部分符合条件"、请将鼠标悬停在状态上方以确定集群是否具有问题描述。例如，它可能会标识集群没有工作节点。
+
+.. 选择 * 下一步 * 。
+.. (可选)*存储*：(可选)选择默认情况下希望部署到此集群中的Kubernetes应用程序使用的存储类。
+
+
+. 要为集群选择新的默认存储类，请启用*Assign a new default storage class*复选框。
+. 从列表中选择新的默认存储类。
++
+[NOTE]
+====
+每个云提供商存储服务都会显示以下价格、性能和弹性信息：
+
+ifdef::gcp[]
+
+** Cloud Volumes Service for Google Cloud：价格、性能和弹性信息
+** Google Persistent Disk：没有价格、性能或弹性信息
+
+
+endif::gcp[]
+
+ifdef::azure[]
+
+** Azure NetApp Files ：性能和弹性信息
+** Azure受管磁盘：无可用的价格、性能或弹性信息
+
+
+endif::azure[]
+
+ifdef::aws[]
+
+** Amazon Elastic Block Store：没有价格、性能或弹性信息
+** 适用于NetApp ONTAP 的Amazon FSX：没有价格、性能或弹性信息
+
+
+endif::aws[]
+
+** NetApp Cloud Volumes ONTAP ：没有价格、性能或弹性信息
+
+
+====
++
+每个存储类均可使用以下服务之一：
+
++
+ifdef::gcp[]
+
++
+** https://cloud.netapp.com/cloud-volumes-service-for-gcp["适用于 Google Cloud 的 Cloud Volumes Service"^]
+** https://cloud.google.com/persistent-disk/["Google 持久磁盘"^]
+
+
+
+
+endif::gcp[]
+
+ifdef::azure[]
+
+* https://cloud.netapp.com/azure-netapp-files["Azure NetApp Files"^]
+* https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview["Azure 受管磁盘"^]
+
+
+endif::azure[]
+
+ifdef::aws[]
+
+* https://docs.aws.amazon.com/ebs/["Amazon Elastic Block Store"^]
+* https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["适用于 NetApp ONTAP 的 Amazon FSX"^]
+
+
+endif::aws[]
+
+* https://www.netapp.com/cloud-services/cloud-volumes-ontap/what-is-cloud-volumes/["NetApp Cloud Volumes ONTAP"^]
++
+了解更多信息 link:../learn/aws-storage.html["Amazon Web Services集群的存储类"]。了解更多信息 link:../learn/azure-storage.html["AKS 集群的存储类"]。了解更多信息 link:../learn/choose-class-and-size.html["GKE 集群的存储类"]。
+
++
+.. 选择 * 下一步 * 。
+.. *审核和批准*：审核配置详细信息。
+.. 选择*Add*将集群添加到Astra Control Service。
+
+
+
+
+.结果
+如果这是您为此云提供程序添加的第一个集群、Astra Control Service将为此云提供程序创建一个对象存储、用于备份在符合条件的集群上运行的应用程序。(在为此云提供程序添加后续集群时、不会再创建其他对象存储。)如果指定了默认存储类、则Astra控制服务将设置您指定的默认存储类。对于在Amazon Web Services或Google Cloud Platform中管理的集群、Astra Control Service还会在集群上创建管理员帐户。这些操作可能需要几分钟时间。
+
+
+
+== 更改默认存储类
+
+您可以更改集群的默认存储类。
+
+
+
+=== 使用Astra Control更改默认存储类
+
+您可以在Astra Control中更改集群的默认存储类。如果集群使用先前安装的存储后端服务、则可能无法使用此方法更改默认存储类(不能选择*设置为默认值*操作)。在这种情况下、您可以 <<使用命令行更改默认存储类>>。
+
+.步骤
+. 在 Astra 控制服务 UI 中，选择 * 集群 * 。
+. 在*集群*页面上、选择要更改的集群。
+. 选择 * 存储 * 选项卡。
+. 选择*存储类*类别。
+. 选择要设置为默认值的存储类的*操作*菜单。
+. 选择*设置为默认值*。
+
+
+
+
+=== 使用命令行更改默认存储类
+
+您可以使用Kubernetes命令更改集群的默认存储类。无论集群的配置如何、此方法都有效。
+
+.步骤
+. 登录到Kubernetes集群。
+. 列出集群中的存储类：
++
+[source, console]
+----
+kubectl get storageclass
+----
+. 从默认存储类中删除默认指定。将<SC_NAME> 替换为存储类的名称：
++
+[source, console]
+----
+kubectl patch storageclass <SC_NAME> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
+----
+. 将其他存储类标记为默认值。将<SC_NAME> 替换为存储类的名称：
++
+[source, console]
+----
+kubectl patch storageclass <SC_NAME> -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+----
+. 确认新的默认存储类：
++
+[source, console]
+----
+kubectl get storageclass
+----
+
+
+ifdef::azure[]
