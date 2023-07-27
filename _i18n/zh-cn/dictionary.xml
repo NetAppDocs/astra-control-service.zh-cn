@@ -403,7 +403,6 @@
   <block id="e07596cf624c6e8c354d1188f9bdb6bb" category="doc">还原应用程序</block>
   <block id="73e5c8ce985735a0c92b24da1a48a7fb" category="summary">克隆现有应用程序以在同一个 Kubernetes 集群或另一个集群上创建重复的应用程序。如果您需要将应用程序和存储从一个 Kubernetes 集群移动到另一个集群，则克隆可以助您一臂之力。例如，您可能希望通过 CI CD 管道和 Kubernetes 命名空间移动工作负载。</block>
   <block id="0adcbb2b9c783786f0ac0b7cfb133292" category="doc">克隆和迁移应用程序</block>
-  <block id="b50343ac8865ee6508570846230e18d5" category="list-text">选择是要从现有快照还是备份创建克隆。如果不选择此选项，则 Astra Control 将根据应用程序的当前状态创建克隆。</block>
   <block id="262c2c7b16c416e39567678b2dfa52c1" category="section-title">在集群上安装应用程序</block>
   <block id="f10cb0ea0034e1f4379ccb2c8a481c0b" category="list-text"><block ref="f10cb0ea0034e1f4379ccb2c8a481c0b" category="inline-link-macro-rx"></block></block>
   <block id="cd9652b8cc8533a7d8fe2d3ddeb81557" category="list-text"><block ref="cd9652b8cc8533a7d8fe2d3ddeb81557" category="inline-link-macro-rx"></block></block>
@@ -547,16 +546,13 @@
   <block id="40e5c10855fbafbea8290f73a6d04f70" category="section-title">2021 年 6 月 2 日</block>
   <block id="0f71f0ee6bed3d528b8e76714ee6a81d" category="paragraph">此版本包含错误修复以及 Google Cloud 支持的以下增强功能。</block>
   <block id="33b49ba36195927db2411b412cfe0b4c" category="inline-link-macro">了解有关 GKEE 集群要求的更多信息</block>
-  <block id="94aa6fa7719fbfefbbd46c4b08c22b4b" category="paragraph"><block ref="c3bd8fba045cfa6e89cf51e6e5781d5d" category="inline-link-macro-rx"></block>。</block>
   <block id="7d782479a41a3941b57cc7c2b60d318a" category="inline-link-macro">了解如何开始使用</block>
   <block id="d0c288db47307237677ead5ae8dbf32b" category="inline-link">了解如何使用 REST API 自动执行应用程序数据生命周期管理</block>
   <block id="9a4e809cf5b98aab76642ac595e658d8" category="paragraph"><block ref="d96242c4026b1863ec2b29df005dc070" category="inline-link-rx"></block>。</block>
   <block id="9908394cca5993b5d280b7ec9749f2d1" category="paragraph">按折扣价预付费，每年订阅一次，您可以在每个应用程序软件包中管理多达 10 个应用程序。请联系 NetApp 销售部门，根据您的组织需要购买任意数量的软件包—例如，从 Astra Control Service 购买 3 个软件包来管理 30 个应用程序。</block>
   <block id="2a5cf8d74e69ce024c7b1a65f9caeaf7" category="paragraph">如果您管理的应用程序超过年度订阅所允许的数量，则每个应用程序的超额费用为每分钟 0.005 美元（与高级 PayGo 相同）。</block>
   <block id="e59328f35d0a769573f1f66bb3b269cf" category="inline-link-macro">了解有关 Astra Control 服务定价的更多信息</block>
-  <block id="2691bc250518e01fc8a64e87887765c4" category="paragraph"><block ref="3315f5b8eeab7eb8e59fe4f651ae450a" category="inline-link-macro-rx"></block>。</block>
   <block id="7056b3684820e2ba6827e9d27c85715f" category="inline-link-macro">了解有关管理应用程序的更多信息</block>
-  <block id="5ee8d4e880da1ab6adf2ef58cad52bc3" category="paragraph"><block ref="b64ad29284518b0972171e8bbb41ea75" category="inline-link-macro-rx"></block>。</block>
   <block id="58a37706ad29b91b5ea0febd18591e9e" category="inline-image-macro">"Apps" 页面的屏幕截图，其中已选择 "Discovered （已发现） " 选项卡。</block>
   <block id="dc52ad8a88f5c9ee3cb4fe055db4e1dc" category="paragraph"><block ref="dc52ad8a88f5c9ee3cb4fe055db4e1dc" category="inline-image-macro-rx" type="image"></block></block>
   <block id="159d293f53335411fd6cc5fe00714c00" category="inline-image-macro">配置保护策略对话框的屏幕截图，您可以在其中启用每小时，每天，每周和每月计划。</block>
@@ -568,10 +564,8 @@
   <block id="429b81900737e151eef475ff31869fa3" category="inline-link">支持 Cloud Volumes Service 的 Google 云区域</block>
   <block id="28d262f7686b19b993c8250943518a7f" category="paragraph">此增强功能意味着， Astra Control Service 现在可以管理在 _any_ 中运行的 Kubernetes 集群的应用程序数据<block ref="69fa08b6ef6184ae8dd1a91cecb10b56" category="inline-link-rx"></block>。</block>
   <block id="b536aa5bb92e93036b2454d38b99f56f" category="inline-link-macro">了解有关选择服务类型的更多信息</block>
-  <block id="7a5679db41601d3fecb409a68ce4c9b2" category="paragraph">如果您可以灵活地在 Google Cloud 区域之间进行选择，则可以根据性能要求选择 CVS 或 CVS-Performance 。 <block ref="89000b13767f1a83f8086c1cc2e31c7d" category="inline-link-macro-rx"></block>。</block>
   <block id="d13993f9f9e60a93ba268e59c921381d" category="paragraph">我们很高兴地宣布， Astra 控制服务现已全面上市。我们采纳了从测试版收到的许多反馈，并进行了一些其他显著的改进。</block>
   <block id="f1b3e68a6481f423fd5c59659b18560d" category="inline-link-macro">了解有关计费的更多信息</block>
-  <block id="964a70c45a61f521ea1c4cb06403d4ee" category="list-text">现在，您可以通过计费从免费计划过渡到高级计划。 <block ref="2e7d11d76129cc6bc66120b2bffcd33e" category="inline-link-macro-rx"></block>。</block>
   <block id="ebb4cef6e957a3f3db21c2430ef1de91" category="list-text">现在，使用 CVS-Performance 服务类型时， Astra Control Service 会创建最小大小为 100 GiB 的永久性卷。</block>
   <block id="00d8253290bc1791dbe2e2f5445579ca" category="list-text">Astra Control Service 现在可以更快地发现应用程序。</block>
   <block id="f0823272d746557a316d9b1a6fcb7c28" category="list-text">现在，您可以自行创建和删除帐户。</block>
@@ -728,19 +722,13 @@
   <block id="36e2bd9e7950f46d3ea6d2bca4c50ba1" category="paragraph">了解如何解决您可能遇到的一些常见问题。</block>
   <block id="d13de4a83d7b44c2e65495def8ef1c7b" category="section-title">有关详细信息 ...</block>
   <block id="825cc355a6b503245e0d84d26f0e16d1" category="paragraph">以下已知问题会影响当前版本：</block>
-  <block id="b9cce366a2d9d759915518e851cf0665" category="list-text"><block ref="16c16afb381b877e03025eb37da25b48" category="inline-xref-macro-rx"></block></block>
   <block id="d3e9aa65af62841e4f76b512ae2f0bc6" category="list-text"><block ref="b3245371f9a4420028b8568536aa8ffb" category="inline-xref-macro-rx"></block></block>
-  <block id="70349fbabd47d30bbfa25bf8e3755abd" category="list-text"><block ref="cc32903e451bee2b84a8f72fefa8ee63" category="inline-xref-macro-rx"></block></block>
   <block id="1af0576f77189b1c71e1d3a9eade995a" category="section-title">使用设置的存储类部署应用程序后，应用程序克隆将失败</block>
   <block id="99dd9758763fdd9d63c8172bb77a83e6" category="paragraph">在使用显式设置的存储类（例如， `helm install ...-set global.storageClass=netapp-cvs-perf-至 至至` ）部署应用程序后，后续克隆应用程序的尝试要求目标集群具有最初指定的存储类。将具有显式设置的存储类的应用程序克隆到没有相同存储类的集群将失败。此情况下没有恢复步骤。</block>
   <block id="cbe80683ce886af66ccaaa3c0870a530" category="section-title">使用特定版本的 PostgreSQL 时应用程序克隆失败</block>
   <block id="70fc1bae36d48b09899dc323f7fbc3b4" category="paragraph">使用 BitNami PostgreSQL 11.5.0 图表时，同一集群中的应用程序克隆始终会失败。要成功克隆，请使用图表的早期或更高版本。</block>
-  <block id="277d303328081a08d224ba1791474f8c" category="section-title">使用外部快照程序 4.2.0 版时，快照最终开始失败</block>
-  <block id="989f15ab4fafcbe33b5c793f7c17921f" category="inline-link">支持的版本</block>
-  <block id="b07ba4d88165e7d28588bdffecc7b23e" category="paragraph">如果将 Kubernetes Snapshot-controller （也称为外部快照程序） 4.2.0 与 Kubernetes 1.20 或 1.21 结合使用，则快照最终可能会开始失败。要防止出现这种情况，请使用其他<block ref="4a7fe4e7f109667d1c8972a591d16348" category="inline-link-rx"></block> 使用 Kubernetes 版本 1.20 或 1.21 的外部快照程序，例如 4.2.1 版。</block>
   <block id="87716101cfca255da11056a624dbce47" category="inline-link-macro">使用 Azure 受管磁盘设置 Microsoft Azure</block>
   <block id="372ba25517e6092baf2e0abc0ae2ef65" category="inline-link-macro">管理应用程序执行挂钩</block>
-  <block id="a916818021b3f228baef189d6dcd5538" category="paragraph"><block ref="bc25b49e1030874d11222c9fe6a36711" category="inline-link-macro-rx"></block>。</block>
   <block id="ec566a7ae96d8d40feeed984810bbeaa" category="section-title">应用程序管理限制</block>
   <block id="b9637d46b079194a13bb9ba833e4a23b" category="paragraph">以下限制会影响 Astra Control Service 对应用程序的管理。</block>
   <block id="a445040139f09298f7fa8e3a22ea47fa" category="section-title">使用 Ppass by reference operators 安装的应用程序克隆可能会失败</block>
@@ -876,7 +864,6 @@
   <block id="0786589eb7392bc413e898e8782cef99" category="list-text">选择 * 我不是 NetApp 注册客户 * 。</block>
   <block id="8f82aca9abb16b6ff389726d5fbe355a" category="section-title">新的存储后端选项</block>
   <block id="8527c0ab84fa8956acb7ba13d5e3ad9d" category="inline-link-macro">了解 Astra 控制服务如何使用适用于 Google Cloud 的 Cloud Volumes Service 作为永久性卷的存储后端</block>
-  <block id="033c399986bd3d9b7ef54b989611f70b" category="paragraph"><block ref="ae94f8298ace086e6c054e879241557e" category="inline-link-macro-rx"></block>。</block>
   <block id="2c86b251dbdee05a59434e44da5fb462" category="paragraph">Astra Control Service 现在支持<block ref="1760b78b440a877c4a7a7d217ccc8ada" category="inline-link-rx"></block> 借助适用于 Google Cloud 的 Cloud Volumes Service 。这是对 _cvs-Performance_ 服务类型的补充。请注意， Astra 控制服务使用适用于 Google Cloud 的 Cloud Volumes Service 作为永久性卷的存储后端。</block>
   <block id="236d8a457924e113f2c3f9923f411976" category="inline-image-macro">应用程序的数据保护选项卡的屏幕截图，您可以在其中选择操作下拉列表以选择还原应用程序。</block>
   <block id="f1f685cb2e1e9e3ea2fdad4e48fc8187" category="paragraph"><block ref="f1f685cb2e1e9e3ea2fdad4e48fc8187" category="inline-image-macro-rx" type="image"></block></block>
@@ -1107,14 +1094,10 @@
   <block id="5b06c01df203c0160efefa98ada2bcc1" category="paragraph">以下限制适用于 Astra Control 限制用户访问资源或功能的方式。</block>
   <block id="66ba81be546d7a5973fa02b72f2d22d7" category="section-title">具有命名空间 RBAC 限制的用户可以添加和取消管理集群</block>
   <block id="6d70905dce5a2e1f37d99d5fa5a0fca9" category="paragraph">不应允许具有命名空间 RBAC 限制的用户添加或取消管理集群。由于当前的限制， Astra 不会阻止此类用户取消管理集群。</block>
-  <block id="bea0a641d1ced5fe318717eadebe7ab8" category="section-title">具有命名空间约束的成员用户无法访问克隆或还原的应用程序，除非管理员用户将命名空间添加到此限制中</block>
   <block id="a6f00c82b6eb55a13a1f242313aaf9c9" category="list-title">应用程序</block>
   <block id="82e978ba92c76493cce02201d1b04355" category="list-title">备份，还原和克隆</block>
-  <block id="b24e23005ed2cadfce9c683ec2b754c5" category="list-text"><block ref="213007433d1a45330875fe1630ec15fa" category="inline-xref-macro-rx"></block></block>
   <block id="c44dd49a83e18cbd27c250a656ebf16d" category="list-title">其他问题</block>
   <block id="440441988db4dd1a631f18e5ce228880" category="list-text"><block ref="4791c8debe5295c527a6dd0dc7f0957f" category="inline-xref-macro-rx"></block></block>
-  <block id="ca318d6b4eed133149be28dcaf9203ab" category="section-title">还原应用程序会导致 PV 大小大于原始 PV</block>
-  <block id="c1ab420107ece0814547044cc11d2689" category="paragraph">如果在创建备份后调整永久性卷的大小，然后从该备份还原，则此永久性卷的大小将与 PV 的新大小匹配，而不是使用备份的大小。</block>
   <block id="f64cab133147d09d35d2708459ada555" category="section-title">当 Astra Trident 脱机时，应用程序数据管理操作失败，并显示内部服务错误（ 500 ）</block>
   <block id="5ffd50b83740bc0749b40034cddea615" category="paragraph">如果应用程序集群上的 Astra Trident 脱机（并恢复联机），并且在尝试应用程序数据管理时遇到 500 个内部服务错误，请重新启动应用程序集群中的所有 Kubernetes 节点以还原功能。</block>
   <block id="d551a2e881c7a8c13113e2a9e28d0b91" category="list-text">如果集群为专用集群，则会显示<block ref="aa255aeede553f15509fbd44536f790e" category="inline-link-rx"></block> 必须允许 Astra 控制服务 IP 地址：</block>
@@ -1175,14 +1158,12 @@
   <block id="6e1e9c83b80f4d22d34cbdf60a71383b" category="paragraph">ifdef::gcp[]</block>
   <block id="f71e012ed046328c8d64aaabfb2eaac1" category="list-text"><block ref="cbe527e26a3f74a21725a85c9fa46b07" category="inline-xref-macro-rx"></block></block>
   <block id="f4c36c8148a1c2baf23d917e226d50fa" category="list-text"><block ref="703e5962f4e6c982183fbea5d4a0ed0f" category="inline-xref-macro-rx"></block></block>
-  <block id="ea9063ae1f93b97201fb6f5157ef64b8" category="paragraph">在使用显式设置的存储类（例如， `helm install ...-set global.storageClass=netapp-cvs-perf-至 至至` ）部署应用程序后，后续克隆应用程序的尝试要求目标集群具有最初指定的存储类。将具有显式设置的存储类的应用程序克隆到没有相同存储类的集群将失败。此情况下没有恢复步骤。</block>
   <block id="bc2727235d82d8b7c78a69fd565295f3" category="section-title">无法在已删除并重新创建的命名空间上定义应用程序</block>
   <block id="586ace51c405474a5c0172b8c1cf7afd" category="paragraph">如果使用命名空间定义应用程序、删除命名空间、然后在同一命名空间中重新安装此应用程序、则此操作将失败、并显示409错误代码。要使用重新创建的命名空间定义应用程序、请先删除旧应用程序实例。</block>
   <block id="3460be97ad18de8f927ac029b73aea1e" category="section-title">如果在管理集群后添加了volumesnapshotclass、则应用程序备份和快照将失败</block>
   <block id="671f168669b50eaf41bbc6e57d130fd1" category="paragraph">在这种情况下、备份和快照失败、并显示UI 500错误。作为临时解决策 、刷新应用程序列表。</block>
   <block id="2628d7b5cc84b024c4b920441addcb86" category="section-title">不支持对使用证书管理器的应用程序执行原位还原操作</block>
   <block id="0d7cda4c63f06aa1eaf0682a607c5601" category="paragraph">此版本的Astra控制服务不支持使用证书管理器原位还原应用程序。支持将还原操作还原到其他命名空间和克隆操作。</block>
-  <block id="33e9a46dfde5bb0f5a8b8327623cb998" category="paragraph">受命名空间名称/ID约束的任何`m成员`用户均可将应用程序克隆或还原到同一集群上的新命名空间或其组织帐户中的任何其他集群。但是，同一用户无法访问新命名空间中的克隆或还原应用程序。通过克隆或还原操作创建新命名空间后，帐户管理员 / 所有者可以编辑 `m成员` 用户帐户并更新受影响用户的角色约束，以授予对新命名空间的访问权限。</block>
   <block id="d55b05877d0dd6743f47d3442323323e" category="inline-link-macro">设置Amazon Web Services</block>
   <block id="0a2055495a94f091655a2e4d421cffe2" category="list-text">预备份</block>
   <block id="cf6e97e89c4b36c29252fcb7b0728d2f" category="list-text">备份后</block>
@@ -1448,37 +1429,25 @@
   <block id="b45f0d80639ec80f5586318d3c5bd31d" category="sidebar">AWS集群的存储</block>
   <block id="5a81378cdc7edd9ea960cf02d6ca78d2" category="paragraph">ifdef::aws[]</block>
   <block id="6beb2fa01dc121194547db1bfbe03408" category="paragraph">endif::aws[]</block>
-  <block id="868ecbbbd8b1e28b5199c1b1690c500b" category="list-text"><block ref="9db9aa8838c1418469991d8a206fd28d" category="inline-xref-macro-rx"></block></block>
-  <block id="e43994c24bb8c97f2a5c5d923ac69298" category="section-title">尝试还原属于已删除集群的应用程序时、应用程序页面将永久加载</block>
-  <block id="f578c128901fc5a492793e5a929e4673" category="paragraph">当您尝试从"应用程序"页面中的已删除集群还原应用程序时、"应用程序"页面永远不会完成加载。作为临时解决策 、从应用程序列表页面中的应用程序操作菜单还原应用程序。</block>
   <block id="b6a9320279ef3d24bad38497af1f9eb9" category="list-text">改进的应用程序管理工作流改进的应用程序管理工作流提高了定义由Astra Control管理的应用程序的灵活性。</block>
   <block id="177b32024bced380eccf349123cd8965" category="list-text">支持Amazon Web Services集群Astra Control Service现在可以管理在Amazon Elastic Kubernetes Service托管的集群上运行的应用程序。您可以将集群配置为使用Amazon Elastic Block Store或Amazon FSx for NetApp ONTAP 作为存储后端。</block>
-  <block id="e0b52dea31d68bd0cdc1c14efa59da85" category="paragraph"><block ref="e0b52dea31d68bd0cdc1c14efa59da85" category="inline-link-macro-rx"></block></block>
   <block id="1dbb809aab63af6c10fa08a732739c10" category="list-text">增强的执行挂钩除了快照前和快照后执行挂钩之外、您现在还可以配置以下类型的执行挂钩：</block>
-  <block id="708d69a9cfe8326e5c6ce3c8ad6ac757" category="paragraph"><block ref="708d69a9cfe8326e5c6ce3c8ad6ac757" category="inline-link-macro-rx"></block></block>
   <block id="518c2494a2c756dd2dd87536a60d5143" category="list-text">Azure Marketplace支持您现在可以通过Azure Marketplace注册到Astra Control Service。</block>
   <block id="9c9f134c049ff9c2a442218abf4331d1" category="list-text">选择云提供商阅读Astra Control Service文档时、您现在可以选择页面右上角的云提供商。您将看到仅与您选择的云提供商相关的文档。</block>
   <block id="15e9aaa51586aa57547422044c2341dc" category="inline-image-macro">Cloud Provider下拉菜单的屏幕截图、您可以从中选择云提供商以获取云提供商专用文档。</block>
   <block id="de50b13f47ea18120714d7459edc3ba7" category="paragraph"><block ref="de50b13f47ea18120714d7459edc3ba7" category="inline-image-macro-rx" type="image"></block></block>
   <block id="48bb90ecaac353cdb16c91a6a455b560" category="list-text">命名空间基于角色的访问控制(RBAC) Astra控制服务现在支持向成员或查看器用户分配命名空间约束。</block>
-  <block id="24c3dfd752dd86b23d8384546f638c63" category="paragraph"><block ref="24c3dfd752dd86b23d8384546f638c63" category="inline-link-macro-rx"></block></block>
   <block id="2221301e5f320330a2ff23a7f92dae75" category="list-text">Azure Active Directory支持Astra控制服务支持使用Azure Active Directory进行身份验证和身份管理的AKS集群。</block>
-  <block id="04d97bec7f4fa11002764129cf40d13a" category="paragraph"><block ref="04d97bec7f4fa11002764129cf40d13a" category="inline-link-macro-rx"></block></block>
   <block id="2db9c37d1e2c8254e3a6c338f50945e5" category="list-text">支持专用AKS集群现在、您可以管理使用专用IP地址的AKS集群。</block>
   <block id="971c8f5be55b8948fecdbae5902f8226" category="list-text">从Astra Control中删除存储分段现在、您可以从Astra Control Service中删除存储分段。</block>
-  <block id="aac55694044199d5b6c6c57c331459cc" category="paragraph"><block ref="aac55694044199d5b6c6c57c331459cc" category="inline-link-macro-rx"></block></block>
   <block id="6375b2643d0c645e023d1f597c848293" category="list-text">原位应用程序还原现在、您可以通过还原到同一集群和命名空间来原位还原应用程序的快照、克隆或备份。</block>
-  <block id="57b180faef2287140b0abcde93ffc94f" category="paragraph"><block ref="57b180faef2287140b0abcde93ffc94f" category="inline-link-macro-rx"></block></block>
   <block id="461f26d1f3faec3478ece1e0d794f9cc" category="list-text">使用执行挂钩的脚本事件Astra Control支持自定义脚本、您可以在为应用程序创建快照之前或之后运行这些脚本。这样，您就可以执行暂停数据库事务等任务，以使数据库应用程序的快照保持一致。</block>
   <block id="a20299ad7f2e64a95e7cc3284a9906a5" category="list-text">操作员部署的应用程序Astra Control支持一些与操作员一起部署的应用程序。</block>
-  <block id="2ea11a36f6164d1bd0f8d6a42682dfb9" category="paragraph"><block ref="2ea11a36f6164d1bd0f8d6a42682dfb9" category="inline-link-macro-rx"></block></block>
   <block id="d64b4db98e014f5440d1f843fea08e3e" category="list-text">具有资源组范围的服务主体Astra控制服务现在支持使用资源组范围的服务主体。</block>
-  <block id="e654c32bea1b21fec8de7bcafdd49dec" category="paragraph"><block ref="e654c32bea1b21fec8de7bcafdd49dec" category="inline-link-macro-rx"></block></block>
   <block id="d965fac9eadc89088435d79a0e46882b" category="list-text">Astra Control Center Astra Control现在可采用新的部署模式。_Astra Control Center_ 是一款自行管理的软件，您可以在数据中心内安装和操作该软件，以便管理内部 Kubernetes 集群的 Kubernetes 应用程序生命周期管理。</block>
   <block id="1966afd91050d7e96fceb59f9fd13f32" category="inline-link">转至Astra控制中心文档</block>
   <block id="80bfdf6309549a7797f10098e05bccc1" category="paragraph">了解更多信息。<block ref="ba5556fa094f10e77f4fa7086cec4749" category="inline-link-rx"></block>。</block>
   <block id="eb98a9a286b93bcf890e03ce1c9063eb" category="list-text">自带存储分段现在、您可以通过添加其他存储分段以及更改云提供商中Kubernetes集群的默认存储分段来管理Astra用于备份和克隆的存储分段。</block>
-  <block id="b8e0d8248d4ced7bc854879cb8922db8" category="paragraph"><block ref="b8e0d8248d4ced7bc854879cb8922db8" category="inline-link-macro-rx"></block></block>
   <block id="590485080b61fb4aa0eecd594141c835" category="list-text">支持共享VPC现在、您可以使用共享VPC网络配置管理GCP项目中的GKEE集群。</block>
   <block id="3ac7bce9a68f7416551081de0fb809db" category="list-text">现在、如果使用CVS服务类型Astra Control Service、则CVS服务类型的永久性卷大小将在使用CVS服务类型时创建最小大小为300 GiB的永久性卷。</block>
   <block id="0bf2090aa53a447008516a1f0e59ef29" category="list-text">现在、GKE-工作节点支持容器优化操作系统容器优化操作系统。这是对 Ubuntu 支持的补充。</block>
@@ -1488,7 +1457,6 @@
   <block id="a5691fb92ce2acabdd947ea4e3dfaa70" category="list-text">命名空间和应用程序可视化我们改进了"发现的应用程序"页面、以更好地显示命名空间和应用程序之间的层次结构。只需展开一个命名空间即可查看该命名空间中包含的应用程序。</block>
   <block id="a13f2262ff8b5ec001ba8f41398e1a6c" category="list-text">用户界面增强功能数据保护向导已进行了增强、易于使用。例如，我们优化了保护策略向导，以便在定义保护计划时更轻松地查看该计划。</block>
   <block id="aad7f3d472e654aef7d2a492a3d54210" category="list-text">活动增强功能我们可以更轻松地在您的Astra Control帐户中查看有关活动的详细信息。</block>
-  <block id="ca0a782901da0ca119f401851ac90842" category="paragraph"><block ref="78b785a9e2d028de12ce9f3f40284661" category="inline-link-macro-rx"></block>。</block>
   <block id="3fc3ba3c5f20ea640e5be46d8c9ca467" category="inline-link">NetApp Astra产品系列的文档</block>
   <block id="c5bc786725b0b61976497d5d0c73be96" category="list-text"><block ref="c5bc786725b0b61976497d5d0c73be96" category="inline-link-rx"></block></block>
   <block id="1c90591655cdfe7d885b02ed72ae2509" category="summary">NetApp 以多种方式为 Astra Control 提供支持。全天候提供广泛的免费自助支持选项、例如知识库(KB)文章和不和渠道。您的 Astra Control 帐户包括通过 Web 服务单提供的远程技术支持。</block>
@@ -1591,17 +1559,11 @@
   <block id="d187001d501dee0ac96f1c4520418b01" category="section-title">2022年11月22日</block>
   <block id="9ed67fb9a4ad2ebd97ca13fe2eb81541" category="list-title">新增功能和支持</block>
   <block id="4eba5ba43cc624385f276658a22c51a8" category="inline-link-macro">定义应用程序</block>
-  <block id="615bfdde03d6ca17ceb25db1da7a8950" category="paragraph"><block ref="615bfdde03d6ca17ceb25db1da7a8950" category="inline-link-macro-rx"></block></block>
   <block id="92131ec58f7cefa34d38f2fee2e98c42" category="inline-link-macro">监控正在运行的任务</block>
-  <block id="7ae618b5d6c1a9768cb0ddc2627b32d0" category="paragraph"><block ref="7ae618b5d6c1a9768cb0ddc2627b32d0" category="inline-link-macro-rx"></block></block>
   <block id="e0b7652da21db7cd16f8155afc64e87b" category="inline-link-macro">管理云实例</block>
-  <block id="9df52d082eaf22280b9667a382b64298" category="paragraph"><block ref="9df52d082eaf22280b9667a382b64298" category="inline-link-macro-rx"></block></block>
   <block id="3a3b7ac2e39541ea05707ccd6eb054d4" category="list-title">已知问题和限制</block>
   <block id="740eb4189d3efee5546cc5fba4fded77" category="inline-link-macro">此版本的已知问题</block>
-  <block id="d1dd5fb317ad23b395c8c846c80e0e5f" category="list-text"><block ref="d1dd5fb317ad23b395c8c846c80e0e5f" category="inline-link-macro-rx"></block></block>
   <block id="609952cd5d8fde0dfe3b1b884bf14558" category="inline-link-macro">此版本的已知限制</block>
-  <block id="9ce2124f29dc4cc07281ecd767336d13" category="list-text"><block ref="9ce2124f29dc4cc07281ecd767336d13" category="inline-link-macro-rx"></block></block>
-  <block id="0a118569e0f55e95cf56c6a9d02d982b" category="paragraph"><block ref="0a118569e0f55e95cf56c6a9d02d982b" category="inline-link-macro-rx"></block></block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="list-title">关于此任务</block>
   <block id="8d7c216bc17d281838efafaa3704677b" category="list-text">选择还原类型：</block>
   <block id="90d21d98503ddae05ddf0a1a34b7d790" category="list-text">*还原到原始命名空间*：使用此操作步骤 将应用程序原位还原到原始集群。</block>
@@ -1688,7 +1650,6 @@
   <block id="dd74de0d68eefd1c10bd1501afbc8b46" category="list-text">输入名称。</block>
   <block id="0e4d685dee3fd3a3e1633f70aaeb2691" category="list-text">输入克隆的目标命名空间。与应用程序关联的每个源命名空间都会映射到一个目标命名空间。</block>
   <block id="411a48d6c0de4b9fbde3de65ac433663" category="admonition">在克隆操作中、Astra Control会创建新的目标命名空间。指定的目标命名空间不能已存在于目标集群上。</block>
-  <block id="d0e721bec5fc1bc7c2e9064111e136f3" category="list-text">如果选择从现有快照或备份克隆、请选择要使用的快照或备份。</block>
   <block id="b92d91ea83b6fa7710918e0aa9c334a7" category="list-text">查看有关克隆的信息、然后选择*克隆*。</block>
   <block id="388750beff3f33d3945072066707b581" category="paragraph">Astra Control会根据您提供的信息克隆应用程序。当新应用程序克隆处于中时、克隆操作成功<block ref="396d45b57c2fbe3318e7b93272a2686b" prefix=" " category="inline-code"></block> 状态。</block>
   <block id="f661390a0d28c238ffbca34027c731cc" category="paragraph">通过克隆或还原操作创建新命名空间后，帐户管理员 / 所有者可以编辑成员用户帐户并更新受影响用户的角色约束，以授予对新命名空间的访问权限。</block>
@@ -1926,7 +1887,6 @@
   <block id="9497a649f72a465537e088cd33f63b26" category="paragraph">除了自动包含的Astra Control之外、您还可以导入与命名空间资源关联的集群资源。您可以添加一个规则、该规则将包含特定组的资源、种类、版本以及标签(可选)。如果存在Astra Control不会自动包含的资源、您可能需要执行此操作。</block>
   <block id="b9e5ceb3ee51c79795e57043d65ace4f" category="list-text">*显式存储类*：如果部署的应用程序已明确设置存储类、并且需要克隆此应用程序、则目标集群必须具有最初指定的存储类。将具有显式设置的存储类的应用程序克隆到没有相同存储类的集群将失败。</block>
   <block id="9bef1d9bf218ed752be76e1c92b4e716" category="list-text">支持将NetApp Cloud Volumes ONTAP 用作存储后端</block>
-  <block id="afe823403603f8e45a82a192de4f1f39" category="paragraph"><block ref="afe823403603f8e45a82a192de4f1f39" category="inline-link-macro-rx"></block></block>
   <block id="43f10e14cfc78f2dccf4af9115390a26" category="list-text"><block ref="43f10e14cfc78f2dccf4af9115390a26" category="inline-link-rx"></block></block>
   <block id="aa2317f5569d30b7aac1b41dd02ffe97" category="list-text">如果您计划使用NetApp Cloud Volumes ONTAP 作为存储后端、则需要将Cloud Volumes ONTAP 配置为使用Amazon Web Services。请参见Cloud Volumes ONTAP<block ref="c40ff22452592aa319388d1d94a0a32e" category="inline-link-rx"></block>。</block>
   <block id="892bb983e85684c863a4bf11d26d064e" category="paragraph">Astra控制服务可以使用容器存储接口(Container Storage Interface、CSI)驱动程序作为存储后端与Azure受管磁盘进行连接。此服务可提供由 Azure 管理的块级存储。</block>
@@ -1991,9 +1951,7 @@
   <block id="69ed61dec8d3d932d3348b6e66006a07" category="list-text">集群运行的Kubbernetes版本必须介于1.23到1.25之间。</block>
   <block id="d5e69ef71e099319f8f69f91e01d0e41" category="section-title">2023年4月25日</block>
   <block id="031a85a49fb1af20498d8b05e9ab9eb2" category="list-text">支持专用Red Hat OpenShift集群</block>
-  <block id="d17303ee723b020bbbbfc1cd5577456b" category="paragraph"><block ref="d17303ee723b020bbbbfc1cd5577456b" category="inline-link-macro-rx"></block></block>
   <block id="e230abda83cb11e7b7ac9992ed62766e" category="list-text">支持在还原操作期间包括或排除应用程序资源</block>
-  <block id="ffff33c395d25303894a11efaf1b01aa" category="paragraph"><block ref="ffff33c395d25303894a11efaf1b01aa" category="inline-link-macro-rx"></block></block>
   <block id="b909803838dd775bd8b8dcfbaf82fb87" category="list-text">支持管理纯数据应用程序</block>
   <block id="5b8f884e708de51fd4946164326e802c" category="section-title">"Activity"页面最多可显示100、000个事件</block>
   <block id="676bd50e0f10e6725dc7a68e3041cfed" category="inline-link-macro">Astra Control REST API</block>
@@ -2066,7 +2024,6 @@
   <block id="de6aa62d63707ee7d0d8147e0441da62" category="paragraph"><block ref="de6aa62d63707ee7d0d8147e0441da62" category="inline-link-rx"></block></block>
   <block id="bbc78db47a3fe23dc96746668da3d287" category="list-text"><block ref="bbc78db47a3fe23dc96746668da3d287" category="inline-link-rx"></block></block>
   <block id="abfeaf5dc3fa1bf4a2a2cba84c5e546c" category="section-title">2023年5月15日</block>
-  <block id="7dfc25c1548ba836ed04c79f8fbd1825" category="paragraph">这是次要的错误修复版本。</block>
   <block id="d5d53109cd766da789a263c6e2051051" category="list-text">删除任何现有的Snapshot CRD和任何现有的Snapshot控制器。</block>
   <block id="43f17763173fe230bdd78477152f5f7d" category="inline-link">卸载 Astra Trident</block>
   <block id="478393a7bc00211c00b84b91bd7270e1" category="list-text"><block ref="ae36d1cdd520df7c3eaefc0ce2deb814" category="inline-link-rx"></block>。</block>
@@ -2225,4 +2182,35 @@ RKE 2 (v1.24.x)与R9cher 2.7</block>
   <block id="01b0983b96350d7c328b2bdc55473ec9" category="sidebar">添加自管理集群</block>
   <block id="df0d5dfa45e4a1cfa039e5d18dfb9d2d" category="sidebar">添加公共自管理集群</block>
   <block id="3746d0f382f4e7553ff621fded87d97c" category="sidebar">添加专用自管理集群</block>
+  <block id="bcceca8869689ff6b9a64bbe278abd0c" category="section-title">2023年7月27日</block>
+  <block id="d6b8f34be835c5143119e2110314903c" category="list-text">现在、克隆操作仅支持实时克隆(托管应用程序的当前状态)。要从快照或备份克隆、请使用还原工作流。</block>
+  <block id="3a8adf0100989b88b4f6945c96e17134" category="paragraph"><block ref="3a8adf0100989b88b4f6945c96e17134" category="inline-link-macro-rx"></block></block>
+  <block id="78059069f50fc7337ebe6e58e00d6f76" category="paragraph"><block ref="78059069f50fc7337ebe6e58e00d6f76" category="inline-link-macro-rx"></block></block>
+  <block id="8e93cfe6b3f3a84b64a6523ae8cccea3" category="paragraph"><block ref="8e93cfe6b3f3a84b64a6523ae8cccea3" category="inline-link-macro-rx"></block></block>
+  <block id="fcfe20aef6d913878ab9ad13252b4886" category="paragraph">这是一个小错误修复版本。</block>
+  <block id="48127f9248c9afe5c8d6c85fe8b5ac8c" category="paragraph"><block ref="48127f9248c9afe5c8d6c85fe8b5ac8c" category="inline-link-macro-rx"></block></block>
+  <block id="1e86fa1c9e64183a87c8b72a8e927899" category="paragraph"><block ref="1e86fa1c9e64183a87c8b72a8e927899" category="inline-link-macro-rx"></block></block>
+  <block id="af6c8806f70a0231b2093b895ebc672c" category="paragraph"><block ref="af6c8806f70a0231b2093b895ebc672c" category="inline-link-macro-rx"></block></block>
+  <block id="d12350e462849507eeabdb08cb7776d0" category="paragraph"><block ref="d12350e462849507eeabdb08cb7776d0" category="inline-link-macro-rx"></block></block>
+  <block id="45cad2be488e432d792310b7d080cf00" category="paragraph"><block ref="45cad2be488e432d792310b7d080cf00" category="inline-link-macro-rx"></block></block>
+  <block id="275488d5bcb2b9e9af730e47d4740160" category="paragraph"><block ref="275488d5bcb2b9e9af730e47d4740160" category="inline-link-macro-rx"></block></block>
+  <block id="252d50f7e54eea40b30d8d14645cb492" category="paragraph"><block ref="252d50f7e54eea40b30d8d14645cb492" category="inline-link-macro-rx"></block></block>
+  <block id="65fd6614e1532540539a961087820a98" category="paragraph"><block ref="65fd6614e1532540539a961087820a98" category="inline-link-macro-rx"></block></block>
+  <block id="d42b75fe19dabf326e6063949f271820" category="list-text"><block ref="d42b75fe19dabf326e6063949f271820" category="inline-link-macro-rx"></block></block>
+  <block id="15f99de9fca4a87464f86c86d87cfca2" category="list-text"><block ref="15f99de9fca4a87464f86c86d87cfca2" category="inline-link-macro-rx"></block></block>
+  <block id="cb3c51843787890aaa87089f7bdb08f5" category="paragraph"><block ref="cb3c51843787890aaa87089f7bdb08f5" category="inline-link-macro-rx"></block></block>
+  <block id="c8f2cca68cde6f95fb2b8b711e37e65a" category="paragraph"><block ref="c8f2cca68cde6f95fb2b8b711e37e65a" category="inline-link-macro-rx"></block></block>
+  <block id="0d1390555a2169c822a86ca918b21b0f" category="paragraph"><block ref="0d1390555a2169c822a86ca918b21b0f" category="inline-link-macro-rx"></block></block>
+  <block id="048441a1433026f2d36f05c5940169c9" category="paragraph"><block ref="048441a1433026f2d36f05c5940169c9" category="inline-link-macro-rx"></block></block>
+  <block id="11d074237c052361a78d2013830a962f" category="paragraph"><block ref="11d074237c052361a78d2013830a962f" category="inline-link-macro-rx"></block></block>
+  <block id="980998f6472b1a8c9d73efb67dabafe1" category="paragraph"><block ref="980998f6472b1a8c9d73efb67dabafe1" category="inline-link-macro-rx"></block></block>
+  <block id="1e94f2e45dee621ae84f1a7b7c552a70" category="paragraph"><block ref="1e94f2e45dee621ae84f1a7b7c552a70" category="inline-link-macro-rx"></block></block>
+  <block id="972ef63b5c8121c2ac56c48029e25d34" category="paragraph"><block ref="cb94ef005338594c3c497df12c52626a" category="inline-link-macro-rx"></block>。</block>
+  <block id="bf177cc423c13a2a2b2c54e1fb65a7c1" category="paragraph"><block ref="489b409456c0f7bc458435cc853fa427" category="inline-link-macro-rx"></block>。</block>
+  <block id="ee37072224861228e5c0a3dd998234a5" category="paragraph"><block ref="5a02f44ba8c8e8e5387f6065f61f0da8" category="inline-link-macro-rx"></block>。</block>
+  <block id="dec5a46bd6cfa5c43e6553e520a0a69c" category="paragraph"><block ref="166107bbd72cf794988ebaebd1c8e8c2" category="inline-link-macro-rx"></block>。</block>
+  <block id="bfdc6d12952fad78facd1e94852759a3" category="paragraph"><block ref="a14820bea7a397e6be2434a9d285faab" category="inline-link-macro-rx"></block>。</block>
+  <block id="c673cd380fd204c071fbbe9ab6093305" category="paragraph"><block ref="4696e5fb4ee6218a3f53515814eb28d8" category="inline-link-macro-rx"></block>。</block>
+  <block id="e9cea3220da1647df30dfb6a29eb4de1" category="paragraph">如果您可以灵活地在 Google Cloud 区域之间进行选择，则可以根据性能要求选择 CVS 或 CVS-Performance 。 <block ref="3e4123586ab28c1a84ca430e681220b3" category="inline-link-macro-rx"></block>。</block>
+  <block id="3dde386e52ee79140b11e62252e39b49" category="list-text">现在，您可以通过计费从免费计划过渡到高级计划。 <block ref="b344195451ae2e57f0e32003c4f1a80b" category="inline-link-macro-rx"></block>。</block>
 </blocks>
