@@ -2213,4 +2213,6 @@ RKE 2 (v1.24.x)与R9cher 2.7</block>
   <block id="c673cd380fd204c071fbbe9ab6093305" category="paragraph"><block ref="4696e5fb4ee6218a3f53515814eb28d8" category="inline-link-macro-rx"></block>。</block>
   <block id="e9cea3220da1647df30dfb6a29eb4de1" category="paragraph">如果您可以灵活地在 Google Cloud 区域之间进行选择，则可以根据性能要求选择 CVS 或 CVS-Performance 。 <block ref="3e4123586ab28c1a84ca430e681220b3" category="inline-link-macro-rx"></block>。</block>
   <block id="3dde386e52ee79140b11e62252e39b49" category="list-text">现在，您可以通过计费从免费计划过渡到高级计划。 <block ref="b344195451ae2e57f0e32003c4f1a80b" category="inline-link-macro-rx"></block>。</block>
+  <block id="bea0a641d1ced5fe318717eadebe7ab8" category="section-title">具有命名空间约束的成员用户无法访问克隆或还原的应用程序，除非管理员用户将命名空间添加到此限制中</block>
+  <block id="33e9a46dfde5bb0f5a8b8327623cb998" category="paragraph">任意<block ref="aa08769cdcb26674c6706093503ff0a3" prefix=" " category="inline-code"></block> 使用命名空间名称/ID限制RBAC的用户可以将应用程序克隆或还原到同一集群上的新命名空间或其组织帐户中的任何其他集群。但是，同一用户无法访问新命名空间中的克隆或还原应用程序。通过克隆或还原操作创建新命名空间后、帐户管理员/所有者可以编辑<block ref="aa08769cdcb26674c6706093503ff0a3" prefix=" " category="inline-code"></block> 受影响用户的用户帐户和更新角色约束、以授予对新命名空间的访问权限。</block>
 </blocks>
