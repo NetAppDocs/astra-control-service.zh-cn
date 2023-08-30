@@ -1003,15 +1003,11 @@
   <block id="2a531f6e1eec4782b314fc38a518cc75" category="list-text">* API * ： Astra 控制服务和 Astra 控制中心使用相同的 Astra 控制 API 。使用 API ，您可以执行与使用 UI 相同的任务。</block>
   <block id="ff66234381e2d5213adaf96c742cb4c3" category="paragraph">您还可以通过 Astra 控制中心管理，迁移和保护 VM 环境中运行的 Kubernetes 集群。</block>
   <block id="6016a2b341113bf496b719905398ecd2" category="section-title">版权</block>
-  <block id="09e95b77ffe81fe465a83ba99efad5c8" category="paragraph"><block ref="09e95b77ffe81fe465a83ba99efad5c8" category="inline-link-rx"></block></block>
   <block id="126a02652da6de02962cf1b654fd6376" category="section-title">商标</block>
   <block id="c4ce4761e466527d26b3e3d5ed1006fd" category="paragraph">NetApp 、 NetApp 徽标和 NetApp 商标页面上列出的标记是 NetApp 、 Inc. 的商标。其他公司和产品名称可能是其各自所有者的商标。</block>
-  <block id="7aa531e9acfe2b98e34d2c92fe9846ff" category="paragraph"><block ref="7aa531e9acfe2b98e34d2c92fe9846ff" category="inline-link-rx"></block></block>
   <block id="be89498d2f8a22ce47c02ba9795fe2af" category="section-title">专利</block>
   <block id="d0b19d36be2c5f16e9aef46c8a452d3d" category="paragraph">有关 NetApp 拥有的专利的最新列表，请访问：</block>
-  <block id="d7f1fbcf9ce4e42f705add574d262b2c" category="paragraph"><block ref="d7f1fbcf9ce4e42f705add574d262b2c" category="inline-link-rx"></block></block>
   <block id="56c34c6410dd45c5cec44149ad0ce037" category="section-title">隐私政策</block>
-  <block id="fc248f74f5e36542f7f5627b8610e9a3" category="paragraph"><block ref="fc248f74f5e36542f7f5627b8610e9a3" category="inline-link-rx"></block></block>
   <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">开放源代码</block>
   <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">通知文件提供有关 NetApp 软件中使用的第三方版权和许可证的信息。</block>
   <block id="5acfa2bc809db5956ea651edbf833ab3" category="summary">了解如何通过向角色添加限制来管理用户角色。</block>
@@ -2215,4 +2211,18 @@ RKE 2 (v1.24.x)与R9cher 2.7</block>
   <block id="3dde386e52ee79140b11e62252e39b49" category="list-text">现在，您可以通过计费从免费计划过渡到高级计划。 <block ref="b344195451ae2e57f0e32003c4f1a80b" category="inline-link-macro-rx"></block>。</block>
   <block id="bea0a641d1ced5fe318717eadebe7ab8" category="section-title">具有命名空间约束的成员用户无法访问克隆或还原的应用程序，除非管理员用户将命名空间添加到此限制中</block>
   <block id="33e9a46dfde5bb0f5a8b8327623cb998" category="paragraph">任意<block ref="aa08769cdcb26674c6706093503ff0a3" prefix=" " category="inline-code"></block> 使用命名空间名称/ID限制RBAC的用户可以将应用程序克隆或还原到同一集群上的新命名空间或其组织帐户中的任何其他集群。但是，同一用户无法访问新命名空间中的克隆或还原应用程序。通过克隆或还原操作创建新命名空间后、帐户管理员/所有者可以编辑<block ref="aa08769cdcb26674c6706093503ff0a3" prefix=" " category="inline-code"></block> 受影响用户的用户帐户和更新角色约束、以授予对新命名空间的访问权限。</block>
+  <block id="02e2841c6dc4823eaf981952fd28de5e" category="paragraph">在管理Azure Kubenetes Service和Google Kubenetes Engine集群时、请注意、您有两种方法可用于Astra Trident安装和生命周期管理：</block>
+  <block id="5764dae31663c1902496bfcba4c25c93" category="list-text">您可以使用Asta Control Service自动管理Asta三端到端的生命周期。为此、请确保要使用Astra Control Service进行管理的集群上未安装Astra三项功能。在这种情况下、Asta Trident会在您开始管理集群时自动安装Asta Trident、并自动处理Asta Trident升级。</block>
+  <block id="26a8bbf329806efed3129a837ea8f4ca" category="list-text">您可以自行管理Asta Dent的生命周期。为此、请先在集群上安装A作用 力三端、然后再使用A作用 力控制服务管理集群。在这种情况下、Astra Control Service会检测到Astra Trandent已安装、并且不会重新安装它或管理Astra Trandent升级。请参见<block ref="0a4eeddcb63a166e3ea6149a4a33d4e7" category="inline-link-rx"></block> 有关安装说明、请参见。</block>
+  <block id="377a03900879b1a147cfef86a55b4b7b" category="paragraph">在使用Asta Control Service管理Amazon Web Services集群时、如果您需要使用Asta Trident启用的存储后端、则需要先在集群上手动安装Asta Trident、然后再使用Asta Control Service进行管理。请参见<block ref="0a4eeddcb63a166e3ea6149a4a33d4e7" category="inline-link-rx"></block> 有关安装说明、请参见。</block>
+  <block id="9036e11904e29e25ddfcd878beff46e6" category="list-text">(可选)如果您要添加Amazon EKS集群或要自行管理Asta三端到功能的安装和升级、请在此集群上安装Asta三端到功能。请参见<block ref="0a4eeddcb63a166e3ea6149a4a33d4e7" category="inline-link-rx"></block> 有关安装说明、请参见。</block>
+  <block id="03349a266f78934afc86e52b232cdc6d" category="list-text">在浏览器中打开Asta Control Service Web UI。</block>
+  <block id="52009bb7ee17227f566cd26a02caee56" category="inline-link-macro"><block ref="52009bb7ee17227f566cd26a02caee56" category="inline-link-rx"></block></block>
+  <block id="a1a9afcf552a769c282769271829889a" category="paragraph"><block ref="a1a9afcf552a769c282769271829889a" category="inline-link-macro-rx"></block></block>
+  <block id="f99aa604031e5049799e73b5c3748a98" category="inline-link-macro"><block ref="f99aa604031e5049799e73b5c3748a98" category="inline-link-rx"></block></block>
+  <block id="5d545fe5152641e2ebe654e336e520e5" category="paragraph"><block ref="5d545fe5152641e2ebe654e336e520e5" category="inline-link-macro-rx"></block></block>
+  <block id="88e5eabd3917048b6927c42496b98f86" category="inline-link-macro"><block ref="88e5eabd3917048b6927c42496b98f86" category="inline-link-rx"></block></block>
+  <block id="dd38f906b37d412de7d1c1dcf4cbf31c" category="paragraph"><block ref="dd38f906b37d412de7d1c1dcf4cbf31c" category="inline-link-macro-rx"></block></block>
+  <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
+  <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
 </blocks>

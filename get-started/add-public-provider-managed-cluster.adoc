@@ -34,8 +34,16 @@ NOTE: Astra控制服务支持使用Azure Active Directory (Azure AD)进行身份
 
 登录到 Astra Control Service 后，第一步是开始管理集群。在将集群添加到Astra Control Service之前、您需要执行特定任务并确保集群满足特定要求。
 
+在管理Azure Kubenetes Service和Google Kubenetes Engine集群时、请注意、您有两种方法可用于Astra Trident安装和生命周期管理：
+
+* 您可以使用Asta Control Service自动管理Asta三端到端的生命周期。为此、请确保要使用Astra Control Service进行管理的集群上未安装Astra三项功能。在这种情况下、Asta Trident会在您开始管理集群时自动安装Asta Trident、并自动处理Asta Trident升级。
+* 您可以自行管理Asta Dent的生命周期。为此、请先在集群上安装A作用 力三端、然后再使用A作用 力控制服务管理集群。在这种情况下、Astra Control Service会检测到Astra Trandent已安装、并且不会重新安装它或管理Astra Trandent升级。请参见 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Astra Trident 文档"^] 有关安装说明、请参见。
+
+
+在使用Asta Control Service管理Amazon Web Services集群时、如果您需要使用Asta Trident启用的存储后端、则需要先在集群上手动安装Asta Trident、然后再使用Asta Control Service进行管理。请参见 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Astra Trident 文档"^] 有关安装说明、请参见。
+
 .开始之前
-[%collapsible]
+[%collapsible%open]
 ====
 ifdef::aws[]
 
@@ -71,6 +79,8 @@ endif::gcp[]
 
 ====
 .步骤
+. (可选)如果您要添加Amazon EKS集群或要自行管理Asta三端到功能的安装和升级、请在此集群上安装Asta三端到功能。请参见 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Astra Trident 文档"^] 有关安装说明、请参见。
+. 在浏览器中打开Asta Control Service Web UI。
 . 在信息板上，选择 * 管理 Kubernetes 集群 * 。
 +
 按照提示添加集群。
