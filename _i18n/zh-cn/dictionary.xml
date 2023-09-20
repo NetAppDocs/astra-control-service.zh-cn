@@ -1069,11 +1069,6 @@
   <block id="a11a0e1d242df8616f3c50d7c65bb304" category="list-text">键入 "remove" 确认此操作。</block>
   <block id="ba2f6425b8f267dbd5a2f8ddb2f7116a" category="list-text">选择 * 是，删除存储分段 * 。</block>
   <block id="9c83e144e5481ac6766f4055e566594d" category="section-title">了解更多信息</block>
-  <block id="37d0b0adf169e682e19c955d0cd73c29" category="list-text">为 Astra Connector 运算符创建命名空间。</block>
-  <block id="38da14ec20cf0841c7dc45fab0adbf07" category="list-text">将 `asaconnector_operator.yaml` 文件应用于操作员命名空间。</block>
-  <block id="48812784c9e7b02bc76402c5a0c3ca10" category="list-text">为专用集群组件创建命名空间。</block>
-  <block id="f831baeb7ae8c560addc2916d8b1096e" category="list-text">应用 Astra Connector 自定义资源定义（ CRD ）。</block>
-  <block id="138db2318815f6b9fc7cc55dd6a6ad32" category="list-text">检查 Astra 连接器的状态。</block>
   <block id="ea2708b459fc0cad6936ec216bd9405e" category="paragraph">Astra 控制中心完全集成到 AutoSupport 和 Active IQ 生态系统中，可为用户和 NetApp 支持提供故障排除和使用信息。</block>
   <block id="970cfe22b76fecaa99669dbc6dd2643e" category="paragraph">* 是否可以将专用 AKS 集群添加到 Astra Control Service ？ *</block>
   <block id="0cc78d43619515d263f8e91071f2ed83" category="paragraph">52.188.218.166/32</block>
@@ -2225,4 +2220,8 @@ RKE 2 (v1.24.x)与R9cher 2.7</block>
   <block id="dd38f906b37d412de7d1c1dcf4cbf31c" category="paragraph"><block ref="dd38f906b37d412de7d1c1dcf4cbf31c" category="inline-link-macro-rx"></block></block>
   <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
+  <block id="3c873407a87c44620e1fc922d17cba7d" category="list-text">应用<block ref="f101e04500a8c699d435a8cc7d56f891" prefix=" " category="inline-code"></block> 文件运行此命令时、系统将为Astra Connector运算符创建正确的命名空间、并将此配置应用于此命名空间：</block>
+  <block id="40fcdcafdc66ab23541a6bf36b499c0f" category="list-text">为专用集群组件创建命名空间：</block>
+  <block id="f285f679ba0c90d91ce807d87ad3a50e" category="list-text">应用Astra Connector自定义资源定义(CRD)：</block>
+  <block id="c642f3e0823bc0255f23532494f80829" category="list-text">检查Asta连接器的状态：</block>
 </blocks>

@@ -72,19 +72,13 @@ RKE 2 (v1.24.x)与R9cher 2.7
 git clone https://github.com/NetApp/astra-connector-operator.git
 ----
 . 将目录更改为已解压缩运算符包的顶层、以便您可以使用`ls`命令查看`astor_operator.yaml`文件。
-. 为 Astra Connector 运算符创建命名空间。
+. 应用 `astraconnector_operator.yaml` 文件运行此命令时、系统将为Astra Connector运算符创建正确的命名空间、并将此配置应用于此命名空间：
 +
 [source, console]
 ----
-kubectl create ns astra-connector-operator
+kubectl apply -f astraconnector_operator.yaml
 ----
-. 将 `asaconnector_operator.yaml` 文件应用于操作员命名空间。
-+
-[source, console]
-----
-kubectl apply -f astraconnector_operator.yaml -n astra-connector-operator
-----
-. 为专用集群组件创建命名空间。
+. 为专用集群组件创建命名空间：
 +
 [source, console]
 ----
@@ -131,13 +125,13 @@ spec:
 ----
 
 
-. 应用 Astra Connector 自定义资源定义（ CRD ）。
+. 应用Astra Connector自定义资源定义(CRD)：
 +
 [source, console]
 ----
 kubectl apply -f config/samples/astraconnector_v1.yaml -n astra-connector
 ----
-. 检查 Astra 连接器的状态。
+. 检查Asta连接器的状态：
 +
 [source, console]
 ----
