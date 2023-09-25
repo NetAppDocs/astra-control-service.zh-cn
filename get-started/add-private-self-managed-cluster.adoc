@@ -200,6 +200,12 @@ Astra控制服务支持使用以下Kubernetes分发版的自管理集群：
 * 集群不能托管在内部网络中；它必须托管在公共云环境中。
 * 如果您正在使用或计划使用已启用CSI驱动程序的存储、则必须在集群上安装相应的CSI驱动程序。有关使用CSI驱动程序集成存储的详细信息、请参阅存储服务的文档。
 * 您可以访问仅包含一个上下文元素的集群kubeconfigfile文件。请遵循 link:create-kubeconfig.html["这些说明"^] 生成kubeconfig.文件。
+* 如果要使用引用私有证书颁发机构(CA)的kubeconfigfile文件添加集群、请将以下行添加到 `cluster` kubeconfig"文件的部分。这样、Astra Control便可添加集群：
++
+[listing]
+----
+insecure-skip-tls-verify: true
+----
 * *仅Rancher *：在Rancher环境中管理应用程序集群时、请修改Rancher提供的kubeconfig文件中的应用程序集群默认上下文、以使用控制平面上下文、而不是Rancher API服务器上下文。这样可以减少 Rancher API 服务器上的负载并提高性能。
 * *Astra三端*：如果您正在使用或计划使用NetApp存储，请确保已安装最新版本的Astra三端。如果已安装Astra三端到子、 link:check-astra-trident-version.html["检查以确保它是最新版本"^]。
 +

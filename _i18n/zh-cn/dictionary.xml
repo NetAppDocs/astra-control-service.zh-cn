@@ -2224,4 +2224,5 @@ RKE 2 (v1.24.x)与R9cher 2.7</block>
   <block id="40fcdcafdc66ab23541a6bf36b499c0f" category="list-text">为专用集群组件创建命名空间：</block>
   <block id="f285f679ba0c90d91ce807d87ad3a50e" category="list-text">应用Astra Connector自定义资源定义(CRD)：</block>
   <block id="c642f3e0823bc0255f23532494f80829" category="list-text">检查Asta连接器的状态：</block>
+  <block id="dce58385777428b5d9a30460fe36730a" category="list-text">如果要使用引用私有证书颁发机构(CA)的kubeconfigfile文件添加集群、请将以下行添加到<block ref="06b2d4b91b5c9eaa8c20a1c270f95b3c" prefix=" " category="inline-code"></block> kubeconfig"文件的部分。这样、Astra Control便可添加集群：</block>
 </blocks>
