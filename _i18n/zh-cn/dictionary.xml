@@ -1476,7 +1476,6 @@
   <block id="e36d851dc2ff79e16c7cfbbb4e4fbe97" category="inline-link">Astra Automation文档</block>
   <block id="e9c498c38ce73fcff282ff152abd7d47" category="list-text">按照中的说明生成Astra Control API令牌<block ref="c02899be0babfb1350e3b2576a6e8c97" category="inline-link-rx"></block>。</block>
   <block id="61ddd26ba79b5e63c1e52be1beb28889" category="section-title">设置永久性存储</block>
-  <block id="f21f22dde0e0692333a7a28cce456b08" category="sidebar">所有Astra文档</block>
   <block id="6ef5565e71b748d07e8a7b0699a73b5a" category="paragraph"><block ref="6ef5565e71b748d07e8a7b0699a73b5a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="305b39af5cd987a6208b64358f967be3" category="list-text">部署在一个或多个命名空间中的单个应用程序(此示例使用Helm 3)</block>
   <block id="5200a678b94ac14cf371f3073027246a" category="list-text">一组通过一个或多个命名空间中的Kubernetes标签标识的资源</block>
@@ -2225,4 +2224,5 @@ RKE 2 (v1.24.x)与R9cher 2.7</block>
   <block id="f285f679ba0c90d91ce807d87ad3a50e" category="list-text">应用Astra Connector自定义资源定义(CRD)：</block>
   <block id="c642f3e0823bc0255f23532494f80829" category="list-text">检查Asta连接器的状态：</block>
   <block id="dce58385777428b5d9a30460fe36730a" category="list-text">如果要使用引用私有证书颁发机构(CA)的kubeconfigfile文件添加集群、请将以下行添加到<block ref="06b2d4b91b5c9eaa8c20a1c270f95b3c" prefix=" " category="inline-code"></block> kubeconfig"文件的部分。这样、Astra Control便可添加集群：</block>
+  <block id="f4228b9bf977f4c9a1952ea84926975f" category="section-title">2023年10月2日</block>
 </blocks>
