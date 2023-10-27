@@ -1499,22 +1499,18 @@
   <block id="ffcc0feca3c8cd069d4965c88a5c1ebb" category="paragraph">如果未安装Astra Trident、您将看到类似于以下内容的输出：</block>
   <block id="6c8bc25bbb383bdd569b3a8b67462c4a" category="list-text">确保Pod正在运行：</block>
   <block id="6d55356ca8cb9b27cfa6e2bb46ebb089" category="paragraph">响应示例：</block>
-  <block id="ee6257954c2f973cd54453583dc792ca" category="list-text">具有活动上下文集群管理员权限的活动 kubeconfig</block>
   <block id="5f85438ae0f2c9122a5cf54e8e098c98" category="list-text">按如下所示创建服务帐户：</block>
   <block id="4ab759267d2877902a521921e10f5f5b" category="list-text">创建名为的服务帐户文件<block ref="a22dad5601b31427598f571133fb2aed" prefix=" " category="inline-code"></block>。</block>
   <block id="210c5331ab46caa141e6ac9d5aeb1bee" category="paragraph">根据需要调整名称和命名空间。如果在此处进行了更改，则应在以下步骤中应用相同的更改。</block>
   <block id="605443509a67749999ab3b0d3ba43e8b" category="list-text">应用服务帐户：</block>
-  <block id="b01a13e2cbe1b4af2c39de81232bb23b" category="list-text">按如下所示授予集群管理员权限：</block>
   <block id="b29afe741178d8d4966c07c97f9892db" category="list-text">创建<block ref="e866afd8290d5c73cda6260e04e6eef0" prefix=" " category="inline-code"></block> 文件已调用<block ref="79e1486667eff2c5e1915f58701f3a18" prefix=" " category="inline-code"></block>。</block>
   <block id="51980eaff0de60f578593fb8ae77f9b3" category="paragraph">根据需要调整创建服务帐户时修改的任何名称和命名空间。</block>
   <block id="c6c2bc2133c73ae2516508de9a2b5869" category="list-text">应用集群角色绑定：</block>
   <block id="b6e00a7dda090ccd5afd1c904d80548c" category="list-text">列出服务帐户密码、替换<block ref="af16c4db277e0498b5fa9e30613367f1" prefix=" " category="inline-code"></block> 使用适用于您的安装的正确环境：</block>
   <block id="f087976277d273660b942918b43af841" category="paragraph">输出的结尾应类似于以下内容：</block>
-  <block id="65c0a05d8c47a658174fbed46d46f8e7" category="paragraph">中每个元素的索引<block ref="7de38f3c3d3baa7ca58a366f09577586" prefix=" " category="inline-code"></block> 阵列以0开头。在上面的示例中、是的索引<block ref="d7cef0644ef6c1b98dc15826f46e6da0" prefix=" " category="inline-code"></block> 将为0、并为创建索引<block ref="38a262a6f1757c3b70ab7cea5bf29ad9" prefix=" " category="inline-code"></block> 将为1。在输出中，记下包含 "token" 一词的服务帐户名称的索引。</block>
   <block id="d3727d544efa902d0381ec79cec3d488" category="list-text">按如下所示生成 kubeconfig ：</block>
   <block id="ed6be01d66e94b422222a328f085d0bc" category="list-text">创建<block ref="3d3f9b7a5974a7898593a3d2f5549f15" prefix=" " category="inline-code"></block> 文件替换<block ref="089d02fba2ffcdb49a91320ff506dfa3" prefix=" " category="inline-code"></block> 在以下脚本的开头、使用正确的值。</block>
   <block id="7d164f3971b504d6203cf274cc77dd35" category="list-text">获取用于将其应用于 Kubernetes 集群的命令。</block>
-  <block id="a4d7f999745cce675903247e4db00f3f" category="list-text">(可选)将kubeconfig重命名为集群的有意义名称。保护集群凭据。</block>
   <block id="aae2bc70406cacace4dfa6be8d857f2c" category="list-text">*提供商*：选择您的云提供商、然后提供创建新云实例所需的凭据或选择要使用的现有云实例。</block>
   <block id="38e2b31fd3dcdd65304ac201efd17f06" category="list-text">*其他*：通过上传提供有关自管理集群的详细信息<block ref="ea46161c66978a87802bc5b44682cbe0" prefix=" " category="inline-code"></block> 文件或粘贴的内容<block ref="ea46161c66978a87802bc5b44682cbe0" prefix=" " category="inline-code"></block> 文件。</block>
   <block id="d9348d075dc7b3c91cff99d56dfc327b" category="inline-link">Kubernetes 文档</block>
@@ -2077,7 +2073,6 @@
   <block id="e6bab5933e86bee96753d8079fcceaed" category="section-title">2023年6月26日</block>
   <block id="b77235e640ab8b5a90390081c423e880" category="list-text">Azure Marketplace订阅现在按小时计费、而不是按分钟计费</block>
   <block id="972d9f8e0e28ff88864515cf37f116b2" category="paragraph">在开始之前、请确保您的计算机上具有以下各项：</block>
-  <block id="e518ff6eca9962a9ad470732191bb026" category="list-text">已安装kubec不得 安装v1.23或更高版本</block>
   <block id="30136395f01879792198317c11831ea4" category="inline-link">Kubernetes</block>
   <block id="501a7b3c879675fb528c68e904b076d1" category="list-text">*检查目标卷*：如果要还原到其他存储类、请确保该存储类使用相同的永久性卷访问模式(例如ReadWriteMany)。如果目标永久性卷访问模式不同，还原操作将失败。例如、如果源永久性卷使用rwx访问模式、请选择无法提供rwx的目标存储类、例如Azure托管磁盘、AWS EBS、Google持久磁盘或<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block>，发生原因则还原操作是否会失败。有关永久性卷访问模式的详细信息、请参阅<block ref="051768f02ea3f9f1a6b86b9d9b060248" category="inline-link-rx"></block> 文档。</block>
   <block id="0f707c2e2c303edecbc57b2a451ad8a9" category="list-text">*检查目标卷*：如果克隆到其他存储类、请确保该存储类使用相同的永久性卷访问模式(例如ReadWriteMany)。如果目标永久性卷访问模式不同、则克隆操作将失败。例如、如果源永久性卷使用rwx访问模式、请选择无法提供rwx的目标存储类、例如Azure托管磁盘、AWS EBS、Google持久磁盘或<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block>，发生原因将使克隆操作失败。有关永久性卷访问模式的详细信息、请参阅<block ref="051768f02ea3f9f1a6b86b9d9b060248" category="inline-link-rx"></block> 文档。</block>
@@ -2225,4 +2220,23 @@ RKE 2 (v1.24.x)与R9cher 2.7</block>
   <block id="c642f3e0823bc0255f23532494f80829" category="list-text">检查Asta连接器的状态：</block>
   <block id="dce58385777428b5d9a30460fe36730a" category="list-text">如果要使用引用私有证书颁发机构(CA)的kubeconfigfile文件添加集群、请将以下行添加到<block ref="06b2d4b91b5c9eaa8c20a1c270f95b3c" prefix=" " category="inline-code"></block> kubeconfig"文件的部分。这样、Astra Control便可添加集群：</block>
   <block id="f4228b9bf977f4c9a1952ea84926975f" category="section-title">2023年10月2日</block>
+  <block id="33a97eec462a14258b6a1fe63f943ec5" category="list-text">已安装kubecv1.25或更高版本</block>
+  <block id="3b34edb55fd85d9b0636e2533b140b9f" category="list-text">kubectl访问要使用Astra控制中心添加和管理的集群</block>
+  <block id="d5b7f62a909e346c0e1cd08be571c54f" category="admonition">对于此操作步骤 、您不需要对运行Astra控制中心的集群进行kubectl访问。</block>
+  <block id="c49be33f592950e78d23dd417a4a75e5" category="list-text">要使用活动环境的集群管理员权限管理的集群的活动kubeconfig</block>
+  <block id="565bfe8a9451afd10f3c41fe9fa4cf22" category="list-text">创建服务帐户：</block>
+  <block id="5a20342984ee9d605acb505095dbcd0a" category="list-text">创建以下具有足够权限的集群角色之一、以使集群由Astra Control管理：</block>
+  <block id="0b696bdc9519b9e33f740fc665813fa2" category="list-text">*受限集群角色*：此角色包含由Astra Control管理集群所需的最低权限：</block>
+  <block id="00b512051a8fb53936e77b3e435be5d9" category="example-title">展开步骤</block>
+  <block id="d2c5b496305d8a36011fc2b1e55dcde3" category="list-text">创建<block ref="d7d354d0f9d0780e168c895c92a32c24" prefix=" " category="inline-code"></block> 文件、例如、<block ref="b7bb4a27d91c967fbba0bb19f36a3533" prefix=" " category="inline-code"></block>。</block>
+  <block id="929489f64fa726fbcdd3058dc505444e" category="list-text">(仅适用于OpenShift集群)如果要为OpenShift集群创建kubeconfig,请取消注释中的最后一行<block ref="b7bb4a27d91c967fbba0bb19f36a3533" prefix=" " category="inline-code"></block> 文件<block ref="7da59f03b6be2daf1bf5fd19ecc78050" prefix=" " category="inline-code"></block> 部分。</block>
+  <block id="d2f7aa8c006dd5e0b027cb6e32926a4e" category="list-text">应用集群角色：</block>
+  <block id="558249c196c0445933dcab3f8c5ccf78" category="list-text">*扩展的集群角色*：此角色包含要由Astra Control管理的集群的扩展权限。如果您使用多个环境，并且无法使用在安装期间配置的默认Asta Control kubeconfig,则可以使用此角色，否则在您的环境中，只使用一个环境的有限角色将不起作用：</block>
+  <block id="5e2febea168e23172b29251a6258dec8" category="admonition">以下内容<block ref="d7d354d0f9d0780e168c895c92a32c24" prefix=" " category="inline-code"></block> 步骤是一个常规Kubbernetes示例。有关特定于您的环境的说明、请参见Kubennetes分发版的文档。</block>
+  <block id="a30ca90c640932dfa98b3ac560bb10ab" category="list-text">为集群角色创建与服务帐户的集群角色绑定：</block>
+  <block id="c1865e8db7245bcc1648e67fb250eba4" category="list-text">创建并应用令牌密钥：</block>
+  <block id="11afc91177361b2eafbbec4287518195" category="list-text">创建名为的令牌机密文件<block ref="7cdd7450df0359169a360b93d3cb369f" prefix=" " category="inline-code"></block>。</block>
+  <block id="9c8324622cc9e060ba0702fa13261b48" category="list-text">通过将令牌密钥名称添加到、将其添加到服务帐户<block ref="7de38f3c3d3baa7ca58a366f09577586" prefix=" " category="inline-code"></block> 数组(以下示例中的最后一行)：</block>
+  <block id="4dc4c64180b058c5c9c94b6a7886e5f1" category="paragraph">中每个元素的索引<block ref="7de38f3c3d3baa7ca58a366f09577586" prefix=" " category="inline-code"></block> 阵列以0开头。在上面的示例中、是的索引<block ref="b91e4862bb487ade8bbd4f9eefe0618e" prefix=" " category="inline-code"></block> 将为0、并为创建索引<block ref="ce8dd462bb623b9902ba4f0151eb2f1b" prefix=" " category="inline-code"></block> 将为1。在输出中、记下服务帐户密钥的索引编号。在下一步中、您将需要此索引编号。</block>
+  <block id="28f4058b3debe49781dd1cccb1354c1e" category="list-text">(可选)将kubeconfig重命名为集群的有意义名称。</block>
 </blocks>
