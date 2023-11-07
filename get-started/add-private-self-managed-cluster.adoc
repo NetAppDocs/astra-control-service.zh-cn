@@ -26,127 +26,40 @@ summary: 设置环境后，您可以创建 Kubernetes 集群，然后将其添�
 | Kubbernetes分发 | 支持的版本 
 
 
-| 基于Azure堆栈HCI的Azure Kubnetes Service | 采用AKS 1.23和1.24的Azure Stack HCI 21H2和22H2 
+| 基于Azure堆栈HCI的Azure Kubnetes Service | 采用AKS 1.24.x和1.25x的Azure Stack HCI 21H2和22H2 
 
 
-| Google Anthos | 1.12到1.14 
+| Google Anthos | 1.15至1.16 
 
 
-| Kubnetes (上游) | 1.24到1.26 (Kubirnetes 1.25或更高版本需要Asta Trident 22.10或更高版本) 
+| Kubnetes (上游) | 1.26至1.28 
 
 
-| Rancher Kubernetes Engine （ RKE） | RKE 1.3与R能 手2.6
-RKE 1.4与R能 手2.7
-RKE 2 (v1.23.x)与R能 手2.6
-RKE 2 (v1.24.x)与R9cher 2.7 
+| Rancher Kubernetes Engine （ RKE） | RKE 1.3与R能 手管理器2.6
+RKE 1.4与R能 手管理器2.7
+RKE 2 (v1.24.x)与R能 手2.6
+RKE 2 (v1.26.x)与R9cher 2.7 
 
 
-| Red Hat OpenShift 容器平台 | 4.10至4.12 
+| Red Hat OpenShift 容器平台 | 4.11至4.13 
 
 
-| VMware Tanzu Kubernetes网格 | 1.6. 
-
-
-| VMware Tanzu Kubernetes Grid Integrated Edition | 1.14和1.15 
+| VMware Tanzu Kubernetes Grid Integrated Edition | 1.16.x 
 |===
 以下说明假定您已创建私有集群并准备好了远程访问该集群的安全方法。
 
 要将专用集群添加到Astra Control Service、您需要执行以下任务：
 
-* <<安装Astra Connector操作员>>
-* <<设置永久性存储>>
-* <<将专用自管理集群添加到Asta Control Service>>
+. <<安装A作用 连接器>>
+. <<设置永久性存储>>
+. <<将专用自管理集群添加到Asta Control Service>>
 
 
 
 
-== 安装Astra Connector操作员
+== 安装A作用 连接器
 
-您需要在专用集群上安装Asta Connector operator。如果使用的是Bastion主机、请从Bastion主机的命令行对这些命令执行问题描述。
-
-.步骤
-. 克隆Astra Connector操作员GitHub存储库：
-+
-[source, console]
-----
-git clone https://github.com/NetApp/astra-connector-operator.git
-----
-. 将目录更改为已解压缩运算符包的顶层、以便您可以使用`ls`命令查看`astor_operator.yaml`文件。
-. 应用 `astraconnector_operator.yaml` 文件运行此命令时、系统将为Astra Connector运算符创建正确的命名空间、并将此配置应用于此命名空间：
-+
-[source, console]
-----
-kubectl apply -f astraconnector_operator.yaml
-----
-. 为专用集群组件创建命名空间：
-+
-[source, console]
-----
-kubectl create ns astra-connector
-----
-. 按照中的说明生成Astra Control API令牌 https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html["Astra Automation文档"^]。
-. 修改ASRA Connector操作程序存储库的config/sempls目录中的示例配置文件、使其包含特定于您的环境的以下项值：
-+
-** `spec.natssync-client.cloud-bridge-url`
-** `spec.astra.token`
-** `spec.astra.clusterName`
-+
-
-NOTE: `spec.astra.clusterName` 只有在导入专用AKS集群且未向Astra Control Service提供kubeconfigfile时才需要。如果不是这种情况、请删除此行。
-
-** `spec.astra.accountId`
-+
-例如：
-
-+
-[listing]
-----
-apiVersion: netapp.astraconnector.com/v1
-kind: AstraConnector
-metadata:
-  name: astra-connector
-spec:
-  natssync-client:
-    image: natssync-client:2.0
-    cloud-bridge-url: https://<your.astra.control.service.url>
-  nats:
-    image: nats:2.6.1-alpine3.14
-  httpproxy-client:
-    image: httpproxylet:2.0
-  echo-client:
-    image: echo-proxylet:2.0
-  imageRegistry:
-    name: theotw
-  astra:
-    token: <Astra Control API token>
-    clusterName: <your-private-AKS-cluster-name>
-    accountId: <Astra Control account id>
-    acceptEULA: yes
-----
-
-
-. 应用Astra Connector自定义资源定义(CRD)：
-+
-[source, console]
-----
-kubectl apply -f config/samples/astraconnector_v1.yaml -n astra-connector
-----
-. 检查Asta连接器的状态：
-+
-[source, console]
-----
-kubectl get astraconnector astra-connector -n astra-connector
-----
-+
-您应看到类似于以下内容的输出：
-
-+
-[source, console]
-----
-NAME              REGISTERED   ASTRACONNECTORID
-astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
-----
-
+在添加专用集群之前、您需要在此集群上安装Astra Connector、以便Astra Control可以与其通信。请参见 link:install-astra-connector.html["安装适用于私有集群的Asta Connector"] 有关说明，请参见。
 
 
 
@@ -197,7 +110,6 @@ Astra控制服务支持使用以下Kubernetes分发版的自管理集群：
 您的自管理集群需要满足以下要求：
 
 * 集群必须可通过Internet访问。
-* 集群不能托管在内部网络中；它必须托管在公共云环境中。
 * 如果您正在使用或计划使用已启用CSI驱动程序的存储、则必须在集群上安装相应的CSI驱动程序。有关使用CSI驱动程序集成存储的详细信息、请参阅存储服务的文档。
 * 您可以访问仅包含一个上下文元素的集群kubeconfigfile文件。请遵循 link:create-kubeconfig.html["这些说明"^] 生成kubeconfig.文件。
 * 如果要使用引用私有证书颁发机构(CA)的kubeconfigfile文件添加集群、请将以下行添加到 `cluster` kubeconfig"文件的部分。这样、Astra Control便可添加集群：
@@ -213,7 +125,7 @@ insecure-skip-tls-verify: true
 NOTE: 您可以 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html#choose-the-deployment-method["部署Astra Trident"^] 使用Trident运算符(手动或使用Helm图表)或 `tridentctl`。在安装或升级Astra Trident之前、请查看 https://docs.netapp.com/us-en/trident/trident-get-started/requirements.html["支持的前端、后端和主机配置"^]。
 
 +
-** *已配置Astra三端存储后端*：必须至少配置一个Astra三端存储后端 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-postdeployment.html#step-1-create-a-backend["已配置"^] 在集群上。
+** *已配置Astra三端存储后端*：必须至少配置一个Astra三端存储后端 https://docs.netapp.com/us-en/trident/trident-use/backends.html["已配置"^] 在集群上。
 ** *已配置Astra三端存储类*：必须至少有一个Astra三端存储类 https://docs.netapp.com/us-en/trident/trident-use/manage-stor-class.html["已配置"^] 在集群上。如果配置了默认存储类、请确保只有一个存储类具有此标注。
 ** 已安装并配置* Astra Trident卷快照控制器和卷快照类*：卷快照控制器必须为 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["已安装"^] 以便可以在Astra Control中创建快照。至少一个Astra Trident `VolumeSnapshotClass` 已经 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-set-up-a-volumesnapshotclass["设置"^] 由管理员执行。
 
@@ -221,6 +133,9 @@ NOTE: 您可以 https://docs.netapp.com/us-en/trident/trident-get-started/kubern
 
 
 ====
+* *Astra Control置备程序*：要使用Astra Control置备程序的高级管理和存储配置功能(仅Astra Control用户可访问这些功能)，必须安装Astra Trandent 23.10或更高版本并启用 link:../use/enable-acp.html["Astra Control配置程序功能"]。
+
+
 .步骤
 . 在信息板上，选择 * 管理 Kubernetes 集群 * 。
 +
@@ -233,7 +148,7 @@ NOTE: 您可以 https://docs.netapp.com/us-en/trident/trident-get-started/kubern
 NOTE: 创建自己的 `kubeconfig` file中、您只能定义*一*上下文元素。请参见 https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/["Kubernetes 文档"^] 有关创建的信息 `kubeconfig` 文件。
 
 . *凭据名称*：提供要上传到Astra Control的自管理集群凭据的名称。默认情况下，凭据名称会自动填充为集群的名称。
-. *专用路由标识符*：输入专用路由标识符，您可以从Astra Connector获取该标识符。如果您通过查询Astra Connector `kubectl get` 命令中、专用路由标识符称为 `ASTRACONNECTORID`。
+. *专用路由标识符*：输入专用路由标识符，您可以从Astra Connector获取该标识符。如果您通过查询Astra Connector `kubectl get astraconnector -n astra-connector` 命令中、专用路由标识符称为 `ASTRACONNECTORID`。
 +
 
 NOTE: 专用路由标识符是与Asta Connector关联的名称、Asta可通过Asta管理专用Kubnetes集群。在这种情况下、专用集群是指不向Internet公开其API服务器的Kubbernetes集群。

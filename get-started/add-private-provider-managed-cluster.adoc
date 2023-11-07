@@ -28,100 +28,16 @@ summary: 设置环境后，您可以创建 Kubernetes 集群，然后将其添�
 
 要将专用集群添加到Astra Control Service、您需要执行以下任务：
 
-* <<安装Astra Connector操作员>>
-* <<设置永久性存储>>
-* <<将私有提供商管理的集群添加到Asta Control Service>>
+. <<安装A作用 连接器>>
+. <<设置永久性存储>>
+. <<将私有提供商管理的集群添加到Asta Control Service>>
 
 
 
 
-== 安装Astra Connector操作员
+== 安装A作用 连接器
 
-您需要在专用集群上安装Asta Connector operator。如果使用的是Bastion主机、请从Bastion主机的命令行对这些命令执行问题描述。
-
-.步骤
-. 克隆Astra Connector操作员GitHub存储库：
-+
-[source, console]
-----
-git clone https://github.com/NetApp/astra-connector-operator.git
-----
-. 将目录更改为已解压缩运算符包的顶层、以便您可以使用`ls`命令查看`astor_operator.yaml`文件。
-. 应用 `astraconnector_operator.yaml` 文件运行此命令时、系统将为Astra Connector运算符创建正确的命名空间、并将此配置应用于此命名空间：
-+
-[source, console]
-----
-kubectl apply -f astraconnector_operator.yaml
-----
-. 为专用集群组件创建命名空间：
-+
-[source, console]
-----
-kubectl create ns astra-connector
-----
-. 按照中的说明生成Astra Control API令牌 https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html["Astra Automation文档"^]。
-. 修改ASRA Connector操作程序存储库的config/sempls目录中的示例配置文件、使其包含特定于您的环境的以下项值：
-+
-** `spec.natssync-client.cloud-bridge-url`
-** `spec.astra.token`
-** `spec.astra.clusterName`
-+
-
-NOTE: `spec.astra.clusterName` 只有在导入专用AKS集群且未向Astra Control Service提供kubeconfigfile时才需要。如果不是这种情况、请删除此行。
-
-** `spec.astra.accountId`
-+
-例如：
-
-+
-[listing]
-----
-apiVersion: netapp.astraconnector.com/v1
-kind: AstraConnector
-metadata:
-  name: astra-connector
-spec:
-  natssync-client:
-    image: natssync-client:2.0
-    cloud-bridge-url: https://<your.astra.control.service.url>
-  nats:
-    image: nats:2.6.1-alpine3.14
-  httpproxy-client:
-    image: httpproxylet:2.0
-  echo-client:
-    image: echo-proxylet:2.0
-  imageRegistry:
-    name: theotw
-  astra:
-    token: <Astra Control API token>
-    clusterName: <your-private-AKS-cluster-name>
-    accountId: <Astra Control account id>
-    acceptEULA: yes
-----
-
-
-. 应用Astra Connector自定义资源定义(CRD)：
-+
-[source, console]
-----
-kubectl apply -f config/samples/astraconnector_v1.yaml -n astra-connector
-----
-. 检查Asta连接器的状态：
-+
-[source, console]
-----
-kubectl get astraconnector astra-connector -n astra-connector
-----
-+
-您应看到类似于以下内容的输出：
-
-+
-[source, console]
-----
-NAME              REGISTERED   ASTRACONNECTORID
-astra-connector   true         22b839aa-8b85-445a-85dd-0b1f53b5ea19
-----
-
+在添加专用集群之前、您需要在此集群上安装Astra Connector、以便Astra Control可以与其通信。请参见 link:install-astra-connector.html["安装适用于私有集群的Asta Connector"] 有关说明，请参见。
 
 
 

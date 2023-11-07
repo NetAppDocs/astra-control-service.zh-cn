@@ -46,5 +46,7 @@ entries:
     url: "/use/close-account.html"
 - title: 管理云实例
   url: "/use/manage-cloud-instances.html"
+- title: 启用Asta Control配置程序
+  url: "/use/enable-acp.html"
 - title: 取消管理应用程序和集群
   url: "/use/unmanage.html"

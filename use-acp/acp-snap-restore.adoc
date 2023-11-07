@@ -1,0 +1,97 @@
+---
+sidebar: sidebar 
+permalink: use-acp/acp-snap-restore.html 
+keywords: snapshot restore, snapshot, astra control provisioner, TridentActionSnapshotRestore, 
+summary: 'Asta Control配置程序可使用从快照快速原位还原卷 `TridentActionSnapshotRestore` (TSR) CR。此CR用作要务Kubbernetes操作、在操作完成后不会持久保留。' 
+---
+= 使用快照恢复卷数据
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Asta Control配置程序可使用从快照快速原位还原卷 `TridentActionSnapshotRestore` (TSR) CR。此CR用作要务Kubbernetes操作、在操作完成后不会持久保留。
+
+Asta Control配置程序支持在上执行快照还原 `ontap-san`， `ontap-san-economy`， `ontap-nas`， `ontap-nas-flexgroup`， `azure-netapp-files`， `gcp-cvs`，和 `solidfire-san` 驱动程序。
+
+.开始之前
+您必须具有绑定的PVC和可用的卷快照。
+
+* 验证PVC状态是否已绑定。
++
+[listing]
+----
+kubectl get pvc
+----
+* 确认卷快照已准备就绪、可以使用。
++
+[listing]
+----
+kubectl get vs
+----
+
+
+.步骤
+. 创建TSR CR。此示例将为PVC创建CR `pvc1` 和卷快照 `pvc1-snapshot`。
++
+[listing]
+----
+cat tasr-pvc1-snapshot.yaml
+
+apiVersion: v1
+kind: TridentActionSnapshotRestore
+metadata:
+  name: this-doesnt-matter
+  namespace: trident
+spec:
+  pvcName: pvc1
+  volumeSnapshotName: pvc1-snapshot
+----
+. 应用CR以从快照还原。此示例将从Snapshot还原 `pvc1`。
++
+[listing]
+----
+kubectl create -f tasr-pvc1-snapshot.yaml
+
+tridentactionsnapshotrestore.trident.netapp.io/this-doesnt-matter created
+----
+
+
+.结果
+Asta Control配置程序从快照还原数据。您可以验证快照还原状态。
+
+[listing]
+----
+kubectl get tasr -o yaml
+
+apiVersion: v1
+items:
+- apiVersion: trident.netapp.io/v1
+  kind: TridentActionSnapshotRestore
+  metadata:
+    creationTimestamp: "2023-04-14T00:20:33Z"
+    generation: 3
+    name: this-doesnt-matter
+    namespace: trident
+    resourceVersion: "3453847"
+    uid: <uid>
+  spec:
+    pvcName: pvc1
+    volumeSnapshotName: pvc1-snapshot
+  status:
+    startTime: "2023-04-14T00:20:34Z"
+    completionTime: "2023-04-14T00:20:37Z"
+    state: Succeeded
+kind: List
+metadata:
+  resourceVersion: ""
+----
+[NOTE]
+====
+* 在大多数情况下、如果发生故障、Asta Control配置程序不会自动重试此操作。您需要再次执行此操作。
+* 没有管理员访问权限的Kubbernetes用户可能必须获得管理员授予的权限、才能在其应用程序命名空间中创建TSR CR。
+
+
+====

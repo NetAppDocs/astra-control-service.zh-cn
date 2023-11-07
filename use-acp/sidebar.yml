@@ -1,0 +1,8 @@
+---
+section: use-acp
+title: 使用Astra Control配置程序
+entries:
+- title: 配置存储后端加密
+  url: "/use-acp/configure-storage-backend-encryption.html"
+- title: 使用快照恢复卷数据
+  url: "/use-acp/acp-snap-restore.html"

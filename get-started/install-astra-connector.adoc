@@ -1,0 +1,137 @@
+---
+sidebar: sidebar 
+permalink: get-started/install-astra-connector.html 
+keywords: connector, install, astra connector, manage cluster, add cluster, cluster, add, manage 
+summary: 您可以安装Asta Connector来帮助管理专用集群。 
+---
+= 安装适用于私有集群的Asta Connector
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+Asta Control Service使用Asta Connector在Asta Control Service和专用集群之间实现通信。您需要在要管理的专用集群上安装Astra Connector。
+
+Astra Connector支持以下类型的专用集群：
+
+* Amazon Elelic Kubelnetes Service (EKS)
+* Azure Kubernetes Service （ AKS ）
+* Google Kubernetes Engine （ GKEE ）
+* 基于AWS的Red Hat OpenShift服务(ROSA)
+* 具有AWS PrivateLink的罗莎
+* Red Hat OpenShift容器平台内部部署
+
+
+
+
+== 安装A作用 连接器
+
+.关于此任务
+* 执行这些步骤时、请对要使用Astra Control Service管理的专用集群执行这些命令。
+* 如果使用的是Bastion主机、请从Bastion主机的命令行对这些命令执行问题描述。
+
+
+.开始之前
+* 您需要访问要使用Astra Control Service管理的专用集群。
+* 要在集群上安装Asta Connector操作员、您需要具有Kubbernetes管理员权限。
+
+
+.步骤
+. 在要使用Asta Control Service管理的专用集群上安装Asta Connector运算符。运行此命令时、命名空间 `astra-connector-operator` 创建并将配置应用于命名空间：
++
+[source, console]
+----
+kubectl apply -f https://github.com/NetApp/astra-connector-operator/releases/download/23.07.0-202310251519/astraconnector_operator.yaml
+----
+. 确认操作员已安装并准备就绪：
++
+[source, console]
+----
+kubectl get all -n astra-connector-operator
+----
+. 从Asta Control获取API令牌。请参见 https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html["Astra Automation文档"^] 有关说明，请参见。
+. 创建Astra-connector命名空间：
++
+[source, console]
+----
+kubectl create ns astra-connector
+----
+. 创建Astra Connector CR文件并将其命名为 `astra-connector-cr.yaml`。更新方括号<>中的值以匹配您的Astra Control环境和集群配置：
++
+** *Astra*：控制服务的Web UI <ASTRA_CONTROL_SERVICE_URL>。
+** *Astra*：您在上一步中获得的<ASTRA_CONTROL_SERVICE_API_TOKEN>标记。
+** *AzAzure Kubernet*：(仅限集群)—专用<PRIVATE_AKS_CLUSTER_NAME>集群的集群名称。只有在添加专用AKS集群时、才会取消注释并填充此行。
+** *Astra*：从<ASTRA_CONTROL_ACCOUNT_ID> Web UI获取。选择页面右上角的图图标，然后选择*API access*。
++
+[source, yaml]
+----
+apiVersion: netapp.astraconnector.com/v1
+kind: AstraConnector
+metadata:
+  name: astra-connector
+  namespace: astra-connector
+spec:
+  natssync-client:
+    cloud-bridge-url: <ASTRA_CONTROL_SERVICE_URL>
+  imageRegistry:
+    name: theotw
+    secret: ""
+  astra:
+    token: <ASTRA_CONTROL_SERVICE_API_TOKEN>
+    #clusterName: <PRIVATE_AKS_CLUSTER_NAME>
+    accountId: <ASTRA_CONTROL_ACCOUNT_ID>
+    acceptEULA: yes
+----
+
+
+. 在您填充之后 `astra-connector-cr.yaml` 使用正确值的文件、应用CR：
++
+[source, console]
+----
+kubectl apply -f astra-connector-cr.yaml
+----
+. 验证Asta Connector是否已完全部署：
++
+[source, console]
+----
+kubectl get all -n astra-connector
+----
+. 验证集群是否已注册到Astra Control：
++
+[source, console]
+----
+kubectl get astraconnector -n astra-connector
+----
++
+您应看到类似于以下内容的输出：
+
++
+[listing]
+----
+NAME              REGISTERED   ASTRACONNECTORID                       STATUS
+astra-connector   true         be475ae5-1511-4eaa-9b9e-712f09b0d065   Registered with Astra
+----
++
+
+TIP: 记下ASTRACONNECTRID；将集群添加到Astra Control时将需要此ID。
+
+
+
+
+
+== 下一步是什么？
+
+现在您已安装Astra Connector、可以将私有集群添加到Astra Control Service了。
+
+* link:add-private-provider-managed-cluster.html["将私有提供商管理的集群添加到Asta Control Service"^]：使用以下步骤添加具有专用IP地址且由云提供商管理的集群。您需要云提供商的服务主体帐户、服务帐户或用户帐户。
+* link:add-private-self-managed-cluster.html["将私有自管理集群添加到Asta Control Service"^]：使用以下步骤添加具有专用IP地址且由您的组织管理的集群。您需要为要添加的集群创建一个kubeconfigfile文件。
+
+
+
+
+== 有关详细信息 ...
+
+* link:add-first-cluster.html["添加集群"^]
+

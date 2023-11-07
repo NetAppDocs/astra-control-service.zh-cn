@@ -1,0 +1,280 @@
+---
+sidebar: sidebar 
+permalink: use/enable-acp.html 
+keywords: Astra Control Provisioner install, acp, enable, astra trident upgrade, upgrade trident 
+summary: 启用Asta Control配置程序以访问高级存储配置和管理功能。 
+---
+= 启用Asta Control配置程序
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Astra Trident 23.10及更高版本提供了使用Astra Control配置程序的选项、允许获得许可的Astra Control用户访问高级存储配置功能。除了基于标准Asta三端CSI的功能之外、Asta Control配置程序还提供了此扩展功能。
+
+您的Astra Control Service订阅会自动包含Astra Control配置程序使用的许可证。
+
+在Asta Control的未来更新中、Asta Control配置程序将取代Asta Trandent、成为Asta Control架构中的存储配置程序和流程编排程序。因此、强烈建议Asta Control用户启用Asta Control配置程序。Asta三元数据将继续保持开源状态、并使用NetApp的新CSI和其他功能进行发布、维护、支持和更新。
+
+.如何知道是否需要启用Astra Control配置程序？
+如果您向Astra Control Service添加的集群之前未安装Astra三项功能、则此集群将标记为 `Eligible`。你先请 link:../get-started/add-first-cluster.html["将集群添加到Asta Control"]，A作用 控制配置程序将自动启用。
+
+集群未标记 `Eligible`，将被标记 `Partially eligible` 原因之一：
+
+* 它使用的是旧版本的Asta三端到子
+* 它使用的是A作用 于三端的23.10、但尚未启用配置程序选项
+* 此集群类型不允许自动启用
+
+
+适用于 `Partially eligible` 在某些情况下、请按照以下说明手动为集群启用Asta Control配置程序。
+
+image:ac-acp-eligibility.png["屏幕截图显示了添加集群工作流中的集群资格"]
+
+.在启用Astra Control配置程序之前
+如果您现有的Asta Trident没有Asta Control配置程序、但要启用Asta Control配置程序、请首先执行以下操作：
+
+* *确认您的Astra Dent版本在四个版本的窗口内*：如果您的Astra Dent版本在23.10的四个版本窗口内、则可以使用Astra Control配置程序直接升级到Astra Dent 23.10。例如、您可以直接从Asta三端到22.10升级到23.10。
+* *确认集群具有一个AMD64*系统架构：Astra Control配置程序映像在amd64和ARM64 CPU架构中都提供，但Astra Control仅支持amd64。
+
+
+.升级到Astra Control配置程序23.10
+如果您将Astra三端到版本23.10升级、则可以使用此操作步骤启用并安装Astra控件配置程序。
+
+.步骤
+. 访问NetApp Astra控件映像注册表：
++
+.展开步骤
+[%collapsible]
+====
+.. 登录到Astra Control Service UI并记录您的Astra Control帐户ID。
++
+... 选择页面右上角的图图标。
+... 选择* API访问*。
+... 记下您的帐户ID。
+
+
+.. 在同一页面中，选择*Generate API t令牌*并将API令牌字符串复制到剪贴板，然后将其保存在编辑器中。
+.. 使用您的首选方法登录Astra Control注册表：
++
+[source, docker]
+----
+docker login cr.astra.netapp.io -u <account-id> -p <api-token>
+----
++
+[source, crane]
+----
+crane auth login cr.astra.netapp.io -u <account-id> -p <api-token>
+----
+
+
+====
+. 按照首选方法的步骤将映像移动到自定义注册表。如果您不使用注册表、请按照三端修复程序操作步骤设置密钥。
++
+
+NOTE: 以下命令可以使用Podman、而不是Docker。如果您使用的是Windows环境、建议使用PowerShell。
+
++
+[role="tabbed-block"]
+====
+.Docker
+--
+.. 从注册表中提取Asta Control配置程序映像：
++
+
+NOTE: 提取的映像不支持多个平台、只支持与提取映像的主机相同的平台、例如Linux amd64。
+
++
+[source, console]
+----
+docker pull cr.astra.netapp.io/astra/trident-acp:23.10.0
+----
+.. 标记图像：
++
+[source, console]
+----
+docker tag cr.astra.netapp.io/astra/trident-acp:23.10.0 <my_custom_registry>/trident-acp:23.10.0
+----
+.. 将映像推送到自定义注册表：
++
+[source, console]
+----
+docker push <my_custom_registry>/trident-acp:23.10.0
+----
+
+
+--
+.起重机
+--
+.. 将Asta Control配置程序清单复制到自定义注册表：
++
+[listing]
+----
+crane copy cr.astra.netapp.io/astra/trident-acp:23.10.0 <my_custom_registry>/trident-acp:23.10.0
+----
+
+
+--
+.Asta三端操作员
+--
+.. 确保Docker配置中存在此块：
++
+[listing]
+----
+{
+    "auths": {
+        "https://cr.astra.netapp.io/": {
+            "auth": "c3R...zE2"
+        }
+    }
+}
+----
+.. [[pull机密]]在中创建密钥 `trident` 命名空间：
++
+[listing]
+----
+kubectl create secret -n <trident namespace> generic <secret name> \
+    --from-file=.dockerconfigjson=<path/to/.docker/config.json> \
+    --type=kubernetes.io/dockerconfigjson
+----
+.. 将此密钥添加到Torc (Asta Trident流程编排程序)：
++
+[listing]
+----
+apiVersion: trident.netapp.io/v1
+kind: TridentOrchestrator
+metadata:
+  name: trident
+spec:
+  debug: true
+  namespace: trident
+  tridentImage: netapp/trident:23.10.0
+  imagePullSecrets:
+  - <secret name>
+----
+
+
+--
+====
+. 确定原来的Asta Trdent安装方法是否使用。
++
+
+WARNING: 请勿使用Helm启用Asta Control配置程序。如果您在初始安装中使用Helm、并且要升级到23.10、则需要使用啮合式操作符或tridentcdl来启用Asta Control配置程序。
+
++
+[role="tabbed-block"]
+====
+.Asta三端操作员
+--
+.. 编辑TridentOrchestrator CR并进行以下编辑：
++
+*** 启用Asta Control配置程序 (`enableACP: true`）
+*** 设置Asta Control配置程序映像的注册表位置 (`acpImage: <my_custom_registry>/trident-acp:v23.10.0`）。
++
+
+NOTE: 如果您已建立 <<pull-secrets,图像拉取密钥>> 在本操作步骤的前面部分、您可以在此处使用它们 (`cr.astra.netapp.io/astra/trident-acp:23.10.0 imagePullSecrets: - <secret name>`）
+
+
+
++
+[listing, subs="+quotes"]
+----
+apiVersion: trident.netapp.io/v1
+kind: TridentOrchestrator
+metadata:
+  name: trident
+spec:
+  debug: true
+  namespace: trident
+  *enableACP: true*
+  *acpImage: <my_custom_registry>/trident-acp:v23.10.0*
+----
+.. 应用更改：
++
+[listing]
+----
+kubectl -n trident apply -f tridentorchestrator_cr.yaml
+----
+.. 更新Asta Trdent配置、以便使用新的 `trident-acp` 容器部署方式：
++
+
+NOTE: 对于运行Kubornetes 1.24或更早版本的集群、请使用 `bundle_pre_1_25.yaml`。对于运行Kubernetes 1.25或更高版本的集群、请使用 `bundle_post_1_25.yaml`。
+
++
+[listing]
+----
+kubectl -n trident apply -f trident-installer-23.10.0/deploy/<bundle-name.yaml>
+----
+.. 验证是否已创建操作员、部署和副本集。
++
+[listing]
+----
+kubectl get all -n <operator-namespace>
+----
++
+
+IMPORTANT: 在 Kubernetes 集群中只能有 * 一个操作符实例 * 。请勿创建 Trident 操作员的多个部署。
+
+.. 验证 `trident-acp` 容器正在运行 `acpVersion` 为 `23.10.0` 状态为 `Installed`：
++
+[listing]
+----
+kubectl get torc -o yaml
+----
++
+响应：
+
++
+[listing]
+----
+status:
+  acpVersion: 23.10.0
+  currentInstallationParams:
+    ...
+    acpImage: <my_custom_registry>/trident-acp:v23.10.0
+    enableACP: "true"
+    ...
+  ...
+  status: Installed
+----
+
+
+--
+.Tridentctl
+--
+.. https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-tridentctl.html["卸载 Astra Trident"^]。
+.. 在启用Asta Control配置程序的情况下重新安装Asta Trent (`--enable-acp=true`）：
++
+[listing]
+----
+./tridentctl -n trident install --enable-acp=true --acp-image=mycustomregistry/trident-acp:v23.10
+----
+.. 确认已启用Asta Control配置程序：
++
+[listing]
+----
+./tridentctl -n trident version
+----
++
+响应：
+
++
+[listing]
+----
++----------------+----------------+-------------+ | SERVER VERSION | CLIENT VERSION | ACP VERSION | +----------------+----------------+-------------+ | 23.10.0 | 23.10.0 | 23.10.0. | +----------------+----------------+-------------+
+----
+
+
+--
+====
+
+
+.结果
+安装Asta Control配置程序后、在Asta Control UI中托管此配置程序的集群将显示 `ACP version` 而不是 `Trident version` 字段和当前安装的版本号。
+
+image:ac-acp-version.png["显示UI中ACP版本位置的屏幕截图"]
+
+.有关详细信息 ...
+* https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-operator-overview.html["Asta Trdent升级文档"^]
+

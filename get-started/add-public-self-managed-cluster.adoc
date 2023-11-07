@@ -76,7 +76,6 @@ Astra控制服务支持使用以下Kubernetes分发版的自管理集群：
 您的自管理集群需要满足以下要求：
 
 * 集群必须可通过Internet访问。
-* 集群不能托管在内部网络中；它必须托管在公共云环境中。
 * 如果您正在使用或计划使用已启用CSI驱动程序的存储、则必须在集群上安装相应的CSI驱动程序。有关使用CSI驱动程序集成存储的详细信息、请参阅存储服务的文档。
 * 您可以访问仅包含一个上下文元素的集群kubeconfigfile文件。请遵循 link:create-kubeconfig.html["这些说明"^] 生成kubeconfig.文件。
 * 如果要使用引用私有证书颁发机构(CA)的kubeconfigfile文件添加集群、请将以下行添加到 `cluster` kubeconfig"文件的部分。这样、Astra Control便可添加集群：
@@ -92,7 +91,7 @@ insecure-skip-tls-verify: true
 NOTE: 您可以 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html#choose-the-deployment-method["部署Astra Trident"^] 使用Trident运算符(手动或使用Helm图表)或 `tridentctl`。在安装或升级Astra Trident之前、请查看 https://docs.netapp.com/us-en/trident/trident-get-started/requirements.html["支持的前端、后端和主机配置"^]。
 
 +
-** *已配置Astra三端存储后端*：必须至少配置一个Astra三端存储后端 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-postdeployment.html#step-1-create-a-backend["已配置"^] 在集群上。
+** *已配置Astra三端存储后端*：必须至少配置一个Astra三端存储后端 https://docs.netapp.com/us-en/trident/trident-use/backends.html["已配置"^] 在集群上。
 ** *已配置Astra三端存储类*：必须至少有一个Astra三端存储类 https://docs.netapp.com/us-en/trident/trident-use/manage-stor-class.html["已配置"^] 在集群上。如果配置了默认存储类、请确保只有一个存储类具有此标注。
 ** 已安装并配置* Astra Trident卷快照控制器和卷快照类*：卷快照控制器必须为 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["已安装"^] 以便可以在Astra Control中创建快照。至少一个Astra Trident `VolumeSnapshotClass` 已经 https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-set-up-a-volumesnapshotclass["设置"^] 由管理员执行。
 
@@ -100,6 +99,9 @@ NOTE: 您可以 https://docs.netapp.com/us-en/trident/trident-get-started/kubern
 
 
 ====
+* *Astra Control置备程序*：要使用Astra Control置备程序的高级管理和存储配置功能(仅Astra Control用户可访问这些功能)，必须安装Astra Trandent 23.10或更高版本并启用 link:../use/enable-acp.html["Astra Control配置程序功能"]。
+
+
 .步骤
 . 在信息板上，选择 * 管理 Kubernetes 集群 * 。
 +

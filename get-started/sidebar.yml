@@ -27,6 +27,8 @@ entries:
 - title: 添加集群
   url: "/get-started/add-first-cluster.html"
   entries:
+  - title: 安装适用于私有集群的Asta Connector
+    url: "/get-started/install-astra-connector.html"
   - title: 添加由提供程序管理的集群
     entries:
     - title: 添加公共提供商管理的集群

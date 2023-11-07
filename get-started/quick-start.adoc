@@ -73,7 +73,8 @@ link:set-up-microsoft-azure-with-amd.html["了解有关 Microsoft Azure 和 Azur
 
 endif::azure[]
 
-如果您要管理自己的集群、而集群不是由云提供商托管的、请查看自管理集群的要求。link:add-first-cluster.html#start-managing-kubernetes-clusters["了解有关自管理集群要求的更多信息"]。
+如果您要管理自己的集群、而集群不是由云提供商托管的、请查看自管理集群的要求。
+link:add-first-cluster.html["了解有关自管理集群要求的更多信息"]。
 
 
 

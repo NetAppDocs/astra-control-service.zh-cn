@@ -21,6 +21,8 @@ summary: 通过使用自动保护策略或临时创建快照和备份来保护�
 * <<配置保护策略>>
 * <<创建快照>>
 * <<创建备份>>
+* <<为ONTAP NAS经济型操作启用备份和还原>>
+* <<创建不可还原的备份>>
 * <<查看快照和备份>>
 * <<删除快照>>
 * <<取消备份>>
@@ -34,6 +36,9 @@ summary: 通过使用自动保护策略或临时创建快照和备份来保护�
 保护策略通过按定义的计划创建快照，备份或这两者来保护应用程序。您可以选择每小时，每天，每周和每月创建快照和备份，并且可以指定要保留的副本数。
 
 如果您需要备份或快照的运行频率高于每小时一次，则可以 https://docs.netapp.com/us-en/astra-automation/workflows/workflows_before.html["使用 Astra Control REST API 创建快照和备份"^]。
+
+
+NOTE: 如果要定义一个保护策略来创建不可变备份以写入一次多次读取(Write 1机会 读取、WORM)分段、请确保备份的保留时间不短于为分段配置的保留期限。
 
 .步骤
 . 选择 * 应用程序 * ，然后选择受管应用程序的名称。
@@ -65,6 +70,9 @@ Astra Control 通过使用您定义的计划和保留策略创建和保留快照
 
 您可以随时创建按需快照。
 
+
+IMPORTANT: 如果您的应用使用由支持的存储类 `ontap-nas-economy` 驱动程序、无法创建快照。为快照使用备用存储类。
+
 .步骤
 . 选择 * 应用程序 * 。
 . 从所需应用程序的 * 操作 * 列的选项菜单中，选择 * 快照 * 。
@@ -90,6 +98,11 @@ ifdef::azure[]
 ====
 endif::azure[]
 
+.关于此任务
+Astra Control中的存储分段不报告可用容量。在备份或克隆Asta Control管理的应用程序之前、请检查相应存储管理系统中的存储分段信息。
+
+如果您的应用使用由支持的存储类 `ontap-nas-economy` 驱动程序、您需要这样做 <<为ONTAP NAS经济型操作启用备份和还原,启用备份和还原>> 功能。请确保您已定义 `backendType` 中的参数 https://docs.netapp.com/us-en/trident/trident-reference/objects.html#kubernetes-storageclass-objects["Kubbernetes存储对象"^] 值为 `ontap-nas-economy` 在执行任何保护操作之前。
+
 .步骤
 . 选择 * 应用程序 * 。
 . 从所需应用程序的*操作*列的选项菜单中、选择*备份*。
@@ -103,14 +116,135 @@ endif::azure[]
 .结果
 Astra Control 会创建应用程序的备份。
 
+[NOTE]
+====
+* 如果网络发生中断或异常缓慢，备份操作可能会超时。这会导致备份失败。
+* 如果需要取消正在运行的备份、请按照中的说明进行操作 <<取消备份>>。要删除备份、请等待备份完成、然后按照中的说明进行操作 <<删除备份>>。
+* 在执行数据保护操作（克隆，备份，还原）并随后调整永久性卷大小后，在 UI 中显示新卷大小之前，最长会有 20 分钟的延迟。数据保护操作将在几分钟内成功完成，您可以使用存储后端的管理软件确认卷大小的更改。
 
-NOTE: 如果需要取消正在运行的备份、请按照中的说明进行操作 <<取消备份>>。要删除备份、请等待备份完成、然后按照中的说明进行操作 <<删除备份>>。
 
+====
+
+
+== 为ONTAP NAS经济型操作启用备份和还原
+
+Asta Control配置程序提供了备份和还原功能、可为使用的存储后端启用这些功能 `ontap-nas-economy` 存储类。
+
+.开始之前
+* 您已启用Astra Control配置程序。
+* 您已在Astra Control中定义了一个应用程序。在您完成此操作步骤之前、此应用程序的保护功能将受限。
+* 您已拥有 `ontap-nas-economy` 已选择作为存储后端的默认存储类。
+
+
+.展开以了解配置步骤
+[%collapsible]
+====
+. 在ONTAP存储后端执行以下操作：
++
+.. 查找托管的SVM `ontap-nas-economy`应用程序的基于卷。
+.. 登录到连接到创建卷的ONTAP的终端。
+.. 隐藏SVM的Snapshot目录：
++
+
+NOTE: 此更改会影响整个SVM。隐藏的目录将继续可访问。
+
++
+[source, console]
+----
+nfs modify -vserver <svm name> -v3-hide-snapshot enabled
+----
++
+
+IMPORTANT: 验证ONTAP存储后端上的Snapshot目录是否已隐藏。如果未能隐藏此目录、可能会导致无法访问您的应用程序、尤其是在使用NFSv3的情况下。
+
+
+
+. 在Astra三端执行以下操作：
++
+.. 为每个基于ONTAP NAS经济型且与应用程序关联的PV启用Snapshot目录：
++
+[source, console]
+----
+tridentctl update volume <pv name> --snapshot-dir=true --pool-level=true -n trident
+----
+.. 确认已为每个关联PV启用Snapshot目录：
++
+[source, console]
+----
+tridentctl get volume <pv name> -n trident -o yaml | grep snapshotDir
+----
++
+响应：
+
++
+[listing]
+----
+snapshotDirectory: "true"
+----
+
+
+. 在Astra Control中、启用所有关联的快照目录后刷新应用程序、以便Astra Control识别更改后的值。
+
+
+.结果
+该应用程序已准备好使用Astra Control进行备份和还原。每个PVC还可供其他应用程序用于备份和恢复。
+
+====
+
+
+== 创建不可还原的备份
+
+只要存储不可变备份的存储分段上的保留策略禁止、就无法修改、删除或覆盖该备份。您可以通过将应用程序备份到配置了保留策略的存储分段来创建不可配置的备份。请参见 link:../learn/data-protection.html#immutable-backups["数据保护"^] 了解有关使用不可配置备份的重要信息。
+
+.开始之前
+您需要使用保留策略配置目标存储分段。根据您使用的存储提供程序、执行此操作的方式会有所不同。有关详细信息、请参见存储提供程序文档：
+
+* *Amazon Web Services*： https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock-console.html["创建存储分段时启用S3对象锁定、并设置默认保留模式"g监管"和默认保留期限"^]。
+* *Google Cloud*： https://cloud.google.com/storage/docs/using-bucket-lock["使用保留策略配置存储分段并指定保留期限"^]。
+* *Microsoft Azure"： https://learn.microsoft.com/en-us/azure/storage/blobs/immutable-policy-configure-container-scope?tabs=azure-portal["在容器级别范围上使用基于时间的保留策略配置Blob存储分段"^]。
+* * NetApp StorageGRID *： https://docs.netapp.com/us-en/storagegrid-117/tenant/creating-s3-bucket.html["创建存储分段时启用S3对象锁定、并将默认保留模式设置为"Compliance (合规性)"和默认保留期限"^]。
+
+
+
+NOTE: Astra Control中的存储分段不报告可用容量。在备份或克隆Asta Control管理的应用程序之前、请检查相应存储管理系统中的存储分段信息。
+
+
+IMPORTANT: 如果您的应用使用由支持的存储类 `ontap-nas-economy` 驱动程序、请确保您已定义 `backendType` 中的参数 https://docs.netapp.com/us-en/trident/trident-reference/objects.html#kubernetes-storageclass-objects["Kubbernetes存储对象"^] 值为 `ontap-nas-economy` 在执行任何保护操作之前。
+
+.步骤
+. 选择 * 应用程序 * 。
+. 从所需应用程序的*操作*列的选项菜单中、选择*备份*。
+. 自定义备份的名称。
+. 选择是否从现有快照备份应用程序。如果选择此选项，则可以从现有快照列表中进行选择。
+. 从存储分段列表中为备份选择一个目标分段。一次写入、多次读取(WORM)存储分段的状态在存储分段名称旁边显示为"已锁定"。
++
+
+NOTE: 如果存储分段类型不受支持、则在将鼠标悬停在存储分段上或选择存储分段时会指示此情况。
+
+. 选择 * 下一步 * 。
+. 查看备份摘要并选择*备份*。
+
+
+.结果
+Astra Control可为应用程序创建不可移动的备份。
+
+[NOTE]
+====
+* 如果网络发生中断或异常缓慢，备份操作可能会超时。这会导致备份失败。
+* 如果您尝试同时为同一应用程序创建两个不可变备份到同一存储分段、Astra Control会阻止第二个备份启动。等待第一个备份完成、然后再启动另一个备份。
+* 您无法取消正在运行的不可更改备份。
+* 在执行数据保护操作（克隆，备份，还原）并随后调整永久性卷大小后，在 UI 中显示新卷大小之前，最长会有 20 分钟的延迟。数据保护操作将在几分钟内成功完成，您可以使用存储后端的管理软件确认卷大小的更改。
+
+
+====
 
 
 == 查看快照和备份
 
 您可以从数据保护选项卡查看应用程序的快照和备份。
+
+
+NOTE: 不可还原备份会在其所使用的存储分段旁边显示状态为"已锁定"。
 
 .步骤
 . 选择 * 应用程序 * ，然后选择受管应用程序的名称。
@@ -146,6 +280,9 @@ Astra Control 会删除快照。
 
 TIP: 要取消备份、备份必须位于中 `Running` 状态。您无法取消中的备份 `Pending` 状态。
 
+
+NOTE: 您无法取消正在运行的不可更改备份。
+
 .步骤
 . 选择 * 应用程序 * ，然后选择应用程序的名称。
 . 选择 * 数据保护 * 。
@@ -162,6 +299,9 @@ TIP: 要取消备份、备份必须位于中 `Running` 状态。您无法取消�
 
 
 NOTE: 如果需要取消正在运行的备份、请按照中的说明进行操作 <<取消备份>>。要删除备份、请等待备份完成、然后按照以下说明进行操作。
+
+
+NOTE: 在保留期限到期之前、您不能删除不可更改的备份。
 
 .步骤
 . 选择 * 应用程序 * ，然后选择应用程序的名称。

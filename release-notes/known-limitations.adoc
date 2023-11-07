@@ -22,12 +22,6 @@ summary: 已知限制确定了本产品版本不支持的平台、设备或功�
 
 
 
-=== 未从集群中卸载Astra Trident
-
-从 Astra 控制服务取消管理集群时，不会自动从集群中卸载 Astra Trident 。要卸载 Astra Trident ，您需要 https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["请按照 Astra Trident 文档中的以下步骤进行操作"^]。
-
-
-
 === 与 Postgres Pod 的现有连接导致故障
 
 在 Postgres Pod 上执行操作时，不应直接在 Pod 中连接以使用 psql 命令。Astra 控制服务需要使用 psql 访问权限来冻结和解冻数据库。如果已建立连接，则快照，备份或克隆将失败。
@@ -45,14 +39,6 @@ ifdef::gcp[]
 == GKEE 集群管理的限制
 
 以下限制适用于在 Google Kubernetes Engine （ GKEE ）中管理 Kubernetes 集群。
-
-
-
-=== Google Marketplace应用程序尚未经过验证
-
-NetApp 尚未验证从 Google Marketplace 部署的应用程序。一些用户报告了从Google Marketplace部署的Postgre、MariaDB和MySQL应用程序的发现或备份问题。
-
-无论您在 Astra Control Service 中使用哪种类型的应用程序，您都应始终自行测试备份和还原工作流，以确保满足灾难恢复要求。
 
 endif::gcp[]
 
@@ -122,7 +108,7 @@ NOTE: 在克隆操作期间、需要IngressClass资源或webhooks才能正常运
 
 === 具有命名空间约束的成员用户无法访问克隆或还原的应用程序，除非管理员用户将命名空间添加到此限制中
 
-任意 `member` 使用命名空间名称/ID限制RBAC的用户可以将应用程序克隆或还原到同一集群上的新命名空间或其组织帐户中的任何其他集群。但是，同一用户无法访问新命名空间中的克隆或还原应用程序。通过克隆或还原操作创建新命名空间后、帐户管理员/所有者可以编辑 `member` 受影响用户的用户帐户和更新角色约束、以授予对新命名空间的访问权限。
+任意 `member` 使用命名空间名称/ID限制RBAC的用户可以将应用程序克隆或还原到同一集群上的新命名空间或其组织帐户中的任何其他集群。但是，同一用户无法访问新命名空间中的克隆或还原应用程序。克隆或还原操作创建新命名空间后、帐户管理员/所有者可以编辑 `member` 受影响用户的用户帐户和更新角色约束、以授予对新命名空间的访问权限。
 
 
 

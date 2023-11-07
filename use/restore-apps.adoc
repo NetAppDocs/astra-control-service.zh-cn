@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: use/restore-apps.html 
-keywords: restore app, restoring an app, restore an app, restore, migrate storage class 
-summary: Astra Control 可以从快照或备份还原应用程序配置和永久性存储。永久性存储备份会从对象存储传输，因此从现有备份还原的速度最快。 
+keywords: restore app, restoring an app, restore an app, restore, ontap-nas-economy, disruptive, migration 
+summary: Astra Control 可以从快照或备份还原应用程序配置和永久性存储。永久性存储备份会从对象存储中传输、因此从现有备份还原将以最快的速度完成。 
 ---
 = 还原应用程序
 :hardbreaks:
@@ -17,10 +17,11 @@ Astra Control 可以从快照或备份还原应用程序。将应用程序还原
 
 NOTE: 如果将命名空间筛选器添加到在还原或克隆操作之后运行的执行挂钩、并且还原或克隆源和目标位于不同的命名空间中、则命名空间筛选器仅会应用于目标命名空间。
 
-.关于此任务
-* *首先保护您的应用程序*：强烈建议您在恢复应用程序之前为其创建快照或备份。这样、您可以在还原失败时从快照或备份克隆。
+.开始之前
+* *首先保护您的应用程序*：强烈建议您在恢复应用程序之前为其创建快照或备份。这样、如果还原失败、您就可以从快照或备份克隆。
 * *检查目标卷*：如果要还原到其他存储类、请确保该存储类使用相同的永久性卷访问模式(例如ReadWriteMany)。如果目标永久性卷访问模式不同，还原操作将失败。例如、如果源永久性卷使用rwx访问模式、请选择无法提供rwx的目标存储类、例如Azure托管磁盘、AWS EBS、Google持久磁盘或 `ontap-san`，发生原因则还原操作是否会失败。有关永久性卷访问模式的详细信息、请参阅 https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes["Kubernetes"^] 文档。
 * *规划空间需求*：对使用NetApp ONTAP 存储的应用程序执行原位还原时、还原的应用程序使用的空间可能会增加一倍。执行原位还原后、从还原的应用程序中删除所有不需要的快照以释放存储空间。
+* *(仅限ONTA-NAS经济型驱动程序)备份和还原*：备份或还原使用由备份的存储类的应用程序之前 `ontap-nas-economy` 驱动程序、请验证 link:../use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations["ONTAP存储后端上的Snapshot目录处于隐藏状态"]。如果未能隐藏此目录、可能会导致无法访问您的应用程序、尤其是在使用NFSv3的情况下。
 
 
 [CAUTION]
@@ -92,7 +93,7 @@ Astra Control 会根据您提供的信息还原应用程序。如果您已原位
 NOTE: 在执行数据保护操作(克隆、备份或还原)并随后调整永久性卷大小后、在Web UI中显示新卷大小之前、最多会有20分钟的延迟。数据保护操作将在几分钟内成功完成，您可以使用存储后端的管理软件确认卷大小的更改。
 
 
-NOTE: 任何按命名空间名称/ID或命名空间标签限制命名空间的成员用户都可以将应用程序克隆或还原到同一集群上的新命名空间或其组织帐户中的任何其他集群。但是，同一用户无法访问新命名空间中的克隆或还原应用程序。通过克隆或还原操作创建新命名空间后，帐户管理员 / 所有者可以编辑成员用户帐户并更新受影响用户的角色约束，以授予对新命名空间的访问权限。
+NOTE: 任何按命名空间名称/ID或命名空间标签限制命名空间的成员用户都可以将应用程序克隆或还原到同一集群上的新命名空间或其组织帐户中的任何其他集群。但是，同一用户无法访问新命名空间中的克隆或还原应用程序。克隆或还原操作创建新命名空间后、帐户管理员/所有者可以编辑成员用户帐户并更新受影响用户的角色约束、以授予对新命名空间的访问权限。
 
 
 

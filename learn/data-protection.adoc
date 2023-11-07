@@ -39,6 +39,24 @@ NOTE: 如果您执行快照或备份、但操作失败并显示错误"The resour
 
 
 
+=== 不可配置的备份
+
+Astra Control Service支持使用以下平台和存储分段类型创建不可配置的备份：
+
+* Amazon Web Services使用配置了S3对象锁定的Amazon S3存储分段
+* Microsoft Azure使用已配置保留策略的Azure存储分段
+* 使用配置了保留策略的Google Cloud Storage存储分段的Google Kub并 配置了保留策略
+* 使用配置了S3对象锁定的S3存储分段的NetApp StorageGRID
+
+
+使用不可配置备份时、请注意以下事项：
+
+* 如果备份到不受支持的平台中的一次写入多次读取(WORM)存储分段或备份到不受支持的存储分段类型、则可能会出现不可预测的结果、例如、即使已过保留时间、备份删除也会失败。
+* Astra Control不支持数据生命周期管理策略、也不支持手动删除用于不可变备份的存储分段上的对象。确保存储后端未配置为管理Astra Control快照或备份数据的生命周期。
+
+
+
+
 == 克隆
 
 _cloner_是应用程序、其配置及其永久性数据卷的精确副本。您可以在同一个 Kubernetes 集群或另一个集群上手动创建克隆。如果需要将应用程序和存储从一个 Kubernetes 集群移动到另一个 Kubernetes 集群，则克隆应用程序非常有用。
