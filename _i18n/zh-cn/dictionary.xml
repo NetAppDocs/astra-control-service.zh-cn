@@ -2162,9 +2162,6 @@ RKE 2 (v1.24.x)与R9cher 2.7</block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
   <block id="dce58385777428b5d9a30460fe36730a" category="list-text">如果要使用引用私有证书颁发机构(CA)的kubeconfigfile文件添加集群、请将以下行添加到<block ref="06b2d4b91b5c9eaa8c20a1c270f95b3c" prefix=" " category="inline-code"></block> kubeconfig"文件的部分。这样、Astra Control便可添加集群：</block>
   <block id="f4228b9bf977f4c9a1952ea84926975f" category="section-title">2023年10月2日</block>
-  <block id="33a97eec462a14258b6a1fe63f943ec5" category="list-text">已安装kubecv1.25或更高版本</block>
-  <block id="3b34edb55fd85d9b0636e2533b140b9f" category="list-text">kubectl访问要使用Astra控制中心添加和管理的集群</block>
-  <block id="d5b7f62a909e346c0e1cd08be571c54f" category="admonition">对于此操作步骤 、您不需要对运行Astra控制中心的集群进行kubectl访问。</block>
   <block id="c49be33f592950e78d23dd417a4a75e5" category="list-text">要使用活动环境的集群管理员权限管理的集群的活动kubeconfig</block>
   <block id="565bfe8a9451afd10f3c41fe9fa4cf22" category="list-text">创建服务帐户：</block>
   <block id="5a20342984ee9d605acb505095dbcd0a" category="list-text">创建以下具有足够权限的集群角色之一、以使集群由Astra Control管理：</block>
@@ -2555,4 +2552,5 @@ RKE 2 (v1.26.x)与R9cher 2.7</block>
   <block id="b518803a746e06a4f19197ae81406970" category="paragraph">如果在存储分段的保留策略过期后删除应用程序的不可更改备份、则备份将从Astra Control中删除、而不是从存储分段中删除。作为临时解决策、如果您需要删除应用程序的最新备份或所有备份、请手动从存储后端删除这些备份。</block>
   <block id="f318002a693e78e0cf366be52609a528" category="admonition">如果某个应用程序有多个备份、请删除该应用程序的最新备份或所有备份。如果删除任何中间增量备份、则无法从最新备份恢复应用程序。</block>
   <block id="03281739854e4951c0f98529e54a24f2" category="sidebar">使用Astra Control配置程序</block>
+  <block id="49219ed727d5145cd828958ebce847fa" category="list-text">已安装kubec不得 安装v1.26或更高版本</block>
 </blocks>
