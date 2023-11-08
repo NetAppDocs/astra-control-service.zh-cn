@@ -2549,8 +2549,7 @@ RKE 2 (v1.26.x)与R9cher 2.7</block>
   <block id="694d3ccd3bafd59fa171259193e6c35c" category="paragraph">将应用程序从备份还原到使用Kerberos传输中加密的存储后端时、还原操作可能会失败。此问题描述不会影响从快照还原或使用NetApp SnapMirror复制应用程序数据。</block>
   <block id="758aed03fde11e3337f4a8ddce7d4f37" category="admonition">在对NFSv4卷使用Kerberos传输中加密时、请确保NFSv4卷使用正确的设置。请参阅的NetApp NFSv4域配置一节(第13页)<block ref="fcbfe3012009d21ef9ba8407142f85b6" category="inline-link-rx"></block>。</block>
   <block id="9e586fb8e7af6f105f029bce05abcad4" category="section-title">对于保留策略已过期的存储分段、删除后备份数据仍会保留在存储分段中</block>
-  <block id="b518803a746e06a4f19197ae81406970" category="paragraph">如果在存储分段的保留策略过期后删除应用程序的不可更改备份、则备份将从Astra Control中删除、而不是从存储分段中删除。作为临时解决策、如果您需要删除应用程序的最新备份或所有备份、请手动从存储后端删除这些备份。</block>
-  <block id="f318002a693e78e0cf366be52609a528" category="admonition">如果某个应用程序有多个备份、请删除该应用程序的最新备份或所有备份。如果删除任何中间增量备份、则无法从最新备份恢复应用程序。</block>
   <block id="03281739854e4951c0f98529e54a24f2" category="sidebar">使用Astra Control配置程序</block>
   <block id="49219ed727d5145cd828958ebce847fa" category="list-text">已安装kubec不得 安装v1.26或更高版本</block>
+  <block id="3c4db63c6115c69942c67f6b04d8e645" category="paragraph">如果在存储分段的保留策略过期后删除应用程序的不可更改备份、则备份将从Astra Control中删除、而不是从存储分段中删除。此问题描述将在即将发布的版本中予以修复。</block>
 </blocks>
