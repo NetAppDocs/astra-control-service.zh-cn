@@ -2554,4 +2554,6 @@ RKE 2 (v1.26.x)与R9cher 2.7</block>
   <block id="3fcb22d3c98c7c79f0727de1eb084b1e" category="list-text">*不可改变的备份*：Astra Control现在支持 <block ref="fe44ae92696e57533e10ffb7636ff94a" category="inline-link-macro-rx"></block> 作为抵御恶意软件和其他威胁的额外安全层。</block>
   <block id="ac4da6c6894a7c36281036138b93deac" category="list-text">*支持管理使用NVMe/TCP存储的应用程序*
 Astra Control现在可以管理由使用NVMe/TCP连接的永久性卷提供支持的应用程序。</block>
+  <block id="d5bd450a47d2497dc5f133703c0fab95" category="list-text">内部部署集群：</block>
+  <block id="00ae925249b1dcd734cdb679b48bf8f7" category="list-text">NetApp ONTAP Select</block>
 </blocks>
