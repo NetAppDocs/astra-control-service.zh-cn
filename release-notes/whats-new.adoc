@@ -23,9 +23,9 @@ NetApp 会定期更新 Astra Control Service ，为您提供新功能，增强�
 * *使用由ONTAP驱动程序提供支持的存储后端为应用程序提供备份和还原功能*：为启用备份和还原操作 `ontap-nas-economy` 和一些 link:../use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations["简单的步骤"^]。
 * *Astra Control Service支持内部Red Hat OpenShift容器平台集群*
 +
-link:../use/restore-apps.html["添加集群"^]
+link:../get-started/add-first-cluster.html["添加集群"^]
 
-* *不可改变的备份*：Astra Control现在支持 link:../concepts/data-protection.html#immutable-backups["不可更改的只读备份"^] 作为抵御恶意软件和其他威胁的额外安全层。
+* *不可改变的备份*：Astra Control现在支持 link:../learn/data-protection.html#immutable-backups["不可更改的只读备份"^] 作为抵御恶意软件和其他威胁的额外安全层。
 * * Astra Control配置程序简介*
 +
 在23.10版中、Astra Control引入了一个新的软件组件、称为Astra Control配置程序、该组件可供所有获得许可的Astra Control用户使用。Asta Control配置程序提供对Asta三元数据以外的一组高级管理和存储配置功能的访问。所有Astra Control客户均可免费使用这些功能。
@@ -47,8 +47,10 @@ Astra Control配置程序23.10版提供了以下功能：
 
 * *Astra Control Service支持在AWS (ROSA)集群上运行Red Hat OpenShift Service *
 +
-link:../use/restore-apps.html["添加集群"^]
+link:../get-started/add-first-cluster.html["添加集群"^]
 
+* *支持管理使用NVMe/TCP存储的应用程序*
+Astra Control现在可以管理由使用NVMe/TCP连接的永久性卷提供支持的应用程序。
 * *默认情况下，执行挂钩处于关闭状态*：从此版本开始，执行挂钩功能可以是 link:../use/manage-app-execution-hooks.html#enable-the-execution-hooks-feature["enabled"] 或禁用以提高安全性(默认情况下处于禁用状态)。如果尚未创建用于Astra Control的执行挂钩、则需要 link:../use/manage-app-execution-hooks.html#enable-the-execution-hooks-feature["启用执行挂钩功能"^] 开始创建挂钩。如果您在此版本之前创建了执行挂钩、则执行挂钩功能将保持启用状态、您可以像往常一样使用挂钩。
 
 

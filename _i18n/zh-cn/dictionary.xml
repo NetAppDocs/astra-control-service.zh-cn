@@ -2522,9 +2522,7 @@ RKE 2 (v1.26.x)与R9cher 2.7</block>
   <block id="d19668a1d8d1bd385693755af3a4d795" category="inline-link-macro">简单的步骤</block>
   <block id="bc6535c6d6068b18ecf4b4c5c01c8d16" category="list-text">*使用由ONTAP驱动程序提供支持的存储后端为应用程序提供备份和还原功能*：为启用备份和还原操作<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 和一些 <block ref="5c67f35967a41efab494aadfd6ca6dff" category="inline-link-macro-rx"></block>。</block>
   <block id="1f6dc20a3ec1623fb44899872279643e" category="list-text">*Astra Control Service支持内部Red Hat OpenShift容器平台集群*</block>
-  <block id="3a1aaab6dcb181e61008309324075e63" category="paragraph"><block ref="3a1aaab6dcb181e61008309324075e63" category="inline-link-macro-rx"></block></block>
   <block id="5eadb99098f006f9c32869481704480a" category="inline-link-macro">不可更改的只读备份</block>
-  <block id="a630fe80f58480c62f875cc147ba8a94" category="list-text">*不可改变的备份*：Astra Control现在支持 <block ref="64c93f29dbc4dc78bd1b2562147eccbb" category="inline-link-macro-rx"></block> 作为抵御恶意软件和其他威胁的额外安全层。</block>
   <block id="9736ef1f9882cacf5ab2e28d88d9e5a6" category="list-text">* Astra Control配置程序简介*</block>
   <block id="6620a1148fc74ef20fba3425d00efe86" category="paragraph">在23.10版中、Astra Control引入了一个新的软件组件、称为Astra Control配置程序、该组件可供所有获得许可的Astra Control用户使用。Asta Control配置程序提供对Asta三元数据以外的一组高级管理和存储配置功能的访问。所有Astra Control客户均可免费使用这些功能。</block>
   <block id="b8012be7d7bd1ed72622391312c910b2" category="list-text">*开始使用Astra Control配置程序*
@@ -2552,4 +2550,8 @@ RKE 2 (v1.26.x)与R9cher 2.7</block>
   <block id="03281739854e4951c0f98529e54a24f2" category="sidebar">使用Astra Control配置程序</block>
   <block id="49219ed727d5145cd828958ebce847fa" category="list-text">已安装kubec不得 安装v1.26或更高版本</block>
   <block id="3c4db63c6115c69942c67f6b04d8e645" category="paragraph">如果在存储分段的保留策略过期后删除应用程序的不可更改备份、则备份将从Astra Control中删除、而不是从存储分段中删除。此问题描述将在即将发布的版本中予以修复。</block>
+  <block id="9d7917a6e561386b201cda34e605d752" category="paragraph"><block ref="9d7917a6e561386b201cda34e605d752" category="inline-link-macro-rx"></block></block>
+  <block id="3fcb22d3c98c7c79f0727de1eb084b1e" category="list-text">*不可改变的备份*：Astra Control现在支持 <block ref="fe44ae92696e57533e10ffb7636ff94a" category="inline-link-macro-rx"></block> 作为抵御恶意软件和其他威胁的额外安全层。</block>
+  <block id="ac4da6c6894a7c36281036138b93deac" category="list-text">*支持管理使用NVMe/TCP存储的应用程序*
+Astra Control现在可以管理由使用NVMe/TCP连接的永久性卷提供支持的应用程序。</block>
 </blocks>
