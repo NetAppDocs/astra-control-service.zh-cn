@@ -12,7 +12,7 @@ summary: 启用Asta Control配置程序以访问高级存储配置和管理功�
 
 
 [role="lead"]
-Astra Trident 23.10及更高版本提供了使用Astra Control配置程序的选项、允许获得许可的Astra Control用户访问高级存储配置功能。除了基于标准Asta三端CSI的功能之外、Asta Control配置程序还提供了此扩展功能。
+Astra Trident 23.10及更高版本提供了使用Astra Control配置程序的选项、允许获得许可的Astra Control用户访问高级存储配置功能。除了基于标准Asta三端CSI的功能之外、Asta Control配置程序还提供了此扩展功能。您可以使用此操作步骤启用和安装Astra控件配置程序。
 
 您的Astra Control Service订阅会自动包含Astra Control配置程序使用的许可证。
 
@@ -38,9 +38,6 @@ image:ac-acp-eligibility.png["屏幕截图显示了添加集群工作流中的�
 * *确认您的Astra Dent版本在四个版本的窗口内*：如果您的Astra Dent版本在23.10的四个版本窗口内、则可以使用Astra Control配置程序直接升级到Astra Dent 23.10。例如、您可以直接从Asta三端到22.10升级到23.10。
 * *确认集群具有一个AMD64*系统架构：Astra Control配置程序映像在amd64和ARM64 CPU架构中都提供，但Astra Control仅支持amd64。
 
-
-.升级到Astra Control配置程序23.10
-如果您将Astra三端到版本23.10升级、则可以使用此操作步骤启用并安装Astra控件配置程序。
 
 .步骤
 . 访问NetApp Astra控件映像注册表：

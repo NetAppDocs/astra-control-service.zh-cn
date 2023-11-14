@@ -2461,7 +2461,6 @@ RKE 2 (v1.26.x)与R9cher 2.7</block>
   <block id="85fb81ab815fcabe32cb17846818c3c1" category="list-text">确保您拥有为Astra Control提供管理存储分段所需权限的存储分段凭据。</block>
   <block id="cb902cabe05f2e75ccb2bfe8f46e3e1d" category="list-text">在"一次写入、多次读取"(WORM)分段的云提供程序保留期限到期之前、您不能删除该分段。WORm分段名称旁用"已锁定"表示。</block>
   <block id="261f0b7f37f0dd290043aab033357d32" category="summary">启用Asta Control配置程序以访问高级存储配置和管理功能。</block>
-  <block id="bd748c545b83229576e1ff062aaacf08" category="paragraph">Astra Trident 23.10及更高版本提供了使用Astra Control配置程序的选项、允许获得许可的Astra Control用户访问高级存储配置功能。除了基于标准Asta三端CSI的功能之外、Asta Control配置程序还提供了此扩展功能。</block>
   <block id="fe562808e3d8ddc1360f041ac9ecb065" category="paragraph">您的Astra Control Service订阅会自动包含Astra Control配置程序使用的许可证。</block>
   <block id="ea513a4deb2445ac25d1082dc1af99e1" category="paragraph">在Asta Control的未来更新中、Asta Control配置程序将取代Asta Trandent、成为Asta Control架构中的存储配置程序和流程编排程序。因此、强烈建议Asta Control用户启用Asta Control配置程序。Asta三元数据将继续保持开源状态、并使用NetApp的新CSI和其他功能进行发布、维护、支持和更新。</block>
   <block id="ef7cd57a49dea042053eb666f78bd5b8" category="paragraph-title">如何知道是否需要启用Astra Control配置程序？</block>
@@ -2478,8 +2477,6 @@ RKE 2 (v1.26.x)与R9cher 2.7</block>
   <block id="0360a2e5fb08211931ade5b67746abd1" category="paragraph">如果您现有的Asta Trident没有Asta Control配置程序、但要启用Asta Control配置程序、请首先执行以下操作：</block>
   <block id="96970ad8b13f688668233173a243a6d7" category="list-text">*确认您的Astra Dent版本在四个版本的窗口内*：如果您的Astra Dent版本在23.10的四个版本窗口内、则可以使用Astra Control配置程序直接升级到Astra Dent 23.10。例如、您可以直接从Asta三端到22.10升级到23.10。</block>
   <block id="513c5f0b4153f3c855edd085e129578d" category="list-text">*确认集群具有一个AMD64*系统架构：Astra Control配置程序映像在amd64和ARM64 CPU架构中都提供，但Astra Control仅支持amd64。</block>
-  <block id="5e12f4a520c19b1613dce3a0e6baee0f" category="paragraph-title">升级到Astra Control配置程序23.10</block>
-  <block id="e6a8e9e99c0090089c402c2a71667c5b" category="paragraph">如果您将Astra三端到版本23.10升级、则可以使用此操作步骤启用并安装Astra控件配置程序。</block>
   <block id="cc74ae067ae4451424c2712fd0b0a766" category="list-text">访问NetApp Astra控件映像注册表：</block>
   <block id="f16793904b509a3f7a260653784d0c7b" category="list-text">登录到Astra Control Service UI并记录您的Astra Control帐户ID。</block>
   <block id="8cbb6fb4fc8e72b38ebb357b93aac0e6" category="list-text">选择页面右上角的图图标。</block>
@@ -2556,4 +2553,5 @@ RKE 2 (v1.26.x)与R9cher 2.7</block>
 Astra Control现在可以管理由使用NVMe/TCP连接的永久性卷提供支持的应用程序。</block>
   <block id="d5bd450a47d2497dc5f133703c0fab95" category="list-text">内部部署集群：</block>
   <block id="00ae925249b1dcd734cdb679b48bf8f7" category="list-text">NetApp ONTAP Select</block>
+  <block id="488eba069a2619d48659ff6ffa6f538a" category="paragraph">Astra Trident 23.10及更高版本提供了使用Astra Control配置程序的选项、允许获得许可的Astra Control用户访问高级存储配置功能。除了基于标准Asta三端CSI的功能之外、Asta Control配置程序还提供了此扩展功能。您可以使用此操作步骤启用和安装Astra控件配置程序。</block>
 </blocks>
