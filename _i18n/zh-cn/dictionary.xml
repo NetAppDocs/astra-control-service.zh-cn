@@ -1901,7 +1901,6 @@
   <block id="b909803838dd775bd8b8dcfbaf82fb87" category="list-text">支持管理纯数据应用程序</block>
   <block id="5b8f884e708de51fd4946164326e802c" category="section-title">"Activity"页面最多可显示100、000个事件</block>
   <block id="676bd50e0f10e6725dc7a68e3041cfed" category="inline-link-macro">Astra Control REST API</block>
-  <block id="474be14e965990f35641a82fd1940bd1" category="paragraph">Astra Control Activity页面最多可显示100、000个事件。要查看所有记录的事件、请使用检索这些事件 <block ref="65b0251af1492433290d52a893eea83e" category="inline-link-macro-rx"></block>。</block>
   <block id="92994eff0d2e1bf73c01841823660ef5" category="list-text">*许可*：要管理10个以上的名称空间，您需要订阅Astra Control。</block>
   <block id="135b308ed83c53f1516b7c754566d1c4" category="list-title">开始之前</block>
   <block id="63d526831e75bdfe2a1b18d7e1752ca3" category="list-text">选择将原始存储类与应用程序保持关联、或者选择其他存储类。</block>
@@ -2554,4 +2553,5 @@ Astra Control现在可以管理由使用NVMe/TCP连接的永久性卷提供支�
   <block id="d5bd450a47d2497dc5f133703c0fab95" category="list-text">内部部署集群：</block>
   <block id="00ae925249b1dcd734cdb679b48bf8f7" category="list-text">NetApp ONTAP Select</block>
   <block id="488eba069a2619d48659ff6ffa6f538a" category="paragraph">Astra Trident 23.10及更高版本提供了使用Astra Control配置程序的选项、允许获得许可的Astra Control用户访问高级存储配置功能。除了基于标准Asta三端CSI的功能之外、Asta Control配置程序还提供了此扩展功能。您可以使用此操作步骤启用和安装Astra控件配置程序。</block>
+  <block id="3296ea02e6ef8200a85b529d14dc6282" category="paragraph">Astra Control Activity页面最多可显示100、000个事件。要查看所有记录的事件、请使用检索这些事件<block ref="3f49e9a4af0b49133601252075c9bc37" category="inline-link-rx"></block>。</block>
 </blocks>
