@@ -2554,4 +2554,7 @@ Astra Control现在可以管理由使用NVMe/TCP连接的永久性卷提供支�
   <block id="00ae925249b1dcd734cdb679b48bf8f7" category="list-text">NetApp ONTAP Select</block>
   <block id="488eba069a2619d48659ff6ffa6f538a" category="paragraph">Astra Trident 23.10及更高版本提供了使用Astra Control配置程序的选项、允许获得许可的Astra Control用户访问高级存储配置功能。除了基于标准Asta三端CSI的功能之外、Asta Control配置程序还提供了此扩展功能。您可以使用此操作步骤启用和安装Astra控件配置程序。</block>
   <block id="3296ea02e6ef8200a85b529d14dc6282" category="paragraph">Astra Control Activity页面最多可显示100、000个事件。要查看所有记录的事件、请使用检索这些事件<block ref="3f49e9a4af0b49133601252075c9bc37" category="inline-link-rx"></block>。</block>
+  <block id="164fe74cfbca9ef543331e42b891cf2c" category="list-text">NetApp MetroCluster</block>
+  <block id="cd27a1715aac859bc2a48a86ed2000c0" category="inline-link">Longhorn</block>
+  <block id="1752f949f63eb1f41cea70be24a2a732" category="list-text"><block ref="1752f949f63eb1f41cea70be24a2a732" category="inline-link-rx"></block></block>
 </blocks>

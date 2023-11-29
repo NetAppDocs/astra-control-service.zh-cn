@@ -100,16 +100,20 @@ endif::azure[]
 * 自管理集群：
 +
 ** Amazon EBS
-** Google 持久磁盘
 ** Azure受管磁盘
+** Google 持久磁盘
 ** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/["Cloud Volumes ONTAP"^]
+** NetApp MetroCluster
+** https://longhorn.io/["Longhorn"^]
 
 
 * 内部部署集群：
 +
+** NetApp MetroCluster
 ** NetApp ONTAP AFF 和 FAS 系统
 ** NetApp ONTAP Select
-** Cloud Volumes ONTAP
+** https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/["Cloud Volumes ONTAP"^]
+** https://longhorn.io/["Longhorn"^]
 
 
 
