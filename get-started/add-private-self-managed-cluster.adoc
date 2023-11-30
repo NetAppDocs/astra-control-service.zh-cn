@@ -145,7 +145,7 @@ NOTE: 您可以 https://docs.netapp.com/us-en/trident/trident-get-started/kubern
 . *其他*：通过上传提供有关自管理集群的详细信息 `kubeconfig.yaml` 文件或粘贴的内容 `kubeconfig.yaml` 文件。
 +
 
-NOTE: 创建自己的 `kubeconfig` file中、您只能定义*一*上下文元素。请参见 https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/["Kubernetes 文档"^] 有关创建的信息 `kubeconfig` 文件。
+NOTE: 创建自己的 `kubeconfig` file中、您只能定义*一*上下文元素。请参见 link:create-kubeconfig.html["这些说明"^] 有关创建的信息 `kubeconfig` 文件。
 
 . *凭据名称*：提供要上传到Astra Control的自管理集群凭据的名称。默认情况下，凭据名称会自动填充为集群的名称。
 . *专用路由标识符*：输入专用路由标识符，您可以从Astra Connector获取该标识符。如果您通过查询Astra Connector `kubectl get astraconnector -n astra-connector` 命令中、专用路由标识符称为 `ASTRACONNECTORID`。
