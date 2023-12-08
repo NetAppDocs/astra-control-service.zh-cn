@@ -21,7 +21,7 @@ summary: 邀请用户加入您的 Astra Control 帐户并删除不应再访问�
 帐户所有者和管理员可以邀请其他用户加入 Astra Control 帐户。
 
 .步骤
-. 确保用户具有 link:../get-started/register.html["Cloud Central 登录"]。
+. 确保用户具有 link:../get-started/register.html["BlueXP登录"]。
 . 选择 * 帐户 * 。
 . 在 * 用户 * 选项卡中，选择 * 邀请 * 。
 . 输入用户的名称，电子邮件地址及其角色。
@@ -29,7 +29,7 @@ summary: 邀请用户加入您的 Astra Control 帐户并删除不应再访问�
 请注意以下事项：
 
 +
-** 电子邮件地址必须与用户用于注册到 Cloud Central 的电子邮件地址匹配。
+** 电子邮件地址必须与用户用于注册BlueXP的电子邮件地址匹配。
 ** 每个角色都提供以下权限：
 +
 *** * 所有者 * 具有管理员权限，可以删除帐户。

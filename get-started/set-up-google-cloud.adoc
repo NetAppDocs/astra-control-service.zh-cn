@@ -233,7 +233,7 @@ video::video-create-gcp-service-account-key.mp4[width=848,height=480]
 设置网络对等关系的最简单方法是直接从 Cloud Volumes Service 获取 gcloud 命令。在创建新文件系统时，可以从 Cloud Volumes Service 访问这些命令。
 
 .步骤
-. https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["转到 NetApp Cloud Central 的全球区域地图"^] 并确定要在集群所在的 Google Cloud 区域中使用的服务类型。
+. https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["转至NetApp BlueXP全球区域地图"^] 并确定要在集群所在的 Google Cloud 区域中使用的服务类型。
 +
 Cloud Volumes Service 提供两种服务类型： CVS 和 CVS-Performance 。 https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types["详细了解这些服务类型"^]。
 

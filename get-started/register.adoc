@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: get-started/register.html 
-keywords: cloud central, sign up, log in, login, register, register for cloud central, create account, sign up for account, get an account, account, accounts 
-summary: Astra Control Service 集成在 NetApp Cloud Central 的身份验证服务中。注册Cloud Central、即可访问Astra Control Service和NetApp的其他云服务。 
+keywords: BlueXP, sign up, log in, login, register, register for BlueXP, create account, sign up for account, get an account, account, accounts 
+summary: Astra控制服务集成在NetApp BlueXP的身份验证服务中。注册BlueXP、即可访问Astra Control Service和NetApp的其他云服务。 
 ---
 = 注册 Astra Control Service 帐户
 :hardbreaks:
@@ -12,7 +12,7 @@ summary: Astra Control Service 集成在 NetApp Cloud Central 的身份验证服
 
 
 [role="lead"]
-要使用 Astra Control Service ，您需要一个与您的 NetApp Cloud Central 帐户关联的 Astra Control Service 帐户。完成 Astra 控制服务注册流程，如果您还没有 Cloud Central 帐户，请注册到 Cloud Central 以访问 Astra 控制服务。
+要使用Astra控制服务、您需要一个与您的NetApp BlueXP帐户关联的Astra控制服务帐户。完成Astra Control Service注册过程、然后、如果您还没有BlueXP帐户、请注册BlueXP以访问Astra Control Service。
 
 
 
@@ -23,12 +23,8 @@ summary: Astra Control Service 集成在 NetApp Cloud Central 的身份验证服
 使用 Astra Control Service 时，您可以从帐户中管理应用程序。帐户包括可以查看和管理帐户中的应用程序以及您的计费详细信息的用户。
 
 .步骤
-. https://cloud.netapp.com/astra["转到 Cloud Central 上的 Astra Control 页面"^]。
-. 选择 * 开始使用 Astra Control* 。
-. 选择 * 空闲计划 * 选项卡。
-+
-image:acs-registration-free-plan.png["需要选择空闲计划选项的注册表单计划选择选项卡的屏幕截图。"]
-
+. https://cloud.netapp.com/astra["转到BlueXP上的Asta Control页面"^]。
+. 选择*立即开始*。
 . 在表单中提供所需信息。
 +
 填写表单时需要注意的一些重要事项：
@@ -36,41 +32,39 @@ image:acs-registration-free-plan.png["需要选择空闲计划选项的注册表
 +
 ** 您的企业名称和地址必须准确无误，因为我们会对其进行验证，以满足全球贸易合规性的要求。
 ** * Astra 帐户名称 * 是您企业的 Astra Control Service 帐户的名称。您将在 Astra Control Service 用户界面中看到此名称。请注意，如果需要，您可以创建其他帐户（最多 5 个）。
-** 在 * 业务电子邮件地址 * 字段中，如果您拥有 NetApp Cloud Central 帐户，请在此处输入您用于该帐户的电子邮件。如果您还没有 NetApp Cloud Central 帐户，请在注册到 Cloud Central 时使用您在此处输入的电子邮件地址。
+** 在*企业电子邮件地址*字段中，如果您有NetApp BlueXP帐户，请在此处输入用于该帐户的电子邮件。如果您还没有NetApp BlueXP帐户、请使用注册BlueXP时在此处输入的电子邮件地址。
 
 
-. 选择 * 提交 * 。
+. 选择 * 创建帐户 * 。
 
 
 
 
-== 注册到 Cloud Central
+== 注册到BlueXP
 
-如果您还没有NetApp云中心帐户、请注册云中心、以便访问Astra控制服务和NetApp的其他云服务。Astra Control Service 集成在 NetApp Cloud Central 的身份验证服务中。如果您已有 Cloud Central 帐户且已完成注册，则可以访问 https://astra.netapp.io["Astra 控制服务"^] 直接使用您的 Cloud Central 凭据。
+Astra控制服务集成在NetApp BlueXP的身份验证服务中。您可以使用BlueXP或NetApp NetApp 支持站点 凭据登录到BlueXP。如果您还没有NetApp BlueXP或NetApp 支持站点 帐户、请注册BlueXP、以便访问Astra Control服务和NetApp的其他云服务。如果您已有BlueXP或NetApp 支持站点 帐户并已完成注册、则可以访问 https://astra.netapp.io["Astra 控制服务"^] 直接使用BlueXP或NetApp 支持站点 凭据。
 
 
-TIP: 您可以使用单点登录使用公司目录中的凭据（联合身份）登录到 Cloud Central 。要了解更多信息，请转到 https://cloud.netapp.com/help-center["Cloud Central 帮助中心"^] 然后选择 * Cloud Central 登录选项 * 。
+TIP: 您还可以使用公司目录中的凭据(联合身份)通过单点登录登录到BlueXP。要了解更多信息，请转到 https://cloud.netapp.com/help-center["帮助中心"^] 然后选择 * Cloud Central 登录选项 * 。
 
 .步骤
-. 转至 https://cloud.netapp.com["NetApp Cloud Central"^]。
-. 在右上角，选择 * 注册 * 。
+. 转至 https://cloud.netapp.com["NetApp BlueXP"^]。
+. 在右上角，选择*Get started*。
+. 选择 * 注册 * 。
 . 填写表单。
 +
-请确保您在此输入的电话号码和电子邮件地址与您在上述免费计划注册表中使用的电话号码和电子邮件地址相同。
+确保您在此处输入的电话号码和电子邮件地址与您在前一个Astra Control注册表中使用的地址相同。
 
 . 选择 * 注册 * 。
 +
 
-TIP: 您在这些表单中输入的电子邮件地址是您的 NetApp Cloud Central 用户 ID 。注册新的 Astra Control Service 帐户或 Astra Control Service 管理员邀请您加入现有 Astra Control Service 帐户时，请使用此 Cloud Central 用户 ID 。
+TIP: 您在这些表单中输入的电子邮件地址是您的NetApp BlueXP用户ID的电子邮件地址。当您注册新的Astra Control帐户或Astra Control管理员邀请您加入现有Astra Control帐户时、请使用此BlueXP用户ID。
 
-+
-image:screenshot-cloud-central-signup.gif["Cloud Central 注册页面的屏幕截图，您需要在此输入电子邮件地址，密码，名称，公司和电话号码，这是可选的。"]
-
-. 等待收到 NetApp Cloud Central 发送的电子邮件。此电子邮件来自地址 saas.support@netapp.com ，可能需要几分钟才能收到。请务必检查您的垃圾邮件文件夹。
+. 等待NetApp BlueXP发送的电子邮件。此电子邮件来自地址 saas.support@netapp.com ，可能需要几分钟才能收到。请务必检查您的垃圾邮件文件夹。
 . 电子邮件到达后，选择电子邮件中的链接以验证您的电子邮件地址。
 
 
 .结果
-现在，您已有活动的 Cloud Central 用户登录。
+现在、您已拥有有效的BlueXP用户登录名。
 
-注册后，您可以从使用 Cloud Central 凭据直接访问 Astra Control Service https://astra.netapp.io[]。
+注册后、您可以直接从使用BlueXP凭据访问ASRA Control https://astra.netapp.io[]。

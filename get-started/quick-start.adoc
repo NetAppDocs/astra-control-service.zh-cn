@@ -81,8 +81,8 @@ link:add-first-cluster.html["了解有关自管理集群要求的更多信息"]�
 == image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["两个"] 完成 Astra Control 注册
 
 [role="quick-margin-list"]
-. 创建 https://cloud.netapp.com["NetApp Cloud Central"^] 帐户。
-. 创建 Astra Control 帐户时，请指定您的 NetApp Cloud Central 电子邮件 ID https://cloud.netapp.com/astra["从 Astra 产品页面"^]。
+. 创建 https://cloud.netapp.com["NetApp BlueXP"^] 帐户。
+. 在创建Astra Control帐户时、请指定您的NetApp BlueXP电子邮件ID https://cloud.netapp.com/astra["从Astra Control产品页面"^]。
 
 
 [role="quick-margin-para"]

@@ -24,7 +24,7 @@ Astra 控制服务可以使用适用于 Google Cloud 的 Cloud Volumes Service �
 
 === 概述
 
-Cloud Volumes Service for Google Cloud 提供两种服务类型： _CVS_ 和 _CVS-Performance_ 。特定 Google Cloud 地区支持这些服务类型。 https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["转到 NetApp Cloud Central 的全球区域地图"^] 确定集群所在的 Google Cloud 区域支持的服务类型。
+Cloud Volumes Service for Google Cloud 提供两种服务类型： _CVS_ 和 _CVS-Performance_ 。特定 Google Cloud 地区支持这些服务类型。 https://cloud.netapp.com/cloud-volumes-global-regions#cvsGcp["转至NetApp BlueXP全球区域地图"^] 确定集群所在的 Google Cloud 区域支持的服务类型。
 
 如果您的 Kubernetes 集群必须位于特定区域，则您将使用该区域支持的服务类型。
 
