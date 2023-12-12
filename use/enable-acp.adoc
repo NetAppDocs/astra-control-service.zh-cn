@@ -67,7 +67,7 @@ crane auth login cr.astra.netapp.io -u <account-id> -p <api-token>
 
 
 ====
-. 按照首选方法的步骤将映像移动到自定义注册表。如果您不使用注册表、请按照三端修复程序操作步骤设置密钥。
+. 如果您有自定义注册表、请按照以下步骤操作、以便使用首选方法将映像移动到自定义注册表。如果您不使用注册表、请按照中的三端修复操作符步骤进行操作 <<no-registry,下一节>>。
 +
 
 NOTE: 以下命令可以使用Podman、而不是Docker。如果您使用的是Windows环境、建议使用PowerShell。
@@ -85,7 +85,15 @@ NOTE: 提取的映像不支持多个平台、只支持与提取映像的主机�
 +
 [source, console]
 ----
-docker pull cr.astra.netapp.io/astra/trident-acp:23.10.0
+docker pull cr.astra.netapp.io/astra/trident-acp:23.10.0 --platform <cluster platform>
+----
++
+示例
+
++
+[listing]
+----
+docker pull cr.astra.netapp.io/astra/trident-acp:23.10.0 --platform linux/amd64
 ----
 .. 标记图像：
 +
@@ -106,49 +114,9 @@ docker push <my_custom_registry>/trident-acp:23.10.0
 --
 .. 将Asta Control配置程序清单复制到自定义注册表：
 +
-[listing]
+[source, crane]
 ----
 crane copy cr.astra.netapp.io/astra/trident-acp:23.10.0 <my_custom_registry>/trident-acp:23.10.0
-----
-
-
---
-.Asta三端操作员
---
-.. 确保Docker配置中存在此块：
-+
-[listing]
-----
-{
-    "auths": {
-        "https://cr.astra.netapp.io/": {
-            "auth": "c3R...zE2"
-        }
-    }
-}
-----
-.. [[pull机密]]在中创建密钥 `trident` 命名空间：
-+
-[listing]
-----
-kubectl create secret -n <trident namespace> generic <secret name> \
-    --from-file=.dockerconfigjson=<path/to/.docker/config.json> \
-    --type=kubernetes.io/dockerconfigjson
-----
-.. 将此密钥添加到Torc (Asta Trident流程编排程序)：
-+
-[listing]
-----
-apiVersion: trident.netapp.io/v1
-kind: TridentOrchestrator
-metadata:
-  name: trident
-spec:
-  debug: true
-  namespace: trident
-  tridentImage: netapp/trident:23.10.0
-  imagePullSecrets:
-  - <secret name>
 ----
 
 
@@ -164,14 +132,65 @@ WARNING: 请勿使用Helm启用Asta Control配置程序。如果您在初始安�
 ====
 .Asta三端操作员
 --
+.. [[no-Registry ]]如果从初始部署中删除了操作员、请重新创建Asta Trident流程编排程序CRD：
++
+... https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy-operator.html#step-1-download-the-trident-installer-package["下载安装程序并将其解压缩"^]。
+... 重新创建CRD：
++
+[source, console]
+----
+kubectl create -f deploy/crds/trident.netapp.io_tridentorchestrators_crd_post1.16.yaml
+----
+... 创建 `trident` 命名空间(如果需要)：
++
+[source, console]
+----
+kubectl create namespace trident
+----
+
+
+.. 将Astra Trdent更新为23.10.0：
++
+
+NOTE: 对于运行Kubornetes 1.24或更早版本的集群、请使用 `bundle_pre_1_25.yaml`。对于运行Kubernetes 1.25或更高版本的集群、请使用 `bundle_post_1_25.yaml`。
+
++
+[source, console]
+----
+kubectl -n trident apply -f trident-installer-23.10.0/deploy/<bundle-name.yaml>
+----
+.. 验证Astra trident是否正在运行：
++
+[source, console]
+----
+kubectl get torc -n trident
+----
++
+响应：
+
++
+[listing]
+----
+NAME      AGE
+trident   21m
+----
+.. [[pull机密]]如果您有一个使用机密的注册表，请创建一个用于提取Astra Control置备程序映像的密钥：
++
+[source, console]
+----
+kubectl create secret docker-registry <secret_name> -n trident --docker-server=<my_custom_registry> --docker-username=<username> --docker-password=<token>
+----
 .. 编辑TridentOrchestrator CR并进行以下编辑：
 +
-*** 启用Asta Control配置程序 (`enableACP: true`）
-*** 设置Asta Control配置程序映像的注册表位置 (`acpImage: <my_custom_registry>/trident-acp:v23.10.0`）。
+[source, console]
+----
+kubectl edit torc trident
+----
 +
-
-NOTE: 如果您已建立 <<pull-secrets,图像拉取密钥>> 在本操作步骤的前面部分、您可以在此处使用它们 (`cr.astra.netapp.io/astra/trident-acp:23.10.0 imagePullSecrets: - <secret name>`）
-
+... 为Astra三端映像设置自定义注册表位置或从Astra Control注册表中提取该映像 (`tridentImage: <my_custom_registry>/trident:23.10.0` 或 `tridentImage: netapp/trident:23.10.0`）。
+... 启用Asta Control配置程序 (`enableACP: true`）。
+... 设置Asta Control配置程序映像的自定义注册表位置或将其从Asta Control注册表中提取 (`acpImage: <my_custom_registry>/trident-acp:23.10.0` 或 `acpImage: cr.astra.netapp.io/astra/trident-acp:23.10.0`）。
+... 如果您已建立 <<pull-secrets,图像拉取密钥>> 在本操作步骤的前面部分、您可以在此处设置它们 (`imagePullSecrets: - <secret_name>`）。使用您在前面步骤中创建的相同名称机密名称。
 
 
 +
@@ -184,30 +203,18 @@ metadata:
 spec:
   debug: true
   namespace: trident
+  *tridentImage: <registry>/trident:23.10.0*
   *enableACP: true*
-  *acpImage: <my_custom_registry>/trident-acp:v23.10.0*
+  *acpImage: <registry>/trident-acp:23.10.0*
+  *imagePullSecrets:
+  - <secret_name>*
 ----
-.. 应用更改：
-+
-[listing]
-----
-kubectl -n trident apply -f tridentorchestrator_cr.yaml
-----
-.. 更新Asta Trdent配置、以便使用新的 `trident-acp` 容器部署方式：
-+
-
-NOTE: 对于运行Kubornetes 1.24或更早版本的集群、请使用 `bundle_pre_1_25.yaml`。对于运行Kubernetes 1.25或更高版本的集群、请使用 `bundle_post_1_25.yaml`。
-
-+
-[listing]
-----
-kubectl -n trident apply -f trident-installer-23.10.0/deploy/<bundle-name.yaml>
-----
+.. 保存并退出文件。部署过程将自动开始。
 .. 验证是否已创建操作员、部署和副本集。
 +
-[listing]
+[source, console]
 ----
-kubectl get all -n <operator-namespace>
+kubectl get all -n trident
 ----
 +
 
@@ -215,7 +222,7 @@ IMPORTANT: 在 Kubernetes 集群中只能有 * 一个操作符实例 * 。请勿
 
 .. 验证 `trident-acp` 容器正在运行 `acpVersion` 为 `23.10.0` 状态为 `Installed`：
 +
-[listing]
+[source, console]
 ----
 kubectl get torc -o yaml
 ----
@@ -229,7 +236,7 @@ status:
   acpVersion: 23.10.0
   currentInstallationParams:
     ...
-    acpImage: <my_custom_registry>/trident-acp:v23.10.0
+    acpImage: <registry>/trident-acp:v23.10.0
     enableACP: "true"
     ...
   ...
@@ -243,13 +250,13 @@ status:
 .. https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-tridentctl.html["卸载 Astra Trident"^]。
 .. 在启用Asta Control配置程序的情况下重新安装Asta Trent (`--enable-acp=true`）：
 +
-[listing]
+[source, console]
 ----
 ./tridentctl -n trident install --enable-acp=true --acp-image=mycustomregistry/trident-acp:v23.10
 ----
 .. 确认已启用Asta Control配置程序：
 +
-[listing]
+[source, console]
 ----
 ./tridentctl -n trident version
 ----

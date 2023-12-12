@@ -60,7 +60,12 @@ kubectl create ns astra-connector
 ----
 . 创建Astra Connector CR文件并将其命名为 `astra-connector-cr.yaml`。更新方括号<>中的值以匹配您的Astra Control环境和集群配置：
 +
-** *Astra*：控制服务的Web UI <ASTRA_CONTROL_SERVICE_URL>。
+** *Astra*：控制服务的Web UI <ASTRA_CONTROL_SERVICE_URL>。例如：
++
+[listing]
+----
+https://astra.netapp.io
+----
 ** *Astra*：您在上一步中获得的<ASTRA_CONTROL_SERVICE_API_TOKEN>标记。
 ** *AzAzure Kubernet*：(仅限集群)—专用<PRIVATE_AKS_CLUSTER_NAME>集群的集群名称。只有在添加专用AKS集群时、才会取消注释并填充此行。
 ** *Astra*：从<ASTRA_CONTROL_ACCOUNT_ID> Web UI获取。选择页面右上角的图图标，然后选择*API access*。
