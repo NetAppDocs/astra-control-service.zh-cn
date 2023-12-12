@@ -2435,7 +2435,6 @@ RKE 2 (v1.26.x)与R9cher 2.7</block>
   <block id="057afae3fe65d4f24b79bd50d34734b1" category="paragraph"><block ref="057afae3fe65d4f24b79bd50d34734b1" category="inline-image-macro-rx" type="image"></block></block>
   <block id="7753d368684bfc31807afc2b7f3cd9c0" category="paragraph-title">在启用Astra Control配置程序之前</block>
   <block id="0360a2e5fb08211931ade5b67746abd1" category="paragraph">如果您现有的Asta Trident没有Asta Control配置程序、但要启用Asta Control配置程序、请首先执行以下操作：</block>
-  <block id="96970ad8b13f688668233173a243a6d7" category="list-text">*确认您的Astra Dent版本在四个版本的窗口内*：如果您的Astra Dent版本在23.10的四个版本窗口内、则可以使用Astra Control配置程序直接升级到Astra Dent 23.10。例如、您可以直接从Asta三端到22.10升级到23.10。</block>
   <block id="513c5f0b4153f3c855edd085e129578d" category="list-text">*确认集群具有一个AMD64*系统架构：Astra Control配置程序映像在amd64和ARM64 CPU架构中都提供，但Astra Control仅支持amd64。</block>
   <block id="cc74ae067ae4451424c2712fd0b0a766" category="list-text">访问NetApp Astra控件映像注册表：</block>
   <block id="f16793904b509a3f7a260653784d0c7b" category="list-text">登录到Astra Control Service UI并记录您的Astra Control帐户ID。</block>
@@ -2459,8 +2458,6 @@ RKE 2 (v1.26.x)与R9cher 2.7</block>
   <block id="9f28a023f26c22c040e88a7f3791d0ed" category="inline-xref">图像拉取密钥</block>
   <block id="84b3a17dd4da0cadee9516d2c742e8e1" category="admonition">对于运行Kubornetes 1.24或更早版本的集群、请使用<block ref="bd2cc8575fe69c7f775292759380c838" prefix=" " category="inline-code"></block>。对于运行Kubernetes 1.25或更高版本的集群、请使用<block ref="5a02ebff4889c2de0379a0fb10bed282" prefix=" " category="inline-code"></block>。</block>
   <block id="a770ca95121cc795b602f9af6af024fb" category="admonition">在 Kubernetes 集群中只能有 * 一个操作符实例 * 。请勿创建 Trident 操作员的多个部署。</block>
-  <block id="0addb2f750cfe9f186eca6774f14ac69" category="list-text"><block ref="ecb96b3444d2267901d021f818e6535e" category="inline-link-rx"></block>。</block>
-  <block id="5dcdd9d11fd62dd1ee60a5366592f2c7" category="list-text">在启用Asta Control配置程序的情况下重新安装Asta Trent <block ref="87d6b9737ff6f9e44e3dd25c182cf495" prefix="(" category="inline-code"></block>）：</block>
   <block id="bfd6393303a90c7eebadedd13edf658b" category="paragraph">安装Asta Control配置程序后、在Asta Control UI中托管此配置程序的集群将显示<block ref="47f79829be244bd727d1881108343390" prefix=" " category="inline-code"></block> 而不是<block ref="f1112223b41fddc71fd6a626582dfb78" prefix=" " category="inline-code"></block> 字段和当前安装的版本号。</block>
   <block id="a368b742ba77bda413a93bc1a4d09ae3" category="inline-link">Asta Trdent升级文档</block>
   <block id="38798f90f44856e877b3d5951137f166" category="list-text"><block ref="38798f90f44856e877b3d5951137f166" category="inline-link-rx"></block></block>
@@ -2547,11 +2544,6 @@ Astra Control现在可以管理由使用NVMe/TCP连接的永久性卷提供支�
   <block id="cbad356d2a2c08e20ea2766c2d78305f" category="inline-xref">下一节</block>
   <block id="e7202f4359a7a5bb666f3f91a540d6ea" category="list-text">如果您有自定义注册表、请按照以下步骤操作、以便使用首选方法将映像移动到自定义注册表。如果您不使用注册表、请按照中的三端修复操作符步骤进行操作 <block ref="d433543a9de56c735bd2827329689b0d" category="inline-xref-macro-rx"></block>。</block>
   <block id="81eeab9506186e2dca8faefa78d54067" category="paragraph">示例</block>
-  <block id="40c27dbe238031119a79044564707195" category="list-text">[[no-Registry ]]如果从初始部署中删除了操作员、请重新创建Asta Trident流程编排程序CRD：</block>
-  <block id="c5ef2e8ef77f84391fa266f923ba567f" category="inline-link">下载安装程序并将其解压缩</block>
-  <block id="bfae990a3fa05e9fc309d9270c1b0bdf" category="list-text"><block ref="1762ff5119022dd6aa9e3a3693ff4c9a" category="inline-link-rx"></block>。</block>
-  <block id="6dfb05d57e00d495a2626742c5794d45" category="list-text">重新创建CRD：</block>
-  <block id="74e1b3ec60a1e85ea67710e2dc1cd343" category="list-text">创建<block ref="47cb44be55a0dffa15dfc900a4c687be" prefix=" " category="inline-code"></block> 命名空间(如果需要)：</block>
   <block id="f2b891f09ee711b58bdd7005fd757210" category="list-text">将Astra Trdent更新为23.10.0：</block>
   <block id="4cf0920f58032b65295d4d0255354879" category="list-text">验证Astra trident是否正在运行：</block>
   <block id="70da7fdb746f99191502821d5d3b6d53" category="list-text">[[pull机密]]如果您有一个使用机密的注册表，请创建一个用于提取Astra Control置备程序映像的密钥：</block>
@@ -2561,4 +2553,14 @@ Astra Control现在可以管理由使用NVMe/TCP连接的永久性卷提供支�
   <block id="f3a11fe989360f45110df3758e7f0641" category="list-text">如果您已建立 <block ref="565c9dfc4921fbeccbde323bc8a44cad" category="inline-xref-macro-rx"></block> 在本操作步骤的前面部分、您可以在此处设置它们 <block ref="bafdae7aa6abb1556ef1b0d17efe7509" prefix="(" category="inline-code"></block>）。使用您在前面步骤中创建的相同名称机密名称。</block>
   <block id="aa3ae8b6c1e4a29f9314a8bbc401330f" category="list-text">保存并退出文件。部署过程将自动开始。</block>
   <block id="4f27e6f7f8f95f32f55540801c5f6db0" category="list-text">验证是否已创建操作员、部署和副本集。</block>
+  <block id="bae6bc3f0a28e1dbcf10ba23c43f14bc" category="list-text">*如果您安装了Astra三端安装程序，请确认其版本在四个版本的窗口内*：如果您的Astra三端安装程序在23.10版本的四个版本窗口内，则可以使用Astra Control置备程序直接升级到Astra三端安装程序23.10。例如、您可以直接从Asta三端到22.10升级到23.10。</block>
+  <block id="b88c081e2a4b249f94292c6f7bf16bdc" category="inline-link">下载Asta三端安装程序并解压缩</block>
+  <block id="59d0cf2c91ce363cf00cd574e291796c" category="list-text">[[无注册]<block ref="c15ad8dc2f63219c53e85038d51645b0" category="inline-link-rx"></block>。</block>
+  <block id="b53ea1f6729ee2c1c5dc303c5e9bb360" category="list-text">如果您尚未安装Astra三端安装程序、或者您从初始Astra三端安装程序中删除了操作员、请完成以下步骤：</block>
+  <block id="1802fc07d2de18110ae52621540f337e" category="list-text">创建客户需求日：</block>
+  <block id="b19df824e7baecb971d0fdd39542c6d6" category="list-text">创建三项命名空间 <block ref="a40796e67d7096bdb1a461d9369987ae" prefix="(" category="inline-code"></block>)或确认三项命名空间仍然存在 <block ref="929ac53a7aaa18d0ab7bfd29e3b89c45" prefix="(" category="inline-code"></block>）。如果已删除此命名空间、请重新创建它。</block>
+  <block id="6942401e8cfb1a0fc7b82ec1dcda7d32" category="list-text"><block ref="b0e92e3807bd982cc8fd58230062a04f" category="inline-link-rx"></block>。</block>
+  <block id="a65211330b142f51904ccfb3741cc124" category="inline-link">如果您已有Asta Trident、请从托管它的集群中将其卸载</block>
+  <block id="00c4331aab8ed2101088511f96b6af8e" category="list-text"><block ref="f21e19b64d79b0da0ff48729d1b28669" category="inline-link-rx"></block>。</block>
+  <block id="005a56f182fe268e9f6977b39114eab8" category="list-text">在启用Asta Control配置程序的情况下安装Asta Trent <block ref="87d6b9737ff6f9e44e3dd25c182cf495" prefix="(" category="inline-code"></block>）：</block>
 </blocks>
