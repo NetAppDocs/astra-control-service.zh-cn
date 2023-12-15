@@ -26,12 +26,6 @@ summary: 设置环境后，您可以创建 Kubernetes 集群，然后将其添�
 | Kubbernetes分发 | 支持的版本 
 
 
-| 基于Azure堆栈HCI的Azure Kubnetes Service | 采用AKS 1.24.x和1.25x的Azure Stack HCI 21H2和22H2 
-
-
-| Google Anthos | 1.15至1.16 
-
-
 | Kubnetes (上游) | 1.26至1.28 
 
 
@@ -42,9 +36,6 @@ RKE 2 (v1.26.x)与R9cher 2.7
 
 
 | Red Hat OpenShift 容器平台 | 4.11至4.13 
-
-
-| VMware Tanzu Kubernetes Grid Integrated Edition | 1.16.x 
 |===
 以下说明假定您已创建私有集群并准备好了远程访问该集群的安全方法。
 
