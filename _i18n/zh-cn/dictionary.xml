@@ -2001,10 +2001,6 @@
   <block id="2217ba8a52de4d6a9862994a9287aa48" category="paragraph">您可以使用Astra Control Service管理以下类型的公共自管理集群：</block>
   <block id="c52ee6d695c3236a2b8bf5b454bac3cb" category="cell">Kubbernetes分发</block>
   <block id="2e5d14f7919ff3c6138e7845aec4f915" category="cell">支持的版本</block>
-  <block id="22ec69733e61456fac578b2f6fcc2856" category="cell">基于Azure堆栈HCI的Azure Kubnetes Service</block>
-  <block id="cd96805b6007cc4c2282c90a414e97f3" category="cell">采用AKS 1.23和1.24的Azure Stack HCI 21H2和22H2</block>
-  <block id="1c4dff0a00340691e103ef63154df371" category="cell">Google Anthos</block>
-  <block id="ef3097a00ac9ce5987c57fb2eedf104c" category="cell">1.12到1.14</block>
   <block id="0770a54f3635e09a4e4ff53a035b9979" category="cell">Kubnetes (上游)</block>
   <block id="4863c0e3b29248649240a69b9df08e1e" category="cell">1.24到1.26 (Kubirnetes 1.25或更高版本需要Asta Trident 22.10或更高版本)</block>
   <block id="8c95b632875261344eb6365459feffd0" category="cell">Rancher Kubernetes Engine （ RKE）</block>
@@ -2013,10 +2009,6 @@ RKE 1.4与R能 手2.7
 RKE 2 (v1.23.x)与R能 手2.6
 RKE 2 (v1.24.x)与R9cher 2.7</block>
   <block id="2fc3e0590f5be49e12616e7785d1d1d8" category="cell">4.10至4.12</block>
-  <block id="a56837df79ae6671b6b511c330431135" category="cell">VMware Tanzu Kubernetes网格</block>
-  <block id="4341447b6ad78bf4d7eb59ebb5a53d63" category="cell">1.6.</block>
-  <block id="a1c1bb4994628000cfe61563bf4ff4f5" category="cell">VMware Tanzu Kubernetes Grid Integrated Edition</block>
-  <block id="4700f2869a38df0fa4d3a207c4048f3d" category="cell">1.14和1.15</block>
   <block id="bd0c68687ae6337e2436da35c9876b3a" category="paragraph">以下说明假定您已创建一个自行管理的集群。</block>
   <block id="f1e065a4705616b4a33e38f8a6c9d9b0" category="list-text"><block ref="a250d079edf413d7ab6b80bd41f1a440" category="inline-xref-macro-rx"></block></block>
   <block id="16b1f7f08468f13997b2fdd4f721c9a4" category="section-title">将集群添加到Asta Control Service</block>
@@ -2211,15 +2203,11 @@ RKE 2 (v1.24.x)与R9cher 2.7</block>
   <block id="a46411d662ebd15db7079553439dbcdc" category="paragraph">中每个元素的索引<block ref="7de38f3c3d3baa7ca58a366f09577586" prefix=" " category="inline-code"></block> 阵列以0开头。在上面的示例中、是的索引<block ref="5bb15412e9504feb0711be74d8c6ed33" prefix=" " category="inline-code"></block> 将为0、并为创建索引<block ref="ce8dd462bb623b9902ba4f0151eb2f1b" prefix=" " category="inline-code"></block> 将为1。在输出中、记下服务帐户密钥的索引编号。在下一步中、您将需要此索引编号。</block>
   <block id="ca492be8d9c67f790505b17ed0272fa9" category="list-text"><block ref="43d42a1bad9233e3772b4daeb39d1495" category="inline-xref-macro-rx"></block></block>
   <block id="8ab37db051796602226f25a5530aeaca" category="paragraph">在添加专用集群之前、您需要在此集群上安装Astra Connector、以便Astra Control可以与其通信。请参见 <block ref="5c81995f6b8f1946f7d874c3b5f608ab" category="inline-link-macro-rx"></block> 有关说明，请参见。</block>
-  <block id="61790943e1aa3906439ccf28814ccf38" category="cell">采用AKS 1.24.x和1.25x的Azure Stack HCI 21H2和22H2</block>
-  <block id="b0f76ba96d59d2ec008421d62cbd51d1" category="cell">1.15至1.16</block>
   <block id="81648ba2efc6c3bc5c076713f631b3d6" category="cell">1.26至1.28</block>
   <block id="e55f71014c1486e673587737ba45e41e" category="cell">RKE 1.3与R能 手管理器2.6
 RKE 1.4与R能 手管理器2.7
 RKE 2 (v1.24.x)与R能 手2.6
 RKE 2 (v1.26.x)与R9cher 2.7</block>
-  <block id="7a1e78fd1adb53e6f4397fb295df4f23" category="cell">4.11至4.13</block>
-  <block id="6a11c0289f3527c7d689f620d79b2d2c" category="cell">1.16.x</block>
   <block id="8bc31dadfb63e8fd7f63080c53baf314" category="list-text">*已配置Astra三端存储后端*：必须至少配置一个Astra三端存储后端<block ref="fb143b34c64ee02a36db37ee7717ee44" category="inline-link-rx"></block> 在集群上。</block>
   <block id="c421985a7d31a3a4aea2acb15d610b59" category="inline-link-macro">Astra Control配置程序功能</block>
   <block id="243cb370b04d1b3f44b5bfb5881e4c02" category="list-text">*Astra Control置备程序*：要使用Astra Control置备程序的高级管理和存储配置功能(仅Astra Control用户可访问这些功能)，必须安装Astra Trandent 23.10或更高版本并启用 <block ref="c34557907158b24c5eddb9109f719b54" category="inline-link-macro-rx"></block>。</block>
@@ -2563,4 +2551,5 @@ Astra Control现在可以管理由使用NVMe/TCP连接的永久性卷提供支�
   <block id="a65211330b142f51904ccfb3741cc124" category="inline-link">如果您已有Asta Trident、请从托管它的集群中将其卸载</block>
   <block id="00c4331aab8ed2101088511f96b6af8e" category="list-text"><block ref="f21e19b64d79b0da0ff48729d1b28669" category="inline-link-rx"></block>。</block>
   <block id="005a56f182fe268e9f6977b39114eab8" category="list-text">在启用Asta Control配置程序的情况下安装Asta Trent <block ref="87d6b9737ff6f9e44e3dd25c182cf495" prefix="(" category="inline-code"></block>）：</block>
+  <block id="89de75d28b7402eb7cc9790aa9e4f669" category="cell">4.11至4.14</block>
 </blocks>
