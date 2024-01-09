@@ -2214,13 +2214,11 @@ RKE 2 (v1.26.x)与R9cher 2.7</block>
   <block id="258c9b2ecd2a4147777d96a2577bb01d" category="list-text">*专用路由标识符*：输入专用路由标识符，您可以从Astra Connector获取该标识符。如果您通过查询Astra Connector<block ref="e29c11c68aee82b23845c3b2bf3ce544" prefix=" " category="inline-code"></block> 命令中、专用路由标识符称为<block ref="6205f02991df9d45acb59ccb61d7a0cb" prefix=" " category="inline-code"></block>。</block>
   <block id="1d740d5e28f5ec526ba0e21bd2c042ae" category="list-text"><block ref="d19f65bb3040b630d929eb2fd73ae249" category="inline-link-macro-rx"></block>。</block>
   <block id="615193f2c37d9fd054a61bf78b73ad01" category="section-title">不可配置的备份</block>
-  <block id="213c28884ce4a2a71120000c783fcf82" category="paragraph">Astra Control Service支持使用以下平台和存储分段类型创建不可配置的备份：</block>
   <block id="10c409f776da63661445303239e693a2" category="list-text">Amazon Web Services使用配置了S3对象锁定的Amazon S3存储分段</block>
   <block id="beef1143f09010f8bcfdc72a883e9c08" category="list-text">Microsoft Azure使用已配置保留策略的Azure存储分段</block>
   <block id="a497c37cc42f059834689ec0fba7374a" category="list-text">使用配置了保留策略的Google Cloud Storage存储分段的Google Kub并 配置了保留策略</block>
   <block id="2068f70db106b56bd996eac3699fdfcf" category="list-text">使用配置了S3对象锁定的S3存储分段的NetApp StorageGRID</block>
   <block id="81a25fa8f10fc7cec301084797002d71" category="paragraph">使用不可配置备份时、请注意以下事项：</block>
-  <block id="582c23d1f9cff824030194a7519dc569" category="list-text">如果备份到不受支持的平台中的一次写入多次读取(WORM)存储分段或备份到不受支持的存储分段类型、则可能会出现不可预测的结果、例如、即使已过保留时间、备份删除也会失败。</block>
   <block id="046b0dc975ab97773b3ec3307b750bf6" category="list-text">Astra Control不支持数据生命周期管理策略、也不支持手动删除用于不可变备份的存储分段上的对象。确保存储后端未配置为管理Astra Control快照或备份数据的生命周期。</block>
   <block id="67fc69d0bf35fe0124a1937122bf3aec" category="summary">您可以配置加密以保护Astra Control与存储后端之间的流量。</block>
   <block id="341784bc72164a9576c48141a8457786" category="doc">配置存储后端加密</block>
@@ -2552,4 +2550,7 @@ Astra Control现在可以管理由使用NVMe/TCP连接的永久性卷提供支�
   <block id="00c4331aab8ed2101088511f96b6af8e" category="list-text"><block ref="f21e19b64d79b0da0ff48729d1b28669" category="inline-link-rx"></block>。</block>
   <block id="005a56f182fe268e9f6977b39114eab8" category="list-text">在启用Asta Control配置程序的情况下安装Asta Trent <block ref="87d6b9737ff6f9e44e3dd25c182cf495" prefix="(" category="inline-code"></block>）：</block>
   <block id="89de75d28b7402eb7cc9790aa9e4f669" category="cell">4.11至4.14</block>
+  <block id="ab25e566dd860edad27ef68f7ef5b9e7" category="paragraph">不可变备份是指在指定时间段内无法更改或删除的备份。在创建不可更改的备份时、Astra Control会检查以确保您使用的存储分段是一次写入多次读取(Write on时 读取多次、WORM)存储分段、如果是、则会确保备份在Astra Control中不可更改。
+Astra Control Service支持使用以下平台和存储分段类型创建不可配置的备份：</block>
+  <block id="2d0336a0c7896d90ad095dbc30578198" category="list-text">如果备份到不受支持的平台中的WORM存储分段或备份到不受支持的存储分段类型、则可能会出现无法预测的结果、例如、即使已过保留时间、备份删除也会失败。</block>
 </blocks>
