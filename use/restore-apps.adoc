@@ -21,6 +21,14 @@ NOTE: 如果将命名空间筛选器添加到在还原或克隆操作之后运�
 * *首先保护您的应用程序*：强烈建议您在恢复应用程序之前为其创建快照或备份。这样、如果还原失败、您就可以从快照或备份克隆。
 * *检查目标卷*：如果要还原到其他存储类、请确保该存储类使用相同的永久性卷访问模式(例如ReadWriteMany)。如果目标永久性卷访问模式不同，还原操作将失败。例如、如果源永久性卷使用rwx访问模式、请选择无法提供rwx的目标存储类、例如Azure托管磁盘、AWS EBS、Google持久磁盘或 `ontap-san`，发生原因则还原操作是否会失败。有关永久性卷访问模式的详细信息、请参阅 https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes["Kubernetes"^] 文档。
 * *规划空间需求*：对使用NetApp ONTAP 存储的应用程序执行原位还原时、还原的应用程序使用的空间可能会增加一倍。执行原位还原后、从还原的应用程序中删除所有不需要的快照以释放存储空间。
+* *支持的存储类驱动程序*：Astra Control支持使用以下驱动程序支持的存储类还原备份：
++
+** `ontap-nas`
+** `ontap-nas-economy`
+** `ontap-san`
+** `ontap-san-economy`
+
+
 * *(仅限ONTA-NAS经济型驱动程序)备份和还原*：备份或还原使用由备份的存储类的应用程序之前 `ontap-nas-economy` 驱动程序、请验证 link:../use/protect-apps.html#enable-backup-and-restore-for-ontap-nas-economy-operations["ONTAP存储后端上的Snapshot目录处于隐藏状态"]。如果未能隐藏此目录、可能会导致无法访问您的应用程序、尤其是在使用NFSv3的情况下。
 
 

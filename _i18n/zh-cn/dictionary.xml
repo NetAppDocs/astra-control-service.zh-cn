@@ -2553,4 +2553,11 @@ Astra Control现在可以管理由使用NVMe/TCP连接的永久性卷提供支�
   <block id="ab25e566dd860edad27ef68f7ef5b9e7" category="paragraph">不可变备份是指在指定时间段内无法更改或删除的备份。在创建不可更改的备份时、Astra Control会检查以确保您使用的存储分段是一次写入多次读取(Write on时 读取多次、WORM)存储分段、如果是、则会确保备份在Astra Control中不可更改。
 Astra Control Service支持使用以下平台和存储分段类型创建不可配置的备份：</block>
   <block id="2d0336a0c7896d90ad095dbc30578198" category="list-text">如果备份到不受支持的平台中的WORM存储分段或备份到不受支持的存储分段类型、则可能会出现无法预测的结果、例如、即使已过保留时间、备份删除也会失败。</block>
+  <block id="2b298e0fe3f26bd15bd0a6fde1cc37ca" category="paragraph">Astra Control支持使用以下驱动程序支持的存储类创建快照：</block>
+  <block id="00055dac2ba112b87a95a368075b9561" category="list-text"><block ref="8321592ce24c8a122ecf26a63cfca407" prefix="" category="inline-code"></block></block>
+  <block id="cd17e7ed84c40a0ff5ecb8b625b1f186" category="list-text"><block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix="" category="inline-code"></block></block>
+  <block id="73b781a615cea2647a87ff2035e296b1" category="list-text"><block ref="3016c12c1db45f14c80c9c1731b9c26a" prefix="" category="inline-code"></block></block>
+  <block id="7699a29541e69341e6490b2f436f651b" category="paragraph">Astra Control支持使用以下驱动程序支持的存储类创建备份：</block>
+  <block id="cecdaed309330a9e7dea16b2076957ee" category="list-text"><block ref="caafdf62a2c609bfa5316118231a1007" prefix="" category="inline-code"></block></block>
+  <block id="d5011d1ec3e5cf71761411134c41a9cd" category="list-text">*支持的存储类驱动程序*：Astra Control支持使用以下驱动程序支持的存储类还原备份：</block>
 </blocks>
