@@ -1,5 +1,8 @@
 ---
 indexpage:
+  title: Astra Control Service 文档
+  summary: Astra Control Service是一项由NetApp管理的服务、可为多个云环境中的Kubernetes集群提供应用程序感知型数据管理。如果您需要管理在内部环境中运行的
+    Kubernetes 应用程序，请访问 Astra Control Center 的文档。
   lead: Astra Control Service是一项由NetApp管理的服务、可为多个云环境中的Kubernetes集群提供应用程序感知型数据管理。如果您需要管理在内部环境中运行的
     Kubernetes 应用程序，请访问 Astra Control Center 的文档。
   tiles:
