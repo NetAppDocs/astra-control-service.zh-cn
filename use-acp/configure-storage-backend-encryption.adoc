@@ -59,6 +59,7 @@ NOTE: 仅支持使用对使用内部ONTAP存储后端的NFS流量进行Kerberos�
 
 使用适当的访问权限配置ONTAP导出策略规则。例如、如果集群要挂载混合使用Kerberos 5i和Kerberos 5p加密的NFS卷、请使用以下访问设置：
 
+[cols="4*"]
 |===
 | Type | 只读访问 | 读/写访问 | 超级用户访问 
 

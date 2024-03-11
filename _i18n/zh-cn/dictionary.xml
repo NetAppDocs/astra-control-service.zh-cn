@@ -2000,13 +2000,11 @@
   <block id="c52ee6d695c3236a2b8bf5b454bac3cb" category="cell">Kubbernetes分发</block>
   <block id="2e5d14f7919ff3c6138e7845aec4f915" category="cell">支持的版本</block>
   <block id="0770a54f3635e09a4e4ff53a035b9979" category="cell">Kubnetes (上游)</block>
-  <block id="4863c0e3b29248649240a69b9df08e1e" category="cell">1.24到1.26 (Kubirnetes 1.25或更高版本需要Asta Trident 22.10或更高版本)</block>
   <block id="8c95b632875261344eb6365459feffd0" category="cell">Rancher Kubernetes Engine （ RKE）</block>
   <block id="86742721bf4e412fd236371e22eea76b" category="cell">RKE 1.3与R能 手2.6
 RKE 1.4与R能 手2.7
 RKE 2 (v1.23.x)与R能 手2.6
 RKE 2 (v1.24.x)与R9cher 2.7</block>
-  <block id="2fc3e0590f5be49e12616e7785d1d1d8" category="cell">4.10至4.12</block>
   <block id="bd0c68687ae6337e2436da35c9876b3a" category="paragraph">以下说明假定您已创建一个自行管理的集群。</block>
   <block id="f1e065a4705616b4a33e38f8a6c9d9b0" category="list-text"><block ref="a250d079edf413d7ab6b80bd41f1a440" category="inline-xref-macro-rx"></block></block>
   <block id="16b1f7f08468f13997b2fdd4f721c9a4" category="section-title">将集群添加到Asta Control Service</block>
@@ -2559,4 +2557,5 @@ Astra Control Service支持使用以下平台和存储分段类型创建不可�
   <block id="cecdaed309330a9e7dea16b2076957ee" category="list-text"><block ref="caafdf62a2c609bfa5316118231a1007" prefix="" category="inline-code"></block></block>
   <block id="d5011d1ec3e5cf71761411134c41a9cd" category="list-text">*支持的存储类驱动程序*：Astra Control支持使用以下驱动程序支持的存储类还原备份：</block>
   <block id="55a8ef29f75e55b9790167d340f9b10a" category="list-text">按年订阅的折扣价预付费用、使您能够管理每个_命名 空间包_最多20个命名空间。请联系NetApp销售部门、根据您的组织需要购买任意数量的软件包。例如、购买3个软件包、可从Asta Control Service管理60个空间。如果您管理的命名空间超过年度订阅所允许的数量、则会按每个额外命名空间的订阅相关超额使用率向您收取费用。如果您还没有 Astra Control 帐户，则购买高级订阅会自动为您创建一个 Astra Control 帐户。如果您已有免费计划，则会自动转换为高级订阅。</block>
+  <block id="b55edf29fb10e1f082aaf76e7d14a0e5" category="cell">1.26至1.28 (使用Asta三齿23.04或更高版本)</block>
 </blocks>
