@@ -2478,7 +2478,6 @@ Astra Control Service支持使用以下平台和存储分段类型创建不可�
   <block id="fa11ed24405872fcaff3d72114365e10" category="list-text">*如果您安装了Astra三端安装程序，请确认其版本在四个版本的窗口内*：如果您的Astra三端安装程序在版本24.02的四个版本窗口内，则可以使用Astra Control置备程序直接升级到Astra三端安装程序24.02。例如、您可以直接从Asta三端23.04升级到24.02。</block>
   <block id="bc50f89e7547553ce82affde0adc4c76" category="list-text">(仅限自定义注册表)按照以下步骤将图像移动到自定义注册表。如果您不使用注册表、请按照中的三端修复操作符步骤进行操作 <block ref="d433543a9de56c735bd2827329689b0d" category="inline-xref-macro-rx"></block>。</block>
   <block id="635815058628a337f65c0953162ac32e" category="list-text">使用您最初使用的安装方法在Asta Trdent中启用Asta Control配置程序：</block>
-  <block id="0666804607fefb21e41712e9a96717d0" category="paragraph">&lt;stdin&gt;中未解析的指令-包括：：https://raw.githubusercontent.com/NetAppDocs/astra-control-center/main/_include/enable-acp-options-tabbed-block.adoc[]</block>
   <block id="e1e016d44c99ff12155d4c6ec97b954b" category="paragraph">Asta Control配置程序功能已启用、您可以使用当前运行的版本可用的任何功能。</block>
   <block id="bd43fc9501d9e9ddb964eda155be38b8" category="section-title">2024年3月14日</block>
   <block id="b13f49c3645a7a864544e5ba028ddf46" category="list-text"><block ref="fe976099507f0433932bc4deb8637ad3" category="inline-link-rx"></block>。</block>
@@ -2550,4 +2549,51 @@ Asta Control配置程序已取代Asta Trandent、成为Asta Control架构中的�
   <block id="1ee256dec031da4c8764ac0ab9618006" category="list-text"><block ref="1ee256dec031da4c8764ac0ab9618006" category="inline-link-rx"></block></block>
   <block id="98687150a7223edc47d2aeb5f1686527" category="list-text">*Astra Control配置程序*：Astra Control配置程序是由NetApp维护的完全受支持的存储配置程序和流程编排程序、包含Astra三项CSI功能以及扩展的存储管理功能、可用于为Docker和Kubernetes管理的容器化应用程序创建存储卷。使用Asta Control部署时、Asta Control配置程序包括一个已配置的ONTAP存储后端。</block>
   <block id="2411d46a6f92e6f14127f5089d27d8fe" category="admonition">如果将CVS服务类型与Asta Control配置程序结合使用、则需要先配置存储池、然后才能配置卷。如果在未配置存储池的情况下配置卷、则卷配置将失败。请参见<block ref="c8e96960daef0620d62e613312bed1b3" category="inline-link-rx"></block> 有关创建卷的详细信息、请参见。</block>
+  <block id="b88c081e2a4b249f94292c6f7bf16bdc" category="inline-link">下载Asta三端安装程序并解压缩</block>
+  <block id="f1f44f407a364d092b4a3b446d6593b5" category="list-text"><block ref="5512264baa78f7d10bb082092407833c" category="inline-link-rx"></block>。</block>
+  <block id="b53ea1f6729ee2c1c5dc303c5e9bb360" category="list-text">如果您尚未安装Astra三端安装程序、或者您从初始Astra三端安装程序中删除了操作员、请完成以下步骤：</block>
+  <block id="1802fc07d2de18110ae52621540f337e" category="list-text">创建客户需求日：</block>
+  <block id="b19df824e7baecb971d0fdd39542c6d6" category="list-text">创建三项命名空间 <block ref="a40796e67d7096bdb1a461d9369987ae" prefix="(" category="inline-code"></block>)或确认三项命名空间仍然存在 <block ref="929ac53a7aaa18d0ab7bfd29e3b89c45" prefix="(" category="inline-code"></block>）。如果已删除此命名空间、请重新创建它。</block>
+  <block id="f8eb25c26ac0064b456c26bd4bb1642b" category="list-text">将Astra Trdent更新到24.02.0：</block>
+  <block id="84b3a17dd4da0cadee9516d2c742e8e1" category="admonition">对于运行Kubornetes 1.24或更早版本的集群、请使用<block ref="bd2cc8575fe69c7f775292759380c838" prefix=" " category="inline-code"></block>。对于运行Kubernetes 1.25或更高版本的集群、请使用<block ref="5a02ebff4889c2de0379a0fb10bed282" prefix=" " category="inline-code"></block>。</block>
+  <block id="4cf0920f58032b65295d4d0255354879" category="list-text">验证Astra trident是否正在运行：</block>
+  <block id="70da7fdb746f99191502821d5d3b6d53" category="list-text">[[pull机密]]如果您有一个使用机密的注册表，请创建一个用于提取Astra Control置备程序映像的密钥：</block>
+  <block id="531dc1bead45003a393e1e227a07b0fa" category="list-text">编辑TridentOrchestrator CR并进行以下编辑：</block>
+  <block id="c88d85553b81a72e9b28005772f27281" category="list-text">为Astra三端映像设置自定义注册表位置或从Astra Control注册表中提取该映像 <block ref="c063da0c4010a4b533407346a02dd83c" prefix="(" category="inline-code"></block> 或<block ref="cad26ce67501baab70dd72ffd03b01e6" prefix=" " category="inline-code"></block>）。</block>
+  <block id="8b1959e0a8b41248dad790a861dbfdd9" category="list-text">启用Asta Control配置程序 <block ref="b146a884950a14beaf7f7c32ccceea96" prefix="(" category="inline-code"></block>）。</block>
+  <block id="1a94316615bc7bfa28020fb176113eb9" category="list-text">设置Asta Control配置程序映像的自定义注册表位置或将其从Asta Control注册表中提取 <block ref="6fd47d0a38cf5afec555b659aaed6104" prefix="(" category="inline-code"></block> 或<block ref="3a419c3a7ea2390874c7e355a5180c2e" prefix=" " category="inline-code"></block>）。</block>
+  <block id="9f28a023f26c22c040e88a7f3791d0ed" category="inline-xref">图像拉取密钥</block>
+  <block id="f3a11fe989360f45110df3758e7f0641" category="list-text">如果您已建立 <block ref="565c9dfc4921fbeccbde323bc8a44cad" category="inline-xref-macro-rx"></block> 在本操作步骤的前面部分、您可以在此处设置它们 <block ref="bafdae7aa6abb1556ef1b0d17efe7509" prefix="(" category="inline-code"></block>）。使用您在前面步骤中创建的相同名称机密名称。</block>
+  <block id="aa3ae8b6c1e4a29f9314a8bbc401330f" category="list-text">保存并退出文件。部署过程将自动开始。</block>
+  <block id="4f27e6f7f8f95f32f55540801c5f6db0" category="list-text">验证是否已创建操作员、部署和副本集。</block>
+  <block id="6849b59104c35075b063cf35570fde13" category="admonition">在 Kubernetes 集群中只能有 * 一个操作符实例 * 。请勿创建多个部署的Asta三端操作员。</block>
+  <block id="faba39ec34eed502aea6d805d792a9ea" category="list-text">验证<block ref="49c9f6c98d04c8c76aee7448fd9136ed" prefix=" " category="inline-code"></block> 容器正在运行<block ref="507c6bbca2ad57c69e89a97ee8714536" prefix=" " category="inline-code"></block> 为<block ref="50ce33a86e6915635518e9752cf0a12f" prefix=" " category="inline-code"></block> 状态为<block ref="98dd43dfae05b11befe1f140e0ec787a" prefix=" " category="inline-code"></block>：</block>
+  <block id="6942401e8cfb1a0fc7b82ec1dcda7d32" category="list-text"><block ref="b0e92e3807bd982cc8fd58230062a04f" category="inline-link-rx"></block>。</block>
+  <block id="a65211330b142f51904ccfb3741cc124" category="inline-link">如果您已有Asta Trident、请从托管它的集群中将其卸载</block>
+  <block id="00c4331aab8ed2101088511f96b6af8e" category="list-text"><block ref="f21e19b64d79b0da0ff48729d1b28669" category="inline-link-rx"></block>。</block>
+  <block id="005a56f182fe268e9f6977b39114eab8" category="list-text">在启用Asta Control配置程序的情况下安装Asta Trent <block ref="87d6b9737ff6f9e44e3dd25c182cf495" prefix="(" category="inline-code"></block>）：</block>
+  <block id="152090ff5e9a05ea7e1cf0c248449638" category="open-title">掌舵</block>
+  <block id="fe98497efedbe156ecc4b953aea77e07" category="inline-link">卸载</block>
+  <block id="e87cd9f9f3f0bdb5a644fb2aa2415f5b" category="list-text">如果您安装了Astra Trident 23.07.1或更早版本、<block ref="956dce94688d94fac89c002857c93b5d" category="inline-link-rx"></block> 操作员和其他组件。</block>
+  <block id="c35a7e0e7f42e740c64a0b6fdade1fe3" category="list-text">如果您的Kubornetes集群运行的是1.24或更早版本、请删除PSP：</block>
+  <block id="113fbd468c6aaecfbef57e5d1e9b500d" category="list-text">添加Astra Trident Helm存储库：</block>
+  <block id="02cc60ae4326121ce3bc2b5fdb24de58" category="list-text">更新Helm图表：</block>
+  <block id="b0f226ab4f18ed3c3dd4ee74affdea76" category="list-text">列出图像：</block>
+  <block id="730022f38a10156cf22189c69dee095d" category="list-text">确保提供了三项运算符24.02.0：</block>
+  <block id="70b739f3363e6b3cd5f0c896d90af9c6" category="list-text">使用 ...<block ref="0562418e6d9a76d0dd22b2f186a2203d" prefix=" " category="inline-code"></block> 并运行以下选项之一、其中包括这些设置：</block>
+  <block id="9fe27ee3cf7416ee3af4516cf89a2b4c" category="list-text">部署位置的名称</block>
+  <block id="8d4c721df5c5b813b86a2d1eb619c735" category="list-text">Astra三端版本</block>
+  <block id="7dba4177f42e6622145f408eb88b1cba" category="list-text">Asta Control配置程序映像的名称</block>
+  <block id="7b0fc32fdb3c2378c2c39008d29aaa43" category="list-text">用于启用配置程序的标志</block>
+  <block id="37ee7516a84d6949e4e0bde03e129758" category="inline-link">｛\f270｛\f151｛\f270｝</block>
+  <block id="29e638c426512b56521aa694976562ea" category="list-text">(可选)本地注册表路径。如果您使用的是本地注册表、则为<block ref="97e5914991475a979ee93ba0d709c399" category="inline-link-rx"></block> 可以位于一个注册表或不同的注册表中、但所有CSI映像都必须位于同一注册表中。</block>
+  <block id="4795c928314a82e5be360b646a3a3aac" category="list-text">三端名称空间</block>
+  <block id="dae8ace18bdcbcc6ae5aece263e14fe8" category="list-title">选项</block>
+  <block id="804c8c9903e49e8cab0717f41b883f9a" category="list-text">没有注册表的映像</block>
+  <block id="c4ffea098f78924a9b9331b8f5e9c8b4" category="list-text">一个注册表中的映像</block>
+  <block id="4847c552b2ff9251806e41c8fa907e19" category="list-text">不同注册表中的映像</block>
+  <block id="d75fdc8e85ddcd7e9dc9f367168dec11" category="paragraph">您可以使用<block ref="cd4140d3de30b520500459331d08d2bf" prefix=" " category="inline-code"></block> 查看安装详细信息、例如名称、命名空间、图表、状态、应用程序版本、和修订版号。</block>
+  <block id="d09a3f23170df63b9065e78b7eb80224" category="paragraph">如果您在使用Helm部署TRIdent时遇到任何问题、请运行此命令以完全卸载Asta TRIdent：</block>
+  <block id="3897d04922674a762953f58e38463cb0" category="inline-link">完全删除Asta Trdent CRD</block>
+  <block id="98709e6abe377fa2083cb4a36ba22ddc" category="paragraph">*请勿*<block ref="d47e0c203a38c85d577cb0ed29c7fad1" category="inline-link-rx"></block> 在尝试重新启用Astra Control配置程序之前、作为卸载的一部分。</block>
 </blocks>
