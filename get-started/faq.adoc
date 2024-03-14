@@ -60,7 +60,7 @@ Astra Control 要求您在入职部分提供准确的客户信息。如果您提
 
 * 在将集群添加到 Astra Control Service 之前，是否需要在集群上安装 CSI 驱动程序？ *
 
-否将集群添加到Astra Control后、该服务将自动在Kubbernetes集群上安装NetApp的三端容器存储接口(CSI)驱动程序。此CSI驱动程序用于为云提供商支持的集群配置永久性卷。
+否将集群添加到Astra Control后、该服务将自动在Kubbernetes集群上安装Astra三端容器存储接口(CSI)驱动程序。此CSI驱动程序用于为云提供商支持的集群配置永久性卷。
 
 * 添加到 Astra Control Service 后，我需要向集群添加工作节点。我该怎么办？ *
 
@@ -145,9 +145,8 @@ WARNING: 在通过 GCP 删除集群之前，请始终从 Astra Control 中将其
 
 endif::gcp[]
 
-* 从 Astra Control 中删除集群时是否会卸载 Astra Trident ？ *
-
-从Astra Control中删除集群时、不会从集群中卸载Astra Trident。
+*取消管理Astra Control配置程序时，它是否会自动从集群中卸载？*
+从Astra Control Center取消管理集群时、Astra Control配置程序或Astra三项功能不会自动从集群中卸载。要卸载Asta Control配置程序及其组件或Asta Trandent、您需要 https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["请按照以下步骤卸载包含Astra Control配置程序服务的Astra Trdent实例"^]。
 
 
 
@@ -203,26 +202,21 @@ endif::gcp[]
 Asta Control配置程序作为Asta Control的一部分、支持一组超群的存储配置功能、这些功能在开源Asta三元数据中不可用。这些功能是对开放源码的三元数据可用的所有功能的补充。
 
 *Astra Control配置程序是否取代了Astra三项功能？*
-
-在Asta Control的未来更新中、Asta Control配置程序将取代Asta Trandent、成为Asta Control架构中的存储配置程序和流程编排程序。因此、强烈建议Astra Control用户使用 link:../use/enable-acp.html["启用Asta Control配置程序"]。Asta三元数据将继续保持开源状态、并使用NetApp的新CSI和其他功能进行发布、维护、支持和更新。
+Asta Control配置程序已取代Asta Trandent、成为Asta Control架构中的存储配置程序和流程编排程序。Asta Control用户应执行此操作 link:../use/enable-acp.html["启用Asta Control配置程序"] 使用A作用 力控制。此版本仍支持Asta三项功能、但未来版本不支持此功能。Asta三元数据将保持开源状态、并使用NetApp的新CSI和其他功能进行发布、维护、支持和更新。但是、只有包含A作用 力三项CSI功能以及扩展存储管理功能的A作用 力控制配置程序才能用于即将推出的A作用 力控制版本。
 
 *我必须为Astra三端安装付费吗？*
 
-否Asta三端技术将继续采用开源方式、并可免费下载。
+否Asta三端技术将继续采用开源方式、并可免费下载。现在、使用Astra Control配置程序功能需要Astra Control许可证。
 
 *在不安装和使用所有Astra Control的情况下，是否可以使用Astra Control中的存储管理和配置功能？*
 
-可以。即使您不想使用Astra Control数据管理功能的完整功能集、也可以升级到Astra Trident 23.10或更高版本并启用Astra Control配置程序功能。
+可以。即使您不想使用Astra Control数据管理功能的完整功能集、也可以升级到Astra Control配置程序并使用其功能。
 
-*如何从现有的Drident用户过渡到Astra Control以使用高级存储管理和配置功能？*
-
-如果您是现有的Trident用户(包括公有云中的Asta Trident用户)、则需要先获取Asta Control许可证。完成此操作后、您可以下载Astra Control配置程序捆绑包、升级Astra三端、和 link:../use/enable-acp.html["启用Astra Control配置程序功能"]。
-
-*如何知道Astra Control配置程序是否已取代了我的集群上的Astra Trident？*
+[[running-acp.check]]**如何知道Astra Control配置程序是否已取代了我的集群上的Astra Trident？*
 
 安装Asta Control配置程序后、Asta Control UI中的主机集群将显示 `ACP version` 而不是 `Trident version` 字段和当前安装的版本号。
 
-image:ac-acp-version.png["显示UI中ACP版本位置的屏幕截图"]
+image:ac-acp-version.png["显示用户界面中Astra Control配置程序版本位置的屏幕截图"]
 
 如果您无权访问此UI、则可以使用以下方法确认安装成功：
 
@@ -230,7 +224,7 @@ image:ac-acp-version.png["显示UI中ACP版本位置的屏幕截图"]
 ====
 .Asta三端操作员
 --
-验证 `trident-acp` 容器正在运行 `acpVersion` 为 `23.10.0` 状态为 `Installed`：
+验证 `trident-acp` 容器正在运行 `acpVersion` 为 `23.10.0` 或更高版本、状态为 `Installed`：
 
 [listing]
 ----

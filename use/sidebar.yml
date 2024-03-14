@@ -50,3 +50,5 @@ entries:
   url: "/use/enable-acp.html"
 - title: 取消管理应用程序和集群
   url: "/use/unmanage.html"
+- title: 部署Asta Control的自管理实例
+  url: "/use/deploy-astra-control-center.html"

@@ -77,18 +77,18 @@ summary: 要使用Astra Control Service管理Amazon Elastic Kubernetes Service�
 
 Kubernetes 集群必须满足以下要求，才能通过 Astra Control Service 发现和管理它。
 
-Kubernetes 版本:: 集群运行的Kubbernetes版本必须介于1.23到1.25之间。
+Kubernetes 版本:: 集群运行的Kubbernetes版本必须介于1.25到1.28之间。
 映像类型:: 每个工作节点的映像类型必须为Linux。
 集群状态:: 集群必须运行状况良好，并且至少有一个联机辅助节点，并且没有处于故障状态的辅助节点。
 
 
-Astra Trident:: 使用存储后端进行操作需要Astra三叉式映像和外部快照控制器。要安装它们、请执行以下操作：
+Asta Control配置程序:: 使用存储后端执行操作需要Astra Control配置程序和外部Snapshot控制器。要启用这些操作、请执行以下操作：
 
 
 [%collapsible%open]
 ====
-. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["安装快照CRD和快照控制器"^]。
-. https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["安装最新版本的Astra Trdent"^]。
+. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploy-a-volume-snapshot-controller["安装快照CRD和快照控制器"^]。
+. link:../use/enable-acp.html["启用Asta Control配置程序"]。
 . https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-create-a-volumesnapshotclass["创建卷快照类"^]。
 
 
@@ -101,7 +101,7 @@ Astra Trident:: 使用存储后端进行操作需要Astra三叉式映像和外�
 [%collapsible%open]
 ====
 .安装外部快照程序
-如果您尚未执行此操作， https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["安装快照CRD和快照控制器"^]。
+如果您尚未执行此操作， https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploy-a-volume-snapshot-controller["安装快照CRD和快照控制器"^]。
 
 .将CSI驱动程序作为Amazon EKS加载项进行安装
 . 为服务帐户创建Amazon EBS CSI驱动程序IAM角色。按照说明进行操作 https://docs.aws.amazon.com/eks/latest/userguide/csi-iam-role.html["在Amazon文档中"^]、使用说明中的AWS命令行界面命令。

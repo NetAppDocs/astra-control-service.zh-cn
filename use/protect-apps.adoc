@@ -150,7 +150,7 @@ Astra Control 会创建应用程序的备份。
 Asta Control配置程序提供了备份和还原功能、可为使用的存储后端启用这些功能 `ontap-nas-economy` 存储类。
 
 .开始之前
-* 您已启用Astra Control配置程序。
+* 您已启用Astra Control配置程序或Astra Trdent。
 * 您已在Astra Control中定义了一个应用程序。在您完成此操作步骤之前、此应用程序的保护功能将受限。
 * 您已拥有 `ontap-nas-economy` 已选择作为存储后端的默认存储类。
 
@@ -178,7 +178,7 @@ IMPORTANT: 验证ONTAP存储后端上的Snapshot目录是否已隐藏。如果�
 
 
 
-. 在Astra三端执行以下操作：
+. 在Asta Control配置程序或Asta Trdent中执行以下操作：
 +
 .. 为每个基于ONTAP NAS经济型且与应用程序关联的PV启用Snapshot目录：
 +

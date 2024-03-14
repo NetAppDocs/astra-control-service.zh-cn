@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: get-started/check-astra-trident-version.html 
-keywords: astra trident, check, version 
+keywords: astra trident, check, version, astra control provisioner 
 summary: 对于自行管理的集群、您可能需要确保使用正确的Asta三端技术支持版本。 
 ---
 = 检查Asta三端安装版本
@@ -12,10 +12,10 @@ summary: 对于自行管理的集群、您可能需要确保使用正确的Asta�
 
 
 [role="lead"]
-要添加使用Asta Trdent提供存储服务的自管理集群、请确保已安装的Asta Trdent版本为最新版本。
+要添加使用Asta Control置备程序或Asta三端对存储服务使用的自管理集群、请确保已安装的Asta三端对等版本为23.10或最新版本。
 
 .步骤
-. 检查Astra Trident版本。
+. 确定您正在运行的Astra三项目标版本：
 +
 [source, console]
 ----
@@ -28,7 +28,7 @@ kubectl get tridentversions -n trident
 [listing]
 ----
 NAME      VERSION
-trident   22.10.0
+trident   24.02.0
 ----
 +
 如果未安装Astra Trident、您将看到类似于以下内容的输出：
@@ -38,9 +38,11 @@ trident   22.10.0
 ----
 error: the server doesn't have a resource type "tridentversions"
 ----
+. 执行以下操作之一：
 +
+** 如果您运行的是Asta三端凹凸版23.01或更早版本、请使用这些版本 https://docs.netapp.com/us-en/trident/trident-managing-k8s/upgrade-trident.html["说明"^] 在升级到Asta Control配置程序之前、升级到Asta三端到最新版本。您可以 link:../use/enable-acp.html["执行直接升级"] 如果您的Astra三端存储在版本24.02的四个版本的窗口中、则将Astra Control配置程序更新为24.02。例如、您可以直接从Asta三端23.04升级到Asta Control配置程序24.02。
+** 如果您运行的是Astra Trdent 23.10或更高版本、请验证Astra Control配置程序是否已启用 link:../use/faq.html#running-acp-check["enabled"]。Asta Control配置程序不能用于23.10之前的Asta Control Center版本。 link:../get-started/enable-acp.html["升级Astra Control配置程序"] 以便它与您要升级的Astra Control Center版本相同、以访问最新功能。
 
-NOTE: 如果Astra Trident未安装或不是最新版本、并且您希望集群使用Astra Trident提供存储服务、则需要先安装最新版本的Astra Trident、然后再继续操作。请参见 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Astra Trident 文档"^] 有关说明，请参见。
 
 . 确保Pod正在运行：
 +

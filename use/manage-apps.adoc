@@ -97,7 +97,7 @@ Astra Control可能无法克隆使用"按参考传递"架构设计的运算符(�
 
 你先请 link:../get-started/add-first-cluster.html["已添加集群"] 对于Astra Control、您可以在集群上安装应用程序或管理现有应用程序。可以管理范围限定为一个或多个命名空间的任何应用程序。
 
-只有当存储位于Astra Control支持的存储类上时、Astra Control才会管理有状态应用程序。Astra控制服务支持由Astra Trident或通用CSI驱动程序支持的任何存储类。
+只有当存储位于Astra Control支持的存储类上时、Astra Control才会管理有状态应用程序。Asta Control Service支持Asta Control配置程序或通用CSI驱动程序支持的任何存储类。
 
 ifdef::gcp[]
 

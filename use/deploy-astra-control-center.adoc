@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: use/deploy-astra-control-center.html 
+keywords: get started, manage apps, manage account 
+summary: 部署独立的自管理Asta Control实例。 
+---
+= 部署Asta Control的自管理实例
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+如果您需要位于网络内部的Asta Control自管理实例、则可以直接从Asta Control Service部署Asta Control Center。
+
+.步骤
+. 在仪表板的Getting Started区域中，选择*Deploy a self-managed instance*。
+. 执行以下操作之一：
++
+** 通过选择*Gener成*生成新的API令牌。
+** 粘贴现有A作用 力控制REST API令牌。请参见 https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html["Astra Automation文档"^] 有关生成API令牌的指导。
+
+
+. 按照*Deploy Astra Control Center*窗口中的说明进行操作。
+

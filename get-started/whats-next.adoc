@@ -21,4 +21,5 @@ summary: 现在、您已登录Astra Control并将集群添加到Astra Control中
 * link:../use/manage-users.html["邀请和管理用户"]
 * link:../use/manage-credentials.html["管理云提供商凭据"]
 * link:../use/manage-notifications.html["管理通知"]
+* link:../use/deploy-astra-control-center.html["部署Asta Control的自管理实例"]
 

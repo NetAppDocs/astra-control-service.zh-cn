@@ -35,7 +35,7 @@ Cloud Volumes Service for Google Cloud 提供两种服务类型： _CVS_ 和 _CV
 
 
 
-NOTE: 如果将CVS服务类型与Asta Trident 23.01或更高版本结合使用、则需要先配置存储池、然后才能配置卷。如果在未配置存储池的情况下配置卷、则卷配置将失败。请参见 https://cloud.google.com/architecture/partners/netapp-cloud-volumes/quickstart#create_a_volume_of_the_cvs_service_type["Cloud Volumes Service文档"^] 有关创建卷的详细信息、请参见。
+NOTE: 如果将CVS服务类型与Asta Control配置程序结合使用、则需要先配置存储池、然后才能配置卷。如果在未配置存储池的情况下配置卷、则卷配置将失败。请参见 https://cloud.google.com/architecture/partners/netapp-cloud-volumes/quickstart#create_a_volume_of_the_cvs_service_type["Cloud Volumes Service文档"^] 有关创建卷的详细信息、请参见。
 
 下表快速比较了此页面上所述的信息。
 

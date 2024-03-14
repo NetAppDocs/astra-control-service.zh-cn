@@ -24,7 +24,7 @@ summary: Astra控制服务集成在NetApp BlueXP的身份验证服务中。注�
 
 .步骤
 . https://cloud.netapp.com/astra["转到BlueXP上的Asta Control页面"^]。
-. 选择*立即开始*。
+. 选择*注册免费版*。
 . 在表单中提供所需信息。
 +
 填写表单时需要注意的一些重要事项：

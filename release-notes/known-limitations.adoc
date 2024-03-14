@@ -120,7 +120,7 @@ NOTE: 在克隆操作期间、需要IngressClass资源或webhooks才能正常运
 
 . 删除任何现有的Snapshot CRD和任何现有的Snapshot控制器。
 . https://docs.netapp.com/us-en/trident/trident-managing-k8s/uninstall-trident.html["卸载 Astra Trident"^]。
-. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploying-a-volume-snapshot-controller["安装快照CRD和快照控制器"^]。
+. https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#deploy-a-volume-snapshot-controller["安装快照CRD和快照控制器"^]。
 . https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["安装最新版本的Astra Trdent"^]。
 . https://docs.netapp.com/us-en/trident/trident-use/vol-snapshots.html#step-1-create-a-volumesnapshotclass["创建卷快照类"^]。
 

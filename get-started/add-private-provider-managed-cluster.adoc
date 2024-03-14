@@ -73,13 +73,13 @@ endif::gcp[]
 
 现在、您可以将专用集群添加到Astra Control Service。
 
-在管理Azure Kubenetes Service和Google Kubenetes Engine集群时、请注意、您有两种方法可用于Astra Trident安装和生命周期管理：
+在管理Azure Kubenetes Service和Google Kubenetes Engine集群时、请注意、Astra Control配置程序安装和生命周期管理有两种选择：
 
-* 您可以使用Asta Control Service自动管理Asta三端到端的生命周期。为此、请确保要使用Astra Control Service进行管理的集群上未安装Astra三项功能。在这种情况下、Asta Trident会在您开始管理集群时自动安装Asta Trident、并自动处理Asta Trident升级。
-* 您可以自行管理Asta Dent的生命周期。为此、请先在集群上安装A作用 力三端、然后再使用A作用 力控制服务管理集群。在这种情况下、Astra Control Service会检测到Astra Trandent已安装、并且不会重新安装它或管理Astra Trandent升级。请参见 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Astra Trident 文档"^] 有关安装说明、请参见。
+* 您可以使用Astra Control Service自动管理Astra Control置管程序的生命周期。要执行此操作、请确保未在要使用Astra Control Service管理的集群上安装Astra Trent、并且未启用Astra Control配置程序。在这种情况下、Astra Control Service会在您开始管理集群时自动启用Astra Control配置程序、并自动处理Astra Control配置程序升级。
+* 您可以自行管理Astra Control配置程序的生命周期。为此、请先在集群上启用Asta Control配置程序、然后再使用Asta Control Service管理集群。在这种情况下、Astra Control Service检测到Astra Control配置程序已启用、不会重新安装它或管理Astra Control配置程序升级。请参见 link:../use/enable-acp.html["启用Asta Control配置程序"^] 有关步骤、请启用Asta Control配置程序。
 
 
-在使用Asta Control Service管理Amazon Web Services集群时、如果您需要使用Asta Trident启用的存储后端、则需要先在集群上手动安装Asta Trident、然后再使用Asta Control Service进行管理。请参见 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Astra Trident 文档"^] 有关安装说明、请参见。
+在使用Asta Control Service管理Amazon Web Services集群时、如果需要只能与Asta Control配置程序一起使用的存储后端、则需要先在集群上手动启用Asta Control配置程序、然后再使用Asta Control Service进行管理。请参见 link:../use/enable-acp.html["启用Asta Control配置程序"^] 了解启用Astra Control配置程序的步骤。
 
 .开始之前
 [%collapsible%open]
@@ -88,7 +88,7 @@ ifdef::aws[]
 
 .Amazon Web Services
 * 您应拥有包含创建集群的IAM用户凭据的JSON文件。 link:../get-started/set-up-amazon-web-services.html#create-an-iam-user["了解如何创建IAM用户"]。
-* 适用于NetApp ONTAP 的Amazon FSX需要Astra Trident。如果您计划使用适用于NetApp ONTAP 的Amazon FSx作为EKS集群的存储后端、请参阅中的Astra Trident信息 link:set-up-amazon-web-services.html#eks-cluster-requirements["EKS集群要求"]。
+* Amazon FSx for NetApp ONTAP需要Astra Control配置程序。如果您计划使用Amazon FSx for NetApp ONTAP作为EKS集群的存储后端、请参阅中的Astra Control配置程序信息 link:set-up-amazon-web-services.html#eks-cluster-requirements["EKS集群要求"]。
 * (可选)如果需要提供 `kubectl` 集群对非集群创建者的其他IAM用户的命令访问权限、请参见中的说明 https://aws.amazon.com/premiumsupport/knowledge-center/amazon-eks-cluster-access/["在Amazon EKS中创建集群后、如何为其他IAM用户和角色提供访问权限？"^]。
 * 如果您计划使用NetApp Cloud Volumes ONTAP 作为存储后端、则需要将Cloud Volumes ONTAP 配置为使用Amazon Web Services。请参见Cloud Volumes ONTAP https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-getting-started-aws.html["设置文档"^]。
 
@@ -124,7 +124,7 @@ endif::gcp[]
 
 ====
 .步骤
-. (可选)如果您要添加Amazon EKS集群或要自行管理Asta三端到功能的安装和升级、请在此集群上安装Asta三端到功能。请参见 https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["Astra Trident 文档"^] 有关安装说明、请参见。
+. (可选)如果要添加Amazon EKS集群或要自行管理Astra Control配置程序的安装和升级、请在此集群上启用Astra Control配置程序。请参见 link:../use/enable-acp.html["启用Asta Control配置程序"^] 了解支持步骤。
 . 在浏览器中打开Asta Control Service Web UI。
 . 在信息板上，选择 * 管理 Kubernetes 集群 * 。
 +

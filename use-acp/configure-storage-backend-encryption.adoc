@@ -32,7 +32,7 @@ Astra Control配置程序支持对两种类型的存储后端进行Kerberos加�
 NOTE: 仅支持使用对使用内部ONTAP存储后端的NFS流量进行Kerberos加密 `ontap-nas` 存储驱动程序。
 
 .开始之前
-* 确保已在受管集群上启用Asta Control配置程序。请参见 link:../use/enable-acp.html["启用Asta Control配置程序"^] 有关说明，请参见。
+* 确保您已安装 link:../use/enable-acp.html["已启用Asta Control配置程序"^] 在受管集群上。
 * 确保您可以访问 `tridentctl` 实用程序。
 * 确保您对ONTAP存储后端具有管理员访问权限。
 * 确保您知道要从ONTAP存储后端共享的一个或多个卷的名称。
@@ -196,7 +196,7 @@ kubectl get sc ontap-nas-sc
 +
 [listing]
 ----
-NAME         PROVISIONER             AGE
+NAME            PROVISIONER             AGE
 ontap-nas-sc    csi.trident.netapp.io   15h
 ----
 
@@ -205,7 +205,7 @@ ontap-nas-sc    csi.trident.netapp.io   15h
 
 === 配置卷
 
-创建存储后端和存储类后、您现在可以配置卷。有关说明，请参见 https://docs.netapp.com/us-en/trident/trident-use/vol-provision.html["配置卷"^]。
+创建存储后端和存储类后、您现在可以配置卷。请参阅以下说明 https://docs.netapp.com/us-en/trident/trident-use/vol-provision.html["配置卷"^]。
 
 
 
@@ -390,4 +390,4 @@ anf-sc-nfs    csi.trident.netapp.io   15h
 
 === 配置卷
 
-创建存储后端和存储类后、您现在可以配置卷。有关说明，请参见 https://docs.netapp.com/us-en/trident/trident-use/vol-provision.html["配置卷"^]。
+创建存储后端和存储类后、您现在可以配置卷。请参阅以下说明 https://docs.netapp.com/us-en/trident/trident-use/vol-provision.html["配置卷"^]。
