@@ -2596,4 +2596,83 @@ Asta Control配置程序已取代Asta Trandent、成为Asta Control架构中的�
   <block id="d09a3f23170df63b9065e78b7eb80224" category="paragraph">如果您在使用Helm部署TRIdent时遇到任何问题、请运行此命令以完全卸载Asta TRIdent：</block>
   <block id="3897d04922674a762953f58e38463cb0" category="inline-link">完全删除Asta Trdent CRD</block>
   <block id="98709e6abe377fa2083cb4a36ba22ddc" category="paragraph">*请勿*<block ref="d47e0c203a38c85d577cb0ed29c7fad1" category="inline-link-rx"></block> 在尝试重新启用Astra Control配置程序之前、作为卸载的一部分。</block>
+  <block id="5220375a520b7758aa31b8b43ce717fe" category="summary">Astra Control配置程序支持在源卷和目标卷之间创建镜像关系、以复制卷以实现灾难恢复。</block>
+  <block id="50e2eea9ba53d70147772db1c5d25f79" category="doc">使用SnapMirror复制卷</block>
+  <block id="d0182feabbbe0987e5c6aed407b4c2a7" category="paragraph">您可以使用Astra Control配置程序在一个集群上的源卷和对等集群上的目标卷之间创建镜像关系、以便为灾难恢复复制数据。您可以使用具有名称流的自定义资源定义(CRD)执行以下操作：</block>
+  <block id="a682d8ef86abcae6c5a1db6186c5f02b" category="list-text">在卷之间创建镜像关系(PVC)</block>
+  <block id="31a8f98d3378661a5b8abf15438f0bca" category="list-text">删除卷之间的镜像关系</block>
+  <block id="a6349012892be516e5729d501a9649a7" category="list-text">中断镜像关系</block>
+  <block id="2597cb6d27f572bb6d7d2fd15f414795" category="list-text">在灾难情况下提升二级卷(故障转移)</block>
+  <block id="40f7c55be912a395aed2502927d3fcfa" category="list-text">在集群之间执行应用程序无中断过渡(在计划内故障转移或迁移期间)</block>
+  <block id="d193cd9a2432eca22e5cf0d06dcee1e6" category="section-title">复制前提条件</block>
+  <block id="55be807bf2be012ff44a04449cc5e8a8" category="paragraph">开始之前、请确保满足以下前提条件：</block>
+  <block id="3404cce75db90acf6a9d52860721a139" category="list-title">ONTAP 集群</block>
+  <block id="5764ffcba90184d76761806e7e8395b9" category="list-text">*Astra控件配置程序*：Astra控件配置程序23.10或更高版本必须位于使用ONTAP作为后端的源和目标Kubernetes集群上。</block>
+  <block id="ba84728ffba482ceb12371a53be2f636" category="inline-link">ONTAP 中的SnapMirror许可概述</block>
+  <block id="b677eb65f7f869d18b845725a133a8d5" category="list-text">*许可证*：必须在源和目标ONTAP集群上启用使用数据保护包的ONTAP SnapMirror异步许可证。请参见<block ref="a7b9425cefc4a3715b38951f4b2b6b35" category="inline-link-rx"></block> 有关详细信息 ...</block>
+  <block id="5cc8ada79224d850ecd22fd22e550c47" category="list-title">对等</block>
+  <block id="9fecd08b776fdfca7b33426363edf913" category="inline-link">集群和 SVM 对等概述</block>
+  <block id="02b05cdd8f0a8c426f307085cc1004f7" category="list-text">*集群和SVM*：ONTAP存储后端必须建立对等状态。请参见<block ref="60333a598df416e49fbceb5a88dce370" category="inline-link-rx"></block> 有关详细信息 ...</block>
+  <block id="94ac6b3955eab183cb88ab17c91000eb" category="admonition">确保两个ONTAP集群之间的复制关系中使用的SVM名称是唯一的。</block>
+  <block id="11b4eae81775a6d26d41d2ca42309c91" category="list-text">*Astra Control置备程序和SVM*：对等远程SVM必须可供目标集群上的Astra Control置备程序使用。</block>
+  <block id="0c5e1b5bc54261ccadd2a72af1047ded" category="list-title">支持的驱动程序</block>
+  <block id="57601c13c06c6ac6e23efaab44ced427" category="list-text">ONTAP -NAS和ONTAP SAN驱动程序支持卷复制。</block>
+  <block id="3ce5b83f8896ef0d2e356d3972ec8898" category="section-title">创建镜像PVC</block>
+  <block id="427a1ab7f39ee4f2dd7a0b7e35f572da" category="paragraph">按照以下步骤并使用CRD示例在主卷和二级卷之间创建镜像关系。</block>
+  <block id="4dc69f665f0d76c17a577a352dd15b25" category="list-text">在主Kubbernetes集群上执行以下步骤：</block>
+  <block id="cffc5263be00a76539edeeff72190d54" category="list-text">使用创建StorageClass对象<block ref="23041ca302bab724a5a0a4ee923c745d" prefix=" " category="inline-code"></block> 参数。</block>
+  <block id="0a52730597fb4ffa01fc117d9e71e3a9" category="listing-title">示例</block>
+  <block id="f1fe26832c26eb686c85bd72da8a62f1" category="list-text">使用先前创建的StorageClass创建PVC。</block>
+  <block id="a306778c7affcc4dd2329c7f1e9a6389" category="list-text">使用本地信息创建镜像关系CR。</block>
+  <block id="f55994c0c11fac6e31cbb70581f696f0" category="paragraph">Astra Control配置程序会提取卷的内部信息以及卷的当前数据保护(DP)状态、然后填充镜像关系的状态字段。</block>
+  <block id="7e36329a511f28054ceb0cb2aba7de3a" category="list-text">获取TridentMirorRelationship CR以获取PVC的内部名称和SVM。</block>
+  <block id="ce01c03f932076e82348fc5aaefacc7d" category="list-text">在二级Kubbernetes集群上执行以下步骤：</block>
+  <block id="dbe7fac150e57be9bc0d8e046792f4c3" category="list-text">使用trident.netapp.io/replication: true参数创建StorageClass。</block>
+  <block id="01d68e0f9630c032dc8a33358e46e65b" category="list-text">使用目标和源信息创建镜像关系CR。</block>
+  <block id="960441627a9e57f3614bc5e5fce9a5ff" category="paragraph">Asta控件配置程序将使用配置的关系策略名称(或ONTAP的默认策略名称)创建SnapMirror关系并对其进行初始化。</block>
+  <block id="4ba5d2a91c95149a7ad924ebd0d9503d" category="list-text">使用先前创建的StorageClass创建一个PVC以用作二级(SnapMirror目标)。</block>
+  <block id="efe874c809f0fe07e9ccbe31c010017a" category="paragraph">Astra Control配置程序将检查是否存在TridentMirorRelationship CRD、如果此关系不存在、则无法创建卷。如果存在此关系、Astra控件配置程序将确保将新FlexVol卷放置到与镜像关系中定义的远程SVM建立对等关系的SVM上。</block>
+  <block id="e71d1a5cbaac30e63ed507e4b62c705f" category="section-title">卷复制状态</block>
+  <block id="35a5ab9faaa73d6bfb24393f7b676624" category="paragraph">三级镜像关系(TCR)是一种CRD、表示PVC之间复制关系的一端。目标T关系 管理器具有一个状态、该状态会告诉Astra Control配置程序所需的状态是什么。目标T关系 管理器具有以下状态：</block>
+  <block id="546afd3b22376f948ae8d790e441d7da" category="list-text">*已建立*：本地PVC是镜像关系的目标卷、这是一个新关系。</block>
+  <block id="724cfb5ec8bac42a80699bb79c4eccb9" category="list-text">*提升*：本地PVC可读写并可挂载、当前未建立任何有效的镜像关系。</block>
+  <block id="d323366aa32e60d08a0f93bda543af47" category="list-text">*重新建立*：本地PVC是镜像关系的目标卷、以前也位于该镜像关系中。</block>
+  <block id="4c3cd5b62a43e82e03fffa6b238ed918" category="list-text">如果目标卷曾经与源卷建立关系、因为它会覆盖目标卷的内容、则必须使用重新建立的状态。</block>
+  <block id="b2e7dc07859cd924ca5706b299986e57" category="list-text">如果卷之前未与源建立关系、则重新建立的状态将失败。</block>
+  <block id="93f9c6ccc7d85e709509db31891ae5eb" category="section-title">在计划外故障转移期间提升辅助PVC</block>
+  <block id="4a76c8d930ec18b5aedc26b5d8e5246f" category="paragraph">在二级Kubbernetes集群上执行以下步骤：</block>
+  <block id="78ac02218b5a9367bdcb4881538477cc" category="list-text">将TridentMirorRelationship的_spec.state_字 段更新为<block ref="1fe57d6202c7cfbb0ee344b1e0a6fb37" prefix=" " category="inline-code"></block>。</block>
+  <block id="ffe4cfc202d643b50342b93a4a11a82f" category="section-title">在计划内故障转移期间提升辅助PVC</block>
+  <block id="1d60b89a076d7f30b8efdef50e842f68" category="paragraph">在计划内故障转移(迁移)期间、执行以下步骤以提升二级PVC：</block>
+  <block id="3310d9a60c164accb7c262ab6e9fbc65" category="list-text">在主Kubbernetes集群上、创建PVC的快照、并等待创建快照。</block>
+  <block id="8b17b79902950942165541a8ab704363" category="list-text">在主Kubnetes集群上、创建SnapshotInfo CR以获取内部详细信息。</block>
+  <block id="678346d79faaa65b2da52e6d7ddce845" category="list-text">在二级Kubernetes集群上、将_TridentMirorRelationship_ CR的_spec.state_字 段更新为_promoted_和_spec.promotedSnapshotHandle_、以成为快照的内部名称。</block>
+  <block id="7b007b14980acd66e9301e02a5670f47" category="list-text">在二级Kubernetes集群上、确认Trident镜像 关系的状态(stats.state字段)为已提升。</block>
+  <block id="f69101c0107c4bbf8f0ccc9141beb68b" category="section-title">在故障转移后还原镜像关系</block>
+  <block id="9a023cbe1d3be933d8edb6228f9901ce" category="paragraph">在还原镜像关系之前、请选择要用作新主卷的那一端。</block>
+  <block id="1c7011adbcc0afa258396aff4f10266b" category="list-text">在二级Kubernetes集群上、确保已更新TundentMirorRelationship上的_spic.netVolumeHandle_字段的值。</block>
+  <block id="ffb25f01fda2538ae98bc0c4b4d465a6" category="list-text">在二级Kubernetes集群上、将Trident镜像 关系的_spec.mirector_字段更新到<block ref="036bbe13de7250844b100bc381b59214" prefix=" " category="inline-code"></block>。</block>
+  <block id="41a593c0bede63aac2726a18e4599087" category="section-title">其他操作</block>
+  <block id="429ffe8f0aaccc8922acaae0bea825a8" category="paragraph">Asta Control配置程序支持在主卷和二级卷上执行以下操作：</block>
+  <block id="253093d00b66ff2357df5085c04b2758" category="section-title">将主PVC复制到新的二级PVC</block>
+  <block id="301dcece9e67241c29ebbbac8a94274e" category="paragraph">确保您已有一个主PVC和一个次要PVC。</block>
+  <block id="7f1c32cba6b98d1db7f3dfda1df76189" category="list-text">从已建立的二级(目标)集群中删除PerbestentVolumeClaim和TridentMirorRelationship CRD。</block>
+  <block id="e655fd5342cff178f54ae5f5b2a3b7b6" category="list-text">从主(源)集群中删除TridentMirorRelationship CRD。</block>
+  <block id="3eb69a135044d3f308d140dccb1dbe5e" category="list-text">在主(源)集群上为要建立的新二级(目标) PVC创建新的TridentMirorRelationship CRD。</block>
+  <block id="92c650dfb6284b5d24ed0e83a2338fa0" category="section-title">调整镜像、主PVC或二级PVC的大小</block>
+  <block id="66990a43216d28b5b6818b021d397574" category="paragraph">可以正常调整PVC的大小、如果数据量超过当前大小、ONTAP将自动扩展任何目标flevxvol。</block>
+  <block id="4e2626fed5da19a4be8255f16a331609" category="section-title">从PVC中删除复制</block>
+  <block id="e1abf7fa65d845d34c33d593ed070453" category="paragraph">要删除复制、请对当前二级卷执行以下操作之一：</block>
+  <block id="b3dd2c563dffb09f03c72bc16a72be62" category="list-text">删除次要PVC上的镜像关系。此操作将中断复制关系。</block>
+  <block id="413ab8e64d0d4ccb3f08ef2a8653a525" category="list-text">或者、将spec.state字段更新为_promoted_。</block>
+  <block id="c00cff9971607d7a0409066a0ecc3bcd" category="section-title">删除PVC (之前已镜像)</block>
+  <block id="21c248e83f23afe590db7c4471350f23" category="paragraph">ASRA Control配置程序会检查是否存在复制的PVC、并在尝试删除卷之前释放复制关系。</block>
+  <block id="8ec9c60105332c1be8facc42b496e14b" category="section-title">删除TTr</block>
+  <block id="b4d20a51885b1a7645c486448d720b7e" category="paragraph">删除镜像关系一端的T磁 还原会导致剩余的T磁 还原在Astra Control配置程序完成删除之前过渡到_promoted状态。如果选定要删除的TMirror已处于_Promote _状态、则不存在现有镜像关系、此时TMirror将被删除、Astra Control配置程序会将本地PVC提升为_ReadWrite_。此删除操作将释放ONTAP中本地卷的SnapMirror元数据。如果此卷将来要在镜像关系中使用、则在创建新镜像关系时、它必须使用具有_re设立_卷复制状态的新TMirror。</block>
+  <block id="d41660149eb8930ad76a1dfe3dc5f2e3" category="section-title">在ONTAP联机时更新镜像关系</block>
+  <block id="7079164c5ba86439b0719782591106dd" category="paragraph">建立镜像关系后、可以随时更新这些关系。您可以使用<block ref="abb3a949c6d70e3e5d92f4ad2bf143a3" prefix=" " category="inline-code"></block> 或<block ref="ff0b4e3d4dfe8f6074b6943947345d4d" prefix=" " category="inline-code"></block> 用于更新关系的字段。
+将目标卷提升为常规ReadWrite卷时、可以使用_promotedSnapshotHandle_指定要将当前卷还原到的特定快照。</block>
+  <block id="4eecab048a7c90cfb92e0f04884686e8" category="section-title">在ONTAP脱机时更新镜像关系</block>
+  <block id="e3b68b1c19a14af5fcb94e147290aec6" category="paragraph">您可以使用CRD执行SnapMirror更新、而Astra Control不直接连接到ONTAP集群。请参阅以下TridentAction镜像 更新的示例格式：</block>
+  <block id="bc08468157c4a9e3a30eed7ba64cc309" category="paragraph"><block ref="1f9dfae8a369525bce4996df40963532" prefix="" category="inline-code"></block> 反映TridentAction镜像 更新CRD的状态。它可以从_suced_、_in Progress _或_failed中获取值。</block>
 </blocks>
