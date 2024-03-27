@@ -1,0 +1,2467 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head class="at-element-marker">
+  <title>开始管理应用程序 | NetApp Documentation</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="开始管理应用程序 | NetApp Documentation" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/zh-cn/astra-control-service/use/manage-apps.html" />
+	<meta property="og:description" content="将Kubernetes集群添加到Astra Control后、您可以在该集群上安装应用程序(在Astra Control之外)、然后转到Astra Control中的"Applications"页面开始管理这些应用程序。" />
+  <meta property="og:image" content="https://docs.netapp.com/zh-cn/astra-control-service/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="将Kubernetes集群添加到Astra Control后、您可以在该集群上安装应用程序(在Astra Control之外)、然后转到Astra Control中的"Applications"页面开始管理这些应用程序。">
+  <meta name="keywords" content=" manage app, discover app, how to manage kubernetes apps, astra control, astra"><!-- Icons -->
+  <link rel="icon" href="/zh-cn/astra-control-service/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/zh-cn/astra-control-service/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+
+  <!-- Combined CSS -->
+  <link rel="stylesheet" type="text/css" href="/zh-cn/astra-control-service/css/ie-netappdocs.css">
+
+  
+  <link rel="stylesheet" href="/zh-cn/astra-control-service/css/ie-landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/zh-cn/astra-control-service/css/ie-tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <link rel="canonical" href="https://docs.netapp.com/zh-cn/astra-control-service/use/manage-apps.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/astra-control-service/use/manage-apps.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/astra-control-service/use/manage-apps.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/astra-control-service/use/manage-apps.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/astra-control-service/use/manage-apps.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/astra-control-service/use/manage-apps.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/astra-control-service/use/manage-apps.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/astra-control-service/use/manage-apps.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/astra-control-service/use/manage-apps.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/astra-control-service/use/manage-apps.html" />
+  <link rel="alternate" hreflang="it" href="https://docs.netapp.com/it-it/astra-control-service/use/manage-apps.html" />
+  <!-- Top level site integrations -->
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js"></script>
+    <script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-document-language="true" data-domain-script="72570c5c-fe30-465f-b0e0-b77f7fb4ae34"></script>
+    <script type="text/javascript">function OptanonWrapper() { }</script>
+    <script type="text/plain" class="optanon-category-C0002" src="https://assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js"></script>
+    <script class="optanon-category-C0001">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.setAttributeNode(d.createAttribute('data-ot-ignore'));j.setAttribute('class','optanon-category-C0001');j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+'';f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MD73T9M');</script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+      const MASTHEAD_OFFSET = 65;
+      const SECTIONS = $("main h2, main h3");
+      // PAGE NAV - Init
+      if (SECTIONS.length == 0) {
+        // remove if there is no elements
+        /*
+        $("#ie-right-navbar").remove();
+        $("#ie-right-navbar-collapse").remove();
+        */
+      } else {
+        $(".page-nav-title").css('display', 'block');
+        for (var i = 0; i < SECTIONS.length; i++) {
+          var sectionId = $(SECTIONS[i]).attr('id');
+          var sectionName = $(SECTIONS[i]).text();
+          var subClass = $(SECTIONS[i]).is("h3") ? ' page-nav__sublink' : '';
+          $("#page-menu").append('<li class="page-nav-item"><a href="#' + sectionId + '" class="page-nav__link' + subClass + '">' + sectionName + '</a></li>');
+        }
+      }
+    });
+  </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/zh-cn/astra-control-service/js/na-search.js'></script><script src='/zh-cn/astra-control-service/js/ie-clouddocs.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><script>
+    /*
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+      */
+  </script>
+  <script src='/zh-cn/astra-control-service/js/custom-dropdown.js'></script>
+  <script src='/zh-cn/astra-control-service/js/FileSaver.min.js'></script>
+  <script src='/zh-cn/astra-control-service/js/jszip-utils.min.js'></script>
+  <script src='/zh-cn/astra-control-service/js/jszip.min.js'></script><script src='/zh-cn/astra-control-service/js/ie-pdf-ux.js'></script></head>
+
+
+  <body class role="document" data-flavor="gcp">
+    <div class="skip-to-main">
+      <a href="#main" >Skip to main content</a>
+    </div><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD73T9M"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div id="page" class="">
+      <div id="ie-phone-menu" class=""></div>
+      <div id="ie-content-wrap" class="">
+        <nav id="ie-new-header">
+    <ul>
+        <li id="ie-phone-menu-button">
+            <a href="#">
+                <image id="" src="/zh-cn/astra-control-service/images/hamburger.svg" alt="menu" />
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.netapp.com/cn">
+                <image id="ie-header-logo" src="/zh-cn/astra-control-service/images/netapp_logo.svg" alt="netapp" />
+            </a>
+        </li>
+        <li id="ie-header-docs">
+            <a href="https://www.netapp.com/support-and-training/documentation/">文档</a>
+        </li>
+
+        <!-- Empty container to push header left with or without lang selector -->
+        <li id="empty-container" style="margin-left: auto">
+        </li>
+        <!-- Start Language Selector --><li id="ie-language-dropdown">
+            <div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+                <div class="custom-dropdown-select custom-dropdown-select-lang">
+                    <img src="/zh-cn/astra-control-service/images/language_white_24dp.svg" class="n-globe__icon" />
+                    <span class="lang-name">简体中文</span>
+                    <img src="/zh-cn/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/zh-cn/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu"><li>
+                        <a href="https://docs.netapp.com/zh-cn/astra-control-service/use/manage-apps.html"
+                            target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/us-en/astra-control-service/use/manage-apps.html"
+                            target="_self"><span translate="no" class="notranslate">English</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/ja-jp/astra-control-service/use/manage-apps.html"
+                            target="_self"><span translate="no" class="notranslate">日本語</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/ko-kr/astra-control-service/use/manage-apps.html"
+                            target="_self"><span translate="no" class="notranslate">한국어</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-tw/astra-control-service/use/manage-apps.html"
+                            target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/de-de/astra-control-service/use/manage-apps.html"
+                            target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/es-es/astra-control-service/use/manage-apps.html"
+                            target="_self"><span translate="no" class="notranslate">Español</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/fr-fr/astra-control-service/use/manage-apps.html"
+                            target="_self"><span translate="no" class="notranslate">Français</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/it-it/astra-control-service/use/manage-apps.html"
+                            target="_self"><span translate="no" class="notranslate">Italiano</span></a>
+                    </li></ul>
+            </div>
+            </li>
+        <!-- End Language Selector -->
+
+
+        <li id="ie-allnetapp">
+            <div id="allnetapp-dropdown" class="custom-dropdown custom-dropdown-allnetapp">
+                <div class="custom-dropdown-select custom-dropdown-select-allnetapp">
+                    <img src="/zh-cn/astra-control-service/images/apps_white_24dp.svg" alt="" class="allnetapp-icon" />
+                    <span class="allnetapp-name">全部来自 NetApp</span>
+                    <img src="/zh-cn/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/zh-cn/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu allnetapp-dropdown">
+                    <li>
+                        <a href="https://bluexp.netapp.com/"
+                            target="_self"><span translate="no" class="notranslate">BlueXP</span></a>
+                    </li>
+                    <li>
+                        <a href="https://mysupport.netapp.com/site/"
+                            target="_self"><span translate="no" class="notranslate">支持</span></a>
+                    </li>
+                    <li>
+                        <a href="https://kb.netapp.com/"
+                            target="_self"><span translate="no" class="notranslate">知识库</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.netapp.com/zh-hans/support-and-training/netapp-learning-services/"
+                            target="_self"><span translate="no" class="notranslate">训练</span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </li>
+
+    </ul>
+</nav>
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+
+<div id="ie-new-sidebar-collapse" style="display: none">
+    <img id="sidebar-expand" class="ie-searchbox-icon" src="/zh-cn/astra-control-service/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-new-sidebar">
+    <div id="ie-product-identity-lockup">
+        <div id="sidebar-collapse" class="">
+            <img src="/zh-cn/astra-control-service/images/double_arrow.svg" alt="" />
+        </div>
+        <div id="ie-breadcrumb" class="">
+  <ul class="ie-breadcrumb">
+    <li class="">
+      <a href="https://docs.netapp.com">所有文档</a>
+    </li>
+    
+    
+    <li class="">
+      <a href="https://docs.netapp.com/us-en/cloud/">云文档</a>
+    </li>
+    
+
+    
+    <li class="">
+      <a href="https://docs.netapp.com/zh-cn/astra-family/">
+        Astra
+      </a>
+    </li>
+    
+  </ul>
+  
+  <div class="ie-product-name" >
+    <!--<a href="/zh-cn/astra-control-service/">-->
+      Astra Control Service
+    <!--</a>-->
+  </div>
+</div>
+
+            
+<div id="ie-selectors">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/zh-cn/astra-control-service/use/manage-apps.html">
+  
+  
+  <div class="custom-dropdown-select selected" title="Google Cloud">
+    <label>云提供商</label>
+    <div>Google Cloud</div>  
+    <img src="/zh-cn/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown flavor invisible" />
+    <img src="/zh-cn/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup flavor" />
+    <!--<img src="/zh-cn/astra-control-service/images/dismiss.svg" class="custom-icon selected" id="remove-flavor" alt="" />-->
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="aws" data-url="/zh-cn/astra-control-service/aws/use/manage-apps.html">Amazon Web Services
+    </li>
+    
+    
+    
+    <li data-value="gcp" data-url="/zh-cn/astra-control-service/gcp/use/manage-apps.html">Google Cloud
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/zh-cn/astra-control-service/azure/use/manage-apps.html">Microsoft Azure
+    </li>
+    
+    
+    <li data-url="/zh-cn/astra-control-service/use/manage-apps.html">所有云提供商</li>
+  </ul>
+</div>
+</div>
+        
+        
+
+<div id="ie-searchbox" class="ie-searchbox-sidebar ">
+    <img class="ie-searchbox-icon" src="/zh-cn/astra-control-service/images/loupe.svg" alt=""/>
+    <div id="react-search" 
+        data-search-html="/zh-cn/astra-control-service/gcp/search.html" 
+        data-type="widget"
+        data-placeholder="搜索文档"
+        data-no-results-found="未找到 {query} 的相关结果"
+        data-did-you-mean="搜索 {suggestion}。"
+        data-no-results-found-did-you-mean="未找到 {query} 的相关结果。您是指 {suggestion}？"
+        data-results-found="找到 {hitCount} 个结果"
+        data-error-message="发生错误。请重试。"
+        data-error-reset="重置搜索"
+        data-sk-es-pf-indexes="" 
+        data-flavor="gcp">
+    </div>
+</div>
+        
+    </div>
+    <div id="ie-new-toc"><script>
+  let sidebarAccordion = true;
+
+  /* specific css rules for Mac */
+  if(navigator.platform.match('Mac') !== null) {
+    document.body.setAttribute('class', 'OSX');
+  }
+
+</script>
+
+<div id="ie-sidebar-container">
+  <ul id="ie-sidebar-list" ><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Astra Control Service 文档"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/index.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/zh-cn/astra-control-service/gcp/index.html">
+        Astra Control Service 文档
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="发行说明"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-cn/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-cn/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 发行说明</div>-->
+         发行说明
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="新增功能"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/release-notes/whats-new.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-cn/astra-control-service/gcp/release-notes/whats-new.html">
+        新增功能
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="已知问题"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/release-notes/known-issues.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-cn/astra-control-service/gcp/release-notes/known-issues.html">
+        已知问题
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="已知限制"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/release-notes/known-limitations.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-cn/astra-control-service/gcp/release-notes/known-limitations.html">
+        已知限制
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="入门"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-cn/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-cn/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 入门</div>-->
+         入门
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="了解Astra Control"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/get-started/intro.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-cn/astra-control-service/gcp/get-started/intro.html">
+        了解Astra Control
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="支持的 Kubernetes 部署"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/get-started/supported-deployments.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-cn/astra-control-service/gcp/get-started/supported-deployments.html">
+        支持的 Kubernetes 部署
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="快速入门"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/get-started/quick-start.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-cn/astra-control-service/gcp/get-started/quick-start.html">
+        快速入门
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="设置您的云提供商"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-cn/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-cn/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 设置您的云提供商</div>-->
+         设置您的云提供商
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="设置 Google Cloud"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/get-started/set-up-google-cloud.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-cn/astra-control-service/gcp/get-started/set-up-google-cloud.html">
+        设置 Google Cloud
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="注册帐户"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/get-started/register.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-cn/astra-control-service/gcp/get-started/register.html">
+        注册帐户
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="添加集群"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/get-started/add-first-cluster.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-cn/astra-control-service/gcp/get-started/add-first-cluster.html">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-cn/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-cn/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 添加集群</div>-->
+         添加集群
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="安装适用于私有集群的Asta Connector"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/get-started/install-astra-connector.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-cn/astra-control-service/gcp/get-started/install-astra-connector.html">
+        安装适用于私有集群的Asta Connector
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="添加由提供程序管理的集群"
+      data-li-level="3" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-3  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-cn/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-cn/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 添加由提供程序管理的集群</div>-->
+         添加由提供程序管理的集群
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="添加公共提供商管理的集群"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/get-started/add-public-provider-managed-cluster.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/zh-cn/astra-control-service/gcp/get-started/add-public-provider-managed-cluster.html">
+        添加公共提供商管理的集群
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="添加专用提供商管理的集群"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/get-started/add-private-provider-managed-cluster.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/zh-cn/astra-control-service/gcp/get-started/add-private-provider-managed-cluster.html">
+        添加专用提供商管理的集群
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="添加自管理集群"
+      data-li-level="3" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-3  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-cn/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-cn/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 添加自管理集群</div>-->
+         添加自管理集群
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="添加公共自管理集群"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/get-started/add-public-self-managed-cluster.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/zh-cn/astra-control-service/gcp/get-started/add-public-self-managed-cluster.html">
+        添加公共自管理集群
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="添加专用自管理集群"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/get-started/add-private-self-managed-cluster.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/zh-cn/astra-control-service/gcp/get-started/add-private-self-managed-cluster.html">
+        添加专用自管理集群
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="检查Asta三端安装版本"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/get-started/check-astra-trident-version.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/zh-cn/astra-control-service/gcp/get-started/check-astra-trident-version.html">
+        检查Asta三端安装版本
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="创建kubeconfig文件"
+      data-li-level="4#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/get-started/create-kubeconfig.html" 
+    ><a class="ie-sidebar-menuitem-4 " href="/zh-cn/astra-control-service/gcp/get-started/create-kubeconfig.html">
+        创建kubeconfig文件
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="下一步是什么？"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/get-started/whats-next.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-cn/astra-control-service/gcp/get-started/whats-next.html">
+        下一步是什么？
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="视频"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/get-started/videos.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-cn/astra-control-service/gcp/get-started/videos.html">
+        视频
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="常见问题解答"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/get-started/faq.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-cn/astra-control-service/gcp/get-started/faq.html">
+        常见问题解答
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="概念"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-cn/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-cn/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 概念</div>-->
+         概念
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="架构和组件"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/learn/architecture.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-cn/astra-control-service/gcp/learn/architecture.html">
+        架构和组件
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="数据保护"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/learn/data-protection.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-cn/astra-control-service/gcp/learn/data-protection.html">
+        数据保护
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="适用于 GKEE 集群的存储"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/learn/choose-class-and-size.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-cn/astra-control-service/gcp/learn/choose-class-and-size.html">
+        适用于 GKEE 集群的存储
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="应用程序管理"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/learn/app-management.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-cn/astra-control-service/gcp/learn/app-management.html">
+        应用程序管理
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="用户角色和命名空间"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/learn/user-roles-namespaces.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-cn/astra-control-service/gcp/learn/user-roles-namespaces.html">
+        用户角色和命名空间
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用 Astra 控制服务"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-cn/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-cn/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 使用 Astra 控制服务</div>-->
+         使用 Astra 控制服务
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="登录"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/use/log-in.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-cn/astra-control-service/gcp/use/log-in.html">
+        登录
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="管理和保护应用程序"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-cn/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-cn/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 管理和保护应用程序</div>-->
+         管理和保护应用程序
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="开始管理应用程序"
+      data-li-level="3#" 
+      class="  ie-sidebar-selected    "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/use/manage-apps.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-cn/astra-control-service/gcp/use/manage-apps.html">
+        开始管理应用程序
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="保护应用程序"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/use/protect-apps.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-cn/astra-control-service/gcp/use/protect-apps.html">
+        保护应用程序
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="还原应用程序"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/use/restore-apps.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-cn/astra-control-service/gcp/use/restore-apps.html">
+        还原应用程序
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="克隆和迁移应用程序"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/use/clone-apps.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-cn/astra-control-service/gcp/use/clone-apps.html">
+        克隆和迁移应用程序
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="管理应用程序执行挂钩"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/use/manage-app-execution-hooks.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-cn/astra-control-service/gcp/use/manage-app-execution-hooks.html">
+        管理应用程序执行挂钩
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="查看应用程序和计算运行状况"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-cn/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-cn/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 查看应用程序和计算运行状况</div>-->
+         查看应用程序和计算运行状况
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="信息板摘要"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/use/view-dashboard.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-cn/astra-control-service/gcp/use/view-dashboard.html">
+        信息板摘要
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="集群运行状况和详细信息"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/use/view-clusters.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-cn/astra-control-service/gcp/use/view-clusters.html">
+        集群运行状况和详细信息
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="应用程序运行状况和详细信息"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/use/view-apps.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-cn/astra-control-service/gcp/use/view-apps.html">
+        应用程序运行状况和详细信息
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="管理存储分段"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/use/manage-buckets.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-cn/astra-control-service/gcp/use/manage-buckets.html">
+        管理存储分段
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="监控正在运行的任务"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/use/monitor-running-tasks.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-cn/astra-control-service/gcp/use/monitor-running-tasks.html">
+        监控正在运行的任务
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="管理您的帐户"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-cn/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-cn/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 管理您的帐户</div>-->
+         管理您的帐户
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="设置计费"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/use/set-up-billing.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-cn/astra-control-service/gcp/use/set-up-billing.html">
+        设置计费
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="邀请和管理用户"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/use/manage-users.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-cn/astra-control-service/gcp/use/manage-users.html">
+        邀请和管理用户
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="管理角色"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/use/manage-roles.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-cn/astra-control-service/gcp/use/manage-roles.html">
+        管理角色
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="管理云提供商凭据"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/use/manage-credentials.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-cn/astra-control-service/gcp/use/manage-credentials.html">
+        管理云提供商凭据
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="监控帐户活动"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/use/monitor-account-activity.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-cn/astra-control-service/gcp/use/monitor-account-activity.html">
+        监控帐户活动
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="管理通知"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/use/manage-notifications.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-cn/astra-control-service/gcp/use/manage-notifications.html">
+        管理通知
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="关闭您的帐户"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/use/close-account.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/zh-cn/astra-control-service/gcp/use/close-account.html">
+        关闭您的帐户
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="管理云实例"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/use/manage-cloud-instances.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-cn/astra-control-service/gcp/use/manage-cloud-instances.html">
+        管理云实例
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="启用Asta Control配置程序"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/use/enable-acp.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-cn/astra-control-service/gcp/use/enable-acp.html">
+        启用Asta Control配置程序
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="取消管理应用程序和集群"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/use/unmanage.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-cn/astra-control-service/gcp/use/unmanage.html">
+        取消管理应用程序和集群
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="部署Asta Control的自管理实例"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/use/deploy-astra-control-center.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-cn/astra-control-service/gcp/use/deploy-astra-control-center.html">
+        部署Asta Control的自管理实例
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用Astra Control配置程序"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-cn/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-cn/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 使用Astra Control配置程序</div>-->
+         使用Astra Control配置程序
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="配置存储后端加密"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/use-acp/configure-storage-backend-encryption.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-cn/astra-control-service/gcp/use-acp/configure-storage-backend-encryption.html">
+        配置存储后端加密
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用快照恢复卷数据"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/use-acp/acp-snap-restore.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-cn/astra-control-service/gcp/use-acp/acp-snap-restore.html">
+        使用快照恢复卷数据
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用SnapMirror复制卷"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/use-acp/acp-volume-replicate.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-cn/astra-control-service/gcp/use-acp/acp-volume-replicate.html">
+        使用SnapMirror复制卷
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="使用 Astra Control REST API 实现自动化"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/automation.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/zh-cn/astra-control-service/gcp/automation.html">
+        使用 Astra Control REST API 实现自动化
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="知识和支持"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/zh-cn/astra-control-service/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/zh-cn/astra-control-service/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> 知识和支持</div>-->
+         知识和支持
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="注册以获得支持"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/support/register-support.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-cn/astra-control-service/gcp/support/register-support.html">
+        注册以获得支持
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="故障排除"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/support/troubleshooting.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-cn/astra-control-service/gcp/support/troubleshooting.html">
+        故障排除
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="获取帮助"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/support/get-help.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/zh-cn/astra-control-service/gcp/support/get-help.html">
+        获取帮助
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="法律声明"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/use/manage-apps.html" 
+      dale-entry-url="/legal-notices.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/zh-cn/astra-control-service/gcp/legal-notices.html">
+        法律声明
+      </a></li></ul>
+</div>
+<script>
+
+  $(".ie-sidebar-button").click(function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    expandedLI = $('li.ie-sidebar-expand')
+
+    const li = $(this).closest("li");
+
+    const parentsLI = $(li).parents('li');
+
+    expandedLI.map(element => {
+      if (sidebarAccordion && !li.hasClass('ie-sidebar-expand') && jQuery.inArray(expandedLI[element], parentsLI) == -1) {
+        $(expandedLI[element]).toggleClass('ie-sidebar-expand');
+        $(expandedLI[element]).children("ul").animate({ height: 'toggle' }, 400, function () {
+          $(li).children("ul").toggleClass('ie-sidebar-open');
+
+        })
+      }
+
+    })
+
+    $(li).toggleClass('ie-sidebar-expand');
+    $(li).children("ul").animate({ height: 'toggle' }, 400, function () {
+      $(li).children("ul").toggleClass('ie-sidebar-open');
+    })
+  });
+
+
+  
+    $("li.ie-sidebar-selected").parents('ul').toggleClass("ie-sidebar-open");
+    $("li.ie-sidebar-selected").toggleClass("ie-sidebar-expand")
+    $("ul.ie-sidebar-open").parent().toggleClass("ie-sidebar-expand");
+    $("li.ie-sidebar-selected").children('ul').toggleClass("ie-sidebar-open")
+  
+  
+</script>
+    </div>
+</div>
+<script>
+
+    
+    let sidebarScrollTopPosition = 0;
+    $("#ie-new-toc").on("scroll", function () {
+        if (sidebarScrollTopPosition == 0) {
+            $.cookie("sidebarScroll", $("#ie-new-toc").scrollTop(), {
+                path: "/zh-cn/astra-control-service"
+            });
+        }
+
+        if ($("#ie-new-toc").scrollTop() > 0) {
+            $('#ie-product-identity-lockup').addClass('ie-addShadow');
+        } else {
+            $('#ie-product-identity-lockup').removeClass('ie-addShadow');
+        }
+    });
+
+    $(function () {
+        if ($.cookie("sidebarScroll")) {
+            $("#ie-new-toc").scrollTop($.cookie("sidebarScroll"));
+        }
+    });
+
+    function setSidebarBottom() {
+        const footerGap = PXinViewport($(".n-footer"));
+        document.getElementById("ie-new-sidebar").style.bottom = Math.max(0, footerGap) + "px";
+    }
+
+    window.onscroll = () => {
+        setSidebarBottom();
+    };
+
+    $("#sidebar-collapse").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        if ($.cookie("sidebarScroll")) {
+            sidebarScrollTopPosition = $.cookie("sidebarScroll");
+        }
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 350, function () {
+            $("#ie-new-sidebar-collapse").show();
+            $("#ie-new-sidebar").removeClass("open")
+            $("#ie-new-sidebar").addClass("close")
+            $("#ie-new-sidebar").removeAttr("style")
+        });
+        $(".ie-content-pane").animate({ width: (width + sidebarWidth), marginLeft: (marginLeft - sidebarWidth) }, 350, function () {
+            resizeContent()
+        })
+
+    });
+    $("#sidebar-expand").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 250, function () {
+            $('#ie-new-sidebar').css('display', 'flex');
+            $("#ie-new-sidebar-collapse").hide();
+            $("#ie-new-sidebar").removeClass("close")
+            $("#ie-new-sidebar").addClass("open")
+            setSidebarBottom();
+
+            if (sidebarScrollTopPosition != 0) {
+                $.cookie("sidebarScroll", sidebarScrollTopPosition, {
+                    path: "/zh-cn/astra-control-service"
+                })
+                $("#ie-new-toc").scrollTop(sidebarScrollTopPosition);
+                sidebarScrollTopPosition = 0;
+            }
+        });
+        $(".ie-content-pane").animate({ width: (width - sidebarWidth), 'marginLeft': (marginLeft + sidebarWidth) }, 250, function () {
+            resizeContent()
+        })
+    });
+    function resizeContent() {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        const rightNavbarVisible =  $("#ie-right-navbar").css('display') && $("#ie-right-navbar").css('display') != 'none';
+        const sidebarVisible = $("#ie-new-sidebar").css('display') != 'none';
+        const rightNavbarWidth = $("#ie-right-navbar").width();
+        const rightNavbarCollapseWidth = $("#ie-right-navbar-collapse").width();
+        const rightNavbarCollapseVisible = $("#ie-right-navbar-collapse").css('display') && $("#ie-right-navbar-collapse").css('display') != 'none';
+        
+        if (rightNavbarVisible && sidebarVisible) {
+            $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarWidth}px)`)
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+        } else if (sidebarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarCollapseWidth}px)`)
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar").width()}px)`)
+            }
+
+        } else if (rightNavbarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            $(".ie-content-pane").width(`calc(100% - ${rightNavbarWidth}px)`)
+        } else {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${rightNavbarCollapseWidth}px)`);
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar-collapse").width()}px) `);
+            }
+            
+        }
+    }
+    $(window).on("resize load", function () {
+        setSidebarBottom();
+        resizeContent()
+    });
+
+
+</script>
+
+<div class="ie-content-pane ie-component-detail-content ie-component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content" id="main">
+      <!-- include utility.html -->
+      <div class="ie-info-disclaimer">
+    <span>
+      <div class="ie-info-disclaimer-container">
+        <div class="ie-info-disclaimer-icon">
+          <img src="/zh-cn/astra-control-service/images/notification-icons.svg" class="luci-icon" alt="" />
+        </div>
+        <div class="ie-info-disclaimer-content">
+          <span> 简体中文版经机器翻译而成，仅供参考。如与英语版出现任何冲突，应以英语版为准。 </span>
+        </div>
+        <div style="clear:both;"></div>
+      </div>
+    </span>
+  </div><div class="ie-component-detail-heading-wrap">
+  <h1 class="ie-component-detail-heading">开始管理应用程序</h1>
+</div>
+
+<div id="ie-byline">
+  
+<div class="page-details">
+    
+        
+            <time datetime="2024-03-14 22:25:56 +0000">03/14/2024</time>
+        
+    
+    
+        <span>贡献者
+        </span>
+    
+    
+</div>
+<div class="page-controls">
+    <div id="contribute-dropdown" class="custom-dropdown custom-dropdown-contrib" >
+        <div class="custom-dropdown-select custom-dropdown-select-contrib">
+        <span class="contrib-name"><img src="/zh-cn/astra-control-service/images/discuss-sm.svg" alt="" class="github-icon" />建议更改</span>
+        <img src="/zh-cn/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown invisible" />
+        <img src="/zh-cn/astra-control-service/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup" />
+        </div>
+        <ul class="custom-dropdown-menu suggested-changes-dropdown"><li>
+                <a target="_blank" href="https://github.com/NetAppDocs/astra-control-service.zh-cn/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/zh-cn/astra-control-service/use/manage-apps.html&page-title=开始管理应用程序" class="page-nav-contribute-link" role="button">请求文档更改</a>
+            </li><li> 
+                <a target="_blank" href="https://github.com/NetAppDocs/astra-control-service/blob/main/use/manage-apps.adoc" class="page-nav-contribute-link" role="button">编辑此页面</a>
+            </li><li><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  >了解如何贡献</a></li>
+        </ul>
+    </div>
+    <div id="pdf-control-container">
+        <div class="n-pdf-header">
+            <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+                <img class="adobe-icon" src="/zh-cn/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>PDF<img src="/zh-cn/astra-control-service/images/dropdown-arrow.svg" class="custom-icon" alt="" />
+            </a>
+        </div>
+        <div class="n-pdf-body-container">
+            <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+                    
+                    
+                    
+                    <a target="_blank" class="pdf-download-link" href="/zh-cn/astra-control-service/pdfs/gcp/fullsite-sidebar/Astra_Control_Service_文档.pdf" >
+                    <img src="/zh-cn/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>本文档站点的 PDF</a>
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-cn/astra-control-service/pdfs/gcp/sidebar/发行说明.pdf" 
+            
+          >
+            <img src="/zh-cn/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            发行说明
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-cn/astra-control-service/pdfs/gcp/sidebar/入门.pdf" 
+            
+          >
+            <img src="/zh-cn/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            入门
+          </a>
+          
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-cn/astra-control-service/pdfs/gcp/sidebar/设置您的云提供商.pdf" 
+            
+          >
+            <img src="/zh-cn/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            设置您的云提供商
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-cn/astra-control-service/pdfs/gcp/sidebar/添加集群.pdf" 
+            
+          >
+            <img src="/zh-cn/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            添加集群
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-cn/astra-control-service/pdfs/gcp/sidebar/添加由提供程序管理的集群.pdf" 
+            
+          >
+            <img src="/zh-cn/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            添加由提供程序管理的集群
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-cn/astra-control-service/pdfs/gcp/sidebar/添加自管理集群.pdf" 
+            
+          >
+            <img src="/zh-cn/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            添加自管理集群
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-cn/astra-control-service/pdfs/gcp/sidebar/概念.pdf" 
+            
+          >
+            <img src="/zh-cn/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            概念
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-cn/astra-control-service/pdfs/gcp/sidebar/使用_Astra_控制服务.pdf" 
+            
+          >
+            <img src="/zh-cn/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            使用 Astra 控制服务
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-cn/astra-control-service/pdfs/gcp/sidebar/管理和保护应用程序.pdf" 
+            
+          >
+            <img src="/zh-cn/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            管理和保护应用程序
+          </a>
+          
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-cn/astra-control-service/pdfs/gcp/sidebar/查看应用程序和计算运行状况.pdf" 
+            
+          >
+            <img src="/zh-cn/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            查看应用程序和计算运行状况
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-cn/astra-control-service/pdfs/gcp/sidebar/管理您的帐户.pdf" 
+            
+          >
+            <img src="/zh-cn/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            管理您的帐户
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-cn/astra-control-service/pdfs/gcp/sidebar/使用Astra_Control配置程序.pdf" 
+            
+          >
+            <img src="/zh-cn/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            使用Astra Control配置程序
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/zh-cn/astra-control-service/pdfs/gcp/sidebar/知识和支持.pdf" 
+            
+          >
+            <img src="/zh-cn/astra-control-service/images/pdf-icon.png" alt="" width="16" height="16"/>
+            知识和支持
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+</li></ul>
+            <div class="zip-pdf-link-container" style="display: none;">   
+                <a href="#" id="zipPdf">
+                <img src="/zh-cn/astra-control-service/images/pdf-zip.png" alt="" width="16" height="16"/>
+                <pre>单独 PDF 文档的收集<span class="zip-size"></span></pre>
+                </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+        </div>
+    </div>        
+<script>
+$("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+$("#toggleButtonPdf").on('click', function(e){ 
+    e.stopPropagation();
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+});
+
+//hide is by clicking outside pdfcontainer
+$(document).on('click', function (e) {
+    if ($('#toggleContainerPdf').is(':visible') && !$('.n-pdf-body-container').is(e.target) && !$('.n-pdf-body-container').has(e.target).length)  {
+        
+        $("#toggleContainerPdf").toggle('display');
+        $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+        $("#toggleButtonPdf").removeClass("active");
+    }
+});
+</script>
+<script>
+    function getPdfLocation() {
+        const pdfLocation = window.scrollX + document.querySelector('#pdf-control-container').getBoundingClientRect().left
+        if (pdfLocation < 450) {
+            $(".n-pdf-body-container").addClass("block")
+        } else {
+            $(".n-pdf-body-container").removeClass("block")
+        }
+    
+    }
+    $( window ).on( "resize", function() {
+        getPdfLocation()
+} );
+</script>
+<script>
+    const pdfButtonWidth =  $(".n-pdf-header").width();
+    const pdfMenuWidth = $(".n-pdf-body-container").width();
+    $(".n-pdf-body-container").css('margin-left', `calc(${pdfButtonWidth - pdfMenuWidth}px)`);
+</script>
+</div>
+
+    
+
+</div>
+
+
+
+
+<div class="content-to-index">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>你先请 <a href="../get-started/add-first-cluster.html">"将 Kubernetes 集群添加到 Astra Control"</a>、您可以在集群上安装应用程序(在Astra Control之外)、然后转到Astra Control中的应用程序页面来定义应用程序。</p>
+</div>
+<div class="paragraph">
+<p>您可以定义和管理包含存储资源且运行Pod的应用程序、或者包含存储资源且未运行任何Pod的应用程序。没有运行Pod的应用程序称为纯数据应用程序。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="应用程序管理要求">应用程序管理要求</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Astra Control 具有以下应用程序管理要求：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>许可</strong>：要管理10个以上的名称空间，您需要订阅Astra Control。</p>
+</li>
+<li>
+<p><strong>命名空间</strong>：可以使用Astra Control在单个集群上的一个或多个指定命名空间内定义应用程序。一个应用程序可以包含跨越同一集群中多个命名空间的资源。Astra Control不支持在多个集群之间定义应用程序。</p>
+</li>
+<li>
+<p><strong>存储类</strong>：如果您安装的应用程序明确设置了存储类、并且需要克隆该应用程序、则克隆操作的目标集群必须具有最初指定的存储类。将具有显式设置的存储类的应用程序克隆到没有相同存储类的集群将失败。</p>
+</li>
+<li>
+<p>* Kubernetes Resources* ：使用非 Astra Control 收集的 Kubernetes 资源的应用程序可能没有完整的应用程序数据管理功能。Astra Control 收集以下 Kubernetes 资源：</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ClusterRole</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ClusterRoleBinding</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ConfigMap</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CronJob</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CustomResourceDefinition</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>CustomResource</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DaemonSet</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>DeploymentConfig</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>HorizontalPodAutoscaler</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Ingress</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>MutatingWebhook</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>NetworkPolicy</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>PersistentVolumeClaim</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Pod</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>PodDisruptionBudget</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>PodTemplate</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ReplicaSet</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Role</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>RoleBinding</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Route</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Secret</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Service</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ServiceAccount</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>StatefulSet</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ValidatingWebhook</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="支持的应用程序安装方法">支持的应用程序安装方法</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Astra Control 支持以下应用程序安装方法：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>* 清单文件 * ： Astra Control 支持使用 kubectl 从清单文件安装的应用程序。例如：</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-console" data-lang="console">kubectl apply -f myapp.yaml</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>* Helm 3* ：如果使用 Helm 安装应用程序，则 Astra Control 需要 Helm 版本 3 。完全支持管理和克隆随 Helm 3 安装的应用程序（或从 Helm 2 升级到 Helm 3 ）。不支持管理随 Helm 2 安装的应用程序。</p>
+</li>
+<li>
+<p><strong>操作员部署的应用程序</strong>：Astra Control支持使用命名空间范围的操作员安装的应用程序、这些应用程序通常采用"按价值传递"而不是"按参考传递"架构设计。操作员及其安装的应用程序必须使用相同的命名空间；您可能需要为操作员修改部署 .yaml 文件，以确保情况确实如此。</p>
+<div class="paragraph">
+<p>以下是一些遵循这些模式的操作员应用程序：</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/k8ssandra/cass-operator/tree/v1.7.1" target="_blank" rel="noopener">"Apache K8ssandra"</a></p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="备注">
+</td>
+<td class="content">
+对于 K8ssandra ，支持原位还原操作。要对新命名空间或集群执行还原操作，需要关闭应用程序的原始实例。这是为了确保传输的对等组信息不会导致跨实例通信。不支持克隆应用程序。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p><a href="https://github.com/jenkinsci/kubernetes-operator" target="_blank" rel="noopener">"Jenkins CI"</a></p>
+</li>
+<li>
+<p><a href="https://github.com/percona/percona-xtradb-cluster-operator" target="_blank" rel="noopener">"Percona XtraDB 集群"</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Astra Control可能无法克隆使用"按参考传递"架构设计的运算符(例如CockroachDB运算符)。在这些类型的克隆操作期间，克隆的操作员会尝试引用源操作员提供的 Kubernetes 机密，尽管在克隆过程中他们拥有自己的新机密。克隆操作可能会失败，因为 Astra Control 不知道源运算符中的 Kubernetes 密钥。</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="在集群上安装应用程序">在集群上安装应用程序</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>你先请 <a href="../get-started/add-first-cluster.html">"已添加集群"</a> 对于Astra Control、您可以在集群上安装应用程序或管理现有应用程序。可以管理范围限定为一个或多个命名空间的任何应用程序。</p>
+</div>
+<div class="paragraph">
+<p>只有当存储位于Astra Control支持的存储类上时、Astra Control才会管理有状态应用程序。Asta Control Service支持Asta Control配置程序或通用CSI驱动程序支持的任何存储类。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../learn/choose-class-and-size.html">"了解 GKEE 集群的存储类"</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="定义应用程序">定义应用程序</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>在Astra Control发现集群上的命名空间后、您可以定义要管理的应用程序。您可以选择 <a href="#定义要作为应用程序进行管理的资源">管理跨越一个或多个命名空间的应用程序</a> 或 <a href="#定义要作为应用程序进行管理的命名空间">将整个命名空间作为一个应用程序进行管理</a>。这一切都可以细化到数据保护操作所需的粒度级别。</p>
+</div>
+<div class="paragraph">
+<p>虽然您可以使用Astra Control单独管理层次结构的两个级别(命名空间和该命名空间中的应用程序或跨命名空间)、但最佳做法是选择一个或另一个。如果在命名空间和应用程序级别同时执行操作，则在 Astra Control 中执行的操作可能会失败。</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/tip.svg" alt="提示">
+</td>
+<td class="content">
+例如、您可能希望为"Maria"设置一个每周节奏的备份策略、但您可能需要比该策略更频繁地备份"MariaDB"(位于同一命名空间中)。根据这些需求、您需要单独管理这些应用程序、而不是作为单命名空间应用程序来管理。
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<div class="title">开始之前</div>
+<ul>
+<li>
+<p>已将Kubernetes集群添加到Astra Control中。</p>
+</li>
+<li>
+<p>集群上安装的一个或多个应用程序。 <a href="#支持的应用程序安装方法">阅读有关支持的应用程序安装方法的更多信息</a>。</p>
+</li>
+<li>
+<p>已添加到Astra Control的Kubernetes集群上的现有命名空间。</p>
+</li>
+<li>
+<p>(可选) Any上的Kubernetes标签 <a href="../use/manage-apps.html#app-management-requirements">"支持的Kubernetes资源"</a>。</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/tip.svg" alt="提示">
+</td>
+<td class="content">
+标签是一个键 / 值对，您可以将其分配给 Kubernetes 对象进行标识。通过标签，可以更轻松地对 Kubernetes 对象进行排序，组织和查找。要了解有关 Kubernetes 标签的更多信息， <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/" target="_blank" rel="noopener">"请参阅Kubernetes官方文档"</a>。
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">关于此任务</div>
+<ul>
+<li>
+<p>开始之前、您还应了解相关信息 <a href="../use/manage-apps.html#what-about-system-namespaces">"管理标准命名空间和系统命名空间"</a>。</p>
+</li>
+<li>
+<p>如果您计划在Astra Control中对应用程序使用多个命名空间、请考虑 <a href="../use/manage-roles.html">"修改具有命名空间限制的用户角色"</a> 定义应用程序之前。</p>
+</li>
+<li>
+<p>有关如何使用Astra Control API管理应用程序的说明、请参见 <a href="https://docs.netapp.com/us-en/astra-automation/" target="_blank" rel="noopener">"Astra Automation 和 API 信息"</a>。</p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">应用程序管理选项</div>
+<ul>
+<li>
+<p><a href="#定义要作为应用程序进行管理的资源">定义要作为应用程序进行管理的资源</a></p>
+</li>
+<li>
+<p><a href="#定义要作为应用程序进行管理的命名空间">定义要作为应用程序进行管理的命名空间</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="定义要作为应用程序进行管理的资源">定义要作为应用程序进行管理的资源</h3>
+<div class="paragraph">
+<p>您可以指定 <a href="../learn/app-management.html">"构成应用程序的Kubernetes资源"</a> 要使用Astra Control进行管理的。通过定义应用程序、您可以将Kubernetes集群中的元素分组到一个应用程序中。此Kubernetes资源集合按命名空间和标签选择器标准进行组织。</p>
+</div>
+<div class="paragraph">
+<p>通过定义应用程序、您可以更精细地控制要包含在Astra Control操作中的内容、包括克隆、快照和备份。</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/warning.svg" alt="警告">
+</td>
+<td class="content">
+定义应用程序时、请确保不在具有保护策略的多个应用程序中包含Kubernetes资源。Kubernetes资源上重叠的保护策略可能会发生发生原因 数据冲突。
+</td>
+</tr>
+</table>
+</div>
+<details>
+<summary class="title">阅读有关将集群范围的资源添加到应用程序命名空间的更多信息。</summary>
+<div class="content">
+<div class="paragraph">
+<p>除了自动包含的Astra Control之外、您还可以导入与命名空间资源关联的集群资源。您可以添加一个规则、该规则将包含特定组的资源、种类、版本以及标签(可选)。如果存在Astra Control不会自动包含的资源、您可能需要执行此操作。</p>
+</div>
+<div class="paragraph">
+<p>您不能排除Astra Control自动包含的任何集群范围的资源。</p>
+</div>
+<div class="paragraph">
+<p>您可以添加以下内容 <code>apiVersions</code> (这些组与API版本结合使用)：</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">资源种类</th>
+<th class="tableblock halign-left valign-top">apiVersions (组+版本)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><code>ClusterRole</code></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rbac.authorization.k8s.io/v1</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><code>ClusterRoleBinding</code></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rbac.authorization.k8s.io/v1</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><code>CustomResource</code></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">apiextensions.k8s.io/v1、apiextensions.k8s.io/v1bea1</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><code>CustomResourceDefinition</code></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">apiextensions.k8s.io/v1、apiextensions.k8s.io/v1bea1</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><code>MutatingWebhookConfiguration</code></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">可批准registration.K8s.IO/v1</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><code>ValidatingWebhookConfiguration</code></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">可批准registration.K8s.IO/v1</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+<div class="olist arabic">
+<div class="title">步骤</div>
+<ol class="arabic">
+<li>
+<p>从应用程序页面中、选择*定义*。</p>
+</li>
+<li>
+<p>在*定义应用程序*窗口中、输入应用程序名称。</p>
+</li>
+<li>
+<p>在*集群*下拉列表中选择运行应用程序的集群。</p>
+</li>
+<li>
+<p>从*命名空间*下拉列表中为应用程序选择一个命名空间。</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="备注">
+</td>
+<td class="content">
+可以使用Astra Control在单个集群上的一个或多个指定命名空间中定义应用程序。一个应用程序可以包含跨越同一集群中多个命名空间的资源。Astra Control不支持在多个集群之间定义应用程序。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>(可选)为每个命名空间中的Kubernetes资源输入一个标签。您可以指定单个标签或标签选择器条件(查询)。</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/tip.svg" alt="提示">
+</td>
+<td class="content">
+要了解有关 Kubernetes 标签的更多信息， <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/" target="_blank" rel="noopener">"请参阅Kubernetes官方文档"</a>。
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>(可选)通过选择*添加命名空间*并从下拉列表中选择命名空间来为应用程序添加其他命名空间。</p>
+</li>
+<li>
+<p>(可选)为您添加的任何其他命名空间输入单个标签或标签选择器条件。</p>
+</li>
+<li>
+<p>(可选)要在Astra Control自动包含的资源之外还包括集群范围的资源、请选中*包括其他集群范围的资源*并完成以下操作：</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>选择*添加包含规则*。</p>
+</li>
+<li>
+<p><strong>组</strong>：从下拉列表中、选择API资源组。</p>
+</li>
+<li>
+<p><strong>种类</strong>：从下拉列表中、选择对象架构的名称。</p>
+</li>
+<li>
+<p><strong>版本</strong>：输入API版本。</p>
+</li>
+<li>
+<p><strong>标签选择器</strong>：也可以包括要添加到规则中的标签。此标签仅用于检索与此标签匹配的资源。如果不提供标签、则Astra Control将收集为该集群指定的所有资源类型的实例。</p>
+</li>
+<li>
+<p>查看根据条目创建的规则。</p>
+</li>
+<li>
+<p>选择 * 添加 * 。</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/tip.svg" alt="提示">
+</td>
+<td class="content">
+您可以根据需要创建任意数量的集群范围资源规则。这些规则将显示在"定义应用程序摘要"中。
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>选择 * 定义 * 。</p>
+</li>
+<li>
+<p>选择*定义*后、根据需要对其他应用程序重复此过程。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>定义完应用程序后、该应用程序将显示在中 <code>Healthy</code> 在应用程序页面上的应用程序列表中的状态。现在、您可以克隆它并创建备份和快照。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="备注">
+</td>
+<td class="content">
+您刚刚添加的应用程序在 " 受保护 " 列下可能会显示一个警告图标，表示它尚未备份，并且尚未计划备份。
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/tip.svg" alt="提示">
+</td>
+<td class="content">
+要查看特定应用程序的详细信息，请选择应用程序名称。
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>要查看添加到此应用程序的资源、请选择*资源*选项卡。在资源列中选择资源名称后面的数字、或者在搜索中输入资源名称、以查看包含的其他集群范围资源。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="定义要作为应用程序进行管理的命名空间">定义要作为应用程序进行管理的命名空间</h3>
+<div class="paragraph">
+<p>您可以通过将命名空间的资源定义为应用程序来将命名空间中的所有Kubernetes资源添加到Astra Control管理中。如果您需要单独定义应用程序、则最好使用此方法 <a href="../learn/app-management.html">"打算管理和保护特定命名空间中的所有资源"</a> 以类似的方式并按通用间隔执行。</p>
+</div>
+<div class="olist arabic">
+<div class="title">步骤</div>
+<ol class="arabic">
+<li>
+<p>从集群页面中、选择一个集群。</p>
+</li>
+<li>
+<p>选择*命名空间*选项卡。</p>
+</li>
+<li>
+<p>选择包含要管理的应用程序资源的命名空间的"Actions"菜单、然后选择*定义为应用程序*。</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/tip.svg" alt="提示">
+</td>
+<td class="content">
+如果要定义多个应用程序、请从命名空间列表中进行选择、然后选择左上角的*操作*按钮并选择*定义为应用程序*。这将在各个命名空间中定义多个单独的应用程序。有关多命名空间应用程序、请参见 <a href="#定义要作为应用程序进行管理的资源">定义要作为应用程序进行管理的资源</a>。
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/note.svg" alt="备注">
+</td>
+<td class="content">
+选中*显示系统命名空间*复选框以显示默认情况下在应用程序管理中不使用的系统命名空间。 <span class="image"><img src="../media/use/acc_namespace_system.png" alt="显示命名空间选项卡中提供的*显示系统命名空间*选项的屏幕截图。"></span> <a href="../use/manage-apps.html#what-about-system-namespaces">"阅读更多内容"</a>。
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>此过程完成后、与此命名空间关联的应用程序将显示在`Associated applications`列中。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="系统命名空间如何">系统命名空间如何？</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Astra Control还会发现Kubernetes集群上的系统命名空间。默认情况下、我们不会向您显示这些系统命名空间、因为您很少需要备份系统应用程序资源。</p>
+</div>
+<div class="paragraph">
+<p>通过选中*显示系统命名空间*复选框、您可以从选定集群的命名空间选项卡中显示系统命名空间。</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="../media/use/acc_namespace_system.png" alt="显示命名空间选项卡中提供的*显示系统命名空间*选项的屏幕截图。"></span></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/astra-control-service/images/tip.svg" alt="提示">
+</td>
+<td class="content">
+Astra Control 本身不是一个标准应用程序，而是一个 " 系统应用程序 " 。 您不应尝试管理 Astra Control 本身。默认情况下，用于管理的 Astra Control 本身不会显示。
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+<div id="ie-right-navbar-collapse" class="close">
+  <img id="navbar-expand" class="ie-searchbox-icon" src="/zh-cn/astra-control-service/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-right-navbar" class="open">
+  <div id="right-navbar-collapse">
+    <img src="/zh-cn/astra-control-service/images/double_arrow.svg" alt="" />
+  </div>
+  <div class="page-nav-container">
+    <nav class="page-nav-fixed">
+      <div class="page-nav-title">在本页面中</div>
+      <div class="page-nav-links">
+        <ul class="page-nav-inner" id="page-menu"></ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+<script>
+  resizeContent();
+  function setRightBarHeight() {
+    var h = 0;
+
+    // header 1
+    h += PXinViewport($('.n-footer'));
+    h += PXinViewport($('#ie-new-header'));
+
+    if ($('#ie-right-navbar').length) {
+      $('#ie-right-navbar').css({ height: `calc(100vh - ${h}px)` });
+    }
+    if ($('.page-nav-links').length) {
+      h += 98;
+      $('.page-nav-links').css({ height: `calc(100vh - ${h}px)` });
+    }
+  }
+
+  $(document).ready(function () {
+    // PAGE NAV - Click
+    const MASTHEAD_OFFSET = 65;
+    const SECTIONS = $("main h2, main h3");
+    let calculateActiveSection = false;
+    setTimeout(() => {
+      calculateActiveSection = true;
+    }, 100)
+
+    $(".page-nav__link").click(function (event) {
+      calculateActiveSection = false;
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      var target = $(event.target);
+      target.addClass('page-nav__link--active');
+      location.hash = event.target.hash;
+      setTimeout(() => {
+        calculateActiveSection = true;
+      }, 100)
+
+    });
+
+    // PAGE NAV - Scroll
+    $(window).on('resize scroll', function () {
+      if (calculateActiveSection) {
+        var activeSection = getActiveSection(SECTIONS, MASTHEAD_OFFSET);
+        if (activeSection) {
+          var activeHref = $(activeSection).attr('id');
+          $(".page-nav__link").removeClass('page-nav__link--active');
+          $("#page-menu a[href=#" + activeHref + "]").addClass('page-nav__link--active');
+          if (location.hash != "#" + activeHref) {
+            if (history.replaceState) {
+              history.replaceState(null, null, "#" + activeHref);
+            }
+          }
+        }
+      }
+    });
+
+    $(".n-pdf-button").click(function () {
+      $(this).toggleClass("active");
+    });
+
+    $.fn.isVisibleAndInViewport = function () {
+      var elementTop = $(this).offset().top;
+      var elementBottom = elementTop + $(this).outerHeight();
+
+      var viewportTop = $(window).scrollTop();
+      var viewportBottom = viewportTop + $(window).height();
+
+      return elementBottom > viewportTop && elementTop < viewportBottom && $(this).is(":visible");
+    };
+
+
+    $(window).on('resize scroll', function () {
+      setRightBarHeight();
+    });
+
+    $(window).trigger('resize');
+
+
+  });
+
+  $("#right-navbar-collapse").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 350, function () {
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+    });
+    $(".ie-content-pane").animate({ width: (width + rightNavbarWidth) }, 350, function () {
+      resizeContent()
+      setSidebarBottom();
+    })
+
+  });
+  $("#navbar-expand").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 250, function () {
+      $("#ie-right-navbar-collapse").removeClass("open")
+      $("#ie-right-navbar-collapse").addClass("close")
+      $("#ie-right-navbar").removeClass("close")
+      $("#ie-right-navbar").addClass("open")
+      setRightBarHeight();
+      setSidebarBottom();
+    });
+    $(".ie-content-pane").animate({ width: (width - rightNavbarWidth) }, 250, function () {
+      resizeContent()
+    })
+  });
+
+  function navbarResize() {
+    const rightNavbarResized = $("#ie-right-navbar-collapse").hasClass('resized');
+    if (window.innerWidth < 1024) {
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+      $("#ie-right-navbar").removeAttr("style")
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar-collapse").addClass("resized")
+    } else {
+      if (rightNavbarResized) {
+        $('#ie-right-navbar').removeClass('close');
+        $('#ie-right-navbar').addClass('open');
+        $("#ie-right-navbar-collapse").removeClass("resized")
+        $("#ie-right-navbar-collapse").removeClass("open")
+        $("#ie-right-navbar-collapse").addClass("close")
+      }
+    }
+    resizeContent()
+  }
+  navbarResize();
+  $(window).on('resize load', function () {
+    navbarResize()
+  });
+
+  function getActiveSection(sections, offset) {
+    var scrollPosition = $(window).scrollTop() + offset + 5;
+    var activeSection;
+    for (var i = 0; i < sections.length; i++) {
+      var el = $(sections[i]);
+      var activePosition = el.offset().top;
+      if (activePosition > scrollPosition) {
+        break;
+      }
+
+      activeSection = sections[i];
+    }
+
+    return activeSection;
+  }
+
+  $("a[href*=#]:not([href=#])").click(function () {
+    setTimeout(() => {
+      $(window).trigger('scroll');
+    }, 105)
+  })
+
+  const hashOnLoad = location.href.split("#")[1];
+  setTimeout(function () {
+    if (hashOnLoad) {
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      $("#page-menu a[href=#" + hashOnLoad + "]").addClass('page-nav__link--active');
+    }
+  }, 100)
+
+</script>
+
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+        <div class="n-footer__left">
+          <li class="n-footer__copyright-link">
+                    <a href="https://www.netapp.com/company/legal/copyright/">© 2024 NetApp, Inc.</a>
+          </li>
+        </div>
+        <div class="n-footer__center">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">使用条款</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">隐私策略</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">Cookie 政策</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">Cookie 设置</a>
+            </li>
+          </ul>
+       </div>
+        <div class="n-footer__right">
+              <li class="n-footer__copyright-link">
+                <a target="_self" href="javascript:netapp_mailto()">请发送有关此页面的反馈</a>
+              </li>
+        </div>
+     </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/zh-cn/astra-control-service/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/zh-cn/astra-control-service/js/prism.js'></script>
+      <script type="text/javascript" src='/zh-cn/astra-control-service/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/zh-cn/astra-control-service/js/ie-tabbed-blocks.js'></script>
+    <script src='/zh-cn/astra-control-service/js/ie-sidebar.js'></script>
+  </body>
+
+</html>
