@@ -468,7 +468,6 @@
   <block id="36a79b43c10a800c5959d1d1206447ec" category="paragraph">Astra Control 包含一个支持状态字段，您可以通过此字段确认您的支持注册。</block>
   <block id="29405bfce5da0c57cd6629b8db602a10" category="list-text">请查看支持状态字段。</block>
   <block id="f761ff65b80a8b63b42c13cb7a7cf4f7" category="paragraph">支持状态从 " 未注册 " 开始，但在完成后将变为 " 正在进行 " ，最后变为 " 已注册 " 。</block>
-  <block id="8adaa56acabfa4c4f66e68cb72de4c4d" category="paragraph">此支持注册状态每 15 分钟轮询一次。新的 NetApp 客户可能需要在下一个工作日完成入职和支持注册。如果序列号在 48 小时内未显示 " 已注册 " ，您可以使用 astra.feedback@netapp.com 联系 NetApp 或从手动注册<block ref="25901fb2084c068b072ad2e600cb7393" category="inline-link-rx"></block>。</block>
   <block id="26630f5c4526843dd047a7b98e30c87e" category="section-title">获取序列号</block>
   <block id="9af9e89edd9437582caaae9b5cd0d87b" category="paragraph">注册帐户时， Astra Control 会使用您提供的有关贵公司的信息生成一个 20 位数的 NetApp 序列号，此序列号以 "941" 开头。</block>
   <block id="63b997f8e23e75b8819decf19a2b9406" category="paragraph">NetApp 序列号表示您的 Astra Control 帐户。打开 Web 服务单时，您需要使用此序列号。</block>
@@ -479,23 +478,13 @@
   <block id="63b11526307884ce31efc524f509c090" category="list-text">新的 NetApp 客户，没有现有的 NetApp 支持站点（ NSS ） SSO 帐户</block>
   <block id="0564257c8c53a18e2ae2558b30fd1326" category="section-title">选项 1 ：使用现有 NetApp 支持站点（ NSS ）帐户的当前 NetApp 客户</block>
   <block id="8e2e894a8f2d0c798eda10b04a6aae2c" category="inline-link">云数据服务支持注册</block>
-  <block id="d15ddd92716258916f2997a149c0e1c9" category="list-text">导航到<block ref="2151d866808a52a3eadb15c242a47970" category="inline-link-rx"></block> 页面以创建 NSS 帐户。</block>
   <block id="db687a348749c84241a38c70c993840c" category="list-text">输入您的 NetApp 支持站点凭据以登录。</block>
-  <block id="e43f3861c61e13a957b05a49f4232f75" category="paragraph">此时将显示现有客户注册页面。</block>
-  <block id="0c74bd4a97dcfedb588165e8bb276977" category="inline-image-macro">现有客户注册表</block>
-  <block id="7a19998317d4f7657b3d9519c2dc94d0" category="paragraph"><block ref="7a19998317d4f7657b3d9519c2dc94d0" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ee364f11fd7d245e4d69ec062eb83cb8" category="list-text">在表单上填写所需信息：</block>
   <block id="e9445c82c61abbe731858b68bc6ef334" category="list-text">输入您的姓名，公司和电子邮件地址。</block>
-  <block id="0207fbb6e6ab362c66c2b1c0726353c5" category="list-text">选择 * 天星 * 作为产品线。</block>
   <block id="c5e190db7965b0aa2ed323bdec1c2c6d" category="list-text">输入序列号。</block>
   <block id="1adcde846f51b1edfaf40ba5a6db3d4f" category="paragraph">您应重定向到 " 已成功提交注册 " 页面。与您的注册关联的电子邮件地址将在几分钟内收到一封电子邮件，指出 " 您的产品现在有资格获得支持 " 。</block>
   <block id="c00608f756de9922b31b80e79feefbdf" category="paragraph">此为适用序列号的一次性支持注册。</block>
   <block id="f3568553211b1a65f5a05f906c626719" category="section-title">选项 2 ：新的 NetApp 客户，没有现有的 NetApp 支持站点（ NSS ）帐户</block>
-  <block id="2557d6c5569c5a3a7e8432c5de6f609f" category="paragraph">此时将显示 "New Customer Registration" 页面。</block>
-  <block id="13057fbeba6fc2ea452df672598620da" category="inline-image-macro">新的客户注册表</block>
-  <block id="2116b097be21cf33cf250f6f4dea05ee" category="paragraph"><block ref="2116b097be21cf33cf250f6f4dea05ee" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="cddef93549327dd0dc967c3c80b4f3e9" category="list-text">输入您的姓名和公司信息。</block>
-  <block id="9bfff919ad044e305f1c311a78a7ecec" category="list-text">选择 * 天星 * 作为产品线。</block>
   <block id="d04e93a4d5398bfd6548e3e1925cb1e0" category="paragraph">您将收到一封来自已提交注册的确认电子邮件。如果未发生错误，系统将重新定向到 " 已成功提交注册 " 页面。您还将在一小时内收到一封电子邮件，指出 " 您的产品现在有资格获得支持 " 。</block>
   <block id="d96b5fa4d8229bcf45a5dfba3e784078" category="list-text">作为 NetApp 的新客户，您还需要创建一个 NetApp 支持站点（ NSS ）用户帐户，以供将来激活支持以及访问支持门户以进行技术支持聊天和 Web 服务单。</block>
   <block id="fbf62905ff14cf2944029e8b9424e045" category="inline-link">NetApp 支持注册站点</block>
@@ -818,7 +807,6 @@
   <block id="d041642ada570d9bb242a59ad36899fd" category="sidebar">查看应用程序和计算运行状况</block>
   <block id="0dac49ef5536e90243a4926670f88ef6" category="list-text">选择 * 支持 * 。</block>
   <block id="732ba767fce4bd62cecb026f6781e1a4" category="list-text">选择 * 我已注册为 NetApp 客户 * 。</block>
-  <block id="ddcfd610f74c256985ea230159f499b4" category="list-text">选择 * 提交注册 * 。</block>
   <block id="0786589eb7392bc413e898e8782cef99" category="list-text">选择 * 我不是 NetApp 注册客户 * 。</block>
   <block id="8f82aca9abb16b6ff389726d5fbe355a" category="section-title">新的存储后端选项</block>
   <block id="8527c0ab84fa8956acb7ba13d5e3ad9d" category="inline-link-macro">了解 Astra 控制服务如何使用适用于 Google Cloud 的 Cloud Volumes Service 作为永久性卷的存储后端</block>
@@ -2683,4 +2671,15 @@ Asta Control配置程序已取代Asta Trandent、成为Asta Control架构中的�
   <block id="a40c084314b74a686572312dc71c4738" category="list-text">创建<block ref="3d3f9b7a5974a7898593a3d2f5549f15" prefix=" " category="inline-code"></block> 文件</block>
   <block id="23ed633c6130c18f08608b6efce84dc4" category="list-text">替换<block ref="089d02fba2ffcdb49a91320ff506dfa3" prefix=" " category="inline-code"></block> 在以下脚本的开头、使用正确的值。</block>
   <block id="1e402f84b3c57afa8aaf19779147556d" category="list-text">设置Asta Control配置程序映像的自定义注册表位置或将其从Asta Control注册表中提取 <block ref="6fd47d0a38cf5afec555b659aaed6104" prefix="(" category="inline-code"></block> 或<block ref="e419be77a3ebdbec678982ec1d2d40b2" prefix=" " category="inline-code"></block>）。</block>
+  <block id="f840f3450a2de3d2159f8e98e8d1b6ad" category="paragraph">此支持注册状态每 15 分钟轮询一次。新的NetApp客户可能需要下一个工作日才能完成加盟和支持注册。如果序列号在 48 小时内未显示 " 已注册 " ，您可以使用 astra.feedback@netapp.com 联系 NetApp 或从手动注册<block ref="25901fb2084c068b072ad2e600cb7393" category="inline-link-rx"></block>。</block>
+  <block id="3591a1f5ccffeba19e21047100fe43b1" category="list-text">导航到<block ref="2151d866808a52a3eadb15c242a47970" category="inline-link-rx"></block> 页面。</block>
+  <block id="4501879906d5ad1040b26cbba93bd49d" category="paragraph">此时将显示现有客户注册页面。</block>
+  <block id="69a9a798beb8ba8c71e96413ecd8f3a4" category="list-text">选择*Astra Control Service*作为产品线。</block>
+  <block id="de1c240b231af9d9534b05367f20e396" category="list-text">选择计费提供商。</block>
+  <block id="b623e6ded9a852f4e7cd9765578d0c08" category="list-text">选择 * 提交 * 。</block>
+  <block id="6294635853dcb1aa39d5c03b3a071505" category="paragraph">此时将显示"New Customer Registration"(新客户注册)页面。</block>
+  <block id="deb1f1ce269d9c97fdfb1d332a33506d" category="list-text">输入您的姓名、公司信息和详细联系信息。</block>
+  <block id="a34b088697717e6985d362f6f34cb3cd" category="list-text">选择*Astra Control Service*作为产品线。</block>
+  <block id="e41e554158031f0f3160a545e232ed02" category="list-text">输入验证码值。</block>
+  <block id="6ea2f3e9291aa9fe05308c7ef844a5f2" category="list-text">选中此复选框以确认您已阅读NetApp隐私政策。</block>
 </blocks>

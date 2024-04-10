@@ -27,7 +27,7 @@ Astra Control 包含一个支持状态字段，您可以通过此字段确认您
 支持状态从 " 未注册 " 开始，但在完成后将变为 " 正在进行 " ，最后变为 " 已注册 " 。
 
 +
-此支持注册状态每 15 分钟轮询一次。新的 NetApp 客户可能需要在下一个工作日完成入职和支持注册。如果序列号在 48 小时内未显示 " 已注册 " ，您可以使用 astra.feedback@netapp.com 联系 NetApp 或从手动注册 https://register.netapp.com[]。
+此支持注册状态每 15 分钟轮询一次。新的NetApp客户可能需要下一个工作日才能完成加盟和支持注册。如果序列号在 48 小时内未显示 " 已注册 " ，您可以使用 astra.feedback@netapp.com 联系 NetApp 或从手动注册 https://register.netapp.com[]。
 
 
 
@@ -56,21 +56,19 @@ NetApp 序列号表示您的 Astra Control 帐户。打开 Web 服务单时，�
 === 选项 1 ：使用现有 NetApp 支持站点（ NSS ）帐户的当前 NetApp 客户
 
 .步骤
-. 导航到 https://register.netapp.com["云数据服务支持注册"^] 页面以创建 NSS 帐户。
+. 导航到 https://register.netapp.com["云数据服务支持注册"^] 页面。
 . 选择 * 我已注册为 NetApp 客户 * 。
 . 输入您的 NetApp 支持站点凭据以登录。
 +
 此时将显示现有客户注册页面。
 
-+
-image:screenshot-existing-registration.gif["现有客户注册表"]
-
 . 在表单上填写所需信息：
 +
 .. 输入您的姓名，公司和电子邮件地址。
-.. 选择 * 天星 * 作为产品线。
+.. 选择*Astra Control Service*作为产品线。
+.. 选择计费提供商。
 .. 输入序列号。
-.. 选择 * 提交注册 * 。
+.. 选择 * 提交 * 。
 
 
 
@@ -85,20 +83,20 @@ image:screenshot-existing-registration.gif["现有客户注册表"]
 === 选项 2 ：新的 NetApp 客户，没有现有的 NetApp 支持站点（ NSS ）帐户
 
 .步骤
-. 导航到 https://register.netapp.com["云数据服务支持注册"^] 页面以创建 NSS 帐户。
+. 导航到 https://register.netapp.com["云数据服务支持注册"^] 页面。
 . 选择 * 我不是 NetApp 注册客户 * 。
 +
-此时将显示 "New Customer Registration" 页面。
-
-+
-image:screenshot-new-registration.gif["新的客户注册表"]
+此时将显示"New Customer Registration"(新客户注册)页面。
 
 . 在表单上填写所需信息：
 +
-.. 输入您的姓名和公司信息。
-.. 选择 * 天星 * 作为产品线。
+.. 输入您的姓名、公司信息和详细联系信息。
+.. 选择*Astra Control Service*作为产品线。
+.. 选择计费提供商。
 .. 输入序列号。
-.. 选择 * 提交注册 * 。
+.. 输入验证码值。
+.. 选中此复选框以确认您已阅读NetApp隐私政策。
+.. 选择 * 提交 * 。
 +
 您将收到一封来自已提交注册的确认电子邮件。如果未发生错误，系统将重新定向到 " 已成功提交注册 " 页面。您还将在一小时内收到一封电子邮件，指出 " 您的产品现在有资格获得支持 " 。
 
