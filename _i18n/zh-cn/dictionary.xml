@@ -1365,7 +1365,6 @@
   <block id="461f26d1f3faec3478ece1e0d794f9cc" category="list-text">使用执行挂钩的脚本事件Astra Control支持自定义脚本、您可以在为应用程序创建快照之前或之后运行这些脚本。这样，您就可以执行暂停数据库事务等任务，以使数据库应用程序的快照保持一致。</block>
   <block id="a20299ad7f2e64a95e7cc3284a9906a5" category="list-text">操作员部署的应用程序Astra Control支持一些与操作员一起部署的应用程序。</block>
   <block id="d64b4db98e014f5440d1f843fea08e3e" category="list-text">具有资源组范围的服务主体Astra控制服务现在支持使用资源组范围的服务主体。</block>
-  <block id="d965fac9eadc89088435d79a0e46882b" category="list-text">Astra Control Center Astra Control现在可采用新的部署模式。_Astra Control Center_ 是一款自行管理的软件，您可以在数据中心内安装和操作该软件，以便管理内部 Kubernetes 集群的 Kubernetes 应用程序生命周期管理。</block>
   <block id="1966afd91050d7e96fceb59f9fd13f32" category="inline-link">转至Astra控制中心文档</block>
   <block id="80bfdf6309549a7797f10098e05bccc1" category="paragraph">了解更多信息。<block ref="ba5556fa094f10e77f4fa7086cec4749" category="inline-link-rx"></block>。</block>
   <block id="eb98a9a286b93bcf890e03ce1c9063eb" category="list-text">自带存储分段现在、您可以通过添加其他存储分段以及更改云提供商中Kubernetes集群的默认存储分段来管理Astra用于备份和克隆的存储分段。</block>
@@ -2090,7 +2089,6 @@
   <block id="974030a30a48754684d05541fd5e96c9" category="list-text">Google Kubernetes Engine （ GKEE ）</block>
   <block id="445b99028268202ea6dce47e9f8a85a0" category="list-text">基于AWS的Red Hat OpenShift服务(ROSA)</block>
   <block id="5272b1b73b7b8f46f79fa9cdaadca15e" category="list-text">具有AWS PrivateLink的罗莎</block>
-  <block id="d1398a9488bb275cd91d0cb20ce8d256" category="list-text">Red Hat OpenShift容器平台内部部署</block>
   <block id="df19c91edd9b2d860753f42efea5673b" category="section-title">安装A作用 连接器</block>
   <block id="cd6d7cc4ca7e276970cfd8898e2ee94d" category="list-text">执行这些步骤时、请对要使用Astra Control Service管理的专用集群执行这些命令。</block>
   <block id="1edf1f850fb1dd3ecb6ec5a68b931d8a" category="list-text">如果使用的是Bastion主机、请从Bastion主机的命令行对这些命令执行问题描述。</block>
@@ -2135,12 +2133,8 @@
   <block id="341784bc72164a9576c48141a8457786" category="doc">配置存储后端加密</block>
   <block id="876580b79932af82226561f24b11688f" category="paragraph">通过使用Astra Control配置程序、您可以对受管集群和存储后端之间的流量启用加密、从而提高数据访问安全性。</block>
   <block id="976a1386596f05796be42a064d0422a1" category="paragraph">Astra Control配置程序支持对两种类型的存储后端进行Kerberos加密：</block>
-  <block id="c0e152193948fa32b98363da93fdd8ae" category="list-text">*内部部署的Kubernet*—Astra配置程序支持通过从ONTAP OpenShift和上游Kubernetes集群到内部ONTAP卷的NFS3和NFSv4连接进行Kerberos加密。</block>
   <block id="efd821ece7f5d1edb285cc1f077325d0" category="list-text">*NFSv*-控件配置程序支持通过从上游Azure NetApp Files集群到Azure NetApp Files卷的NFSv4.1连接进行Kerberos加密。</block>
   <block id="0a710c309a5f6dc65b056833a5208521" category="paragraph">您可以创建、删除、调整大小、创建快照、克隆、 只读克隆、并导入使用NFS加密的卷。</block>
-  <block id="2aff02c8ceb99a9445937af9d4d8f286" category="section-title">使用内部ONTAP卷配置传输中的Kerberos加密</block>
-  <block id="330282591e8caa9814eb88ec524b89cf" category="paragraph">您可以对受管集群与内部ONTAP存储后端之间的存储流量启用Kerberos加密。</block>
-  <block id="daf34fb0fcb74d9bcf85abcebcc8e1f2" category="admonition">仅支持使用对使用内部ONTAP存储后端的NFS流量进行Kerberos加密<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block> 存储驱动程序。</block>
   <block id="bf08e3747af8cdb14b7eaf98563b8d7e" category="inline-link-macro">启用Asta Control配置程序</block>
   <block id="0ff02d27ae5cac1a12c6c403fd55443c" category="list-text">确保您可以访问<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block> 实用程序。</block>
   <block id="bef890ed7cc869346d4b483cd3e3ab00" category="list-text">确保您对ONTAP存储后端具有管理员访问权限。</block>
@@ -2360,7 +2354,6 @@
   <block id="a28c4973c51793fba9a52bb919793c55" category="list-text">*Astra Control配置程序功能*</block>
   <block id="e04a039dab89abe32a55e462186f4be5" category="paragraph">Astra Control配置程序23.10版提供了以下功能：</block>
   <block id="c935990e28d9a826be6bb8ad7cbaa9c1" category="inline-link-macro">正在启用加密</block>
-  <block id="c0f1ffff2a89df254e7675f2a875147f" category="list-text">*通过Kerberos 5加密增强存储后端安全性*：您可以通过提高存储安全性 <block ref="63a1519b1e13a139789d4589996b0d00" category="inline-link-macro-rx"></block> 托管集群和存储后端之间的流量。A作用 力控制配置程序支持通过NFSv4.1连接从Red Hat OpenShift集群到Azure NetApp Files和内部ONTAP卷进行Kerberos 5加密。</block>
   <block id="ab52bbefe9879da9b800f9792291f5a4" category="list-text">*使用快照恢复数据*：Astra Control配置程序可使用从快照快速原位还原卷<block ref="2aabb3b01d0d54317a9eeef910e001f6" prefix=" " category="inline-code"></block> (TSR) CR。</block>
   <block id="55a9d6aa251e3c334db4ab4055a4a004" category="inline-xref">以上</block>
   <block id="ffada8bf4e89c89a39c9186528693015" category="list-text">*使用为应用程序提供备份和还原功能<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 驱动程序支持的存储后端*：如上所述 <block ref="abf023a9d67df445290faa3fe3686bc6" category="inline-xref-macro-rx"></block>。</block>
@@ -2515,7 +2508,6 @@ Asta Control配置程序已取代Asta Trandent、成为Asta Control架构中的�
   <block id="5d169abc26c5e6f92958752c40a56358" category="cell">支持哪些Kubednetes分发版？</block>
   <block id="41f1a6b80fe46fb30f51ab1b61f1a992" category="list-text">*云提供商*</block>
   <block id="57c997cc6378705850c1e534b71a042d" category="list-text">*自管理集群*</block>
-  <block id="bab5ccef18c501c42d7cf94c7aaa84b3" category="list-text">*内部部署集群*</block>
   <block id="22ec69733e61456fac578b2f6fcc2856" category="list-text">基于Azure堆栈HCI的Azure Kubnetes Service</block>
   <block id="1c4dff0a00340691e103ef63154df371" category="list-text">Google Anthos</block>
   <block id="408bc02fc5ae5048343ebe28f7180f1e" category="list-text">使用此新管理员角色在集群上安装link./概念/architution#Astra-control-components [Astra Control置备程序]、并创建一个或多个存储类。</block>
@@ -2682,4 +2674,13 @@ Asta Control配置程序已取代Asta Trandent、成为Asta Control架构中的�
   <block id="a34b088697717e6985d362f6f34cb3cd" category="list-text">选择*Astra Control Service*作为产品线。</block>
   <block id="e41e554158031f0f3160a545e232ed02" category="list-text">输入验证码值。</block>
   <block id="6ea2f3e9291aa9fe05308c7ef844a5f2" category="list-text">选中此复选框以确认您已阅读NetApp隐私政策。</block>
+  <block id="fae11419c337e3427841a0c9b9d592f9" category="list-text">Red Hat OpenShift容器平台内部部署</block>
+  <block id="8e9845a2b1617722638d4b2716d9e349" category="list-text">*内部集群*</block>
+  <block id="08451abaef86ef74512d1771c506741a" category="list-text">*内部部署Kubernet*—控制配置程序支持通过从Red ONTAP OpenShift和上游Kubernetes集群到内部ONTAP卷的NFS3和NFSv4连接进行Kerberos加密。</block>
+  <block id="0b660ae85d215a9e70834a4e745fe95b" category="section-title">为内部ONTAP卷配置传输中的Kerberos加密</block>
+  <block id="7c139dfc85d7e4497d2109fff4d0893f" category="paragraph">您可以对受管集群与内部ONTAP存储后端之间的存储流量启用Kerberos加密。</block>
+  <block id="4733fee3df7d4e6e25e68e5ad7d2adf0" category="admonition">仅支持使用对使用内部ONTAP存储后端的NFS流量进行Kerberos加密<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block> 存储驱动程序。</block>
+  <block id="df3d75a39182fab8d217744cdb76529e" category="list-text">*通过Kerberos 5加密增强存储后端安全性*：您可以通过提高存储安全性 <block ref="63a1519b1e13a139789d4589996b0d00" category="inline-link-macro-rx"></block> 托管集群和存储后端之间的流量。Astra Control配置程序支持通过NFSv4.1连接从Red Hat OpenShift集群到Azure NetApp Files和内部ONTAP卷进行Kerberos 5加密。</block>
+  <block id="931459f37abea3d820afa0fcf0ecfef7" category="list-text">Astra 控制中心
+Astra Control 现在可采用新的部署模式。_Asta Control Center_是一款自行管理的软件、您可以在数据中心安装和运行该软件、以便管理内部Kubernetes集群的Kubernetes应用程序生命周期管理。</block>
 </blocks>

@@ -16,7 +16,7 @@ summary: 您可以配置加密以保护Astra Control与存储后端之间的流�
 
 Astra Control配置程序支持对两种类型的存储后端进行Kerberos加密：
 
-* *内部部署的Kubernet*—Astra配置程序支持通过从ONTAP OpenShift和上游Kubernetes集群到内部ONTAP卷的NFS3和NFSv4连接进行Kerberos加密。
+* *内部部署Kubernet*—控制配置程序支持通过从Red ONTAP OpenShift和上游Kubernetes集群到内部ONTAP卷的NFS3和NFSv4连接进行Kerberos加密。
 * *NFSv*-控件配置程序支持通过从上游Azure NetApp Files集群到Azure NetApp Files卷的NFSv4.1连接进行Kerberos加密。
 
 
@@ -24,7 +24,7 @@ Astra Control配置程序支持对两种类型的存储后端进行Kerberos加�
 
 
 
-== 使用内部ONTAP卷配置传输中的Kerberos加密
+== 为内部ONTAP卷配置传输中的Kerberos加密
 
 您可以对受管集群与内部ONTAP存储后端之间的存储流量启用Kerberos加密。
 

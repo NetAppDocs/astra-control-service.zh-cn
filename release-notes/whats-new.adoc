@@ -45,7 +45,7 @@ link:../get-started/add-first-cluster.html["添加集群"^]
 Astra Control配置程序23.10版提供了以下功能：
 
 +
-*** *通过Kerberos 5加密增强存储后端安全性*：您可以通过提高存储安全性 link:../use-acp/configure-storage-backend-encryption.html["正在启用加密"^] 托管集群和存储后端之间的流量。A作用 力控制配置程序支持通过NFSv4.1连接从Red Hat OpenShift集群到Azure NetApp Files和内部ONTAP卷进行Kerberos 5加密。
+*** *通过Kerberos 5加密增强存储后端安全性*：您可以通过提高存储安全性 link:../use-acp/configure-storage-backend-encryption.html["正在启用加密"^] 托管集群和存储后端之间的流量。Astra Control配置程序支持通过NFSv4.1连接从Red Hat OpenShift集群到Azure NetApp Files和内部ONTAP卷进行Kerberos 5加密。
 *** *使用快照恢复数据*：Astra Control配置程序可使用从快照快速原位还原卷 `TridentActionSnapshotRestore` (TSR) CR。
 *** *使用为应用程序提供备份和还原功能 `ontap-nas-economy` 驱动程序支持的存储后端*：如上所述 <<nas-eco-backup-restore,以上>>。
 
@@ -329,7 +329,8 @@ endif::azure[]
 
 此版本包含以下新增功能和增强功能：
 
-* Astra Control Center Astra Control现在可采用新的部署模式。_Astra Control Center_ 是一款自行管理的软件，您可以在数据中心内安装和操作该软件，以便管理内部 Kubernetes 集群的 Kubernetes 应用程序生命周期管理。
+* Astra 控制中心
+Astra Control 现在可采用新的部署模式。_Asta Control Center_是一款自行管理的软件、您可以在数据中心安装和运行该软件、以便管理内部Kubernetes集群的Kubernetes应用程序生命周期管理。
 +
 了解更多信息。 https://docs.netapp.com/us-en/astra-control-center["转至Astra控制中心文档"^]。
 

@@ -87,7 +87,7 @@ Astra Control 有两种部署模式：
 ** Red Hat OpenShift 容器平台
 
 
-* *内部部署集群*
+* *内部集群*
 +
 ** Red Hat OpenShift容器平台内部部署
 
@@ -139,7 +139,7 @@ Astra Control 有两种部署模式：
 ** https://longhorn.io/["Longhorn"^]
 
 
-* *内部部署集群*
+* *内部集群*
 +
 ** NetApp MetroCluster
 ** NetApp ONTAP AFF 和 FAS 系统
