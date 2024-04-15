@@ -1399,7 +1399,6 @@
   <block id="2e0924d60f841b17b95f6a2808bdd804" category="doc">通过Astra Control Service管理专用集群</block>
   <block id="e36d851dc2ff79e16c7cfbbb4e4fbe97" category="inline-link">Astra Automation文档</block>
   <block id="61ddd26ba79b5e63c1e52be1beb28889" category="section-title">设置永久性存储</block>
-  <block id="6ef5565e71b748d07e8a7b0699a73b5a" category="paragraph"><block ref="6ef5565e71b748d07e8a7b0699a73b5a" category="inline-image-macro-rx" type="image"></block></block>
   <block id="305b39af5cd987a6208b64358f967be3" category="list-text">部署在一个或多个命名空间中的单个应用程序(此示例使用Helm 3)</block>
   <block id="5200a678b94ac14cf371f3073027246a" category="list-text">一组通过一个或多个命名空间中的Kubernetes标签标识的资源</block>
   <block id="e7ee212d9bc4dca7907f427fe053cfd0" category="paragraph">* 我已从免费计划升级到高级 PayGO 计划。是否会为前10个命名空间付费？*</block>
@@ -2683,4 +2682,5 @@ Asta Control配置程序已取代Asta Trandent、成为Asta Control架构中的�
   <block id="df3d75a39182fab8d217744cdb76529e" category="list-text">*通过Kerberos 5加密增强存储后端安全性*：您可以通过提高存储安全性 <block ref="63a1519b1e13a139789d4589996b0d00" category="inline-link-macro-rx"></block> 托管集群和存储后端之间的流量。Astra Control配置程序支持通过NFSv4.1连接从Red Hat OpenShift集群到Azure NetApp Files和内部ONTAP卷进行Kerberos 5加密。</block>
   <block id="931459f37abea3d820afa0fcf0ecfef7" category="list-text">Astra 控制中心
 Astra Control 现在可采用新的部署模式。_Asta Control Center_是一款自行管理的软件、您可以在数据中心安装和运行该软件、以便管理内部Kubernetes集群的Kubernetes应用程序生命周期管理。</block>
+  <block id="b4cdc34d8767d1d4b7a24fbb97a1d8a7" category="paragraph"><block ref="b4cdc34d8767d1d4b7a24fbb97a1d8a7" category="inline-image-macro-rx" type="image"></block></block>
 </blocks>
