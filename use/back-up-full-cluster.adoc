@@ -1,0 +1,63 @@
+---
+sidebar: sidebar 
+permalink: use/back-up-full-cluster.html 
+keywords: backup, back up, backup apps, back up apps, take a backup, schedule backups, full, full backup, cluster backup, cluster, namespace, label, labels, namespaces 
+summary: 通过计划完整集群备份来保护您的应用程序、以便保护集群上的所有名空间。 
+---
+= [技术预览]保护整个集群
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+您可以为集群上的任何或所有非受管卷创建计划的自动备份。这些工作流由NetApp以Kubbernetes服务帐户、角色绑定和cron作业的形式提供、并使用Python脚本进行编排。
+
+
+
+== 工作原理
+
+在配置和安装完整集群备份工作流时、cron作业会定期运行、并保护尚未管理的任何命名空间、从而根据您在安装期间选择的计划自动创建保护策略。
+
+如果您不希望使用完整集群备份工作流保护集群上的每个非受管命名空间、则可以改用基于标签的备份工作流。基于标签的备份工作流也会使用cron任务、但它不会保护所有非受管命名库、而是通过您提供的标签来标识命名库、以根据铜牌、银牌或金牌备份策略保护命名库。
+
+在所选工作流范围内创建新命名空间时、该命名空间会自动受到保护、无需任何管理员操作。这些工作流是按集群实施的、因此不同的集群可以根据集群的重要性使用任一工作流、并具有独特的保护级别。
+
+.示例：完全集群保护
+例如、在配置和安装完整集群备份工作流时、任何命名空间中的任何应用程序都将定期进行管理和保护、而无需管理员进一步努力。安装工作流时、命名空间不必存在；如果将来添加命名空间、它将受到保护。
+
+.示例：基于标签的保护
+要获得更精细的粒度、您可以使用基于标签的工作流。例如、您可以安装此工作流、并告诉用户根据所需的保护级别、将多个标签之一应用于要保护的任何命名区域。这样、用户就可以使用其中一个标签创建命名空间、而无需通知管理员。它们的新命名空间以及其中的所有应用程序都会自动受到保护。
+
+
+
+== 为所有的名段创建计划备份
+
+您可以使用完整集群备份工作流为集群上的所有名空间创建计划备份。
+
+.步骤
+. 将以下文件下载到可通过网络访问集群的计算机：
++
+** https://raw.githubusercontent.com/NetApp/netapp-astra-toolkits/main/examples/fullcluster-backup/components.yaml["Components.YAML CRD文件"]
+** https://raw.githubusercontent.com/NetApp/netapp-astra-toolkits/main/examples/fullcluster-backup/protectCluster.py["protectCluster.py Python脚本"]
+
+
+. 要配置和安装此工具包、请执行以下步骤： https://github.com/NetApp/netapp-astra-toolkits/blob/main/examples/fullcluster-backup/README.md["按照附带的说明进行操作"^]。
+
+
+
+
+== 为特定的名段创建计划备份
+
+您可以使用基于标签的备份工作流按标签为特定命名库创建计划备份。
+
+.步骤
+. 将以下文件下载到可通过网络访问集群的计算机：
++
+** https://raw.githubusercontent.com/NetApp/netapp-astra-toolkits/main/examples/labelbased-backup/components.yaml["Components.YAML CRD文件"]
+** https://raw.githubusercontent.com/NetApp/netapp-astra-toolkits/main/examples/labelbased-backup/protectCluster.py["protectCluster.py Python脚本"]
+
+
+. 要配置和安装此工具包、请执行以下步骤： https://github.com/NetApp/netapp-astra-toolkits/blob/main/examples/labelbased-backup/README.md["按照附带的说明进行操作"^]。
+

@@ -2683,4 +2683,30 @@ Asta Control配置程序已取代Asta Trandent、成为Asta Control架构中的�
   <block id="931459f37abea3d820afa0fcf0ecfef7" category="list-text">Astra 控制中心
 Astra Control 现在可采用新的部署模式。_Asta Control Center_是一款自行管理的软件、您可以在数据中心安装和运行该软件、以便管理内部Kubernetes集群的Kubernetes应用程序生命周期管理。</block>
   <block id="b4cdc34d8767d1d4b7a24fbb97a1d8a7" category="paragraph"><block ref="b4cdc34d8767d1d4b7a24fbb97a1d8a7" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="a1932721112c7fa6e0a220f8d12316b9" category="summary">通过计划完整集群备份来保护您的应用程序、以便保护集群上的所有名空间。</block>
+  <block id="71a086a5ae784c9162639b628b47f232" category="doc">[技术预览]保护整个集群</block>
+  <block id="55663ff2954ae71700f6f717aacad2a3" category="paragraph">您可以为集群上的任何或所有非受管卷创建计划的自动备份。这些工作流由NetApp以Kubbernetes服务帐户、角色绑定和cron作业的形式提供、并使用Python脚本进行编排。</block>
+  <block id="9ffdb95250e26c7a6b468126ac7c75b0" category="section-title">工作原理</block>
+  <block id="5802e6b0af2e6482a64feeddbae90420" category="paragraph">在配置和安装完整集群备份工作流时、cron作业会定期运行、并保护尚未管理的任何命名空间、从而根据您在安装期间选择的计划自动创建保护策略。</block>
+  <block id="b5f80c63a9b3f7187b8a71e3279b1d40" category="paragraph">如果您不希望使用完整集群备份工作流保护集群上的每个非受管命名空间、则可以改用基于标签的备份工作流。基于标签的备份工作流也会使用cron任务、但它不会保护所有非受管命名库、而是通过您提供的标签来标识命名库、以根据铜牌、银牌或金牌备份策略保护命名库。</block>
+  <block id="3215156b98c07a49699d09346585d0f8" category="paragraph">在所选工作流范围内创建新命名空间时、该命名空间会自动受到保护、无需任何管理员操作。这些工作流是按集群实施的、因此不同的集群可以根据集群的重要性使用任一工作流、并具有独特的保护级别。</block>
+  <block id="4f3bac614b10b9269eff9557644b9d68" category="paragraph-title">示例：完全集群保护</block>
+  <block id="823f5a690316e8d8db6de2fd88676b37" category="paragraph">例如、在配置和安装完整集群备份工作流时、任何命名空间中的任何应用程序都将定期进行管理和保护、而无需管理员进一步努力。安装工作流时、命名空间不必存在；如果将来添加命名空间、它将受到保护。</block>
+  <block id="20220274e3d349d98f94f4af6c1d54cf" category="paragraph-title">示例：基于标签的保护</block>
+  <block id="ab9b4add4c2750df9ea518f6cfe58c09" category="paragraph">要获得更精细的粒度、您可以使用基于标签的工作流。例如、您可以安装此工作流、并告诉用户根据所需的保护级别、将多个标签之一应用于要保护的任何命名区域。这样、用户就可以使用其中一个标签创建命名空间、而无需通知管理员。它们的新命名空间以及其中的所有应用程序都会自动受到保护。</block>
+  <block id="07b045e6ed11320210f203c982fd829d" category="section-title">为所有的名段创建计划备份</block>
+  <block id="8332335e5e8bddc0b81921741539149a" category="paragraph">您可以使用完整集群备份工作流为集群上的所有名空间创建计划备份。</block>
+  <block id="20ebd9eda05c23de72572e3c4aa298f5" category="list-text">将以下文件下载到可通过网络访问集群的计算机：</block>
+  <block id="b8d3f43c1b8b6847ecf7255053992be6" category="inline-link">Components.YAML CRD文件</block>
+  <block id="e50ee5d787cfb185cfc2734fce798446" category="list-text"><block ref="e50ee5d787cfb185cfc2734fce798446" category="inline-link-rx"></block></block>
+  <block id="ac728b04543286ddda4fc836c6e98155" category="inline-link">protectCluster.py Python脚本</block>
+  <block id="7b1407a1eec5953c774bcc2d3d8908ab" category="list-text"><block ref="7b1407a1eec5953c774bcc2d3d8908ab" category="inline-link-rx"></block></block>
+  <block id="a9bd07d5dee89e8f8d63365bf38ed3ae" category="inline-link">按照附带的说明进行操作</block>
+  <block id="5c3f07c159adb2641838be3ccfa6f663" category="list-text">要配置和安装此工具包、请执行以下步骤：<block ref="f14b0785043f5fca456d2804860e2da9" category="inline-link-rx"></block>。</block>
+  <block id="0e770ae52a7daab5fccefca84b2322ce" category="section-title">为特定的名段创建计划备份</block>
+  <block id="8a6d3ef96a37da0f9a9d95b72a87049a" category="paragraph">您可以使用基于标签的备份工作流按标签为特定命名库创建计划备份。</block>
+  <block id="25c5f7a0ed30f3d017ebfd4b8f0b50a4" category="list-text"><block ref="25c5f7a0ed30f3d017ebfd4b8f0b50a4" category="inline-link-rx"></block></block>
+  <block id="b68db3e0a56f3b8c81ba53790b675138" category="list-text"><block ref="b68db3e0a56f3b8c81ba53790b675138" category="inline-link-rx"></block></block>
+  <block id="df3bb36ac44fafa7502c4bf87e8770ea" category="list-text">要配置和安装此工具包、请执行以下步骤：<block ref="ce6ac21e909840a69102ba43afa6cfb6" category="inline-link-rx"></block>。</block>
+  <block id="6a96f7d929fa0abae3976fe12471f4f9" category="sidebar">保护整个集群</block>
 </blocks>
