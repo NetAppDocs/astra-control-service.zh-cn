@@ -24,9 +24,6 @@ image:astra-architecture-diagram-v7.png["Astra Control 架构图和组件"]
 * *Astra Control配置程序*：Astra Control配置程序是由NetApp维护的完全受支持的存储配置程序和流程编排程序、包含Astra三项CSI功能以及扩展的存储管理功能、可用于为Docker和Kubernetes管理的容器化应用程序创建存储卷。使用Asta Control部署时、Asta Control配置程序包括一个已配置的ONTAP存储后端。
 
 
-* * Cloud Insights * ： Cloud Insights 是一款 NetApp 云基础架构监控工具，可用于监控由 控制中心管理的 Kubernetes 集群的性能和利用率。Cloud Insights 将存储使用量与工作负载相关联。在 Astra 控制中心中启用 Cloud Insights 连接后，遥测信息将显示在 Astra 控制中心 UI 页面中。
-
-
 
 
 == Astra Control 接口
@@ -46,6 +43,5 @@ image:astra-architecture-diagram-v7.png["Astra Control 架构图和组件"]
 * https://docs.netapp.com/us-en/astra-control-center/index.html["Astra 控制中心文档"^]
 * https://docs.netapp.com/us-en/astra-automation/index.html["Astra Control API文档"^]
 * https://docs.netapp.com/us-en/trident/index.html["Astra Trident 文档"^]
-* https://docs.netapp.com/us-en/cloudinsights/["Cloud Insights 文档"^]
 * https://docs.netapp.com/us-en/ontap/index.html["ONTAP 文档"^]
 

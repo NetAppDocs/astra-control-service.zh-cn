@@ -925,14 +925,11 @@
   <block id="4a2ab62188738135163aaaaeab1d6cfe" category="list-text"><block ref="4a2ab62188738135163aaaaeab1d6cfe" category="inline-link-rx"></block></block>
   <block id="d418042930eb178009f4c27360b349f6" category="inline-link">使用 Astra Control API</block>
   <block id="35e127abdc4e59a01dd3fd4f63603bf1" category="list-text"><block ref="35e127abdc4e59a01dd3fd4f63603bf1" category="inline-link-rx"></block></block>
-  <block id="5858ee4031acd7b896faa2d3d2c1a299" category="inline-link">Cloud Insights 文档</block>
-  <block id="2b93b48daf034e4100d00b85950e109d" category="list-text"><block ref="2b93b48daf034e4100d00b85950e109d" category="inline-link-rx"></block></block>
   <block id="eb75aeb3b4b2b9734ba3e52f5483f0b2" category="inline-link">ONTAP 文档</block>
   <block id="8217522f2b9eea86f1099a2aba54aebd" category="list-text"><block ref="8217522f2b9eea86f1099a2aba54aebd" category="inline-link-rx"></block></block>
   <block id="60f694f21643599c137f6c610e48124e" category="paragraph">下面简要介绍了 Astra Control 环境的各个组件。</block>
   <block id="51d249216b03414f10b242b851af7951" category="section-title">Astra Control 组件</block>
   <block id="a8d77bbb11d2e1a349811767d194e9ba" category="list-text">* Kubernetes 集群 * ： Kubernetes 是一个可移植，可扩展的开源平台，用于管理容器化工作负载和服务，便于进行声明性配置和自动化。Astra 为 Kubernetes 集群中托管的应用程序提供管理服务。</block>
-  <block id="415ba7b6a21fb373d9c5b72207313c1c" category="list-text">* Cloud Insights * ： Cloud Insights 是一款 NetApp 云基础架构监控工具，可用于监控由 控制中心管理的 Kubernetes 集群的性能和利用率。Cloud Insights 将存储使用量与工作负载相关联。在 Astra 控制中心中启用 Cloud Insights 连接后，遥测信息将显示在 Astra 控制中心 UI 页面中。</block>
   <block id="de0c45e94d4b178203631d55e65d1b62" category="section-title">Astra Control 接口</block>
   <block id="d015aca78df45458ee1d6533c5246919" category="paragraph">您可以使用不同的界面完成任务：</block>
   <block id="085434e07821849d9d71c59516ad591f" category="list-text">* Web 用户界面（ UI ） * ： Astra 控制服务和 Astra 控制中心使用同一个基于 Web 的 UI ，您可以在其中管理，迁移和保护应用程序。此外，还可以使用 UI 管理用户帐户和配置设置。</block>
@@ -1072,7 +1069,6 @@
   <block id="c5e2734ed937951c4604f55129ebf6bb" category="list-text">Azure受管磁盘：无可用的价格、性能或弹性信息</block>
   <block id="368def07c6bfa29b38f6913d1a01d925" category="paragraph">+*对于GKEE集群、Astra Control Service使用<block ref="33441d63a8e7ace6860eab2024320819" category="inline-link-rx"></block> 或 Google Persistent Disk 作为永久性卷的存储后端。</block>
   <block id="eb1ac977ae8f3dc0832dd982e309d50b" category="paragraph">+在Azure中、Astra Control Service还会为Blob容器创建资源组、存储帐户和密钥。</block>
-  <block id="47de31b9013ca59e1620936759a1c481" category="paragraph">Astra Control 旨在简化 Kubernetes 原生应用程序的应用程序数据生命周期管理操作。Astra控制服务支持在多个云提供商环境中运行的Kubernetes集群。</block>
   <block id="e29d7c0b36af68edd13ebac84f15b44b" category="sidebar">云提供商</block>
   <block id="46aef2e5080a5347df1ce7546e1be1df" category="sidebar">所有云提供商</block>
   <block id="56ef2682280ac110060b881925a87b80" category="sidebar">Google Cloud</block>
@@ -1611,7 +1607,6 @@
   <block id="934c5edffa8e732ecb866cb319c8454a" category="doc">应用程序管理</block>
   <block id="516729a7c0562425406a22cfe6a2c163" category="list-text">Amazon EBS</block>
   <block id="79c9c43a409053927cc323915dbf1c06" category="list-text">Azure受管磁盘</block>
-  <block id="43e71b094d6e4df1d87b41898754d340" category="paragraph">在云互联环境中， Astra 控制中心使用 Cloud Insights 提供高级监控和遥测功能。如果没有Cloud Insights 连接、则Astra控制中心可提供有限的(7天的指标)监控和遥测功能、并通过开放式指标端点导出到Kubernetes原生 监控工具(例如Prometheus和Grafana)。</block>
   <block id="736df34727d37ee0029df106be139889" category="paragraph">您可以向集群添加应用程序。或者、如果要管理的集群中已有一些应用程序、则可以使用Astra控制中心来管理它们。然后、使用Astra控制中心创建快照、备份、克隆和复制关系。</block>
   <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">结果</block>
   <block id="06c2cea18679d64399783748fa367bdd" category="inline-image-macro">一个</block>
@@ -2709,4 +2704,5 @@ Astra Control 现在可采用新的部署模式。_Asta Control Center_是一款
   <block id="b68db3e0a56f3b8c81ba53790b675138" category="list-text"><block ref="b68db3e0a56f3b8c81ba53790b675138" category="inline-link-rx"></block></block>
   <block id="df3bb36ac44fafa7502c4bf87e8770ea" category="list-text">要配置和安装此工具包、请执行以下步骤：<block ref="ce6ac21e909840a69102ba43afa6cfb6" category="inline-link-rx"></block>。</block>
   <block id="6a96f7d929fa0abae3976fe12471f4f9" category="sidebar">保护整个集群</block>
+  <block id="c6549ebb7cd213e64b91aa2f6576c5f6" category="paragraph">Astra Control旨在简化Kubbernetes原生应用程序的应用程序数据生命周期管理操作。Astra控制服务支持在多个云提供商环境中运行的Kubernetes集群。</block>
 </blocks>

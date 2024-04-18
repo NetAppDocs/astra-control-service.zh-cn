@@ -18,7 +18,7 @@ summary: 如果您只是想快速了解问题解答，此常见问题解答会�
 
 == 概述
 
-Astra Control 旨在简化 Kubernetes 原生应用程序的应用程序数据生命周期管理操作。Astra控制服务支持在多个云提供商环境中运行的Kubernetes集群。
+Astra Control旨在简化Kubbernetes原生应用程序的应用程序数据生命周期管理操作。Astra控制服务支持在多个云提供商环境中运行的Kubernetes集群。
 
 以下各节将为您在使用 Astra Control 时可能遇到的其他一些问题提供解答。如有任何其他澄清，请联系 astra.feedback@netapp.com
 
