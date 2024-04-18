@@ -127,33 +127,20 @@
   <block id="7100f9112ef8dd78f5c15873f53dbe55" category="inline-link-macro">了解 GKEE 集群的存储类</block>
   <block id="3946d8b08dbcd33b3e5d7fc0e1384dec" category="inline-link-macro">了解 AKS 集群的存储类</block>
   <block id="b1151aae9531d2f5e85d085e8878cea6" category="summary">如果您只是想快速了解问题解答，此常见问题解答会很有帮助。</block>
-  <block id="8de7ff5f7f2186929bf88ea5dcfc0fb3" category="doc">有关 Astra 控制服务的常见问题</block>
   <block id="3b878279a04dc47d60932cb294d96259" category="section-title">概述</block>
   <block id="7138c9866f92caa6559eeb16dedcead9" category="paragraph">以下各节将为您在使用 Astra Control 时可能遇到的其他一些问题提供解答。如有任何其他澄清，请联系 astra.feedback@netapp.com</block>
   <block id="3783e7bdb365c30dbefc88440e625d44" category="section-title">访问 Astra Control</block>
-  <block id="03069a991fdd2077c62785ce41219767" category="paragraph">* 注册 Astra Control 时，为什么需要提供如此多的详细信息？ *</block>
   <block id="210f37c32bd0a904a147316532fe278a" category="paragraph">Astra Control 在注册时需要准确的客户信息。要进行全球贸易合规性（ GTC ）检查，必须提供此信息。</block>
-  <block id="9cd70118795cf5a9e6a24b6fa97bb7ec" category="paragraph">* 注册 Astra Control 时为什么会出现 " 注册失败 " 错误？ *</block>
   <block id="e536f2d0f23e9ecd1c6d0f34cb91879f" category="paragraph">Astra Control 要求您在入职部分提供准确的客户信息。如果您提供的信息不正确，则会收到 "Registration Failed" 错误。您所属的其他帐户也会被锁定。</block>
-  <block id="b2b7d115fca8188e00942f74004f6315" category="paragraph">* 什么是 Astra 控制服务 URL ？ *</block>
   <block id="bfed83f9776b9cffcb89ba03cfc123b6" category="paragraph">您可以通过访问 Astra 控制服务<block ref="8c65d1fc4cf122e461b28ceccd26064c" category="inline-link-rx"></block>。</block>
-  <block id="8b5023dd95de9062815ee098ef81fc8a" category="paragraph">* 我向同事发送了一封电子邮件邀请函，但他们尚未收到。我该怎么办？ *</block>
   <block id="e17fe64b172b99fcc59af763f07b9782" category="paragraph">要求他们检查其垃圾邮件文件夹中是否有来自 do-not-reply@netapp.com 的电子邮件，或者在收件箱中搜索 " 邀请函 " 。 您也可以删除此用户并尝试重新添加它们。</block>
-  <block id="12e5e74341c47b0e02245229810cdaff" category="paragraph">* 我在一个月中升级到高级 PayGO 计划。我是否会在整个月内支付费用？ *</block>
-  <block id="f18b7956b816c9fe4217adec72e97c14" category="paragraph">* 我正在使用免费计划，是否会为永久性卷申请付费？ *</block>
   <block id="b892fe302a6a7df4519761ccd72b7c2f" category="section-title">注册 Kubernetes 集群</block>
-  <block id="b588fb2a2e55643a23cbafdb1879e478" category="paragraph">* 在将集群添加到 Astra Control Service 之前，是否需要在集群上安装 CSI 驱动程序？ *</block>
-  <block id="a48e52ca315005bd57971ddff57c7bf1" category="paragraph">* 添加到 Astra Control Service 后，我需要向集群添加工作节点。我该怎么办？ *</block>
-  <block id="952200664143e727f3f65397759fe5e8" category="paragraph">* 我的 GKE 集群是否可以位于共享 VPC 上？ *</block>
   <block id="5d346778751cb328795e29ad6aed29a4" category="inline-link-macro">了解如何为共享 VPC 配置设置 Astra 服务帐户</block>
-  <block id="829e16b22728d9cc77125c1682a81ee7" category="paragraph">在 GCP 上的何处可以找到我的服务帐户凭据？ *</block>
   <block id="c922f94b242e01ca5ff1ea0504c38cec" category="inline-link-macro">如何为 Astra Control 设置 Google Cloud</block>
   <block id="89786972ebb5d82191ae05695b18af61" category="inline-link">Google Cloud Console</block>
   <block id="3b7c0140ffbf1360b77a6097417a3066" category="paragraph">登录到后<block ref="e94913b2471950c8dc101d7e8d795192" category="inline-link-rx"></block>，您的服务帐户详细信息将显示在 * IAM 和管理 * 部分中。有关详细信息，请参见 <block ref="8bbc24aeb37c65ac01202e37261ba8ea" category="inline-link-macro-rx"></block>。</block>
-  <block id="8ddf6502ee6252d1c8f0f8a5f078fe5f" category="paragraph">* 我想从不同的 GCP 项目添加不同的 GKEE 集群。Astra Control 是否支持此功能？ *</block>
   <block id="c4a3f82dbfc065caa7a7179a9a2e8776" category="paragraph">不支持，此配置不受支持。仅支持一个 GCP 项目。</block>
   <block id="4e35c512bb8095cfcd8cee32d40b802c" category="section-title">删除集群</block>
-  <block id="b9723d5d96158122fac0543366bf9b55" category="paragraph">* 如何正确取消注册，关闭集群以及删除关联的卷？ *</block>
   <block id="cdb2726825d8ca6b1fbc495e1769be38" category="inline-link-macro">从 Astra Control 取消管理应用程序</block>
   <block id="bfde4228559e1dc730ccb3f1710371f6" category="list-text"><block ref="819731d94d9a0720df36a3fc1b85d024" category="inline-link-macro-rx"></block>。</block>
   <block id="21a301641f60afe52f6d844a16411108" category="inline-link-macro">从 Astra Control 中取消注册集群</block>
@@ -161,23 +148,16 @@
   <block id="ac91efe0f7c777283d4aa8496a021658" category="inline-link-macro">删除永久性卷声明</block>
   <block id="4bfb4aec5593e6e5438f1cc386d7016a" category="list-text"><block ref="da04ffeea2a9f763e144903904e2107d" category="inline-link-macro-rx"></block>。</block>
   <block id="5f1133c91558de54a6d46ea1610e831b" category="list-text">删除集群。</block>
-  <block id="58e7a1631bced81042ee450415ba603c" category="paragraph">* 从 Astra Control 中删除集群后，应用程序和数据会发生什么情况？ *</block>
   <block id="ebbe7b49b4dfb4e04de74f7b82444433" category="admonition">在通过 GCP 删除集群之前，请始终从 Astra Control 中将其删除。如果在集群仍由 Astra Control 管理时从 GCP 中删除集群，则可能会对您的 Astra Control 帐户产生发生原因问题。</block>
   <block id="f75d983d4bc87e1a244c894a4357e93a" category="section-title">管理应用程序</block>
-  <block id="eaeb56aabe324b7270ae7355bb58edcb" category="paragraph">* Astra Control 是否可以部署应用程序？ *</block>
   <block id="48df7f09a242df239385ebae869133b8" category="paragraph">Astra Control 不会部署应用程序。应用程序必须部署在 Astra Control 之外。</block>
   <block id="baaf63e6e2361e11fa4ae44151218b4e" category="list-text">运行 `kubectl get SC` 并检查默认存储类。</block>
   <block id="c5f298a00c4f6a85ebf65b24eef94a12" category="list-text">检查用于部署应用程序的 YAML 文件或 Helm 图表，查看是否定义了其他存储类。</block>
-  <block id="44379fcc25f304b4401a09a7641dd567" category="paragraph">* 停止从 Astra Control 管理应用程序后，应用程序会发生什么情况？ *</block>
   <block id="61cd231bb056b77c37c6a7acab17451a" category="paragraph">任何现有备份或快照都将被删除。应用程序和数据始终可用。数据管理操作不适用于非受管应用程序或属于该应用程序的任何备份或快照。</block>
   <block id="6b1a3a19f3f025ff9c844910c80c100e" category="section-title">数据管理操作</block>
-  <block id="be9dbc276a4b73040099b74812ef9a11" category="paragraph">* Astra Control 在何处创建对象存储分段？ *</block>
   <block id="ee258cc51fd8d77c270d309d42e1e91c" category="inline-link-macro">添加其他存储分段</block>
   <block id="080b8b96134b3479ee1b832683e73f7f" category="paragraph">第一个受管集群的地理位置决定了对象存储的位置。例如，如果您添加的第一个集群位于欧洲区域，则会在同一地理位置创建存储分段。如果需要，您可以 <block ref="4f6248a5a34b77d4064c987204932c98" category="inline-link-macro-rx"></block>。</block>
-  <block id="f29fc395a645dd9357f1b54e4c7e1f67" category="paragraph">* 我的帐户中存在未创建的快照。它们来自何处？ *</block>
   <block id="f86869b91c2862dbaafa6e55f5952968" category="paragraph">在某些情况下， Astra Control 会在执行其他过程时自动创建快照。如果这些快照的使用时间超过几分钟，您可以安全地将其删除。</block>
-  <block id="f48c2d460dc1a0ef0ec9aa4169e8c272" category="paragraph">* 我的应用程序使用多个 PV 。Astra Control 是否会为所有这些 PVC 创建快照和备份？ *</block>
-  <block id="5fabf021c8fb95cd2d38139cc7c5ff89" category="paragraph">* 是否可以直接通过云提供商管理 Astra Control 创建的快照？ *</block>
   <block id="0e1998253be388fcd1c18fc76ead9054" category="summary">Astra Control 是 Kubernetes 应用程序数据生命周期管理解决方案，可简化有状态应用程序的操作。轻松保护，备份和迁移 Kubernetes 工作负载，并即时创建有效的应用程序克隆。</block>
   <block id="620e99caf2b3d803b4dd22b70d895fde" category="summary">此文档站点上的许多页面都包含一些视频，用于展示如何使用 Astra Control Service 完成任务。如果您只是对视频感兴趣，我们会通过在这个页面上收集所有视频（类似于播放列表）来简化您的操作。</block>
   <block id="cec4f0bbb3f7119930f9ff4d721ad21a" category="doc">Astra Control Service 视频</block>
@@ -1003,7 +983,6 @@
   <block id="ba2f6425b8f267dbd5a2f8ddb2f7116a" category="list-text">选择 * 是，删除存储分段 * 。</block>
   <block id="9c83e144e5481ac6766f4055e566594d" category="section-title">了解更多信息</block>
   <block id="ea2708b459fc0cad6936ec216bd9405e" category="paragraph">Astra 控制中心完全集成到 AutoSupport 和 Active IQ 生态系统中，可为用户和 NetApp 支持提供故障排除和使用信息。</block>
-  <block id="970cfe22b76fecaa99669dbc6dd2643e" category="paragraph">* 是否可以将专用 AKS 集群添加到 Astra Control Service ？ *</block>
   <block id="0cc78d43619515d263f8e91071f2ed83" category="paragraph">52.188.218.166/32</block>
   <block id="f26ee8a93c95de7a50a14b73f85172c5" category="paragraph">了解 Astra Control 中的用户角色和命名空间，以及如何使用它们控制对组织中资源的访问。</block>
   <block id="f4040f71a7d553f2519487070892b115" category="section-title">用户角色</block>
@@ -1043,7 +1022,6 @@
   <block id="a57d95e33fbdffe3b4bd71d5b0be74cd" category="list-text">选择*存储类*类别。</block>
   <block id="b76660fac98aeb4fc46b77e989e6d8b0" category="list-text">选择要设置为默认值的存储类的*操作*菜单。</block>
   <block id="b4789b0ec041cd5e51f32c2f901a0951" category="list-text">选择*设置为默认值*。</block>
-  <block id="2dd2a1bdae3516df1950c153f6135366" category="paragraph">*是否可以使用Active Directory管理AKS集群的身份验证？*</block>
   <block id="e4b4463df81090495a7820578ac936d9" category="paragraph">可以、您可以将AKS集群配置为使用Azure Active Directory (Azure AD)进行身份验证和身份管理。创建集群时、请按照中的说明进行操作<block ref="ba1ce5a57a4d347a0e1e2ecf2a2c91ba" category="inline-link-rx"></block> 将集群配置为使用Azure AD。您需要确保集群满足AKS管理的Azure AD集成的要求。</block>
   <block id="35766360770e699f50fa8f51d1c6ff36" category="doc">了解Astra Control</block>
   <block id="87e0c6ecd728fb0d791237540ebc2d13" category="section-title">可选：为Azure备份存储分段配置冗余</block>
@@ -1109,7 +1087,6 @@
   <block id="043e32602230f742d954f613b7b5ce25" category="inline-link">在Amazon EKS中创建集群后、如何为其他IAM用户和角色提供访问权限？</block>
   <block id="03505e86c100771649c5c405d210f3de" category="paragraph">+*对于Amazon EKS集群、Astra Control Service使用<block ref="a65cb6c91d35e755c3763fe01aedac72" category="inline-link-rx"></block> 或<block ref="554e81ff0c0b44a91e38efe479d6c57c" category="inline-link-rx"></block> 作为永久性卷的存储后端。</block>
   <block id="9ab46041ac5136f2300b8e64c19f0964" category="section-title">注册Elastic Kubernetes Service (EKS)集群</block>
-  <block id="cfab7aa3599d78d5f3c56857f2175c5f" category="paragraph">*是否可以将专用EKS集群添加到Astra Control Service？*</block>
   <block id="5802142fb14713d93859bda03cc52eb3" category="section-title">注册Azure Kubernetes Service (AKS)集群</block>
   <block id="2c932845e362039bca422bb4b59eea27" category="section-title">注册Google Kubernetes Engine (GKEE)集群</block>
   <block id="de67786285afec6fafad0eaf1b94a4b7" category="summary">要使用Astra Control Service管理Amazon Elastic Kubernetes Service集群、需要执行几个步骤来准备Amazon Web Services项目。</block>
@@ -1397,7 +1374,6 @@
   <block id="61ddd26ba79b5e63c1e52be1beb28889" category="section-title">设置永久性存储</block>
   <block id="305b39af5cd987a6208b64358f967be3" category="list-text">部署在一个或多个命名空间中的单个应用程序(此示例使用Helm 3)</block>
   <block id="5200a678b94ac14cf371f3073027246a" category="list-text">一组通过一个或多个命名空间中的Kubernetes标签标识的资源</block>
-  <block id="e7ee212d9bc4dca7907f427fe053cfd0" category="paragraph">* 我已从免费计划升级到高级 PayGO 计划。是否会为前10个命名空间付费？*</block>
   <block id="a851ae746dac71e034dd92d612caa0fd" category="paragraph">是的。升级到高级计划后、Astra Control开始为您的帐户中的所有受管命名空间收取费用。</block>
   <block id="6f010557b55fefd84ac5e20c2db5a8ae" category="paragraph">可以将新的工作节点添加到现有池中、也可以创建新池、但前提是它们是<block ref="bba3d88d28186b91a2b3165d6143a600" prefix=" " category="inline-code"></block> 映像类型。这些信息将由 Astra Control 自动发现。如果新节点在 Astra Control 中不可见，请检查新工作节点是否正在运行受支持的映像类型。您还可以使用验证新工作节点的运行状况<block ref="1513e62b9eb7bbfc46c1be1a91a2ab76" prefix=" " category="inline-code"></block> 命令：</block>
   <block id="3c7ad3a476ad730cdda13eafe57f371e" category="list-text">GKE1.24及更高版本不支持基于Docker的节点映像。检查以确保GKEE中的工作节点映像类型为<block ref="bba3d88d28186b91a2b3165d6143a600" prefix=" " category="inline-code"></block> NFS挂载成功。</block>
@@ -1639,7 +1615,6 @@
   <block id="7acb8defb656ebd5f9decf15c05926ca" category="paragraph-title">完成后</block>
   <block id="08f1e852f149dc9bdf3a724bc95ed61a" category="list-text">将此容器作为分段添加到Astra Control Service中。请参见 <block ref="3ecbb82ace41389a409b1cc92181a5a8" category="inline-link-macro-rx"></block>。</block>
   <block id="1d7c1d2f297451f6eaf4e76901db96d2" category="list-text">(可选)要使用新创建的存储分段作为Azure备份的默认存储分段、请将其设置为Azure的默认存储分段。请参见 <block ref="d1523cf11113b501cc0e7216254bf527" category="inline-link-macro-rx"></block>。</block>
-  <block id="0f0939624ea35d3dd7896d9216bee5d4" category="paragraph">*我看不到应用程序的任何PVC绑定到GCP CVS。有什么问题？ *</block>
   <block id="0ab04539adb80fe9a1c9f5dc0be183d2" category="section-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> 查看适用于Amazon Web Services的Astra Control Service要求</block>
   <block id="dd8153a2eaefa2ca6b22e74080a45577" category="section-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> 创建Amazon帐户</block>
   <block id="d2d49f8b074c326544953d30a666756a" category="section-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> 安装Amazon Web Services CLI</block>
@@ -1928,7 +1903,6 @@
   <block id="501a7b3c879675fb528c68e904b076d1" category="list-text">*检查目标卷*：如果要还原到其他存储类、请确保该存储类使用相同的永久性卷访问模式(例如ReadWriteMany)。如果目标永久性卷访问模式不同，还原操作将失败。例如、如果源永久性卷使用rwx访问模式、请选择无法提供rwx的目标存储类、例如Azure托管磁盘、AWS EBS、Google持久磁盘或<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block>，发生原因则还原操作是否会失败。有关永久性卷访问模式的详细信息、请参阅<block ref="051768f02ea3f9f1a6b86b9d9b060248" category="inline-link-rx"></block> 文档。</block>
   <block id="0f707c2e2c303edecbc57b2a451ad8a9" category="list-text">*检查目标卷*：如果克隆到其他存储类、请确保该存储类使用相同的永久性卷访问模式(例如ReadWriteMany)。如果目标永久性卷访问模式不同、则克隆操作将失败。例如、如果源永久性卷使用rwx访问模式、请选择无法提供rwx的目标存储类、例如Azure托管磁盘、AWS EBS、Google持久磁盘或<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block>，发生原因将使克隆操作失败。有关永久性卷访问模式的详细信息、请参阅<block ref="051768f02ea3f9f1a6b86b9d9b060248" category="inline-link-rx"></block> 文档。</block>
   <block id="a6c02bceb9754a343a62ee6831e410ff" category="paragraph">可以、您可以将专用EKS集群添加到Astra Control Service。要添加专用EKS集群、请参见 <block ref="d51718998c7312025a3cf72e62416cc2" category="inline-link-macro-rx"></block>。</block>
-  <block id="af2b33bb637866cca13ababa2653601d" category="paragraph">* 是否可以将专用 GKEE 集群添加到 Astra Control Service ？ *</block>
   <block id="6622fcb5d45cfc45bd9176f732c6ff48" category="paragraph">专用GKE集群必须具有<block ref="aa255aeede553f15509fbd44536f790e" category="inline-link-rx"></block> 设置为允许 Astra Control IP 地址：</block>
   <block id="cfc5109ab7ff42dc4040fd043f178632" category="summary">现在、您已登录Astra Control并将集群添加到Astra Control中、可以开始使用Astra Control的应用程序数据管理功能了。</block>
   <block id="9a0ee0d50da1e4f3e59551eb08363dfe" category="paragraph">现在、您已登录并向Astra Control添加了集群、可以开始使用Astra Control的应用程序数据管理功能了。</block>
@@ -2059,11 +2033,8 @@
   <block id="d92ad56b4462b38e4df701caeeffd38a" category="paragraph">是的。Astra Control可以管理共享VPC中的集群。 <block ref="12cc1ce3ba4d58645c4f3bfe8f445bfc" category="inline-link-macro-rx"></block>。</block>
   <block id="da3896d1bd14d90f23119c4f4e1c15a3" category="paragraph">否Asta Control创建的快照和备份只能使用Asta Control进行管理。</block>
   <block id="4c58fde327564dd131d9bda17203e9c0" category="section-title">Asta Control配置程序</block>
-  <block id="9a0966df6fce07aa3deb33fa2cd5da9f" category="paragraph">*Astra Control配置程序的存储配置功能与Astra Trident中的存储配置功能有何不同？*</block>
   <block id="dc918830fd0bda72f7a7d0f6e208b17e" category="paragraph">Asta Control配置程序作为Asta Control的一部分、支持一组超群的存储配置功能、这些功能在开源Asta三元数据中不可用。这些功能是对开放源码的三元数据可用的所有功能的补充。</block>
   <block id="ad1ed8a22f0b210e932f280697114063" category="inline-link-macro">启用Asta Control配置程序</block>
-  <block id="d4a584de43e0998448679fdc7be156af" category="paragraph">*我必须为Astra三端安装付费吗？*</block>
-  <block id="b8481a0cbd8ab968ce47b6bacfc1ad58" category="paragraph">*在不安装和使用所有Astra Control的情况下，是否可以使用Astra Control中的存储管理和配置功能？*</block>
   <block id="6f04a726f4038aea2cb90f4951cba4a2" category="paragraph">安装Asta Control配置程序后、Asta Control UI中的主机集群将显示<block ref="47f79829be244bd727d1881108343390" prefix=" " category="inline-code"></block> 而不是<block ref="f1112223b41fddc71fd6a626582dfb78" prefix=" " category="inline-code"></block> 字段和当前安装的版本号。</block>
   <block id="b705f14969fa7c55d16aa5c0ef9c37a0" category="inline-image-macro">显示UI中ACP版本位置的屏幕截图</block>
   <block id="298c14088e0ed4580971821ac46240ba" category="paragraph"><block ref="298c14088e0ed4580971821ac46240ba" category="inline-image-macro-rx" type="image"></block></block>
@@ -2475,13 +2446,8 @@ RKE 2：版本1.24.17、1.25.14、1.26.9、带RANcher Manager 2.7.9</block>
   <block id="0465f53aa4ae4c5a9a86033a6e53038b" category="paragraph">在使用Asta Control Service管理Amazon Web Services集群时、如果需要只能与Asta Control配置程序一起使用的存储后端、则需要先在集群上手动启用Asta Control配置程序、然后再使用Asta Control Service进行管理。请参见 <block ref="09bb7a105629f922c89dc5bfe800e3ad" category="inline-link-macro-rx"></block> 了解启用Astra Control配置程序的步骤。</block>
   <block id="afb15fc00f8b4ac20b5b892ab1c9aa7d" category="paragraph">否将集群添加到Astra Control后、该服务将自动在Kubbernetes集群上安装Astra三端容器存储接口(CSI)驱动程序。此CSI驱动程序用于为云提供商支持的集群配置永久性卷。</block>
   <block id="c103c1b613b979158e5cb38bf6ed5f16" category="inline-link">请按照以下步骤卸载包含Astra Control配置程序服务的Astra Trdent实例</block>
-  <block id="6f494d3d3ab6addde987af35a6b39453" category="paragraph">*取消管理Astra Control配置程序时，它是否会自动从集群中卸载？*
-从Astra Control Center取消管理集群时、Astra Control配置程序或Astra三项功能不会自动从集群中卸载。要卸载Asta Control配置程序及其组件或Asta Trandent、您需要<block ref="20ce5e359d2a1fb9fe63ec6fbc3432ca" category="inline-link-rx"></block>。</block>
-  <block id="555a1239c2a1c0c929e5163ef6b8bd8d" category="paragraph">*Astra Control配置程序是否取代了Astra三项功能？*
-Asta Control配置程序已取代Asta Trandent、成为Asta Control架构中的存储配置程序和流程编排程序。Asta Control用户应执行此操作 <block ref="ff2bbb7428b8f99317648669d291554d" category="inline-link-macro-rx"></block> 使用A作用 力控制。此版本仍支持Asta三项功能、但未来版本不支持此功能。Asta三元数据将保持开源状态、并使用NetApp的新CSI和其他功能进行发布、维护、支持和更新。但是、只有包含A作用 力三项CSI功能以及扩展存储管理功能的A作用 力控制配置程序才能用于即将推出的A作用 力控制版本。</block>
   <block id="b2e63d361f13f7c7a6953e6d716921b8" category="paragraph">否Asta三端技术将继续采用开源方式、并可免费下载。现在、使用Astra Control配置程序功能需要Astra Control许可证。</block>
   <block id="f7674e11004b268d07981c0956e67fe1" category="paragraph">可以。即使您不想使用Astra Control数据管理功能的完整功能集、也可以升级到Astra Control配置程序并使用其功能。</block>
-  <block id="d8272a56355a60a1ca520a3d6649207f" category="paragraph">[[running-acp.check]]**如何知道Astra Control配置程序是否已取代了我的集群上的Astra Trident？*</block>
   <block id="5c06389afe2ac88223b5ed747dc58668" category="inline-image-macro">显示用户界面中Astra Control配置程序版本位置的屏幕截图</block>
   <block id="02a9d2702f20af4981fc27f25359bc43" category="paragraph"><block ref="02a9d2702f20af4981fc27f25359bc43" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ad474921e3019f83ed5e493076ec8133" category="paragraph">验证<block ref="49c9f6c98d04c8c76aee7448fd9136ed" prefix=" " category="inline-code"></block> 容器正在运行<block ref="507c6bbca2ad57c69e89a97ee8714536" prefix=" " category="inline-code"></block> 为<block ref="84976609aebb6439476255d5ef8280bb" prefix=" " category="inline-code"></block> 或更高版本、状态为<block ref="98dd43dfae05b11befe1f140e0ec787a" prefix=" " category="inline-code"></block>：</block>
@@ -2705,4 +2671,38 @@ Astra Control 现在可采用新的部署模式。_Asta Control Center_是一款
   <block id="df3bb36ac44fafa7502c4bf87e8770ea" category="list-text">要配置和安装此工具包、请执行以下步骤：<block ref="ce6ac21e909840a69102ba43afa6cfb6" category="inline-link-rx"></block>。</block>
   <block id="6a96f7d929fa0abae3976fe12471f4f9" category="sidebar">保护整个集群</block>
   <block id="c6549ebb7cd213e64b91aa2f6576c5f6" category="paragraph">Astra Control旨在简化Kubbernetes原生应用程序的应用程序数据生命周期管理操作。Astra控制服务支持在多个云提供商环境中运行的Kubernetes集群。</block>
+  <block id="af2a4d2810d86aa0169c117f82682f9a" category="doc">常见问题解答</block>
+  <block id="e2ba85373a43ff83523544e3c8b20cac" category="paragraph-title">注册Astra Control时、为什么需要提供这么多详细信息？</block>
+  <block id="48a8ba7464567f29c363a814219f7e86" category="paragraph-title">为什么在注册Astra Control时收到“注册失败”错误？</block>
+  <block id="b231617ec636773574fda7f2f3f71590" category="paragraph-title">什么是Astra Control Service URL？</block>
+  <block id="83536486243739fea4e7386d1547ac37" category="paragraph-title">我向一位同事发送了一封电子邮件邀请函、但他们尚未收到邀请函。我该怎么办？</block>
+  <block id="d0b31c853fcf0fac7e52a6b7681a6d5b" category="paragraph-title">我从免费版升级到Premium PayGO计划。前10个名字会收取费用吗？</block>
+  <block id="33f5815cc5cfd5877253ed77622f0007" category="paragraph-title">我在一个月中升级到Premium PayGO计划。是否会收取整个月的费用？</block>
+  <block id="2f4f1be084dd738c079ff8c6c035ac1d" category="paragraph-title">我正在使用免费计划、是否会因永久性卷索赔而收费？</block>
+  <block id="84d8b806753a0920b4173b1358282c19" category="paragraph-title">在将集群添加到Astra Control Service之前、是否需要在集群上安装CSI驱动程序？</block>
+  <block id="87aba5b6abffa83e102cfce68467a91f" category="paragraph-title">在添加到Astra Control Service后、我需要向集群添加工作节点。我该怎么办？</block>
+  <block id="71741f57e0ef60c355e46181b86f6486" category="paragraph-title">是否可以将专用EKS集群添加到Astra Control Service？</block>
+  <block id="f97a24ca8fd59c19e4a1adb26020e9a2" category="paragraph-title">是否可以将专用AKS集群添加到Astra Control Service？</block>
+  <block id="5d6fe13b86aa0eb0b0fceadfba4b244e" category="paragraph-title">是否可以使用Active Directory管理AKS集群的身份验证？</block>
+  <block id="8eb3ff627df9a47638fb622f65f91c63" category="paragraph-title">是否可以将专用GKE集群添加到Astra Control Service？</block>
+  <block id="41f2fddc9e2a5165c173e0d3bc7b2f09" category="paragraph-title">我的GKE集群是否可以驻留在共享VPC上？</block>
+  <block id="cf847ce591998095de7e84567bd8b17a" category="paragraph-title">在哪里可以找到我在GCP上的服务帐户凭据？</block>
+  <block id="2927a523854de3dbef1f98b96201e888" category="paragraph-title">我想从不同的GCP项目添加不同的GKE集群。Astra Control是否支持这一点？</block>
+  <block id="f7e99a45e43eb95d65b73567098604bd" category="list-title">如何正确取消注册、关闭集群以及删除关联的卷？</block>
+  <block id="18517a8ddd1451d8eae0f79685ae69c3" category="paragraph-title">从Asta Control中删除集群后、我的应用程序和数据会发生什么情况？</block>
+  <block id="2ea85804838c4a7c9bf4a8feb5343932" category="paragraph-title">取消管理Astra Control配置程序时、它是否会自动从集群中卸载？</block>
+  <block id="6e97758e2a7f18315bc2dd21ba2fb822" category="paragraph">从Astra Control Center取消管理集群时、Astra Control配置程序或Astra三项功能不会自动从集群中卸载。要卸载Asta Control配置程序及其组件或Asta Trandent、您需要<block ref="20ce5e359d2a1fb9fe63ec6fbc3432ca" category="inline-link-rx"></block>。</block>
+  <block id="9c571c6fb937319efe65b3c9d020edc8" category="paragraph-title">Astra Control是否可以部署应用程序？</block>
+  <block id="5a00e266405339524a709ed124e68977" category="paragraph-title">我没有看到应用程序的任何PVC绑定到GCP CVS。出什么问题了？</block>
+  <block id="a7fec8f073e339fb7794287e8e5663a0" category="paragraph-title">停止从Asta Control管理应用程序后、应用程序会发生什么情况？</block>
+  <block id="6b59b068724f323c0baa61747c1ba713" category="paragraph-title">Astra Control在何处创建对象存储分段？</block>
+  <block id="8afa2fae393366d6b197ab7eae5782a9" category="paragraph-title">我的帐户中有我未创建的快照。他们来自哪里？</block>
+  <block id="b9a7bae01f76ff8a887e3e03377895be" category="paragraph-title">我的应用程序使用多个PV.Astra Control是否会为所有这些PVC创建快照和备份？</block>
+  <block id="5139a5d999f1bbac2fb5e1e029b14429" category="paragraph-title">我是否可以直接通过云提供商管理Asta Control拍摄的快照？</block>
+  <block id="ee8d37ab9ce413b000f7a6f1c6831e25" category="paragraph-title">Astra Control配置程序的存储配置功能与Astra Trident中的存储配置功能有何不同？</block>
+  <block id="36057914e1173ce157bef770560c4d14" category="paragraph-title">Astra Control配置程序是否正在取代Astra Trent？</block>
+  <block id="1545b138340a043e294238b4a34d04cb" category="paragraph">Asta Control配置程序已取代Asta Trandent、成为Asta Control架构中的存储配置程序和流程编排程序。Asta Control用户应执行此操作 <block ref="ff2bbb7428b8f99317648669d291554d" category="inline-link-macro-rx"></block> 使用A作用 力控制。此版本仍支持Asta三项功能、但未来版本不支持此功能。Asta三元数据将保持开源状态、并使用NetApp的新CSI和其他功能进行发布、维护、支持和更新。但是、只有包含A作用 力三项CSI功能以及扩展存储管理功能的A作用 力控制配置程序才能用于即将推出的A作用 力控制版本。</block>
+  <block id="6080a9c8227972613444a9ebc88e3b3c" category="paragraph-title">我是否必须为Asta三端存储付费？</block>
+  <block id="369842d22c436a81bf21800576abee8b" category="paragraph-title">是否可以在不安装和使用所有Astra Control的情况下使用Astra Control中的存储管理和配置功能？</block>
+  <block id="63bdba47639989b6e534ecb34c5f142e" category="paragraph-title">如何知道Astra Control配置程序是否已取代了集群上的Astra Trident？</block>
 </blocks>

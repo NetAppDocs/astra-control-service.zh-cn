@@ -34,6 +34,8 @@ sidebar:
   - title: 使用 Astra Control REST API 实现自动化
     url: "/automation.html"
   - section: support
+  - title: 常见问题解答
+    url: "/get-started/faq.html"
   - title: 法律声明
     url: "/legal-notices.html"
 product-family:
