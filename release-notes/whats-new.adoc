@@ -18,8 +18,21 @@ NetApp 会定期更新 Astra Control Service ，为您提供新功能，增强�
 
 == 2024年3月14日
 
-.新增功能和支持
-这是一个小错误修复版本。
+.(技术预览)声明性Kubarnetes工作流
+此Astra Control Center版本包含声明性Kubarnetes功能、可用于从本机Kubarnetes自定义资源(CR)执行数据管理。
+
+此功能仅在Astra Control Service早期采用者计划(EAP)实例中可用。有关加入NetApp的信息、请联系您的EAP销售代表。
+
+安装后 link:../get-started/install-astra-connector-declarative.html["Asta连接器"] 在要管理的集群上、您将能够在UI或CR中执行以下基于CR的集群操作：
+
+* link:../use/manage-apps.html#tech-preview-define-an-application-using-a-kubernetes-custom-resource["使用自定义资源定义应用程序"]
+* link:../use/manage-buckets.html#tech-preview-manage-a-bucket-using-a-custom-resource["定义存储分段"]
+* link:../use/back-up-full-cluster.html["保护整个集群"]
+* link:../use/protect-apps.html#create-a-backup["备份应用程序"]
+* link:../use/protect-apps.html#create-a-snapshot["创建快照"]
+* link:../use/protect-apps.html#configure-a-protection-policy["为快照或备份创建计划"]
+* link:../use/restore-apps.html["从快照或备份还原应用程序"]
+
 
 
 

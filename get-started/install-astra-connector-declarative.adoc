@@ -1,0 +1,130 @@
+---
+sidebar: sidebar 
+permalink: get-started/install-astra-connector-declarative.html 
+keywords: connector, install, astra connector, manage cluster, add cluster, cluster, add, manage 
+summary: 您可以安装Asta Connector来帮助管理专用集群。 
+---
+= (技术预览)安装声明性Kubarnetes Asta Connector
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+使用声明性Kubarnetes工作流管理的集群使用Astra Connector在受管集群和Astra Control之间实现通信。您需要在要使用声明性Kubarnetes工作流管理的所有集群上安装Astra Connector。
+
+您可以使用Kubarnetes命令和自定义资源(Custom Resource、CR)文件安装声明性Kubarnetes Asta Connector。
+
+.关于此任务
+* 执行这些步骤时、请在要使用Astra Control进行管理的集群上执行这些命令。
+* 如果使用的是Bastion主机、请从Bastion主机的命令行对这些命令执行问题描述。
+
+
+.开始之前
+* 您需要访问要使用Astra Control管理的集群。
+* 要在集群上安装Asta Connector操作员、您需要具有Kubbernetes管理员权限。
+
+
+
+NOTE: 如果为集群配置了强制实施Pod安全接入(这是Kubernetes 1.25及更高版本集群的默认设置)、则需要对相应的卷空间启用PSA限制。请参见 link:prep-for-cluster-management.html["使用Astra Control准备用于集群管理的环境"] 有关说明，请参见。
+
+.步骤
+. 在要使用声明性Kubarnetes工作流管理的集群上安装A作用 连接器操作员。运行此命令时、命名空间 `astra-connector-operator` 创建并将配置应用于命名空间：
++
+[source, console]
+----
+kubectl apply -f https://github.com/NetApp/astra-connector-operator/releases/download/24.02.0-202403151353/astraconnector_operator.yaml
+----
+. 确认操作员已安装并准备就绪：
++
+[source, console]
+----
+kubectl get all -n astra-connector-operator
+----
+. 从Asta Control获取API令牌。请参见 https://docs.netapp.com/us-en/astra-automation/get-started/get_api_token.html["Astra Automation文档"^] 有关说明，请参见。
+. 使用令牌创建密钥。将<API_TOKEN>替换为您从Astra Control收到的令牌：
++
+[source, console]
+----
+kubectl create secret generic astra-token \
+--from-literal=apiToken=<API_TOKEN> \
+-n astra-connector
+----
+. 创建Docker密钥以提取Astra Connector映像。将括号<>中的值替换为您环境中的信息：
++
+
+NOTE: 您可以在Astra Control Web UI中找到<ASTRA_CONTROL_ACCOUNT_ID>。在Web UI中，选择页面右上角的图图标，然后选择*API access*。
+
++
+[source, console]
+----
+kubectl create secret docker-registry regcred \
+--docker-username=<ASTRA_CONTROL_ACCOUNT_ID> \
+--docker-password=<API_TOKEN> \
+-n astra-connector \
+--docker-server=cr.astra.netapp.io
+----
+. 创建Astra Connector CR文件并将其命名为 `astra-connector-cr.yaml`。更新方括号<>中的值以匹配您的Astra Control环境和集群配置：
++
+** <ASTRA_CONTROL_ACCOUNT_ID>：在上一步中从Astra Control Web UI获取。
+** <CLUSTER_NAME>：应在Asta Control中分配此集群的名称。
+** <ASTRA_CONTROL_URL>：Asta Control的Web UI URL。例如：
++
+[listing]
+----
+https://astra.control.url
+----
++
+[source, yaml]
+----
+apiVersion: astra.netapp.io/v1
+kind: AstraConnector
+metadata:
+  name: astra-connector
+  namespace: astra-connector
+spec:
+  astra:
+    accountId: <ASTRA_CONTROL_ACCOUNT_ID>
+    clusterName: <CLUSTER_NAME>
+    #Only set `skipTLSValidation` to `true` when using the default self-signed
+    #certificate in a proof-of-concept environment.
+    skipTLSValidation: false #Should be set to false in production environments
+    tokenRef: astra-token
+  natsSyncClient:
+    cloudBridgeURL: <ASTRA_CONTROL_HOST_URL>
+  imageRegistry:
+    name: cr.astra.netapp.io
+    secret: regcred
+----
+
+
+. 在您填充之后 `astra-connector-cr.yaml` 使用正确值的文件、应用CR：
++
+[source, console]
+----
+kubectl apply -n astra-connector -f astra-connector-cr.yaml
+----
+. 验证Asta Connector是否已完全部署：
++
+[source, console]
+----
+kubectl get all -n astra-connector
+----
+. 验证集群是否已注册到Astra Control：
++
+[source, console]
+----
+kubectl get astraconnectors.astra.netapp.io -A
+----
++
+您应看到类似于以下内容的输出：
+
++
+[listing]
+----
+NAMESPACE         NAME              REGISTERED   ASTRACONNECTORID                       STATUS
+astra-connector   astra-connector   true         00ac8-2cef-41ac-8777-ed0583e   Registered with Astra
+----
+. 验证该集群是否显示在Astra Control Web UI的*集群*页面上的受管集群列表中。
+

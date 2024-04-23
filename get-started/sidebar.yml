@@ -27,8 +27,13 @@ entries:
 - title: 添加集群
   url: "/get-started/add-first-cluster.html"
   entries:
-  - title: 安装适用于私有集群的Asta Connector
-    url: "/get-started/install-astra-connector.html"
+  - title: 安装Asta Connector以管理集群
+    url: "/get-started/astra-connector-overview.html"
+    entries:
+    - title: 安装适用于私有集群的早期版本Asta Connector
+      url: "/get-started/install-astra-connector-previous.html"
+    - title: 安装适用于声明性Kubarnetes集群的Asta Connector
+      url: "/get-started/install-astra-connector-declarative.html"
   - title: 添加由提供程序管理的集群
     entries:
     - title: 添加公共提供商管理的集群

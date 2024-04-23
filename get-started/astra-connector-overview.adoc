@@ -1,0 +1,22 @@
+---
+sidebar: sidebar 
+permalink: get-started/astra-connector-overview.html 
+keywords: connector, install, astra connector, manage cluster, add cluster, cluster, add, manage 
+summary: 要使用Asta Control管理集群、您需要安装Asta Connector。 
+---
+= 安装Asta Connector以管理集群
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/get-started/
+
+
+[role="lead"]
+Asta Connector是一款位于受管集群上的软件、可促进受管集群与Asta Control之间的通信。对于使用Asta Control Service管理的集群、Asta Connector有两个可用版本：
+
+* *Astra Connecter*的先前版本： link:install-astra-connector-previous.html["安装旧版本的Asta Connector"] 如果您计划使用非Kubnetes本机工作流管理集群、请在集群上执行此操作。
+* [技术预览]*声明性Kubernetes Astra Connecter*： link:install-astra-connector-declarative.html["为使用声明性Kubarnetes工作流管理的集群安装Asta Connector"] 如果您计划使用声明性Kubarnetes工作流管理集群、请在集群上执行此操作。在集群上安装Asta Connector后、该集群将自动添加到Asta Control中。
+
+
+
+NOTE: 声明性Kubarnetes Asta Connector仅作为Asta Control早期采用者计划(EAP)的一部分提供。有关加入NetApp的信息、请联系您的EAP销售代表。

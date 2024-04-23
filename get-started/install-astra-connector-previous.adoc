@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: get-started/install-astra-connector.html 
+permalink: get-started/install-astra-connector-previous.html 
 keywords: connector, install, astra connector, manage cluster, add cluster, cluster, add, manage 
 summary: 您可以安装Asta Connector来帮助管理专用集群。 
 ---
-= 安装适用于私有集群的Asta Connector
+= 安装旧版本的Asta Connector
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,9 +12,9 @@ summary: 您可以安装Asta Connector来帮助管理专用集群。
 
 
 [role="lead"]
-Asta Control Service使用Asta Connector在Asta Control Service和专用集群之间实现通信。您需要在要管理的专用集群上安装Astra Connector。
+Astra Control Service使用以前版本的Astra Connector在Astra Control Service和使用非Kubnetes本机工作流管理的专用集群之间实现通信。您需要在要使用非Kubbernetes本机工作流管理的专用集群上安装Astra Connector。
 
-Astra Connector支持以下类型的专用集群：
+早期版本的Astra Connector支持使用非Kubenetes本机工作流管理的以下类型的专用集群：
 
 * Amazon Elelic Kubelnetes Service (EKS)
 * Azure Kubernetes Service （ AKS ）
@@ -23,10 +23,6 @@ Astra Connector支持以下类型的专用集群：
 * 具有AWS PrivateLink的罗莎
 * Red Hat OpenShift容器平台内部部署
 
-
-
-
-== 安装A作用 连接器
 
 .关于此任务
 * 执行这些步骤时、请对要使用Astra Control Service管理的专用集群执行这些命令。
@@ -39,7 +35,7 @@ Astra Connector支持以下类型的专用集群：
 
 
 .步骤
-. 在要使用Asta Control Service管理的专用集群上安装Asta Connector运算符。运行此命令时、命名空间 `astra-connector-operator` 创建并将配置应用于命名空间：
+. 在要使用非Kubbernetes本机工作流管理的专用集群上安装先前的Astra Connector运算符。运行此命令时、命名空间 `astra-connector-operator` 创建并将配置应用于命名空间：
 +
 [source, console]
 ----

@@ -50,7 +50,7 @@ RKE 2：版本1.24.17、1.25.14、1.26.9、带RANcher Manager 2.7.9
 
 == 安装A作用 连接器
 
-在添加专用集群之前、您需要在此集群上安装Astra Connector、以便Astra Control可以与其通信。请参见 link:install-astra-connector.html["安装适用于私有集群的Asta Connector"] 有关说明，请参见。
+在添加专用集群之前、您需要在此集群上安装Astra Connector、以便Astra Control可以与其通信。请参见 link:install-astra-connector-previous.html["为使用非Kubnetes本机工作流管理的专用集群安装以前版本的Astra Connector"] 有关说明，请参见。
 
 
 

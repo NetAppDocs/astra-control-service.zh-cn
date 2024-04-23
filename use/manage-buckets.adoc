@@ -174,6 +174,94 @@ NOTE: Astra Control 可首先确保没有使用存储分段进行备份的计划
 
 
 
+== [技术预览]使用自定义资源管理存储分段
+
+您可以使用应用程序集群上的Astra Control自定义资源(CR)添加存储分段。如果要备份应用程序和永久性存储，或者要跨集群克隆应用程序，则必须添加对象存储分段提供程序。Astra Control 会将这些备份或克隆存储在您定义的对象存储分段中。如果使用的是自定义资源方法、则应用程序快照功能需要一个存储分段。
+
+如果您要将应用程序配置和永久性存储克隆到同一集群、则无需在Astra Control中使用存储分段。
+
+Asta Control的存储分段自定义资源称为AppVault。此CR包含在保护操作中使用存储分段所需的配置。
+
+.开始之前
+* 确保您有一个可从Astra Control Center管理的集群访问的存储分段。
+* 确保您具有此存储分段的凭据。
+* 确保存储分段为以下类型之一：
++
+** NetApp ONTAP S3
+** NetApp StorageGRID S3
+** Microsoft Azure
+** 通用 S3
+
+
+
+
+
+NOTE: Amazon Web Services (AWS)和Google Cloud Platform (GCP)使用通用S3存储分段类型。
+
+
+NOTE: 虽然Astra控制中心支持将Amazon S3作为通用S3存储分段提供商、但Astra控制中心可能不支持声称支持Amazon S3的所有对象存储供应商。
+
+.步骤
+. 创建自定义资源(CR)文件并将其命名为(例如、 `astra-appvault.yaml`）。
+. 配置以下属性：
++
+** * metadata.name*:_(必需)_ AppVault自定义资源的名称。
+** *spec.prefix*：_(可选)_一个路径、该路径前缀为存储在AppVault中的所有实体的名称。
+** *。spec.providerConfig*:_(必需)_用于存储使用指定提供程序访问AppVault所需的配置。
+** * spec.providerCredentials*:_(必需)_存储使用指定提供程序访问AppVault所需的任何凭据的引用。
++
+*** * spec.providerCredentials.valueFromSecret*:_(可选)_表示凭据值应来自机密。
++
+**** *key*:_(如果使用了valueFroMSecret)密钥的有效密钥_。
+**** *name*:_(如果使用valueF物品 密钥，则为必需项)_包含此字段值的机密的名称。必须位于同一命名空间中。
+
+
+
+
+** * spec.providerType*:_(必需)_用于确定提供备份的内容；例如、NetApp ONTAP S3或Microsoft Azure。
++
+YAML示例：
+
++
+[source, yaml]
+----
+apiVersion: astra.netapp.io/v1
+kind: AppVault
+metadata:
+  name: astra-appvault
+spec:
+  providerType: generic-s3
+  providerConfig:
+    path: testpath
+    endpoint: 192.168.1.100:80
+    bucketName: bucket1
+    secure: "false"
+  providerCredentials:
+    accessKeyID:
+      valueFromSecret:
+        name: s3-creds
+        key: accessKeyID
+    secretAccessKey:
+      valueFromSecret:
+        name: s3-creds
+        key: secretAccessKey
+----
+
+
+. 在您填充之后 `astra-appvault.yaml` 使用正确值的文件、应用CR：
++
+[source, console]
+----
+kubectl apply -f astra-appvault.yaml -n astra-connector
+----
++
+
+NOTE: 添加存储分段时、Astra Control会使用默认存储分段指示符标记一个存储分段。您创建的第一个存储分段将成为默认存储分段。添加分段时、您可以稍后决定添加 link:../use/manage-buckets.html#set-the-default-bucket["设置另一个默认存储分段"^]。
+
+
+
+
+
 == 了解更多信息
 
 * https://docs.netapp.com/us-en/astra-automation/index.html["使用 Astra Control API"^]

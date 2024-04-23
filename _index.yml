@@ -20,6 +20,8 @@ indexpage:
       url: "/use/manage-apps.html"
     - title: 保护您的应用程序
       url: "/use/protect-apps.html"
+    - title: 保护整个集群
+      url: "/use/back-up-full-cluster.html"
     - title: 迁移应用程序
       url: "/use/clone-apps.html"
     - title: 设置计费
