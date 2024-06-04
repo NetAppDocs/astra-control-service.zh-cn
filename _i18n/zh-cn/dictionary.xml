@@ -2307,7 +2307,6 @@
   <block id="25c0fc647d4495551197e1366ffb88c1" category="inline-link-macro">启用执行挂钩功能</block>
   <block id="d18d82128e00bde35f6e0d2869d5bf4d" category="list-text">*默认情况下，执行挂钩处于关闭状态*：从此版本开始，执行挂钩功能可以是 <block ref="5fbd6d349444ac17373b392afcdaf677" category="inline-link-macro-rx"></block> 或禁用以提高安全性(默认情况下处于禁用状态)。如果尚未创建用于Astra Control的执行挂钩、则需要 <block ref="85c1cb9c60d373b225cb02cebdd0fa71" category="inline-link-macro-rx"></block> 开始创建挂钩。如果您在此版本之前创建了执行挂钩、则执行挂钩功能将保持启用状态、您可以像往常一样使用挂钩。</block>
   <block id="cbcb0d5fc851d3d299a5b4094fe28e88" category="paragraph">任意<block ref="aa08769cdcb26674c6706093503ff0a3" prefix=" " category="inline-code"></block> 使用命名空间名称/ID限制RBAC的用户可以将应用程序克隆或还原到同一集群上的新命名空间或其组织帐户中的任何其他集群。但是，同一用户无法访问新命名空间中的克隆或还原应用程序。克隆或还原操作创建新命名空间后、帐户管理员/所有者可以编辑<block ref="aa08769cdcb26674c6706093503ff0a3" prefix=" " category="inline-code"></block> 受影响用户的用户帐户和更新角色约束、以授予对新命名空间的访问权限。</block>
-  <block id="212a5202776ec83aae2e348c300b284e" category="list-text"><block ref="ba01bb34315cdda27da30f151a6b3a93" category="inline-xref-macro-rx"></block></block>
   <block id="2a9637886ec18ac79339d54fd59c3dac" category="list-text"><block ref="e6692a6ca085ac5ca4d1b661f3b80574" category="inline-xref-macro-rx"></block></block>
   <block id="6d00a00b6023f439cef44dc10b9b46f4" category="list-text"><block ref="025a13f8160290a685803adf4afe8791" category="inline-xref-macro-rx"></block></block>
   <block id="389f816f6fc3ba34f8ccf0ecdb3fcbb6" category="section-title">对ONTAP NAS经济型存储类的原位还原操作失败</block>
@@ -2794,7 +2793,6 @@ Astra Control 现在可采用新的部署模式。_Asta Control Center_是一款
   <block id="e9a2cf6bcc4b5dac4132bd23653461f4" category="inline-link-macro">设置另一个默认存储分段</block>
   <block id="70c54cfcee3c9263e59ee7de13eaba8a" category="admonition">添加存储分段时、Astra Control会使用默认存储分段指示符标记一个存储分段。您创建的第一个存储分段将成为默认存储分段。添加分段时、您可以稍后决定添加 <block ref="f83337d9020c8fbb1074e1310043d277" category="inline-link-macro-rx"></block>。</block>
   <block id="52431bbd389e0fa547d3457c7623dfdb" category="paragraph-title">(技术预览)声明性Kubarnetes工作流</block>
-  <block id="a70f47b04c91a98499e8d350fa135250" category="paragraph">此Astra Control Center版本包含声明性Kubarnetes功能、可用于从本机Kubarnetes自定义资源(CR)执行数据管理。</block>
   <block id="0addefdac9fea093ab0631c42bf63154" category="paragraph">此功能仅在Astra Control Service早期采用者计划(EAP)实例中可用。有关加入NetApp的信息、请联系您的EAP销售代表。</block>
   <block id="1d649712f351065ae3623bc575a29774" category="inline-link-macro">Asta连接器</block>
   <block id="9edf27bb0e7572b9900e7980f47a9346" category="paragraph">安装后 <block ref="124c0a76592741cd24122aa865f475c8" category="inline-link-macro-rx"></block> 在要管理的集群上、您将能够在UI或CR中执行以下基于CR的集群操作：</block>
@@ -2886,4 +2884,5 @@ Astra Control 现在可采用新的部署模式。_Asta Control Center_是一款
   <block id="e84bb7e947a5b25481546110f575734a" category="list-text"><block ref="e84bb7e947a5b25481546110f575734a" category="inline-link-rx"></block></block>
   <block id="5858ee4031acd7b896faa2d3d2c1a299" category="inline-link">Cloud Insights 文档</block>
   <block id="2b93b48daf034e4100d00b85950e109d" category="list-text"><block ref="2b93b48daf034e4100d00b85950e109d" category="inline-link-rx"></block></block>
+  <block id="20186cef4fc96e59fa1bf8ee82f413ce" category="paragraph">此Astra Control Service版本包含声明性Kubarnetes功能、可用于从本机Kubarnetes自定义资源(CR)执行数据管理。</block>
 </blocks>
