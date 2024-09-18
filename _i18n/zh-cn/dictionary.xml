@@ -972,7 +972,6 @@
   <block id="a11a0e1d242df8616f3c50d7c65bb304" category="list-text">键入 "remove" 确认此操作。</block>
   <block id="ba2f6425b8f267dbd5a2f8ddb2f7116a" category="list-text">选择 * 是，删除存储分段 * 。</block>
   <block id="9c83e144e5481ac6766f4055e566594d" category="section-title">了解更多信息</block>
-  <block id="ea2708b459fc0cad6936ec216bd9405e" category="paragraph">Astra 控制中心完全集成到 AutoSupport 和 Active IQ 生态系统中，可为用户和 NetApp 支持提供故障排除和使用信息。</block>
   <block id="0cc78d43619515d263f8e91071f2ed83" category="paragraph">52.188.218.166/32</block>
   <block id="f26ee8a93c95de7a50a14b73f85172c5" category="paragraph">了解 Astra Control 中的用户角色和命名空间，以及如何使用它们控制对组织中资源的访问。</block>
   <block id="f4040f71a7d553f2519487070892b115" category="section-title">用户角色</block>
@@ -2885,4 +2884,5 @@ Astra Control 现在可采用新的部署模式。_Asta Control Center_是一款
   <block id="20186cef4fc96e59fa1bf8ee82f413ce" category="paragraph">此Astra Control Service版本包含声明性Kubarnetes功能、可用于从本机Kubarnetes自定义资源(CR)执行数据管理。</block>
   <block id="7da594e16f0a75f632446ae54fcebe05" category="paragraph"><block ref="7da594e16f0a75f632446ae54fcebe05" category="inline-link-rx"></block></block>
   <block id="f5a6b606e4d3218555a81c4263520975" category="admonition">要观看Azure Marketplace订阅过程视频演示，请访问<block ref="f66ebb92a2b0ab499cd7d4ec1bb5ea24" category="inline-link-rx"></block>。</block>
+  <block id="a9cf730f8ab04a5b52f1d19c74c1483c" category="paragraph">Astra控制中心完全集成到AutoSupport和Active IQ数字顾问(也称为数字顾问)生态系统中、可为用户和NetApp支持提供故障排除和使用信息。</block>
 </blocks>

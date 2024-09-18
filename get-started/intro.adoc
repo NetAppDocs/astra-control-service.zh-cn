@@ -219,7 +219,7 @@ Astra 控制中心在您自己的私有云中本地运行。
 
 Astra控制中心支持Kuburenet集群、其中Astra控制配置程序配置了存储类、并具有ONTAP存储后端。
 
-Astra 控制中心完全集成到 AutoSupport 和 Active IQ 生态系统中，可为用户和 NetApp 支持提供故障排除和使用信息。
+Astra控制中心完全集成到AutoSupport和Active IQ数字顾问(也称为数字顾问)生态系统中、可为用户和NetApp支持提供故障排除和使用信息。
 
 您可以使用 90 天评估许可证试用 Astra Control Center 。评估版可通过电子邮件和社区选项获得支持。此外，您还可以从产品支持信息板访问知识库文章和文档。
 
